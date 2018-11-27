@@ -6,6 +6,7 @@ import Lightbulb from "./Lightbulb";
 
 const Wrapper = styled.div`
   height: 100vh;
+  min-height: 948px;
   width: 100%;
   background: linear-gradient(to right, #e38b3d, #f3bf70);
   display: flex;

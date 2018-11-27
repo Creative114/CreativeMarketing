@@ -16,7 +16,7 @@ code {
 #Layer1 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   opacity: 0;
@@ -25,7 +25,7 @@ code {
 #Layer2 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   animation-delay: 1s;
@@ -35,7 +35,7 @@ code {
 #Layer3 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   animation-delay: 1500ms;
@@ -45,7 +45,7 @@ code {
 #Layer4 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   animation-delay: 2s;
@@ -55,7 +55,7 @@ code {
 #Layer5 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   animation-delay: 2500ms;
@@ -65,7 +65,7 @@ code {
 #Layer6 {
   animation-duration: 3s;
   animation-name: fadeIn;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-direction: alternate;
   transition: 750ms;
   animation-delay: 3s;

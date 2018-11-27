@@ -13,9 +13,9 @@ export default function Lightbulb() {
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Home" transform="translate(-937.000000, -162.000000)">
           <g id="Asset-3" transform="translate(937.000000, 162.000000)">
