@@ -24,14 +24,15 @@ export const Subtitle = styled.h2`
   color: #505d68;
   font-size: ${props => (props.logo ? "28px" : "21px")};
   line-height: 38px;
+  margin: 0.5em 0;
 `;
 
 export const Text = styled.p`
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #a1aeb7;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 38px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -64,4 +65,38 @@ export const Column = styled.div`
   @media (max-width: 768px) {
     align-items: center;
   }
+`;
+
+export const Button = styled.button`
+  background-color: inherit;
+  width: 146px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #505d68;
+  color: #505d68;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  border-radius: 3px;
+  transition: 750ms;
+  &:hover {
+    background-color: #667785;
+    color: #fff;
+  }
+
+  ${props =>
+    props.primary &&
+    css`
+      background: #b9402d;
+      width: 165px;
+      height: 45px;
+      border: 1px solid transparent;
+      color: #fff;
+      &:hover {
+        background-color: #d25a47;
+      }
+    `};
 `;
