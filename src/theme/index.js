@@ -36,13 +36,14 @@ export const Text = styled.p`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: #fff;
+  color: ${props => (props.active ? "#E38B3D" : "#fff")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;
   font-weight: 700;
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
+  transition: 500ms;
 `;
 
 // CONTAINERS
