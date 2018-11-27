@@ -14,11 +14,6 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const Image = styled.img`
-  width: 330px;
-  height: 517px;
-`;
-
 export default function Splash() {
   return (
     <Wrapper>
