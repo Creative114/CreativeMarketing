@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 // TYPE
 
@@ -31,6 +32,16 @@ export const Text = styled.p`
   color: #a1aeb7;
   font-size: 16px;
   line-height: 24px;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 1em;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
 `;
 
 // CONTAINERS

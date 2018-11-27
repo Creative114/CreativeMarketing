@@ -12,3 +12,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#Layer1 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+#Layer2 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  animation-delay: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+#Layer3 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  animation-delay: 1500ms;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+#Layer4 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+#Layer5 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  animation-delay: 2500ms;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+#Layer6 {
+  animation-duration: 3s;
+  animation-name: fadeIn;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  transition: 750ms;
+  animation-delay: 3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
