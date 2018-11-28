@@ -24,15 +24,16 @@ export const Subtitle = styled.h2`
   color: #505d68;
   font-size: ${props => (props.logo ? "28px" : "21px")};
   line-height: 38px;
-  margin: 0.5em 0;
+  margin: ${props => props.margin || "0.5em 0"};
 `;
 
 export const Text = styled.p`
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #a1aeb7;
-  font-size: 18px;
+  font-size: ${props => (props.logo ? "22px" : "18px")};
   line-height: 38px;
+  margin: ${props => props.margin || "0.5em 0"};
 `;
 
 export const StyledNavLink = styled(NavLink)`

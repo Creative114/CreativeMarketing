@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Logo from "../../assets/logo.png";
+import LogoColor from "../../assets/logoColor.png";
 
 import { Row, StyledNavLink } from "../../theme/index";
 
@@ -22,6 +23,7 @@ const Image = styled.img`
   width: 305px;
   height: 40px;
   margin-left: 1.5em;
+  transition: 500ms;
 `;
 
 export default class Navigation extends Component {
@@ -31,7 +33,7 @@ export default class Navigation extends Component {
   };
 
   listenScrollEvent = e => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 350) {
       this.setState({ color: "white", active: true });
     } else {
       this.setState({ color: "rgba(0,0,0,0)", active: false });
@@ -46,7 +48,7 @@ export default class Navigation extends Component {
     const { color, active } = this.state;
     return (
       <Wrapper background={color} active={active}>
-        <Image src={Logo} alt="Creative114 Logo" />
+        <Image src={active ? LogoColor : Logo} alt="Creative114 Logo" />
         <Row margin="0 3em 0 0">
           <StyledNavLink active={active} to="/">
             Home

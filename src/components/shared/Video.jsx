@@ -37,7 +37,6 @@ export default function Video() {
   return (
     <Wrapper>
       <Iframe
-        src="https://www.youtube.com/embed/YU5xms6OfJ8"
         frameBorder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen

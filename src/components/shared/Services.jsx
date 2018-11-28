@@ -40,22 +40,23 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: #f2f5f7;
   cursor: pointer;
   transition: 750ms;
+  text-align: center;
   &:hover {
-    background: #f2f5f7;
+    background: #fff;
   }
 `;
 
 const Icon = styled.i`
-  font-size: 3.5em;
-  color: #0070c0;
+  font-size: 4em;
+  color: #b9402d;
 `;
 
 const StyledRow = styled(Row)`
-  justifycontent: space-between;
-  alignitems: center;
+  justify-content: space-between;
+  align-items: center;
   width: 75%;
   @media (max-width: 780px) {
     flex-direction: column;
@@ -86,28 +87,28 @@ function Item({ title, text, icon }) {
 export default function Services() {
   const items = [
     {
-      title: "What We Do",
+      title: "Video Marketing",
       text:
-        "Connect-IT 360 is a non-profit teaching our youth the essential building blocks to being successful in life. We bridge the gap between our youth and the business world to guide them through disruption and transformation.",
-      icon: "fas fa-graduation-cap"
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      icon: "fal fa-video"
     },
     {
-      title: "Our Why",
+      title: "Web Design",
       text:
-        "Founder Robyn Mussler was inspired by her sister Susie, who had Down Syndrome. The vision was to create Connect-IT 360, where everyone has a value, and the opportunity for a brighter future.",
-      icon: "fas fa-award"
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      icon: "fal fa-code"
     },
     {
-      title: "Our Promise to You",
+      title: "Graphic Design",
       text:
-        "Connect-IT 360 stays ahead of the curve to prepare our youth to face daily challenges, create products and services that influence the community, and change lives through innovation.",
-      icon: "fas fa-briefcase"
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      icon: "fal fa-drafting-compass"
     },
     {
-      title: "Our Core Values",
+      title: "Photography",
       text:
-        "Connect-IT 360 heart beats to create a community dedicated to embracing the value, growth, and the potential of every child. As a result, our youth can realize their #BestU.",
-      icon: "fas fa-apple-alt"
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      icon: "fal fa-camera-alt"
     }
   ];
   return (
@@ -115,13 +116,14 @@ export default function Services() {
       <div style={{ height: "75px" }} />
       <StyledRow>
         <StyledTextRow>
-          <Title>Stimulate Your Inspiration.</Title>
+          <Title>Experts in solving problems</Title>
         </StyledTextRow>
         <StyledTextRow>
           <Text secondary>
-            Strengthen Your Community. Create Unlimited Opportunity. Connect-IT
-            360 is a non-profit teaching our youth the essential building blocks
-            to being successful in life.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo.
           </Text>
         </StyledTextRow>
       </StyledRow>
