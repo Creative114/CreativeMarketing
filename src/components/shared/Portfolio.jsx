@@ -28,7 +28,7 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0.75em;
   outline: none;
   border-radius: 3px;
@@ -70,6 +70,10 @@ const StyledImage = styled.img`
   object-fit: cover;
   filter: ${props => (props.active ? "grayscale(0%)" : "grayscale(100%)")};
   transition: 500ms;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 function Image({ img, id, selected }) {
