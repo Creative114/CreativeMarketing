@@ -4,6 +4,7 @@ import Splash from "../../shared/Splash";
 import Video from "../../shared/Video";
 import Services from "../../shared/Services";
 import Logos from "../../shared/Logos";
+import Portfolio from "../../shared/Portfolio";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,6 +19,7 @@ export default class Home extends Component {
         <Logos />
         <Video />
         <Services />
+        <Portfolio />
       </Wrapper>
     );
   }
