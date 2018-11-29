@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Logo from "../../assets/logo.png";
-import Icon from "../../assets/icon.jpg";
+import Icon from "../../assets/icon.png";
 
 import { Row, StyledNavLink } from "../../theme/index";
 
@@ -20,8 +20,8 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${props => (props.active ? "50px" : "305px")};
-  height: ${props => (props.active ? "50px" : "40px")};
+  width: ${props => (props.active ? "40px" : "305px")};
+  height: ${props => (props.active ? "56px" : "40px")};
   margin-left: 1.5em;
   transition: 250ms;
 `;

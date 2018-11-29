@@ -148,7 +148,11 @@ export default class Portfolio extends Component {
 
         <Grid>
           <Item className="horizontal">
-            <Image selected={selected} id="videoMarketing" img={horizontal1} />
+            <Image
+              selected={selected}
+              id="videoMarketing && all"
+              img={horizontal1}
+            />
           </Item>
           <Item>
             <Image selected={selected} id="webDesign" img={normal1} />

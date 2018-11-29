@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle, Button } from "../../theme/index";
+import testimonial1 from "../../assets/testimonial1.jpg";
 
 const Wrapper = styled.div`
   height: 620px;
@@ -14,12 +15,20 @@ const Wrapper = styled.div`
 `;
 
 const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+`;
+
+const Thumbnail = styled.div`
+  background: ${props => props.img};
+  background-size: contain;
   position: relative;
   left: 0;
   width: 704px;
-  height: 396px;
-  background-color: #f6f6f6;
+  height: 396.5px;
   margin-right: 4em;
+  transition: 250ms;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @media (max-width: 700px) {
     margin-right: 0;
     width: 100%;
@@ -36,11 +45,13 @@ const StyledColumn = styled(Column)`
 export default function Video() {
   return (
     <Wrapper>
-      <Iframe
-        frameBorder="0"
-        allow="autoplay; encrypted-media"
-        allowFullscreen
-      />
+      <Thumbnail img={`url('${testimonial1}')`}>
+        <Iframe
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullscreen
+        />
+      </Thumbnail>
       <StyledColumn>
         <Subtitle primary>View our 2017/2018 reel</Subtitle>
         <Text secondary>

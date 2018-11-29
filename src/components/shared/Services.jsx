@@ -34,7 +34,7 @@ const Grid = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  border: 0.5px solid #a1aeb7;
+  border: 1.5px solid #a1aeb7;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,7 @@ const Div = styled.div`
   text-align: center;
   &:hover {
     background: #fff;
+    border: 1.5px solid #b9402d;
   }
 `;
 

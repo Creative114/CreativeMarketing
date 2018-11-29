@@ -38,12 +38,20 @@ const StyledTextColumn = styled(Column)`
 `;
 
 const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+`;
+
+const Thumbnail = styled.div`
+  background: ${props => props.img};
+  background-size: contain;
   position: relative;
   right: 0;
   width: 704px;
-  height: 396px;
-  background-color: #f6f6f6;
+  height: 396.5px;
   margin-left: 4em;
+  transition: 250ms;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @media (max-width: 700px) {
     margin-right: 0;
     width: 100%;
@@ -77,11 +85,13 @@ export default function Testimonial({
           </StyledTextColumn>
         </StyledColumn>
         <StyledColumn>
-          <Iframe
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullscreen
-          />
+          <Thumbnail img={`url('${img}')`}>
+            <Iframe
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullscreen
+            />
+          </Thumbnail>
         </StyledColumn>
       </React.Fragment>
     </Wrapper>

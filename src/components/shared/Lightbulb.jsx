@@ -3,8 +3,8 @@ import React from "react";
 export default function Lightbulb() {
   return (
     <svg
-      width="330px"
-      height="517px"
+      width="384px"
+      height="602px"
       viewBox="0 0 330 517"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

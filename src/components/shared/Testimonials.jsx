@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
 import { Title, Column, Row } from "../../theme/index";
+import testimonial1 from "../../assets/testimonial1.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -101,6 +102,7 @@ export default class Testimonials extends Component {
             <Testimonial
               title="Video Marketing"
               description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              img={testimonial1}
             />
           )}
           {selected === "webDesign" && (
