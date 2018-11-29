@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Subtitle, Title, Text, Column, Row } from "../../theme/index";
+import { Title, Column, Row, Button } from "../../theme/index";
 import normal1 from "../../assets/normal1.jpg";
 import vertical1 from "../../assets/vertical1.jpg";
 import horizontal1 from "../../assets/horizontal1.jpg";
@@ -9,7 +9,6 @@ import normal3 from "../../assets/normal3.jpg";
 import big1 from "../../assets/big1.jpg";
 import normal4 from "../../assets/normal4.jpg";
 import normal5 from "../../assets/normal5.jpg";
-import vertical2 from "../../assets/vertical2.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -94,7 +93,7 @@ function MenuItem({ id, selected, title, handleClick }) {
   );
 }
 
-export default class Mocks extends Component {
+export default class Portfolio extends Component {
   state = {
     selected: "all"
   };
@@ -178,6 +177,9 @@ export default class Mocks extends Component {
             <Image selected={selected} id="videoMarketing" img={horizontal1} />
           </Item>
         </Grid>
+        <Column alignitems="center">
+          <Button primary>See More</Button>
+        </Column>
       </Wrapper>
     );
   }

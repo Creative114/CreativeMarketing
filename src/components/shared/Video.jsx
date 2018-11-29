@@ -39,7 +39,7 @@ export default function Video() {
       <Iframe
         frameBorder="0"
         allow="autoplay; encrypted-media"
-        allowfullscreen
+        allowFullscreen
       />
       <StyledColumn>
         <Subtitle primary>View our 2017/2018 reel</Subtitle>

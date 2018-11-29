@@ -7,7 +7,7 @@ import { Row, StyledNavLink } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100px;
+  height: 75px;
   background: ${props => props.background};
   display: flex;
   align-items: center;
