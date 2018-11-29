@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Logo from "../../assets/logo.png";
-import LogoColor from "../../assets/logoColor.png";
+import Icon from "../../assets/icon.jpg";
 
 import { Row, StyledNavLink } from "../../theme/index";
 
@@ -20,10 +20,10 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 305px;
-  height: 40px;
+  width: ${props => (props.active ? "50px" : "305px")};
+  height: ${props => (props.active ? "50px" : "40px")};
   margin-left: 1.5em;
-  transition: 500ms;
+  transition: 250ms;
 `;
 
 export default class Navigation extends Component {
@@ -48,7 +48,11 @@ export default class Navigation extends Component {
     const { color, active } = this.state;
     return (
       <Wrapper background={color} active={active}>
-        <Image src={active ? LogoColor : Logo} alt="Creative114 Logo" />
+        <Image
+          active={active}
+          src={active ? Icon : Logo}
+          alt="Creative114 Logo"
+        />
         <Row margin="0 3em 0 0">
           <StyledNavLink active={active} to="/">
             Home
