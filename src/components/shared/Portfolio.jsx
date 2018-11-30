@@ -49,7 +49,7 @@ const Grid = styled.div`
   width: 75%;
   margin: 3em auto;
   display: grid;
-  grid-gap: 25px;
+  grid-gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 198px;
   grid-auto-flow: dense;
@@ -108,6 +108,7 @@ export default class Portfolio extends Component {
 
   render() {
     const { selected } = this.state;
+    const { type } = this.props;
     return (
       <Wrapper>
         <Column alignitems="center">
@@ -181,9 +182,11 @@ export default class Portfolio extends Component {
             <Image selected={selected} id="videoMarketing" img={horizontal1} />
           </Item>
         </Grid>
-        <Column alignitems="center">
-          <Button primary>See More</Button>
-        </Column>
+        {type === "home" && (
+          <Column alignitems="center">
+            <Button primary>See More</Button>
+          </Column>
+        )}
       </Wrapper>
     );
   }

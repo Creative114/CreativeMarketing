@@ -8,7 +8,8 @@ export const Title = styled.h1`
   font-weight: 700;
   color: #505d68;
   font-size: 50px;
-  line-height: 64px;
+  line-height: 48px;
+  margin: ${props => props.margin || ".5em 0"};
   ${props =>
     props.header &&
     css`
@@ -34,6 +35,12 @@ export const Text = styled.p`
   font-size: ${props => (props.logo ? "22px" : "18px")};
   line-height: 38px;
   margin: ${props => props.margin || "0.5em 0"};
+  ${props =>
+    props.header &&
+    css`
+      color: #fff;
+      font-size: 22px;
+    `};
 `;
 
 export const StyledNavLink = styled(NavLink)`

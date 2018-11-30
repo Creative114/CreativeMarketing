@@ -33,7 +33,7 @@ export default class Navigation extends Component {
   };
 
   listenScrollEvent = e => {
-    if (window.scrollY > 350) {
+    if (window.scrollY > 150) {
       this.setState({ color: "white", active: true });
     } else {
       this.setState({ color: "rgba(0,0,0,0)", active: false });
@@ -54,10 +54,10 @@ export default class Navigation extends Component {
           alt="Creative114 Logo"
         />
         <Row margin="0 3em 0 0">
-          <StyledNavLink active={active} to="/">
+          <StyledNavLink active={active} exact to="/">
             Home
           </StyledNavLink>
-          <StyledNavLink active={active} to="/">
+          <StyledNavLink active={active} exact to="/work">
             Work
           </StyledNavLink>
           <StyledNavLink active={active} to="/">
