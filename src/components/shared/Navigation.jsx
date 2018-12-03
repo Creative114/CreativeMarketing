@@ -60,7 +60,7 @@ export default class Navigation extends Component {
           <StyledNavLink active={active} exact to="/work">
             Work
           </StyledNavLink>
-          <StyledNavLink active={active} to="/">
+          <StyledNavLink active={active} exact to="/about">
             About
           </StyledNavLink>
           <StyledNavLink active={active} to="/">

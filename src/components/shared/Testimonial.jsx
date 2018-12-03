@@ -50,7 +50,7 @@ const Thumbnail = styled.div`
   width: 704px;
   height: 396.5px;
   margin-left: 4em;
-  transition: 250ms;
+  transition: 500ms;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @media (max-width: 700px) {
     margin-right: 0;

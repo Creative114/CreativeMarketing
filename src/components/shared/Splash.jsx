@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { Row, Column, Title, Text } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
+import aboutSplash from "../../assets/aboutSplash.jpg";
 
 const Wrapper = styled.div`
   height: ${props => (props.home ? "948px" : "800px")};
   width: 100%;
   background: ${props => props.background};
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,16 +29,18 @@ export default function Splash({ type, title }) {
       background={
         type === "home"
           ? "linear-gradient(to right, #e38b3d, #f3bf70)"
-          : "linear-gradient(to right, #B9402D, #D97881)"
+          : type === "work"
+          ? "linear-gradient(to right, #B9402D, #D97881)"
+          : type === "about" && `url('${aboutSplash}')`
       }
     >
       <Navigation />
       {type === "home" && (
         <Row justifycontent="space-around" alignitems="center">
-          <Column width="45%">
+          <Column width="55%">
             <Title header home>
-              Strategic. <br /> Problem-solving. <br /> Creatives. <br /> On a
-              mission.
+              Creative Storytelling. <br /> Lead Generation. <br /> Brand
+              Strategy. <br /> Digital Marketing.
             </Title>
           </Column>
           <Lightbulb />

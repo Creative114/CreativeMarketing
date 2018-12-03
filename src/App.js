@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./components/screens/Home/Home";
 import Work from "./components/screens/Work/Work";
+import About from "./components/screens/About/About";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const App = () => (
@@ -18,6 +19,13 @@ const App = () => (
         path="/work"
         render={() => {
           return <Work onEnter={window.scrollTo(0, 0)} />;
+        }}
+      />
+      <Route
+        exact
+        path="/about"
+        render={() => {
+          return <About onEnter={window.scrollTo(0, 0)} />;
         }}
       />
     </div>

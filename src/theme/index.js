@@ -14,7 +14,7 @@ export const Title = styled.h1`
     props.header &&
     css`
       color: #fff;
-      font-size: ${props => props.home && "80px"};
+      font-size: ${props => props.home && "68px"};
       line-height: ${props => props.home && "100px"};
     `};
 `;
@@ -40,6 +40,12 @@ export const Text = styled.p`
     css`
       color: #fff;
       font-size: 22px;
+    `};
+  ${props =>
+    props.title &&
+    css`
+      margin: 0;
+      font-size: 21px;
     `};
 `;
 

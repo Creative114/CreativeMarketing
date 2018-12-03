@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle, Button } from "../../theme/index";
-import testimonial1 from "../../assets/testimonial1.jpg";
+import testimonial3 from "../../assets/testimonial3.jpg";
 
 const Wrapper = styled.div`
   height: 620px;
@@ -24,8 +24,8 @@ const Thumbnail = styled.div`
   background-size: contain;
   position: relative;
   left: 0;
-  width: 704px;
-  height: 396.5px;
+  width: 703px;
+  height: 397px;
   margin-right: 4em;
   transition: 250ms;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -45,7 +45,7 @@ const StyledColumn = styled(Column)`
 export default function Video() {
   return (
     <Wrapper>
-      <Thumbnail img={`url('${testimonial1}')`}>
+      <Thumbnail img={`url('${testimonial3}')`}>
         <Iframe
           frameBorder="0"
           allow="autoplay; encrypted-media"

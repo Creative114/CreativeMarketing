@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledNavLink, Row, Text } from "../../theme/index";
+import { StyledNavLink, Row } from "../../theme/index";
 import Logo from "../../assets/logo.png";
 
 const Wrapper = styled.div`
