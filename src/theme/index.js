@@ -10,6 +10,12 @@ export const Title = styled.h1`
   font-size: 50px;
   line-height: 48px;
   margin: ${props => props.margin || ".5em 0"};
+  @media (max-width: 780px) {
+    font-size: 38px;
+  }
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
   ${props =>
     props.header &&
     css`
@@ -35,6 +41,14 @@ export const Text = styled.p`
   font-size: ${props => (props.logo ? "22px" : "18px")};
   line-height: 38px;
   margin: ${props => props.margin || "0.5em 0"};
+  @media (max-width: 780px) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  @media (max-width: 400px) {
+    font-size: 14px;
+    line-height: 26px;
+  }
   ${props =>
     props.header &&
     css`
@@ -58,6 +72,10 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
   transition: 500ms;
+  @media (max-width: 780px) {
+    margin: 0 0.5em;
+    font-size: 14px;
+  }
 `;
 
 // CONTAINERS

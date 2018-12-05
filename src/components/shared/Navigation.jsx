@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Logo from "../../assets/logo.png";
 import Icon from "../../assets/icon.png";
+import Burger from "./Burger";
 
 import { Row, StyledNavLink } from "../../theme/index";
 
@@ -45,6 +46,11 @@ export default class Navigation extends Component {
   }
 
   render() {
+    const mobile = window.matchMedia("(max-width: 920px)");
+
+    let handleChange = () => {};
+
+    mobile.addListener(handleChange());
     const { color, active } = this.state;
     return (
       <Wrapper background={color} active={active}>
@@ -53,23 +59,27 @@ export default class Navigation extends Component {
           src={active ? Icon : Logo}
           alt="Creative114 Logo"
         />
-        <Row margin="0 3em 0 0">
-          <StyledNavLink active={active} exact to="/">
-            Home
-          </StyledNavLink>
-          <StyledNavLink active={active} exact to="/work">
-            Work
-          </StyledNavLink>
-          <StyledNavLink active={active} exact to="/about">
-            About
-          </StyledNavLink>
-          <StyledNavLink active={active} to="/">
-            Impact
-          </StyledNavLink>
-          <StyledNavLink active={active} to="/">
-            Contact
-          </StyledNavLink>
-        </Row>
+        {mobile.matches && <Burger />}
+
+        {!mobile.matches && (
+          <Row margin="0 3em 0 0">
+            <StyledNavLink active={active} exact to="/">
+              Home
+            </StyledNavLink>
+            <StyledNavLink active={active} exact to="/work">
+              Work
+            </StyledNavLink>
+            <StyledNavLink active={active} exact to="/about">
+              About
+            </StyledNavLink>
+            <StyledNavLink active={active} to="/">
+              Impact
+            </StyledNavLink>
+            <StyledNavLink active={active} to="/">
+              Contact
+            </StyledNavLink>
+          </Row>
+        )}
       </Wrapper>
     );
   }

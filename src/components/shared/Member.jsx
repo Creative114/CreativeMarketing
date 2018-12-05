@@ -52,11 +52,11 @@ const Box = styled.div`
   border-radius: 3px;
 `;
 
-const I = styled.i`
-  color: #a1aeb7;
-  font-size: 1.75em;
-  margin-right: 1em;
-`;
+// const I = styled.i`
+//   color: #a1aeb7;
+//   font-size: 1.75em;
+//   margin-right: 1em;
+// `;
 
 export default function Member({ title, description, img, name }) {
   return (
@@ -69,11 +69,11 @@ export default function Member({ title, description, img, name }) {
           <Subtitle>{name}</Subtitle>
           <Text title>{title}</Text>
           <Text>{description}</Text>
-          <Row margin=".5em 0">
+          {/* <Row margin=".5em 0">
             <I className="fab fa-facebook-f" />
             <I className="fab fa-linkedin-in" />
             <I className="fab fa-medium-m" />
-          </Row>
+          </Row> */}
         </StyledTextColumn>
       </StyledColumn>
     </Wrapper>

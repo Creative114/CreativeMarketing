@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { Title, Column, Row, Button } from "../../theme/index";
 import normal1 from "../../assets/normal1.jpg";
 import vertical1 from "../../assets/vertical1.jpg";
-import horizontal1 from "../../assets/horizontal1.jpg";
+import port2 from "../../assets/port2.jpg";
+import port3 from "../../assets/port3.jpg";
 import normal2 from "../../assets/normal2.jpg";
 import normal3 from "../../assets/normal3.jpg";
-import big1 from "../../assets/big1.jpg";
+import port1 from "../../assets/port1.jpg";
 import normal4 from "../../assets/normal4.jpg";
 import normal5 from "../../assets/normal5.jpg";
 
@@ -43,16 +44,33 @@ const StyledButton = styled.button`
     background-color: #d25a47;
     color: #fff;
   }
+  @media (max-width: 780px) {
+    font-size: 14px;
+    width: 150px;
+    height: 38px;
+    margin: 0.75em;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  flex-wrap: wrap;
+  justifycontent: center;
+  alignitems: center;
+  width: 95%;
+  margin: 0 auto;
 `;
 
 const Grid = styled.div`
   width: 75%;
   margin: 3em auto;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 198px;
+  grid-auto-rows: 160px;
   grid-auto-flow: dense;
+  @media (max-width: 780px) {
+    width: 95%;
+  }
 `;
 
 const Item = styled.div`
@@ -61,6 +79,8 @@ const Item = styled.div`
   align-items: center;
   font-size: 2em;
   color: #fff;
+  height: 100%;
+  width: 100%;
 `;
 
 const StyledImage = styled.img`
@@ -75,10 +95,10 @@ const StyledImage = styled.img`
   }
 `;
 
-function Image({ img, id, selected }) {
+function Image({ img, cid, selected }) {
   console.log(selected);
 
-  return <StyledImage src={img} id={id} active={selected === id} />;
+  return <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
 }
 
 function MenuItem({ id, selected, title, handleClick }) {
@@ -109,12 +129,13 @@ export default class Portfolio extends Component {
   render() {
     const { selected } = this.state;
     const { type } = this.props;
+    const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
         <Column alignitems="center">
           <Title>Projects</Title>
         </Column>
-        <Row justifycontent="center" alignitems="center">
+        <StyledRow>
           <MenuItem
             id="all"
             title="All"
@@ -145,41 +166,73 @@ export default class Portfolio extends Component {
             handleClick={this.handleClick}
             selected={selected}
           />
-        </Row>
+        </StyledRow>
 
         <Grid>
-          <Item className="horizontal">
+          <Item className={mobile ? "horizontal" : ""}>
             <Image
               selected={selected}
-              id="videoMarketing && all"
-              img={horizontal1}
+              cid={["videoMarketing", "all"]}
+              img={port2}
             />
           </Item>
           <Item>
-            <Image selected={selected} id="webDesign" img={normal1} />
+            <Image
+              selected={selected}
+              cid={["webDesign", "all"]}
+              img={normal1}
+            />
           </Item>
           <Item>
-            <Image selected={selected} id="photography" img={normal2} />
+            <Image
+              selected={selected}
+              cid={["photograqphy", "all"]}
+              img={normal2}
+            />
           </Item>
           <Item>
-            <Image selected={selected} id="webDesign" img={normal3} />
+            <Image
+              selected={selected}
+              cid={["webDesign", "all"]}
+              img={normal3}
+            />
           </Item>
-          <Item className="vertical">
-            <Image selected={selected} id="photography" img={vertical1} />
+          <Item className={mobile ? "vertical" : ""}>
+            <Image
+              selected={selected}
+              cid={["photography", "all"]}
+              img={vertical1}
+            />
           </Item>
           <Item>
-            <Image selected={selected} id="graphicDesign" img={normal4} />
+            <Image
+              selected={selected}
+              cid={["graphicDesign", "all"]}
+              img={normal4}
+            />
           </Item>
           <Item>
-            <Image selected={selected} id="webDesign" img={normal5} />
+            <Image
+              selected={selected}
+              cid={["webDesign", "all"]}
+              img={normal5}
+            />
           </Item>
 
-          <Item className="big">
-            <Image selected={selected} id="videoMarketing" img={big1} />
+          <Item className={mobile ? "big" : ""}>
+            <Image
+              selected={selected}
+              cid={["videoMarketing", "all"]}
+              img={port1}
+            />
           </Item>
 
-          <Item className="horizontal">
-            <Image selected={selected} id="videoMarketing" img={horizontal1} />
+          <Item className={mobile ? "horizontal" : ""}>
+            <Image
+              selected={selected}
+              cid={["videoMarketing", "all"]}
+              img={port3}
+            />
           </Item>
         </Grid>
         {type === "home" && (

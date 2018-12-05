@@ -11,18 +11,35 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 3em 0 0 0;
+  @media (max-width: 780px) {
+    height: 100%;
+    min-height: 100px;
+    padding: 6em 0;
+  }
 `;
 
 const Image = styled.img`
   width: 220px;
   height: 30px;
   margin-left: 3em;
+  @media (max-width: 780px) {
+    margin: 0 0 2em 0;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 780px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default function Footer() {
   return (
     <Wrapper>
-      <Row alignitems="center" justifycontent="space-between">
+      <StyledRow>
         <Image src={Logo} alt="" />
         <Row alignitems="center">
           <StyledNavLink footer to="/">
@@ -41,7 +58,7 @@ export default function Footer() {
             Contact
           </StyledNavLink>
         </Row>
-      </Row>
+      </StyledRow>
       <Row>
         {/* <Text footer>
           2018 &copy; Feed Forward | Made with &hearts; in Tampa, FL

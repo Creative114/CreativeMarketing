@@ -9,10 +9,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
+  padding: 6em 0 4em 0;
   @media (max-width: 780px) {
     width: 95%;
     padding: 1em 0;
+    text-align: center;
+    padding: 3em 0 1.5em 0;
   }
 `;
 
@@ -26,6 +28,8 @@ const Grid = styled.div`
   height: 100%;
   width: 80%;
   @media (max-width: 780px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 310px;
     width: 95%;
     margin: 0;
   }
@@ -53,6 +57,9 @@ const Div = styled.div`
 const Icon = styled.i`
   font-size: 4em;
   color: #b9402d;
+  @media (max-width: 400px) {
+    font-size: 2em;
+  }
 `;
 
 const StyledRow = styled(Row)`
@@ -63,6 +70,7 @@ const StyledRow = styled(Row)`
     flex-direction: column;
     width: 95%;
     align-items: center;
+    margin: 1em 0;
   }
 `;
 
@@ -114,7 +122,6 @@ export default function Services() {
   ];
   return (
     <Wrapper id="what">
-      <div style={{ height: "75px" }} />
       <StyledRow>
         <StyledTextRow>
           <Title>Experts in solving problems</Title>
