@@ -54,8 +54,8 @@ const StyledButton = styled.button`
 
 const StyledRow = styled(Row)`
   flex-wrap: wrap;
-  justifycontent: center;
-  alignitems: center;
+  justify-content: center;
+  align-items: center;
   width: 95%;
   margin: 0 auto;
 `;

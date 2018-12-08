@@ -25,6 +25,10 @@ const Image = styled.img`
   height: ${props => (props.active ? "56px" : "40px")};
   margin-left: 1.5em;
   transition: 250ms;
+  @media (max-width: 425px) {
+    width: ${props => (props.active ? "40px" : "250px")};
+    height: ${props => (props.active ? "56px" : "33px")};
+  }
 `;
 
 export default class Navigation extends Component {

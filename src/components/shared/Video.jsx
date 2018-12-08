@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   @media (max-width: 780px) {
     flex-direction: column;
     height: 100%;
@@ -39,7 +40,7 @@ const Wrapper = styled.div`
 //   }
 // `;
 
-const StyledColumn = styled(Column)`
+const StyledTextColumn = styled(Column)`
   width: 35%;
   @media (max-width: 700px) {
     width: 95%;
@@ -49,17 +50,33 @@ const StyledColumn = styled(Column)`
 const Thumbnail = styled.img`
   width: 100%;
   height: 100%;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   @media (max-width: 700px) {
     margin-right: 0;
   }
 `;
 
+const StyledColumn = styled(Column)`
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  padding: 2em 0;
+  @media (max-width: 780px) {
+    width: 100%;
+    padding: 1em 0;
+    align-items: center;
+  }
+`;
+
 export default function Video() {
   return (
     <Wrapper>
-      <Thumbnail src={testimonial3} />
       <StyledColumn>
+        <Thumbnail src={testimonial3} />
+      </StyledColumn>
+      <StyledTextColumn>
         <Subtitle primary>The heart behind the brand</Subtitle>
         <Text secondary>
           If you are going to trust us to tell your story, you might as well
@@ -70,7 +87,7 @@ export default function Video() {
           beautiful.
         </Text>
         <Button primary>Learn more</Button>
-      </StyledColumn>
+      </StyledTextColumn>
     </Wrapper>
   );
 }

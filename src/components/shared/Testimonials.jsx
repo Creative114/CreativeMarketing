@@ -47,7 +47,6 @@ const StyledButton = styled.button`
 
 const StyledColumn = styled(Column)`
   margin: 0 0 0 3em;
-  width: 100%;
   @media (max-width: 780px) {
     margin: 0 auto;
   }

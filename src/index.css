@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 #Layer1 {
   animation-duration: 3s;
   animation-name: fadeIn;
