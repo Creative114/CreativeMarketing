@@ -20,15 +20,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const Iframe = styled.iframe`
-  width: 85%;
-  height: 85%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-`;
-
 const StyledTextColumn = styled(Column)`
   width: 35%;
   @media (max-width: 780px) {
@@ -37,7 +28,7 @@ const StyledTextColumn = styled(Column)`
   }
 `;
 
-const Thumbnail = styled.img`
+const VideoTag = styled.video`
   width: 100%;
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -57,31 +48,18 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-const VideoIframe = () => (
-  <iframe
-    title="cats"
-    width="640"
-    height="360"
-    src="https://player.vimeo.com/video/295427548"
-    style={{
-      maxWidth: "97%",
-      position: "absolute",
-      left: 0,
-      right: 0,
-      margin: "auto",
-      top: "50%",
-      transform: "translateY(-50%)"
-    }}
-  />
-);
-
 export default class Video extends Component {
   render() {
     const { isOpen, handleLightbox } = this.props;
     return (
       <Wrapper>
-        <StyledColumn onClick={handleLightbox}>
-          <Thumbnail src={testimonial3} />
+        <StyledColumn>
+          <VideoTag poster={testimonial3} controls>
+            <source
+              src="https://player.vimeo.com/external/260181613.hd.mp4?s=c2602f22c1a1b1724c517c6ef2a70b879f2310a2&profile_id=175"
+              type="video/mp4"
+            />
+          </VideoTag>
         </StyledColumn>
         <StyledTextColumn>
           <Subtitle primary>The heart behind the brand</Subtitle>
@@ -95,9 +73,6 @@ export default class Video extends Component {
           </Text>
           <Button primary>Learn more</Button>
         </StyledTextColumn>
-        {isOpen && (
-          <Lightbox mainSrc={VideoIframe} onCloseRequest={handleLightbox} />
-        )}
       </Wrapper>
     );
   }

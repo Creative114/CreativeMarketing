@@ -3,14 +3,20 @@ import styled from "styled-components";
 import { Title, Column, Row, Button } from "../../theme/index";
 import normal1 from "../../assets/normal1.jpg";
 import vertical1 from "../../assets/vertical1.jpg";
+import port1 from "../../assets/port1.jpg";
 import port2 from "../../assets/port2.jpg";
 import port3 from "../../assets/port3.jpg";
+import port4 from "../../assets/port4.jpg";
+import port5 from "../../assets/port5.jpg";
 import normal2 from "../../assets/normal2.jpg";
 import normal3 from "../../assets/normal3.jpg";
-import port1 from "../../assets/port1.jpg";
 import normal4 from "../../assets/normal4.jpg";
 import normal5 from "../../assets/normal5.jpg";
-import { VideoIframe1, VideoIframe2, VideoIframe3 } from "./Videos/Videos";
+import {
+  VideoStopBeingAverage,
+  VideoTimBratz,
+  VideoTimTebow
+} from "./Videos/Videos";
 import Lightbox from "lightbox-react";
 import "lightbox-react/style.css";
 
@@ -98,7 +104,13 @@ const StyledImage = styled.img`
   }
 `;
 
-const lightbox = [VideoIframe1, VideoIframe2, VideoIframe3];
+const lightbox = [
+  VideoStopBeingAverage,
+  port4,
+  port5,
+  VideoTimBratz,
+  VideoTimTebow
+];
 
 function Image({ img, cid, selected }) {
   return <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
@@ -196,11 +208,11 @@ export default class Portfolio extends Component {
               img={normal1}
             />
           </Item>
-          <Item>
+          <Item onClick={() => this.handleLightbox(1)}>
             <Image
               selected={selected}
-              cid={["photograqphy", "all"]}
-              img={normal2}
+              cid={["photography", "all"]}
+              img={port4}
             />
           </Item>
           <Item>
@@ -211,17 +223,18 @@ export default class Portfolio extends Component {
             />
           </Item>
           <Item className={mobile ? "vertical" : ""}>
+            >
+            <Image
+              selected={selected}
+              img={vertical1}
+              cid={["photography", "all"]}
+            />
+          </Item>
+          <Item onClick={() => this.handleLightbox(2)}>
             <Image
               selected={selected}
               cid={["photography", "all"]}
-              img={vertical1}
-            />
-          </Item>
-          <Item>
-            <Image
-              selected={selected}
-              cid={["graphicDesign", "all"]}
-              img={normal4}
+              img={port5}
             />
           </Item>
           <Item>
@@ -232,7 +245,10 @@ export default class Portfolio extends Component {
             />
           </Item>
 
-          <Item className={mobile ? "big" : ""}>
+          <Item
+            className={mobile ? "big" : ""}
+            onClick={() => this.handleLightbox(4)}
+          >
             <Image
               selected={selected}
               cid={["videoMarketing", "all"]}
@@ -240,7 +256,10 @@ export default class Portfolio extends Component {
             />
           </Item>
 
-          <Item className={mobile ? "horizontal" : ""}>
+          <Item
+            className={mobile ? "horizontal" : ""}
+            onClick={() => this.handleLightbox(3)}
+          >
             <Image
               selected={selected}
               cid={["videoMarketing", "all"]}

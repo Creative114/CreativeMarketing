@@ -1,11 +1,11 @@
 import React from "react";
 
-export const VideoIframe1 = () => (
+export const VideoStopBeingAverage = () => (
   <iframe
-    title="cats"
+    title="Stop being average"
     width="640"
     height="360"
-    src="https://player.vimeo.com/video/295427548"
+    src="https://player.vimeo.com/external/221823534.hd.mp4?s=9567b793c0b6b9bacd100a307166e73501415feb&profile_id=119"
     style={{
       maxWidth: "97%",
       position: "absolute",
@@ -18,12 +18,12 @@ export const VideoIframe1 = () => (
   />
 );
 
-export const VideoIframe2 = () => (
+export const VideoTimBratz = () => (
   <iframe
-    title="cats"
+    title="tim bratz"
     width="640"
     height="360"
-    src="https://player.vimeo.com/video/295775678"
+    src="https://player.vimeo.com/external/295427548.hd.mp4?s=7be7dc55f62c5d4ad1a4c919eaa4b663966deef9&profile_id=169"
     style={{
       maxWidth: "97%",
       position: "absolute",
@@ -36,12 +36,12 @@ export const VideoIframe2 = () => (
   />
 );
 
-export const VideoIframe3 = () => (
+export const VideoTimTebow = () => (
   <iframe
-    title="cats"
+    title="Time Tebow"
     width="640"
     height="360"
-    src="https://player.vimeo.com/video/260181613"
+    src="https://player.vimeo.com/external/304399575.hd.mp4?s=1eac23e38eb14cf832c60e739dae543874dd9cf8&profile_id=169"
     style={{
       maxWidth: "97%",
       position: "absolute",

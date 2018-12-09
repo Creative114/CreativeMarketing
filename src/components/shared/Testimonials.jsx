@@ -66,8 +66,7 @@ function MenuItem({ id, selected, title, handleClick }) {
 
 export default class Testimonials extends Component {
   state = {
-    selected: "videoMarketing",
-    playing: false
+    selected: "videoMarketing"
   };
 
   handleClick = id => {
@@ -78,12 +77,8 @@ export default class Testimonials extends Component {
     });
   };
 
-  handlePlay = () => {
-    this.setState({ playing: !this.state.playing });
-  };
-
   render() {
-    const { selected, playing } = this.state;
+    const { selected } = this.state;
     let settings = {
       dots: true,
       infinite: false,
@@ -107,7 +102,7 @@ export default class Testimonials extends Component {
             <Slider {...settings}>
               <Testimonial
                 title="Video Marketing"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products. CG hired Creative 114 to produce testimonial videos at their quarterly meetings, create video thumbnails and other graphic design."
                 img={testimonial2}
               />
 
@@ -165,24 +160,30 @@ export default class Testimonials extends Component {
                   title="Video Marketing"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                   img={testimonial2}
-                  playing={playing}
-                  handlePlay={this.handlePlay}
-                  src={"https://player.vimeo.com/video/260181613?autoplay=1"}
+                  src={
+                    "https://player.vimeo.com/external/289156916.hd.mp4?s=03d0bc51a2d17b988e352eb886a4c9c6193abd5e&profile_id=169"
+                  }
                 />
               )}
 
               {selected === "webDesign" && (
                 <Testimonial
-                  title="Web Deisgn"
+                  title="Web Design"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  img={testimonial1}
+                  // img={testimonial1}
+                  src={
+                    "https://player.vimeo.com/external/247876645.hd.mp4?s=b50b2731bea4f07781d6f8708cad8cac1aa7c4cb&profile_id=175"
+                  }
                 />
               )}
               {selected === "graphicDesign" && (
                 <Testimonial
                   title="Graphic Design"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
                   img={testimonial1}
+                  src={
+                    "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
+                  }
                 />
               )}
               {selected === "photography" && (

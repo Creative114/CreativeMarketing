@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   width: 90%;
   align-items: center;
   margin: 0 auto;
+  transition: 750ms;
   @media (max-width: 780px) {
     flex-direction: column-reverse;
     align-items: center;
@@ -23,6 +24,7 @@ const StyledColumn = styled(Column)`
   align-items: center;
   background-color: inherit;
   padding: 2em 0;
+  transition: 750ms;
   @media (max-width: 780px) {
     width: 100%;
     padding: 1em 0;
@@ -40,40 +42,15 @@ const StyledTextColumn = styled(Column)`
   }
 `;
 
-// const Thumbnail = styled.div`
-//   background: ${props => props.img};
-//   background-size: contain;
-//   background
-//   position: relative;
-//   right: 0;
-//   width: 704px;
-//   height: 396.5px;
-//   margin-left: 4em;
-//   transition: 500ms;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-//   @media (max-width: 700px) {
-//     margin-right: 0;
-//     width: 95%;
-//   }
-// `;
-
-const Thumbnail = styled.img`
+const VideoTag = styled.video`
   width: 100%;
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  @media (max-width: 700px) {
-    margin-right: 0;
-  }
+  cursor: pointer;
+  transition: 750ms;
 `;
 
-export default function Testimonial({
-  title,
-  description,
-  src,
-  img,
-  playing,
-  handlePlay
-}) {
+export default function Testimonial({ title, description, src, img }) {
   return (
     <Wrapper>
       <React.Fragment>
@@ -83,20 +60,10 @@ export default function Testimonial({
             <Text>{description}</Text>
           </StyledTextColumn>
         </StyledColumn>
-        <StyledColumn onClick={handlePlay}>
-          {playing ? (
-            <iframe
-              src={src}
-              width="640"
-              height="360"
-              frameborder="0"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowfullscreen
-            />
-          ) : (
-            <Thumbnail src={img} />
-          )}
+        <StyledColumn>
+          <VideoTag poster={img} controls>
+            <source src={src} type="video/mp4" />
+          </VideoTag>
         </StyledColumn>
       </React.Fragment>
     </Wrapper>

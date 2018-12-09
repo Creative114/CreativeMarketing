@@ -105,25 +105,25 @@ export default function Services() {
     {
       title: "Video Marketing",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Our core mission is to provide value to your organization--telling your story is the most powerful way in which you can do so.",
       icon: "fas fa-video"
     },
     {
       title: "Web Design",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "At Creative114, we utilize the latest techngologies and frameworks to ensure superior performance, security, and SEO.",
       icon: "fas fa-code"
     },
     {
       title: "Graphic Design",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Consistency in branding is vital to your organizations' success--our team of experts create brands that represent your vision.",
       icon: "fas fa-drafting-compass"
     },
     {
       title: "Photography",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "A picture tells a thousand words--Nothing fulfills us greater than capturing your happiest moments.",
       icon: "fas fa-camera-alt"
     }
   ];
@@ -135,10 +135,10 @@ export default function Services() {
         </StyledTextRow>
         <StyledTextRow>
           <Text secondary>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo.
+            At heart, we're entrepreneurs just like you; we have the experience,
+            skillset, and know-how to position your business for success. We
+            provide scalable strategies for your oganization to meet new
+            heights.
           </Text>
         </StyledTextRow>
       </StyledRow>
