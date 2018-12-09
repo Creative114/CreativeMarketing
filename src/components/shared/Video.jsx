@@ -42,8 +42,9 @@ const Wrapper = styled.div`
 
 const StyledTextColumn = styled(Column)`
   width: 35%;
-  @media (max-width: 700px) {
+  @media (max-width: 780px) {
     width: 95%;
+    align-items: center;
   }
 `;
 
@@ -52,7 +53,7 @@ const Thumbnail = styled.img`
   height: 100%;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  @media (max-width: 700px) {
+  @media (max-width: 780px) {
     margin-right: 0;
   }
 `;

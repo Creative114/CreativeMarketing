@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 500px) {
+    height: ${props => (props.home ? "700px" : "800px")};
+  }
 `;
 
 const StyledColumn = styled(Column)`
@@ -20,6 +23,27 @@ const StyledColumn = styled(Column)`
   text-align: center;
   width: 55%;
   margin: 0 auto;
+`;
+
+const StyledHomeColumn = styled(Column)`
+  width: ${props => (props.primary ? "50%" : "25%")};
+  @media (max-width: 780px) {
+    width: ${props => (props.primary ? "95%" : "30%")};
+    margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    width: ${props => (props.primary ? "95%" : "40%")};
+  }
+`;
+
+const StyledRow = styled(Row)`
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 780px) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
 `;
 
 export default function Splash({ type, title }) {
@@ -36,15 +60,17 @@ export default function Splash({ type, title }) {
     >
       <Navigation />
       {type === "home" && (
-        <Row justifycontent="space-around" alignitems="center">
-          <Column width="55%">
+        <StyledRow>
+          <StyledHomeColumn primary>
             <Title header home>
               Creative Storytelling. <br /> Lead Generation. <br /> Brand
               Strategy. <br /> Digital Marketing.
             </Title>
-          </Column>
-          <Lightbulb />
-        </Row>
+          </StyledHomeColumn>
+          <StyledHomeColumn>
+            <Lightbulb />
+          </StyledHomeColumn>
+        </StyledRow>
       )}
       {type !== "home" && (
         <StyledColumn>

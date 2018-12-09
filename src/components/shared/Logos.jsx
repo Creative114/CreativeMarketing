@@ -28,8 +28,10 @@ const Grid = styled.div`
   height: 100%;
   width: 100%;
   @media (max-width: 780px) {
-    width: 95%;
+    width: 100%;
     margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
   }
 `;
 
@@ -41,6 +43,9 @@ const StyledColumn = styled(Column)`
   align-items: center;
   margin: 4em 0 2em 0;
   text-align: center;
+  @media (max-width: 780px) {
+    width: 95%;
+  }
 `;
 
 const logos = [

@@ -8,7 +8,7 @@ export const Title = styled.h1`
   font-weight: 700;
   color: #505d68;
   font-size: 50px;
-  line-height: 48px;
+  line-height: 52px;
   margin: ${props => props.margin || ".5em 0"};
   @media (max-width: 780px) {
     font-size: 38px;
@@ -22,6 +22,21 @@ export const Title = styled.h1`
       color: #fff;
       font-size: ${props => props.home && "68px"};
       line-height: ${props => props.home && "100px"};
+      @media (max-width: 1200px) {
+        font-size: 50px;
+        line-height: 90px;
+      }
+      @media (max-width: 900px) {
+        line-height: 72px;
+      }
+      @media (max-width: 780px) {
+        font-size: 48px;
+        line-height: 64px;
+      }
+      @media (max-width: 500px) {
+        font-size: 38px;
+        line-height: 48px;
+      }
     `};
 `;
 
