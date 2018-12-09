@@ -46,7 +46,7 @@ const StyledRow = styled(Row)`
   }
 `;
 
-export default function Splash({ type, title }) {
+export default function Splash({ type, title, show }) {
   return (
     <Wrapper
       home={type === "home"}
@@ -58,7 +58,7 @@ export default function Splash({ type, title }) {
           : type === "about" && `url('${aboutSplash}')`
       }
     >
-      <Navigation />
+      <Navigation show={show} />
       {type === "home" && (
         <StyledRow>
           <StyledHomeColumn primary>

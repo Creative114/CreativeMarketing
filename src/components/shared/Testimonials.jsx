@@ -66,7 +66,8 @@ function MenuItem({ id, selected, title, handleClick }) {
 
 export default class Testimonials extends Component {
   state = {
-    selected: "videoMarketing"
+    selected: "videoMarketing",
+    playing: false
   };
 
   handleClick = id => {
@@ -77,8 +78,12 @@ export default class Testimonials extends Component {
     });
   };
 
+  handlePlay = () => {
+    this.setState({ playing: !this.state.playing });
+  };
+
   render() {
-    const { selected } = this.state;
+    const { selected, playing } = this.state;
     let settings = {
       dots: true,
       infinite: false,
@@ -160,8 +165,12 @@ export default class Testimonials extends Component {
                   title="Video Marketing"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                   img={testimonial2}
+                  playing={playing}
+                  handlePlay={this.handlePlay}
+                  src={"https://player.vimeo.com/video/260181613?autoplay=1"}
                 />
               )}
+
               {selected === "webDesign" && (
                 <Testimonial
                   title="Web Deisgn"

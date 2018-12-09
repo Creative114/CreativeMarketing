@@ -66,7 +66,14 @@ const Thumbnail = styled.img`
   }
 `;
 
-export default function Testimonial({ title, description, img }) {
+export default function Testimonial({
+  title,
+  description,
+  src,
+  img,
+  playing,
+  handlePlay
+}) {
   return (
     <Wrapper>
       <React.Fragment>
@@ -76,9 +83,20 @@ export default function Testimonial({ title, description, img }) {
             <Text>{description}</Text>
           </StyledTextColumn>
         </StyledColumn>
-        <StyledColumn>
-          {/* <Thumbnail img={`url('${img}')`} /> */}
-          <Thumbnail src={img} />
+        <StyledColumn onClick={handlePlay}>
+          {playing ? (
+            <iframe
+              src={src}
+              width="640"
+              height="360"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            />
+          ) : (
+            <Thumbnail src={img} />
+          )}
         </StyledColumn>
       </React.Fragment>
     </Wrapper>

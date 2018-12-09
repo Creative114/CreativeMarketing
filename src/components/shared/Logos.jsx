@@ -31,7 +31,7 @@ const Grid = styled.div`
     width: 100%;
     margin: 0;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
+    grid-auto-rows: 175px;
   }
 `;
 

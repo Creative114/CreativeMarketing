@@ -10,6 +10,9 @@ import normal3 from "../../assets/normal3.jpg";
 import port1 from "../../assets/port1.jpg";
 import normal4 from "../../assets/normal4.jpg";
 import normal5 from "../../assets/normal5.jpg";
+import { VideoIframe1, VideoIframe2, VideoIframe3 } from "./Videos/Videos";
+import Lightbox from "lightbox-react";
+import "lightbox-react/style.css";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -95,9 +98,9 @@ const StyledImage = styled.img`
   }
 `;
 
-function Image({ img, cid, selected }) {
-  console.log(selected);
+const lightbox = [VideoIframe1, VideoIframe2, VideoIframe3];
 
+function Image({ img, cid, selected }) {
   return <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
 }
 
@@ -115,7 +118,9 @@ function MenuItem({ id, selected, title, handleClick }) {
 
 export default class Portfolio extends Component {
   state = {
-    selected: "all"
+    selected: "all",
+    photoIndex: 0,
+    isOpen: false
   };
 
   handleClick = id => {
@@ -126,9 +131,14 @@ export default class Portfolio extends Component {
     });
   };
 
+  handleLightbox = index => {
+    this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
+  };
+
   render() {
-    const { selected } = this.state;
+    const { selected, photoIndex, isOpen } = this.state;
     const { type } = this.props;
+
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
@@ -169,7 +179,10 @@ export default class Portfolio extends Component {
         </StyledRow>
 
         <Grid>
-          <Item className={mobile ? "horizontal" : ""}>
+          <Item
+            onClick={() => this.handleLightbox(0)}
+            className={mobile ? "horizontal" : ""}
+          >
             <Image
               selected={selected}
               cid={["videoMarketing", "all"]}
@@ -239,6 +252,26 @@ export default class Portfolio extends Component {
           <Column alignitems="center">
             <Button primary>See More</Button>
           </Column>
+        )}
+        {isOpen && (
+          <Lightbox
+            mainSrc={lightbox[photoIndex]}
+            nextSrc={lightbox[(photoIndex + 1) % lightbox.length]}
+            prevSrc={
+              lightbox[(photoIndex + lightbox.length - 1) % lightbox.length]
+            }
+            onCloseRequest={this.handleLightbox}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + lightbox.length - 1) % lightbox.length
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % lightbox.length
+              })
+            }
+          />
         )}
       </Wrapper>
     );

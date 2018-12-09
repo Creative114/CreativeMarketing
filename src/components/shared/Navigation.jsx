@@ -15,9 +15,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   position: fixed;
   top: 0;
-  z-index: 10000;
+  z-index: 100;
   transition: 500ms;
   box-shadow: ${props => props.active && "0 0 10px rgba(0, 0, 0, 0.1)"};
+  // display: ${props => props.display};
 `;
 
 const Image = styled.img`
@@ -57,7 +58,11 @@ export default class Navigation extends Component {
     mobile.addListener(handleChange());
     const { color, active } = this.state;
     return (
-      <Wrapper background={color} active={active}>
+      <Wrapper
+        background={color}
+        active={active}
+        display={!this.props.show && "none"}
+      >
         <Image
           active={active}
           src={active ? Icon : Logo}
