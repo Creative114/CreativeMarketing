@@ -4,6 +4,8 @@ import Testimonial from "./Testimonial";
 import { Title, Column, Row } from "../../theme/index";
 import testimonial1 from "../../assets/testimonial1.jpg";
 import testimonial2 from "../../assets/testimonial2.jpg";
+import testimonial3 from "../../assets/testimonial3.jpg";
+import testimonial4 from "../../assets/testimonial4.jpg";
 import Slider from "react-slick";
 
 const Wrapper = styled.div`
@@ -170,7 +172,7 @@ export default class Testimonials extends Component {
                 <Testimonial
                   title="Web Design"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  // img={testimonial1}
+                  img={testimonial3}
                   src={
                     "https://player.vimeo.com/external/247876645.hd.mp4?s=b50b2731bea4f07781d6f8708cad8cac1aa7c4cb&profile_id=175"
                   }
@@ -190,7 +192,7 @@ export default class Testimonials extends Component {
                 <Testimonial
                   title="Photography"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  img={testimonial2}
+                  img={testimonial4}
                 />
               )}
             </Row>

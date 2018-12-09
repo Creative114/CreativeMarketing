@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle, Row } from "../../theme/index";
+import { Column, Text, Subtitle } from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,12 +38,12 @@ const StyledTextColumn = styled(Column)`
   }
 `;
 
-const Img = styled.img`
-  width: 70%;
-  @media (max-width: 780px) {
-    width: 90%;
-  }
-`;
+// const Img = styled.img`
+//   width: 70%;
+//   @media (max-width: 780px) {
+//     width: 90%;
+//   }
+// `;
 
 const Box = styled.div`
   width: 450px;

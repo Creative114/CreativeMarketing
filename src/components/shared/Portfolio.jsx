@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Title, Column, Row, Button } from "../../theme/index";
-import normal1 from "../../assets/normal1.jpg";
-import vertical1 from "../../assets/vertical1.jpg";
 import port1 from "../../assets/port1.jpg";
 import port2 from "../../assets/port2.jpg";
 import port3 from "../../assets/port3.jpg";
 import port4 from "../../assets/port4.jpg";
 import port5 from "../../assets/port5.jpg";
-import normal2 from "../../assets/normal2.jpg";
-import normal3 from "../../assets/normal3.jpg";
-import normal4 from "../../assets/normal4.jpg";
-import normal5 from "../../assets/normal5.jpg";
+import port6 from "../../assets/port6.jpg";
+import port7 from "../../assets/port7.jpg";
+import port8 from "../../assets/port8.jpg";
+import port9 from "../../assets/port9.jpg";
 import {
   VideoStopBeingAverage,
   VideoTimBratz,
@@ -106,8 +104,12 @@ const StyledImage = styled.img`
 
 const lightbox = [
   VideoStopBeingAverage,
-  port4,
+  port6,
+  port8,
+  port7,
+  port9,
   port5,
+  port4,
   VideoTimBratz,
   VideoTimTebow
 ];
@@ -201,53 +203,48 @@ export default class Portfolio extends Component {
               img={port2}
             />
           </Item>
-          <Item>
-            <Image
-              selected={selected}
-              cid={["webDesign", "all"]}
-              img={normal1}
-            />
-          </Item>
           <Item onClick={() => this.handleLightbox(1)}>
+            <Image selected={selected} cid={["webDesign", "all"]} img={port6} />
+          </Item>
+          <Item onClick={() => this.handleLightbox(2)}>
             <Image
               selected={selected}
-              cid={["photography", "all"]}
-              img={port4}
+              cid={["graphicDesign", "all"]}
+              img={port8}
             />
           </Item>
-          <Item>
-            <Image
-              selected={selected}
-              cid={["webDesign", "all"]}
-              img={normal3}
-            />
+          <Item onClick={() => this.handleLightbox(3)}>
+            <Image selected={selected} cid={["webDesign", "all"]} img={port7} />
           </Item>
-          <Item className={mobile ? "vertical" : ""}>
+          <Item
+            className={mobile ? "vertical" : ""}
+            onClick={() => this.handleLightbox(4)}
+          >
             >
             <Image
               selected={selected}
-              img={vertical1}
+              img={port9}
               cid={["photography", "all"]}
             />
           </Item>
-          <Item onClick={() => this.handleLightbox(2)}>
+          <Item onClick={() => this.handleLightbox(5)}>
             <Image
               selected={selected}
               cid={["photography", "all"]}
               img={port5}
             />
           </Item>
-          <Item>
+          <Item onClick={() => this.handleLightbox(6)}>
             <Image
               selected={selected}
-              cid={["webDesign", "all"]}
-              img={normal5}
+              cid={["photography", "all"]}
+              img={port4}
             />
           </Item>
 
           <Item
             className={mobile ? "big" : ""}
-            onClick={() => this.handleLightbox(4)}
+            onClick={() => this.handleLightbox(8)}
           >
             <Image
               selected={selected}
@@ -258,7 +255,7 @@ export default class Portfolio extends Component {
 
           <Item
             className={mobile ? "horizontal" : ""}
-            onClick={() => this.handleLightbox(3)}
+            onClick={() => this.handleLightbox(7)}
           >
             <Image
               selected={selected}

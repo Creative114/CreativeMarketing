@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle, Button } from "../../theme/index";
 import testimonial3 from "../../assets/testimonial3.jpg";
-import Lightbox from "lightbox-react";
 
 const Wrapper = styled.div`
   height: 620px;
@@ -50,7 +49,6 @@ const StyledColumn = styled(Column)`
 
 export default class Video extends Component {
   render() {
-    const { isOpen, handleLightbox } = this.props;
     return (
       <Wrapper>
         <StyledColumn>
