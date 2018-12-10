@@ -10,13 +10,7 @@ import port6 from "../../assets/port6.jpg";
 import port7 from "../../assets/port7.jpg";
 import port8 from "../../assets/port8.jpg";
 import port9 from "../../assets/port9.jpg";
-import {
-  VideoStopBeingAverage,
-  VideoTimBratz,
-  VideoTimTebow
-} from "./Videos/Videos";
-import Lightbox from "lightbox-react";
-import "lightbox-react/style.css";
+import Modal from "../shared/Modal";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -84,7 +78,6 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
   color: #fff;
   height: 100%;
   width: 100%;
@@ -102,16 +95,80 @@ const StyledImage = styled.img`
   }
 `;
 
+const Img = styled.img`
+  max-width: 97%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+const VideoStopBeingAverage = () => (
+  <iframe
+    title="Stop Being Average"
+    src="https://player.vimeo.com/video/221823534?title=0&byline=0&portrait=0"
+    width="640"
+    height="360"
+    style={{
+      maxWidth: "97%",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      margin: "auto",
+      top: "50%",
+      transform: "translateY(-50%)"
+    }}
+  />
+);
+
+const VideoTimBratz = () => (
+  <iframe
+    title="Tim Bratz"
+    src="https://player.vimeo.com/video/295427548?title=0&byline=0&portrait=0"
+    style={{
+      maxWidth: "97%",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      margin: "auto",
+      top: "50%",
+      transform: "translateY(-50%)"
+    }}
+    width="640"
+    height="360"
+  />
+);
+
+const VideoTimTebow = () => (
+  <iframe
+    title="Tim Tebo"
+    src="https://player.vimeo.com/video/304399575?title=0&byline=0&portrait=0"
+    width="640"
+    height="360"
+    style={{
+      maxWidth: "97%",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      margin: "auto",
+      top: "50%",
+      transform: "translateY(-50%)"
+    }}
+  />
+);
+
 const lightbox = [
-  VideoStopBeingAverage,
-  port6,
-  port8,
-  port7,
-  port9,
-  port5,
-  port4,
-  VideoTimBratz,
-  VideoTimTebow
+  <VideoStopBeingAverage />,
+  <Img src={port6} />,
+  <Img src={port8} />,
+  <Img src={port7} />,
+  <Img src={port9} />,
+  <Img src={port5} />,
+  <Img src={port4} />,
+  <VideoTimBratz />,
+  <VideoTimTebow />
 ];
 
 function Image({ img, cid, selected }) {
@@ -147,6 +204,10 @@ export default class Portfolio extends Component {
 
   handleLightbox = index => {
     this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
+  };
+
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
 
   render() {
@@ -264,30 +325,15 @@ export default class Portfolio extends Component {
             />
           </Item>
         </Grid>
-        {type === "home" && (
+        {/* {type === "home" && (
           <Column alignitems="center">
             <Button primary>See More</Button>
           </Column>
-        )}
+        )} */}
         {isOpen && (
-          <Lightbox
-            mainSrc={lightbox[photoIndex]}
-            nextSrc={lightbox[(photoIndex + 1) % lightbox.length]}
-            prevSrc={
-              lightbox[(photoIndex + lightbox.length - 1) % lightbox.length]
-            }
-            onCloseRequest={this.handleLightbox}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + lightbox.length - 1) % lightbox.length
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % lightbox.length
-              })
-            }
-          />
+          <Modal show={isOpen} togglemodal={this.toggleModal}>
+            {lightbox[photoIndex]}
+          </Modal>
         )}
       </Wrapper>
     );

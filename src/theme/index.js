@@ -76,6 +76,11 @@ export const Text = styled.p`
       margin: 0;
       font-size: 21px;
     `};
+  ${props =>
+    props.footer &&
+    css`
+      color: #fff;
+    `};
 `;
 
 export const StyledNavLink = styled(NavLink)`

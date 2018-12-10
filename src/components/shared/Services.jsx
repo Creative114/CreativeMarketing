@@ -124,7 +124,7 @@ export default function Services() {
       title: "Photography",
       text:
         "A picture tells a thousand words--Nothing fulfills us greater than capturing your happiest moments.",
-      icon: "fas fa-camera-alt"
+      icon: "fas fa-camera"
     }
   ];
   return (

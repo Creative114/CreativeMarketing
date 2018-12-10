@@ -12,20 +12,18 @@ const Wrapper = styled.div`
   background: ${props => props.background};
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   z-index: 100;
   transition: 500ms;
   box-shadow: ${props => props.active && "0 0 10px rgba(0, 0, 0, 0.1)"};
-  // display: ${props => props.display};
 `;
 
 const Image = styled.img`
   width: ${props => (props.active ? "40px" : "305px")};
   height: ${props => (props.active ? "56px" : "40px")};
-  margin-left: 1.5em;
   transition: 250ms;
+  margin-left: 1.5em;
   @media (max-width: 425px) {
     width: ${props => (props.active ? "40px" : "250px")};
     height: ${props => (props.active ? "56px" : "33px")};
@@ -68,9 +66,9 @@ export default class Navigation extends Component {
           src={active ? Icon : Logo}
           alt="Creative114 Logo"
         />
-        {mobile.matches && <Burger />}
+        {/* {mobile.matches && <Burger />} */}
 
-        {!mobile.matches && (
+        {/* {!mobile.matches && (
           <Row margin="0 3em 0 0">
             <StyledNavLink active={active} exact to="/">
               Home
@@ -88,7 +86,7 @@ export default class Navigation extends Component {
               Contact
             </StyledNavLink>
           </Row>
-        )}
+        )} */}
       </Wrapper>
     );
   }

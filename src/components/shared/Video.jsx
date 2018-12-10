@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle, Button } from "../../theme/index";
-import testimonial3 from "../../assets/testimonial3.jpg";
+import behindTheBrand from "../../assets/behindTheBrand.jpg";
 
 const Wrapper = styled.div`
   height: 620px;
@@ -52,9 +52,9 @@ export default class Video extends Component {
     return (
       <Wrapper>
         <StyledColumn>
-          <VideoTag poster={testimonial3} controls>
+          <VideoTag poster={behindTheBrand} controls>
             <source
-              src="https://player.vimeo.com/external/260181613.hd.mp4?s=c2602f22c1a1b1724c517c6ef2a70b879f2310a2&profile_id=175"
+              src="https://player.vimeo.com/external/305414450.hd.mp4?s=ebca55954b19033bd1677a57ba3da4fff42b34fd&profile_id=169"
               type="video/mp4"
             />
           </VideoTag>
@@ -67,9 +67,10 @@ export default class Video extends Component {
             our talents and our passion of storytelling to create amazing
             content that will add values to your life and your business. We
             craft stories through building amazing websites, shoot videos and
-            photos and design beautiful.
+            photos, and design beautiful assets to elevate your brand and
+            vision.
           </Text>
-          <Button primary>Learn more</Button>
+          {/* <Button primary>Learn more</Button> */}
         </StyledTextColumn>
       </Wrapper>
     );

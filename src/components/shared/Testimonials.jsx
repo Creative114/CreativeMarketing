@@ -54,11 +54,11 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-function MenuItem({ id, selected, title, handleClick }) {
+function MenuItem({ id, selected, title, handleClick, client }) {
   return (
     <StyledButton
       id={id}
-      onClick={() => handleClick(id)}
+      onClick={() => handleClick(id, client)}
       active={id === selected}
     >
       {title}
@@ -68,19 +68,26 @@ function MenuItem({ id, selected, title, handleClick }) {
 
 export default class Testimonials extends Component {
   state = {
-    selected: "videoMarketing"
+    selected: "videoMarketing",
+    title: "Movement 2819"
   };
 
-  handleClick = id => {
+  handleClick = (id, client) => {
     this.setState(() => {
       return {
-        selected: id
+        selected: id,
+        title: client
       };
     });
   };
 
+  handlePlay = id => {
+    let el = document.getElementById(`${id}`);
+    el.play();
+  };
+
   render() {
-    const { selected } = this.state;
+    const { selected, title } = this.state;
     let settings = {
       dots: true,
       infinite: false,
@@ -92,7 +99,7 @@ export default class Testimonials extends Component {
     return (
       <Wrapper>
         <StyledColumn>
-          <Title>Why people love Creative114</Title>
+          <Title>Why {title} loves Creative114</Title>
         </StyledColumn>
 
         {mobile.matches ? (
@@ -103,27 +110,36 @@ export default class Testimonials extends Component {
           >
             <Slider {...settings}>
               <Testimonial
-                title="Video Marketing"
-                description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products. CG hired Creative 114 to produce testimonial videos at their quarterly meetings, create video thumbnails and other graphic design."
+                title="Movement 2819"
+                description="Movement 2819 is a non-profit organization located in Tampa Bay with the simple purpose to fulfil the great commission. Based on Matthew 28:19, their primary purpose is to go out and tell the good news of the Gospel. To fulfill their mission, their founder, Dustin Lachance had the big vision to fill a stadium to preach the Gospel. They invited Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee of Mission City Worship. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
                 img={testimonial2}
+                src={
+                  "https://player.vimeo.com/external/289156916.hd.mp4?s=03d0bc51a2d17b988e352eb886a4c9c6193abd5e&profile_id=169"
+                }
               />
 
               <Testimonial
-                title="Web Deisgn"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                title="Litacore"
+                description="Smart Stop Logistics is a Software as a Service start up headquatered in Tampa Bay. Their mission is to improve quality of life for all ages and lifestyles by harnessing crowd-source data and content with technology. With the first product, the vision was to create a web based platform that would allow school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to revamp their marketing website, create a branded video and also to create photographic assets for their website and their business. Their original needs was to provide video production, however with the value we were providing, they ended up hiring us for the full package."
+                img={testimonial3}
+                src={
+                  "https://player.vimeo.com/external/247876645.hd.mp4?s=b50b2731bea4f07781d6f8708cad8cac1aa7c4cb&profile_id=175"
+                }
+              />
+
+              <Testimonial
+                title="The Collective Genius"
+                description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
                 img={testimonial1}
+                src={
+                  "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
+                }
               />
 
               <Testimonial
-                title="Graphic Design"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                img={testimonial1}
-              />
-
-              <Testimonial
-                title="Photography"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                img={testimonial2}
+                title="USF Health"
+                description="University of South Florida Health - Morsani College of Medicine is a tampa bay health care provider with the mission to improve the full spectrum of health - from the environment, to the community, to the individual. We were approached by their chief resident and the program director to produce headshots for the PGY1 Interns and the Family Medecine second and third year residents - a total of 32 medical doctors. The purpose of this project was to produce assets for their revamped website. We also capture group pictures of the teaching faculty."
+                img={testimonial4}
               />
             </Slider>
           </div>
@@ -132,24 +148,28 @@ export default class Testimonials extends Component {
             <Row alignitems="center" margin="0 0 0 3em">
               <MenuItem
                 id="videoMarketing"
+                client="Movement 2819"
                 title="Video Marketing"
                 handleClick={this.handleClick}
                 selected={selected}
               />
               <MenuItem
                 id="webDesign"
+                client="Litacore"
                 title="Web Design"
                 handleClick={this.handleClick}
                 selected={selected}
               />
               <MenuItem
                 id="graphicDesign"
+                client="The Collective Genius"
                 title="Graphic Design"
                 handleClick={this.handleClick}
                 selected={selected}
               />
               <MenuItem
                 id="photography"
+                client="USF Health"
                 title="Photography"
                 handleClick={this.handleClick}
                 selected={selected}
@@ -159,9 +179,10 @@ export default class Testimonials extends Component {
             <Row>
               {selected === "videoMarketing" && (
                 <Testimonial
-                  title="Video Marketing"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  title="Movement 2819"
+                  description="Movement 2819 is a non-profit organization located in Tampa Bay with the simple purpose to fulfil the great commission. Based on Matthew 28:19, their primary purpose is to go out and tell the good news of the Gospel. To fulfill their mission, their founder, Dustin Lachance had the big vision to fill a stadium to preach the Gospel. They invited Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee of Mission City Worship. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
                   img={testimonial2}
+                  handlePlay={this.handlePlay}
                   src={
                     "https://player.vimeo.com/external/289156916.hd.mp4?s=03d0bc51a2d17b988e352eb886a4c9c6193abd5e&profile_id=169"
                   }
@@ -170,9 +191,10 @@ export default class Testimonials extends Component {
 
               {selected === "webDesign" && (
                 <Testimonial
-                  title="Web Design"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  title="Litacore"
+                  description="Smart Stop Logistics is a Software as a Service start up headquatered in Tampa Bay. Their mission is to improve quality of life for all ages and lifestyles by harnessing crowd-source data and content with technology. With the first product, the vision was to create a web based platform that would allow school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to revamp their marketing website, create a branded video and also to create photographic assets for their website and their business. Their original needs was to provide video production, however with the value we were providing, they ended up hiring us for the full package."
                   img={testimonial3}
+                  handlePlay={this.handlePlay}
                   src={
                     "https://player.vimeo.com/external/247876645.hd.mp4?s=b50b2731bea4f07781d6f8708cad8cac1aa7c4cb&profile_id=175"
                   }
@@ -180,9 +202,10 @@ export default class Testimonials extends Component {
               )}
               {selected === "graphicDesign" && (
                 <Testimonial
-                  title="Graphic Design"
+                  title="The Collective Genius"
                   description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
                   img={testimonial1}
+                  handlePlay={this.handlePlay}
                   src={
                     "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
                   }
@@ -190,9 +213,10 @@ export default class Testimonials extends Component {
               )}
               {selected === "photography" && (
                 <Testimonial
-                  title="Photography"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  title="USF Health"
+                  description="University of South Florida Health - Morsani College of Medicine is a tampa bay health care provider with the mission to improve the full spectrum of health - from the environment, to the community, to the individual. We were approached by their chief resident and the program director to produce headshots for the PGY1 Interns and the Family Medecine second and third year residents - a total of 32 medical doctors. The purpose of this project was to produce assets for their revamped website. We also capture group pictures of the teaching faculty."
                   img={testimonial4}
+                  handlePlay={this.handlePlay}
                 />
               )}
             </Row>
