@@ -10,16 +10,26 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
+const StyledColumn = styled(Column)`
+  margin: 3em 0;
+  align-items: center;
+  text-align: center;
+  @media (max-width: 780px) {
+    margin: 2em auto;
+    width: 95%;
+  }
+`;
+
 export default function CaseStudies() {
   return (
     <Wrapper>
-      <Column alignitems="center" textalign="center" margin="3em 0">
+      <StyledColumn>
         <Title>Case studies</Title>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor.
         </Text>
-      </Column>
+      </StyledColumn>
       <CaseStudy
         img={test1}
         type="secondary"
