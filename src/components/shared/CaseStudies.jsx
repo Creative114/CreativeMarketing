@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import CaseStudy from "./CaseStudy";
-import test1 from "../../assets/test1.jpg";
-import test2 from "../../assets/test2.jpg";
 import { Column, Title, Text } from "../../theme/index";
 
 const Wrapper = styled.div`
@@ -20,7 +18,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function CaseStudies() {
+export default function CaseStudies({ casestudies, navigate }) {
   return (
     <Wrapper>
       <StyledColumn>
@@ -30,24 +28,23 @@ export default function CaseStudies() {
           eiusmod tempor.
         </Text>
       </StyledColumn>
-      <CaseStudy
-        img={test1}
-        type="secondary"
-        title="Lorem Ipsum"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
-      <CaseStudy
-        img={test2}
-        type="primary"
-        title="Lorem Ipsum"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
-      <CaseStudy
-        img={test1}
-        type="secondary"
-        title="Lorem Ipsum"
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
+
+      {casestudies &&
+        casestudies.map((key, index) => {
+          return (
+            <CaseStudy
+              key={index}
+              img={
+                key.bannerImage &&
+                `https://media.graphcms.com/${key.bannerImage.handle}`
+              }
+              type={index === 0 || 2 ? "secondary" : "primary"}
+              title={key.title}
+              description={key.description}
+              navigate={navigate}
+            />
+          );
+        })}
     </Wrapper>
   );
 }

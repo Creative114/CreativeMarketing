@@ -48,7 +48,7 @@ const Div = styled.div`
   }
 `;
 
-export default function Benefit({ title, description, img, type }) {
+export default function Benefit({ title, description, img, type, navigate }) {
   return (
     <Wrapper primary={type === "primary"}>
       {type === "primary" && (
@@ -57,7 +57,14 @@ export default function Benefit({ title, description, img, type }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              <Button primary>Learn more</Button>
+              <Button
+                primary
+                onClick={() =>
+                  navigate.push(`/casestudies/${title.toLowerCase()}`)
+                }
+              >
+                Learn more
+              </Button>
             </StyledTextColumn>
           </StyledColumn>
           <Div background={`url('${img}')`} />
@@ -70,7 +77,14 @@ export default function Benefit({ title, description, img, type }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              <Button primary>Learn more</Button>
+              <Button
+                primary
+                onClick={() =>
+                  navigate.push(`/casestudies/${title.toLowerCase()}`)
+                }
+              >
+                Learn more
+              </Button>
             </StyledTextColumn>
           </StyledColumn>
         </React.Fragment>

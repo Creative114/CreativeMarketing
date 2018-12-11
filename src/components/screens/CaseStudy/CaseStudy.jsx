@@ -11,3 +11,5 @@ class CaseStudy extends Component {
     );
   }
 }
+
+export default CaseStudy;
