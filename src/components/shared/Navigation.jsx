@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
+  justify-content: space-between;
   top: 0;
   z-index: 100;
   transition: 500ms;
@@ -66,9 +67,9 @@ export default class Navigation extends Component {
           src={active ? Icon : Logo}
           alt="Creative114 Logo"
         />
-        {/* {mobile.matches && <Burger />} */}
+        {mobile.matches && <Burger />}
 
-        {/* {!mobile.matches && (
+        {!mobile.matches && (
           <Row margin="0 3em 0 0">
             <StyledNavLink active={active} exact to="/">
               Home
@@ -86,7 +87,7 @@ export default class Navigation extends Component {
               Contact
             </StyledNavLink>
           </Row>
-        )} */}
+        )}
       </Wrapper>
     );
   }

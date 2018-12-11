@@ -43,7 +43,7 @@ export default function Footer() {
     <Wrapper>
       <StyledRow>
         <Image src={Logo} alt="" />
-        {/* <Row alignitems="center">
+        <Row alignitems="center">
           <StyledNavLink footer to="/">
             Home
           </StyledNavLink>
@@ -59,7 +59,7 @@ export default function Footer() {
           <StyledNavLink footer to="/">
             Contact
           </StyledNavLink>
-        </Row> */}
+        </Row>
       </StyledRow>
       <StyledRow copy>
         <Text footer>

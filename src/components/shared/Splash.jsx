@@ -47,7 +47,7 @@ const StyledRow = styled(Row)`
   }
 `;
 
-export default function Splash({ type, title, show }) {
+export default function Splash({ type, title, show, img }) {
   return (
     <Wrapper
       home={type === "home"}
@@ -56,7 +56,9 @@ export default function Splash({ type, title, show }) {
           ? "linear-gradient(to right, #e38b3d, #f3bf70)"
           : type === "work"
           ? "linear-gradient(to right, #B9402D, #D97881)"
-          : type === "about" && `url('${aboutSplash}')`
+          : type === "about"
+          ? `url('${aboutSplash}')`
+          : type === "casestudy" && `url('${img}')`
       }
     >
       <Navigation show={show} />
@@ -73,7 +75,17 @@ export default function Splash({ type, title, show }) {
           </StyledHomeColumn>
         </StyledRow>
       )}
-      {type !== "home" && (
+      {type === "about" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </Text>
+        </StyledColumn>
+      )}
+      {type === "work" && (
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>

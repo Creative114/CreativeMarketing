@@ -9,8 +9,6 @@ import gql from "graphql-tag";
 
 const App = ({ data: { casestudypages, casestudyexcerpts, recentworks } }) => {
   if (casestudypages) {
-    console.log(casestudypages);
-
     return (
       <Router>
         <div>
