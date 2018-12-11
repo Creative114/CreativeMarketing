@@ -58,7 +58,9 @@ export default function Splash({ type, title, show, img }) {
           ? "linear-gradient(to right, #B9402D, #D97881)"
           : type === "about"
           ? `url('${aboutSplash}')`
-          : type === "casestudy" && `url('${img}')`
+          : type === "casestudy"
+          ? `url('${img}')`
+          : type === "impact" && "linear-gradient(to right, #e38b3d, #f3bf70)"
       }
     >
       <Navigation show={show} />
@@ -86,6 +88,26 @@ export default function Splash({ type, title, show, img }) {
         </StyledColumn>
       )}
       {type === "work" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </Text>
+        </StyledColumn>
+      )}
+      {type === "casestudy" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </Text>
+        </StyledColumn>
+      )}
+      {type === "impact" && (
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>

@@ -10,6 +10,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "lightbox-react": "^0.3.7",
+    "moment": "^2.22.2",
     "normalize.css": "^8.0.1",
     "react": "^16.6.3",
     "react-apollo": "^2.3.2",

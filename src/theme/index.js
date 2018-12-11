@@ -81,6 +81,12 @@ export const Text = styled.p`
     css`
       color: #fff;
     `};
+  ${props =>
+    props.post &&
+    css`
+      font-size: 14px;
+      line-height: 22px;
+    `};
 `;
 
 export const StyledNavLink = styled(NavLink)`
