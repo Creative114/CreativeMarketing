@@ -8,12 +8,12 @@ import { withRouter } from "react-router-dom";
 
 class Work extends Component {
   render() {
-    const { casestudies } = this.props;
+    const { casestudies, recentwork } = this.props;
     return (
       <div>
         <Splash type="work" title="Work" />
         <Portfolio />
-        <Recent />
+        <Recent recentwork={recentwork} />
         <CaseStudies casestudies={casestudies} navigate={this.props.history} />
         <Footer />
       </div>

@@ -35,24 +35,26 @@ const Grid = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  border: 1.5px solid #a1aeb7;
+  border: 1.5px solid transparent;
   border-radius: 3px;
   display: flex;
-  background: #f2f5f7;
+  background: ${props => props.background};
+  background-size: cover;
   cursor: pointer;
   transition: 750ms;
   text-align: center;
+  filter: grayscale(75%);
   &:hover {
-    background: #fff;
+    filter: grayscale(0%);
     border: 1.5px solid #b9402d;
   }
 `;
 
-function Item({ title, text }) {
-  return <Div />;
+function Item({ title, text, backgroundImage }) {
+  return <Div background={`url('${backgroundImage}')`} />;
 }
 
-export default function Recent() {
+export default function Recent({ recentwork }) {
   const items = [
     {
       title: "Video Marketing",
@@ -89,13 +91,15 @@ export default function Recent() {
         </Text>
       </Column>
       <Grid>
-        {items.map((key, index) => {
+        {recentwork.map((key, index) => {
           return (
             <Item
               key={index}
               title={key.title}
-              text={key.text}
-              icon={key.icon}
+              backgroundImage={
+                key.backgroundImage &&
+                `https://media.graphcms.com/${key.backgroundImage.handle}`
+              }
             />
           );
         })}

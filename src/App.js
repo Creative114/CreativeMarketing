@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
-const App = ({ data: { casestudypages, casestudyexcerpts } }) => {
+const App = ({ data: { casestudypages, casestudyexcerpts, recentworks } }) => {
   if (casestudypages) {
     console.log(casestudypages);
 
@@ -37,6 +37,7 @@ const App = ({ data: { casestudypages, casestudyexcerpts } }) => {
                 <Work
                   onEnter={window.scrollTo(0, 0)}
                   casestudies={casestudyexcerpts}
+                  recentwork={recentworks}
                 />
               );
             }}
@@ -94,6 +95,13 @@ export const casestudypages = gql`
         fileName
         height
         id
+      }
+    }
+    recentworks {
+      id
+      title
+      backgroundImage {
+        handle
       }
     }
   }
