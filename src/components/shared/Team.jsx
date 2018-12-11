@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Member from "./Member";
 import { Row } from "../../theme/index";
+import Slider from "react-slick";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -76,7 +77,7 @@ function Box({ id, selected, handleClick }) {
   );
 }
 
-export default class Mocks extends Component {
+export default class Team extends Component {
   state = {
     selected: "jet"
   };
@@ -91,62 +92,113 @@ export default class Mocks extends Component {
 
   render() {
     const { selected } = this.state;
+    let settings = {
+      dots: true,
+      infinite: false,
+      arrows: false,
+      speed: 1000
+    };
+
+    const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
-        <Row>
-          {selected === "jet" && (
-            <Member
-              name="Getro Jean-Claude"
-              title="President"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "will" && (
-            <Member
-              name="William Whatley"
-              title="Developer"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test1" && (
-            <Member
-              name="Test1"
-              title="Guy"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test2" && (
-            <Member
-              name="Test2"
-              title="Girl"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test3" && (
-            <Member
-              name="Test3"
-              title="Guy2"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-        </Row>
+        {mobile.matches && (
+          <div
+            style={{
+              margin: "1.5em 0"
+            }}
+          >
+            <Slider {...settings}>
+              <Member
+                name="Getro Jean-Claude"
+                title="President"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
 
-        <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
-          {boxes &&
-            boxes.map((key, index) => {
-              return (
-                <Box
-                  key={index}
-                  id={key.id}
-                  title={key.title}
-                  description={key.description}
-                  icon={key.icon}
-                  handleClick={this.handleClick}
-                  selected={selected}
+              <Member
+                name="William Whatley"
+                title="Developer"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+
+              <Member
+                name="Test1"
+                title="Guy"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+
+              <Member
+                name="Test2"
+                title="Girl"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+
+              <Member
+                name="Test3"
+                title="Guy2"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+            </Slider>
+          </div>
+        )}
+        {!mobile.matches && (
+          <React.Fragment>
+            <Row>
+              {selected === "jet" && (
+                <Member
+                  name="Getro Jean-Claude"
+                  title="President"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
-              );
-            })}
-        </Row>
+              )}
+              {selected === "will" && (
+                <Member
+                  name="William Whatley"
+                  title="Developer"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
+              {selected === "test1" && (
+                <Member
+                  name="Test1"
+                  title="Guy"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
+              {selected === "test2" && (
+                <Member
+                  name="Test2"
+                  title="Girl"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
+              {selected === "test3" && (
+                <Member
+                  name="Test3"
+                  title="Guy2"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
+            </Row>
+
+            <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
+              {boxes &&
+                boxes.map((key, index) => {
+                  return (
+                    <Box
+                      key={index}
+                      id={key.id}
+                      title={key.title}
+                      description={key.description}
+                      icon={key.icon}
+                      handleClick={this.handleClick}
+                      selected={selected}
+                    />
+                  );
+                })}
+            </Row>
+          </React.Fragment>
+        )}
       </Wrapper>
     );
   }

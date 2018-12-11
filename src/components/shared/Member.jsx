@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   @media (max-width: 780px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -50,6 +50,14 @@ const Box = styled.div`
   height: 450px;
   background: #f1f5f7;
   border-radius: 3px;
+  @media (max-width: 780px) {
+    width: 350px;
+    height: 350px;
+  }
+  @media (max-width: 500px) {
+    width: 225px;
+    height: 225px;
+  }
 `;
 
 // const I = styled.i`

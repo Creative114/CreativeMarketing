@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   height: ${props => (props.home ? "948px" : "800px")};
   width: 100%;
   background: ${props => props.background};
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

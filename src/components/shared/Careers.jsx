@@ -9,22 +9,53 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 780px) {
+    padding: 2em 0 3em 0;
+  }
 `;
 
 const Img = styled.img`
   width: 50%;
 `;
 
+const StyledRow = styled(Row)`
+  margin: 3em 0 0 0;
+  justify-content: space-evenly;
+  @media (max-width: 780px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+`;
+
+const StyledColumn = styled(Column)`
+  width: 50%;
+  justify-content: ${props => props.text && "center"};
+  align-items: center;
+  @media (max-width: 780px) {
+    width: ${props => (props.text ? "95%" : "65%")};
+    text-align: center;
+  }
+`;
+
+const StyledTextColumn = styled(Column)`
+  width: 70%;
+
+  @media (max-width: 780px) {
+    width: 95%;
+  }
+`;
+
 export default function Careers() {
   return (
     <Wrapper>
       <Title>Our team is growing!</Title>
-      <Row justifycontent="space-evenly" margin="3em 0 0 0">
-        <Column width="50%" alignitems="center">
+      <StyledRow>
+        <StyledColumn>
           <Img src={dummy} />
-        </Column>
-        <Column width="50%" justifycontent="center">
-          <Column width="70%">
+        </StyledColumn>
+        <StyledColumn text>
+          <StyledTextColumn>
             <Text>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -36,9 +67,9 @@ export default function Careers() {
             <Row margin=".5em 0">
               <Button primary>Apply today</Button>
             </Row>
-          </Column>
-        </Column>
-      </Row>
+          </StyledTextColumn>
+        </StyledColumn>
+      </StyledRow>
     </Wrapper>
   );
 }

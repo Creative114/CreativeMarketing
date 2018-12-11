@@ -102,7 +102,7 @@ export default class Testimonials extends Component {
           <Title>Why {title} loves Creative114</Title>
         </StyledColumn>
 
-        {mobile.matches ? (
+        {mobile.matches && (
           <div
             style={{
               margin: "1.5em 0"
@@ -143,7 +143,8 @@ export default class Testimonials extends Component {
               />
             </Slider>
           </div>
-        ) : (
+        )}
+        {!mobile.matches && (
           <React.Fragment>
             <Row alignitems="center" margin="0 0 0 3em">
               <MenuItem
