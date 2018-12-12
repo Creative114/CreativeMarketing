@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Splash from "../../shared/Splash";
 import Content from "../../shared/Content";
+import Footer from "../../shared/Footer";
 
 class CaseStudy extends Component {
   render() {
@@ -10,6 +11,7 @@ class CaseStudy extends Component {
       <div>
         <Splash type="casestudy" img={bannerVideo} />
         <Content title={title} description={mainDescription} />
+        <Footer />
       </div>
     );
   }

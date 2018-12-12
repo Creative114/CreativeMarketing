@@ -1,5 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
+import styled from "styled-components";
+import Splash from "../../shared/Splash";
+import Content from "../../shared/Content";
+import Footer from "../../shared/Footer";
 
-export default function Post() {
-  return <div />;
+class Post extends Component {
+  render() {
+    const { bannerImage, title, text } = this.props;
+    return (
+      <div>
+        <Splash type="casestudy" img={bannerImage} />
+        <Content title={title} description={text} />
+        <Footer />
+      </div>
+    );
+  }
 }
+
+export default Post;
