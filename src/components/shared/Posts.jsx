@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Column, Text, Title, Row, Subtitle } from "../../theme/index";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   min-height: 500px;
@@ -65,17 +66,19 @@ const StyledColumn = styled(Column)`
 
 function Post({ title, date, author, bannerImage, description }) {
   return (
-    <Div>
-      <Image src={bannerImage} />
-      <StyledColumn>
-        <Subtitle margin=".25em 0 0 0">{title}</Subtitle>
-        <Row width="100%" justifycontent="space-between">
-          <Text margin=".15em 0">{date}</Text>
-          <Text margin=".15em 0">By: {author}</Text>
-        </Row>
-        <Text post>{description}</Text>
-      </StyledColumn>
-    </Div>
+    <Link to={`/impact/${title.toLowerCase()}`}>
+      <Div>
+        <Image src={bannerImage} />
+        <StyledColumn>
+          <Subtitle margin=".25em 0 0 0">{title}</Subtitle>
+          <Row width="100%" justifycontent="space-between">
+            <Text margin=".15em 0">{date}</Text>
+            <Text margin=".15em 0">By: {author}</Text>
+          </Row>
+          <Text post>{description}</Text>
+        </StyledColumn>
+      </Div>
+    </Link>
   );
 }
 

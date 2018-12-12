@@ -91,18 +91,19 @@ export default function Recent({ recentwork }) {
         </Text>
       </Column>
       <Grid>
-        {recentwork.map((key, index) => {
-          return (
-            <Item
-              key={index}
-              title={key.title}
-              backgroundImage={
-                key.backgroundImage &&
-                `https://media.graphcms.com/${key.backgroundImage.handle}`
-              }
-            />
-          );
-        })}
+        {recentwork &&
+          recentwork.map((key, index) => {
+            return (
+              <Item
+                key={index}
+                title={key.title}
+                backgroundImage={
+                  key.backgroundImage &&
+                  `https://media.graphcms.com/${key.backgroundImage.handle}`
+                }
+              />
+            );
+          })}
       </Grid>
     </Wrapper>
   );

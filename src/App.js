@@ -4,12 +4,19 @@ import Work from "./components/screens/Work/Work";
 import About from "./components/screens/About/About";
 import CaseStudy from "./components/screens/CaseStudy/CaseStudy";
 import Impact from "./components/screens/Impact/Impact";
+import Post from "./components/screens/Post/Post";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
 const App = ({
-  data: { casestudypages, casestudyexcerpts, recentworks, posts }
+  data: {
+    casestudypages,
+    casestudyexcerpts,
+    recentworks,
+    postExcerpts,
+    postPages
+  }
 }) => {
   return (
     <Router>
@@ -45,7 +52,9 @@ const App = ({
           exact
           path="/impact"
           render={() => {
-            return <Impact onEnter={window.scrollTo(0, 0)} posts={posts} />;
+            return (
+              <Impact onEnter={window.scrollTo(0, 0)} posts={postExcerpts} />
+            );
           }}
         />
         {casestudypages &&
@@ -62,6 +71,29 @@ const App = ({
                       bannerVideo={
                         key.bannerVideo &&
                         `https://media.graphcms.com/${key.bannerVideo.handle}`
+                      }
+                    />
+                  )}
+                />
+              </React.Fragment>
+            );
+          })}
+        {postPages &&
+          postPages.map((key, index) => {
+            return (
+              <React.Fragment key={index}>
+                <Route
+                  path={`/impact/${key.title.toLowerCase()}`}
+                  render={() => (
+                    <Post
+                      onEnter={window.scrollTo(0, 0)}
+                      title={key.title}
+                      text={key.text}
+                      date={key.date}
+                      author={key.author}
+                      bannerImage={
+                        key.bannerImage &&
+                        `https://media.graphcms.com/${key.bannerImage.handle}`
                       }
                     />
                   )}
@@ -107,10 +139,20 @@ export const casestudypages = gql`
         handle
       }
     }
-    posts {
+    postExcerpts {
       id
       title
       description
+      date
+      author
+      bannerImage {
+        handle
+      }
+    }
+    postPages {
+      id
+      title
+      text
       date
       author
       bannerImage {
