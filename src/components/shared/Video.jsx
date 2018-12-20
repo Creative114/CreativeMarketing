@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  background: #f2f5f7;
   justify-content: space-evenly;
   @media (max-width: 780px) {
     flex-direction: column;
@@ -53,10 +54,21 @@ const StyledColumn = styled(Column)`
 `;
 
 export default class Video extends Component {
-  handlePlay = id => {
-    let el = document.getElementById(`${id}`);
-    el.play();
+  state = {
+    playing: false
   };
+  handlePlay = id => {
+    let playing = this.state.playing;
+    let el = document.getElementById(`${id}`);
+    this.setState({ playing: !this.state.playing }, () => {
+      if (playing === true) {
+        el.pause();
+      } else {
+        el.play();
+      }
+    });
+  };
+
   render() {
     return (
       <Wrapper>

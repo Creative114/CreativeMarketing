@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6em 0 4em 0;
+  padding: 3.5em 0 4em 0;
   @media (max-width: 780px) {
     width: 95%;
     padding: 1em 0;
@@ -57,6 +57,7 @@ const Div = styled.div`
 const Icon = styled.i`
   font-size: 4em;
   color: #b9402d;
+  margin: 0.25em 0;
   @media (max-width: 780px) {
     font-size: 3em;
   }

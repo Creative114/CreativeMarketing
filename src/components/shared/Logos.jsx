@@ -27,7 +27,7 @@ const Grid = styled.div`
   grid-auto-rows: 185px;
   height: 100%;
   width: 85%;
-  max-width: 1200px;
+  max-width: 1600px;
   @media (max-width: 780px) {
     width: 100%;
     margin: 0;
@@ -67,9 +67,8 @@ export default function Logos() {
   return (
     <Wrapper>
       <StyledColumn>
-        <Subtitle logo margin="0">
-          Strategic Creative storytelling is the most powerful tool to empower
-          and nurture your brand.
+        <Subtitle logo margin="0 0 .5em 0">
+          Storytelling is the most powerful tool to empower your brand.
         </Subtitle>
         <Text logo margin="0">
           Here are a few brands that have trusted us

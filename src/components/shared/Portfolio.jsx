@@ -15,7 +15,8 @@ import Modal from "../shared/Modal";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 6em 0 4em 0;
+  padding: 3em 0;
+  background: #f2f5f7;
 `;
 
 const StyledButton = styled.button`
@@ -70,6 +71,24 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 160px;
   grid-auto-flow: dense;
+  @media (min-width: 2500px) {
+    min-width: 2500px;
+    max-width: 2500px;
+    grid-auto-rows: 355px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  @media (min-width: 2000px) {
+    min-width: 2000px;
+    max-width: 2000px;
+    grid-auto-rows: 325px;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  }
+  @media (min-width: 1750px) {
+    min-width: 1750px;
+    max-width: 1750px;
+    grid-auto-rows: 280px;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
   @media (max-width: 1300px) {
     width: 95%;
     min-width: 95%;
@@ -331,11 +350,11 @@ export default class Portfolio extends Component {
             />
           </Item>
         </Grid>
-        {/* {type === "home" && (
+        {type === "home" && (
           <Column alignitems="center">
             <Button primary>See More</Button>
           </Column>
-        )} */}
+        )}
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {lightbox[photoIndex]}

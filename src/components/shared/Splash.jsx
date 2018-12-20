@@ -6,7 +6,8 @@ import Lightbulb from "./Lightbulb";
 import aboutSplash from "../../assets/aboutSplash.jpg";
 
 const Wrapper = styled.div`
-  height: ${props => (props.home ? "948px" : "800px")};
+  height: 100vh;
+  min-height: 785px;
   width: 100%;
   background: ${props => props.background};
   background-size: cover;

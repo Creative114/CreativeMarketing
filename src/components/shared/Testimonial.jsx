@@ -5,7 +5,7 @@ import { Column, Text, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 600px;
+  min-height: 550px;
   width: 90%;
   align-items: center;
   margin: 0 auto;
@@ -23,7 +23,6 @@ const StyledColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   background-color: inherit;
-  padding: 2em 0;
   transition: 750ms;
   @media (max-width: 780px) {
     width: 100%;

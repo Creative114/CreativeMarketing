@@ -11,7 +11,7 @@ import Slider from "react-slick";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 6em 0 4em 0;
+  padding: 3em 0;
   @media (max-width: 780px) {
     text-align: center;
     padding: 3em 0 2em 0;
@@ -69,6 +69,7 @@ function MenuItem({ id, selected, title, handleClick, client }) {
 export default class Testimonials extends Component {
   state = {
     selected: "videoMarketing",
+    playing: false,
     title: "Movement 2819"
   };
 
@@ -82,10 +83,16 @@ export default class Testimonials extends Component {
   };
 
   handlePlay = id => {
+    let playing = this.state.playing;
     let el = document.getElementById(`${id}`);
-    el.play();
+    this.setState({ playing: !this.state.playing }, () => {
+      if (playing === true) {
+        el.pause();
+      } else {
+        el.play();
+      }
+    });
   };
-
   render() {
     const { selected, title } = this.state;
     let settings = {
