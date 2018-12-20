@@ -48,6 +48,7 @@ const VideoTag = styled.video`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 750ms;
+  max-width: 880px;
 `;
 
 export default function Testimonial({
@@ -67,12 +68,7 @@ export default function Testimonial({
           </StyledTextColumn>
         </StyledColumn>
         <StyledColumn>
-          <VideoTag
-            id="video"
-            onClick={() => handlePlay("video")}
-            poster={img}
-            controls
-          >
+          <VideoTag id="video" onClick={() => handlePlay("video")} poster={img}>
             <source src={src} type="video/mp4" />
           </VideoTag>
         </StyledColumn>

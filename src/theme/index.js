@@ -87,6 +87,23 @@ export const Text = styled.p`
       font-size: 14px;
       line-height: 22px;
     `};
+  ${props =>
+    props.contact &&
+    css`
+      color: ${props => (props.active ? "#E38B3D" : "#fff")};
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 500ms;
+      cursor: pointer;
+      line-height: 1em;
+      @media (max-width: 780px) {
+        margin: 0 0.5em;
+        font-size: 14px;
+      }
+    `};
 `;
 
 export const StyledNavLink = styled(NavLink)`

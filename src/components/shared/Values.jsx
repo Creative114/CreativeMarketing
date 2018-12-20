@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title } from "../../theme/index";
+import { Column, Text, Title, Subtitle } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -48,38 +48,38 @@ const StyledBoxColumn = styled(Column)`
 
 const values = [
   {
-    icon: "fal fa-user-md",
-    title: "Select your speciality",
+    icon: "fas fa-handshake-alt",
+    title: "Collaboration",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   },
   {
-    icon: "fal fa-clipboard-list-check",
-    title: "To-do list",
+    icon: "fas fa-award",
+    title: "Commitment",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   },
   {
-    icon: "fal fa-handshake-alt",
-    title: "Collaborate",
+    icon: "fas fa-heart",
+    title: "Compassion",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   },
   {
-    icon: "fal fa-tachometer-alt",
-    title: "Admin Dashboard",
+    icon: "fas fa-badge-check",
+    title: "Credibility",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   },
   {
-    icon: "fal fa-star",
-    title: "Request reviews",
+    icon: "fas fa-star",
+    title: "Character",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   },
   {
-    icon: "fal fa-bell",
-    title: "Notifications",
+    icon: "fas fa-bullseye",
+    title: "Consistency",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
   }
@@ -90,7 +90,7 @@ function Box({ icon, title, description }) {
     <StyledBox>
       <Icon className={icon} />
       <StyledBoxColumn>
-        <Text large>{title}</Text>
+        <Subtitle primary>{title}</Subtitle>
         <Text>{description}</Text>
       </StyledBoxColumn>
     </StyledBox>

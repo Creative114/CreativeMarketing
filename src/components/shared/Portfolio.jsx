@@ -62,15 +62,18 @@ const StyledRow = styled(Row)`
 `;
 
 const Grid = styled.div`
-  width: 75%;
+  min-width: 1200px;
+  max-width: 1200px;
   margin: 3em auto;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 160px;
   grid-auto-flow: dense;
-  @media (max-width: 780px) {
+  @media (max-width: 1300px) {
     width: 95%;
+    min-width: 95%;
+    max-width: 95%;
   }
 `;
 
@@ -112,6 +115,7 @@ const VideoStopBeingAverage = () => (
     width="640"
     height="360"
     style={{
+      border: 0,
       maxWidth: "97%",
       position: "absolute",
       left: 0,
@@ -128,6 +132,7 @@ const VideoTimBratz = () => (
     title="Tim Bratz"
     src="https://player.vimeo.com/video/295427548?title=0&byline=0&portrait=0"
     style={{
+      border: 0,
       maxWidth: "97%",
       position: "absolute",
       left: 0,
@@ -148,6 +153,7 @@ const VideoTimTebow = () => (
     width="640"
     height="360"
     style={{
+      border: 0,
       maxWidth: "97%",
       position: "absolute",
       left: 0,

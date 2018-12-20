@@ -4,7 +4,9 @@ import { Column, Text, Subtitle, Button } from "../../theme/index";
 import behindTheBrand from "../../assets/behindTheBrand.jpg";
 
 const Wrapper = styled.div`
-  height: 620px;
+  min-height: 620px;
+  height: 100%;
+  padding: 2em 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -12,6 +14,7 @@ const Wrapper = styled.div`
   @media (max-width: 780px) {
     flex-direction: column;
     height: 100%;
+    min-height: 100%;
     width: 95%;
     margin: 0 auto;
     padding: 3em 0 1.5em 0;
@@ -32,10 +35,12 @@ const VideoTag = styled.video`
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  max-width: 880px;
 `;
 
 const StyledColumn = styled(Column)`
   width: 50vw;
+
   justify-content: center;
   align-items: center;
   background-color: inherit;
@@ -48,11 +53,19 @@ const StyledColumn = styled(Column)`
 `;
 
 export default class Video extends Component {
+  handlePlay = id => {
+    let el = document.getElementById(`${id}`);
+    el.play();
+  };
   render() {
     return (
       <Wrapper>
         <StyledColumn>
-          <VideoTag poster={behindTheBrand} controls>
+          <VideoTag
+            id="video1"
+            poster={behindTheBrand}
+            onClick={() => this.handlePlay("video1")}
+          >
             <source
               src="https://player.vimeo.com/external/305414450.hd.mp4?s=ebca55954b19033bd1677a57ba3da4fff42b34fd&profile_id=169"
               type="video/mp4"

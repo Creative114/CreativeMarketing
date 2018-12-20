@@ -28,6 +28,7 @@ const StyledColumn = styled(Column)`
 
 const StyledHomeColumn = styled(Column)`
   width: ${props => (props.primary ? "50%" : "25%")};
+  max-width: ${props => (props.primary ? "750px" : "435px")};
   @media (max-width: 780px) {
     width: ${props => (props.primary ? "95%" : "30%")};
     margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
@@ -55,7 +56,7 @@ export default function Splash({ type, title, show, img }) {
         type === "home"
           ? "linear-gradient(to right, #e38b3d, #f3bf70)"
           : type === "work"
-          ? "linear-gradient(to right, #B9402D, #D97881)"
+          ? `url('${img}')`
           : type === "about"
           ? `url('${aboutSplash}')`
           : type === "casestudy"

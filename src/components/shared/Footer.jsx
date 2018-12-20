@@ -4,7 +4,7 @@ import { StyledNavLink, Row, Text } from "../../theme/index";
 import Logo from "../../assets/logo.png";
 
 const Wrapper = styled.div`
-  height: 125px;
+  height: 150px;
   width: 100%;
   background: #b9402d;
   display: flex;
@@ -47,18 +47,18 @@ export default function Footer() {
           <StyledNavLink footer to="/">
             Home
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/work">
             Work
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/about">
             About
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/impact">
             Impact
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <Text footer contact className="drift-open-chat">
             Contact
-          </StyledNavLink>
+          </Text>
         </Row>
       </StyledRow>
       <StyledRow copy>

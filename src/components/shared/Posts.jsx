@@ -5,13 +5,13 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  min-height: 500px;
+  height: 600px;
   width: 85%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
+  padding: 4em 0;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -83,10 +83,8 @@ function Post({ title, date, author, bannerImage, description }) {
 }
 
 export default function Posts({ posts }) {
-  console.log(posts);
-
   return (
-    <Wrapper id="what">
+    <Wrapper>
       <Column alignitems="center" textalign="center">
         <Title>Latest thoughts</Title>
         <Text>
@@ -94,9 +92,9 @@ export default function Posts({ posts }) {
           eiusmod tempor.
         </Text>
       </Column>
-      <Grid>
-        {posts &&
-          posts.map((key, index) => {
+      {posts && posts.length >= 1 && (
+        <Grid>
+          {posts.map((key, index) => {
             return (
               <Post
                 key={index}
@@ -111,7 +109,13 @@ export default function Posts({ posts }) {
               />
             );
           })}
-      </Grid>
+        </Grid>
+      )}
+      {posts && posts.length === 0 && (
+        <Column alignitems="center" textalign="center" jusitfycontent="center">
+          <Title>Coming soon!</Title>
+        </Column>
+      )}
     </Wrapper>
   );
 }

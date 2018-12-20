@@ -22,21 +22,21 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 1em;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 250px;
+  grid-auto-rows: 185px;
   height: 100%;
-  width: 100%;
+  width: 85%;
+  max-width: 1200px;
   @media (max-width: 780px) {
     width: 100%;
     margin: 0;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 175px;
   }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 85%;
 `;
 
 const StyledColumn = styled(Column)`
@@ -68,7 +68,8 @@ export default function Logos() {
     <Wrapper>
       <StyledColumn>
         <Subtitle logo margin="0">
-          Stories are the greatest way to infuse life into brand
+          Strategic Creative storytelling is the most powerful tool to empower
+          and nurture your brand.
         </Subtitle>
         <Text logo margin="0">
           Here are a few brands that have trusted us

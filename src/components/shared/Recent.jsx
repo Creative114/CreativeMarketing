@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;

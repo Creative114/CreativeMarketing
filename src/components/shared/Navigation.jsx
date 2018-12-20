@@ -4,7 +4,7 @@ import Logo from "../../assets/logo.png";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
 
-import { Row, StyledNavLink } from "../../theme/index";
+import { Row, StyledNavLink, Text } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -21,8 +21,8 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${props => (props.active ? "40px" : "305px")};
-  height: ${props => (props.active ? "56px" : "40px")};
+  width: ${props => (props.active ? "40px" : "250px")};
+  height: ${props => (props.active ? "56px" : "33px")};
   transition: 250ms;
   margin-left: 1.5em;
   @media (max-width: 425px) {
@@ -83,9 +83,9 @@ export default class Navigation extends Component {
             <StyledNavLink active={active} to="/impact">
               Impact
             </StyledNavLink>
-            <StyledNavLink active={active} to="/">
+            <Text className="drift-open-chat" active={active} contact>
               Contact
-            </StyledNavLink>
+            </Text>
           </Row>
         )}
       </Wrapper>
