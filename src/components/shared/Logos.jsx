@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  margin: 0 auto;
+  margin: 2em auto;
   margin-top: 1em;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 185px;

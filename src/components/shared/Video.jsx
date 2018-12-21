@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle } from "../../theme/index";
+import { Column, Text, Subtitle, Button } from "../../theme/index";
 import behindTheBrand from "../../assets/behindTheBrand.jpg";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   min-height: 620px;
@@ -12,6 +13,9 @@ const Wrapper = styled.div`
   align-items: center;
   background: #f2f5f7;
   justify-content: space-evenly;
+  @media (min-width: 1750px) {
+    min-height: 1000px;
+  }
   @media (max-width: 780px) {
     flex-direction: column;
     height: 100%;
@@ -40,8 +44,7 @@ const VideoTag = styled.video`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 50vw;
-
+  max-width: 50%;
   justify-content: center;
   align-items: center;
   background-color: inherit;
@@ -95,7 +98,9 @@ export default class Video extends Component {
             photos, and design beautiful assets to elevate your brand and
             vision.
           </Text>
-          {/* <Button primary>Learn more</Button> */}
+          <Button primary>
+            <Link to="/work">Learn more</Link>
+          </Button>
         </StyledTextColumn>
       </Wrapper>
     );
