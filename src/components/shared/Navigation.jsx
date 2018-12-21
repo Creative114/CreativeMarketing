@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Logo from "../../assets/logo.png";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
 
@@ -56,6 +55,7 @@ export default class Navigation extends Component {
 
     mobile.addListener(handleChange());
     const { color, active } = this.state;
+    const { type } = this.props;
     return (
       <Wrapper
         background={color}
@@ -67,19 +67,34 @@ export default class Navigation extends Component {
 
         {!mobile.matches && (
           <Row margin="0 3em 0 0">
-            <StyledNavLink active={active} exact to="/">
+            <StyledNavLink home={type === "home"} active={active} exact to="/">
               Home
             </StyledNavLink>
-            <StyledNavLink active={active} exact to="/work">
+            <StyledNavLink
+              home={type === "home"}
+              active={active}
+              exact
+              to="/work"
+            >
               Work
             </StyledNavLink>
-            <StyledNavLink active={active} exact to="/about">
+            <StyledNavLink
+              home={type === "home"}
+              active={active}
+              exact
+              to="/about"
+            >
               About
             </StyledNavLink>
-            <StyledNavLink active={active} to="/impact">
+            <StyledNavLink home={type === "home"} active={active} to="/impact">
               Impact
             </StyledNavLink>
-            <Text className="drift-open-chat" active={active} contact>
+            <Text
+              home={type === "home"}
+              className="drift-open-chat"
+              active={active}
+              contact
+            >
               Contact
             </Text>
           </Row>

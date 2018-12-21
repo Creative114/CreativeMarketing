@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Splash from "../../shared/Splash";
 import Content from "../../shared/Content";
 import Footer from "../../shared/Footer";

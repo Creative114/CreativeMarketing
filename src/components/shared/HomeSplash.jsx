@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Text } from "../../theme/index";
+import { Row, Column, Title } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
 
@@ -9,30 +9,31 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   background: #fff;
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
-  @media (max-width: 500px) {
-    height: ${props => (props.home ? "700px" : "800px")};
+  @media (max-width: 780px) {
+    justify-content: center;
   }
 `;
 
 const StyledLightbulb = styled(Column)`
   width: 5%;
   margin: 0 auto;
+  @media (max-width: 900px) {
+    width: 7.5%;
+  }
 `;
 
 const StyledHomeColumn = styled(Column)`
   margin-top: 6em;
-  width: ${props => (props.primary ? "75%" : "25%")};
+  width: 75%;
   @media (max-width: 780px) {
-    width: ${props => (props.primary ? "95%" : "30%")};
-    margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
+    width: 95%;
+    margin: 6em auto 0 auto;
     text-align: center;
   }
   @media (max-width: 500px) {
-    width: ${props => (props.primary ? "95%" : "40%")};
+    width: 95%;
   }
 `;
 
@@ -46,10 +47,18 @@ const StyledRow = styled(Row)`
   }
 `;
 
+const StyledVideoRow = styled(Row)`
+  width: 75%;
+  margin: 0 auto;
+  @media (max-width: 780px) {
+    width: 100%;
+  }
+`;
+
 export default function HomeSplash() {
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation type="home" />
       <StyledRow>
         <StyledHomeColumn primary>
           <StyledLightbulb>
@@ -61,7 +70,7 @@ export default function HomeSplash() {
         </StyledHomeColumn>
       </StyledRow>
 
-      <Row width="75%" margin="0 auto">
+      <StyledVideoRow>
         <video
           autoplay="autoplay"
           playsinline=""
@@ -69,12 +78,12 @@ export default function HomeSplash() {
           loop="loop"
           preload=""
           width="100%"
-          height="500px"
+          height="100%"
           controlslist="nodownload"
         >
           <source src="https://player.vimeo.com/external/296340016.hd.mp4?s=f9fc7bcadcc66d19041fa372b11ff4ba4798dd55&profile_id=175" />
         </video>
-      </Row>
+      </StyledVideoRow>
     </Wrapper>
   );
 }

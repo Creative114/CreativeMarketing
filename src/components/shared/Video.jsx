@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle, Button } from "../../theme/index";
+import { Column, Text, Subtitle } from "../../theme/index";
 import behindTheBrand from "../../assets/behindTheBrand.jpg";
 
 const Wrapper = styled.div`

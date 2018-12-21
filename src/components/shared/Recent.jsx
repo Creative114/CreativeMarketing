@@ -49,37 +49,11 @@ const Div = styled.div`
   }
 `;
 
-function Item({ title, text, backgroundImage }) {
+function Item({ backgroundImage }) {
   return <Div background={`url('${backgroundImage}')`} />;
 }
 
 export default function Recent({ recentwork }) {
-  const items = [
-    {
-      title: "Video Marketing",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-video"
-    },
-    {
-      title: "Web Design",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-code"
-    },
-    {
-      title: "Graphic Design",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-drafting-compass"
-    },
-    {
-      title: "Photography",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-camera-alt"
-    }
-  ];
   return (
     <Wrapper id="what">
       <Column alignitems="center" textalign="center">

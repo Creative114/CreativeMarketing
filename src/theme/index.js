@@ -24,11 +24,12 @@ export const Title = styled.h1`
       line-height: ${props => props.home && "100px"};
       margin: ${props => props.margin || ".25em 0"};
       @media (max-width: 1200px) {
-        font-size: 50px;
+        font-size: 72px;
         line-height: 90px;
       }
       @media (max-width: 900px) {
-        line-height: 72px;
+        line-height: 62px;
+        line-height: 80px;
       }
       @media (max-width: 780px) {
         font-size: 48px;
@@ -91,7 +92,8 @@ export const Text = styled.p`
   ${props =>
     props.contact &&
     css`
-      color: ${props => (props.active ? "#b9402d" : "#b9402d")};
+      color: ${props =>
+        props.home ? "#b9402d" : props.active ? "#b9402d" : "#fff"};
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 1em;
@@ -108,7 +110,7 @@ export const Text = styled.p`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${props => (props.active ? "#b9402d" : "#b9402d")};
+  color: ${props => (props.active ? "#b9402d" : "#fff")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;
@@ -116,6 +118,11 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
   transition: 500ms;
+  ${props =>
+    props.home &&
+    css`
+      color: #b9402d;
+    `};
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 14px;
