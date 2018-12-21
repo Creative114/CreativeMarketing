@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const Title = styled.h1`
   font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   color: #505d68;
   font-size: 50px;
   line-height: 52px;
@@ -19,9 +19,10 @@ export const Title = styled.h1`
   ${props =>
     props.header &&
     css`
-      color: #fff;
-      font-size: ${props => props.home && "68px"};
+      color: ${props => (props.home ? "#000" : "#fff")};
+      font-size: ${props => props.home && "92px"};
       line-height: ${props => props.home && "100px"};
+      margin: ${props => props.margin || ".25em 0"};
       @media (max-width: 1200px) {
         font-size: 50px;
         line-height: 90px;
@@ -90,7 +91,7 @@ export const Text = styled.p`
   ${props =>
     props.contact &&
     css`
-      color: ${props => (props.active ? "#E38B3D" : "#fff")};
+      color: ${props => (props.active ? "#b9402d" : "#b9402d")};
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 1em;
@@ -107,7 +108,7 @@ export const Text = styled.p`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${props => (props.active ? "#E38B3D" : "#fff")};
+  color: ${props => (props.active ? "#b9402d" : "#b9402d")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;

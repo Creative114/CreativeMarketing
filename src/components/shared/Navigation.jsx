@@ -21,13 +21,13 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${props => (props.active ? "40px" : "250px")};
-  height: ${props => (props.active ? "56px" : "33px")};
+  width: 40px;
+  height: 56px;
   transition: 250ms;
   margin-left: 1.5em;
   @media (max-width: 425px) {
-    width: ${props => (props.active ? "40px" : "250px")};
-    height: ${props => (props.active ? "56px" : "33px")};
+    width: 40px;
+    height: 56px;
   }
 `;
 
@@ -62,11 +62,7 @@ export default class Navigation extends Component {
         active={active}
         display={!this.props.show && "none"}
       >
-        <Image
-          active={active}
-          src={active ? Icon : Logo}
-          alt="Creative114 Logo"
-        />
+        <Image active={!active} src={Icon} alt="Creative114 Logo" />
         {mobile.matches && <Burger />}
 
         {!mobile.matches && (

@@ -7,14 +7,14 @@ import aboutSplash from "../../assets/aboutSplash.jpg";
 
 const Wrapper = styled.div`
   height: 100vh;
-  min-height: 785px;
   width: 100%;
+  margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   @media (max-width: 500px) {
     height: ${props => (props.home ? "700px" : "800px")};
   }
@@ -27,9 +27,14 @@ const StyledColumn = styled(Column)`
   margin: 0 auto;
 `;
 
+const StyledLightbulb = styled(Column)`
+  width: 6.5%;
+  margin: 0 auto;
+`;
+
 const StyledHomeColumn = styled(Column)`
-  width: ${props => (props.primary ? "50%" : "25%")};
-  max-width: ${props => (props.primary ? "750px" : "435px")};
+  margin-top: 6em;
+  width: ${props => (props.primary ? "75%" : "25%")};
   @media (max-width: 780px) {
     width: ${props => (props.primary ? "95%" : "30%")};
     margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
@@ -41,7 +46,8 @@ const StyledHomeColumn = styled(Column)`
 `;
 
 const StyledRow = styled(Row)`
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   @media (max-width: 780px) {
     flex-direction: column-reverse;
@@ -55,7 +61,7 @@ export default function Splash({ type, title, show, img }) {
       home={type === "home"}
       background={
         type === "home"
-          ? "linear-gradient(to right, #e38b3d, #f3bf70)"
+          ? "#fff"
           : type === "work"
           ? `url('${img}')`
           : type === "about"
@@ -69,13 +75,12 @@ export default function Splash({ type, title, show, img }) {
       {type === "home" && (
         <StyledRow>
           <StyledHomeColumn primary>
+            <StyledLightbulb>
+              <Lightbulb />
+            </StyledLightbulb>
             <Title header home>
-              Creative Storytelling. <br /> Lead Generation. <br /> Brand
-              Strategy. <br /> Digital Marketing.
+              Creative Storytelling, Lead Generation and Brand Strategy.
             </Title>
-          </StyledHomeColumn>
-          <StyledHomeColumn>
-            <Lightbulb />
           </StyledHomeColumn>
         </StyledRow>
       )}

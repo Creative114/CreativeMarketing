@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Splash from "../../shared/Splash";
+import HomeSplash from "../../shared/HomeSplash";
 import Video from "../../shared/Video";
 import Services from "../../shared/Services";
 import Logos from "../../shared/Logos";
@@ -11,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Splash type="home" />
+        <HomeSplash type="home" />
         <Logos />
         <Video />
         <Services />
