@@ -81,7 +81,7 @@ export default function HomeSplash() {
           height="100%"
           controlslist="nodownload"
         >
-          <source src="https://player.vimeo.com/external/296340016.hd.mp4?s=f9fc7bcadcc66d19041fa372b11ff4ba4798dd55&profile_id=175" />
+          <source src="https://player.vimeo.com/external/308437848.hd.mp4?s=3a4177925eaf3898e34da138b5ef2f6fd951f4ee&profile_id=175" />
         </video>
       </StyledVideoRow>
     </Wrapper>

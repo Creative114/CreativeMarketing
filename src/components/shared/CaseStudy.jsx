@@ -50,8 +50,8 @@ const Div = styled.div`
 
 export default function Benefit({ title, description, img, type, navigate }) {
   return (
-    <Wrapper primary={type === "primary"}>
-      {type === "primary" && (
+    <Wrapper primary={type === "right"}>
+      {type === "right" && (
         <React.Fragment>
           <StyledColumn>
             <StyledTextColumn>
@@ -70,7 +70,7 @@ export default function Benefit({ title, description, img, type, navigate }) {
           <Div background={`url('${img}')`} />
         </React.Fragment>
       )}
-      {type === "secondary" && (
+      {type === "left" && (
         <React.Fragment>
           <Div background={`url('${img}')`} />
           <StyledColumn>

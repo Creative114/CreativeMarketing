@@ -42,28 +42,22 @@ const boxes = [
     icon: "fal fa-bullseye-arrow"
   },
   {
-    id: "will",
+    id: "jephte",
     title: "Efficient",
     description: "Lorem ipsum dolor sit amet, consectetur",
     icon: "fal fa-rabbit-fast"
   },
   {
-    id: "test1",
+    id: "rachel",
     title: "Evaluations",
     description: "Lorem ipsum dolor sit amet, consectetur",
     icon: "fal fa-clipboard-list-check"
   },
   {
-    id: "test2",
+    id: "will",
     title: "Accountability",
     description: "Lorem ipsum dolor sit amet, consectetur",
     icon: "fal fa-fingerprint"
-  },
-  {
-    id: "test3",
-    title: "Analytical",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-chart-bar"
   }
 ];
 
@@ -116,20 +110,20 @@ export default class Team extends Component {
               />
 
               <Member
+                name="Jephte Jean-Claude"
+                title="Camera Operator"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+
+              <Member
+                name="Rachel Jean-Claude"
+                title=""
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              />
+
+              <Member
                 name="William Whatley"
-                title="Developer"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              />
-
-              <Member
-                name="Test1"
-                title="Guy"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              />
-
-              <Member
-                name="Test2"
-                title="Girl"
+                title="Technologist"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
               />
 
@@ -151,31 +145,24 @@ export default class Team extends Component {
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
               )}
+              {selected === "jephte" && (
+                <Member
+                  name="Jephte Jean-Claude"
+                  title="Camera Operator"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
+              {selected === "rachel" && (
+                <Member
+                  name="Rachel Jean-Claude"
+                  title="Test"
+                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                />
+              )}
               {selected === "will" && (
                 <Member
                   name="William Whatley"
-                  title="Developer"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                />
-              )}
-              {selected === "test1" && (
-                <Member
-                  name="Test1"
-                  title="Guy"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                />
-              )}
-              {selected === "test2" && (
-                <Member
-                  name="Test2"
-                  title="Girl"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                />
-              )}
-              {selected === "test3" && (
-                <Member
-                  name="Test3"
-                  title="Guy2"
+                  title="Technologist"
                   description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
               )}

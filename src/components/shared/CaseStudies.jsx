@@ -38,10 +38,10 @@ export default function CaseStudies({ casestudies, navigate }) {
                 key.bannerImage &&
                 `https://media.graphcms.com/${key.bannerImage.handle}`
               }
-              type={index === 0 || 2 ? "secondary" : "primary"}
               title={key.title}
               description={key.description}
               navigate={navigate}
+              type={key.type}
             />
           );
         })}

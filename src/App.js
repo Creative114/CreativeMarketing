@@ -10,13 +10,7 @@ import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
 const App = ({
-  data: {
-    casestudypages,
-    casestudyexcerpts,
-    recentworks,
-    postExcerpts,
-    postPages
-  }
+  data: { casestudypages, casestudyexcerpts, postExcerpts, postPages }
 }) => {
   return (
     <Router>
@@ -43,7 +37,6 @@ const App = ({
               <Work
                 onEnter={window.scrollTo(0, 0)}
                 casestudies={casestudyexcerpts}
-                recentwork={recentworks}
               />
             );
           }}
@@ -123,6 +116,7 @@ export const casestudypages = gql`
     casestudyexcerpts {
       id
       title
+      type
       description
       bannerImage {
         width
@@ -130,13 +124,6 @@ export const casestudypages = gql`
         fileName
         height
         id
-      }
-    }
-    recentworks {
-      id
-      title
-      backgroundImage {
-        handle
       }
     }
     postExcerpts {

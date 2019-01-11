@@ -98,9 +98,11 @@ export default function Splash({ type, title, show, img }) {
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            We are more than a video production, design or web development
+            agency. We are in the business of solving problems. We work to craft
+            and tell your stories with emotions and creativity. Our primary
+            purpose is to empower your business with what we call the three C's:
+            Create, Connect and Cultivate you brand.
           </Text>
         </StyledColumn>
       )}
