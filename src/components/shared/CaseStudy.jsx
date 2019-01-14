@@ -49,6 +49,7 @@ const Div = styled.div`
 `;
 
 export default function Benefit({ title, description, img, type, navigate }) {
+  let location = title.replace(/\s+/g, "-");
   return (
     <Wrapper primary={type === "right"}>
       {type === "right" && (
@@ -60,7 +61,7 @@ export default function Benefit({ title, description, img, type, navigate }) {
               <Button
                 primary
                 onClick={() =>
-                  navigate.push(`/casestudies/${title.toLowerCase()}`)
+                  navigate.push(`/casestudies/${location.toLowerCase()}`)
                 }
               >
                 Learn more
@@ -80,7 +81,7 @@ export default function Benefit({ title, description, img, type, navigate }) {
               <Button
                 primary
                 onClick={() =>
-                  navigate.push(`/casestudies/${title.toLowerCase()}`)
+                  navigate.push(`/casestudies/${location.toLowerCase()}`)
                 }
               >
                 Learn more

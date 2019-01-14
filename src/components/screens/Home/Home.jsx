@@ -6,8 +6,9 @@ import Logos from "../../shared/Logos";
 import Portfolio from "../../shared/Portfolio";
 import Testimonials from "../../shared/Testimonials";
 import Footer from "../../shared/Footer";
+import { withRouter } from "react-router-dom";
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
     return (
       <div>
@@ -15,10 +16,12 @@ export default class Home extends Component {
         <Logos />
         <Video />
         <Services />
-        <Portfolio type="home" />
+        <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
         <Footer />
       </div>
     );
   }
 }
+
+export default withRouter(Home);

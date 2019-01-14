@@ -52,15 +52,17 @@ const App = ({
         />
         {casestudypages &&
           casestudypages.map((key, index) => {
+            let title = key.title.replace(/\s+/g, "-");
             return (
               <React.Fragment key={index}>
                 <Route
-                  path={`/casestudies/${key.title.toLowerCase()}`}
+                  path={`/casestudies/${title.toLowerCase()}`}
                   render={() => (
                     <CaseStudy
                       onEnter={window.scrollTo(0, 0)}
                       title={key.title}
                       mainDescription={key.mainDescription}
+                      videos={key.videos}
                       bannerVideo={
                         key.bannerVideo &&
                         `https://media.graphcms.com/${key.bannerVideo.handle}`
@@ -105,6 +107,7 @@ export const casestudypages = gql`
       id
       title
       mainDescription
+      videos
       bannerVideo {
         width
         handle

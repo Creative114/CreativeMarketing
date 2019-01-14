@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Column, Text, Title } from "../../theme/index";
 import Modal from "../shared/Modal";
 import recent1 from "../../assets/recent1.jpg";
-import recent2 from "../../assets/recent2.jpg";
+import recent5 from "../../assets/recent5.jpg";
 import recent3 from "../../assets/recent3.jpg";
 import recent4 from "../../assets/recent4.jpg";
 
@@ -26,8 +26,8 @@ const Grid = styled.div`
   grid-gap: 25px;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(263px, 1fr));
-  grid-auto-rows: 198px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-auto-rows: 170px;
   height: 100%;
   width: 100%;
   @media (max-width: 780px) {
@@ -49,6 +49,7 @@ const Div = styled.div`
   transition: 750ms;
   text-align: center;
   filter: grayscale(75%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   &:hover {
     filter: grayscale(0%);
     border: 1.5px solid #b9402d;
@@ -98,11 +99,16 @@ const lightbox = [
   />,
   <Video
     src={
-      "https://gcs-vimeo.akamaized.net/exp=1546110543~acl=%2A%2F956533294.mp4%2A~hmac=9ef6cb106d6429affd6d14dfa080b2ff35aef553731503217230f8134d589df6/vimeo-prod-skyfire-std-us/01/2036/10/260181613/956533294.mp4"
+      "https://player.vimeo.com/external/260181613.hd.mp4?s=c2602f22c1a1b1724c517c6ef2a70b879f2310a2&profile_id=175"
     }
     title={"Title"}
   />,
-  <Video title={"Title"} />
+  <Video
+    title={"Title"}
+    src={
+      "https://player.vimeo.com/external/310223821.hd.mp4?s=c214e32c3f8e0c025cf86b1e50d311b04ce34d47&profile_id=175"
+    }
+  />
 ];
 
 export default class Recent extends Component {
@@ -144,7 +150,7 @@ export default class Recent extends Component {
             onClick={() => this.handleLightbox(2)}
           />
           <Div
-            background={`url('${recent2}')`}
+            background={`url('${recent5}')`}
             onClick={() => this.handleLightbox(3)}
           />
         </Grid>

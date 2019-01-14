@@ -67,7 +67,12 @@ export default function Testimonial({
           </StyledTextColumn>
         </StyledColumn>
         <StyledColumn>
-          <VideoTag id="video" onClick={() => handlePlay("video")} poster={img}>
+          <VideoTag
+            controls
+            id="video"
+            onClick={() => handlePlay("video")}
+            poster={img}
+          >
             <source src={src} type="video/mp4" />
           </VideoTag>
         </StyledColumn>

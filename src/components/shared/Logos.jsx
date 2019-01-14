@@ -37,6 +37,8 @@ const Grid = styled.div`
 
 const Image = styled.img`
   width: 85%;
+  align-self: center;
+  justify-self: center;
 `;
 
 const StyledColumn = styled(Column)`

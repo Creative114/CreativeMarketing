@@ -237,7 +237,7 @@ export default class Portfolio extends Component {
 
   render() {
     const { selected, photoIndex, isOpen } = this.state;
-    const { type } = this.props;
+    const { type, navigate } = this.props;
 
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
@@ -352,7 +352,9 @@ export default class Portfolio extends Component {
         </Grid>
         {type === "home" && (
           <Column alignitems="center">
-            <Button primary>See More</Button>
+            <Button primary onClick={() => navigate.push("Work")}>
+              See More
+            </Button>
           </Column>
         )}
         {isOpen && (

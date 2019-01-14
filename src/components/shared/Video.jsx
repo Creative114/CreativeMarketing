@@ -77,6 +77,7 @@ export default class Video extends Component {
       <Wrapper>
         <StyledColumn>
           <VideoTag
+            controls
             id="video1"
             poster={behindTheBrand}
             onClick={() => this.handlePlay("video1")}
