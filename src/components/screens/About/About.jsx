@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div>
       <Splash type="about" title="About" />
-      <Team />
+      {/* <Team /> */}
       <Values />
       <Careers />
       <Footer />

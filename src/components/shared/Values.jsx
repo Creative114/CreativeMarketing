@@ -91,7 +91,7 @@ function Box({ icon, title, description }) {
       <Icon className={icon} />
       <StyledBoxColumn>
         <Subtitle primary>{title}</Subtitle>
-        <Text>{description}</Text>
+        {/* <Text>{description}</Text> */}
       </StyledBoxColumn>
     </StyledBox>
   );

@@ -5,7 +5,7 @@ import { Column, Text, Button, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 500px;
+  min-height: 300px;
   width: 100%;
   align-items: center;
   @media (max-width: 780px) {
@@ -58,14 +58,14 @@ export default function Benefit({ title, description, img, type, navigate }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              <Button
+              {/* <Button
                 primary
                 onClick={() =>
                   navigate.push(`/casestudies/${location.toLowerCase()}`)
                 }
               >
                 Learn more
-              </Button>
+              </Button> */}
             </StyledTextColumn>
           </StyledColumn>
           <Div background={`url('${img}')`} />
@@ -78,14 +78,14 @@ export default function Benefit({ title, description, img, type, navigate }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              <Button
+              {/* <Button
                 primary
                 onClick={() =>
                   navigate.push(`/casestudies/${location.toLowerCase()}`)
                 }
               >
                 Learn more
-              </Button>
+              </Button> */}
             </StyledTextColumn>
           </StyledColumn>
         </React.Fragment>

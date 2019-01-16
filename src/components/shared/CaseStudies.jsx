@@ -23,10 +23,10 @@ export default function CaseStudies({ casestudies, navigate }) {
     <Wrapper>
       <StyledColumn>
         <Title>Case studies</Title>
-        <Text>
+        {/* <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor.
-        </Text>
+        </Text> */}
       </StyledColumn>
 
       {casestudies &&
