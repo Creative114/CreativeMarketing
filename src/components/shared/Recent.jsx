@@ -8,7 +8,7 @@ import recent3 from "../../assets/recent3.jpg";
 import recent4 from "../../assets/recent4.jpg";
 
 const Wrapper = styled.div`
-  min-height: 500px;
+  height: 100%;
   width: 85%;
   margin: 0 auto;
   display: flex;
@@ -132,8 +132,8 @@ export default class Recent extends Component {
         <Column alignitems="center" textalign="center">
           <Title>Recent work</Title>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor.
+            Below are a few projects that we have had the honor of creating for
+            our clients:
           </Text>
         </Column>
         <Grid>

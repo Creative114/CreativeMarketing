@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  margin: 3em 0;
+  margin: 2em 0;
   align-items: center;
   text-align: center;
   @media (max-width: 780px) {

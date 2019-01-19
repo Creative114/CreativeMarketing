@@ -5,7 +5,6 @@ import { Column, Text, Button, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 300px;
   width: 100%;
   align-items: center;
   @media (max-width: 780px) {
@@ -29,7 +28,7 @@ const StyledColumn = styled(Column)`
 `;
 
 const StyledTextColumn = styled(Column)`
-  margin: 1em 0;
+  margin: 0.5em 0;
   width: 70%;
   @media (max-width: 780px) {
     width: 90%;
@@ -41,10 +40,9 @@ const Div = styled.div`
   background: ${props => props.background};
   background-size: cover;
   width: 50vw;
-  min-height: 550px;
+  min-height: 350px;
   @media (max-width: 780px) {
     width: 100%;
-    min-height: 400px;
   }
 `;
 

@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Column, Text, Title, Subtitle } from "../../theme/index";
 
 const Wrapper = styled.div`
-  width: 90%;
+  width: 80%;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 25px;
   height: 100%;
   margin: 3em auto;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 325px;
   @media (max-width: 780px) {
     width: 100%;
@@ -51,37 +51,37 @@ const values = [
     icon: "fas fa-handshake-alt",
     title: "Collaboration",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We encourage diversity of thoughts and collaboration to help ideas grows further."
   },
   {
     icon: "fas fa-award",
     title: "Commitment",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We are dedicated to the unrelenting pursuit of your goals and success of your brand."
   },
   {
     icon: "fas fa-heart",
     title: "Compassion",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We bring more meaning to our work by serving and helping others achieve their own dreams."
   },
   {
     icon: "fas fa-badge-check",
     title: "Credibility",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We always do what is right even though it might cost us because trust and integrity is everything to us."
   },
   {
     icon: "fas fa-star",
-    title: "Character",
+    title: "Candor",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We believe openness and honesty should be cultivated for the greater good and success of the people that we serve."
   },
   {
     icon: "fas fa-bullseye",
     title: "Consistency",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+      "We go beyond the status quo to consistently exceed your expectation with the quality of our work."
   }
 ];
 
@@ -91,7 +91,7 @@ function Box({ icon, title, description }) {
       <Icon className={icon} />
       <StyledBoxColumn>
         <Subtitle primary>{title}</Subtitle>
-        {/* <Text>{description}</Text> */}
+        <Text>{description}</Text>
       </StyledBoxColumn>
     </StyledBox>
   );

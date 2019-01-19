@@ -105,14 +105,14 @@ export default class Team extends Component {
             <Slider {...settings}>
               <Member
                 name="Getro Jean-Claude"
-                title="President"
-                description="Getro is the Mastermind behind Creative 114. Since he was 14, his creative passion sparked when he was doing videos for fun for. He is very passionate about storytelling with videos. Getro graduated from the Honors college at the University of Toledo. He graduated from Leadership Toledo and won the 20 under 40 Leadership Award. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with International Footprint."
+                title="Founder & Creative Director"
+                description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
               />
 
               <Member
                 name="Jephte Jean-Claude"
                 title="Camera Operator"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
               />
 
               <Member
@@ -143,14 +143,14 @@ export default class Team extends Component {
                 <Member
                   name="Getro Jean-Claude"
                   title="President"
-                  description="Getro is the Mastermind behind Creative 114. Since he was 14, his creative passion sparked when he was doing videos for fun for. He is very passionate about storytelling with videos. Getro graduated from the Honors college at the University of Toledo. He graduated from Leadership Toledo and won the 20 under 40 Leadership Award. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with International Footprint."
+                  description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
                 />
               )}
               {selected === "jephte" && (
                 <Member
                   name="Jephte Jean-Claude"
                   title="Camera Operator"
-                  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
                 />
               )}
               {selected === "rachel" && (

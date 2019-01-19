@@ -88,9 +88,10 @@ export default function Splash({ type, title, show, img }) {
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            We are a creative storytelling solution that will empower your brand
+            to create, connect and cultivate your targeted audience. We partner
+            with you to create a compelling and emotionally engaging
+            storytelling through video, website and content creation.
           </Text>
         </StyledColumn>
       )}
