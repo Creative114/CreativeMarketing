@@ -117,7 +117,7 @@ export default class Team extends Component {
 
               <Member
                 name="Rachel Jean-Claude"
-                title=""
+                title="The Boss"
                 description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
               />
 
@@ -126,12 +126,6 @@ export default class Team extends Component {
                 title="Technologist"
                 description="William has experience developing web and native applications, as well as leading engineering teams for nearly two years. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic medical doctors. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
                 "
-              />
-
-              <Member
-                name="Test3"
-                title="Guy2"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
               />
             </Slider>
           </div>
@@ -156,7 +150,7 @@ export default class Team extends Component {
               {selected === "rachel" && (
                 <Member
                   name="Rachel Jean-Claude"
-                  title="Test"
+                  title="The Boss"
                   description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
                 />
               )}

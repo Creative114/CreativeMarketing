@@ -41,6 +41,9 @@ const VideoTag = styled.video`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   max-width: 880px;
+  @media (max-width: 780px) {
+    width: 325px;
+  }
 `;
 
 const StyledColumn = styled(Column)`

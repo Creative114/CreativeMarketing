@@ -4,6 +4,7 @@ import { Row, Column, Title, Text } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
 import aboutSplash from "../../assets/aboutSplash.jpg";
+import impactSplash from "../../assets/impact.jpg";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -25,6 +26,9 @@ const StyledColumn = styled(Column)`
   text-align: center;
   width: 55%;
   margin: 0 auto;
+  @media (max-width: 500px) {
+    width: 95%;
+  }
 `;
 
 const StyledLightbulb = styled(Column)`
@@ -68,7 +72,7 @@ export default function Splash({ type, title, show, img }) {
           ? `url('${aboutSplash}')`
           : type === "casestudy"
           ? `url('${img}')`
-          : type === "impact" && "linear-gradient(to right, #e38b3d, #f3bf70)"
+          : type === "impact" && `url('${impactSplash}')`
       }
     >
       <Navigation show={show} />
@@ -120,11 +124,7 @@ export default function Splash({ type, title, show, img }) {
       {type === "impact" && (
         <StyledColumn>
           <Title header>{title}</Title>
-          <Text header>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </Text>
+          <Text header>Coming soon.</Text>
         </StyledColumn>
       )}
     </Wrapper>

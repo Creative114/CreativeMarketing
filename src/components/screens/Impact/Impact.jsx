@@ -7,8 +7,8 @@ export default function Impact({ posts }) {
   return (
     <div>
       <Splash type="impact" title="Impact" />
-      <Posts posts={posts} />
-      <Footer />
+      {/* <Posts posts={posts} /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -36,14 +36,14 @@ function BurgerMenu({ close }) {
           <StyledLi onClick={close}>Home</StyledLi>
         </Link>
         <Link to="/work">
-          <StyledLi onClick={close}>About</StyledLi>
+          <StyledLi onClick={close}>Work</StyledLi>
         </Link>
         <Link to="/about">
           <StyledLi onClick={close}>About</StyledLi>
         </Link>
-        {/* <Link to="/">
-          <StyledLi onClick={close}>Resources</StyledLi>
-        </Link> */}
+        <Link to="/impact">
+          <StyledLi onClick={close}>Impact</StyledLi>
+        </Link>
         {/* <Link to="/" className="drift-open-chat">
           <StyledLi onClick={close} className="drift-open-chat">
             Contact
