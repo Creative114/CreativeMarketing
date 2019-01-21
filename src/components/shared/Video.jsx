@@ -5,9 +5,8 @@ import behindTheBrand from "../../assets/behindTheBrand.jpg";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  min-height: 620px;
   height: 100%;
-  padding: 2em 0;
+  padding: 3em 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -86,7 +85,7 @@ export default class Video extends Component {
             onClick={() => this.handlePlay("video1")}
           >
             <source
-              src="https://player.vimeo.com/external/305414450.hd.mp4?s=ebca55954b19033bd1677a57ba3da4fff42b34fd&profile_id=169"
+              src="https://player.vimeo.com/external/312446875.hd.mp4?s=2dd633164982e455133d97e7ab7584e5d19556ec&profile_id=169"
               type="video/mp4"
             />
           </VideoTag>

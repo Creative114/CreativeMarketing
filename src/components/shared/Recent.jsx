@@ -9,7 +9,7 @@ import recent4 from "../../assets/recent4.jpg";
 
 const Wrapper = styled.div`
   height: 100%;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,10 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 25px;
+  grid-gap: 15px;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: 185px;
   height: 100%;
   width: 100%;

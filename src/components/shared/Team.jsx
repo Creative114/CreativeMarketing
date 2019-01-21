@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Member from "./Member";
 import { Row } from "../../theme/index";
 import Slider from "react-slick";
+import jet from "../../assets/jet.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -104,12 +105,13 @@ export default class Team extends Component {
           >
             <Slider {...settings}>
               <Member
+                img={jet}
                 name="Getro Jean-Claude"
                 title="Founder & Creative Director"
                 description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
               />
 
-              <Member
+              {/* <Member
                 name="Jephte Jean-Claude"
                 title="Camera Operator"
                 description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
@@ -126,7 +128,7 @@ export default class Team extends Component {
                 title="Technologist"
                 description="William has experience developing web and native applications, as well as leading engineering teams for nearly two years. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic medical doctors. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
                 "
-              />
+              /> */}
             </Slider>
           </div>
         )}
@@ -135,12 +137,13 @@ export default class Team extends Component {
             <Row>
               {selected === "jet" && (
                 <Member
+                  img={jet}
                   name="Getro Jean-Claude"
                   title="President"
                   description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
                 />
               )}
-              {selected === "jephte" && (
+              {/* {selected === "jephte" && (
                 <Member
                   name="Jephte Jean-Claude"
                   title="Camera Operator"
@@ -161,10 +164,10 @@ export default class Team extends Component {
                   description="William has experience developing web and native applications, as well as leading engineering teams for nearly two years. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic medical doctors. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
                   "
                 />
-              )}
+              )} */}
             </Row>
 
-            <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
+            {/* <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
               {boxes &&
                 boxes.map((key, index) => {
                   return (
@@ -179,7 +182,7 @@ export default class Team extends Component {
                     />
                   );
                 })}
-            </Row>
+            </Row> */}
           </React.Fragment>
         )}
       </Wrapper>

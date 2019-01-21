@@ -112,7 +112,7 @@ export default function Services() {
     {
       title: "Web Design",
       text:
-        "At Creative114, we utilize the latest techngologies and frameworks to ensure superior performance, security, and SEO.",
+        "At Creative114, we utilize the latest technologies and frameworks to ensure superior performance, security, and SEO.",
       icon: "fas fa-code"
     },
     {

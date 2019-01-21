@@ -45,11 +45,11 @@ const StyledTextColumn = styled(Column)`
 //   }
 // `;
 
-const Box = styled.div`
+const Img = styled.img`
   width: 450px;
   height: 450px;
-  background: #f1f5f7;
   border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 780px) {
     width: 350px;
     height: 350px;
@@ -70,7 +70,7 @@ export default function Member({ title, description, img, name }) {
   return (
     <Wrapper>
       <StyledColumn>
-        <Box />
+        <Img src={img} alt="" />
       </StyledColumn>
       <StyledColumn>
         <StyledTextColumn>
