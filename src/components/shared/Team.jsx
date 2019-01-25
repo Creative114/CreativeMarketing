@@ -4,6 +4,8 @@ import Member from "./Member";
 import { Row } from "../../theme/index";
 import Slider from "react-slick";
 import jet from "../../assets/jet.jpg";
+import will from "../../assets/will.jpg";
+import jephte from "../../assets/jephte.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,7 +15,7 @@ const Wrapper = styled.div`
 
 const StyledBox = styled.div`
   width: 165px;
-  height: 138px;
+  height: 165px;
   background: #f1f5f7;
   display: flex;
   flex-direction: column;
@@ -21,6 +23,9 @@ const StyledBox = styled.div`
   text-align: center;
   margin: 0 1.5em;
   border-radius: 3px;
+  background: ${props => props.background};
+  background-size: contain;
+  background-repeat: no-repeat;
   border: ${props =>
     (props.active && "1.5px solid #b9402d") || "1.5px solid transparent"};
   cursor: pointer;
@@ -40,31 +45,36 @@ const boxes = [
     id: "jet",
     title: "Effective",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-bullseye-arrow"
+    icon: "fal fa-bullseye-arrow",
+    img: jet
   },
   {
     id: "jephte",
     title: "Efficient",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-rabbit-fast"
+    icon: "fal fa-rabbit-fast",
+    img: jephte
   },
   {
     id: "rachel",
     title: "Evaluations",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-clipboard-list-check"
+    icon: "fal fa-clipboard-list-check",
+    img: jet
   },
   {
     id: "will",
     title: "Accountability",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-fingerprint"
+    icon: "fal fa-fingerprint",
+    img: will
   }
 ];
 
-function Box({ id, selected, handleClick }) {
+function Box({ id, selected, handleClick, img }) {
   return (
     <StyledBox
+      background={`url('${img}')`}
       id={id}
       onClick={() => handleClick(id)}
       active={id === selected}
@@ -111,7 +121,8 @@ export default class Team extends Component {
                 description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
               />
 
-              {/* <Member
+              <Member
+                img={jephte}
                 name="Jephte Jean-Claude"
                 title="Camera Operator"
                 description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
@@ -124,11 +135,12 @@ export default class Team extends Component {
               />
 
               <Member
+                img={will}
                 name="William Whatley"
                 title="Technologist"
-                description="William has experience developing web and native applications, as well as leading engineering teams for nearly two years. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic medical doctors. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
+                description="William has experience developing web and native applications, as well as leading engineering teams. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic physicians. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
                 "
-              /> */}
+              />
             </Slider>
           </div>
         )}
@@ -143,8 +155,9 @@ export default class Team extends Component {
                   description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
                 />
               )}
-              {/* {selected === "jephte" && (
+              {selected === "jephte" && (
                 <Member
+                  img={jephte}
                   name="Jephte Jean-Claude"
                   title="Camera Operator"
                   description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
@@ -159,15 +172,16 @@ export default class Team extends Component {
               )}
               {selected === "will" && (
                 <Member
+                  img={will}
                   name="William Whatley"
                   title="Technologist"
-                  description="William has experience developing web and native applications, as well as leading engineering teams for nearly two years. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic medical doctors. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
+                  description="William has experience developing web and native applications, as well as leading engineering teams. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic physicians. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
                   "
                 />
-              )} */}
+              )}
             </Row>
 
-            {/* <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
+            <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
               {boxes &&
                 boxes.map((key, index) => {
                   return (
@@ -179,10 +193,11 @@ export default class Team extends Component {
                       icon={key.icon}
                       handleClick={this.handleClick}
                       selected={selected}
+                      img={key.img}
                     />
                   );
                 })}
-            </Row> */}
+            </Row>
           </React.Fragment>
         )}
       </Wrapper>

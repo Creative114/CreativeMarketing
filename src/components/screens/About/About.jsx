@@ -11,7 +11,7 @@ export default function About() {
       <Splash type="about" title="About" />
       <Team />
       <Values />
-      {/* <Careers /> */}
+      <Careers />
       <Footer />
     </div>
   );

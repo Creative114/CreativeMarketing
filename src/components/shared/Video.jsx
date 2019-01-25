@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle, Button } from "../../theme/index";
-import behindTheBrand from "../../assets/behindTheBrand.jpg";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -11,15 +10,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background: #f2f5f7;
-  justify-content: space-evenly;
+  justify-content: space-between;
   @media (min-width: 1750px) {
     min-height: 1000px;
   }
-  @media (max-width: 780px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
-    height: 100%;
-    min-height: 100%;
-    width: 95%;
     margin: 0 auto;
     padding: 3em 0 1.5em 0;
     text-align: center;
@@ -27,36 +23,67 @@ const Wrapper = styled.div`
 `;
 
 const StyledTextColumn = styled(Column)`
-  width: 35%;
-  @media (max-width: 780px) {
+  width: 45%;
+  @media (max-width: 1000px) {
     width: 95%;
     align-items: center;
   }
 `;
 
-const VideoTag = styled.video`
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  max-width: 880px;
-  @media (max-width: 780px) {
-    width: 325px;
+const VideoWrapper = styled.div`
+  width: 45%;
+  @media (max-width: 1000px) {
+    width: 85%;
   }
 `;
 
-const StyledColumn = styled(Column)`
-  max-width: 50%;
-  justify-content: center;
-  align-items: center;
-  background-color: inherit;
-  padding: 2em 0;
-  @media (max-width: 780px) {
-    width: 100%;
-    padding: 1em 0;
-    align-items: center;
+class YourVideo extends React.Component {
+  componentWillMount() {
+    const script1 = document.createElement("script");
+    const script2 = document.createElement("script");
+
+    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
+    script1.async = true;
+
+    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
+    script2.async = true;
+
+    document.body.appendChild(script1);
+    document.body.appendChild(script2);
   }
-`;
+
+  render() {
+    return (
+      <VideoWrapper>
+        <div
+          class="wistia_embed wistia_async_c6tvpstwki videoFoam=true"
+          style={{ height: "100%", position: "relative", width: "100%" }}
+        >
+          <div
+            class="wistia_swatch"
+            style={{
+              height: "100%",
+              left: 0,
+              opacity: 0,
+              overflow: "hidden",
+              position: "absolute",
+              top: 0,
+              transition: "opacity 250ms",
+              width: "100%"
+            }}
+          >
+            <img
+              src="https://fast.wistia.com/embed/medias/c6tvpstwki/swatch"
+              style={{ height: "100%", width: "100%", objectFit: "contain" }}
+              alt=""
+              onload="this.parentNode.style.opacity=1;"
+            />
+          </div>
+        </div>
+      </VideoWrapper>
+    );
+  }
+}
 
 export default class Video extends Component {
   state = {
@@ -77,19 +104,7 @@ export default class Video extends Component {
   render() {
     return (
       <Wrapper>
-        <StyledColumn>
-          <VideoTag
-            controls
-            id="video1"
-            poster={behindTheBrand}
-            onClick={() => this.handlePlay("video1")}
-          >
-            <source
-              src="https://player.vimeo.com/external/312446875.hd.mp4?s=2dd633164982e455133d97e7ab7584e5d19556ec&profile_id=169"
-              type="video/mp4"
-            />
-          </VideoTag>
-        </StyledColumn>
+        <YourVideo />
         <StyledTextColumn>
           <Subtitle primary>The heart behind the brand</Subtitle>
           <Text secondary>

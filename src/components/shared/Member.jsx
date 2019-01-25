@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 90%;
   align-items: center;
   margin: 0 auto;
-  @media (max-width: 780px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@ const StyledColumn = styled(Column)`
   align-items: center;
   background-color: inherit;
   padding: 2em 0;
-  @media (max-width: 780px) {
+  @media (max-width: 1200px) {
     width: 100%;
     align-items: center;
   }
@@ -30,27 +30,20 @@ const StyledColumn = styled(Column)`
 
 const StyledTextColumn = styled(Column)`
   margin: 1em 0;
-  width: 70%;
-  @media (max-width: 780px) {
+  width: 80%;
+  @media (max-width: 1200px) {
     width: 90%;
     text-align: center;
     align-items: center;
   }
 `;
 
-// const Img = styled.img`
-//   width: 70%;
-//   @media (max-width: 780px) {
-//     width: 90%;
-//   }
-// `;
-
 const Img = styled.img`
   width: 450px;
   height: 450px;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  @media (max-width: 780px) {
+  @media (max-width: 1200px) {
     width: 350px;
     height: 350px;
   }
