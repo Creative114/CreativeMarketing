@@ -55,13 +55,13 @@ const boxes = [
     icon: "fal fa-rabbit-fast",
     img: jephte
   },
-  {
-    id: "rachel",
-    title: "Evaluations",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-clipboard-list-check",
-    img: jet
-  },
+  // {
+  //   id: "rachel",
+  //   title: "Evaluations",
+  //   description: "Lorem ipsum dolor sit amet, consectetur",
+  //   icon: "fal fa-clipboard-list-check",
+  //   img: jet
+  // },
   {
     id: "will",
     title: "Accountability",
@@ -128,11 +128,11 @@ export default class Team extends Component {
                 description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
               />
 
-              <Member
+              {/* <Member
                 name="Rachel Jean-Claude"
                 title="The Boss"
                 description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
-              />
+              /> */}
 
               <Member
                 img={will}
@@ -163,13 +163,13 @@ export default class Team extends Component {
                   description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
                 />
               )}
-              {selected === "rachel" && (
+              {/* {selected === "rachel" && (
                 <Member
                   name="Rachel Jean-Claude"
                   title="The Boss"
                   description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
                 />
-              )}
+              )} */}
               {selected === "will" && (
                 <Member
                   img={will}
