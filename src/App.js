@@ -50,6 +50,13 @@ const App = ({
             );
           }}
         />
+        <Route
+          exact
+          path="/casestudies/:name"
+          render={() => {
+            return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
+          }}
+        />
         {casestudypages &&
           casestudypages.map((key, index) => {
             let title = key.title.replace(/\s+/g, "-");

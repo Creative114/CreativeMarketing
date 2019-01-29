@@ -7,7 +7,7 @@ import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: ${props => props.height || "100vh"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
@@ -66,6 +66,7 @@ export default function Splash({ type, title, show, img }) {
   return (
     <Wrapper
       home={type === "home"}
+      height={type === "casestudy" && "350px"}
       background={
         type === "home"
           ? "#fff"

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Button, Subtitle } from "../../theme/index";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const StyledColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   background-color: inherit;
-  padding: 2em 0;
+
   @media (max-width: 780px) {
     width: 100%;
     padding: 4em 0;
@@ -47,7 +48,7 @@ const Div = styled.div`
 `;
 
 export default function Benefit({ title, description, img, type, navigate }) {
-  let location = title.replace(/\s+/g, "-");
+  let location = title.replace(/\s+/g, "");
   return (
     <Wrapper primary={type === "right"}>
       {type === "right" && (
@@ -56,14 +57,14 @@ export default function Benefit({ title, description, img, type, navigate }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              {/* <Button
+              <Button
                 primary
                 onClick={() =>
-                  navigate.push(`/casestudies/${location.toLowerCase()}`)
+                  navigate.push(`/casestudies/name:${location.toLowerCase()}`)
                 }
               >
                 Learn more
-              </Button> */}
+              </Button>
             </StyledTextColumn>
           </StyledColumn>
           <Div background={`url('${img}')`} />
@@ -76,14 +77,14 @@ export default function Benefit({ title, description, img, type, navigate }) {
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>
               <Text>{description}</Text>
-              {/* <Button
+              <Button
                 primary
                 onClick={() =>
-                  navigate.push(`/casestudies/${location.toLowerCase()}`)
+                  navigate.push(`/casestudies/name:${location.toLowerCase()}`)
                 }
               >
                 Learn more
-              </Button> */}
+              </Button>
             </StyledTextColumn>
           </StyledColumn>
         </React.Fragment>
