@@ -4,15 +4,18 @@ import { Row, Column, Title, Text } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
 import aboutSplash from "../../assets/aboutSplash.jpg";
+import impactSplash from "../../assets/impact.jpg";
 
 const Wrapper = styled.div`
-  height: ${props => (props.home ? "948px" : "800px")};
+  height: ${props => props.height || "100vh"};
   width: 100%;
+  margin: 0 auto;
   background: ${props => props.background};
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   @media (max-width: 500px) {
     height: ${props => (props.home ? "700px" : "800px")};
   }
@@ -21,12 +24,24 @@ const Wrapper = styled.div`
 const StyledColumn = styled(Column)`
   align-items: center;
   text-align: center;
-  width: 55%;
+  width: 65%;
+  margin: 0 auto;
+  @media (max-width: 780px) {
+    width: 85%;
+  }
+  @media (max-width: 500px) {
+    width: 95%;
+  }
+`;
+
+const StyledLightbulb = styled(Column)`
+  width: 6.5%;
   margin: 0 auto;
 `;
 
 const StyledHomeColumn = styled(Column)`
-  width: ${props => (props.primary ? "50%" : "25%")};
+  margin-top: 6em;
+  width: ${props => (props.primary ? "75%" : "25%")};
   @media (max-width: 780px) {
     width: ${props => (props.primary ? "95%" : "30%")};
     margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
@@ -38,7 +53,8 @@ const StyledHomeColumn = styled(Column)`
 `;
 
 const StyledRow = styled(Row)`
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   @media (max-width: 780px) {
     flex-direction: column-reverse;
@@ -46,40 +62,64 @@ const StyledRow = styled(Row)`
   }
 `;
 
-export default function Splash({ type, title, show }) {
+export default function Splash({ type, title, show, img }) {
   return (
     <Wrapper
       home={type === "home"}
+      height={type === "casestudy" && "550px"}
       background={
         type === "home"
-          ? "linear-gradient(to right, #e38b3d, #f3bf70)"
+          ? "#fff"
           : type === "work"
-          ? "linear-gradient(to right, #B9402D, #D97881)"
-          : type === "about" && `url('${aboutSplash}')`
+          ? `url('${img}')`
+          : type === "about"
+          ? `url('${aboutSplash}')`
+          : type === "casestudy"
+          ? `url('${img}')`
+          : type === "impact" && `url('${impactSplash}')`
       }
     >
       <Navigation show={show} />
       {type === "home" && (
         <StyledRow>
           <StyledHomeColumn primary>
+            <StyledLightbulb>
+              <Lightbulb />
+            </StyledLightbulb>
             <Title header home>
-              Creative Storytelling. <br /> Lead Generation. <br /> Brand
-              Strategy. <br /> Digital Marketing.
+              Creative Storytelling, Lead Generation and Brand Strategy.
             </Title>
-          </StyledHomeColumn>
-          <StyledHomeColumn>
-            <Lightbulb />
           </StyledHomeColumn>
         </StyledRow>
       )}
-      {type !== "home" && (
+      {type === "about" && (
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            We are a creative storytelling solution that will empower your brand
+            to create, connect and cultivate your targeted audience. We partner
+            with you to create a compelling and emotionally engaging
+            storytelling through video, website and content creation.
           </Text>
+        </StyledColumn>
+      )}
+      {type === "work" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>
+            We are more than a video production, design or web development
+            agency. We are in the business of solving problems. We work to craft
+            and tell your stories with emotions and creativity. Our primary
+            purpose is to empower your business with what we call the three C's:
+            Create, Connect and Cultivate you brand.
+          </Text>
+        </StyledColumn>
+      )}
+
+      {type === "impact" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>Coming soon.</Text>
         </StyledColumn>
       )}
     </Wrapper>

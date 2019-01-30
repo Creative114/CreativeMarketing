@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Logo from "../../assets/logo.png";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
 
-import { Row, StyledNavLink } from "../../theme/index";
+import { Row, StyledNavLink, Text } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -12,23 +11,22 @@ const Wrapper = styled.div`
   background: ${props => props.background};
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
+  justify-content: space-between;
   top: 0;
   z-index: 100;
   transition: 500ms;
   box-shadow: ${props => props.active && "0 0 10px rgba(0, 0, 0, 0.1)"};
-  // display: ${props => props.display};
 `;
 
 const Image = styled.img`
-  width: ${props => (props.active ? "40px" : "305px")};
-  height: ${props => (props.active ? "56px" : "40px")};
-  margin-left: 1.5em;
+  width: 40px;
+  height: 56px;
   transition: 250ms;
+  margin-left: 1.5em;
   @media (max-width: 425px) {
-    width: ${props => (props.active ? "40px" : "250px")};
-    height: ${props => (props.active ? "56px" : "33px")};
+    width: 40px;
+    height: 56px;
   }
 `;
 
@@ -57,36 +55,48 @@ export default class Navigation extends Component {
 
     mobile.addListener(handleChange());
     const { color, active } = this.state;
+    const { type } = this.props;
     return (
       <Wrapper
         background={color}
         active={active}
         display={!this.props.show && "none"}
       >
-        <Image
-          active={active}
-          src={active ? Icon : Logo}
-          alt="Creative114 Logo"
-        />
+        <Image active={!active} src={Icon} alt="Creative114 Logo" />
         {mobile.matches && <Burger />}
 
         {!mobile.matches && (
           <Row margin="0 3em 0 0">
-            <StyledNavLink active={active} exact to="/">
+            <StyledNavLink home={type === "home"} active={active} exact to="/">
               Home
             </StyledNavLink>
-            <StyledNavLink active={active} exact to="/work">
+            <StyledNavLink
+              home={type === "home"}
+              active={active}
+              exact
+              to="/work"
+            >
               Work
             </StyledNavLink>
-            <StyledNavLink active={active} exact to="/about">
+            <StyledNavLink
+              home={type === "home"}
+              active={active}
+              exact
+              to="/about"
+            >
               About
             </StyledNavLink>
-            <StyledNavLink active={active} to="/">
+            <StyledNavLink home={type === "home"} active={active} to="/impact">
               Impact
             </StyledNavLink>
-            <StyledNavLink active={active} to="/">
+            <Text
+              home={type === "home"}
+              className="drift-open-chat"
+              active={active}
+              contact
+            >
               Contact
-            </StyledNavLink>
+            </Text>
           </Row>
         )}
       </Wrapper>

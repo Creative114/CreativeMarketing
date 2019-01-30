@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const Title = styled.h1`
   font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   color: #505d68;
   font-size: 50px;
   line-height: 52px;
@@ -19,15 +19,17 @@ export const Title = styled.h1`
   ${props =>
     props.header &&
     css`
-      color: #fff;
-      font-size: ${props => props.home && "68px"};
+      color: ${props => (props.home ? "#000" : "#fff")};
+      font-size: ${props => props.home && "92px"};
       line-height: ${props => props.home && "100px"};
+      margin: ${props => props.margin || ".25em 0"};
       @media (max-width: 1200px) {
-        font-size: 50px;
+        font-size: 72px;
         line-height: 90px;
       }
       @media (max-width: 900px) {
-        line-height: 72px;
+        line-height: 62px;
+        line-height: 80px;
       }
       @media (max-width: 780px) {
         font-size: 48px;
@@ -76,10 +78,39 @@ export const Text = styled.p`
       margin: 0;
       font-size: 21px;
     `};
+  ${props =>
+    props.footer &&
+    css`
+      color: #fff;
+    `};
+  ${props =>
+    props.post &&
+    css`
+      font-size: 14px;
+      line-height: 22px;
+    `};
+  ${props =>
+    props.contact &&
+    css`
+      color: ${props =>
+        props.home ? "#b9402d" : props.active ? "#b9402d" : "#fff"};
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 500ms;
+      cursor: pointer;
+      line-height: 1em;
+      @media (max-width: 780px) {
+        margin: 0 0.5em;
+        font-size: 14px;
+      }
+    `};
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${props => (props.active ? "#E38B3D" : "#fff")};
+  color: ${props => (props.active ? "#b9402d" : "#fff")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;
@@ -87,6 +118,11 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
   transition: 500ms;
+  ${props =>
+    props.home &&
+    css`
+      color: #b9402d;
+    `};
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 14px;
@@ -130,6 +166,7 @@ export const Button = styled.button`
   font-size: 18px;
   border-radius: 3px;
   transition: 750ms;
+  margin: 0.5em 0;
   &:hover {
     background-color: #667785;
     color: #fff;

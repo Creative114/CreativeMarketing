@@ -5,7 +5,7 @@ import { Column, Text, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 500px;
+  min-height: 550px;
   width: 90%;
   align-items: center;
   margin: 0 auto;
@@ -23,7 +23,6 @@ const StyledColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   background-color: inherit;
-  padding: 2em 0;
   transition: 750ms;
   @media (max-width: 780px) {
     width: 100%;
@@ -34,7 +33,7 @@ const StyledColumn = styled(Column)`
 
 const StyledTextColumn = styled(Column)`
   margin: 1em 0;
-  width: 70%;
+  width: 90%;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -48,9 +47,16 @@ const VideoTag = styled.video`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 750ms;
+  max-width: 880px;
 `;
 
-export default function Testimonial({ title, description, src, img }) {
+export default function Testimonial({
+  title,
+  description,
+  src,
+  img,
+  handlePlay
+}) {
   return (
     <Wrapper>
       <React.Fragment>
@@ -61,7 +67,12 @@ export default function Testimonial({ title, description, src, img }) {
           </StyledTextColumn>
         </StyledColumn>
         <StyledColumn>
-          <VideoTag poster={img} controls>
+          <VideoTag
+            controls
+            id="video"
+            onClick={() => handlePlay("video")}
+            poster={img}
+          >
             <source src={src} type="video/mp4" />
           </VideoTag>
         </StyledColumn>

@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledNavLink, Row } from "../../theme/index";
+import { StyledNavLink, Row, Text } from "../../theme/index";
 import Logo from "../../assets/logo.png";
 
 const Wrapper = styled.div`
-  height: 125px;
+  height: 150px;
   width: 100%;
   background: #b9402d;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 3em 0 0 0;
   @media (max-width: 780px) {
     height: 100%;
@@ -30,9 +30,11 @@ const Image = styled.img`
 const StyledRow = styled(Row)`
   align-items: center;
   justify-content: space-between;
+  margin: ${props => props.copy && "0 0 0 3em"};
   @media (max-width: 780px) {
     flex-direction: column;
     align-items: center;
+    margin: 0;
   }
 `;
 
@@ -45,25 +47,25 @@ export default function Footer() {
           <StyledNavLink footer to="/">
             Home
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/work">
             Work
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/about">
             About
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <StyledNavLink footer to="/impact">
             Impact
           </StyledNavLink>
-          <StyledNavLink footer to="/">
+          <Text footer contact className="drift-open-chat">
             Contact
-          </StyledNavLink>
+          </Text>
         </Row>
       </StyledRow>
-      <Row>
-        {/* <Text footer>
-          2018 &copy; Feed Forward | Made with &hearts; in Tampa, FL
-        </Text> */}
-      </Row>
+      <StyledRow copy>
+        <Text footer>
+          2018 &copy; Creative114 | Made with &hearts; in Tampa, FL
+        </Text>
+      </StyledRow>
     </Wrapper>
   );
 }

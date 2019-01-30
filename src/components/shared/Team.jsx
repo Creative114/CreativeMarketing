@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Member from "./Member";
 import { Row } from "../../theme/index";
+import Slider from "react-slick";
+import jet from "../../assets/jet.jpg";
+import will from "../../assets/will.jpg";
+import jephte from "../../assets/jephte.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -11,7 +15,7 @@ const Wrapper = styled.div`
 
 const StyledBox = styled.div`
   width: 165px;
-  height: 138px;
+  height: 165px;
   background: #f1f5f7;
   display: flex;
   flex-direction: column;
@@ -19,6 +23,9 @@ const StyledBox = styled.div`
   text-align: center;
   margin: 0 1.5em;
   border-radius: 3px;
+  background: ${props => props.background};
+  background-size: contain;
+  background-repeat: no-repeat;
   border: ${props =>
     (props.active && "1.5px solid #b9402d") || "1.5px solid transparent"};
   cursor: pointer;
@@ -38,37 +45,36 @@ const boxes = [
     id: "jet",
     title: "Effective",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-bullseye-arrow"
+    icon: "fal fa-bullseye-arrow",
+    img: jet
   },
   {
-    id: "will",
+    id: "jephte",
     title: "Efficient",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-rabbit-fast"
+    icon: "fal fa-rabbit-fast",
+    img: jephte
   },
+  // {
+  //   id: "rachel",
+  //   title: "Evaluations",
+  //   description: "Lorem ipsum dolor sit amet, consectetur",
+  //   icon: "fal fa-clipboard-list-check",
+  //   img: jet
+  // },
   {
-    id: "test1",
-    title: "Evaluations",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-clipboard-list-check"
-  },
-  {
-    id: "test2",
+    id: "will",
     title: "Accountability",
     description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-fingerprint"
-  },
-  {
-    id: "test3",
-    title: "Analytical",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-chart-bar"
+    icon: "fal fa-fingerprint",
+    img: will
   }
 ];
 
-function Box({ id, selected, handleClick }) {
+function Box({ id, selected, handleClick, img }) {
   return (
     <StyledBox
+      background={`url('${img}')`}
       id={id}
       onClick={() => handleClick(id)}
       active={id === selected}
@@ -76,7 +82,7 @@ function Box({ id, selected, handleClick }) {
   );
 }
 
-export default class Mocks extends Component {
+export default class Team extends Component {
   state = {
     selected: "jet"
   };
@@ -91,62 +97,109 @@ export default class Mocks extends Component {
 
   render() {
     const { selected } = this.state;
+    let settings = {
+      dots: true,
+      infinite: false,
+      arrows: false,
+      speed: 1000
+    };
+
+    const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
-        <Row>
-          {selected === "jet" && (
-            <Member
-              name="Getro Jean-Claude"
-              title="President"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "will" && (
-            <Member
-              name="William Whatley"
-              title="Developer"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test1" && (
-            <Member
-              name="Test1"
-              title="Guy"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test2" && (
-            <Member
-              name="Test2"
-              title="Girl"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-          {selected === "test3" && (
-            <Member
-              name="Test3"
-              title="Guy2"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            />
-          )}
-        </Row>
+        {mobile.matches && (
+          <div
+            style={{
+              margin: "1.5em 0"
+            }}
+          >
+            <Slider {...settings}>
+              <Member
+                img={jet}
+                name="Getro Jean-Claude"
+                title="Founder & Creative Director"
+                description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
+              />
 
-        <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
-          {boxes &&
-            boxes.map((key, index) => {
-              return (
-                <Box
-                  key={index}
-                  id={key.id}
-                  title={key.title}
-                  description={key.description}
-                  icon={key.icon}
-                  handleClick={this.handleClick}
-                  selected={selected}
+              <Member
+                img={jephte}
+                name="Jephte Jean-Claude"
+                title="Camera Operator"
+                description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
+              />
+
+              {/* <Member
+                name="Rachel Jean-Claude"
+                title="The Boss"
+                description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
+              /> */}
+
+              <Member
+                img={will}
+                name="William Whatley"
+                title="Technologist"
+                description="William has experience developing web and native applications, as well as leading engineering teams. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic physicians. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
+                "
+              />
+            </Slider>
+          </div>
+        )}
+        {!mobile.matches && (
+          <React.Fragment>
+            <Row>
+              {selected === "jet" && (
+                <Member
+                  img={jet}
+                  name="Getro Jean-Claude"
+                  title="President"
+                  description="Getro is the mastermind behind Creative 114 and is passionate about creative storytelling. He graduated from the University of Toledo and the Jesup Scott Honors College. He has won the 20 under 40 Leadership Award in Toledo recognizing individuals who have distinguished themselves in the community. He was featured in a few local and national magazine. He truly got his start producing videos professionally with churches and charities with National and International Footprint."
                 />
-              );
-            })}
-        </Row>
+              )}
+              {selected === "jephte" && (
+                <Member
+                  img={jephte}
+                  name="Jephte Jean-Claude"
+                  title="Camera Operator"
+                  description="Jephte is so much fun to be around. He is the life of the party and always bring a smile to everyone he interacts with."
+                />
+              )}
+              {/* {selected === "rachel" && (
+                <Member
+                  name="Rachel Jean-Claude"
+                  title="The Boss"
+                  description="Rachael is the superpower behind Getro's success. They got married in 2017 and together expecting a beautiful daughter. Rachael is a family Medicine Physician. In her free time, she puts her amazing organizational skills to work."
+                />
+              )} */}
+              {selected === "will" && (
+                <Member
+                  img={will}
+                  name="William Whatley"
+                  title="Technologist"
+                  description="William has experience developing web and native applications, as well as leading engineering teams. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic physicians. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship.
+                  "
+                />
+              )}
+            </Row>
+
+            <Row justifycontent="center" alignitems="center" margin="3em 0 0 0">
+              {boxes &&
+                boxes.map((key, index) => {
+                  return (
+                    <Box
+                      key={index}
+                      id={key.id}
+                      title={key.title}
+                      description={key.description}
+                      icon={key.icon}
+                      handleClick={this.handleClick}
+                      selected={selected}
+                      img={key.img}
+                    />
+                  );
+                })}
+            </Row>
+          </React.Fragment>
+        )}
       </Wrapper>
     );
   }

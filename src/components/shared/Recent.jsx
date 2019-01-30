@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Title } from "../../theme/index";
+import Modal from "../shared/Modal";
+import recent1 from "../../assets/recent1.jpg";
+import recent5 from "../../assets/recent5.jpg";
+import recent3 from "../../assets/recent3.jpg";
+import recent4 from "../../assets/recent4.jpg";
 
 const Wrapper = styled.div`
-  min-height: 500px;
-  width: 85%;
+  height: 100%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -19,11 +23,11 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 25px;
+  grid-gap: 15px;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(263px, 1fr));
-  grid-auto-rows: 198px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 185px;
   height: 100%;
   width: 100%;
   @media (max-width: 780px) {
@@ -35,71 +39,118 @@ const Grid = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  border: 1.5px solid #a1aeb7;
+  border: 1.5px solid transparent;
   border-radius: 3px;
   display: flex;
-  background: #f2f5f7;
+  background: ${props => props.background};
+  background-repeat: no-repeat;
+  background-size: cover;
   cursor: pointer;
   transition: 750ms;
   text-align: center;
+  filter: grayscale(75%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   &:hover {
-    background: #fff;
+    filter: grayscale(0%);
     border: 1.5px solid #b9402d;
   }
 `;
 
-function Item({ title, text }) {
-  return <Div />;
-}
+const Video = ({ src, title }) => (
+  <iframe
+    title={title}
+    src={src}
+    width="640"
+    height="360"
+    style={{
+      border: 0,
+      maxWidth: "97%",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      margin: "auto",
+      top: "50%",
+      transform: "translateY(-50%)"
+    }}
+  />
+);
 
-export default function Recent() {
-  const items = [
-    {
-      title: "Video Marketing",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-video"
-    },
-    {
-      title: "Web Design",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-code"
-    },
-    {
-      title: "Graphic Design",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-drafting-compass"
-    },
-    {
-      title: "Photography",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      icon: "fas fa-camera-alt"
+const lightbox = [
+  <Video
+    src={
+      "https://player.vimeo.com/external/302947248.hd.mp4?s=44c33ee912d83e643cb35784f99aa751f371e52d&profile_id=169"
     }
-  ];
-  return (
-    <Wrapper id="what">
-      <Column alignitems="center" textalign="center">
-        <Title>Recent work</Title>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor.
-        </Text>
-      </Column>
-      <Grid>
-        {items.map((key, index) => {
-          return (
-            <Item
-              key={index}
-              title={key.title}
-              text={key.text}
-              icon={key.icon}
-            />
-          );
-        })}
-      </Grid>
-    </Wrapper>
-  );
+    title={"Title"}
+  />,
+  <Video
+    src={
+      "https://player.vimeo.com/external/302617339.hd.mp4?s=8bfeff0be5ce98ff7f2f6153a3d9cc929434a7a5&profile_id=175"
+    }
+    title={"Title"}
+  />,
+  <Video
+    src={
+      "https://player.vimeo.com/external/260181613.hd.mp4?s=c2602f22c1a1b1724c517c6ef2a70b879f2310a2&profile_id=175"
+    }
+    title={"Title"}
+  />,
+  <Video
+    title={"Title"}
+    src={
+      "https://player.vimeo.com/external/310223821.hd.mp4?s=c214e32c3f8e0c025cf86b1e50d311b04ce34d47&profile_id=175"
+    }
+  />
+];
+
+export default class Recent extends Component {
+  state = {
+    photoIndex: 0,
+    isOpen: false
+  };
+
+  handleLightbox = index => {
+    this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
+  };
+
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  render() {
+    const { photoIndex, isOpen } = this.state;
+    return (
+      <Wrapper id="what">
+        <Column alignitems="center" textalign="center">
+          <Title>Recent work</Title>
+          <Text>
+            Below are a few projects that we have had the honor of creating for
+            our clients:
+          </Text>
+        </Column>
+        <Grid>
+          <Div
+            background={`url('${recent3}')`}
+            onClick={() => this.handleLightbox(0)}
+          />
+          <Div
+            background={`url('${recent1}')`}
+            onClick={() => this.handleLightbox(1)}
+          />
+          <Div
+            background={`url('${recent4}')`}
+            onClick={() => this.handleLightbox(2)}
+          />
+          <Div
+            background={`url('${recent5}')`}
+            onClick={() => this.handleLightbox(3)}
+          />
+        </Grid>
+        {isOpen && (
+          <Modal show={isOpen} togglemodal={this.toggleModal}>
+            {lightbox[photoIndex]}
+          </Modal>
+        )}
+      </Wrapper>
+    );
+  }
 }
