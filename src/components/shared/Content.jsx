@@ -28,8 +28,8 @@ export default function Content({ title, description }) {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>{title}</Title>
-        <Text secondary>{description}</Text>
+        <Title>{title && title}</Title>
+        <Text secondary>{description && description}</Text>
       </StyledColumn>
     </Wrapper>
   );

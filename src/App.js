@@ -57,29 +57,7 @@ const App = ({
             return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
           }}
         />
-        {casestudypages &&
-          casestudypages.map((key, index) => {
-            let title = key.title.replace(/\s+/g, "-");
-            return (
-              <React.Fragment key={index}>
-                <Route
-                  path={`/casestudies/${title.toLowerCase()}`}
-                  render={() => (
-                    <CaseStudy
-                      onEnter={window.scrollTo(0, 0)}
-                      title={key.title}
-                      mainDescription={key.mainDescription}
-                      videos={key.videos}
-                      bannerVideo={
-                        key.bannerVideo &&
-                        `https://media.graphcms.com/${key.bannerVideo.handle}`
-                      }
-                    />
-                  )}
-                />
-              </React.Fragment>
-            );
-          })}
+
         {postPages &&
           postPages.map((key, index) => {
             return (
@@ -110,32 +88,6 @@ const App = ({
 
 export const casestudypages = gql`
   query {
-    casestudypages {
-      id
-      title
-      mainDescription
-      videos
-      bannerVideo {
-        width
-        handle
-        fileName
-        height
-        id
-      }
-    }
-    casestudyexcerpts {
-      id
-      title
-      type
-      description
-      bannerImage {
-        width
-        handle
-        fileName
-        height
-        id
-      }
-    }
     postExcerpts {
       id
       title

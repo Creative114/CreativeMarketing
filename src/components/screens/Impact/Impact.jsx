@@ -1,7 +1,7 @@
 import React from "react";
 import Splash from "../../shared/Splash";
-import Posts from "../../shared/Posts";
-import Footer from "../../shared/Footer";
+// import Posts from "../../shared/Posts";
+// import Footer from "../../shared/Footer";
 
 export default function Impact({ posts }) {
   return (

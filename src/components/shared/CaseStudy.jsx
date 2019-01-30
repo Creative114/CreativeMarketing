@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Button, Subtitle } from "../../theme/index";
-import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;

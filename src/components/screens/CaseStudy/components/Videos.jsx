@@ -9,7 +9,6 @@ const Wrapper = styled.div`
 const VideoTag = styled.video`
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   max-width: 880px;
 `;
@@ -19,13 +18,15 @@ const Grid = styled.div`
   grid-gap: 25px;
   margin: 3em auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 170px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 250px;
   height: 100%;
-  width: 75%;
+  width: 90%;
   @media (max-width: 780px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 215px;
     width: 95%;
-    margin: 0;
+    margin: 2em auto;
   }
 `;
 
@@ -43,13 +44,18 @@ export default class Videos extends Component {
           </VideoTag>
         </Column>
         <Grid>
-          {next.map((key, index) => {
-            return (
-              <VideoTag key={index} controls id={key}>
-                <source src={key} type="video/mp4" />
-              </VideoTag>
-            );
-          })}
+          {/* <VideoTag controls id={next[0]}>
+            <source src={next[0]} type="video/mp4" />
+          </VideoTag> */}
+          <VideoTag controls id={next[1]}>
+            <source src={next[1]} type="video/mp4" />
+          </VideoTag>
+          <VideoTag controls id={next[2]}>
+            <source src={next[2]} type="video/mp4" />
+          </VideoTag>
+          <VideoTag controls id={next[3]}>
+            <source src={next[3]} type="video/mp4" />
+          </VideoTag>
         </Grid>
       </Wrapper>
     );

@@ -56,15 +56,6 @@ const Div = styled.div`
   }
 `;
 
-function Item({ backgroundImage, handleLightbox }) {
-  return (
-    <Div
-      onClick={() => handleLightbox(0)}
-      background={`url('${backgroundImage}')`}
-    />
-  );
-}
-
 const Video = ({ src, title }) => (
   <iframe
     title={title}

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Row, Text, Button, Subtitle } from "../../theme/index";
+import { Column, Title, Row, Text, Button } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;

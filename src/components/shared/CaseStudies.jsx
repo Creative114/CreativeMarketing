@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CaseStudy from "./CaseStudy";
-import { Column, Title, Text } from "../../theme/index";
+import { Column, Title } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -34,10 +34,7 @@ export default function CaseStudies({ casestudies, navigate }) {
           return (
             <CaseStudy
               key={index}
-              img={
-                key.bannerImage &&
-                `https://media.graphcms.com/${key.bannerImage.handle}`
-              }
+              img={key.img}
               title={key.title}
               description={key.description}
               navigate={navigate}

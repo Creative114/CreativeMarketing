@@ -66,7 +66,7 @@ export default function Splash({ type, title, show, img }) {
   return (
     <Wrapper
       home={type === "home"}
-      height={type === "casestudy" && "350px"}
+      height={type === "casestudy" && "550px"}
       background={
         type === "home"
           ? "#fff"
@@ -115,16 +115,7 @@ export default function Splash({ type, title, show, img }) {
           </Text>
         </StyledColumn>
       )}
-      {type === "casestudy" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </Text>
-        </StyledColumn>
-      )}
+
       {type === "impact" && (
         <StyledColumn>
           <Title header>{title}</Title>
