@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
-  background-position: center;
+  background-position: ${props => props.backgroundposition};
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@ export default function Splash({ type, title, show, img }) {
     <Wrapper
       home={type === "home"}
       height={type === "casestudy" && "550px"}
+      backgroundposition={type === "casestudy" ? "top" : "center"}
       background={
         type === "home"
           ? "#fff"
