@@ -27,7 +27,7 @@ const Grid = styled.div`
   margin: 0 auto;
   margin-top: 2em;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 185px;
+  grid-auto-rows: 205px;
   height: 100%;
   width: 100%;
   @media (max-width: 780px) {

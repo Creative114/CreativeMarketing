@@ -18,10 +18,10 @@ const Grid = styled.div`
   grid-gap: 25px;
   margin: 3em auto;
   margin-top: 2em;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 250px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 350px;
   height: 100%;
-  width: 90%;
+  width: 80%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 215px;
@@ -44,9 +44,9 @@ export default class Videos extends Component {
           </VideoTag>
         </Column>
         <Grid>
-          {/* <VideoTag controls id={next[0]}>
+          <VideoTag controls id={next[0]}>
             <source src={next[0]} type="video/mp4" />
-          </VideoTag> */}
+          </VideoTag>
           <VideoTag controls id={next[1]}>
             <source src={next[1]} type="video/mp4" />
           </VideoTag>
@@ -56,6 +56,9 @@ export default class Videos extends Component {
           <VideoTag controls id={next[3]}>
             <source src={next[3]} type="video/mp4" />
           </VideoTag>
+          {/* <VideoTag controls id={next[4]}>
+            <source src={next[4]} type="video/mp4" />
+          </VideoTag> */}
         </Grid>
       </Wrapper>
     );
