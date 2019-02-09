@@ -77,6 +77,8 @@ export default function Splash({ type, title, show, img }) {
           ? `url('${aboutSplash}')`
           : type === "casestudy"
           ? `url('${img}')`
+          : type === "contact"
+          ? `url('${aboutSplash}')`
           : type === "impact" && `url('${impactSplash}')`
       }
     >
@@ -121,6 +123,11 @@ export default function Splash({ type, title, show, img }) {
         <StyledColumn>
           <Title header>{title}</Title>
           <Text header>Coming soon.</Text>
+        </StyledColumn>
+      )}
+      {type === "contact" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
         </StyledColumn>
       )}
     </Wrapper>

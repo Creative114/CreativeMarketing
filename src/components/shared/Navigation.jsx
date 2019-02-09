@@ -89,14 +89,9 @@ export default class Navigation extends Component {
             <StyledNavLink home={type === "home"} active={active} to="/impact">
               Impact
             </StyledNavLink>
-            <Text
-              home={type === "home"}
-              className="drift-open-chat"
-              active={active}
-              contact
-            >
+            <StyledNavLink home={type === "home"} active={active} to="/contact">
               Contact
-            </Text>
+            </StyledNavLink>
           </Row>
         )}
       </Wrapper>

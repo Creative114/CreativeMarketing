@@ -5,6 +5,7 @@ import About from "./components/screens/About/About";
 import CaseStudy from "./components/screens/CaseStudy/CaseStudy";
 import Impact from "./components/screens/Impact/Impact";
 import Post from "./components/screens/Post/Post";
+import Contact from "./components/screens/Contact/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
@@ -58,7 +59,13 @@ const App = ({
               return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
             }}
           />
-
+          <Route
+            exact
+            path="/contact"
+            render={() => {
+              return <Contact onEnter={window.scrollTo(0, 0)} />;
+            }}
+          />
           {postPages &&
             postPages.map((key, index) => {
               return (
