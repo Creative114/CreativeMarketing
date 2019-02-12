@@ -17,51 +17,110 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   padding: 5em 0;
+  @media (max-width: 780px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2em 0;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  @media (max-width: 780px) {
+    align-items: center;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  margin: 1em 0;
+  align-items: center;
+  @media (max-width: 780px) {
+    margin: 0.5em 0;
+  }
+`;
+
+const StyledColumn = styled(Column)`
+  @media (max-width: 780px) {
+    margin: 1.5em 0;
+    align-items: center;
+  }
 `;
 
 const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
-  color: #505d68;
+  color: ${props => (props.social ? "#b9402d" : "#505d68")};
+  @media (max-width: 780px) {
+    margin: 0 0.5em;
+    font-size: 1.5em;
+  }
 `;
 
 export default function ContactForm() {
   return (
     <Wrapper>
-      <Column>
+      <StyledColumn>
         <Title>Reach us</Title>
         <a href="tel:4193677341">
-          <Row margin="1em 0" alignitems="center">
+          <StyledRow>
             <Icon className="fal fa-mobile-android" />
             <Text post>419-367-7341</Text>
-          </Row>
+          </StyledRow>
         </a>
         <a href="mailto:jet@creative114.com">
-          <Row margin="1em 0" alignitems="center">
+          <StyledRow>
             <Icon className="fal fa-envelope" />
             <Text post>jet@creative114.com</Text>
-          </Row>
+          </StyledRow>
         </a>
-        <Row margin="1em 0" alignitems="center">
+        <StyledRow>
           <Icon className="fal fa-map-pin" />
           <Text post>
             801 Seminole Blvd, suite 114
             <br /> Largo, FL 33770
           </Text>
-        </Row>
+        </StyledRow>
         <a className="drift-open-chat">
-          <Row margin="1em 0" alignitems="center">
+          <StyledRow>
             <Icon className="fal fa-comment" />
             <Text post>Chat now</Text>
-          </Row>
+          </StyledRow>
         </a>
-      </Column>
-      <Column>
+        <StyledRow>
+          <a
+            href="https://www.linkedin.com/showcase/creative114/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-linkedin-in" />
+          </a>
+          <a
+            href="https://www.facebook.com/114brands"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-facebook-f" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/candigitalgroup/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-instagram" />
+          </a>
+          <a
+            href="https://vimeo.com/channels/1439000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-vimeo-v" />
+          </a>
+        </StyledRow>
+      </StyledColumn>
+      <StyledColumn>
         <Title>Leave us a note</Title>
         <Form action="https://formspree.io/xelajgzm" method="POST">
           <Label htmlFor="name" login>
@@ -79,7 +138,7 @@ export default function ContactForm() {
             Send
           </Button>
         </Form>
-      </Column>
+      </StyledColumn>
     </Wrapper>
   );
 }

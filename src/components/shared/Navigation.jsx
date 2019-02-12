@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
 
-import { Row, StyledNavLink, Text } from "../../theme/index";
+import { Row, StyledNavLink } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;

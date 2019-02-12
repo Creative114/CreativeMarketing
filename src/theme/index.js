@@ -142,6 +142,9 @@ export const Input = styled.input`
   border-radius: 4px;
   color: #6d6d6d;
   transition: 250ms;
+  @media (max-width: 780px) {
+    width: 275px;
+  }
   &:focus {
     border: 1px solid #546887;
   }
@@ -160,6 +163,9 @@ export const TextArea = styled.textarea`
   border-radius: 4px;
   color: #6d6d6d;
   transition: 250ms;
+  @media (max-width: 780px) {
+    width: 275px;
+  }
   &:focus {
     border: 1px solid #546887;
   }
