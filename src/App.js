@@ -6,15 +6,15 @@ import CaseStudy from "./components/screens/CaseStudy/CaseStudy";
 import Impact from "./components/screens/Impact/Impact";
 import Post from "./components/screens/Post/Post";
 import Contact from "./components/screens/Contact/Contact";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Thanks from "./components/screens/Thanks/Thanks";
+import NoMatch from "./components/screens/NoMatch/NoMatch";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
-const App = ({
-  data: { casestudypages, casestudyexcerpts, postExcerpts, postPages }
-}) => {
+const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <div>
         <Switch>
           <Route
@@ -35,21 +35,14 @@ const App = ({
             exact
             path="/work"
             render={() => {
-              return (
-                <Work
-                  onEnter={window.scrollTo(0, 0)}
-                  casestudies={casestudyexcerpts}
-                />
-              );
+              return <Work onEnter={window.scrollTo(0, 0)} />;
             }}
           />
           <Route
             exact
             path="/impact"
             render={() => {
-              return (
-                <Impact onEnter={window.scrollTo(0, 0)} posts={postExcerpts} />
-              );
+              return <Impact onEnter={window.scrollTo(0, 0)} />;
             }}
           />
           <Route
@@ -66,62 +59,71 @@ const App = ({
               return <Contact onEnter={window.scrollTo(0, 0)} />;
             }}
           />
-          {postPages &&
+          <Route
+            exact
+            path="/thanks"
+            render={() => {
+              return <Thanks onEnter={window.scrollTo(0, 0)} />;
+            }}
+          />
+          <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
+          {/* {postPages &&
             postPages.map((key, index) => {
               return (
-                <React.Fragment key={index}>
-                  <Route
-                    path={`/impact/${key.title.toLowerCase()}`}
-                    render={() => (
-                      <Post
-                        onEnter={window.scrollTo(0, 0)}
-                        title={key.title}
-                        text={key.text}
-                        date={key.date}
-                        author={key.author}
-                        bannerImage={
-                          key.bannerImage &&
-                          `https://media.graphcms.com/${key.bannerImage.handle}`
-                        }
-                      />
-                    )}
-                  />
-                </React.Fragment>
+                <Route
+                  key={index}
+                  path={`/impact/${key.title.toLowerCase()}`}
+                  render={() => (
+                    <Post
+                      onEnter={window.scrollTo(0, 0)}
+                      title={key.title}
+                      text={key.text}
+                      date={key.date}
+                      author={key.author}
+                      bannerImage={
+                        key.bannerImage &&
+                        `https://media.graphcms.com/${key.bannerImage.handle}`
+                      }
+                    />
+                  )}
+                />
               );
-            })}
+            })} */}
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
-export const casestudypages = gql`
-  query {
-    postExcerpts {
-      id
-      title
-      description
-      date
-      author
-      bannerImage {
-        handle
-      }
-    }
-    postPages {
-      id
-      title
-      text
-      date
-      author
-      bannerImage {
-        handle
-      }
-    }
-  }
-`;
+// export const casestudypages = gql`
+//   query {
+//     postExcerpts {
+//       id
+//       title
+//       description
+//       date
+//       author
+//       bannerImage {
+//         handle
+//       }
+//     }
+//     postPages {
+//       id
+//       title
+//       text
+//       date
+//       author
+//       bannerImage {
+//         handle
+//       }
+//     }
+//   }
+// `;
 
-export default graphql(casestudypages, {
-  props: ({ data }) => ({
-    data
-  })
-})(App);
+// export default graphql(casestudypages, {
+//   props: ({ data }) => ({
+//     data
+//   })
+// })(App);
+
+export default App;

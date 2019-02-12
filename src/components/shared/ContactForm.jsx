@@ -134,6 +134,11 @@ export default function ContactForm() {
           <Label htmlFor="message" login>
             Message *<TextArea name="message" />
           </Label>
+          <input
+            type="hidden"
+            name="_next"
+            value="http://creative114.com/#/thanks"
+          />
           <Button type="submit" primary>
             Send
           </Button>

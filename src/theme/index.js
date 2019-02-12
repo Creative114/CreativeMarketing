@@ -159,7 +159,7 @@ export const TextArea = styled.textarea`
   outline: none;
   display: flex;
   align-items: center;
-  padding: 0 0.25em;
+  padding: 0.25em;
   border-radius: 4px;
   color: #6d6d6d;
   transition: 250ms;

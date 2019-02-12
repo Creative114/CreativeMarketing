@@ -79,6 +79,10 @@ export default function Splash({ type, title, show, img }) {
           ? `url('${img}')`
           : type === "contact"
           ? `url('${aboutSplash}')`
+          : type === "thanks"
+          ? `url('${impactSplash}')`
+          : type === "nomatch"
+          ? `url('${aboutSplash}')`
           : type === "impact" && `url('${impactSplash}')`
       }
     >
@@ -128,6 +132,20 @@ export default function Splash({ type, title, show, img }) {
       {type === "contact" && (
         <StyledColumn>
           <Title header>{title}</Title>
+        </StyledColumn>
+      )}
+      {type === "thanks" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>
+            Our team will reach out to you as soon as possible.
+          </Text>
+        </StyledColumn>
+      )}
+      {type === "nomatch" && (
+        <StyledColumn>
+          <Title header>{title}</Title>
+          <Text header>Something went wrong. Please try again.</Text>
         </StyledColumn>
       )}
     </Wrapper>
