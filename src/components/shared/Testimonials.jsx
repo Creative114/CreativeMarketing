@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
-import { Title, Column, Row } from "../../theme/index";
+import { Title, Row } from "../../theme/index";
 import testimonial1 from "../../assets/testimonial1.jpg";
 import testimonial2 from "../../assets/testimonial2.jpg";
 import testimonial3 from "../../assets/testimonial3.jpg";
-import testimonial4 from "../../assets/testimonial4.jpg";
 import Slider from "react-slick";
 
 const Wrapper = styled.div`
@@ -21,7 +20,7 @@ const Wrapper = styled.div`
 const StyledButton = styled.button`
   width: 195px;
   height: 45px;
-  background: ${props => (props.active ? "#B9402D" : "#fff")};
+  background: ${props => (props.active ? "#B9402D" : "#f2f5f7")};
   color: ${props => (props.active ? "#fff" : "#505d68")};
   display: flex;
   text-transform: uppercase;
@@ -47,13 +46,6 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledColumn = styled(Column)`
-  margin: 0 0 0 3em;
-  @media (max-width: 780px) {
-    margin: 0 auto;
-  }
-`;
-
 function MenuItem({ id, selected, title, handleClick, client }) {
   return (
     <StyledButton
@@ -68,7 +60,7 @@ function MenuItem({ id, selected, title, handleClick, client }) {
 
 export default class Testimonials extends Component {
   state = {
-    selected: "videoMarketing",
+    selected: "nonProfit",
     playing: false,
     title: "Movement 2819"
   };
@@ -105,9 +97,9 @@ export default class Testimonials extends Component {
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
-        <StyledColumn>
+        <Row justifycontent="center">
           <Title>Why {title} loves Creative114</Title>
-        </StyledColumn>
+        </Row>
 
         {mobile.matches && (
           <div
@@ -142,50 +134,37 @@ export default class Testimonials extends Component {
                   "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
                 }
               />
-
-              <Testimonial
-                title="USF Health"
-                description="University of South Florida Health - Morsani College of Medicine is a tampa bay health care provider with the mission to improve the full spectrum of health - from the environment, to the community, to the individual. We were approached by their chief resident and the program director to produce headshots for the PGY1 Interns and the Family Medecine second and third year residents - a total of 32 medical doctors. The purpose of this project was to produce assets for their revamped website. We also capture group pictures of the teaching faculty."
-                img={testimonial4}
-              />
             </Slider>
           </div>
         )}
         {!mobile.matches && (
           <React.Fragment>
-            <Row alignitems="center" margin="0 0 0 3em">
+            <Row alignitems="center" justifycontent="center">
               <MenuItem
-                id="videoMarketing"
+                id="nonProfit"
                 client="Movement 2819"
-                title="Video Marketing"
+                title="Non Profit"
                 handleClick={this.handleClick}
                 selected={selected}
               />
               <MenuItem
-                id="webDesign"
+                id="startUp"
                 client="Litacore"
-                title="Web Design"
+                title="Startup"
                 handleClick={this.handleClick}
                 selected={selected}
               />
               <MenuItem
-                id="graphicDesign"
+                id="business"
                 client="The Collective Genius"
-                title="Graphic Design"
-                handleClick={this.handleClick}
-                selected={selected}
-              />
-              <MenuItem
-                id="photography"
-                client="USF Health"
-                title="Photography"
+                title="Business"
                 handleClick={this.handleClick}
                 selected={selected}
               />
             </Row>
 
             <Row>
-              {selected === "videoMarketing" && (
+              {selected === "nonProfit" && (
                 <Testimonial
                   title="Movement 2819"
                   description="Movement 2819 is a non-profit organization located in Tampa Bay with the simple purpose to fulfil the great commission. Based on Matthew 28:19, their primary purpose is to go out and tell the good news of the Gospel. To fulfill their mission, their founder, Dustin Lachance had the big vision to fill a stadium to preach the Gospel. They invited Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee of Mission City Worship. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
@@ -197,7 +176,7 @@ export default class Testimonials extends Component {
                 />
               )}
 
-              {selected === "webDesign" && (
+              {selected === "startUp" && (
                 <Testimonial
                   title="Litacore"
                   description="Smart Stop Logistics is a Software as a Service start up headquatered in Tampa Bay. Their mission is to improve quality of life for all ages and lifestyles by harnessing crowd-source data and content with technology. With the first product, the vision was to create a web based platform that would allow school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to revamp their marketing website, create a branded video and also to create photographic assets for their website and their business. Their original needs was to provide video production, however with the value we were providing, they ended up hiring us for the full package."
@@ -208,7 +187,7 @@ export default class Testimonials extends Component {
                   }
                 />
               )}
-              {selected === "graphicDesign" && (
+              {selected === "business" && (
                 <Testimonial
                   title="The Collective Genius"
                   description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
@@ -217,14 +196,6 @@ export default class Testimonials extends Component {
                   src={
                     "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
                   }
-                />
-              )}
-              {selected === "photography" && (
-                <Testimonial
-                  title="USF Health"
-                  description="University of South Florida Health - Morsani College of Medicine is a tampa bay health care provider with the mission to improve the full spectrum of health - from the environment, to the community, to the individual. We were approached by their chief resident and the program director to produce headshots for the PGY1 Interns and the Family Medecine second and third year residents - a total of 32 medical doctors. The purpose of this project was to produce assets for their revamped website. We also capture group pictures of the teaching faculty."
-                  img={testimonial4}
-                  handlePlay={this.handlePlay}
                 />
               )}
             </Row>

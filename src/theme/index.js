@@ -20,8 +20,8 @@ export const Title = styled.h1`
     props.header &&
     css`
       color: ${props => (props.home ? "#000" : "#fff")};
-      font-size: ${props => props.home && "92px"};
-      line-height: ${props => props.home && "100px"};
+      font-size: ${props => props.home && "72px"};
+      line-height: ${props => props.home && "80px"};
       margin: ${props => props.margin || ".25em 0"};
       @media (max-width: 1200px) {
         font-size: 72px;
@@ -232,7 +232,7 @@ export const Button = styled.button`
     props.primary &&
     css`
       background: #b9402d;
-      width: 165px;
+      width: ${props => (props.small ? "135px" : "165px")};
       height: 45px;
       border: 1px solid transparent;
       color: #fff;

@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Text } from "../../theme/index";
+import { Column, Title, Text } from "../../theme/index";
 import Navigation from "./Navigation";
-import Lightbulb from "./Lightbulb";
 import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
 
@@ -34,34 +33,6 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-const StyledLightbulb = styled(Column)`
-  width: 6.5%;
-  margin: 0 auto;
-`;
-
-const StyledHomeColumn = styled(Column)`
-  margin-top: 6em;
-  width: ${props => (props.primary ? "75%" : "25%")};
-  @media (max-width: 780px) {
-    width: ${props => (props.primary ? "95%" : "30%")};
-    margin: ${props => (props.primary ? "0 auto" : "0 auto 1em auto")};
-    text-align: center;
-  }
-  @media (max-width: 500px) {
-    width: ${props => (props.primary ? "95%" : "40%")};
-  }
-`;
-
-const StyledRow = styled(Row)`
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  @media (max-width: 780px) {
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-  }
-`;
-
 export default function Splash({ type, title, show, img }) {
   return (
     <Wrapper
@@ -69,9 +40,7 @@ export default function Splash({ type, title, show, img }) {
       height={type === "casestudy" || (type === "contact" && "550px")}
       backgroundposition={type === "casestudy" ? "top" : "center"}
       background={
-        type === "home"
-          ? "#fff"
-          : type === "work"
+        type === "work"
           ? `url('${img}')`
           : type === "about"
           ? `url('${aboutSplash}')`
@@ -87,18 +56,6 @@ export default function Splash({ type, title, show, img }) {
       }
     >
       <Navigation show={show} />
-      {type === "home" && (
-        <StyledRow>
-          <StyledHomeColumn primary>
-            <StyledLightbulb>
-              <Lightbulb />
-            </StyledLightbulb>
-            <Title header home>
-              Creative Storytelling, Lead Generation and Brand Strategy.
-            </Title>
-          </StyledHomeColumn>
-        </StyledRow>
-      )}
       {type === "about" && (
         <StyledColumn>
           <Title header>{title}</Title>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle } from "../../theme/index";
+import { Column, Text, Title } from "../../theme/index";
 import logo1 from "../../assets/logo1.jpg";
 import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
@@ -69,9 +69,7 @@ export default function Logos() {
   return (
     <Wrapper>
       <StyledColumn>
-        <Subtitle logo margin="0 0 .5em 0">
-          Storytelling is the most powerful tool to empower your brand.
-        </Subtitle>
+        <Title>Our clients.</Title>
         <Text logo margin="0">
           Here are a few brands that have trusted us
         </Text>

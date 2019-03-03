@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Column, Title } from "../../theme/index";
+import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
 
@@ -27,6 +27,7 @@ const StyledLightbulb = styled(Column)`
 const StyledHomeColumn = styled(Column)`
   margin-top: 6em;
   width: 75%;
+  align-items: center;
   @media (max-width: 780px) {
     width: 95%;
     margin: 6em auto 0 auto;
@@ -60,13 +61,20 @@ export default function HomeSplash() {
     <Wrapper>
       <Navigation type="home" />
       <StyledRow>
-        <StyledHomeColumn primary>
+        <StyledHomeColumn>
           <StyledLightbulb>
             <Lightbulb />
           </StyledLightbulb>
           <Title header home>
-            Creative Storytelling, Lead Generation and Brand Strategy.
+            Showcase the emotional impact of the good that you do.
           </Title>
+          <Subtitle logo>
+            We create <span style={{ color: "#b9402d" }}>video stories</span>{" "}
+            that engage, entertain, and excite your targeted audience.
+          </Subtitle>
+          <Row margin="2em 0">
+            <Button primary>Start now</Button>
+          </Row>
         </StyledHomeColumn>
       </StyledRow>
 

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
-
-import { Row, StyledNavLink } from "../../theme/index";
+import { Row, StyledNavLink, Button } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -66,7 +65,7 @@ export default class Navigation extends Component {
         {mobile.matches && <Burger />}
 
         {!mobile.matches && (
-          <Row margin="0 3em 0 0">
+          <Row margin="0 3em 0 0" alignitems="center">
             <StyledNavLink home={type === "home"} active={active} exact to="/">
               Home
             </StyledNavLink>
@@ -92,6 +91,9 @@ export default class Navigation extends Component {
             <StyledNavLink home={type === "home"} active={active} to="/contact">
               Contact
             </StyledNavLink>
+            <Button primary small>
+              Start now
+            </Button>
           </Row>
         )}
       </Wrapper>

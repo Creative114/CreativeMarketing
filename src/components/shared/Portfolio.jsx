@@ -109,8 +109,8 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${props => (props.active ? "grayscale(0%)" : "grayscale(100%)")};
-  transition: 500ms;
+  filter: ${props => (props.active ? "blur(0px)" : "blur(4px)")};
+  transition: 750ms;
   cursor: pointer;
   &:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
@@ -253,26 +253,27 @@ export default class Portfolio extends Component {
             selected={selected}
           />
           <MenuItem
-            id="videoMarketing"
-            title="Video Marketing"
+            id="startUps"
+            title="Startups"
             handleClick={this.handleClick}
             selected={selected}
           />
           <MenuItem
-            id="webDesign"
-            title="Web Design"
+            id="nonProfits"
+            title="nonProfits"
             handleClick={this.handleClick}
             selected={selected}
           />
           <MenuItem
-            id="graphicDesign"
-            title="Graphic Design"
+            id="smallBusinesses"
+            title="Small Businesses"
             handleClick={this.handleClick}
             selected={selected}
           />
+
           <MenuItem
-            id="photography"
-            title="Photography"
+            id="largeBusinesses"
+            title="Large Businesses"
             handleClick={this.handleClick}
             selected={selected}
           />
@@ -283,24 +284,28 @@ export default class Portfolio extends Component {
             onClick={() => this.handleLightbox(0)}
             className={mobile ? "horizontal" : ""}
           >
-            <Image
-              selected={selected}
-              cid={["videoMarketing", "all"]}
-              img={port2}
-            />
+            <Image selected={selected} cid={["startUps", "all"]} img={port2} />
           </Item>
           <Item onClick={() => this.handleLightbox(1)}>
-            <Image selected={selected} cid={["webDesign", "all"]} img={port6} />
+            <Image
+              selected={selected}
+              cid={["smallBusinesses", "all"]}
+              img={port6}
+            />
           </Item>
           <Item onClick={() => this.handleLightbox(2)}>
             <Image
               selected={selected}
-              cid={["graphicDesign", "all"]}
+              cid={["nonProfits", "all"]}
               img={port8}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(3)}>
-            <Image selected={selected} cid={["webDesign", "all"]} img={port7} />
+            <Image
+              selected={selected}
+              cid={["smallBusinesses", "all"]}
+              img={port7}
+            />
           </Item>
           <Item
             className={mobile ? "vertical" : ""}
@@ -310,20 +315,20 @@ export default class Portfolio extends Component {
             <Image
               selected={selected}
               img={port9}
-              cid={["photography", "all"]}
+              cid={["largeBusinesses", "all"]}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(5)}>
             <Image
               selected={selected}
-              cid={["photography", "all"]}
+              cid={["largeBusinesses", "all"]}
               img={port5}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(6)}>
             <Image
               selected={selected}
-              cid={["photography", "all"]}
+              cid={["largeBusinesses", "all"]}
               img={port4}
             />
           </Item>
@@ -332,22 +337,14 @@ export default class Portfolio extends Component {
             className={mobile ? "big" : ""}
             onClick={() => this.handleLightbox(8)}
           >
-            <Image
-              selected={selected}
-              cid={["videoMarketing", "all"]}
-              img={port1}
-            />
+            <Image selected={selected} cid={["startUps", "all"]} img={port1} />
           </Item>
 
           <Item
             className={mobile ? "horizontal" : ""}
             onClick={() => this.handleLightbox(7)}
           >
-            <Image
-              selected={selected}
-              cid={["videoMarketing", "all"]}
-              img={port3}
-            />
+            <Image selected={selected} cid={["startUps", "all"]} img={port3} />
           </Item>
         </Grid>
         {type === "home" && (

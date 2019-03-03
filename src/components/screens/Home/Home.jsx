@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HomeSplash from "../../shared/HomeSplash";
 import Video from "../../shared/Video";
-import Services from "../../shared/Services";
+import How from "../../shared/How";
 import Logos from "../../shared/Logos";
 import Portfolio from "../../shared/Portfolio";
 import Testimonials from "../../shared/Testimonials";
@@ -28,7 +28,7 @@ class Home extends Component {
         <HomeSplash type="home" />
         <Logos />
         <Video />
-        <Services />
+        <How />
         <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
         <Footer />

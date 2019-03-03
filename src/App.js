@@ -4,13 +4,13 @@ import Work from "./components/screens/Work/Work";
 import About from "./components/screens/About/About";
 import CaseStudy from "./components/screens/CaseStudy/CaseStudy";
 import Impact from "./components/screens/Impact/Impact";
-import Post from "./components/screens/Post/Post";
+// import Post from "./components/screens/Post/Post";
 import Contact from "./components/screens/Contact/Contact";
 import Thanks from "./components/screens/Thanks/Thanks";
 import NoMatch from "./components/screens/NoMatch/NoMatch";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import { graphql } from "react-apollo";
-import gql from "graphql-tag";
+// import { graphql } from "react-apollo";
+// import gql from "graphql-tag";
 
 const App = () => {
   return (

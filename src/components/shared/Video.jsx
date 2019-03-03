@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle, Button } from "../../theme/index";
+import { Column, Text, Row, Button, Title } from "../../theme/index";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
-  padding: 6em 0;
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   background: #f2f5f7;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 3em 0;
   @media (min-width: 1750px) {
     min-height: 1000px;
   }
@@ -27,6 +28,15 @@ const StyledTextColumn = styled(Column)`
   @media (max-width: 1000px) {
     width: 95%;
     align-items: center;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  padding: 2.5em 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  @media (max-width: 1000px) {
   }
 `;
 
@@ -104,22 +114,24 @@ export default class Video extends Component {
   render() {
     return (
       <Wrapper>
-        <YourVideo />
-        <StyledTextColumn>
-          <Subtitle primary>The heart behind the brand</Subtitle>
-          <Text secondary>
-            If you are going to trust us to tell your story, you might as well
-            know ours and the heart behind the brand. It is in our DNA to use
-            our talents and our passion of storytelling to create amazing
-            content that will add values to your life and your business. We
-            craft stories through building amazing websites, shoot videos and
-            photos, and design beautiful assets to elevate your brand and
-            vision.
-          </Text>
-          <Button primary>
-            <Link to="/work">Learn more</Link>
-          </Button>
-        </StyledTextColumn>
+        <Title>Our Story.</Title>
+        <StyledRow>
+          <YourVideo />
+          <StyledTextColumn>
+            <Text secondary>
+              If you are going to trust us to tell your story, you might as well
+              know ours and the heart behind the brand. It is in our DNA to use
+              our talents and our passion of storytelling to create amazing
+              content that will add values to your life and your business. We
+              craft stories through building amazing websites, shoot videos and
+              photos, and design beautiful assets to elevate your brand and
+              vision.
+            </Text>
+          </StyledTextColumn>
+        </StyledRow>
+        <Button primary>
+          <Link to="/work">Learn more</Link>
+        </Button>
       </Wrapper>
     );
   }
