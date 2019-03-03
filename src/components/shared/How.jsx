@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.5em 0 4em 0;
+  padding: 3.5em 0;
   @media (max-width: 780px) {
     width: 95%;
     padding: 1em 0;
@@ -110,7 +110,7 @@ export default function How() {
           );
         })}
       </Grid>
-      <Row margin="2em 0">
+      <Row margin="2em 0 1em 0">
         <Button primary>Start now</Button>
       </Row>
     </Wrapper>

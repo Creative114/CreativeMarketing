@@ -93,7 +93,7 @@ export const Text = styled.p`
     props.contact &&
     css`
       color: ${props =>
-        props.home ? "#b9402d" : props.active ? "#b9402d" : "#fff"};
+        props.home ? "#D21F04" : props.active ? "#D21F04" : "#fff"};
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 1em;
@@ -110,7 +110,7 @@ export const Text = styled.p`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${props => (props.active ? "#b9402d" : "#fff")};
+  color: ${props => (props.active ? "#D21F04" : "#fff")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;
@@ -121,7 +121,7 @@ export const StyledNavLink = styled(NavLink)`
   ${props =>
     props.home &&
     css`
-      color: #b9402d;
+      color: #d21f04;
     `};
   @media (max-width: 780px) {
     margin: 0 0.5em;
@@ -231,7 +231,7 @@ export const Button = styled.button`
   ${props =>
     props.primary &&
     css`
-      background: #b9402d;
+      background: #d21f04;
       width: ${props => (props.small ? "135px" : "165px")};
       height: 45px;
       border: 1px solid transparent;

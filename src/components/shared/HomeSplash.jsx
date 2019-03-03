@@ -69,7 +69,7 @@ export default function HomeSplash() {
             Showcase the emotional impact of the good that you do.
           </Title>
           <Subtitle logo>
-            We create <span style={{ color: "#b9402d" }}>video stories</span>{" "}
+            We create <span style={{ color: "#D21F04" }}>video stories</span>{" "}
             that engage, entertain, and excite your targeted audience.
           </Subtitle>
           <Row margin="2em 0">
