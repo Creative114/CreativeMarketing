@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #f2f5f7;
+  background: rgb(242, 245, 247);
   justify-content: center;
   padding: 3em 0;
   @media (min-width: 1750px) {
@@ -41,7 +41,7 @@ const StyledRow = styled(Row)`
 `;
 
 const VideoWrapper = styled.div`
-  width: 45%;
+  width: 50%;
   @media (max-width: 1000px) {
     width: 85%;
   }

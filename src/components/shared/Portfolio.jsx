@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 3em 0;
-  background: #f2f5f7;
+  background: rgb(242, 245, 247);
 `;
 
 const StyledButton = styled.button`
