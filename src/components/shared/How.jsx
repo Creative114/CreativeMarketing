@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Title, Subtitle, Row, Button } from "../../theme/index";
+import production from "../../assets/production.png";
+import preproduction from "../../assets/preproduction.png";
+import postproduction from "../../assets/postproduction.png";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -46,16 +49,9 @@ const Div = styled.div`
   text-align: center;
 `;
 
-const Icon = styled.i`
-  font-size: 4em;
-  color: #b9402d;
+const Image = styled.img`
+  width: 150px;
   margin: 0.25em 0;
-  @media (max-width: 780px) {
-    font-size: 3em;
-  }
-  @media (max-width: 400px) {
-    font-size: 2em;
-  }
 `;
 
 const StyledRow = styled(Row)`
@@ -69,11 +65,11 @@ const StyledRow = styled(Row)`
   }
 `;
 
-function Item({ title, text, icon }) {
+function Item({ title, text, img }) {
   return (
     <Div>
       <Column width="85%" alignitems="center" textalign="center">
-        <Icon className={icon} />
+        <Image src={img} />
         <Subtitle primary>{title}</Subtitle>
         <Text secondary>{text}</Text>
       </Column>
@@ -86,20 +82,20 @@ export default function How() {
     {
       title: "1: Pre-Production",
       text:
-        "Our core mission is to provide value to your organization--telling your story is the most powerful way in which you can do so.",
-      icon: "fas fa-video"
+        "This is the most important stage. We build the foundation of the project after you submit the creative brief. We then create a logistical game plan and get ready to shoot.",
+      img: preproduction
     },
     {
       title: "2: Production",
       text:
-        "At Creative114, we utilize the latest technologies and frameworks to ensure superior performance, security, and SEO.",
-      icon: "fas fa-code"
+        "Lights, Camera, Action. Oh yeah!!! this is the fun part. We travel to the filming locations with our gears to capture all the footage that we need to tell your engaging stories.",
+      img: production
     },
     {
       title: "3: Post-Production",
       text:
-        "Consistency in branding is vital to your organizations' success--our team of experts create brands that represent your vision.",
-      icon: "fas fa-drafting-compass"
+        "This is where we really shine. We bring the shots together into a cohesive story. We share first drafts to get your thoughts. We’re ready to give your customers goosebumps.",
+      img: postproduction
     }
   ];
   return (
@@ -110,16 +106,13 @@ export default function How() {
       <Grid>
         {items.map((key, index) => {
           return (
-            <Item
-              key={index}
-              title={key.title}
-              text={key.text}
-              icon={key.icon}
-            />
+            <Item key={index} title={key.title} text={key.text} img={key.img} />
           );
         })}
       </Grid>
-      <Button primary>Start now</Button>
+      <Row margin="2em 0">
+        <Button primary>Start now</Button>
+      </Row>
     </Wrapper>
   );
 }

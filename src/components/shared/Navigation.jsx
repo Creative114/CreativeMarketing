@@ -86,7 +86,7 @@ export default class Navigation extends Component {
               About
             </StyledNavLink>
             <StyledNavLink home={type === "home"} active={active} to="/impact">
-              Impact
+              #Shareyourimpact
             </StyledNavLink>
             <StyledNavLink home={type === "home"} active={active} to="/contact">
               Contact

@@ -119,13 +119,13 @@ export default class Video extends Component {
           <YourVideo />
           <StyledTextColumn>
             <Text secondary>
-              If you are going to trust us to tell your story, you might as well
-              know ours and the heart behind the brand. It is in our DNA to use
-              our talents and our passion of storytelling to create amazing
-              content that will add values to your life and your business. We
-              craft stories through building amazing websites, shoot videos and
-              photos, and design beautiful assets to elevate your brand and
-              vision.
+              We are on a mission to tell stories that captivate audiences by
+              showcasing the good that you do. That’s our passion. That’s what
+              give us goosebumps. We believe video stories are the best way to
+              inspire and engage those you serve. That’s why we decided to
+              create and share our own story. We wanted to inspire and show you
+              that no matter where you are from, no matter your vision and
+              passion, you can make and #shareyourimpact.
             </Text>
           </StyledTextColumn>
         </StyledRow>

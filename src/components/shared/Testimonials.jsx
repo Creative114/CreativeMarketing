@@ -110,7 +110,7 @@ export default class Testimonials extends Component {
             <Slider {...settings}>
               <Testimonial
                 title="Movement 2819"
-                description="Movement 2819 is a non-profit organization located in Tampa Bay with the simple purpose to fulfil the great commission. Based on Matthew 28:19, their primary purpose is to go out and tell the good news of the Gospel. To fulfill their mission, their founder, Dustin Lachance had the big vision to fill a stadium to preach the Gospel. They invited Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee of Mission City Worship. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
+                description="Movement 2819 is a non-profit located in Tampa Bay area. Based on Matthew 28:19, their primary purpose is to go and tell the good news of the Gospel. To fulfill their mission, Dustin Lachance had the big vision to preach the Gospel to thousands of people. They invited Tim Tebow, Kari Jobe and many others. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
                 img={testimonial2}
                 src={
                   "https://player.vimeo.com/external/289156916.hd.mp4?s=03d0bc51a2d17b988e352eb886a4c9c6193abd5e&profile_id=169"
@@ -119,7 +119,7 @@ export default class Testimonials extends Component {
 
               <Testimonial
                 title="Litacore"
-                description="Smart Stop Logistics is a Software as a Service start up headquatered in Tampa Bay. Their mission is to improve quality of life for all ages and lifestyles by harnessing crowd-source data and content with technology. With the first product, the vision was to create a web based platform that would allow school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to revamp their marketing website, create a branded video and also to create photographic assets for their website and their business. Their original needs was to provide video production, however with the value we were providing, they ended up hiring us for the full package."
+                description="Smart Stop Logistics is a startup located in the Tampa Bay area with the mission to improve the quality of life for all ages with technology. The vision of their first product was to create a web-based platform for school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to create a branded video for their launch. However, with the value provided, they also hired us to revamp their marketing website, and to create new photographic assets for their business."
                 img={testimonial3}
                 src={
                   "https://player.vimeo.com/external/247876645.hd.mp4?s=b50b2731bea4f07781d6f8708cad8cac1aa7c4cb&profile_id=175"
@@ -128,7 +128,7 @@ export default class Testimonials extends Component {
 
               <Testimonial
                 title="The Collective Genius"
-                description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
+                description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and create joint venture on deals as well as educational training products. We were hired by CG to film presentations and testimonial videos at their quarterly meetings. We ended up also created graphic design assets for their new website."
                 img={testimonial1}
                 src={
                   "https://player.vimeo.com/external/296217499.hd.mp4?s=649e2c29d410bab4828c675201e2c00e58c04bde&profile_id=175"
@@ -167,7 +167,7 @@ export default class Testimonials extends Component {
               {selected === "nonProfit" && (
                 <Testimonial
                   title="Movement 2819"
-                  description="Movement 2819 is a non-profit organization located in Tampa Bay with the simple purpose to fulfil the great commission. Based on Matthew 28:19, their primary purpose is to go out and tell the good news of the Gospel. To fulfill their mission, their founder, Dustin Lachance had the big vision to fill a stadium to preach the Gospel. They invited Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee of Mission City Worship. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
+                  description="Movement 2819 is a non-profit located in Tampa Bay area. Based on Matthew 28:19, their primary purpose is to go and tell the good news of the Gospel. To fulfill their mission, Dustin Lachance had the big vision to preach the Gospel to thousands of people. They invited Tim Tebow, Kari Jobe and many others. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
                   img={testimonial2}
                   handlePlay={this.handlePlay}
                   src={
@@ -179,7 +179,7 @@ export default class Testimonials extends Component {
               {selected === "startUp" && (
                 <Testimonial
                   title="Litacore"
-                  description="Smart Stop Logistics is a Software as a Service start up headquatered in Tampa Bay. Their mission is to improve quality of life for all ages and lifestyles by harnessing crowd-source data and content with technology. With the first product, the vision was to create a web based platform that would allow school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to revamp their marketing website, create a branded video and also to create photographic assets for their website and their business. Their original needs was to provide video production, however with the value we were providing, they ended up hiring us for the full package."
+                  description="Smart Stop Logistics is a startup located in the Tampa Bay area with the mission to improve the quality of life for all ages with technology. The vision of their first product was to create a web-based platform for school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to create a branded video for their launch. However, with the value provided, they also hired us to revamp their marketing website, and to create new photographic assets for their business."
                   img={testimonial3}
                   handlePlay={this.handlePlay}
                   src={
@@ -190,7 +190,7 @@ export default class Testimonials extends Component {
               {selected === "business" && (
                 <Testimonial
                   title="The Collective Genius"
-                  description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% of all real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and joint venture on real estate deals as well as educational training products."
+                  description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and create joint venture on deals as well as educational training products. We were hired by CG to film presentations and testimonial videos at their quarterly meetings. We ended up also created graphic design assets for their new website."
                   img={testimonial1}
                   handlePlay={this.handlePlay}
                   src={
