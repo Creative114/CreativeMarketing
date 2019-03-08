@@ -10,6 +10,12 @@ import port6 from "../../assets/port6.jpg";
 import port7 from "../../assets/port7.jpg";
 import port8 from "../../assets/port8.jpg";
 import port9 from "../../assets/port9.jpg";
+import tbsw from "../../assets/tbsw.jpg";
+import premier from "../../assets/premier.jpg";
+import edental from "../../assets/edental.jpg";
+import litacore from "../../assets/litacore.jpg";
+import nighttoshine from "../../assets/nighttoshine.jpg";
+import hirehumanly from "../../assets/hirehumanly.jpg";
 import Modal from "../shared/Modal";
 import {
   VideoNightToShine,
@@ -244,21 +250,21 @@ export default class Portfolio extends Component {
             <Image
               selected={selected}
               cid={["smallBusinesses", "all"]}
-              img={port6}
+              img={tbsw}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(2)}>
             <Image
               selected={selected}
               cid={["nonProfits", "all"]}
-              img={port8}
+              img={nighttoshine}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(3)}>
             <Image
               selected={selected}
               cid={["smallBusinesses", "all"]}
-              img={port7}
+              img={edental}
             />
           </Item>
           <Item
@@ -268,7 +274,7 @@ export default class Portfolio extends Component {
             >
             <Image
               selected={selected}
-              img={port9}
+              img={litacore}
               cid={["largeBusinesses", "all"]}
             />
           </Item>
@@ -276,14 +282,14 @@ export default class Portfolio extends Component {
             <Image
               selected={selected}
               cid={["largeBusinesses", "all"]}
-              img={port5}
+              img={hirehumanly}
             />
           </Item>
           <Item onClick={() => this.handleLightbox(6)}>
             <Image
               selected={selected}
               cid={["largeBusinesses", "all"]}
-              img={port4}
+              img={premier}
             />
           </Item>
 
