@@ -11,6 +11,17 @@ import port7 from "../../assets/port7.jpg";
 import port8 from "../../assets/port8.jpg";
 import port9 from "../../assets/port9.jpg";
 import Modal from "../shared/Modal";
+import {
+  VideoNightToShine,
+  VideoTimTebow,
+  VideoPremierPaint,
+  VideoStopBeingAverage,
+  VideoTimBratz,
+  VideoHireHumanly,
+  VideoLitaCore,
+  VideoTBSW,
+  VideoEDental
+} from "../shared/Videos/Videos";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -127,71 +138,14 @@ const Img = styled.img`
   transform: translateY(-50%);
 `;
 
-const VideoStopBeingAverage = () => (
-  <iframe
-    title="Stop Being Average"
-    src="https://player.vimeo.com/video/221823534?title=0&byline=0&portrait=0"
-    width="640"
-    height="360"
-    style={{
-      border: 0,
-      maxWidth: "97%",
-      position: "absolute",
-      left: 0,
-      right: 0,
-      margin: "auto",
-      top: "50%",
-      transform: "translateY(-50%)"
-    }}
-  />
-);
-
-const VideoTimBratz = () => (
-  <iframe
-    title="Tim Bratz"
-    src="https://player.vimeo.com/video/295427548?title=0&byline=0&portrait=0"
-    style={{
-      border: 0,
-      maxWidth: "97%",
-      position: "absolute",
-      left: 0,
-      right: 0,
-      margin: "auto",
-      top: "50%",
-      transform: "translateY(-50%)"
-    }}
-    width="640"
-    height="360"
-  />
-);
-
-const VideoTimTebow = () => (
-  <iframe
-    title="Tim Tebo"
-    src="https://player.vimeo.com/video/304399575?title=0&byline=0&portrait=0"
-    width="640"
-    height="360"
-    style={{
-      border: 0,
-      maxWidth: "97%",
-      position: "absolute",
-      left: 0,
-      right: 0,
-      margin: "auto",
-      top: "50%",
-      transform: "translateY(-50%)"
-    }}
-  />
-);
-
 const lightbox = [
   <VideoStopBeingAverage />,
-  <Img src={port6} />,
-  <Img src={port8} />,
-  <Img src={port7} />,
-  <Img src={port9} />,
-  <Img src={port5} />,
-  <Img src={port4} />,
+  <VideoTBSW />,
+  <VideoNightToShine />,
+  <VideoEDental />,
+  <VideoLitaCore />,
+  <VideoHireHumanly />,
+  <VideoPremierPaint />,
   <VideoTimBratz />,
   <VideoTimTebow />
 ];

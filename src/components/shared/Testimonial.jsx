@@ -50,13 +50,7 @@ const VideoTag = styled.video`
   max-width: 880px;
 `;
 
-export default function Testimonial({
-  title,
-  description,
-  src,
-  img,
-  handlePlay
-}) {
+export default function Testimonial({ title, description, src }) {
   return (
     <Wrapper>
       <React.Fragment>
@@ -67,14 +61,22 @@ export default function Testimonial({
           </StyledTextColumn>
         </StyledColumn>
         <StyledColumn>
-          <VideoTag
-            controls
-            id="video"
-            onClick={() => handlePlay("video")}
-            poster={img}
-          >
-            <source src={src} type="video/mp4" />
-          </VideoTag>
+          <iframe
+            title="TBSW"
+            src={src}
+            width="640"
+            height="360"
+            style={{
+              border: 0,
+              maxWidth: "97%",
+              position: "absolute",
+              left: 0,
+              right: 0,
+              margin: "auto",
+              top: "50%",
+              transform: "translateY(-50%)"
+            }}
+          />
         </StyledColumn>
       </React.Fragment>
     </Wrapper>
