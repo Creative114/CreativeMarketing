@@ -4,6 +4,7 @@ import { Column, Text, Title, Subtitle, Row, Button } from "../../theme/index";
 import production from "../../assets/production.png";
 import preproduction from "../../assets/preproduction.png";
 import postproduction from "../../assets/postproduction.png";
+import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -100,19 +101,26 @@ export default function How() {
   ];
   return (
     <Wrapper>
-      <StyledRow>
-        <Title>3 steps to share your emotionally engaging stories.</Title>
-      </StyledRow>
-      <Grid>
-        {items.map((key, index) => {
-          return (
-            <Item key={index} title={key.title} text={key.text} img={key.img} />
-          );
-        })}
-      </Grid>
-      <Row margin="2em 0 1em 0">
-        <Button primary>Start now</Button>
-      </Row>
+      <Reveal effect="fadeIn">
+        <StyledRow>
+          <Title>3 steps to share your emotionally engaging stories.</Title>
+        </StyledRow>
+        <Grid>
+          {items.map((key, index) => {
+            return (
+              <Item
+                key={index}
+                title={key.title}
+                text={key.text}
+                img={key.img}
+              />
+            );
+          })}
+        </Grid>
+        <Row margin="2em 0 1em 0">
+          <Button primary>Start now</Button>
+        </Row>
+      </Reveal>
     </Wrapper>
   );
 }

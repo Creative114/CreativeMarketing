@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Row, Button, Title } from "../../theme/index";
 import { Link } from "react-router-dom";
+import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -114,24 +115,26 @@ export default class Video extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Our Story.</Title>
-        <StyledRow>
-          <YourVideo />
-          <StyledTextColumn>
-            <Text secondary>
-              We are on a mission to tell stories that captivate audiences by
-              showcasing the good that you do. That’s our passion. That’s what
-              give us goosebumps. We believe video stories are the best way to
-              inspire and engage those you serve. That’s why we decided to
-              create and share our own story. We wanted to inspire and show you
-              that no matter where you are from, no matter your vision and
-              passion, you can make and #shareyourimpact.
-            </Text>
-          </StyledTextColumn>
-        </StyledRow>
-        <Button primary>
-          <Link to="/work">Learn more</Link>
-        </Button>
+        <Reveal effect="fadeIn">
+          <Title>Our Story.</Title>
+          <StyledRow>
+            <YourVideo />
+            <StyledTextColumn>
+              <Text secondary>
+                We are on a mission to tell stories that captivate audiences by
+                showcasing the good that you do. That’s our passion. That’s what
+                give us goosebumps. We believe video stories are the best way to
+                inspire and engage those you serve. That’s why we decided to
+                create and share our own story. We wanted to inspire and show
+                you that no matter where you are from, no matter your vision and
+                passion, you can make and #shareyourimpact.
+              </Text>
+            </StyledTextColumn>
+          </StyledRow>
+          <Button primary>
+            <Link to="/work">Learn more</Link>
+          </Button>
+        </Reveal>
       </Wrapper>
     );
   }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
+import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -50,9 +51,11 @@ const StyledRow = styled(Row)`
 
 const StyledVideoRow = styled(Row)`
   width: 75%;
+  height: 478px;
   margin: 0 auto;
   @media (max-width: 780px) {
     width: 100%;
+    height: 100%;
   }
 `;
 
@@ -75,23 +78,26 @@ export default class HomeSplash extends Component {
     return (
       <Wrapper>
         <Navigation type="home" />
-        <StyledRow>
-          <StyledHomeColumn>
-            <StyledLightbulb>
-              <Lightbulb />
-            </StyledLightbulb>
-            <Title header home>
-              Showcase the emotional impact of the good that you do.
-            </Title>
-            <Subtitle logo>
-              We create <span style={{ color: "#D21F04" }}>video stories</span>{" "}
-              that engage, entertain, and excite your targeted audience.
-            </Subtitle>
-            <Row margin="2em 0">
-              <Button primary>Start now</Button>
-            </Row>
-          </StyledHomeColumn>
-        </StyledRow>
+        <Reveal effect="fadeIn">
+          <StyledRow>
+            <StyledHomeColumn>
+              <StyledLightbulb>
+                <Lightbulb />
+              </StyledLightbulb>
+              <Title header home>
+                Showcase the emotional impact of the good that you do.
+              </Title>
+              <Subtitle logo>
+                We create{" "}
+                <span style={{ color: "#D21F04" }}>video stories</span> that
+                engage, entertain, and excite your targeted audience.
+              </Subtitle>
+              <Row margin="2em 0">
+                <Button primary>Start now</Button>
+              </Row>
+            </StyledHomeColumn>
+          </StyledRow>
+        </Reveal>
         <StyledVideoRow>
           <div
             class="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"

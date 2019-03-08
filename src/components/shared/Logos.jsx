@@ -13,6 +13,7 @@ import logo9 from "../../assets/logo9.jpg";
 import logo10 from "../../assets/logo10.jpg";
 import logo11 from "../../assets/logo11.jpg";
 import logo12 from "../../assets/logo12.jpg";
+import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -69,10 +70,12 @@ export default function Logos() {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>Our clients.</Title>
-        <Text logo margin="0">
-          Here are a few brands that have trusted us
-        </Text>
+        <Reveal effect="fadeIn">
+          <Title>Our clients.</Title>
+          <Text logo margin="0">
+            Here are a few brands that have trusted us
+          </Text>
+        </Reveal>
       </StyledColumn>
       <Grid>
         {logos &&

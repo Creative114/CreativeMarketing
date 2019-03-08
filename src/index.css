@@ -19,6 +19,21 @@ a {
   cursor: pointer;
 }
 
+.fadeIn {
+  animation: fadeIn 750ms 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 #Layer1 {
   animation-duration: 3s;
   animation-name: fadeIn;

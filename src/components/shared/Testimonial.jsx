@@ -20,7 +20,6 @@ const Wrapper = styled.div`
 
 const StyledColumn = styled(Column)`
   width: 50vw;
-
   position: relative;
   justify-content: center;
   align-items: center;
