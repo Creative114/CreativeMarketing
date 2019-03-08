@@ -82,12 +82,12 @@ export default function ContactForm() {
             <br /> Largo, FL 33770
           </Text>
         </StyledRow>
-        <a className="drift-open-chat">
+        <span className="drift-open-chat">
           <StyledRow>
             <Icon className="fal fa-comment" />
             <Text post>Chat now</Text>
           </StyledRow>
-        </a>
+        </span>
         <StyledRow>
           <a
             href="https://www.linkedin.com/showcase/creative114/"

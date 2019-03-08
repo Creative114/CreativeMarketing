@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
@@ -56,29 +56,70 @@ const StyledVideoRow = styled(Row)`
   }
 `;
 
-export default function HomeSplash() {
-  return (
-    <Wrapper>
-      <Navigation type="home" />
-      <StyledRow>
-        <StyledHomeColumn>
-          <StyledLightbulb>
-            <Lightbulb />
-          </StyledLightbulb>
-          <Title header home>
-            Showcase the emotional impact of the good that you do.
-          </Title>
-          <Subtitle logo>
-            We create <span style={{ color: "#D21F04" }}>video stories</span>{" "}
-            that engage, entertain, and excite your targeted audience.
-          </Subtitle>
-          <Row margin="2em 0">
-            <Button primary>Start now</Button>
-          </Row>
-        </StyledHomeColumn>
-      </StyledRow>
+export default class HomeSplash extends Component {
+  componentWillMount() {
+    const script1 = document.createElement("script");
+    const script2 = document.createElement("script");
 
-      <StyledVideoRow>
+    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
+    script1.async = true;
+
+    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
+    script2.async = true;
+
+    document.body.appendChild(script1);
+    document.body.appendChild(script2);
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Navigation type="home" />
+        <StyledRow>
+          <StyledHomeColumn>
+            <StyledLightbulb>
+              <Lightbulb />
+            </StyledLightbulb>
+            <Title header home>
+              Showcase the emotional impact of the good that you do.
+            </Title>
+            <Subtitle logo>
+              We create <span style={{ color: "#D21F04" }}>video stories</span>{" "}
+              that engage, entertain, and excite your targeted audience.
+            </Subtitle>
+            <Row margin="2em 0">
+              <Button primary>Start now</Button>
+            </Row>
+          </StyledHomeColumn>
+        </StyledRow>
+        <StyledVideoRow>
+          <div
+            class="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
+            style={{ height: "100%", position: "relative", width: "100%" }}
+          >
+            <div
+              class="wistia_swatch"
+              style={{
+                height: "100%",
+                left: 0,
+                opacity: 0,
+                overflow: "hidden",
+                position: "absolute",
+                top: 0,
+                transition: "opacity 250ms",
+                width: "100%"
+              }}
+            >
+              <img
+                src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
+                style={{ height: "100%", width: "100%", objectFit: "contain" }}
+                alt=""
+                onLoad="this.parentNode.style.opacity=1;"
+              />
+            </div>
+          </div>
+        </StyledVideoRow>
+        {/* <StyledVideoRow>
         <video
           autoplay="autoplay"
           playsinline=""
@@ -89,9 +130,10 @@ export default function HomeSplash() {
           height="100%"
           controlslist="nodownload"
         >
-          <source src="https://player.vimeo.com/external/308437848.hd.mp4?s=3a4177925eaf3898e34da138b5ef2f6fd951f4ee&profile_id=175" />
+          <source src="https://creative114.wistia.com/medias/n5ltbaiebq?embedType=async&videoFoam=true&videoWidth=640" />
         </video>
-      </StyledVideoRow>
-    </Wrapper>
-  );
+      </StyledVideoRow> */}
+      </Wrapper>
+    );
+  }
 }

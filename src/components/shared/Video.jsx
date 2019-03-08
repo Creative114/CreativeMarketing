@@ -86,7 +86,7 @@ class YourVideo extends React.Component {
               src="https://fast.wistia.com/embed/medias/c6tvpstwki/swatch"
               style={{ height: "100%", width: "100%", objectFit: "contain" }}
               alt=""
-              onload="this.parentNode.style.opacity=1;"
+              onLoad="this.parentNode.style.opacity=1;"
             />
           </div>
         </div>

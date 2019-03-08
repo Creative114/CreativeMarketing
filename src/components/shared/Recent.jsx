@@ -9,7 +9,7 @@ import recent4 from "../../assets/recent4.jpg";
 
 const Wrapper = styled.div`
   height: 100%;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -26,10 +26,10 @@ const Grid = styled.div`
   grid-gap: 15px;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 205px;
   height: 100%;
-  width: 100%;
+  width: 95%;
   @media (max-width: 780px) {
     width: 95%;
     margin: 0;
@@ -39,7 +39,6 @@ const Grid = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  border: 1.5px solid transparent;
   border-radius: 3px;
   display: flex;
   background: ${props => props.background};
@@ -48,11 +47,9 @@ const Div = styled.div`
   cursor: pointer;
   transition: 750ms;
   text-align: center;
-  filter: grayscale(75%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   &:hover {
-    filter: grayscale(0%);
-    border: 1.5px solid #b9402d;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
   }
 `;
 
