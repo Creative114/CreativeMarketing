@@ -4,12 +4,6 @@ import { Title, Column, Row, Button } from "../../theme/index";
 import port1 from "../../assets/port1.jpg";
 import port2 from "../../assets/port2.jpg";
 import port3 from "../../assets/port3.jpg";
-import port4 from "../../assets/port4.jpg";
-import port5 from "../../assets/port5.jpg";
-import port6 from "../../assets/port6.jpg";
-import port7 from "../../assets/port7.jpg";
-import port8 from "../../assets/port8.jpg";
-import port9 from "../../assets/port9.jpg";
 import tbsw from "../../assets/tbsw.jpg";
 import premier from "../../assets/premier.jpg";
 import edental from "../../assets/edental.jpg";
@@ -134,16 +128,6 @@ const StyledImage = styled.img`
   }
 `;
 
-const Img = styled.img`
-  max-width: 97%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-
 const lightbox = [
   <VideoStopBeingAverage />,
   <VideoTBSW />,
@@ -198,7 +182,6 @@ export default class Portfolio extends Component {
   render() {
     const { selected, photoIndex, isOpen } = this.state;
     const { type, navigate } = this.props;
-
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
