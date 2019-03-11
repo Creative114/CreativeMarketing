@@ -29,6 +29,24 @@ const Image = styled.img`
   }
 `;
 
+const Div = styled.div`
+  margin: 0;
+  display: none;
+  @media (max-width: 920px) {
+    display: block;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  display: flex;
+  align-items: center;
+  margin: 0 3em 0 0;
+  @media (max-width: 920px) {
+    margin: 0;
+    display: none;
+  }
+`;
+
 export default class Navigation extends Component {
   state = {
     color: "rgba(0,0,0,0)",
@@ -48,11 +66,6 @@ export default class Navigation extends Component {
   }
 
   render() {
-    const mobile = window.matchMedia("(max-width: 920px)");
-
-    let handleChange = () => {};
-
-    mobile.addListener(handleChange());
     const { color, active } = this.state;
     const { type, toggleModal } = this.props;
     return (
@@ -62,40 +75,41 @@ export default class Navigation extends Component {
         display={!this.props.show && "none"}
       >
         <Image active={!active} src={Icon} alt="Creative114 Logo" />
-        {mobile.matches && <Burger />}
+        <Div>
+          {" "}
+          <Burger toggleModal={toggleModal} />
+        </Div>
 
-        {!mobile.matches && (
-          <Row margin="0 3em 0 0" alignitems="center">
-            <StyledNavLink home={type === "home"} active={active} exact to="/">
-              Home
-            </StyledNavLink>
-            <StyledNavLink
-              home={type === "home"}
-              active={active}
-              exact
-              to="/work"
-            >
-              Work
-            </StyledNavLink>
-            <StyledNavLink
-              home={type === "home"}
-              active={active}
-              exact
-              to="/about"
-            >
-              About
-            </StyledNavLink>
-            <StyledNavLink home={type === "home"} active={active} to="/impact">
-              #Shareyourimpact
-            </StyledNavLink>
-            <StyledNavLink home={type === "home"} active={active} to="/contact">
-              Contact
-            </StyledNavLink>
-            <Button primary small onClick={toggleModal}>
-              Start now
-            </Button>
-          </Row>
-        )}
+        <StyledRow>
+          <StyledNavLink home={type === "home"} active={active} exact to="/">
+            Home
+          </StyledNavLink>
+          <StyledNavLink
+            home={type === "home"}
+            active={active}
+            exact
+            to="/work"
+          >
+            Work
+          </StyledNavLink>
+          <StyledNavLink
+            home={type === "home"}
+            active={active}
+            exact
+            to="/about"
+          >
+            About
+          </StyledNavLink>
+          <StyledNavLink home={type === "home"} active={active} to="/impact">
+            #Shareyourimpact
+          </StyledNavLink>
+          <StyledNavLink home={type === "home"} active={active} to="/contact">
+            Contact
+          </StyledNavLink>
+          <Button primary small onClick={toggleModal}>
+            Start now
+          </Button>
+        </StyledRow>
       </Wrapper>
     );
   }
