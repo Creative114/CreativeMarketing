@@ -54,7 +54,7 @@ export default class Navigation extends Component {
 
     mobile.addListener(handleChange());
     const { color, active } = this.state;
-    const { type } = this.props;
+    const { type, toggleModal } = this.props;
     return (
       <Wrapper
         background={color}
@@ -91,7 +91,7 @@ export default class Navigation extends Component {
             <StyledNavLink home={type === "home"} active={active} to="/contact">
               Contact
             </StyledNavLink>
-            <Button primary small>
+            <Button primary small onClick={toggleModal}>
               Start now
             </Button>
           </Row>

@@ -8,9 +8,20 @@ import Testimonials from "../../shared/Testimonials";
 import Footer from "../../shared/Footer";
 import { withRouter } from "react-router-dom";
 import Helmet from "react-helmet";
+import Modal from "../../shared/Modal";
+import StartNowForm from "../../shared/StartNowForm";
 
 class Home extends Component {
+  state = {
+    isOpen: false
+  };
+
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
   render() {
+    const { isOpen } = this.state;
     return (
       <div>
         <Helmet
@@ -25,13 +36,18 @@ class Home extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <HomeSplash type="home" />
+        <HomeSplash type="home" toggleModal={this.toggleModal} />
         <Logos />
         <Video />
         <How />
         <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
         <Footer />
+        {isOpen && (
+          <Modal show={isOpen} togglemodal={this.toggleModal}>
+            <StartNowForm />
+          </Modal>
+        )}
       </div>
     );
   }

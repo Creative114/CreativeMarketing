@@ -10,10 +10,20 @@ import casestudy1 from "../../../assets/casestudy1.jpg";
 import casestudy2 from "../../../assets/casestudy2.jpg";
 import casestudy3 from "../../../assets/casestudy3.jpg";
 import Helmet from "react-helmet";
+import Modal from "../../shared/Modal";
+import StartNowForm from "../../shared/StartNowForm";
 
 class Work extends Component {
+  state = {
+    isOpen: false
+  };
+
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
   render() {
     const { recentwork } = this.props;
+    const { isOpen } = this.state;
     const casestudies = [
       {
         title: "Movement 2819",
@@ -51,11 +61,21 @@ class Work extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <Splash type="work" title="Work" img={splash} />
+        <Splash
+          type="work"
+          title="Work"
+          img={splash}
+          toggleModal={this.toggleModal}
+        />
         <Portfolio />
         <Recent recentwork={recentwork} />
         <CaseStudies casestudies={casestudies} navigate={this.props.history} />
         <Footer />
+        {isOpen && (
+          <Modal show={isOpen} togglemodal={this.toggleModal}>
+            <StartNowForm />
+          </Modal>
+        )}
       </div>
     );
   }

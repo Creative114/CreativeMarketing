@@ -222,10 +222,11 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 3px;
   transition: 750ms;
   margin: 0.5em 0;
+  text-transform: uppercase;
   &:hover {
     background-color: #667785;
     color: #fff;
@@ -239,6 +240,7 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #fff;
+
       &:hover {
         background-color: #d25a47;
       }
