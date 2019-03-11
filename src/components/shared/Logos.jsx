@@ -27,7 +27,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 185px;
   height: 100%;
-  width: 85%;
+  width: 87%;
   max-width: 1600px;
   @media (max-width: 780px) {
     width: 100%;
@@ -37,7 +37,7 @@ const Grid = styled.div`
 `;
 
 const Image = styled.img`
-  width: 85%;
+  width: 100%;
   align-self: center;
   justify-self: center;
 `;

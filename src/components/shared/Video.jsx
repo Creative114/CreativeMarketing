@@ -25,17 +25,19 @@ const Wrapper = styled.div`
 `;
 
 const StyledTextColumn = styled(Column)`
-  width: 45%;
+  width: 40%;
+  margin: 0 2em;
   @media (max-width: 1000px) {
     width: 95%;
     align-items: center;
+    margin: 0;
   }
 `;
 
 const StyledRow = styled(Row)`
   padding: 2.5em 0;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 90%;
   @media (max-width: 1000px) {
   }
@@ -43,8 +45,10 @@ const StyledRow = styled(Row)`
 
 const VideoWrapper = styled.div`
   width: 50%;
+  margin: 0 2em;
   @media (max-width: 1000px) {
     width: 85%;
+    margin: 0;
   }
 `;
 

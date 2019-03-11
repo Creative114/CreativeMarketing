@@ -42,15 +42,6 @@ const StyledTextColumn = styled(Column)`
   }
 `;
 
-const VideoTag = styled.video`
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: 750ms;
-  max-width: 880px;
-`;
-
 export default function Testimonial({ title, description, src }) {
   return (
     <Wrapper>

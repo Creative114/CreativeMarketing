@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledNavLink, Row, Text } from "../../theme/index";
+import { StyledNavLink, Row, Text, Button, Column } from "../../theme/index";
 import Logo from "../../assets/logo.png";
 
 const Wrapper = styled.div`
-  height: 150px;
+  height: 175px;
   width: 100%;
   background: #b9402d;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3em 0 0 0;
+  padding: 3em 0 2em 0;
   @media (max-width: 780px) {
     height: 100%;
     min-height: 100px;
@@ -21,20 +21,26 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 220px;
   height: 30px;
-  margin-left: 3em;
-  @media (max-width: 780px) {
-    margin: 0 0 2em 0;
-  }
 `;
 
 const StyledRow = styled(Row)`
   align-items: center;
   justify-content: space-between;
-  margin: ${props => props.copy && "0 0 0 3em"};
+  margin: 0 2em;
   @media (max-width: 780px) {
     flex-direction: column;
     align-items: center;
     margin: 0;
+  }
+`;
+
+const Icon = styled.i`
+  font-size: 2em;
+  margin-right: 0.75em;
+  color: #fff;
+  @media (max-width: 780px) {
+    margin: 0 0.5em;
+    font-size: 1.5em;
   }
 `;
 
@@ -59,12 +65,52 @@ export default function Footer() {
           <Text footer contact className="drift-open-chat">
             Contact
           </Text>
+          <Button footer small>
+            Start now
+          </Button>
         </Row>
       </StyledRow>
-      <StyledRow copy>
-        <Text footer>
-          2018 &copy; Creative114 | Made with &hearts; in Tampa, FL
-        </Text>
+      <StyledRow>
+        <Column>
+          <Text footer>
+            We create videos that Engage, Entertain, and Excite your targeted
+            audience.
+          </Text>
+          <Text footer>
+            2018 &copy; Creative114 | Made with &hearts; in Tampa, FL
+          </Text>
+        </Column>
+        <Row>
+          <a
+            href="https://www.linkedin.com/showcase/creative114/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-linkedin-in" />
+          </a>
+          <a
+            href="https://www.facebook.com/114brands"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-facebook-f" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/candigitalgroup/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-instagram" />
+          </a>
+          <a
+            href="https://vimeo.com/channels/1439000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon social className="fab fa-vimeo-v" />
+          </a>
+        </Row>
       </StyledRow>
     </Wrapper>
   );

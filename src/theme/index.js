@@ -7,7 +7,7 @@ export const Title = styled.h1`
   font-family: "Ubuntu", sans-serif;
   font-weight: 800;
   color: #505d68;
-  font-size: 50px;
+  font-size: 42px;
   line-height: 52px;
   margin: ${props => props.margin || ".5em 0"};
   @media (max-width: 780px) {
@@ -82,6 +82,9 @@ export const Text = styled.p`
     props.footer &&
     css`
       color: #fff;
+      margin: 0;
+      line-height: 1.5em;
+      font-size: 16px;
     `};
   ${props =>
     props.post &&
@@ -236,6 +239,18 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #fff;
+      &:hover {
+        background-color: #d25a47;
+      }
+    `};
+  ${props =>
+    props.footer &&
+    css`
+      background: #fff;
+      width: ${props => (props.small ? "135px" : "165px")};
+      height: 45px;
+      border: 1px solid transparent;
+      color: #d21f04;
       &:hover {
         background-color: #d25a47;
       }

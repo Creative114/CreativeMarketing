@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: linear-gradient(#ffffff, #f7f7f7 85%);
+  padding-bottom: 3em;
   display: flex;
   flex-direction: column;
   @media (max-width: 780px) {
