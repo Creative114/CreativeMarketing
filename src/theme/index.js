@@ -228,10 +228,6 @@ export const Button = styled.button`
   transition: 750ms;
   margin: 0.5em 0;
   text-transform: uppercase;
-  &:hover {
-    background-color: #667785;
-    color: #fff;
-  }
 
   ${props =>
     props.primary &&
@@ -241,9 +237,9 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #fff;
-
       &:hover {
         background-color: #f32405;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
     `};
   ${props =>
@@ -255,7 +251,8 @@ export const Button = styled.button`
       border: 1px solid transparent;
       color: #d21f04;
       &:hover {
-        background-color: #d25a47;
+        color: #d21f04;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
     `};
 `;

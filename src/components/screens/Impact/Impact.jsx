@@ -30,7 +30,13 @@ class Impact extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <Splash type="impact" title="Impact" toggleModal={this.toggleModal} />
+        <Splash
+          type="impact"
+          title="Impact"
+          text="Coming soon."
+          toggleModal={this.toggleModal}
+          src="https://player.vimeo.com/external/320619144.hd.mp4?s=58bb391b41ba251e391116c5e3d21462f96eba5a&profile_id=169"
+        />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />

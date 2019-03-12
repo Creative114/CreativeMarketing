@@ -17,7 +17,11 @@ export default function NoMatch() {
           { property: "og:url", content: "http://creative114.com" }
         ]}
       />
-      <Splash type="nomatch" title="Oops" />
+      <Splash
+        type="nomatch"
+        title="Oops"
+        text="Something went wrong. Please try again."
+      />
     </div>
   );
 }

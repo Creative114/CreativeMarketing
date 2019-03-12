@@ -32,7 +32,13 @@ export default class About extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <Splash type="about" title="About" toggleModal={this.toggleModal} />
+        <Splash
+          type="about"
+          title="About"
+          text=" We are a creative storytelling solution that will empower your brand to create, connect and cultivate your targeted audience. We partner with you to create a compelling and emotionally engaging storytelling through video, website and content creation."
+          toggleModal={this.toggleModal}
+          src="https://player.vimeo.com/external/320613023.hd.mp4?s=e6381ef87a4e840aadcea5ae80381210ae9177b8&profile_id=175"
+        />
         <Team />
         <Values />
         <Careers />

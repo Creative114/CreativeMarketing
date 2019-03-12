@@ -6,18 +6,12 @@ import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
 
 const Wrapper = styled.div`
-  height: ${props => props.height || "100vh"};
+  height: ${props => props.height || "100%"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: ${props => props.backgroundposition};
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 500px) {
-    height: ${props => (props.home ? "700px" : "800px")};
-  }
 `;
 
 const StyledColumn = styled(Column)`
@@ -25,6 +19,7 @@ const StyledColumn = styled(Column)`
   text-align: center;
   width: 65%;
   margin: 0 auto;
+  z-index: 1000;
   @media (max-width: 780px) {
     width: 85%;
   }
@@ -33,78 +28,45 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Splash({ type, title, show, img, toggleModal }) {
+const Video = styled.video`
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+`;
+
+export default function Splash({
+  type,
+  src,
+  title,
+  text,
+  show,
+  img,
+  toggleModal
+}) {
+  console.log(img);
+
   return (
     <Wrapper
-      home={type === "home"}
-      height={type === "casestudy" || (type === "contact" && "550px")}
-      backgroundposition={type === "casestudy" ? "top" : "center"}
+      height={type === "casestudy" && "550px"}
       background={
-        type === "work"
+        type === "casestudy"
           ? `url('${img}')`
-          : type === "about"
-          ? `url('${aboutSplash}')`
-          : type === "casestudy"
-          ? `url('${img}')`
-          : type === "contact"
-          ? `url('${aboutSplash}')`
           : type === "thanks"
           ? `url('${impactSplash}')`
-          : type === "nomatch"
-          ? `url('${aboutSplash}')`
-          : type === "impact" && `url('${impactSplash}')`
+          : type === "nomatch" && `url('${aboutSplash}')`
       }
     >
       <Navigation show={show} toggleModal={toggleModal} />
-      {type === "about" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            We are a creative storytelling solution that will empower your brand
-            to create, connect and cultivate your targeted audience. We partner
-            with you to create a compelling and emotionally engaging
-            storytelling through video, website and content creation.
-          </Text>
-        </StyledColumn>
+      {type !== "casestudy" && (
+        <Video autoPlay muted loop>
+          <source src={src} type="video/mp4" />
+        </Video>
       )}
-      {type === "work" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            We are more than a video production, design or web development
-            agency. We are in the business of solving problems. We work to craft
-            and tell your stories with emotions and creativity. Our primary
-            purpose is to empower your business with what we call the three C's:
-            Create, Connect and Cultivate you brand.
-          </Text>
-        </StyledColumn>
-      )}
-
-      {type === "impact" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>Coming soon.</Text>
-        </StyledColumn>
-      )}
-      {type === "contact" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-        </StyledColumn>
-      )}
-      {type === "thanks" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            Our team will reach out to you as soon as possible.
-          </Text>
-        </StyledColumn>
-      )}
-      {type === "nomatch" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>Something went wrong. Please try again.</Text>
-        </StyledColumn>
-      )}
+      {/* <StyledColumn>
+        <Title header>{title}</Title>
+        <Text header>{text}</Text>
+      </StyledColumn> */}
     </Wrapper>
   );
 }

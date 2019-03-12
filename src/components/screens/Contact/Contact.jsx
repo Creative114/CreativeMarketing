@@ -30,7 +30,12 @@ export default class Contact extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <Splash type="contact" title="Contact" toggleModal={this.toggleModal} />
+        <Splash
+          type="contact"
+          title="Contact"
+          src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
+          toggleModal={this.toggleModal}
+        />
         <ContactForm />
         <Footer />
         {isOpen && (

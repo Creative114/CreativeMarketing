@@ -17,7 +17,11 @@ export default function Thanks() {
           { property: "og:url", content: "http://creative114.com" }
         ]}
       />
-      <Splash type="thanks" title="Thanks" />
+      <Splash
+        type="thanks"
+        title="Thanks"
+        text=" Our team will reach out to you as soon as possible."
+      />
     </div>
   );
 }
