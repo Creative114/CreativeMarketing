@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(#ffffff, #f7f7f7 85%);
+  background: linear-gradient(#ffffff, #cdcdcd 85%);
   padding-bottom: 3em;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ const StyledLightbulb = styled(Column)`
 
 const StyledHomeColumn = styled(Column)`
   margin-top: 6em;
-  width: 75%;
+  width: 85%;
   align-items: center;
   @media (max-width: 780px) {
     width: 95%;

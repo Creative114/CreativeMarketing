@@ -223,6 +223,7 @@ export const Button = styled.button`
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
+  font-weight: 600;
   border-radius: 3px;
   transition: 750ms;
   margin: 0.5em 0;
@@ -242,7 +243,7 @@ export const Button = styled.button`
       color: #fff;
 
       &:hover {
-        background-color: #d25a47;
+        background-color: #f32405;
       }
     `};
   ${props =>
