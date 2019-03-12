@@ -76,9 +76,10 @@ export default class HomeSplash extends Component {
   }
 
   render() {
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
-        <Navigation type="home" />
+        <Navigation type="home" toggleModal={toggleModal} />
         <Reveal effect="fadeIn">
           <StyledRow>
             <StyledHomeColumn>

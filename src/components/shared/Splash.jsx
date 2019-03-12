@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Text } from "../../theme/index";
+import { Column, Title, Text, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
@@ -33,7 +33,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Splash({ type, title, show, img }) {
+export default function Splash({ type, title, show, img, toggleModal }) {
   return (
     <Wrapper
       home={type === "home"}
@@ -55,7 +55,7 @@ export default function Splash({ type, title, show, img }) {
           : type === "impact" && `url('${impactSplash}')`
       }
     >
-      <Navigation show={show} />
+      <Navigation show={show} toggleModal={toggleModal} />
       {type === "about" && (
         <StyledColumn>
           <Title header>{title}</Title>
