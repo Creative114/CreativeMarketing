@@ -95,7 +95,9 @@ export default class HomeSplash extends Component {
                 engage, entertain, and excite your targeted audience.
               </Subtitle>
               <Row margin="2em 0">
-                <Button primary>Start now</Button>
+                <Button primary onClick={toggleModal}>
+                  Start now
+                </Button>
               </Row>
             </StyledHomeColumn>
           </StyledRow>
