@@ -48,7 +48,7 @@ const StyledBoxColumn = styled(Column)`
 
 const values = [
   {
-    icon: "fas fa-handshake-alt",
+    icon: "fas fa-handshake",
     title: "Collaboration",
     description:
       "We encourage diversity of thoughts and collaboration to help ideas grows further."
@@ -66,7 +66,7 @@ const values = [
       "We bring more meaning to our work by serving and helping others achieve their own dreams."
   },
   {
-    icon: "fas fa-badge-check",
+    icon: "fas fa-certificate",
     title: "Credibility",
     description:
       "We always do what is right even though it might cost us because trust and integrity is everything to us."
