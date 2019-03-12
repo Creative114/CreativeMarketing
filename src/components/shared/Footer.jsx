@@ -44,7 +44,7 @@ const Icon = styled.i`
   }
 `;
 
-export default function Footer() {
+export default function Footer({ toggleModal }) {
   return (
     <Wrapper>
       <StyledRow>
@@ -65,7 +65,7 @@ export default function Footer() {
           <Text footer contact className="drift-open-chat">
             Contact
           </Text>
-          <Button footer small>
+          <Button footer small onClick={toggleModal}>
             Start now
           </Button>
         </Row>

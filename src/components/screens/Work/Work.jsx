@@ -76,7 +76,7 @@ class Work extends Component {
         <Portfolio />
         <Recent recentwork={recentwork} />
         <CaseStudies casestudies={casestudies} navigate={this.props.history} />
-        <Footer />
+        <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />

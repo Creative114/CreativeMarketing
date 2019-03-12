@@ -42,7 +42,7 @@ class Home extends Component {
         <How />
         <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
-        <Footer />
+        <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />

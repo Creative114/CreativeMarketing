@@ -42,7 +42,7 @@ export default class About extends Component {
         <Team />
         <Values />
         <Careers />
-        <Footer />
+        <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />

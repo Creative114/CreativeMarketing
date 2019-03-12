@@ -153,6 +153,27 @@ export const Input = styled.input`
   }
 `;
 
+export const Select = styled.select`
+  width: 365px;
+  height: 41px;
+  background-color: #efefef;
+  border: 1px solid transparent;
+  margin: 0.5em 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25em;
+  border-radius: 4px;
+  color: #6d6d6d;
+  transition: 250ms;
+  @media (max-width: 780px) {
+    width: 275px;
+  }
+  &:focus {
+    border: 1px solid #546887;
+  }
+`;
+
 export const TextArea = styled.textarea`
   width: 360px;
   height: 80px;

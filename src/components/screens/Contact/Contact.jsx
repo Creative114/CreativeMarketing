@@ -37,7 +37,7 @@ export default class Contact extends Component {
           toggleModal={this.toggleModal}
         />
         <ContactForm />
-        <Footer />
+        <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />
