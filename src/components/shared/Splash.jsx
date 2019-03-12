@@ -19,7 +19,7 @@ const StyledColumn = styled(Column)`
   text-align: center;
   width: 65%;
   margin: 0 auto;
-  z-index: 1000;
+  z-index: 100000;
   @media (max-width: 780px) {
     width: 85%;
   }
@@ -31,8 +31,20 @@ const StyledColumn = styled(Column)`
 const Video = styled.video`
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+`;
+
+const Div = styled.div`
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 `;
 
 export default function Splash({
@@ -59,9 +71,12 @@ export default function Splash({
     >
       <Navigation show={show} toggleModal={toggleModal} />
       {type !== "casestudy" && (
-        <Video autoPlay muted loop>
-          <source src={src} type="video/mp4" />
-        </Video>
+        <div style={{ height: "100%", width: "100%" }}>
+          <Video autoPlay muted loop>
+            <source src={src} type="video/mp4" />
+          </Video>
+          <Div />
+        </div>
       )}
       {/* <StyledColumn>
         <Title header>{title}</Title>
