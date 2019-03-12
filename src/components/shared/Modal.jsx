@@ -28,6 +28,10 @@ const Icon = styled.i`
   cursor: pointer;
   z-index: 1000;
   margin-right: 1em;
+  transition: 500ms;
+  &:hover {
+    color: #ccc;
+  }
 `;
 
 export default class Modal extends Component {
@@ -38,7 +42,10 @@ export default class Modal extends Component {
     return (
       <Backdrop>
         <Header>
-          <Icon onClick={this.props.togglemodal} className="fas fa-times" />
+          <Icon
+            onClick={this.props.togglemodal}
+            className="fas fa-times-circle"
+          />
         </Header>
         {this.props.children}
       </Backdrop>
