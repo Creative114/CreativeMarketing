@@ -34,6 +34,13 @@ const StyledRow = styled(Row)`
   }
 `;
 
+const StyledColumn = styled(Column)`
+  @media (max-width: 780px) {
+    text-align: center;
+    width: 95;
+  }
+`;
+
 const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
@@ -71,7 +78,7 @@ export default function Footer() {
         </Row>
       </StyledRow>
       <StyledRow>
-        <Column>
+        <StyledColumn>
           <Text footer>
             We create videos that Engage, Entertain, and Excite your targeted
             audience.
@@ -79,7 +86,7 @@ export default function Footer() {
           <Text footer>
             2018 &copy; Creative114 | Made with &hearts; in Tampa, FL
           </Text>
-        </Column>
+        </StyledColumn>
         <Row>
           <a
             href="https://www.linkedin.com/showcase/creative114/"
