@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(#ffffff, #cdcdcd 85%);
+  background: linear-gradient(#ffffff, rgb(242, 245, 247));
   padding-bottom: 3em;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ const StyledHomeColumn = styled(Column)`
   align-items: center;
   @media (max-width: 780px) {
     width: 95%;
-    margin: 6em auto 0 auto;
+    margin: 1em auto 0 auto;
     text-align: center;
   }
   @media (max-width: 500px) {

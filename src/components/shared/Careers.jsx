@@ -21,6 +21,7 @@ const StyledColumn = styled(Column)`
   text-align: center;
   @media (max-width: 780px) {
     text-align: center;
+    width: 95%;
   }
 `;
 

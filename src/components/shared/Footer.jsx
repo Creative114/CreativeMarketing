@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 3em 0 2em 0;
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     height: 100%;
     min-height: 100px;
     padding: 6em 0;
@@ -21,23 +21,26 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 220px;
   height: 30px;
+  @media (max-width: 920px) {
+    margin: 0.75em 0;
+  }
 `;
 
 const StyledRow = styled(Row)`
   align-items: center;
   justify-content: space-between;
   margin: 0 2em;
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     flex-direction: column;
     align-items: center;
-    margin: 0;
   }
 `;
 
 const StyledColumn = styled(Column)`
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     text-align: center;
-    width: 95;
+    width: 95%;
+    margin: 0.75em 0;
   }
 `;
 
@@ -45,9 +48,26 @@ const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
   color: #fff;
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     margin: 0 0.5em;
     font-size: 1.5em;
+  }
+`;
+
+const MobileDiv = styled.div`
+  margin: 0;
+  display: none;
+  @media (max-width: 780px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const DesktopDiv = styled(Row)`
+  align-items: center;
+  @media (max-width: 780px) {
+    margin: 0;
+    display: none;
   }
 `;
 
@@ -72,11 +92,18 @@ export default function Footer({ toggleModal }) {
           <Text footer contact className="drift-open-chat">
             Contact
           </Text>
-          <Button footer small onClick={toggleModal}>
-            Start now
-          </Button>
+          <DesktopDiv>
+            <Button footer small onClick={toggleModal}>
+              Start now
+            </Button>
+          </DesktopDiv>
         </Row>
       </StyledRow>
+      <MobileDiv>
+        <Button footer small onClick={toggleModal}>
+          Start now
+        </Button>
+      </MobileDiv>
       <StyledRow>
         <StyledColumn>
           <Text footer>
