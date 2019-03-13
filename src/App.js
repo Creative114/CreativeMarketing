@@ -8,6 +8,7 @@ import Impact from "./components/screens/Impact/Impact";
 import Contact from "./components/screens/Contact/Contact";
 import Thanks from "./components/screens/Thanks/Thanks";
 import NoMatch from "./components/screens/NoMatch/NoMatch";
+import StartNow from "./components/screens/StartNow/StartNow";
 import { HashRouter, Route, Switch } from "react-router-dom";
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
@@ -64,6 +65,13 @@ const App = () => {
             path="/thanks"
             render={() => {
               return <Thanks onEnter={window.scrollTo(0, 0)} />;
+            }}
+          />
+          <Route
+            exact
+            path="/startnow"
+            render={() => {
+              return <StartNow onEnter={window.scrollTo(0, 0)} />;
             }}
           />
           <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />

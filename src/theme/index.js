@@ -225,6 +225,7 @@ export const Column = styled.div`
   width: ${props => props.width};
   align-items: ${props => props.alignitems};
   justify-content: ${props => props.justifycontent};
+  text-align: ${props => props.textalign};
   margin: ${props => props.margin};
   @media (max-width: 768px) {
     align-items: center;

@@ -44,11 +44,12 @@ function BurgerMenu({ close }) {
         <Link to="/impact">
           <StyledLi onClick={close}>Impact</StyledLi>
         </Link>
-        {/* <Link to="/" className="drift-open-chat">
-          <StyledLi onClick={close} className="drift-open-chat">
-            Contact
-          </StyledLi>
-        </Link> */}
+        <Link to="/contact">
+          <StyledLi onClick={close}>Contact</StyledLi>
+        </Link>
+        <Link to="/startnow">
+          <StyledLi onClick={close}>Start Now</StyledLi>
+        </Link>
       </StyledUl>
     </div>
   );
