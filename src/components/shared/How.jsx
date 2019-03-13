@@ -78,7 +78,7 @@ function Item({ title, text, img }) {
   );
 }
 
-export default function How() {
+export default function How({ toggleModal }) {
   const items = [
     {
       title: "1: Pre-Production",
@@ -118,7 +118,9 @@ export default function How() {
           })}
         </Grid>
         <Row margin="2em 0 1em 0">
-          <Button primary>Start now</Button>
+          <Button primary onClick={toggleModal}>
+            Start now
+          </Button>
         </Row>
       </Reveal>
     </Wrapper>

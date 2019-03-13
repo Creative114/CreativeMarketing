@@ -22,6 +22,7 @@ import {
   VideoTBSW,
   VideoEDental
 } from "../shared/Videos/Videos";
+import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -185,123 +186,139 @@ export default class Portfolio extends Component {
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
-        <Column alignitems="center">
-          <Title>Projects</Title>
-        </Column>
-        <StyledRow>
-          <MenuItem
-            id="all"
-            title="All"
-            handleClick={this.handleClick}
-            selected={selected}
-          />
-          <MenuItem
-            id="startUps"
-            title="Startups"
-            handleClick={this.handleClick}
-            selected={selected}
-          />
-          <MenuItem
-            id="nonProfits"
-            title="nonProfits"
-            handleClick={this.handleClick}
-            selected={selected}
-          />
-          <MenuItem
-            id="smallBusinesses"
-            title="Small Businesses"
-            handleClick={this.handleClick}
-            selected={selected}
-          />
+        <Reveal effect="fadeIn">
+          <React.Fragment>
+            <Column alignitems="center">
+              <Title>Projects</Title>
+            </Column>
+            <StyledRow>
+              <MenuItem
+                id="all"
+                title="All"
+                handleClick={this.handleClick}
+                selected={selected}
+              />
+              <MenuItem
+                id="startUps"
+                title="Startups"
+                handleClick={this.handleClick}
+                selected={selected}
+              />
+              <MenuItem
+                id="nonProfits"
+                title="nonProfits"
+                handleClick={this.handleClick}
+                selected={selected}
+              />
+              <MenuItem
+                id="smallBusinesses"
+                title="Small Businesses"
+                handleClick={this.handleClick}
+                selected={selected}
+              />
 
-          <MenuItem
-            id="largeBusinesses"
-            title="Large Businesses"
-            handleClick={this.handleClick}
-            selected={selected}
-          />
-        </StyledRow>
+              <MenuItem
+                id="largeBusinesses"
+                title="Large Businesses"
+                handleClick={this.handleClick}
+                selected={selected}
+              />
+            </StyledRow>
 
-        <Grid>
-          <Item
-            onClick={() => this.handleLightbox(0)}
-            className={mobile ? "horizontal" : ""}
-          >
-            <Image selected={selected} cid={["startUps", "all"]} img={port2} />
-          </Item>
-          <Item onClick={() => this.handleLightbox(1)}>
-            <Image
-              selected={selected}
-              cid={["smallBusinesses", "all"]}
-              img={tbsw}
-            />
-          </Item>
-          <Item onClick={() => this.handleLightbox(2)}>
-            <Image
-              selected={selected}
-              cid={["nonProfits", "all"]}
-              img={nighttoshine}
-            />
-          </Item>
-          <Item onClick={() => this.handleLightbox(3)}>
-            <Image
-              selected={selected}
-              cid={["smallBusinesses", "all"]}
-              img={edental}
-            />
-          </Item>
-          <Item
-            className={mobile ? "vertical" : ""}
-            onClick={() => this.handleLightbox(4)}
-          >
-            >
-            <Image
-              selected={selected}
-              img={litacore}
-              cid={["largeBusinesses", "all"]}
-            />
-          </Item>
-          <Item onClick={() => this.handleLightbox(5)}>
-            <Image
-              selected={selected}
-              cid={["largeBusinesses", "all"]}
-              img={hirehumanly}
-            />
-          </Item>
-          <Item onClick={() => this.handleLightbox(6)}>
-            <Image
-              selected={selected}
-              cid={["largeBusinesses", "all"]}
-              img={premier}
-            />
-          </Item>
+            <Grid>
+              <Item
+                onClick={() => this.handleLightbox(0)}
+                className={mobile ? "horizontal" : ""}
+              >
+                <Image
+                  selected={selected}
+                  cid={["startUps", "all"]}
+                  img={port2}
+                />
+              </Item>
+              <Item onClick={() => this.handleLightbox(1)}>
+                <Image
+                  selected={selected}
+                  cid={["smallBusinesses", "all"]}
+                  img={tbsw}
+                />
+              </Item>
+              <Item onClick={() => this.handleLightbox(2)}>
+                <Image
+                  selected={selected}
+                  cid={["nonProfits", "all"]}
+                  img={nighttoshine}
+                />
+              </Item>
+              <Item onClick={() => this.handleLightbox(3)}>
+                <Image
+                  selected={selected}
+                  cid={["smallBusinesses", "all"]}
+                  img={edental}
+                />
+              </Item>
+              <Item
+                className={mobile ? "vertical" : ""}
+                onClick={() => this.handleLightbox(4)}
+              >
+                >
+                <Image
+                  selected={selected}
+                  img={litacore}
+                  cid={["largeBusinesses", "all"]}
+                />
+              </Item>
+              <Item onClick={() => this.handleLightbox(5)}>
+                <Image
+                  selected={selected}
+                  cid={["largeBusinesses", "all"]}
+                  img={hirehumanly}
+                />
+              </Item>
+              <Item onClick={() => this.handleLightbox(6)}>
+                <Image
+                  selected={selected}
+                  cid={["largeBusinesses", "all"]}
+                  img={premier}
+                />
+              </Item>
 
-          <Item
-            className={mobile ? "big" : ""}
-            onClick={() => this.handleLightbox(8)}
-          >
-            <Image selected={selected} cid={["startUps", "all"]} img={port1} />
-          </Item>
+              <Item
+                className={mobile ? "big" : ""}
+                onClick={() => this.handleLightbox(8)}
+              >
+                <Image
+                  selected={selected}
+                  cid={["startUps", "all"]}
+                  img={port1}
+                />
+              </Item>
 
-          <Item
-            className={mobile ? "horizontal" : ""}
-            onClick={() => this.handleLightbox(7)}
-          >
-            <Image selected={selected} cid={["startUps", "all"]} img={port3} />
-          </Item>
-        </Grid>
-        {type === "home" && (
-          <Column alignitems="center">
-            <Button primary onClick={() => navigate.push("Work")}>
-              See More
-            </Button>
-          </Column>
-        )}
-        {isOpen && (
-          <Modal show={isOpen} togglemodal={this.toggleModal}>
-            {lightbox[photoIndex]}
-          </Modal>
-        )}
+              <Item
+                className={mobile ? "horizontal" : ""}
+                onClick={() => this.handleLightbox(7)}
+              >
+                <Image
+                  selected={selected}
+                  cid={["startUps", "all"]}
+                  img={port3}
+                />
+              </Item>
+            </Grid>
+            {type === "home" && (
+              <Column alignitems="center">
+                <Button primary onClick={() => navigate.push("Work")}>
+                  See More
+                </Button>
+              </Column>
+            )}
+            {isOpen && (
+              <Modal show={isOpen} togglemodal={this.toggleModal}>
+                {lightbox[photoIndex]}
+              </Modal>
+            )}
+          </React.Fragment>
+        </Reveal>
       </Wrapper>
     );
   }

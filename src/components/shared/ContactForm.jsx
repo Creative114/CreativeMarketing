@@ -65,18 +65,18 @@ export default function ContactForm() {
         <Title>Reach us</Title>
         <a href="tel:4193677341">
           <StyledRow>
-            <Icon className="fal fa-mobile-android" />
+            <Icon className="fas fa-phone" />
             <Text post>419-367-7341</Text>
           </StyledRow>
         </a>
         <a href="mailto:jet@creative114.com">
           <StyledRow>
-            <Icon className="fal fa-envelope" />
+            <Icon className="fas fa-envelope" />
             <Text post>jet@creative114.com</Text>
           </StyledRow>
         </a>
         <StyledRow>
-          <Icon className="fal fa-map-pin" />
+          <Icon className="fas fa-map-pin" />
           <Text post>
             801 Seminole Blvd, suite 114
             <br /> Largo, FL 33770
@@ -84,7 +84,7 @@ export default function ContactForm() {
         </StyledRow>
         <span className="drift-open-chat">
           <StyledRow>
-            <Icon className="fal fa-comment" />
+            <Icon className="fas fa-comment" />
             <Text post>Chat now</Text>
           </StyledRow>
         </span>

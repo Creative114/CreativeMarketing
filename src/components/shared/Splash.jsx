@@ -6,18 +6,12 @@ import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
 
 const Wrapper = styled.div`
-  height: ${props => props.height || "100vh"};
+  height: ${props => props.height || "100%"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: ${props => props.backgroundposition};
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 500px) {
-    height: ${props => (props.home ? "700px" : "800px")};
-  }
 `;
 
 const StyledColumn = styled(Column)`
@@ -76,23 +70,13 @@ export default function Splash({
 }) {
   return (
     <Wrapper
-      home={type === "home"}
-      height={type === "casestudy" || (type === "contact" && "550px")}
-      backgroundposition={type === "casestudy" ? "top" : "center"}
+      height={type === "casestudy" && "550px"}
       background={
-        type === "work"
+        type === "casestudy"
           ? `url('${img}')`
-          : type === "about"
-          ? `url('${aboutSplash}')`
-          : type === "casestudy"
-          ? `url('${img}')`
-          : type === "contact"
-          ? `url('${aboutSplash}')`
           : type === "thanks"
           ? `url('${impactSplash}')`
-          : type === "nomatch"
-          ? `url('${aboutSplash}')`
-          : type === "impact" && `url('${impactSplash}')`
+          : type === "nomatch" && `url('${aboutSplash}')`
       }
     >
       <Navigation show={show} toggleModal={toggleModal} />

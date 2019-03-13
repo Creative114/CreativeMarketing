@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Input, Label, Button, TextArea, Title } from "../../theme/index";
+import {
+  Input,
+  Label,
+  Button,
+  TextArea,
+  Title,
+  Select
+} from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,10 +57,22 @@ export default function StartNowForm() {
           Phone *
           <Input type="phone" name="phone" />
         </Label>
+
         <Label htmlFor="budget" login>
           Budget *
-          <Input type="text" name="budget" />
+          <Select id="budget" name="budget">
+            <option value="first">$1,000-$2,500</option>
+            <option value="second">$2,500-$5,000</option>
+            <option value="third">$5,000-$7,500</option>
+            <option value="forth">$7,500-$10,000</option>
+            <option value="fifth">$10,000 +</option>
+          </Select>
         </Label>
+
+        {/* <Label htmlFor="budget" login>
+          Budget *
+          <Input type="text" name="budget" />
+        </Label> */}
         <Label htmlFor="objective" login>
           Objective *<TextArea name="objective" />
         </Label>

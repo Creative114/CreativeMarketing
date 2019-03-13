@@ -153,6 +153,27 @@ export const Input = styled.input`
   }
 `;
 
+export const Select = styled.select`
+  width: 365px;
+  height: 41px;
+  background-color: #efefef;
+  border: 1px solid transparent;
+  margin: 0.5em 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25em;
+  border-radius: 4px;
+  color: #6d6d6d;
+  transition: 250ms;
+  @media (max-width: 780px) {
+    width: 275px;
+  }
+  &:focus {
+    border: 1px solid #546887;
+  }
+`;
+
 export const TextArea = styled.textarea`
   width: 360px;
   height: 80px;
@@ -224,14 +245,11 @@ export const Button = styled.button`
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
+  font-weight: 600;
   border-radius: 3px;
   transition: 750ms;
   margin: 0.5em 0;
   text-transform: uppercase;
-  &:hover {
-    background-color: #667785;
-    color: #fff;
-  }
 
   ${props =>
     props.primary &&
@@ -241,9 +259,9 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #fff;
-
       &:hover {
-        background-color: #d25a47;
+        background-color: #f32405;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
     `};
   ${props =>
@@ -255,7 +273,8 @@ export const Button = styled.button`
       border: 1px solid transparent;
       color: #d21f04;
       &:hover {
-        background-color: #d25a47;
+        color: #d21f04;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
     `};
 `;

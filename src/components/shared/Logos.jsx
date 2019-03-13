@@ -69,20 +69,22 @@ const logos = [
 export default function Logos() {
   return (
     <Wrapper>
-      <StyledColumn>
-        <Reveal effect="fadeIn">
-          <Title>Our clients.</Title>
-          <Text logo margin="0">
-            Here are a few brands that have trusted us
-          </Text>
-        </Reveal>
-      </StyledColumn>
-      <Grid>
-        {logos &&
-          logos.map((key, index) => {
-            return <Image src={key} alt="Creative114 Logo" key={index} />;
-          })}
-      </Grid>
+      <Reveal effect="fadeIn">
+        <React.Fragment>
+          <StyledColumn>
+            <Title>Our clients.</Title>
+            <Text logo margin="0">
+              Here are a few brands that have trusted us
+            </Text>
+          </StyledColumn>
+          <Grid>
+            {logos &&
+              logos.map((key, index) => {
+                return <Image src={key} alt="Creative114 Logo" key={index} />;
+              })}
+          </Grid>
+        </React.Fragment>
+      </Reveal>
     </Wrapper>
   );
 }

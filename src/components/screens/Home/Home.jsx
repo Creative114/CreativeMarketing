@@ -39,10 +39,10 @@ class Home extends Component {
         <HomeSplash type="home" toggleModal={this.toggleModal} />
         <Logos />
         <Video />
-        <How />
+        <How toggleModal={this.toggleModal} />
         <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
-        <Footer />
+        <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             <StartNowForm />
