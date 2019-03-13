@@ -24,7 +24,19 @@ const StyledColumn = styled(Column)`
   align-items: center;
   text-align: center;
   width: 65%;
-  margin: 0 auto;
+  margin: 17em auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  position: absolute;
+  @media (max-width: 1200px) {
+    margin: 8em auto;
+  }
+  @media (max-width: 920px) {
+    display: none;
+  }
   @media (max-width: 780px) {
     width: 85%;
   }
@@ -33,7 +45,35 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Splash({ type, title, show, img, toggleModal }) {
+const Video = styled.video`
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const Div = styled.div`
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;
+
+export default function Splash({
+  type,
+  src,
+  title,
+  text,
+  show,
+  img,
+  toggleModal
+}) {
   return (
     <Wrapper
       home={type === "home"}
@@ -56,54 +96,26 @@ export default function Splash({ type, title, show, img, toggleModal }) {
       }
     >
       <Navigation show={show} toggleModal={toggleModal} />
-      {type === "about" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            We are a creative storytelling solution that will empower your brand
-            to create, connect and cultivate your targeted audience. We partner
-            with you to create a compelling and emotionally engaging
-            storytelling through video, website and content creation.
-          </Text>
-        </StyledColumn>
-      )}
-      {type === "work" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            We are more than a video production, design or web development
-            agency. We are in the business of solving problems. We work to craft
-            and tell your stories with emotions and creativity. Our primary
-            purpose is to empower your business with what we call the three C's:
-            Create, Connect and Cultivate you brand.
-          </Text>
-        </StyledColumn>
-      )}
 
-      {type === "impact" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>Coming soon.</Text>
-        </StyledColumn>
-      )}
-      {type === "contact" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-        </StyledColumn>
-      )}
-      {type === "thanks" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>
-            Our team will reach out to you as soon as possible.
-          </Text>
-        </StyledColumn>
-      )}
-      {type === "nomatch" && (
-        <StyledColumn>
-          <Title header>{title}</Title>
-          <Text header>Something went wrong. Please try again.</Text>
-        </StyledColumn>
+      {type !== "casestudy" && (
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Video autoPlay muted loop>
+            <source src={src} type="video/mp4" />
+          </Video>
+          <Div />
+          <StyledColumn>
+            <Title header>{title}</Title>
+            <Text header>{text}</Text>
+          </StyledColumn>
+        </div>
       )}
     </Wrapper>
   );

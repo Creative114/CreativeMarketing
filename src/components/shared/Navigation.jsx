@@ -13,9 +13,13 @@ const Wrapper = styled.div`
   position: fixed;
   justify-content: space-between;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
   transition: 500ms;
   box-shadow: ${props => props.active && "0 0 10px rgba(0, 0, 0, 0.1)"};
+  @media (max-width: 920px) {
+    position: relative;
+    background-color: #fff;
+  }
 `;
 
 const Image = styled.img`
@@ -29,21 +33,20 @@ const Image = styled.img`
   }
 `;
 
-const Div = styled.div`
-  margin: 0;
-  display: none;
-  @media (max-width: 920px) {
-    display: block;
-  }
-`;
-
 const StyledRow = styled(Row)`
-  display: flex;
   align-items: center;
   margin: 0 3em 0 0;
   @media (max-width: 920px) {
     margin: 0;
     display: none;
+  }
+`;
+
+const BurgerDiv = styled.div`
+  margin: 0;
+  display: none;
+  @media (max-width: 920px) {
+    display: block;
   }
 `;
 
@@ -75,10 +78,9 @@ export default class Navigation extends Component {
         display={!this.props.show && "none"}
       >
         <Image active={!active} src={Icon} alt="Creative114 Logo" />
-        <Div>
-          {" "}
-          <Burger toggleModal={toggleModal} />
-        </Div>
+        <BurgerDiv>
+          <Burger />
+        </BurgerDiv>
 
         <StyledRow>
           <StyledNavLink home={type === "home"} active={active} exact to="/">
