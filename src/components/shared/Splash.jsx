@@ -98,6 +98,7 @@ export default function Splash({
           <StyledColumn>
             <Title header>{title}</Title>
             <Text header>{text}</Text>
+            <Button footer>Start now</Button>
           </StyledColumn>
         </div>
       )}

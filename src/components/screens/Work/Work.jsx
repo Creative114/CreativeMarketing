@@ -67,11 +67,7 @@ class Work extends Component {
           img={splash}
           src="https://player.vimeo.com/external/320615958.hd.mp4?s=ef079df32a46b67d823275083675210fb601a354&profile_id=169"
           toggleModal={this.toggleModal}
-          text="We are more than a video production, design or web development
-          agency. We are in the business of solving problems. We work to craft
-          and tell your stories with emotions and creativity. Our primary
-          purpose is to empower your business with what we call the three C's:
-          Create, Connect and Cultivate you brand."
+          text="We are more than a video production company. We are in the business of creative storytelling and problem solving. We work to craft and tell your stories with emotions and creativity. Our primary purpose is to empower your business to engage, entertain, and excite your targeted audience."
         />
         <Portfolio />
         <Recent recentwork={recentwork} />
