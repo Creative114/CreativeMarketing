@@ -44,8 +44,8 @@ const StyledTextColumn = styled(Column)`
 
 export default class Testimonial extends Component {
   render() {
-    const { title, description, src } = this.props;
-    const swatch = src.split("/")[5];
+    const { title, description, src, type } = this.props;
+    const swatch = src && src.split("/")[5];
     console.log(swatch);
     return (
       <Wrapper>
@@ -57,34 +57,50 @@ export default class Testimonial extends Component {
             </StyledTextColumn>
           </StyledColumn>
           <StyledColumn>
-            <div
-              className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
-              style={{ height: "100%", position: "relative", width: "100%" }}
-            >
+            {type === "video" && (
               <div
-                className="wistia_swatch"
-                style={{
-                  height: "100%",
-                  left: 0,
-                  opacity: 0,
-                  overflow: "hidden",
-                  position: "absolute",
-                  top: 0,
-                  transition: "opacity 250ms",
-                  width: "100%"
-                }}
+                className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
+                style={{ height: "100%", position: "relative", width: "100%" }}
+              >
+                <div
+                  className="wistia_swatch"
+                  style={{
+                    height: "100%",
+                    left: 0,
+                    opacity: 0,
+                    overflow: "hidden",
+                    position: "absolute",
+                    top: 0,
+                    transition: "opacity 250ms",
+                    width: "100%"
+                  }}
+                >
+                  <img
+                    src={src}
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "contain"
+                    }}
+                    alt=""
+                  />
+                </div>
+              </div>
+            )}
+            {type === "image" && (
+              <div
+                style={{ height: "100%", position: "relative", width: "99%" }}
               >
                 <img
                   src={src}
                   style={{
-                    height: "100%",
                     width: "100%",
                     objectFit: "contain"
                   }}
                   alt=""
                 />
               </div>
-            </div>
+            )}
           </StyledColumn>
         </React.Fragment>
       </Wrapper>
