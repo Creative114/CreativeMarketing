@@ -110,7 +110,7 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${props => (props.active ? "blur(0px)" : "blur(4px)")};
+  filter: ${props => (props.active ? "blur(0px)" : "blur(4px) grayscale(95%)")};
   transition: 750ms;
   cursor: pointer;
   &:hover {
@@ -262,7 +262,7 @@ export default class Portfolio extends Component {
               <Item onClick={() => this.handleLightbox(1)}>
                 <Image
                   selected={selected}
-                  cid={["smallBusinesses", "all"]}
+                  cid={["nonProfits", "all"]}
                   img={tbsw}
                 />
               </Item>
@@ -288,20 +288,20 @@ export default class Portfolio extends Component {
                 <Image
                   selected={selected}
                   img={litacore}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["startUps", "all"]}
                 />
               </Item>
               <Item onClick={() => this.handleLightbox(5)}>
                 <Image
                   selected={selected}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["startUps", "all"]}
                   img={hirehumanly}
                 />
               </Item>
               <Item onClick={() => this.handleLightbox(6)}>
                 <Image
                   selected={selected}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["smallBusinesses", "all"]}
                   img={premier}
                 />
               </Item>
@@ -312,7 +312,7 @@ export default class Portfolio extends Component {
               >
                 <Image
                   selected={selected}
-                  cid={["startUps", "all"]}
+                  cid={["nonProfits", "all"]}
                   img={port1}
                 />
               </Item>
@@ -323,7 +323,7 @@ export default class Portfolio extends Component {
               >
                 <Image
                   selected={selected}
-                  cid={["startUps", "all"]}
+                  cid={["largeBusinesses", "all"]}
                   img={port3}
                 />
               </Item>
