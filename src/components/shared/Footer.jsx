@@ -6,7 +6,7 @@ import Logo from "../../assets/logo.png";
 const Wrapper = styled.div`
   height: 175px;
   width: 100%;
-  background: #b9402d;
+  background: #d21f04;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,6 +37,7 @@ const StyledRow = styled(Row)`
 `;
 
 const StyledColumn = styled(Column)`
+  width: 50%;
   @media (max-width: 920px) {
     text-align: center;
     width: 95%;
@@ -77,18 +78,10 @@ export default function Footer({ toggleModal }) {
       <StyledRow>
         <Image src={Logo} alt="" />
         <Row alignitems="center">
-          <StyledNavLink footer to="/">
-            Home
-          </StyledNavLink>
-          <StyledNavLink footer to="/work">
-            Work
-          </StyledNavLink>
-          <StyledNavLink footer to="/about">
-            About
-          </StyledNavLink>
-          <StyledNavLink footer to="/impact">
-            Impact
-          </StyledNavLink>
+          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/work">Work</StyledNavLink>
+          <StyledNavLink to="/about">About</StyledNavLink>
+          <StyledNavLink to="/impact">Impact</StyledNavLink>
           <Text footer contact className="drift-open-chat">
             Contact
           </Text>
@@ -107,8 +100,9 @@ export default function Footer({ toggleModal }) {
       <StyledRow>
         <StyledColumn>
           <Text footer>
-            We create videos that Engage, Entertain, and Excite your targeted
-            audience.
+            Most Businesses struggle to be interesting and relatable. We
+            identify & highlight engaging stories that generate ROI (and
+            goosebumps).
           </Text>
           <Text footer>
             2018 &copy; Creative114 | Made with &hearts; in Tampa, FL

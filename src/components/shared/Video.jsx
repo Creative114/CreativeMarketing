@@ -30,7 +30,7 @@ const StyledTextColumn = styled(Column)`
   @media (max-width: 1000px) {
     width: 95%;
     align-items: center;
-    margin: 0;
+    margin: 1em auto;
   }
 `;
 
@@ -40,6 +40,9 @@ const StyledRow = styled(Row)`
   justify-content: center;
   width: 90%;
   @media (max-width: 1000px) {
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
   }
 `;
 
@@ -53,29 +56,15 @@ const VideoWrapper = styled.div`
 `;
 
 class YourVideo extends React.Component {
-  componentWillMount() {
-    const script1 = document.createElement("script");
-    const script2 = document.createElement("script");
-
-    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
-    script1.async = true;
-
-    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
-    script2.async = true;
-
-    document.body.appendChild(script1);
-    document.body.appendChild(script2);
-  }
-
   render() {
     return (
       <VideoWrapper>
         <div
-          class="wistia_embed wistia_async_c6tvpstwki videoFoam=true"
+          className="wistia_embed wistia_async_c6tvpstwki videoFoam=true"
           style={{ height: "100%", position: "relative", width: "100%" }}
         >
           <div
-            class="wistia_swatch"
+            className="wistia_swatch"
             style={{
               height: "100%",
               left: 0,
@@ -91,7 +80,6 @@ class YourVideo extends React.Component {
               src="https://fast.wistia.com/embed/medias/c6tvpstwki/swatch"
               style={{ height: "100%", width: "100%", objectFit: "contain" }}
               alt=""
-              onLoad="this.parentNode.style.opacity=1;"
             />
           </div>
         </div>

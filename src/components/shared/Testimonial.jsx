@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Subtitle } from "../../theme/index";
 
@@ -42,35 +42,52 @@ const StyledTextColumn = styled(Column)`
   }
 `;
 
-export default function Testimonial({ title, description, src }) {
-  return (
-    <Wrapper>
-      <React.Fragment>
-        <StyledColumn>
-          <StyledTextColumn>
-            <Subtitle>{title}</Subtitle>
-            <Text>{description}</Text>
-          </StyledTextColumn>
-        </StyledColumn>
-        <StyledColumn>
-          <iframe
-            title="TBSW"
-            src={src}
-            width="640"
-            height="360"
-            style={{
-              border: 0,
-              maxWidth: "97%",
-              position: "absolute",
-              left: 0,
-              right: 0,
-              margin: "auto",
-              top: "50%",
-              transform: "translateY(-50%)"
-            }}
-          />
-        </StyledColumn>
-      </React.Fragment>
-    </Wrapper>
-  );
+export default class Testimonial extends Component {
+  render() {
+    const { title, description, src } = this.props;
+    const swatch = src.split("/")[5];
+    console.log(swatch);
+    return (
+      <Wrapper>
+        <React.Fragment>
+          <StyledColumn>
+            <StyledTextColumn>
+              <Subtitle>{title}</Subtitle>
+              <Text>{description}</Text>
+            </StyledTextColumn>
+          </StyledColumn>
+          <StyledColumn>
+            <div
+              className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
+              style={{ height: "100%", position: "relative", width: "100%" }}
+            >
+              <div
+                className="wistia_swatch"
+                style={{
+                  height: "100%",
+                  left: 0,
+                  opacity: 0,
+                  overflow: "hidden",
+                  position: "absolute",
+                  top: 0,
+                  transition: "opacity 250ms",
+                  width: "100%"
+                }}
+              >
+                <img
+                  src={src}
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "contain"
+                  }}
+                  alt=""
+                />
+              </div>
+            </div>
+          </StyledColumn>
+        </React.Fragment>
+      </Wrapper>
+    );
+  }
 }

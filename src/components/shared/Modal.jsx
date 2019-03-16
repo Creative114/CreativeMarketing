@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Row } from "../../theme/index";
 
 const Backdrop = styled.div`
   position: fixed;
@@ -8,7 +9,7 @@ const Backdrop = styled.div`
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1000000;
+  z-index: 10000000000;
 `;
 
 const Header = styled.div`
@@ -34,6 +35,17 @@ const Icon = styled.i`
   }
 `;
 
+const StyledRow = styled(Row)`
+  width: 75%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  @media (max-width: 780px) {
+    width: 95%;
+  }
+`;
+
 export default class Modal extends Component {
   render() {
     if (!this.props.show) {
@@ -47,7 +59,7 @@ export default class Modal extends Component {
             className="fas fa-times-circle"
           />
         </Header>
-        {this.props.children}
+        <StyledRow>{this.props.children}</StyledRow>
       </Backdrop>
     );
   }

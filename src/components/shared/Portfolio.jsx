@@ -11,17 +11,6 @@ import litacore from "../../assets/litacore.jpg";
 import nighttoshine from "../../assets/nighttoshine.jpg";
 import hirehumanly from "../../assets/hirehumanly.jpg";
 import Modal from "../shared/Modal";
-import {
-  VideoNightToShine,
-  VideoTimTebow,
-  VideoPremierPaint,
-  VideoStopBeingAverage,
-  VideoTimBratz,
-  VideoHireHumanly,
-  VideoLitaCore,
-  VideoTBSW,
-  VideoEDental
-} from "../shared/Videos/Videos";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -129,16 +118,50 @@ const StyledImage = styled.img`
   }
 `;
 
+function Video({ src }) {
+  const swatch = src.split("/")[5];
+  return (
+    <div
+      className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
+      style={{ height: "100%", position: "relative", width: "100%" }}
+    >
+      <div
+        className="wistia_swatch"
+        style={{
+          height: "100%",
+          left: 0,
+          opacity: 0,
+          overflow: "hidden",
+          position: "absolute",
+          top: 0,
+          transition: "opacity 250ms",
+          width: "50%"
+        }}
+      >
+        <img
+          src={src}
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "contain"
+          }}
+          alt=""
+        />
+      </div>
+    </div>
+  );
+}
+
 const lightbox = [
-  <VideoStopBeingAverage />,
-  <VideoTBSW />,
-  <VideoNightToShine />,
-  <VideoEDental />,
-  <VideoLitaCore />,
-  <VideoHireHumanly />,
-  <VideoPremierPaint />,
-  <VideoTimBratz />,
-  <VideoTimTebow />
+  <Video src="https://fast.wistia.com/embed/medias/b7t59q2bhm/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/gly35kaelh/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/fryc5uagap/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/7fz5mm3p04/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/qv2j9xjckh/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/md0m7im8nw/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/ewz4lmrc7o/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/5eobdschy8/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch" />
 ];
 
 function Image({ img, cid, selected }) {
