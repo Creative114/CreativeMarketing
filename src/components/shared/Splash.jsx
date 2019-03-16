@@ -98,7 +98,9 @@ export default function Splash({
           <StyledColumn>
             <Title header>{title}</Title>
             <Text header>{text}</Text>
-            <Button footer>Start now</Button>
+            <Button footer onClick={toggleModal}>
+              Start now
+            </Button>
           </StyledColumn>
         </div>
       )}
