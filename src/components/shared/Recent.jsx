@@ -118,7 +118,7 @@ export default class Recent extends Component {
     return (
       <Wrapper id="what">
         <Column alignitems="center" textalign="center">
-          <Title>Recent work</Title>
+          <Title>Other work</Title>
           <Text>
             Below are a few projects that we have had the honor of creating for
             our clients:

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Home from "./components/screens/Home/Home";
 import Work from "./components/screens/Work/Work";
 import About from "./components/screens/About/About";
@@ -13,69 +13,83 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
 
-const App = () => {
-  return (
-    <HashRouter>
-      <div>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return <Home onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/about"
-            render={() => {
-              return <About onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/work"
-            render={() => {
-              return <Work onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/impact"
-            render={() => {
-              return <Impact onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/casestudies/:name"
-            render={() => {
-              return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/contact"
-            render={() => {
-              return <Contact onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/thanks"
-            render={() => {
-              return <Thanks onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route
-            exact
-            path="/startnow"
-            render={() => {
-              return <StartNow onEnter={window.scrollTo(0, 0)} />;
-            }}
-          />
-          <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
-          {/* {postPages &&
+class App extends Component {
+  componentWillMount() {
+    const script1 = document.createElement("script");
+    const script2 = document.createElement("script");
+
+    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
+    script1.async = true;
+
+    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
+    script2.async = true;
+
+    document.body.appendChild(script1);
+    document.body.appendChild(script2);
+  }
+  render() {
+    return (
+      <HashRouter>
+        <div>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <Home onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/about"
+              render={() => {
+                return <About onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/work"
+              render={() => {
+                return <Work onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/impact"
+              render={() => {
+                return <Impact onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/casestudies/:name"
+              render={() => {
+                return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/contact"
+              render={() => {
+                return <Contact onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/thanks"
+              render={() => {
+                return <Thanks onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/startnow"
+              render={() => {
+                return <StartNow onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
+            {/* {postPages &&
             postPages.map((key, index) => {
               return (
                 <Route
@@ -97,11 +111,12 @@ const App = () => {
                 />
               );
             })} */}
-        </Switch>
-      </div>
-    </HashRouter>
-  );
-};
+          </Switch>
+        </div>
+      </HashRouter>
+    );
+  }
+}
 
 // export const casestudypages = gql`
 //   query {

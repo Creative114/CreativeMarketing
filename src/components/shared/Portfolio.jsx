@@ -11,18 +11,8 @@ import litacore from "../../assets/litacore.jpg";
 import nighttoshine from "../../assets/nighttoshine.jpg";
 import hirehumanly from "../../assets/hirehumanly.jpg";
 import Modal from "../shared/Modal";
-import {
-  VideoNightToShine,
-  VideoTimTebow,
-  VideoPremierPaint,
-  VideoStopBeingAverage,
-  VideoTimBratz,
-  VideoHireHumanly,
-  VideoLitaCore,
-  VideoTBSW,
-  VideoEDental
-} from "../shared/Videos/Videos";
 import Reveal from "react-reveal/Reveal";
+import Video from "../shared/Video";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -121,7 +111,7 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${props => (props.active ? "blur(0px)" : "blur(4px)")};
+  filter: ${props => (props.active ? "blur(0px)" : "blur(4px) grayscale(95%)")};
   transition: 750ms;
   cursor: pointer;
   &:hover {
@@ -130,15 +120,15 @@ const StyledImage = styled.img`
 `;
 
 const lightbox = [
-  <VideoStopBeingAverage />,
-  <VideoTBSW />,
-  <VideoNightToShine />,
-  <VideoEDental />,
-  <VideoLitaCore />,
-  <VideoHireHumanly />,
-  <VideoPremierPaint />,
-  <VideoTimBratz />,
-  <VideoTimTebow />
+  <Video src="https://fast.wistia.com/embed/medias/b7t59q2bhm/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/gly35kaelh/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/fryc5uagap/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/7fz5mm3p04/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/qv2j9xjckh/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/md0m7im8nw/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/ewz4lmrc7o/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/5eobdschy8/swatch" />,
+  <Video src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch" />
 ];
 
 function Image({ img, cid, selected }) {
@@ -239,7 +229,7 @@ export default class Portfolio extends Component {
               <Item onClick={() => this.handleLightbox(1)}>
                 <Image
                   selected={selected}
-                  cid={["smallBusinesses", "all"]}
+                  cid={["nonProfits", "all"]}
                   img={tbsw}
                 />
               </Item>
@@ -265,20 +255,20 @@ export default class Portfolio extends Component {
                 <Image
                   selected={selected}
                   img={litacore}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["startUps", "all"]}
                 />
               </Item>
               <Item onClick={() => this.handleLightbox(5)}>
                 <Image
                   selected={selected}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["startUps", "all"]}
                   img={hirehumanly}
                 />
               </Item>
               <Item onClick={() => this.handleLightbox(6)}>
                 <Image
                   selected={selected}
-                  cid={["largeBusinesses", "all"]}
+                  cid={["smallBusinesses", "all"]}
                   img={premier}
                 />
               </Item>
@@ -289,7 +279,7 @@ export default class Portfolio extends Component {
               >
                 <Image
                   selected={selected}
-                  cid={["startUps", "all"]}
+                  cid={["nonProfits", "all"]}
                   img={port1}
                 />
               </Item>
@@ -300,7 +290,7 @@ export default class Portfolio extends Component {
               >
                 <Image
                   selected={selected}
-                  cid={["startUps", "all"]}
+                  cid={["largeBusinesses", "all"]}
                   img={port3}
                 />
               </Item>

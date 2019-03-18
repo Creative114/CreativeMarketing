@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column } from "../../../../theme/index";
+import { Column, Row, Title } from "../../../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -43,6 +43,9 @@ export default class Videos extends Component {
             <source src={first} type="video/mp4" />
           </VideoTag>
         </Column>
+        <Row justifycontent="center">
+          <Title>Example videos</Title>
+        </Row>
         <Grid>
           <VideoTag controls id={next[0]}>
             <source src={next[0]} type="video/mp4" />

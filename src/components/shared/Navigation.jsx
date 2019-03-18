@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   position: fixed;
   justify-content: space-between;
   top: 0;
-  z-index: 10000;
+  z-index: 10000000;
   transition: 500ms;
   box-shadow: ${props => props.active && "0 0 10px rgba(0, 0, 0, 0.1)"};
   @media (max-width: 920px) {

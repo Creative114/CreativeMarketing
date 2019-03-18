@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(#ffffff, #cdcdcd 85%);
-  padding-bottom: 3em;
+  background: linear-gradient(#ffffff, rgb(242, 245, 247));
+  padding-bottom: 4em;
   display: flex;
   flex-direction: column;
   @media (max-width: 780px) {
@@ -32,7 +32,7 @@ const StyledHomeColumn = styled(Column)`
   align-items: center;
   @media (max-width: 780px) {
     width: 95%;
-    margin: 6em auto 0 auto;
+    margin: 1em auto 0 auto;
     text-align: center;
   }
   @media (max-width: 500px) {
@@ -61,20 +61,6 @@ const StyledVideoRow = styled(Row)`
 `;
 
 export default class HomeSplash extends Component {
-  componentWillMount() {
-    const script1 = document.createElement("script");
-    const script2 = document.createElement("script");
-
-    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
-    script1.async = true;
-
-    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
-    script2.async = true;
-
-    document.body.appendChild(script1);
-    document.body.appendChild(script2);
-  }
-
   render() {
     const { toggleModal } = this.props;
     return (
@@ -90,9 +76,10 @@ export default class HomeSplash extends Component {
                 Showcase the emotional impact of the good that you do.
               </Title>
               <Subtitle logo>
-                We create{" "}
-                <span style={{ color: "#D21F04" }}>video stories</span> that
-                engage, entertain, and excite your targeted audience.
+                Most Businesses struggle to be interesting and relatable. <br />{" "}
+                We identify & highlight{" "}
+                <span style={{ color: "#D21F04" }}>engaging stories</span> that
+                generate ROI (and goosebumps).
               </Subtitle>
               <Row margin="2em 0">
                 <Button primary onClick={toggleModal}>
@@ -104,11 +91,11 @@ export default class HomeSplash extends Component {
         </Reveal>
         <StyledVideoRow>
           <div
-            class="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
+            className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
             style={{ height: "100%", position: "relative", width: "100%" }}
           >
             <div
-              class="wistia_swatch"
+              className="wistia_swatch"
               style={{
                 height: "100%",
                 left: 0,
@@ -124,7 +111,6 @@ export default class HomeSplash extends Component {
                 src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
                 style={{ height: "100%", width: "100%", objectFit: "contain" }}
                 alt=""
-                onLoad="this.parentNode.style.opacity=1;"
               />
             </div>
           </div>
