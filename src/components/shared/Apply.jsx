@@ -25,7 +25,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Careers() {
+export default function Apply() {
   return (
     <Wrapper>
       <Title>Our team is growing!</Title>

@@ -3,9 +3,9 @@ import Splash from "../../shared/Splash";
 import Content from "../../shared/Content";
 import Footer from "../../shared/Footer";
 import Videos from "./components/Videos";
-import casestudy1 from "../../../assets/casestudy1.jpg";
-import casestudy2 from "../../../assets/casestudy2.jpg";
-import casestudy3 from "../../../assets/casestudy3.jpg";
+import casestudyhero1 from "../../../assets/casestudyhero1.jpg";
+import casestudyhero2 from "../../../assets/casestudyhero2.jpg";
+import casestudyhero3 from "../../../assets/casestudyhero3.jpg";
 import { withRouter } from "react-router-dom";
 
 class CaseStudy extends Component {
@@ -24,7 +24,7 @@ class CaseStudy extends Component {
   getData = () => {
     const data = {
       movement2819: {
-        image: casestudy1,
+        image: casestudyhero1,
         title: "Movement 2819",
         description:
           "Movement 2819 is a non-profit hosting large scale events called Night of Hope. The first event was hosted at the Tropicana Field and attracted over 20K people. Special guests included: Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee and Dustin LaChance.",
@@ -37,20 +37,20 @@ class CaseStudy extends Component {
         ]
       },
       missioncitychurch: {
-        image: casestudy3,
+        image: casestudyhero2,
         title: "Mission City Church",
         description:
           "Mission City is a church in Largo Florida. Their mission is to help people find and follow Jesus. They create several events throughout the year including conferences featuring Pam Tebow, Trip Lee, Clayton Jennings and Perry Noble.",
         videos: [
           "https://player.vimeo.com/external/310906652.hd.mp4?s=d676ab463722d9a973757ba06dd075fed93e5b25&profile_id=175",
-          "https://player.vimeo.com/external/271932241.hd.mp4?s=646816deb01b356f10a268e0595e36b4ed07d981&profile_id=175",
+          "https://player.vimeo.com/external/302617339.hd.mp4?s=8bfeff0be5ce98ff7f2f6153a3d9cc929434a7a5&profile_id=175",
           "https://player.vimeo.com/external/289283783.hd.mp4?s=87414942eae7d4e5d7a8dd63d9521c2bd734c57c&profile_id=169",
           "https://player.vimeo.com/external/260181613.hd.mp4?s=c2602f22c1a1b1724c517c6ef2a70b879f2310a2&profile_id=175",
           "https://player.vimeo.com/external/283278488.hd.mp4?s=0173efdd60f0619e941eb2215f05b8dcbeb30eb5&profile_id=175"
         ]
       },
       collectivegenius: {
-        image: casestudy2,
+        image: casestudyhero3,
         title: "Collective Genuis",
         description:
           "CG is a top notch Mastermind for the nation's top 5 % Real Estate investors. They host quarterly events in Florida and San Diego. They meet to connect, lend and borrow money from each other, systematize inefficiencies, and create joint venture on real estate deals.",

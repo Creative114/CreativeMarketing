@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Splash from "../../shared/Splash";
 import Values from "../../shared/Values";
-import Careers from "../../shared/Careers";
+import Apply from "../../shared/Apply";
 import Team from "../../shared/Team";
 import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
@@ -41,7 +41,7 @@ export default class About extends Component {
         />
         <Team />
         <Values />
-        <Careers />
+        <Apply />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

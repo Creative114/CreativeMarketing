@@ -73,7 +73,8 @@ export default function Splash({
 }) {
   return (
     <Wrapper
-      height={type === "casestudy" && "550px"}
+      height={type === "casestudy" && "650px"}
+      backgroundposition={type === "casestudy" && "center"}
       background={
         type === "casestudy"
           ? `url('${img}')`
