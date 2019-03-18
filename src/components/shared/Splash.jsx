@@ -18,6 +18,7 @@ const StyledColumn = styled(Column)`
   align-items: center;
   text-align: center;
   width: 65%;
+  height: 100%;
   margin: 17em auto;
   top: 0;
   bottom: 0;
@@ -46,7 +47,7 @@ const Video = styled.video`
   height: 100%;
 `;
 
-const Div = styled.div`
+const Overlay = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
@@ -54,6 +55,8 @@ const Div = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  min-height: 100%;
+  min-width: 100%;
   @media (max-width: 920px) {
     display: none;
   }
@@ -70,7 +73,8 @@ export default function Splash({
 }) {
   return (
     <Wrapper
-      height={type === "casestudy" && "550px"}
+      height={type === "casestudy" && "650px"}
+      backgroundposition={type === "casestudy" && "center"}
       background={
         type === "casestudy"
           ? `url('${img}')`
@@ -88,13 +92,14 @@ export default function Splash({
             width: "100%",
             display: "flex",
             alignContent: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            position: "relative"
           }}
         >
           <Video autoPlay muted loop>
             <source src={src} type="video/mp4" />
           </Video>
-          <Div />
+          <Overlay />
           <StyledColumn>
             <Title header>{title}</Title>
             <Text header>{text}</Text>

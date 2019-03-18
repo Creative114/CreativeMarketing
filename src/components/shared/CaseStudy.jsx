@@ -39,8 +39,9 @@ const StyledTextColumn = styled(Column)`
 const Div = styled.div`
   background: ${props => props.background};
   background-size: cover;
+  background-position: center;
   width: 50vw;
-  min-height: 350px;
+  height: 400px;
   @media (max-width: 780px) {
     width: 100%;
   }

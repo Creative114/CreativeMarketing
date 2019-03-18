@@ -12,6 +12,7 @@ import nighttoshine from "../../assets/nighttoshine.jpg";
 import hirehumanly from "../../assets/hirehumanly.jpg";
 import Modal from "../shared/Modal";
 import Reveal from "react-reveal/Reveal";
+import Video from "../shared/Video";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -117,40 +118,6 @@ const StyledImage = styled.img`
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   }
 `;
-
-function Video({ src }) {
-  const swatch = src.split("/")[5];
-  return (
-    <div
-      className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
-      style={{ height: "100%", position: "relative", width: "100%" }}
-    >
-      <div
-        className="wistia_swatch"
-        style={{
-          height: "100%",
-          left: 0,
-          opacity: 0,
-          overflow: "hidden",
-          position: "absolute",
-          top: 0,
-          transition: "opacity 250ms",
-          width: "50%"
-        }}
-      >
-        <img
-          src={src}
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "contain"
-          }}
-          alt=""
-        />
-      </div>
-    </div>
-  );
-}
 
 const lightbox = [
   <Video src="https://fast.wistia.com/embed/medias/b7t59q2bhm/swatch" />,
