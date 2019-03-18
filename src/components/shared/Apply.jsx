@@ -25,16 +25,12 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Apply() {
+export default function Apply({ title, text }) {
   return (
     <Wrapper>
-      <Title>Our team is growing!</Title>
+      <Title>{title}</Title>
       <StyledColumn>
-        <Text>
-          We're looking for self-starters, go-getters, and those passionate
-          about joining a creative force for good. Currently, we're seeking
-          content creators, designers, and programmers.
-        </Text>
+        <Text>{text}</Text>
         {/* <Subtitle>William Whatley, Senior Developer</Subtitle> */}
         <Row margin=".5em 0">
           <Button className="drift-open-chat" primary>

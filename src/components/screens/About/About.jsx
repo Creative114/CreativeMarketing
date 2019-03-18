@@ -41,7 +41,12 @@ export default class About extends Component {
         />
         <Team />
         <Values />
-        <Apply />
+        <Apply
+          title="Our team is growing!"
+          text="We're looking for self-starters, go-getters, and those passionate
+          about joining a creative force for good. Currently, we're seeking
+          content creators, designers, and programmers."
+        />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

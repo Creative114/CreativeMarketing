@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { Column, Text, Title, Row, Subtitle } from "../../theme/index";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import Video from "../shared/Video";
 
 const Wrapper = styled.div`
-  height: 600px;
+  height: 100%;
   width: 85%;
   margin: 0 auto;
   display: flex;
@@ -21,13 +22,13 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 25px;
+  grid-gap: 50px;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(263px, 1fr));
-  grid-auto-rows: 450px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
   height: 100%;
-  width: 100%;
+  width: 75%;
   @media (max-width: 780px) {
     width: 95%;
     margin: 0;
@@ -37,23 +38,15 @@ const Grid = styled.div`
 const Div = styled.div`
   width: 100%;
   height: 100%;
-  border: 1.5px solid transparent;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: 750ms;
-  filter: grayscale(75%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   &:hover {
-    filter: grayscale(0%);
-    border: 1.5px solid #b9402d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 200px;
 `;
 
 const StyledColumn = styled(Column)`
@@ -64,21 +57,22 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-function Post({ title, date, author, bannerImage, description }) {
+function Post({ title, text, date, author, video, description }) {
   return (
-    <Link to={`/impact/${title.toLowerCase()}`}>
-      <Div>
-        <Image src={bannerImage} />
-        <StyledColumn>
-          <Subtitle margin=".25em 0 0 0">{title}</Subtitle>
-          <Row width="100%" justifycontent="space-between">
-            <Text margin=".15em 0">{date}</Text>
-            <Text margin=".15em 0">By: {author}</Text>
-          </Row>
-          <Text post>{description}</Text>
-        </StyledColumn>
-      </Div>
-    </Link>
+    // <Link to={`/impact/${title.toLowerCase()}`}>
+    <Div>
+      <Video src={video} />
+      <StyledColumn>
+        <Subtitle margin="1em 0 0 0">{title}</Subtitle>
+        <Text>{text}</Text>
+        <Row width="100%" justifycontent="space-between">
+          {/* <Text margin=".15em 0">{date}</Text> */}
+          {/* <Text margin=".15em 0">By: {author}</Text> */}
+        </Row>
+        <Text post>{description}</Text>
+      </StyledColumn>
+    </Div>
+    // </Link>
   );
 }
 
@@ -86,11 +80,11 @@ export default function Posts({ posts }) {
   return (
     <Wrapper>
       <Column alignitems="center" textalign="center">
-        <Title>Latest thoughts</Title>
-        <Text>
+        <Title>#ShareYourImpact</Title>
+        {/* <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor.
-        </Text>
+        </Text> */}
       </Column>
       {posts && posts.length >= 1 && (
         <Grid>
@@ -99,13 +93,10 @@ export default function Posts({ posts }) {
               <Post
                 key={index}
                 title={key.title}
-                description={key.description}
+                text={key.text}
                 date={moment(key.date).format("MMM Do YY")}
-                author={key.author}
-                bannerImage={
-                  key.bannerImage &&
-                  `https://media.graphcms.com/${key.bannerImage.handle}`
-                }
+                // author={key.author}
+                video={key.video}
               />
             );
           })}
