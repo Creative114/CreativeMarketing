@@ -54,6 +54,7 @@ const StyledColumn = styled(Column)`
   @media (max-width: 780px) {
     width: ${props => (props.text ? "95%" : "65%")};
     text-align: center;
+    padding: 0;
   }
 `;
 
