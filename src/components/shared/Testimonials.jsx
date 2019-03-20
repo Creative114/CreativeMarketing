@@ -40,7 +40,7 @@ const StyledButton = styled.button`
   user-select: none;
   border: none;
   &:hover {
-    background-color: #d25a47;
+    background-color: #f32405;
     color: #fff;
   }
 `;

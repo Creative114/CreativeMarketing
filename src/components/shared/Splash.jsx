@@ -18,8 +18,9 @@ const StyledColumn = styled(Column)`
   align-items: center;
   text-align: center;
   width: 65%;
-  height: 100%;
-  margin: 17em auto;
+  height: auto;
+  margin: auto;
+  margin-top: 15em;
   top: 0;
   bottom: 0;
   left: 0;
