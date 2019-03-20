@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Member from "./Member";
-import { Row } from "../../theme/index";
+import { Row, Title } from "../../theme/index";
 import Slider from "react-slick";
 import jet from "../../assets/jet.jpg";
 import will from "../../assets/will.jpg";
 import jephte from "../../assets/jephte.jpg";
 import alex from "../../assets/alex.jpg";
 import sasha from "../../assets/sasha.jpg";
-import rachel from "../../assets/rachel.jpg";
+import Rachael from "../../assets/rachel.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -52,11 +52,11 @@ const boxes = [
     img: jet
   },
   {
-    id: "rachel",
+    id: "Rachael",
     title: "Efficient",
     description: "Lorem ipsum dolor sit amet, consectetur",
     icon: "fal fa-rabbit-fast",
-    img: rachel
+    img: Rachael
   },
   {
     id: "jephte",
@@ -124,6 +124,9 @@ export default class Team extends Component {
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
+        <Row justifycontent="center">
+          <Title>Meet the team</Title>
+        </Row>
         {mobile.matches && (
           <div
             style={{
@@ -139,8 +142,8 @@ export default class Team extends Component {
               />
 
               <Member
-                img={rachel}
-                name="Rachel Jean-Claude"
+                img={Rachael}
+                name="Rachael Jean-Claude"
                 title="The Founder’s Boss"
                 description="Behind any great man, there is an amazing women. She is the founder’s (Getro) wife. With her day job - she saves lives as a family medicine physicians. However, she loves working with her husband as an assistant behind the scene photographer/videographer when the time allows. She also handles some of the internal operations of Creative1.14. She plays a huge role as a soundboard for the strategic growth of the organization. Fun Fact: Getro and Rachael are expecting their first child - a daughter - Marielle (Ellie) in June 2019. "
               />
@@ -166,8 +169,8 @@ export default class Team extends Component {
               />
               <Member
                 img={alex}
-                name="Drone Operator"
-                title="Technologist"
+                name="Alex Gell"
+                title="Drone Operator"
                 description="Alex is a certified Part 107 drone pilot and currently captures all of our amazing drone footage for our creative stories. He is very passionate about technology and video production. He currently volunteers as the Director of Production at Mission City Church. He prides himself in continually growing as a husband/father, providing great customer service and problem solving. Alex is married, has a 3 year old, Emilia and a second child on the way with his wife Niki. Fun Fact: Alex was born in Puerto Rico and speak fluent Spanish."
               />
             </Slider>
@@ -184,10 +187,10 @@ export default class Team extends Component {
                   description="Getro is the mastermind behind Creative1.14. He is very passionate about creative storytelling and problem solving. When Getro is not working hard to tell the emotional impact of the good that you do - he is gaining inspiration by watching all of the Marvel’s (and sometime DC’s) movies and shows. Getro loves learning about different cultures, food and languages. He is fluent in Creole and has strong command of French and Spanish. He even took 3 semesters of Mandarin Chinese in College.  Fun Fact: He is originally from Haiti, has won a 20 under 40 Leadership Award, nominated as Next Mayor of Toledo and was featured in a few local and national magazine."
                 />
               )}
-              {selected === "rachel" && (
+              {selected === "Rachael" && (
                 <Member
-                  img={rachel}
-                  name="Rachel Jean-Claude"
+                  img={Rachael}
+                  name="Rachael Jean-Claude"
                   title="The Founder’s Boss"
                   description="Behind any great man, there is an amazing women. She is the founder’s (Getro) wife. With her day job - she saves lives as a family medicine physicians. However, she loves working with her husband as an assistant behind the scene photographer/videographer when the time allows. She also handles some of the internal operations of Creative1.14. She plays a huge role as a soundboard for the strategic growth of the organization. Fun Fact: Getro and Rachael are expecting their first child - a daughter - Marielle (Ellie) in June 2019. "
                 />
@@ -219,8 +222,8 @@ export default class Team extends Component {
               {selected === "alex" && (
                 <Member
                   img={alex}
-                  name="Drone Operator"
-                  title="Technologist"
+                  name="Alex Gell"
+                  title="Drone Operator"
                   description="Alex is a certified Part 107 drone pilot and currently captures all of our amazing drone footage for our creative stories. He is very passionate about technology and video production. He currently volunteers as the Director of Production at Mission City Church. He prides himself in continually growing as a husband/father, providing great customer service and problem solving. Alex is married, has a 3 year old, Emilia and a second child on the way with his wife Niki. Fun Fact: Alex was born in Puerto Rico and speak fluent Spanish."
                 />
               )}

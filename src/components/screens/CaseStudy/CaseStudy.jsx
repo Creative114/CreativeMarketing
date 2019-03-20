@@ -51,7 +51,7 @@ class CaseStudy extends Component {
       },
       collectivegenius: {
         image: casestudyhero3,
-        title: "Collective Genuis",
+        title: "Collective Genius",
         description:
           "CG is a top notch Mastermind for the nation's top 5 % Real Estate investors. They host quarterly events in Florida and San Diego. They meet to connect, lend and borrow money from each other, systematize inefficiencies, and create joint venture on real estate deals.",
         videos: [
@@ -73,7 +73,7 @@ class CaseStudy extends Component {
       case "missioncitychurch":
         dataSet = data.missioncitychurch;
         break;
-      case "collectivegenuis":
+      case "collectivegenius":
         dataSet = data.collectivegenius;
         break;
       default:

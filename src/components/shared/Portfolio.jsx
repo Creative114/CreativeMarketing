@@ -128,7 +128,7 @@ const lightbox = [
   <Video src="https://fast.wistia.com/embed/medias/md0m7im8nw/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/ewz4lmrc7o/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/5eobdschy8/swatch" />,
-  <Video src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch" />
+  <Video src="https://fast.wistia.com/embed/medias/zxnxd3awth/swatch" />
 ];
 
 function Image({ img, cid, selected }) {
