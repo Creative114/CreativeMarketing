@@ -30,7 +30,7 @@ class CaseStudy extends Component {
           "Movement 2819 is a non-profit hosting large scale events called Night of Hope. The first event was hosted at the Tropicana Field and attracted over 20K people. Special guests included: Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee and Dustin LaChance.",
         videos: [
           "https://player.vimeo.com/external/310906235.hd.mp4?s=1059f964466500c12e6a2ec389371adc498e3335&profile_id=175",
-          "https://player.vimeo.com/external/290870260.hd.mp4?s=961dd96af0a1e6ca9e60a37ab82d47ed9f862ffd&profile_id=175",
+          "https://player.vimeo.com/external/302617339.hd.mp4?s=8bfeff0be5ce98ff7f2f6153a3d9cc929434a7a5&profile_id=175",
           "https://player.vimeo.com/external/301830720.hd.mp4?s=88dd5b354107217044684e064850ffe4a020a506&profile_id=169",
           "https://player.vimeo.com/external/302947248.hd.mp4?s=44c33ee912d83e643cb35784f99aa751f371e52d&profile_id=169",
           "https://player.vimeo.com/external/304399575.hd.mp4?s=1eac23e38eb14cf832c60e739dae543874dd9cf8&profile_id=169"
