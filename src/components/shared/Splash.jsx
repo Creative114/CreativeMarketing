@@ -69,7 +69,8 @@ export default function Splash({
   text,
   show,
   img,
-  toggleModal
+  toggleModal,
+  redirect
 }) {
   return (
     <Wrapper
@@ -103,8 +104,18 @@ export default function Splash({
           <StyledColumn>
             <Title header>{title}</Title>
             <Text header>{text}</Text>
-            <Button footer onClick={toggleModal}>
-              Start now
+
+            {/* <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/creative114"
+              style={{ minHeight: "320px", height: "58px" }}
+            /> */}
+
+            <Button
+              footer
+              onClick={type === "contact" ? redirect : toggleModal}
+            >
+              {type === "contact" ? "Schedule now" : "Start now"}
             </Button>
           </StyledColumn>
         </div>
