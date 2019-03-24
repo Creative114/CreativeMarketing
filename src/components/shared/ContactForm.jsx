@@ -105,7 +105,7 @@ export default function ContactForm() {
           </a>
 
           <a
-            href="https://www.instagram.com/candigitalgroup/"
+            href="https://www.instagram.com/creative1.14/"
             target="_blank"
             rel="noopener noreferrer"
           >

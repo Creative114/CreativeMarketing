@@ -64,13 +64,13 @@ function Post({ title, text, date, author, video, description }) {
     <Div>
       <Video src={video} />
       <StyledColumn>
-        <Subtitle margin="1em 0 0 0">{title}</Subtitle>
-        <Text>{text}</Text>
+        {/* <Subtitle margin="1em 0 0 0">{title}</Subtitle> */}
+        {/* <Text>{text}</Text> */}
         <Row width="100%" justifycontent="space-between">
           {/* <Text margin=".15em 0">{date}</Text> */}
           {/* <Text margin=".15em 0">By: {author}</Text> */}
         </Row>
-        <Text post>{description}</Text>
+        {/* <Text post>{description}</Text> */}
       </StyledColumn>
     </Div>
     // </Link>
