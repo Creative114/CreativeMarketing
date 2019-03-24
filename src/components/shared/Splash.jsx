@@ -30,10 +30,8 @@ const StyledColumn = styled(Column)`
   @media (max-width: 1200px) {
     margin: 8em auto;
   }
-  @media (max-width: 920px) {
-    display: none;
-  }
   @media (max-width: 780px) {
+    margin: 4em auto;
     width: 85%;
   }
   @media (max-width: 500px) {
@@ -58,6 +56,15 @@ const Overlay = styled.div`
   height: 100%;
   min-height: 100%;
   min-width: 100%;
+`;
+
+const StyledText = styled(Text)`
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;
+
+const StyledButton = styled(Button)`
   @media (max-width: 920px) {
     display: none;
   }
@@ -104,7 +111,7 @@ export default function Splash({
           <Overlay />
           <StyledColumn>
             <Title header>{title}</Title>
-            <Text header>{text}</Text>
+            <StyledText header>{text}</StyledText>
 
             {/* <div
               className="calendly-inline-widget"
@@ -112,12 +119,12 @@ export default function Splash({
               style={{ minHeight: "320px", height: "58px" }}
             /> */}
 
-            <Button
+            <StyledButton
               footer
               onClick={type === "contact" ? redirect : toggleModal}
             >
               {type === "contact" ? "Schedule now" : "Start now"}
-            </Button>
+            </StyledButton>
           </StyledColumn>
         </div>
       )}

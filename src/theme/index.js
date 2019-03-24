@@ -46,9 +46,12 @@ export const Subtitle = styled.h2`
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   color: #505d68;
-  font-size: ${props => (props.logo ? "28px" : "21px")};
+  font-size: ${props => (props.logo ? "22px" : "21px")};
   line-height: 38px;
   margin: ${props => props.margin || "0.5em 0"};
+  @media (max-width: 900px) {
+    font-size: 21px;
+  }
 `;
 
 export const Text = styled.p`
