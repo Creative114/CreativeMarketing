@@ -77,7 +77,7 @@ export default class Testimonials extends Component {
     let settings = {
       dots: true,
       infinite: false,
-      arrows: true,
+
       speed: 1000,
       autoplay: true
     };
