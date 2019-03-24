@@ -5,8 +5,8 @@ import { Column, Text, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 500px;
-  width: 90%;
+  min-height: 600px;
+  width: 95%;
   align-items: center;
   margin: 0 auto;
   @media (max-width: 1200px) {
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 50vw;
+  width: 50%;
   justify-content: center;
   align-items: center;
   background-color: inherit;
@@ -30,7 +30,7 @@ const StyledColumn = styled(Column)`
 
 const StyledTextColumn = styled(Column)`
   margin: 1em 0;
-  width: 80%;
+  width: 90%;
   @media (max-width: 1200px) {
     width: 90%;
     text-align: center;

@@ -29,9 +29,10 @@ const Image = styled.img`
 const StyledRow = styled(Row)`
   align-items: center;
   justify-content: space-between;
-  margin: 0 2em;
+  margin: 0 5em;
   @media (max-width: 920px) {
     flex-direction: column;
+    margin: 0;
     align-items: center;
   }
 `;
@@ -100,12 +101,12 @@ export default function Footer({ toggleModal }) {
       <StyledRow>
         <StyledColumn>
           <Text footer>
-            Most Businesses struggle to be interesting and relatable. We
-            identify & highlight engaging stories that generate ROI (and
-            goosebumps).
+            Most Businesses struggle to be interesting and relatable.
+            <br /> We identify & highlight engaging stories that generate ROI
+            (and goosebumps).
           </Text>
           <Text footer>
-            2018 &copy; Creative114 | Made with &hearts; in Tampa, FL
+            2019 &copy; Creative114 | Made with &hearts; in Tampa, FL
           </Text>
         </StyledColumn>
         <Row>
@@ -125,7 +126,7 @@ export default function Footer({ toggleModal }) {
           </a>
 
           <a
-            href="https://www.instagram.com/candigitalgroup/"
+            href="https://www.instagram.com/creative1.14/"
             target="_blank"
             rel="noopener noreferrer"
           >

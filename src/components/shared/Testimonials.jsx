@@ -77,8 +77,9 @@ export default class Testimonials extends Component {
     let settings = {
       dots: true,
       infinite: false,
-      arrows: false,
-      speed: 1000
+      arrows: true,
+      speed: 1000,
+      autoplay: true
     };
 
     const mobile = window.matchMedia("(max-width: 780px)");
