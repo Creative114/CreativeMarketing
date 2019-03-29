@@ -4,6 +4,7 @@ import { Column, Row, Title } from "../../../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
+  background: linear-gradient(#ffffff, rgb(242, 245, 247));
 `;
 
 const VideoTag = styled.video`
@@ -16,8 +17,8 @@ const VideoTag = styled.video`
 const Grid = styled.div`
   display: grid;
   grid-gap: 25px;
-  margin: 3em auto;
-  margin-top: 2em;
+  margin: 2em auto 0 auto;
+  padding: 2em 0;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 350px;
   height: 100%;

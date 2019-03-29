@@ -16,7 +16,7 @@ export default class Contact extends Component {
   };
 
   redirect = () => {
-    window.open("https://calendly.com/creative114", "_blank");
+    window.open("https://meetings.hubspot.com/jet", "_blank");
   };
   redirect;
   render() {
