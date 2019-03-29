@@ -149,6 +149,7 @@ export const Input = styled.input`
   border-radius: 4px;
   color: #6d6d6d;
   transition: 250ms;
+
   @media (max-width: 780px) {
     width: 275px;
   }
