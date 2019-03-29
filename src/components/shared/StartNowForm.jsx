@@ -61,25 +61,27 @@ export default function StartNowForm() {
           objective: ""
         }}
         onSubmit={values => {
-          const postData = {
-            email: values.email,
-            firstname: values.firstname,
-            lastname: values.lastname,
-            hs_context: JSON.stringify({
-              pageUrl: "https://creative114.com/#/contact",
-              pageName: "Contact Us"
-            })
-          };
+          console.log(values);
 
-          axios
-            .post(
-              `https://forms.hubspot.com/uploads/form/v2/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea`,
-              { postData }
-            )
-            .then(res => {
-              console.log(res);
-              console.log(res.data);
-            });
+          // const postData = {
+          //   email: values.email,
+          //   firstname: values.firstname,
+          //   lastname: values.lastname,
+          //   hs_context: JSON.stringify({
+          //     pageUrl: "https://creative114.com/#/contact",
+          //     pageName: "Contact Us"
+          //   })
+          // };
+
+          // axios
+          //   .post(
+          //     `https://forms.hubspot.com/uploads/form/v2/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea`,
+          //     { postData }
+          //   )
+          //   .then(res => {
+          //     console.log(res);
+          //     console.log(res.data);
+          //   });
         }}
         render={({
           values,
