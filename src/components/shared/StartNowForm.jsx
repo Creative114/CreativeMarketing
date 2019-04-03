@@ -54,32 +54,44 @@ export default function StartNowForm() {
         initialValues={{
           businessName: "",
           businessWebsite: "",
-          contactName: "",
+          firstname: "",
           email: "",
           phone: "",
           budget: "",
           objective: ""
         }}
         onSubmit={values => {
-          const postData = {
-            email: values.email,
-            businessName: values.businessName,
-            businessWebsite: values.businessWebsite,
-            contactName: values.contactName,
-            phone: values.phone,
-            budget: values.budget,
-            objective: values.objective
-          };
-
-          axios
-            .post(
-              `https://forms.hubspot.com/uploads/form/v2/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea`,
-              { postData }
-            )
-            .then(res => {
-              console.log(res);
-              console.log(res.data);
-            });
+          function formv3() {
+            let xhr = new XMLHttpRequest();
+            let url =
+              "https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea";
+            let data = {
+              fields: [
+                {
+                  name: "email",
+                  value: values.email
+                },
+                {
+                  name: "firstname",
+                  value: values.contactName
+                }
+              ],
+              context: {
+                pageUri: "www.creative114.com/#/",
+                pageName: "Contact page"
+              }
+            };
+            // const final_data = JSON.stringify(data);
+            xhr.open("POST", url);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log("success");
+              }
+            };
+            xhr.send(data);
+          }
+          formv3();
         }}
         render={({
           values,
@@ -109,14 +121,14 @@ export default function StartNowForm() {
                 name="businessWebsite"
               />
             </Label>
-            <Label htmlFor="contactName" login>
+            <Label htmlFor="firstname" login>
               Contact name *
               <Input
-                value={values.contactName}
+                value={values.firstname}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 type="name"
-                name="contactName"
+                name="firstname"
               />
             </Label>
             <Label htmlFor="email" login>
