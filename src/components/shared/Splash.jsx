@@ -119,12 +119,14 @@ export default function Splash({
               style={{ minHeight: "320px", height: "58px" }}
             /> */}
 
-            <StyledButton
-              footer
-              onClick={type === "contact" ? redirect : toggleModal}
-            >
-              {type === "contact" ? "Schedule now" : "Start now"}
-            </StyledButton>
+            {type !== "thanks" && (
+              <StyledButton
+                footer
+                onClick={type === "contact" ? redirect : toggleModal}
+              >
+                {type === "contact" ? "Schedule now" : "Find your story"}
+              </StyledButton>
+            )}
           </StyledColumn>
         </div>
       )}

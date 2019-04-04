@@ -10,6 +10,7 @@ import { withRouter } from "react-router-dom";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import StartNowForm from "../../shared/StartNowForm";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
 class Home extends Component {
   state = {
@@ -45,7 +46,7 @@ class Home extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <StartNowForm />
+            <FindYourStoryForm />
           </Modal>
         )}
       </div>

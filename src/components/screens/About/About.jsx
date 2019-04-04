@@ -6,7 +6,7 @@ import Team from "../../shared/Team";
 import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
-import StartNowForm from "../../shared/StartNowForm";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
 export default class About extends Component {
   state = {
@@ -50,7 +50,7 @@ export default class About extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <StartNowForm />
+            <FindYourStoryForm />
           </Modal>
         )}
       </div>

@@ -11,7 +11,7 @@ import casestudy2 from "../../../assets/casestudy2.jpg";
 import casestudy3 from "../../../assets/casestudy3.jpg";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
-import StartNowForm from "../../shared/StartNowForm";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
 class Work extends Component {
   state = {
@@ -75,7 +75,7 @@ class Work extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <StartNowForm />
+            <FindYourStoryForm />
           </Modal>
         )}
       </div>

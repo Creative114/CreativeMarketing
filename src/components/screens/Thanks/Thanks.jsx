@@ -1,5 +1,6 @@
 import React from "react";
 import Splash from "../../shared/Splash";
+import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
 
 export default function Thanks() {
@@ -22,6 +23,7 @@ export default function Thanks() {
         title="Thanks"
         text=" Our team will reach out to you as soon as possible."
       />
+      <Footer />
     </div>
   );
 }
