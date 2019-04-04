@@ -87,15 +87,15 @@ export default function Footer({ toggleModal }) {
             Contact
           </Text>
           <DesktopDiv>
-            <Button footer small onClick={toggleModal}>
-              Start now
+            <Button footer onClick={() => toggleModal("story")}>
+              Find your story
             </Button>
           </DesktopDiv>
         </Row>
       </StyledRow>
       <MobileDiv>
-        <Button footer small onClick={toggleModal}>
-          Start now
+        <Button footer onClick={() => toggleModal("story")}>
+          Find your story
         </Button>
       </MobileDiv>
       <StyledRow>

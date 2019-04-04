@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Splash from "../../shared/Splash";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
-import StartNowForm from "../../shared/StartNowForm";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import Apply from "../../shared/Apply";
 import Footer from "../../shared/Footer";
 import Posts from "../../shared/Posts";
@@ -61,7 +61,7 @@ class Impact extends Component {
         <Footer />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <StartNowForm />
+            <FindYourStoryForm />
           </Modal>
         )}
       </div>

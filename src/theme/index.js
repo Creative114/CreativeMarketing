@@ -96,6 +96,7 @@ export const Text = styled.p`
       font-size: 14px;
       line-height: 22px;
     `};
+
   ${props =>
     props.contact &&
     css`
@@ -263,6 +264,7 @@ export const Button = styled.button`
       width: ${props => (props.small ? "135px" : "165px")};
       height: 45px;
       border: 1px solid transparent;
+      margin: ${props => props.margin || ".5em 0"}
       color: #fff;
       &:hover {
         background-color: #f32405;

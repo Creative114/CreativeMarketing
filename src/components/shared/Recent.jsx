@@ -38,7 +38,6 @@ const Div = styled.div`
   height: 100%;
   border-radius: 3px;
   display: flex;
-  background: ${props => props.background};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
