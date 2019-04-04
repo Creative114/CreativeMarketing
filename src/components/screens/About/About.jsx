@@ -7,17 +7,19 @@ import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
+import ApplyForm from "../../shared/ApplyForm";
 
 export default class About extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    type: null
   };
 
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  toggleModal = type => {
+    this.setState({ isOpen: !this.state.isOpen, type });
   };
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, type } = this.state;
     return (
       <div>
         <Helmet
@@ -42,6 +44,7 @@ export default class About extends Component {
         <Team />
         <Values />
         <Apply
+          toggleModal={this.toggleModal}
           title="Our team is growing!"
           text="We're looking for self-starters, go-getters, and those passionate
           about joining a creative force for good. Currently, we're seeking
@@ -50,7 +53,8 @@ export default class About extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <FindYourStoryForm />
+            {type === "story" && <FindYourStoryForm />}
+            {type === "apply" && <ApplyForm />}
           </Modal>
         )}
       </div>

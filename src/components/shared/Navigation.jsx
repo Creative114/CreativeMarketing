@@ -108,7 +108,7 @@ export default class Navigation extends Component {
           <StyledNavLink home={type === "home"} active={active} to="/contact">
             Contact
           </StyledNavLink>
-          <Button primary onClick={toggleModal}>
+          <Button primary onClick={() => toggleModal("story")}>
             Find your story
           </Button>
         </StyledRow>

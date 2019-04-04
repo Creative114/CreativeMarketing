@@ -26,7 +26,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Apply({ title, text }) {
+export default function Apply({ title, text, toggleModal }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
@@ -34,7 +34,7 @@ export default function Apply({ title, text }) {
         <Text>{text}</Text>
         {/* <Subtitle>William Whatley, Senior Developer</Subtitle> */}
         <Row margin=".5em 0">
-          <Button className="drift-open-chat" primary>
+          <Button onClick={() => toggleModal("apply")} primary>
             Apply today
           </Button>
         </Row>
