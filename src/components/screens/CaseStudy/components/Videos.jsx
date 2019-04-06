@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(#ffffff, rgb(242, 245, 247));
+  padding: 0 0 3em 0;
 `;
 
 const Grid = styled.div`
@@ -15,12 +16,11 @@ const Grid = styled.div`
   margin: 2em auto 0 auto;
   padding: 2em 0;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 350px;
+  grid-auto-rows: auto;
   height: 100%;
   width: 80%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 215px;
     width: 95%;
     margin: 2em auto;
   }
@@ -47,7 +47,7 @@ export default class Videos extends Component {
     if (first && next) {
       return (
         <Wrapper>
-          <Column alignitems="center" margin="0 0 2em 0">
+          <Column alignitems="center" margin="0 auto 2em auto" width="80%">
             <Video src={first} />
           </Column>
           <Row justifycontent="center">

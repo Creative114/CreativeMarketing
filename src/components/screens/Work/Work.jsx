@@ -26,6 +26,13 @@ class Work extends Component {
     const { isOpen } = this.state;
     const casestudies = [
       {
+        title: "Collective Genius",
+        description:
+          "CG is a top notch Mastermind for the nation's top 5 % Real Estate investors. They host quarterly events in Florida and San Diego. They meet to connect, lend and borrow money from each other, systematize inefficiencies, and create joint venture on real estate deals.",
+        type: "left",
+        img: casestudy3
+      },
+      {
         title: "Movement 2819",
         description:
           "Movement 2819 is a non-profit hosting large scale events called Night of Hope. The first event was hosted at the Tropicana Field and attracted over 20K people. Special guests included: Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee and Dustin LaChance.",
@@ -38,13 +45,6 @@ class Work extends Component {
           "Mission City is a church in Largo Florida. Their mission is to help people find and follow Jesus. They create several events throughout the year including conferences featuring Pam Tebow, Trip Lee, Clayton Jennings and Perry Noble.",
         type: "left",
         img: casestudy2
-      },
-      {
-        title: "Collective Genius",
-        description:
-          "CG is a top notch Mastermind for the nation's top 5 % Real Estate investors. They host quarterly events in Florida and San Diego. They meet to connect, lend and borrow money from each other, systematize inefficiencies, and create joint venture on real estate deals.",
-        type: "right",
-        img: casestudy3
       }
     ];
     return (

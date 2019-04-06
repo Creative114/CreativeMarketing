@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle } from "../../theme/index";
+import { Column, Text, Subtitle, Row } from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
-  height: 100%;
-  min-height: 600px;
-  width: 95%;
+  height: auto;
+  width: 100%;
   align-items: center;
   margin: 0 auto;
   @media (max-width: 1200px) {
@@ -17,11 +16,19 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 50%;
   justify-content: center;
   align-items: center;
   background-color: inherit;
   padding: 2em 0;
+  @media (max-width: 1200px) {
+    width: 100%;
+    align-items: center;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  width: 82%;
+  margin: 0 auto;
   @media (max-width: 1200px) {
     width: 100%;
     align-items: center;
@@ -39,8 +46,8 @@ const StyledTextColumn = styled(Column)`
 `;
 
 const Img = styled.img`
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 1200px) {
@@ -62,21 +69,23 @@ const Img = styled.img`
 export default function Member({ title, description, img, name }) {
   return (
     <Wrapper>
-      <StyledColumn>
-        <Img src={img} alt="" />
-      </StyledColumn>
-      <StyledColumn>
-        <StyledTextColumn>
-          <Subtitle>{name}</Subtitle>
-          <Text title>{title}</Text>
-          <Text>{description}</Text>
-          {/* <Row margin=".5em 0">
+      <StyledRow>
+        <StyledColumn>
+          <Img src={img} alt="" />
+        </StyledColumn>
+        <StyledColumn>
+          <StyledTextColumn>
+            <Subtitle>{name}</Subtitle>
+            <Text title>{title}</Text>
+            <Text>{description}</Text>
+            {/* <Row margin=".5em 0">
             <I className="fab fa-facebook-f" />
             <I className="fab fa-linkedin-in" />
             <I className="fab fa-medium-m" />
           </Row> */}
-        </StyledTextColumn>
-      </StyledColumn>
+          </StyledTextColumn>
+        </StyledColumn>
+      </StyledRow>
     </Wrapper>
   );
 }

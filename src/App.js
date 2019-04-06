@@ -17,6 +17,7 @@ class App extends Component {
   componentWillMount() {
     const script1 = document.createElement("script");
     const script2 = document.createElement("script");
+    const script3 = document.createElement("script");
 
     script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
     script1.async = true;
@@ -24,8 +25,13 @@ class App extends Component {
     script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
     script2.async = true;
 
+    script3.src =
+      "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    script3.async = true;
+
     document.body.appendChild(script1);
     document.body.appendChild(script2);
+    document.body.appendChild(script3);
   }
   render() {
     return (
