@@ -9,7 +9,6 @@ import Footer from "../../shared/Footer";
 import { withRouter } from "react-router-dom";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
-import StartNowForm from "../../shared/StartNowForm";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
 class Home extends Component {

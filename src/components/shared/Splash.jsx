@@ -105,7 +105,7 @@ export default function Splash({
             position: "relative"
           }}
         >
-          <Video autoPlay muted loop>
+          <Video autoPlay muted loop playsinline>
             <source src={src} type="video/mp4" />
           </Video>
           <Overlay />
@@ -122,7 +122,9 @@ export default function Splash({
             {type !== "thanks" && (
               <StyledButton
                 footer
-                onClick={type === "contact" ? redirect : toggleModal}
+                onClick={() =>
+                  type === "contact" ? redirect : toggleModal("story")
+                }
               >
                 {type === "contact" ? "Schedule now" : "Find your story"}
               </StyledButton>

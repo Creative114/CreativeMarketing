@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input, Label, Button, Title, Text, TextArea } from "../../theme/index";
+import { Input, Label, Button, Title, TextArea } from "../../theme/index";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
@@ -70,7 +70,7 @@ export default function FindYourStoryForm() {
             xhr.open("POST", url);
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = function() {
-              if (xhr.readyState == 4 && xhr.status == 200) {
+              if (xhr.readyState === 4 && xhr.status === 200) {
                 window.location.href = "https://creative114.com/#/thanks";
               }
             };

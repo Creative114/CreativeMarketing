@@ -6,6 +6,17 @@ import ContactForm from "../../shared/ContactForm";
 import Modal from "../../shared/Modal";
 import StartNowForm from "../../shared/StartNowForm";
 
+function Calendar() {
+  return (
+    <div style={{ marginTop: "2em" }}>
+      <div
+        class="meetings-iframe-container"
+        data-src="https://meetings.hubspot.com/jet?embed=true"
+      />
+    </div>
+  );
+}
+
 export default class Contact extends Component {
   state = {
     isOpen: false
@@ -43,7 +54,9 @@ export default class Contact extends Component {
           redirect={this.redirect}
           text="We are excited at the opportunity to serve you. Please check below for a few different ways to connect with us. We would love to hear from you. If you would like to schedule a call or grab a cup of coffee with Jet - please click on this link:"
         />
+        <Calendar />
         <ContactForm />
+
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

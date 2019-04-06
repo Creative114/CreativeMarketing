@@ -46,16 +46,20 @@ export default function FindYourStoryForm() {
           because of the impact that you make, not just to cash a paycheck. As
           their guide, you are helping your customers - the heroes - win their
           battles. You are making a difference. Why not you tell the emotional
-          impact of the good that you do with videos stories? According to
-          Hubspot, 85% of consumers want to see more video content from brands.
-          Tubular insight has found that 73% of marketers say video positively
-          impacts their ROI. Emotional Storytelling is a surefire way to
-          connect, engage and resonate with your targeted audience. People rely
-          on emotions, rather than information, to make decisions. To help you
-          get started, we’re sharing a copy of the internal process we use to
-          tell emotionally impacting stories. If you like a copy of the exact
-          process we use internally (our secret sauce), download it for free
-          here.
+          impact of the good that you do with videos stories?
+        </Text>
+        <Text post>
+          According to Hubspot, 85% of consumers want to see more video content
+          from brands. Tubular insight has found that 73% of marketers say video
+          positively impacts their ROI. Emotional Storytelling is a surefire way
+          to connect, engage and resonate with your targeted audience. People
+          rely on emotions, rather than information, to make decisions.
+        </Text>
+        <Text post>
+          To help you get started, we’re sharing a copy of the internal process
+          we use to tell emotionally impacting stories. If you like a copy of
+          the exact process we use internally (our secret sauce), download it
+          for free here.
         </Text>
       </div>
       <Formik
@@ -88,7 +92,7 @@ export default function FindYourStoryForm() {
             xhr.open("POST", url);
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = function() {
-              if (xhr.readyState == 4 && xhr.status == 200) {
+              if (xhr.readyState === 4 && xhr.status === 200) {
                 window.location.href = "https://creative114.com/#/thanks";
               }
             };

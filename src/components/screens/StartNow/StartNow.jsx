@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
 import Splash from "../../shared/Splash";
-import { Input, Label, Button, TextArea, Title } from "../../../theme/index";
+import { Input, Label, Button, TextArea } from "../../../theme/index";
 
 const Form = styled.form`
   display: flex;

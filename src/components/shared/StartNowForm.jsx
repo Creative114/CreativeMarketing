@@ -8,9 +8,7 @@ import {
   Title,
   Select
 } from "../../theme/index";
-import axios from "axios";
 import { Formik } from "formik";
-import HubspotForm from "react-hubspot-form";
 
 const Wrapper = styled.div`
   display: flex;
@@ -86,7 +84,7 @@ export default function StartNowForm() {
             xhr.open("POST", url);
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = function() {
-              if (xhr.readyState == 4 && xhr.status == 200) {
+              if (xhr.readyState === 4 && xhr.status === 200) {
                 console.log("success");
               }
             };

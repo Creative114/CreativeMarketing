@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  padding: 5em 0;
+  padding: 3em 0;
   @media (max-width: 780px) {
     flex-direction: column;
     justify-content: flex-start;

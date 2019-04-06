@@ -83,7 +83,7 @@ export default class HomeSplash extends Component {
               </Subtitle>
               <Row margin="2em 0">
                 <Button primary onClick={toggleModal}>
-                  Start now
+                  Find your story
                 </Button>
               </Row>
             </StyledHomeColumn>
