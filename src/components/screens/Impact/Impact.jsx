@@ -6,6 +6,7 @@ import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import Apply from "../../shared/Apply";
 import Footer from "../../shared/Footer";
 import Posts from "../../shared/Posts";
+import NonProfitForm from "../../shared/NonProfitForm";
 
 const posts = [
   {
@@ -22,15 +23,16 @@ const posts = [
 
 class Impact extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    type: ""
   };
 
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  toggleModal = type => {
+    this.setState({ isOpen: !this.state.isOpen, type });
   };
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, type } = this.state;
 
     return (
       <div style={{ height: "100%" }}>
@@ -56,12 +58,14 @@ class Impact extends Component {
         <Posts posts={posts} />
         <Apply
           title="Apply to #ShareYourImpact"
-          text="We're looking to select 12 non-profit organizations every year to tell their impact stories. If you would like to be considered for this feature, please fill out the form below to apply."
+          text="We're looking to select 4 non-profit organizations every year to tell their impact stories. If you would like to be considered for this feature, please fill out the form below to apply."
+          toggleModal={this.toggleModal}
         />
         <Footer />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <FindYourStoryForm />
+            {type === "story" && <FindYourStoryForm />}
+            {type === "nonprofit" && <NonProfitForm />}
           </Modal>
         )}
       </div>

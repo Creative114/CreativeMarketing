@@ -21,7 +21,7 @@ export default function Thanks() {
       <Splash
         type="thanks"
         title="Thanks"
-        text=" Our team will reach out to you as soon as possible."
+        text="Please download the link below!"
       />
       <Footer />
     </div>
