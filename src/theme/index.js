@@ -280,7 +280,6 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #d21f04;
-
       &:hover {
         color: #d21f04;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

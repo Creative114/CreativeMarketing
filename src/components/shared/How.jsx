@@ -118,8 +118,8 @@ export default function How({ toggleModal }) {
           })}
         </Grid>
         <Row margin="2em 0 1em 0">
-          <Button primary onClick={toggleModal}>
-            Start now
+          <Button primary onClick={() => toggleModal("story")}>
+            Find your story
           </Button>
         </Row>
       </Reveal>

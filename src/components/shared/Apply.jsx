@@ -32,9 +32,8 @@ export default function Apply({ title, text, toggleModal }) {
       <Title>{title}</Title>
       <StyledColumn>
         <Text>{text}</Text>
-        {/* <Subtitle>William Whatley, Senior Developer</Subtitle> */}
         <Row margin=".5em 0">
-          <Button onClick={() => toggleModal("apply")} primary>
+          <Button onClick={() => toggleModal("nonprofit")} primary>
             Apply today
           </Button>
         </Row>

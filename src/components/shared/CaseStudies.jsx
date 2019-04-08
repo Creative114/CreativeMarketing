@@ -6,6 +6,7 @@ import { Column, Title } from "../../theme/index";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  background: rgb(242, 245, 247);
 `;
 
 const StyledColumn = styled(Column)`

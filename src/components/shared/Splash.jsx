@@ -4,6 +4,7 @@ import { Column, Title, Text, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact.jpg";
+import PDF from "../../assets/findyourstory.pdf";
 
 const Wrapper = styled.div`
   height: ${props => props.height || "100%"};
@@ -70,6 +71,29 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const A = styled.a`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: 750ms;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+  background: #fff;
+  width: 165px;
+  height: 45px;
+  border: 1px solid transparent;
+  color: #d21f04;
+  &:hover {
+    color: #d21f04;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+`;
+
 export default function Splash({
   type,
   src,
@@ -105,7 +129,7 @@ export default function Splash({
             position: "relative"
           }}
         >
-          <Video autoPlay muted loop playsinline>
+          <Video autoPlay muted loop playsInline>
             <source src={src} type="video/mp4" />
           </Video>
           <Overlay />
@@ -129,6 +153,7 @@ export default function Splash({
                 {type === "contact" ? "Schedule now" : "Find your story"}
               </StyledButton>
             )}
+            {type === "thanks" && <A href={PDF}>Download now!</A>}
           </StyledColumn>
         </div>
       )}
