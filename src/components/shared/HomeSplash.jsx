@@ -76,10 +76,12 @@ export default class HomeSplash extends Component {
                 Showcase the emotional impact of the good that you do.
               </Title>
               <Subtitle logo>
-                Most Businesses struggle to be interesting and relatable. <br />{" "}
-                We identify & highlight{" "}
-                <span style={{ color: "#D21F04" }}>engaging stories</span> that
-                generate ROI (and goosebumps).
+                Most Businesses struggle to be interesting, relevant and
+                relatable. <br /> We help them identify and tell{" "}
+                <span style={{ color: "#D21F04" }}>
+                  emotionally engaging video stories
+                </span>{" "}
+                that generate ROI (and goosebumps).
               </Subtitle>
               <Row margin="2em 0">
                 <Button primary onClick={toggleModal}>
