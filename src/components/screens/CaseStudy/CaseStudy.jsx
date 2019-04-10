@@ -7,11 +7,15 @@ import casestudyhero1 from "../../../assets/casestudyhero1.jpg";
 import casestudyhero2 from "../../../assets/casestudyhero2.jpg";
 import casestudyhero3 from "../../../assets/casestudyhero3.jpg";
 import { withRouter } from "react-router-dom";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
+import Modal from "../../shared/Modal";
 
 class CaseStudy extends Component {
   state = {
     name: "",
-    data: { title: "", description: "", image: "", videos: [] }
+    data: { title: "", description: "", image: "", videos: [] },
+    type: null,
+    isOpen: false
   };
 
   componentDidMount() {
@@ -20,6 +24,10 @@ class CaseStudy extends Component {
       this.getData();
     });
   }
+
+  toggleModal = type => {
+    this.setState({ isOpen: !this.state.isOpen, type });
+  };
 
   getData = () => {
     const data = {
@@ -85,16 +93,26 @@ class CaseStudy extends Component {
 
   render() {
     const { title, description, image, videos } = this.state.data;
+    const { isOpen, type } = this.state;
     if (this.state.data) {
       return (
         <div>
-          <Splash type="casestudy" img={image && image} />
+          <Splash
+            type="casestudy"
+            img={image && image}
+            toggleModal={this.toggleModal}
+          />
           <Content
             title={title && title}
             description={description && description}
           />
           <Videos videos={videos && videos} />
           <Footer />
+          {isOpen && (
+            <Modal show={isOpen} togglemodal={this.toggleModal}>
+              <FindYourStoryForm />
+            </Modal>
+          )}
         </div>
       );
     } else {

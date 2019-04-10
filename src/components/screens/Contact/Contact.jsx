@@ -4,7 +4,7 @@ import Footer from "../../shared/Footer";
 import Helmet from "react-helmet";
 import ContactForm from "../../shared/ContactForm";
 import Modal from "../../shared/Modal";
-import StartNowForm from "../../shared/StartNowForm";
+import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
 function Calendar() {
   return (
@@ -60,7 +60,7 @@ export default class Contact extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <StartNowForm />
+            <FindYourStoryForm />
           </Modal>
         )}
       </div>
