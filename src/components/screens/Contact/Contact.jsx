@@ -6,32 +6,42 @@ import ContactForm from "../../shared/ContactForm";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
-function Calendar() {
-  return (
-    <div style={{ marginTop: "2em" }}>
-      <div
-        class="meetings-iframe-container"
-        data-src="https://meetings.hubspot.com/jet?embed=true"
-      />
-    </div>
-  );
+class Calendar extends Component {
+  componentWillMount() {
+    const script3 = document.createElement("script");
+
+    script3.src =
+      "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    script3.async = true;
+
+    document.body.appendChild(script3);
+  }
+  render() {
+    return (
+      <div style={{ width: "auto", height: "auto" }}>
+        <div
+          class="meetings-iframe-container"
+          data-src="https://meetings.hubspot.com/jet?embed=true"
+        />
+      </div>
+    );
+  }
 }
 
 export default class Contact extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    type: null
   };
 
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  toggleModal = type => {
+    this.setState({ isOpen: !this.state.isOpen, type }, () => {
+      console.log(this.state);
+    });
   };
 
-  redirect = () => {
-    window.open("https://meetings.hubspot.com/jet", "_blank");
-  };
-  redirect;
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, type } = this.state;
     return (
       <div>
         <Helmet
@@ -54,13 +64,14 @@ export default class Contact extends Component {
           redirect={this.redirect}
           text="We are excited at the opportunity to serve you. Please check below for a few different ways to connect with us. We would love to hear from you. If you would like to schedule a call or grab a cup of coffee with Jet - please click on this link:"
         />
-        <Calendar />
+
         <ContactForm />
 
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <FindYourStoryForm />
+            {type === "story" && <FindYourStoryForm />}
+            {type === "schedule" && <Calendar />}
           </Modal>
         )}
       </div>

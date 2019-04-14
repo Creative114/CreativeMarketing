@@ -147,7 +147,9 @@ export default function Splash({
               <StyledButton
                 footer
                 onClick={() =>
-                  type === "contact" ? redirect : toggleModal("story")
+                  type === "contact"
+                    ? toggleModal("schedule")
+                    : toggleModal("story")
                 }
               >
                 {type === "contact" ? "Schedule now" : "Find your story"}
