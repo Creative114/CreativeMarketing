@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
+import LaunchVideos from "../../shared/LaunchVideos";
 
 class Landing extends Component {
   state = {
@@ -34,6 +35,7 @@ class Landing extends Component {
           ]}
         />
         <LaunchSplash toggleModal={this.toggleModal} />
+        <LaunchVideos />
         <Logos />
         <Testimonials />
         <Footer toggleModal={this.toggleModal} />
