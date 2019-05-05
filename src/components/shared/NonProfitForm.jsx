@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input, Label, Button, Title, Text } from "../../theme/index";
+import { Input, Label, Button, Title } from "../../theme/index";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`

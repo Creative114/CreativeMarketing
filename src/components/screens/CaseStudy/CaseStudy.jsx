@@ -14,7 +14,7 @@ class CaseStudy extends Component {
   state = {
     name: "",
     data: { title: "", description: "", image: "", videos: [] },
-    type: null,
+
     isOpen: false
   };
 
@@ -25,8 +25,8 @@ class CaseStudy extends Component {
     });
   }
 
-  toggleModal = type => {
-    this.setState({ isOpen: !this.state.isOpen, type });
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
 
   getData = () => {
@@ -93,7 +93,7 @@ class CaseStudy extends Component {
 
   render() {
     const { title, description, image, videos } = this.state.data;
-    const { isOpen, type } = this.state;
+    const { isOpen } = this.state;
     if (this.state.data) {
       return (
         <div>

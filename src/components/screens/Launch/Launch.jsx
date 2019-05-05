@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import HomeSplash from "../../shared/HomeSplash";
-import Story from "../../shared/Story";
-import How from "../../shared/How";
+import LaunchSplash from "../../shared/LaunchSplash";
 import Logos from "../../shared/Logos";
-import Portfolio from "../../shared/Portfolio";
 import Testimonials from "../../shared/Testimonials";
 import Footer from "../../shared/Footer";
 import { withRouter } from "react-router-dom";
@@ -11,7 +8,7 @@ import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 
-class Home extends Component {
+class Landing extends Component {
   state = {
     isOpen: false
   };
@@ -36,11 +33,8 @@ class Home extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <HomeSplash toggleModal={this.toggleModal} />
+        <LaunchSplash toggleModal={this.toggleModal} />
         <Logos />
-        <Story />
-        <How toggleModal={this.toggleModal} />
-        <Portfolio type="home" navigate={this.props.history} />
         <Testimonials />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
@@ -53,4 +47,4 @@ class Home extends Component {
   }
 }
 
-export default withRouter(Home);
+export default withRouter(Landing);

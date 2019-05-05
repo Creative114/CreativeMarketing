@@ -10,6 +10,7 @@ import Thanks from "./components/screens/Thanks/Thanks";
 import NoMatch from "./components/screens/NoMatch/NoMatch";
 import StartNow from "./components/screens/StartNow/StartNow";
 import { HashRouter, Route, Switch } from "react-router-dom";
+import Launch from "./components/screens/Launch/Launch";
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
 
@@ -92,6 +93,13 @@ class App extends Component {
               path="/startnow"
               render={() => {
                 return <StartNow onEnter={window.scrollTo(0, 0)} />;
+              }}
+            />
+            <Route
+              exact
+              path="/launch"
+              render={() => {
+                return <Launch onEnter={window.scrollTo(0, 0)} />;
               }}
             />
             <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />

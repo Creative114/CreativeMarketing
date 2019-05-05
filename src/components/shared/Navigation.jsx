@@ -78,40 +78,57 @@ export default class Navigation extends Component {
         display={!this.props.show && "none"}
       >
         <Image active={!active} src={Icon} alt="Creative114 Logo" />
-        <BurgerDiv>
-          <Burger />
-        </BurgerDiv>
+        {type !== "launch" && (
+          <React.Fragment>
+            <BurgerDiv>
+              <Burger />
+            </BurgerDiv>
 
-        <StyledRow>
-          <StyledNavLink home={type === "home"} active={active} exact to="/">
-            Home
-          </StyledNavLink>
-          <StyledNavLink
-            home={type === "home"}
-            active={active}
-            exact
-            to="/work"
-          >
-            Work
-          </StyledNavLink>
-          <StyledNavLink
-            home={type === "home"}
-            active={active}
-            exact
-            to="/about"
-          >
-            About
-          </StyledNavLink>
-          <StyledNavLink home={type === "home"} active={active} to="/impact">
-            #Shareyourimpact
-          </StyledNavLink>
-          <StyledNavLink home={type === "home"} active={active} to="/contact">
-            Contact
-          </StyledNavLink>
-          <Button primary onClick={() => toggleModal("story")}>
-            Find your story
-          </Button>
-        </StyledRow>
+            <StyledRow>
+              <StyledNavLink
+                home={type === "home"}
+                active={active}
+                exact
+                to="/"
+              >
+                Home
+              </StyledNavLink>
+              <StyledNavLink
+                home={type === "home"}
+                active={active}
+                exact
+                to="/work"
+              >
+                Work
+              </StyledNavLink>
+              <StyledNavLink
+                home={type === "home"}
+                active={active}
+                exact
+                to="/about"
+              >
+                About
+              </StyledNavLink>
+              <StyledNavLink
+                home={type === "home"}
+                active={active}
+                to="/impact"
+              >
+                #Shareyourimpact
+              </StyledNavLink>
+              <StyledNavLink
+                home={type === "home"}
+                active={active}
+                to="/contact"
+              >
+                Contact
+              </StyledNavLink>
+              <Button primary onClick={() => toggleModal("story")}>
+                Find your story
+              </Button>
+            </StyledRow>
+          </React.Fragment>
+        )}
       </Wrapper>
     );
   }
