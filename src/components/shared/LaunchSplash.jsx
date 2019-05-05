@@ -12,13 +12,15 @@ const Wrapper = styled.div`
   display: flex;
   @media (max-width: 780px) {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 const StyledColumn = styled(Column)`
   width: 32%
   margin: 0 auto;
-  @media (max-width: 780px) {
+  @media (max-width: 1200px) {
     width: 95%;
     margin: 1em auto 0 auto;
     text-align: center;
@@ -30,14 +32,26 @@ const StyledColumn = styled(Column)`
 
 const StyledVideoColumn = styled(Row)`
   width: 60%;
-  @media (max-width: 780px) {
-    width: 100%;
-    height: 100%;
+  @media (max-width: 1200px) {
+    width: 95%;
+    margin: 0 auto;
   }
 `;
 
 const StyledRow = styled(Row)`
   padding: 10em 0;
+  @media (max-width: 1200px) {
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em 0;
+  }
+`;
+
+const StyledButtonRow = styled(Row)`
+  @media (max-width: 1200px) {
+    justify-content: center;
+    margin: 2em 0;
+  }
 `;
 
 export default class LaunchSplash extends Component {
@@ -55,11 +69,11 @@ export default class LaunchSplash extends Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem
               ipsum dolor sit amet consectetur adipiscing elit.
             </Text>
-            <Row>
+            <StyledButtonRow>
               <Button primary onClick={toggleModal}>
                 Find your story
               </Button>
-            </Row>
+            </StyledButtonRow>
           </StyledColumn>
 
           <StyledVideoColumn>
