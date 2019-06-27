@@ -28,21 +28,21 @@ class Work extends Component {
       {
         title: "Collective Genius",
         description:
-          "CG is a top notch Mastermind for the nation's top 5 % Real Estate investors. They host quarterly events in Florida and San Diego. They meet to connect, lend and borrow money from each other, systematize inefficiencies, and create joint venture on real estate deals.",
+          "COLLECTIVE GENIUS is a renowned mastermind for an elite group of investors throughout the country and the world. Their company is comprised of the top 5% of the nation’s investors. Creative114 captured powerful presentations at their quarterly meetings and produced videos and graphic design that they use to promote and grow their business.",
         type: "left",
         img: casestudy3
       },
       {
         title: "Movement 2819",
         description:
-          "Movement 2819 is a non-profit hosting large scale events called Night of Hope. The first event was hosted at the Tropicana Field and attracted over 20K people. Special guests included: Tim Tebow, Kari Jobe, Mack Brock, Shannon Estee and Dustin LaChance.",
+          "MOVEMENT 2819 is a non-profit based in Tampa Bay with the mission to share the teaching of the Gospel. They hired Creative114 to develop compelling video content to advertise their 2018 Night of Hope event, as well as craft a video recap of the night. The event drew over 20,000 people and featured notable Christian celebrities like Tim Tebow, Kari Jobe, Shannon Estee, and Mack Brock. Founder, Dustin Lachance, who organized the event, was beyond thrilled with the results.",
         type: "right",
         img: casestudy1
       },
       {
         title: "Mission City Church",
         description:
-          "Mission City is a church in Largo Florida. Their mission is to help people find and follow Jesus. They create several events throughout the year including conferences featuring Pam Tebow, Trip Lee, Clayton Jennings and Perry Noble.",
+          "MISSION CITY CHURCH, located in Largo, Florida, works on a consistent basis with Creative114 to capture weekly announcements, create story videos, and produce conference recaps and church events. creative114 has produced videos for their events with notable featured guests such as Pam Tebow, Trip Lee, Clayton Jennings, and Perry Noble. Mission City Church aims to be the hands, feet, and voice of Jesus as they deliver hope in the Tampa Bay area. We are grateful for the opportunity to help MCC execute their mission and vision.",
         type: "left",
         img: casestudy2
       }
@@ -63,11 +63,11 @@ class Work extends Component {
         />
         <Splash
           type="work"
-          title="Work"
+          title="More Than Work"
           img={splash}
           src="https://player.vimeo.com/external/320615958.hd.mp4?s=ef079df32a46b67d823275083675210fb601a354&profile_id=169"
           toggleModal={this.toggleModal}
-          text="We are more than a video production company. We are in the business of creative storytelling and problem solving. We work to craft and tell your stories with emotions and creativity. Our primary purpose is to empower your business to engage, entertain, and excite your targeted audience."
+          text="We deliver far more than beautiful, cinematic work. Our passion is telling your inspiring, moving, and emotional stories through the art of video. Our greatest payment comes in the form of laughter, tears, applause, and goosebumps."
         />
         <Portfolio />
         <Recent recentwork={recentwork} />

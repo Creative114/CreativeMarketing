@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Column, Title, Button, Text } from "../../theme/index";
-import Reveal from "react-reveal/Reveal";
+// import Reveal from "react-reveal/Reveal";
 import Navigation from "./Navigation";
 
 const Wrapper = styled.div`

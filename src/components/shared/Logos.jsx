@@ -75,7 +75,7 @@ export default function Logos() {
           <StyledColumn>
             <Title>Our clients.</Title>
             <Text logo margin="0">
-              Here are a few brands that have trusted us
+              The Heroes Behind Our Success
             </Text>
           </StyledColumn>
           <Grid>

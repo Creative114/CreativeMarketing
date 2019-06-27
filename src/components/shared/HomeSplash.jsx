@@ -73,19 +73,19 @@ export default class HomeSplash extends Component {
                 <Lightbulb />
               </StyledLightbulb>
               <Title header home>
-                Showcase the emotional impact of the good that you do.
+                Supercharging Your Business With Emotionally Engaging Videos
               </Title>
               <Subtitle logo>
-                Most Businesses struggle to be interesting, relevant and
-                relatable. <br /> We help them identify and tell{" "}
+                If you struggle to be interesting, relevant, and relatable,{" "}
+                <br /> we’ll help you identify and communicate{" "}
                 <span style={{ color: "#D21F04" }}>
-                  emotionally engaging video stories
+                  emotionally engaging stories
                 </span>{" "}
-                that generate ROI (and goosebumps).
+                that generate results (and goosebumps).
               </Subtitle>
               <Row margin="2em 0">
                 <Button primary onClick={toggleModal}>
-                  Find your story
+                  Start your story
                 </Button>
               </Row>
             </StyledHomeColumn>

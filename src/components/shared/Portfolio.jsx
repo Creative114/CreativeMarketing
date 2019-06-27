@@ -298,7 +298,7 @@ export default class Portfolio extends Component {
             {type === "home" && (
               <Column alignitems="center">
                 <Button primary onClick={() => navigate.push("Work")}>
-                  See More
+                  Start your story
                 </Button>
               </Column>
             )}

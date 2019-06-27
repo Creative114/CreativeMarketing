@@ -58,11 +58,12 @@ export default class Recent extends Component {
   render() {
     return (
       <Wrapper id="what">
-        <Column alignitems="center" textalign="center">
-          <Title>Other work</Title>
+        <Column alignitems="center" textalign="center" width="75%">
+          <Title>A Few of Our Recent Stories</Title>
           <Text>
-            Below are a few projects that we have had the honor of creating for
-            our clients:
+            We are committed to masterfully crafting experiences that evoke an
+            emotional connection and imprint your message into the hearts and
+            minds of your audience.
           </Text>
         </Column>
         <Grid>

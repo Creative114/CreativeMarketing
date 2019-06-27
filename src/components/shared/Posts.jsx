@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Row } from "../../theme/index";
+import { Column, Title, Row, Text } from "../../theme/index";
 import moment from "moment";
 import Video from "../shared/Video";
 
@@ -48,7 +48,7 @@ const Div = styled.div`
   }
 `;
 
-const StyledColumn = styled(Column)`
+const StyledPost = styled(Column)`
   padding: 0 1em;
   @media (max-width: 780px) {
     width: ${props => (props.text ? "95%" : "65%")};
@@ -57,12 +57,24 @@ const StyledColumn = styled(Column)`
   }
 `;
 
+const StyledColumn = styled(Column)`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  @media (max-width: 1100px) {
+    margin: 1em auto;
+    width: 95%;
+  }
+`;
+
 function Post({ title, text, date, author, video, description }) {
   return (
     // <Link to={`/impact/${title.toLowerCase()}`}>
     <Div>
       <Video src={video} />
-      <StyledColumn>
+      <StyledPost>
         {/* <Subtitle margin="1em 0 0 0">{title}</Subtitle> */}
         {/* <Text>{text}</Text> */}
         <Row width="100%" justifycontent="space-between">
@@ -70,7 +82,7 @@ function Post({ title, text, date, author, video, description }) {
           {/* <Text margin=".15em 0">By: {author}</Text> */}
         </Row>
         {/* <Text post>{description}</Text> */}
-      </StyledColumn>
+      </StyledPost>
     </Div>
     // </Link>
   );
@@ -79,13 +91,17 @@ function Post({ title, text, date, author, video, description }) {
 export default function Posts({ posts }) {
   return (
     <Wrapper>
-      <Column alignitems="center" textalign="center">
-        <Title>#ShareYourImpact</Title>
+      <StyledColumn>
+        <Title>The Stories</Title>
+        <Text logo margin="0">
+          That Need to Be Told
+        </Text>
+
         {/* <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor.
         </Text> */}
-      </Column>
+      </StyledColumn>
       {posts && posts.length >= 1 && (
         <Grid>
           {posts.map((key, index) => {

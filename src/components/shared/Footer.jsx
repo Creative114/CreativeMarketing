@@ -101,9 +101,9 @@ export default function Footer({ toggleModal }) {
       <StyledRow>
         <StyledColumn>
           <Text footer>
-            Most Businesses struggle to be interesting and relatable.
-            <br /> We identify & highlight engaging stories that generate ROI
-            (and goosebumps).
+            If you’re struggle to be interesting, relevant, and relatable,
+            <br /> we’ll help you identify and communicate emotionally engaging
+            video stories that generate results (and goosebumps).
           </Text>
           <Text footer>
             2019 &copy; Creative114 | Made with &hearts; in Tampa, FL

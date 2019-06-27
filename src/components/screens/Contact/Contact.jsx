@@ -58,11 +58,11 @@ export default class Contact extends Component {
         />
         <Splash
           type="contact"
-          title="Contact"
+          title="Let’s Explore Your Story"
           src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
           toggleModal={this.toggleModal}
           redirect={this.redirect}
-          text="We are excited at the opportunity to serve you. Please check below for a few different ways to connect with us. We would love to hear from you. If you would like to schedule a call or grab a cup of coffee with Jet - please click on this link:"
+          text="We would love to hear from you."
         />
 
         <ContactForm />

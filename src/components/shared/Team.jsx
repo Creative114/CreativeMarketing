@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Member from "./Member";
-import { Row, Title } from "../../theme/index";
+import { Row, Title, Text, Column } from "../../theme/index";
 import Slider from "react-slick";
 import jet from "../../assets/jet.jpg";
 import will from "../../assets/will.jpg";
 import jephte from "../../assets/jephte.jpg";
 import alex from "../../assets/alex.jpg";
-import sasha from "../../assets/sasha.jpg";
 import Rachael from "../../assets/rachel.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 4em 0 2em 0;
+  margin: 0 auto;
 `;
 
 const StyledBox = styled.div`
@@ -58,6 +58,18 @@ const MobileDiv = styled.div`
   }
 `;
 
+const StyledColumn = styled(Column)`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  @media (max-width: 1100px) {
+    margin: 1em auto;
+    width: 95%;
+  }
+`;
+
 const boxes = [
   {
     id: "jet",
@@ -87,13 +99,7 @@ const boxes = [
     icon: "fal fa-fingerprint",
     img: will
   },
-  {
-    id: "sasha",
-    title: "Accountability",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-fingerprint",
-    img: sasha
-  },
+
   {
     id: "alex",
     title: "Accountability",
@@ -139,49 +145,49 @@ export default class Team extends Component {
 
     return (
       <Wrapper>
-        <Row justifycontent="center">
+        <StyledColumn>
           <Title>Meet the team</Title>
-        </Row>
+          <Text logo margin="0">
+            The Creative114 team has a diverse background in different areas
+            that allow us to use impeccable resources to convey your story and
+            offer out-of-the-box solutions to your problems.
+          </Text>
+        </StyledColumn>
         <MobileDiv>
           <Slider {...settings}>
             <Member
               img={jet}
               name="Getro Jean-Claude"
               title="Founder & Creative Director"
-              description="Getro is the mastermind behind Creative1.14. He is very passionate about creative storytelling and problem solving. When Getro is not working hard to tell the emotional impact of the good that you do - he is gaining inspiration by watching all of the Marvel’s (and sometime DC’s) movies and shows. Getro loves learning about different cultures, food and languages. He is fluent in Creole and has strong command of French and Spanish. He even took 3 semesters of Mandarin Chinese in College.  Fun Fact: He is originally from Haiti, has won a 20 under 40 Leadership Award, nominated as Next Mayor of Toledo and was featured in a few local and national magazine."
+              description="Without Jet’s vision and servant leadership Creative114 would not be what it is today. He is committed to using his life to impact others. With his keen sense of human connection and his eye for capturing exceptional video content, Jet’s early creative career focused on video and design for nonprofits. After winning awards and gaining national coverage, he was motivated by something greater—the power of telling emotionally engaging stories. He continued to grow as a filmmaker, storyteller, and entrepreneur, eventually launching what is now known as Creative114. He is humbled to lead the team in diverse opportunities to share the unique stories of national and international nonprofits and businesses of all sizes. Jet is dedicated to reflecting the values of determination, creativity, and empowerment in everything he does."
             />
 
             <Member
               img={Rachael}
               name="Rachael Jean-Claude"
-              title="The Founder’s Boss"
-              description="Behind any great man, there is an amazing women. She is the founder’s (Getro) wife. With her day job - she saves lives as a family medicine physicians. However, she loves working with her husband as an assistant behind the scene photographer/videographer when the time allows. She also handles some of the internal operations of Creative1.14. She plays a huge role as a soundboard for the strategic growth of the organization. Fun Fact: Getro and Rachael are expecting their first child - a daughter - Marielle (Ellie) in June 2019. "
+              title="Executive Assistant"
+              description="The expression “behind every great man there’s a great woman” is more than a simple adage.  It is the truth behind the leadership of Creative114. Jet and Rachael’s teamwork is important to the success of the company. At the core of Rachael’s work is a powerful question: How can I help foster an environment where creativity can thrive? She is a foundational part of the team, serving our clients and staff with her leadership support, production assistance, and business development. Although she rarely stands in the spotlight, Rachael works behind-the-scenes keeping our Creative114 moving forward."
             />
 
             <Member
               img={jephte}
               name="Jephte Jean-Claude"
               title="Marketing Intern"
-              description="Jephte is the younger and better looking brother of the Founder (Getro). He is currently in College studying Marketing and will be graduating in December 2019. He hopes to join his brother’s business after graduation. He is currently a track and field star and even played football as a wide receiver and kicker in his first couple years in College. Jephte is a drummer, loves to dance and is the life of the party. He always bring a smile to everyone that he interacts with. Fun Fact: He is a 5 times MIAA Triple Jump Champions."
+              description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
             />
 
             <Member
               img={will}
               name="William Whatley"
               title="Technologist"
-              description="William has experience developing web and native applications, as well as leading engineering teams. In addition, he currently acts as Chief Technologist for a medical application in partnership with two academic physicians. William has mentored and even served as a judge for a county-wide public high school’s program in Florida, where he gave presentations and taught the fundamentals of programming, usability, product ideation, UI/UX, and entrepreneurship."
+              description="William is the guy you want on your team. He helps give Creative114 our strong digital presence. As a talented website and applications developer, William works behind-the-scenes to diligently create and maintain our online presence. The work he does on our site also helps us better support and promote our clients. He keeps our site updated and create landing pages that are directly related to maximizing the reach of our stories and the Creative114 brand. "
             />
-            <Member
-              img={sasha}
-              name="Sasha Lorow"
-              title="Social Media Strategist"
-              description="Sasha is a graduate from the University of Tampa with a Degree in Digital Arts. In her role with Creative1.14, she creates and executes our social media strategy and campaigns. She also monitors and engage with our social media audience. As her passion, Sasha has always been drawn to anything remotely creative. She currently volunteers at her church as a camera operator on the production team. Fun Fact: She is originally from South Carolina. She loves music and uses it as her muse for her life and inspiration. She hopes to become a pro at playing the guitar one day."
-            />
+
             <Member
               img={alex}
               name="Alex Gell"
               title="Drone Operator"
-              description="Alex is a certified Part 107 drone pilot and currently captures all of our amazing drone footage for our creative stories. He is very passionate about technology and video production. He currently volunteers as the Director of Production at Mission City Church. He prides himself in continually growing as a husband/father, providing great customer service and problem solving. Alex is married, has a 3 year old, Emilia and a second child on the way with his wife Niki. Fun Fact: Alex was born in Puerto Rico and speak fluent Spanish."
+              description="As a certified drone operator, Alex professionally captures the beautiful shots and footage used in our creative content. Passionate about technology, he has a knack for using technical equipment to deliver the breathtaking visual aspects of our projects."
             />
           </Slider>
         </MobileDiv>
@@ -193,15 +199,15 @@ export default class Team extends Component {
                   img={jet}
                   name="Getro Jean-Claude"
                   title="Founder & Creative Director"
-                  description="Getro is the mastermind behind Creative1.14. He is very passionate about creative storytelling and problem solving. When Getro is not working hard to tell the emotional impact of the good that you do - he is gaining inspiration by watching all of the Marvel’s (and sometime DC’s) movies and shows. Getro loves learning about different cultures, food and languages. He is fluent in Creole and has strong command of French and Spanish. He even took 3 semesters of Mandarin Chinese in College.  Fun Fact: He is originally from Haiti, has won a 20 under 40 Leadership Award, nominated as Next Mayor of Toledo and was featured in a few local and national magazine."
+                  description="Without Jet’s vision and servant leadership Creative114 would not be what it is today. He is committed to using his life to impact others. With his keen sense of human connection and his eye for capturing exceptional video content, Jet’s early creative career focused on video and design for nonprofits. After winning awards and gaining national coverage, he was motivated by something greater—the power of telling emotionally engaging stories. He continued to grow as a filmmaker, storyteller, and entrepreneur, eventually launching what is now known as Creative114. He is humbled to lead the team in diverse opportunities to share the unique stories of national and international nonprofits and businesses of all sizes. Jet is dedicated to reflecting the values of determination, creativity, and empowerment in everything he does."
                 />
               )}
               {selected === "Rachael" && (
                 <Member
                   img={Rachael}
                   name="Rachael Jean-Claude"
-                  title="The Founder’s Boss"
-                  description="Behind any great man, there is an amazing women. She is the founder’s (Getro) wife. With her day job - she saves lives as a family medicine physicians. However, she loves working with her husband as an assistant behind the scene photographer/videographer when the time allows. She also handles some of the internal operations of Creative1.14. She plays a huge role as a soundboard for the strategic growth of the organization. Fun Fact: Getro and Rachael are expecting their first child - a daughter - Marielle (Ellie) in June 2019. "
+                  title="Executive Assistant"
+                  description="The expression “behind every great man there’s a great woman” is more than a simple adage.  It is the truth behind the leadership of Creative114. Jet and Rachael’s teamwork is important to the success of the company. At the core of Rachael’s work is a powerful question: How can I help foster an environment where creativity can thrive? She is a foundational part of the team, serving our clients and staff with her leadership support, production assistance, and business development. Although she rarely stands in the spotlight, Rachael works behind-the-scenes keeping our Creative114 moving forward."
                 />
               )}
               {selected === "jephte" && (
@@ -209,7 +215,7 @@ export default class Team extends Component {
                   img={jephte}
                   name="Jephte Jean-Claude"
                   title="Marketing Intern"
-                  description="Jephte is the younger and better looking brother of the Founder (Getro). He is currently in College studying Marketing and will be graduating in December 2019. He hopes to join his brother’s business after graduation. He is currently a track and field star and even played football as a wide receiver and kicker in his first couple years in College. Jephte is a drummer, loves to dance and is the life of the party. He always bring a smile to everyone that he interacts with. Fun Fact: He is a 5 times MIAA Triple Jump Champions."
+                  description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
                 />
               )}
               {selected === "will" && (
@@ -220,20 +226,13 @@ export default class Team extends Component {
                   description="William is a gifted web and native applications developer. In his capacity, he creates and maintains the aesthetic and web presence of Creative1.14. He also work to develop web and landing pages for our clients in order to maximize the ROI of the amazing stories that we create for them. William deeply cares about the environment and charity work. He has mentored and even served as a judge for public high school programs in Florida, where he taught the fundamentals of programming, product ideation, UI/UX, and entrepreneurship. Unique fact: William loves traveling and spending time in South America. He is quickly learning Spanish and loves entrepreneurship."
                 />
               )}
-              {selected === "sasha" && (
-                <Member
-                  img={sasha}
-                  name="Sasha Lorow"
-                  title="Social Media Strategist"
-                  description="Sasha is a graduate from the University of Tampa with a Degree in Digital Arts. In her role with Creative1.14, she creates and executes our social media strategy and campaigns. She also monitors and engage with our social media audience. As her passion, Sasha has always been drawn to anything remotely creative. She currently volunteers at her church as a camera operator on the production team. Fun Fact: She is originally from South Carolina. She loves music and uses it as her muse for her life and inspiration. She hopes to become a pro at playing the guitar one day."
-                />
-              )}
+
               {selected === "alex" && (
                 <Member
                   img={alex}
                   name="Alex Gell"
                   title="Drone Operator"
-                  description="Alex is a certified Part 107 drone pilot and currently captures all of our amazing drone footage for our creative stories. He is very passionate about technology and video production. He currently volunteers as the Director of Production at Mission City Church. He prides himself in continually growing as a husband/father, providing great customer service and problem solving. Alex is married, has a 3 year old, Emilia and a second child on the way with his wife Niki. Fun Fact: Alex was born in Puerto Rico and speak fluent Spanish."
+                  description="As a certified drone operator, Alex professionally captures the beautiful shots and footage used in our creative content. Passionate about technology, he has a knack for using technical equipment to deliver the breathtaking visual aspects of our projects."
                 />
               )}
             </Row>

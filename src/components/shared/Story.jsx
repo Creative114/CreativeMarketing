@@ -113,18 +113,21 @@ export default class Story extends Component {
             <StoryVideo />
             <StyledTextColumn>
               <Text secondary>
-                We are on a mission to tell stories that captivate audiences by
-                showcasing the good that you do. That’s our passion. That’s what
-                give us goosebumps. We believe video stories are the best way to
-                inspire and engage those you serve. That’s why we decided to
-                create and share our own story. We wanted to inspire and show
-                you that no matter where you are from, no matter your vision and
-                passion, you can make and #shareyourimpact.
+                The human connection. It adds value to our lives, gives us a
+                sense of belonging, and makes us feel a remarkable range of
+                emotions. In a world where people feel more isolated than ever
+                and attention spans are short, we set out to successfully help
+                businesses and individuals engage in an authentic, transparent,
+                and effective way—through the power of video storytelling. It’s
+                our mission to create meaningful connections between you and
+                your audience by developing and crafting emotionally engaging
+                stories that directly reach the heart and make a long-lasting
+                impact. #shareyourimpact.
               </Text>
             </StyledTextColumn>
           </StyledRow>
           <Button primary>
-            <Link to="/work">Learn more</Link>
+            <Link to="/work">Start your story</Link>
           </Button>
         </Reveal>
       </Wrapper>

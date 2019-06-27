@@ -29,7 +29,7 @@ const StyledBox = styled(Column)`
   text-align: center;
 `;
 
-const StyledColumn = styled(Column)`
+const StyledWrapper = styled(Column)`
   padding: 6em 0 4em 0;
   align-items: center;
   margin: 0 auto;
@@ -46,42 +46,54 @@ const StyledBoxColumn = styled(Column)`
   }
 `;
 
+const StyledColumn = styled(Column)`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  @media (max-width: 1100px) {
+    margin: 1em auto;
+    width: 95%;
+  }
+`;
+
 const values = [
   {
     icon: "fas fa-handshake",
-    title: "Collaboration",
+    title: "Encourage Collaboration",
     description:
-      "We encourage diversity of thoughts and collaboration to help ideas grows further."
+      "We combine our talents and resources with your expertise in your industry to engage, entertain, and excite the right people with your unique story."
   },
   {
     icon: "fas fa-award",
-    title: "Commitment",
+    title: "Embrace Commitment",
     description:
-      "We are dedicated to the unrelenting pursuit of your goals and success of your brand."
+      "We never settle for the status quo. We will go to any length possible to exceed your expectations and deliver the highest quality finished product."
   },
   {
     icon: "fas fa-heart",
-    title: "Compassion",
+    title: "Express Compassion",
     description:
-      "We bring more meaning to our work by serving and helping others achieve their own dreams."
+      "We are dedicated to loving and serving you. The way we treat people and live our lives is intricately woven into the exceptional work we produce."
   },
   {
     icon: "fas fa-certificate",
-    title: "Credibility",
+    title: "Establish Credibility",
     description:
-      "We always do what is right even though it might cost us because trust and integrity is everything to us."
+      "Trust and integrity are critical to our identity as a brand and as individuals. We promise to always do what is right for the client, no matter the circumstances."
   },
   {
     icon: "fas fa-star",
-    title: "Candor",
+    title: "Emphasize Candor",
     description:
-      "We believe openness and honesty should be cultivated for the greater good and success of the people that we serve."
+      "Transparency and honesty are ingrained in our people and in our processes. We will always be up front with you and work with your best interest in mind."
   },
   {
     icon: "fas fa-bullseye",
-    title: "Consistency",
+    title: "Enhance Creativity",
     description:
-      "We go beyond the status quo to consistently exceed your expectation with the quality of our work."
+      "We are passionate about our work and we don’t stop until we’ve pushed the boundaries of turning your vision into a breathtaking, exciting reality."
   }
 ];
 
@@ -99,8 +111,15 @@ function Box({ icon, title, description }) {
 
 export default function Values() {
   return (
-    <StyledColumn>
-      <Title>Our Values</Title>
+    <StyledWrapper>
+      <StyledColumn>
+        <Title>Our Values</Title>
+        <Text logo margin="0">
+          The Creative114 team has a diverse background in different areas that
+          allow us to use impeccable resources to convey your story and offer
+          out-of-the-box solutions to your problems.
+        </Text>
+      </StyledColumn>
       <Wrapper>
         {values &&
           values.map((key, index) => {
@@ -114,6 +133,6 @@ export default function Values() {
             );
           })}
       </Wrapper>
-    </StyledColumn>
+    </StyledWrapper>
   );
 }

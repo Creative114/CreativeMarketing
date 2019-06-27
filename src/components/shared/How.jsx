@@ -55,14 +55,12 @@ const Image = styled.img`
   margin: 0.25em 0;
 `;
 
-const StyledRow = styled(Row)`
+const StyledColumn = styled(Column)`
   justify-content: center;
   align-items: center;
+  text-align: center;
   @media (max-width: 1100px) {
-    flex-direction: column;
-    align-items: center;
     margin: 1em auto;
-    text-align: center;
   }
 `;
 
@@ -81,30 +79,33 @@ function Item({ title, text, img }) {
 export default function How({ toggleModal }) {
   const items = [
     {
-      title: "1: Pre-Production",
+      title: "Explore",
       text:
-        "This is the most important stage. We build the foundation of the project after you submit the creative brief. We then create a logistical game plan and get ready to shoot.",
+        "People are longing to feel something. Maximize your story’s emotional impact by diving into what you want others to feel and how you want them to respond.",
       img: preproduction
     },
     {
-      title: "2: Production",
+      title: "Express",
       text:
-        "Lights, Camera, Action. Oh yeah!!! this is the fun part. We travel to the filming locations with our gears to capture all the footage that we need to tell your engaging stories.",
+        "The most captivating narratives combine inspired words with unforgettable pictures. Awaken your audience through robust, cinematic storytelling.",
       img: production
     },
     {
-      title: "3: Post-Production",
+      title: "Excite",
       text:
-        "This is where we really shine. We bring the shots together into a cohesive story. We share first drafts to get your thoughts. We’re ready to give your customers goosebumps.",
+        "See your dream become a breathtaking reality, as you share your message on the world’s stage. Gain the recognition you deserve and the results you desire.",
       img: postproduction
     }
   ];
   return (
     <Wrapper>
       <Reveal effect="fadeIn">
-        <StyledRow>
-          <Title>3 steps to share your emotionally engaging stories.</Title>
-        </StyledRow>
+        <StyledColumn>
+          <Title>3 Clear Steps.</Title>
+          <Text logo margin="0">
+            For Captivating Your Audience
+          </Text>
+        </StyledColumn>
         <Grid>
           {items.map((key, index) => {
             return (
@@ -119,7 +120,7 @@ export default function How({ toggleModal }) {
         </Grid>
         <Row margin="2em 0 1em 0">
           <Button primary onClick={() => toggleModal("story")}>
-            Find your story
+            Start your story
           </Button>
         </Row>
       </Reveal>

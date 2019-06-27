@@ -37,7 +37,7 @@ export default class About extends Component {
         <Splash
           type="about"
           title="About"
-          text="Most Businesses struggle to be interesting and relatable. We have a process that identifies, highlights and conveys the emotional impact of the good that they do so they can tell compelling and engaging stories that will generate goosebumps and ROI for their business."
+          text="Our team becomes an extension of your team. Collaborate with creative, diverse storytellers who know how to capture your vision, craft inspiring words, and create a compelling visual narrative that will captivate your audience."
           toggleModal={this.toggleModal}
           src="https://player.vimeo.com/external/320613023.hd.mp4?s=e6381ef87a4e840aadcea5ae80381210ae9177b8&profile_id=175"
         />

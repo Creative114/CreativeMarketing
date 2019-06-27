@@ -152,7 +152,7 @@ export default function Splash({
                     : toggleModal("story")
                 }
               >
-                {type === "contact" ? "Schedule now" : "Find your story"}
+                {type === "contact" ? "Schedule now" : "Start your story"}
               </StyledButton>
             )}
             {type === "thanks" && <A href={PDF}>Download now!</A>}

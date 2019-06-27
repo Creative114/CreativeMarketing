@@ -50,15 +50,15 @@ class Impact extends Component {
         />
         <Splash
           type="impact"
-          title="#ShareYourImpact"
-          text="#ShareYourImpact is a movement that was birthed out of our mission to showcase the emotional impact of the good that you do. It is ingrained in our culture and our DNA. Serving and helping others achieve their dreams is one of the way that we bring more meaning to our work. So we give back to the local community, the nation and overseas. Follow along with our impact journey!!!"
+          title="Bigger Than a Hashtag"
+          text="Our clients are incredible. We started the #shareyourimpact movement to spread awareness and showcase the good they are doing. It’s a way for us to give more to our clients, our community, our people, and our world. Be inspired as you follow #shareyourimpact on social media!"
           toggleModal={this.toggleModal}
           src="https://player.vimeo.com/external/320619144.hd.mp4?s=58bb391b41ba251e391116c5e3d21462f96eba5a&profile_id=169"
         />
         <Posts posts={posts} />
         <Apply
-          title="Apply to #ShareYourImpact"
-          text="We're looking to select 4 non-profit organizations every year to tell their impact stories. If you would like to be considered for this feature, please fill out the form below to apply."
+          title="Apply"
+          text="Each year we feature four outstanding non-profit organizations as part of our #shareyourimpact movement. If you would like your organization to be considered as one of these non-profits, please fill out the simple form below to apply."
           toggleModal={this.toggleModal}
         />
         <Footer />

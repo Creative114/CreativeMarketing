@@ -30,6 +30,9 @@ export default function Apply({ title, text, toggleModal }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
+      <Text logo margin="0">
+        to #shareyourimpact
+      </Text>
       <StyledColumn>
         <Text>{text}</Text>
         <Row margin=".5em 0">

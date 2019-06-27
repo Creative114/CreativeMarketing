@@ -41,7 +41,7 @@ const Div = styled.div`
   background-size: cover;
   background-position: center;
   width: 50vw;
-  height: 400px;
+  height: 600px;
   @media (max-width: 780px) {
     width: 100%;
   }
