@@ -5,6 +5,7 @@ const Wrapper = styled.div`
 height: 100%;
 width: 100%:
 position: relative;
+border-radius: 4px;
 `;
 
 const Div = styled.div`
@@ -16,12 +17,14 @@ const Div = styled.div`
   top: 0;
   transition: opacity 250ms;
   width: 50%;
+  border-radius: 4px;
 `;
 
 const Img = styled.img`
   height: 100%;
   width: 100%;
   object-fit: contain;
+  border-radius: 4px;
 `;
 
 export default function Video({ src }) {

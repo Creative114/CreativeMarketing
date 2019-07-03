@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   height: 100%;
   min-height: 550px;
-  width: 90%;
+  width: 95%;
   align-items: center;
   margin: 0 auto;
   transition: 750ms;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 50vw;
+  width: 45vw;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ const StyledColumn = styled(Column)`
 
 const StyledTextColumn = styled(Column)`
   margin: 1em 0;
-  width: 90%;
+  width: 70%;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;

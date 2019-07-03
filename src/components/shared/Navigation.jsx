@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Icon from "../../assets/icon.png";
 import Burger from "./Burger";
 import { Row, StyledNavLink, Button } from "../../theme/index";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -77,7 +78,9 @@ export default class Navigation extends Component {
         active={active}
         display={!this.props.show && "none"}
       >
-        <Image active={!active} src={Icon} alt="Creative114 Logo" />
+        <Link to="/">
+          <Image active={!active} src={Icon} alt="Creative114 Logo" />
+        </Link>
         {type !== "launch" && (
           <React.Fragment>
             <BurgerDiv>

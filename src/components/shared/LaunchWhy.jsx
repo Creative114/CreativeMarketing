@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Title } from "../../theme/index";
-import Video from "../shared/Video";
+import { Row, Column, Title, Text } from "../../theme/index";
+// import Reveal from "react-reveal/Reveal";
+import BG from "../../assets/rectange_bg.png";
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0 auto;
-  display: flex;
+  background: ${props => props.bg};
   flex-direction: column;
-  padding: 3em 0;
   align-items: center;
+  padding: 10em 0;
   @media (max-width: 780px) {
-    width: 95%;
-    text-align: center;
-    padding: 1em 0;
+    justify-content: center;
+    padding: 5em 0;
   }
 `;
 
@@ -22,15 +22,15 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
   margin: 0 auto;
-  margin: 2em 0 4em 0;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-auto-rows: auto;
+  margin: 2em auto 6em auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 170px;
   height: 100%;
   width: 80%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
-    margin: 2em 0;
+    margin: 2em auto;
   }
 `;
 
@@ -39,21 +39,15 @@ const Div = styled.div`
   height: 100%;
   border-radius: 3px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
   transition: 750ms;
   text-align: center;
 `;
-
-// const lightbox = [
-//   <Video src="https://fast.wistia.com/embed/medias/v70c06uszd/swatch" />,
-//   <Video src="https://fast.wistia.com/embed/medias/ioz3i2dz8k/swatch" />,
-//   <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />,
-//   <Video src="https://fast.wistia.com/embed/medias/jsdmuoe293/swatch" />,
-//   <Video src="https://fast.wistia.com/embed/medias/k3qm1g877n/swatch" />,
-//   <Video src="https://fast.wistia.com/embed/medias/bvj3ukhj2g/swatch" />
-// ];
 
 const StyledButton = styled.button`
   width: 342px;
@@ -80,35 +74,37 @@ const StyledButton = styled.button`
   }
 `;
 
-export default class LaunchVideos extends Component {
+export default class LaunchWhy extends Component {
   render() {
     return (
-      <Wrapper id="what">
+      <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
-          <Title margin=".25em 0">Other work</Title>
+          <Title margin=".25em 0">Lorem Ipsum</Title>
           <Text>
-            Below are a few projects that we have had the honor of creating for
-            our clients:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum
+            dolor sit amet consectetur adipiscing elit.
           </Text>
         </Column>
         <Grid>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/v70c06uszd/swatch" />
+            <Text>Test</Text>
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/ioz3i2dz8k/swatch" />
+            <Text>Test</Text>
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />
+            <Text>Test</Text>
           </Div>
         </Grid>
-        <StyledButton>
-          <i
-            class="fas fa-play-circle"
-            style={{ color: "#fff", marginRight: ".5em" }}
-          />
-          Find your story
-        </StyledButton>
+        <Row justifycontent="center">
+          <StyledButton>
+            <i
+              class="fas fa-play-circle"
+              style={{ color: "#fff", marginRight: ".5em" }}
+            />
+            Find your story
+          </StyledButton>
+        </Row>
       </Wrapper>
     );
   }

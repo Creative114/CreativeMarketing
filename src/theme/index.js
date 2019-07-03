@@ -59,7 +59,7 @@ export const Text = styled.p`
   font-weight: 300;
   color: #a1aeb7;
   font-size: ${props => (props.logo ? "22px" : "18px")};
-  line-height: 38px;
+  line-height: 34px;
   margin: ${props => props.margin || "0.5em 0"};
   @media (max-width: 780px) {
     font-size: 16px;
