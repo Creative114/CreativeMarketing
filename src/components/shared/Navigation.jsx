@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Icon from "../../assets/icon.png";
+import Logo from "../../assets/logoColor.png";
 import Burger from "./Burger";
 import { Row, StyledNavLink, Button } from "../../theme/index";
 import { Link } from "react-router-dom";
@@ -24,8 +25,8 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 40px;
-  height: 56px;
+  width: ${props => (props.active ? "220px" : "40px")};
+  height: ${props => (props.active ? "30px" : "56px")};
   transition: 250ms;
   margin-left: 1.5em;
   @media (max-width: 425px) {
@@ -79,7 +80,11 @@ export default class Navigation extends Component {
         display={!this.props.show && "none"}
       >
         <Link to="/">
-          <Image active={!active} src={Icon} alt="Creative114 Logo" />
+          <Image
+            src={active ? Icon : Logo}
+            active={!active}
+            alt="Creative114 Logo"
+          />
         </Link>
         {type !== "launch" && (
           <React.Fragment>
