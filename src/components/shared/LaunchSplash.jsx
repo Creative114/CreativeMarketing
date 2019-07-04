@@ -66,6 +66,31 @@ const Image = styled.img`
   }
 `;
 
+const StyledButton = styled.button`
+  width: 342px;
+  height: 79px;
+  outline: none;
+  background: #d21f04;
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 750ms;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+  box-shadow: 0 5px 30px rgba(148, 151, 155, 0.6);
+  &:hover {
+    background-color: #f32405;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+`;
+
 export default class LaunchSplash extends Component {
   render() {
     const { toggleModal } = this.props;
@@ -75,17 +100,14 @@ export default class LaunchSplash extends Component {
           <StyledColumn>
             <Image src={Icon} alt="" />
             <Title header home margin=".25em 0 -.05em 0">
-              Lorem ipsum dolor sit amet
+              Find Your Story
             </Title>
             <Text logo>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem
               ipsum dolor sit amet consectetur adipiscing elit.
             </Text>
-            <StyledButtonRow>
-              <Button primary onClick={toggleModal}>
-                Find your story
-              </Button>
-            </StyledButtonRow>
+
+            <StyledButton>Schedule a Free Consultation</StyledButton>
           </StyledColumn>
 
           <StyledVideoColumn>

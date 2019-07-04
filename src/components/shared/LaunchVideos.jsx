@@ -23,10 +23,10 @@ const Grid = styled.div`
   grid-gap: 15px;
   margin: 0 auto;
   margin: 2em 0 4em 0;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
-  width: 80%;
+  width: 85%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
@@ -85,10 +85,10 @@ export default class LaunchVideos extends Component {
     return (
       <Wrapper id="what">
         <Column alignitems="center" textalign="center">
-          <Title margin=".25em 0">Other work</Title>
+          <Title margin=".25em 0">The Solution</Title>
           <Text>
-            Below are a few projects that we have had the honor of creating for
-            our clients:
+            Watch each video and discover 4 foundational secrets that will
+            transform the way you engage with your ideal audience.
           </Text>
         </Column>
         <Grid>
@@ -97,6 +97,9 @@ export default class LaunchVideos extends Component {
           </Div>
           <Div>
             <Video src="https://fast.wistia.com/embed/medias/ioz3i2dz8k/swatch" />
+          </Div>
+          <Div>
+            <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />
           </Div>
           <Div>
             <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />

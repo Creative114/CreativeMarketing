@@ -22,7 +22,7 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
   margin: 0 auto;
-  margin: 2em auto 6em auto;
+  margin: 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 170px;
   height: 100%;
@@ -74,28 +74,51 @@ const StyledButton = styled.button`
   }
 `;
 
+const StyledColumn = styled(Column)`
+  align-items: center;
+  width: 70%;
+  margin: 3em auto;
+  text-align: center;
+`;
+
 export default class LaunchWhy extends Component {
   render() {
     return (
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
-          <Title margin=".25em 0">Lorem Ipsum</Title>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem ipsum
-            dolor sit amet consectetur adipiscing elit.
-          </Text>
+          <Title margin=".25em 0">The Problem</Title>
+          <Text>If Your Videos Are Boring, they Won’t Get You Results</Text>
         </Column>
         <Grid>
           <Div>
-            <Text>Test</Text>
+            <Column width="85%">
+              <Text>"Why aren’t my videos connecting with people?"</Text>
+            </Column>
           </Div>
           <Div>
-            <Text>Test</Text>
+            <Column width="85%">
+              <Text>"How can I reach my ideal target audience?"</Text>
+            </Column>
           </Div>
           <Div>
-            <Text>Test</Text>
+            <Column width="85%">
+              <Text>"What makes people take action?"</Text>
+            </Column>
           </Div>
         </Grid>
+        <StyledColumn>
+          <Text>
+            Overcome the obstacles that keep you from connecting with your
+            customers. Start supercharging your message with emotionally
+            engaging video stories.
+          </Text>
+          {/* <Text dark>
+            After you watch the 4 Find Your Story videos, reach out to
+            Creative114 for a free consultation on how to overcome your specific
+            obstacles and reach more people with your emotionally engaging video
+            story.
+          </Text> */}
+        </StyledColumn>
         <Row justifycontent="center">
           <StyledButton>
             <i

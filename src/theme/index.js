@@ -96,7 +96,11 @@ export const Text = styled.p`
       font-size: 14px;
       line-height: 22px;
     `};
-
+  ${props =>
+    props.dark &&
+    css`
+      color: #2b2b2b;
+    `};
   ${props =>
     props.contact &&
     css`
