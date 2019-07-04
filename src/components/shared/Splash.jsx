@@ -101,8 +101,7 @@ export default function Splash({
   text,
   show,
   img,
-  toggleModal,
-  redirect
+  toggleModal
 }) {
   return (
     <Wrapper
@@ -116,7 +115,7 @@ export default function Splash({
           : type === "nomatch" && `url('${aboutSplash}')`
       }
     >
-      <Navigation show={show} toggleModal={toggleModal} />
+      <Navigation type={type} show={show} toggleModal={toggleModal} />
 
       {type !== "casestudy" && (
         <div

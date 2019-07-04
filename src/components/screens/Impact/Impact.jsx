@@ -7,6 +7,7 @@ import Apply from "../../shared/Apply";
 import Footer from "../../shared/Footer";
 import Posts from "../../shared/Posts";
 import NonProfitForm from "../../shared/NonProfitForm";
+import Calendar from "../../shared/Calendar";
 
 const posts = [
   {
@@ -60,12 +61,14 @@ class Impact extends Component {
           title="Apply"
           text="Each year we feature four outstanding non-profit organizations as part of our #shareyourimpact movement. If you would like your organization to be considered as one of these non-profits, please fill out the simple form below to apply."
           toggleModal={this.toggleModal}
+          type="impact"
         />
         <Footer />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {type === "story" && <FindYourStoryForm />}
             {type === "nonprofit" && <NonProfitForm />}
+            {type === "schedule" && <Calendar />}
           </Modal>
         )}
       </div>

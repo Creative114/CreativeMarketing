@@ -26,7 +26,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function Apply({ title, text, toggleModal }) {
+export default function Apply({ title, text, toggleModal, type }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
@@ -36,7 +36,12 @@ export default function Apply({ title, text, toggleModal }) {
       <StyledColumn>
         <Text>{text}</Text>
         <Row margin=".5em 0">
-          <Button onClick={() => toggleModal("nonprofit")} primary>
+          <Button
+            onClick={() =>
+              toggleModal(type === "impact" ? "nonprofit" : "apply")
+            }
+            primary
+          >
             Apply today
           </Button>
         </Row>

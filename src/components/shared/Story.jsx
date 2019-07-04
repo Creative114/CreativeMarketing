@@ -105,6 +105,7 @@ export default class Story extends Component {
   };
 
   render() {
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -126,8 +127,8 @@ export default class Story extends Component {
               </Text>
             </StyledTextColumn>
           </StyledRow>
-          <Button primary>
-            <Link to="/work">Start your story</Link>
+          <Button primary onClick={() => toggleModal("story")}>
+            Start your story
           </Button>
         </Reveal>
       </Wrapper>

@@ -5,28 +5,7 @@ import Helmet from "react-helmet";
 import ContactForm from "../../shared/ContactForm";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
-
-class Calendar extends Component {
-  componentWillMount() {
-    const script3 = document.createElement("script");
-
-    script3.src =
-      "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
-    script3.async = true;
-
-    document.body.appendChild(script3);
-  }
-  render() {
-    return (
-      <div style={{ width: "auto", height: "auto" }}>
-        <div
-          class="meetings-iframe-container"
-          data-src="https://meetings.hubspot.com/jet?embed=true"
-        />
-      </div>
-    );
-  }
-}
+import Calendar from "../../shared/Calendar";
 
 export default class Contact extends Component {
   state = {
@@ -35,9 +14,7 @@ export default class Contact extends Component {
   };
 
   toggleModal = type => {
-    this.setState({ isOpen: !this.state.isOpen, type }, () => {
-      console.log(this.state);
-    });
+    this.setState({ isOpen: !this.state.isOpen, type });
   };
 
   render() {

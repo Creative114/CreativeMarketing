@@ -12,18 +12,21 @@ import casestudy3 from "../../../assets/casestudy3.jpg";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
+import Calendar from "../../shared/Calendar";
 
 class Work extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    type: ""
   };
 
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  toggleModal = type => {
+    this.setState({ isOpen: !this.state.isOpen, type });
   };
+
   render() {
     const { recentwork } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, type } = this.state;
     const casestudies = [
       {
         title: "Collective Genius",
@@ -75,7 +78,8 @@ class Work extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <FindYourStoryForm />
+            {type === "story" && <FindYourStoryForm />}
+            {type === "schedule" && <Calendar />}
           </Modal>
         )}
       </div>

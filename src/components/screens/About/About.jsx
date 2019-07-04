@@ -8,6 +8,7 @@ import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import ApplyForm from "../../shared/ApplyForm";
+import Calendar from "../../shared/Calendar";
 
 export default class About extends Component {
   state = {
@@ -55,6 +56,7 @@ export default class About extends Component {
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {type === "story" && <FindYourStoryForm />}
             {type === "apply" && <ApplyForm />}
+            {type === "schedule" && <Calendar />}
           </Modal>
         )}
       </div>

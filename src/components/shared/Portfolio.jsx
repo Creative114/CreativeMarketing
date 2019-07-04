@@ -172,7 +172,7 @@ export default class Portfolio extends Component {
 
   render() {
     const { selected, photoIndex, isOpen } = this.state;
-    const { type, navigate } = this.props;
+    const { type, navigate, toggleModal } = this.props;
     const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
@@ -297,7 +297,7 @@ export default class Portfolio extends Component {
             </Grid>
             {type === "home" && (
               <Column alignitems="center">
-                <Button primary onClick={() => navigate.push("Work")}>
+                <Button primary onClick={() => toggleModal("story")}>
                   Start your story
                 </Button>
               </Column>

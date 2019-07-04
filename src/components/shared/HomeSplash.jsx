@@ -73,7 +73,7 @@ export default class HomeSplash extends Component {
                 <Lightbulb />
               </StyledLightbulb>
               <Title header home>
-                Supercharging Your Business With Emotionally Engaging Videos
+                Superchange Your Business With Emotionally Engaging Videos
               </Title>
               <Subtitle logo>
                 If you struggle to be interesting, relevant, and relatable,{" "}
@@ -84,8 +84,8 @@ export default class HomeSplash extends Component {
                 that generate results (and goosebumps).
               </Subtitle>
               <Row margin="2em 0">
-                <Button primary onClick={toggleModal}>
-                  Start your story
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
                 </Button>
               </Row>
             </StyledHomeColumn>

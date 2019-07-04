@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Icon from "../../assets/icon.png";
 import Logo from "../../assets/logoColor.png";
+import LogoWhite from "../../assets/logo.png";
 import Burger from "./Burger";
 import { Row, StyledNavLink, Button } from "../../theme/index";
 import { Link } from "react-router-dom";
@@ -70,9 +71,29 @@ export default class Navigation extends Component {
     window.addEventListener("scroll", this.listenScrollEvent);
   }
 
+  handleLogo = (active, type) => {
+    let logo;
+    if (active && type === "home") {
+      logo = Icon;
+    } else if (!active && type === "home") {
+      logo = Logo;
+    } else if (active) {
+      logo = Icon;
+    } else if (!active) {
+      logo = LogoWhite;
+    } else {
+      logo = LogoWhite;
+    }
+    console.log(logo);
+
+    return logo;
+  };
+
   render() {
     const { color, active } = this.state;
     const { type, toggleModal } = this.props;
+    console.log(type);
+
     return (
       <Wrapper
         background={color}
@@ -81,7 +102,7 @@ export default class Navigation extends Component {
       >
         <Link to="/">
           <Image
-            src={active ? Icon : Logo}
+            src={this.handleLogo(active, type)}
             active={!active}
             alt="Creative114 Logo"
           />
@@ -131,8 +152,8 @@ export default class Navigation extends Component {
               >
                 Contact
               </StyledNavLink>
-              <Button primary onClick={() => toggleModal("story")}>
-                Find your story
+              <Button primary onClick={() => toggleModal("schedule")}>
+                Schedule a call now
               </Button>
             </StyledRow>
           </React.Fragment>
