@@ -73,7 +73,7 @@ export default class HomeSplash extends Component {
                 <Lightbulb />
               </StyledLightbulb>
               <Title header home>
-                Superchange Your Business With Emotionally Engaging Videos
+                Supercharge Your Business With Emotionally Engaging Videos
               </Title>
               <Subtitle logo>
                 If you struggle to be interesting, relevant, and relatable,
