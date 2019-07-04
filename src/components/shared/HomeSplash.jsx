@@ -76,8 +76,8 @@ export default class HomeSplash extends Component {
                 Superchange Your Business With Emotionally Engaging Videos
               </Title>
               <Subtitle logo>
-                If you struggle to be interesting, relevant, and relatable,{" "}
-                <br /> we’ll help you identify and communicate{" "}
+                If you struggle to be interesting, relevant, and relatable,
+                we’ll help you identify and communicate{" "}
                 <span style={{ color: "#D21F04" }}>
                   emotionally engaging stories
                 </span>{" "}
