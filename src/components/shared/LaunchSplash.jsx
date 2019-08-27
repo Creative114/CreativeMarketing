@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Button, Text } from "../../theme/index";
+import { Row, Column, Title, Text } from "../../theme/index";
 // import Reveal from "react-reveal/Reveal";
 import Icon from "../../assets/icon.png";
 
@@ -48,14 +48,6 @@ const StyledRow = styled(Row)`
   }
 `;
 
-const StyledButtonRow = styled(Row)`
-  margin: 1em 0;
-  @media (max-width: 1200px) {
-    justify-content: center;
-    margin: 2em 0;
-  }
-`;
-
 const Image = styled.img`
   width: 50px;
   height: 70px;
@@ -93,7 +85,6 @@ const StyledButton = styled.button`
 
 export default class LaunchSplash extends Component {
   render() {
-    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <StyledRow>

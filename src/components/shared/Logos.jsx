@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title } from "../../theme/index";
 import logo1 from "../../assets/logo1.jpg";
 import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
@@ -41,15 +40,6 @@ const Image = styled.img`
   width: 100%;
   align-self: center;
   justify-self: center;
-`;
-
-const StyledColumn = styled(Column)`
-  align-items: center;
-  margin: 4em 0 2em 0;
-  text-align: center;
-  @media (max-width: 780px) {
-    width: 95%;
-  }
 `;
 
 const logos = [

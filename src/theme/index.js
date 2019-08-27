@@ -41,6 +41,21 @@ export const Title = styled.h1`
         line-height: 48px;
       }
     `};
+  ${props =>
+    props.new &&
+    css`
+      color: #000;
+      font-size: 60px;
+      line-height: 1.2em;
+      margin: 0.25em 0;
+      margin-top: 0;
+      @media (max-width: 1200px) {
+        font-size: 48px;
+      }
+      @media (max-width: 900px) {
+        font-size: 38px;
+      }
+    `};
 `;
 
 export const Subtitle = styled.h2`

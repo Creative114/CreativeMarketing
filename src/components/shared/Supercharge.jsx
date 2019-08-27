@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Row, Button, Title } from "../../theme/index";
+import { Column, Text, Button, Title } from "../../theme/index";
 import { Link } from "react-router-dom";
 import Reveal from "react-reveal/Reveal";
 
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 3em 0;
+  padding: 4em 0;
   @media (min-width: 1750px) {
     min-height: 1000px;
   }
@@ -35,14 +35,7 @@ export default class Supercharge extends Component {
       <Wrapper>
         <Reveal effect="fadeIn">
           <StyledColumn>
-            <Title
-              style={{
-                fontSize: "60px",
-                color: "#000",
-                lineHeight: "1.2em",
-                marginTop: "0"
-              }}
-            >
+            <Title new>
               Supercharge Your Business With <br /> Engaging Videos That
               Generate <span style={{ color: "#d21f04" }}>Results</span> <br />{" "}
               (and Goosebumps)
