@@ -19,9 +19,10 @@ export const Title = styled.h1`
   ${props =>
     props.header &&
     css`
-      color: ${props => (props.home ? "#000" : "#fff")};
-      font-size: ${props => props.home && "72px"};
-      line-height: ${props => props.home && "80px"};
+      color: #fff;
+      font-size: ${props => props.home && "92px"};
+      text-transform: ${props => props.home && "uppercase"};
+      line-height: ${props => props.home && "90px"};
       margin: ${props => props.margin || ".25em 0"};
       @media (max-width: 1200px) {
         font-size: 72px;
@@ -52,6 +53,14 @@ export const Subtitle = styled.h2`
   @media (max-width: 900px) {
     font-size: 21px;
   }
+  ${props =>
+    props.home &&
+    css`
+      color: #fff;
+      font-size: 28px;
+      text-transform: uppercase;
+      margin: 0;
+    `}
 `;
 
 export const Text = styled.p`
@@ -119,6 +128,26 @@ export const Text = styled.p`
         font-size: 14px;
       }
     `};
+  ${props =>
+    props.red &&
+    css`
+      color: #d21f04;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+    `}
+  ${props =>
+    props.pointer &&
+    css`
+      color: #000;
+      font-weight: 600;
+      margin-top: 0;
+    `}
+    ${props =>
+      props.secondary &&
+      css`
+        line-height: 1.5em;
+      `}
 `;
 
 export const StyledNavLink = styled(NavLink)`

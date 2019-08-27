@@ -76,7 +76,7 @@ export default class Navigation extends Component {
     if (active && type === "home") {
       logo = Icon;
     } else if (!active && type === "home") {
-      logo = Logo;
+      logo = LogoWhite;
     } else if (active) {
       logo = Icon;
     } else if (!active) {
@@ -112,50 +112,59 @@ export default class Navigation extends Component {
             <BurgerDiv>
               <Burger />
             </BurgerDiv>
+            {type !== "home" && (
+              <StyledRow>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/"
+                >
+                  Home
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/work"
+                >
+                  Work
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/about"
+                >
+                  About
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  to="/impact"
+                >
+                  #Shareyourimpact
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  to="/contact"
+                >
+                  Contact
+                </StyledNavLink>
 
-            <StyledRow>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/"
-              >
-                Home
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/work"
-              >
-                Work
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/about"
-              >
-                About
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                to="/impact"
-              >
-                #Shareyourimpact
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                to="/contact"
-              >
-                Contact
-              </StyledNavLink>
-              <Button primary onClick={() => toggleModal("schedule")}>
-                Schedule a call now
-              </Button>
-            </StyledRow>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
+              </StyledRow>
+            )}
+            {type === "home" && (
+              <div style={{ marginRight: "2em" }}>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
+              </div>
+            )}
           </React.Fragment>
         )}
       </Wrapper>

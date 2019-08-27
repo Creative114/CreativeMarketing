@@ -72,12 +72,12 @@ export default function Logos() {
     <Wrapper>
       <Reveal effect="fadeIn">
         <React.Fragment>
-          <StyledColumn>
+          {/* <StyledColumn>
             <Title>Our clients.</Title>
             <Text logo margin="0">
               The Heroes Behind Our Success
             </Text>
-          </StyledColumn>
+          </StyledColumn> */}
           <Grid>
             {logos &&
               logos.map((key, index) => {

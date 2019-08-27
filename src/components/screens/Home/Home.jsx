@@ -11,6 +11,9 @@ import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import Calendar from "../../shared/Calendar";
+import Told from "../../shared/Told";
+import Deliver from "../../shared/Deliver";
+import Supercharge from "../../shared/Supercharge";
 
 class Home extends Component {
   state = {
@@ -39,15 +42,14 @@ class Home extends Component {
           ]}
         />
         <HomeSplash toggleModal={this.toggleModal} />
-        <Logos />
+
         <Story toggleModal={this.toggleModal} />
+        <Told />
+        <Deliver />
         <How toggleModal={this.toggleModal} />
-        <Portfolio
-          type="home"
-          navigate={this.props.history}
-          toggleModal={this.toggleModal}
-        />
+
         <Testimonials />
+        <Supercharge />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
