@@ -6,7 +6,7 @@ import Lightbulb from "./Lightbulb";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   @media (max-width: 780px) {
     justify-content: center;
+    height: 100%;
   }
 `;
 
@@ -89,46 +90,65 @@ export default class HomeSplash extends Component {
     return (
       <Wrapper>
         <Navigation type="home" toggleModal={toggleModal} />
-        <Reveal effect="fadeIn">
+
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center"
+          }}
+        >
           <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              position: "relative"
-            }}
+            className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
+            style={{ height: "100%", position: "relative", width: "100%" }}
           >
-            <Video autoPlay muted loop playsInline>
-              <source
-                src={
-                  "https://player.vimeo.com/external/320613023.hd.mp4?s=e6381ef87a4e840aadcea5ae80381210ae9177b8&profile_id=175 "
-                }
-                type="video/mp4"
+            <div
+              className="wistia_swatch"
+              style={{
+                height: "100%",
+                left: 0,
+                opacity: 0,
+                overflow: "hidden",
+                position: "absolute",
+                top: 0,
+                transition: "opacity 250ms",
+                width: "100%"
+              }}
+            >
+              <img
+                src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "contain"
+                }}
+                alt=""
               />
-            </Video>
-            <Overlay />
-            <StyledRow>
-              <StyledHomeColumn>
-                <StyledLightbulb>
-                  <Lightbulb />
-                </StyledLightbulb>
-                <Title header home>
-                  Your story told like never before
-                </Title>
-                <Subtitle home>
-                  Supercharge your business with engaging videos
-                </Subtitle>
-                <Row margin="2em 0">
-                  <StyledButton primary onClick={() => toggleModal("schedule")}>
-                    Schedule a call now
-                  </StyledButton>
-                </Row>
-              </StyledHomeColumn>
-            </StyledRow>
+            </div>
           </div>
-        </Reveal>
+
+          <Overlay />
+          <StyledRow>
+            <StyledHomeColumn>
+              <StyledLightbulb>
+                <Lightbulb />
+              </StyledLightbulb>
+              <Title header home>
+                Your story told like never before
+              </Title>
+              <Subtitle home>
+                Supercharge your business with engaging videos
+              </Subtitle>
+              <Row margin="2em 0">
+                <StyledButton primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </StyledButton>
+              </Row>
+            </StyledHomeColumn>
+          </StyledRow>
+        </div>
       </Wrapper>
     );
   }

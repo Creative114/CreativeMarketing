@@ -104,12 +104,20 @@ export default class Testimonials extends Component {
                     src={
                       "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
                     }
+                    src2={
+                      "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                    }
                   />
 
                   <Testimonial
                     title="Litacore"
-                    type="image"
-                    src={litatestimonial}
+                    type="video"
+                    src={
+                      "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                    }
+                    src2={
+                      "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                    }
                     description="LITACORE is a technology company focused on enhancing the lives of people all around the world. Their groundbreaking website-based platform serves members of school community and allows school transportation administrators to track buses, provide accurate ETAs and reports to parents to assure the safety of their children. They hired Creative114 to renovate their marketing website, provide photography and graphics, and develop a creative brand launch video."
                   />
 
@@ -118,6 +126,9 @@ export default class Testimonials extends Component {
                     type="video"
                     description="THE COLLECTIVE GENIUS is a renowned real estate mastermind targeting an elite group of real estate investors throughout the country and the world. Their company is comprised of the top 5% of the nation’s investors. Creative114 was hired to capture powerful presentations at their quarterly meetings and produce videos and graphic design that they use to promote and grow their business."
                     src={
+                      "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                    }
+                    src2={
                       "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
                     }
                   />
@@ -159,15 +170,23 @@ export default class Testimonials extends Component {
                       src={
                         "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
                       }
+                      src2={
+                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                      }
                     />
                   )}
 
                   {selected === "startUp" && (
                     <Testimonial
-                      type="image"
+                      type="video"
                       title="Litacore"
                       description="Smart Stop Logistics is a startup located in the Tampa Bay area with the mission to improve the quality of life for all ages with technology. The vision of their first product was to create a web-based platform for school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to create a branded video for their launch. However, with the value provided, they also hired us to revamp their marketing website, and to create new photographic assets for their business."
-                      src={litatestimonial}
+                      src={
+                        "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                      }
+                      src2={
+                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                      }
                     />
                   )}
                   {selected === "business" && (
@@ -176,6 +195,9 @@ export default class Testimonials extends Component {
                       title="The Collective Genius"
                       description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and create joint venture on deals as well as educational training products. We were hired by CG to film presentations and testimonial videos at their quarterly meetings. We ended up also created graphic design assets for their new website."
                       src={
+                        "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                      }
+                      src2={
                         "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
                       }
                     />

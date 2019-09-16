@@ -43,13 +43,13 @@ class Home extends Component {
         <HomeSplash toggleModal={this.toggleModal} />
 
         <Story toggleModal={this.toggleModal} />
-        <Told />
+        <Told toggleModal={this.toggleModal} />
         <Deliver />
         <How toggleModal={this.toggleModal} />
 
         <Testimonials />
         <Elements />
-        <Supercharge />
+        <Supercharge toggleModal={this.toggleModal} />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

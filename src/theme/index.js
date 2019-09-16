@@ -19,7 +19,7 @@ export const Title = styled.h1`
   ${props =>
     props.header &&
     css`
-      color: #fff;
+      color: ${props => (props.launch ? "#000" : "#fff")};
       font-size: ${props => props.home && "92px"};
       text-transform: ${props => props.home && "uppercase"};
       line-height: ${props => props.home && "90px"};

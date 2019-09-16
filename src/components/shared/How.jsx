@@ -116,8 +116,8 @@ export default function How({ toggleModal }) {
           })}
         </Grid>
         <Row margin="2em 0 1em 0">
-          <Button primary onClick={() => toggleModal("story")}>
-            Start your story
+          <Button primary onClick={() => toggleModal("schedule")}>
+            Schedule a call now
           </Button>
         </Row>
       </Reveal>

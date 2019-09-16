@@ -58,7 +58,7 @@ export default class Deliver extends Component {
             <Video src="https://fast.wistia.com/embed/medias/kklt1ne01e/swatch" />
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" />
+            <Video src="https://fast.wistia.com/embed/medias/p20j70i0qu/swatch" />
           </Div>
           <Div>
             <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" />

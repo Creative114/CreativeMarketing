@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   background: linear-gradient(#ffffff, rgb(242, 245, 247));
   display: flex;
+  padding-bottom: 4em;
   flex-direction: column;
   @media (max-width: 780px) {
     justify-content: center;
@@ -90,7 +91,7 @@ export default class LaunchSplash extends Component {
         <StyledRow>
           <StyledColumn>
             <Image src={Icon} alt="" />
-            <Title header home margin=".25em 0 -.05em 0">
+            <Title launch header home margin=".25em 0 -.05em 0">
               Find Your Story
             </Title>
             <Text logo>

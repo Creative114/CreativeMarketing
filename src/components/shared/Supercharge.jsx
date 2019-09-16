@@ -31,6 +31,7 @@ const StyledColumn = styled(Column)`
 
 export default class Supercharge extends Component {
   render() {
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -54,8 +55,8 @@ export default class Supercharge extends Component {
               </Text>
               <Text red>It's our job to help you produce those feelings.</Text>
             </Column>
-            <Button primary>
-              <Link to="/work">Schedule a call now</Link>
+            <Button primary onClick={() => toggleModal("schedule")}>
+              Schedule a call now
             </Button>
           </StyledColumn>
         </Reveal>

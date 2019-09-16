@@ -61,6 +61,7 @@ const StyledColumn = styled(Column)`
 
 export default class Told extends Component {
   render() {
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -70,8 +71,8 @@ export default class Told extends Component {
                 Your <span style={{ color: "#d21f04" }}>story</span> deserves to
                 be heard
               </Title>
-              <Button primary>
-                <Link to="/work">Schedule a call now</Link>
+              <Button primary onClick={() => toggleModal("schedule")}>
+                Schedule a call now
               </Button>
             </StyledColumn>
             <StyledTextColumn>
