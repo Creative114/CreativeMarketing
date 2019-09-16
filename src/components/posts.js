@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 75%;
   max-width: 1600px;
   height: 100%;
-  margin: 0em auto;
+  margin: 4em auto;
   display: flex;
   text-align: center;
   justify-content: space-between;
