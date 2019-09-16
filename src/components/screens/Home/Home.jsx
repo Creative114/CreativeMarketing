@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import HomeSplash from "../../shared/HomeSplash";
 import Story from "../../shared/Story";
 import How from "../../shared/How";
-import Logos from "../../shared/Logos";
-import Portfolio from "../../shared/Portfolio";
 import Testimonials from "../../shared/Testimonials";
 import Footer from "../../shared/Footer";
 import { withRouter } from "react-router-dom";
@@ -11,6 +9,10 @@ import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import Calendar from "../../shared/Calendar";
+import Told from "../../shared/Told";
+import Deliver from "../../shared/Deliver";
+import Supercharge from "../../shared/Supercharge";
+import Elements from "../../shared/Elements";
 
 class Home extends Component {
   state = {
@@ -39,15 +41,15 @@ class Home extends Component {
           ]}
         />
         <HomeSplash toggleModal={this.toggleModal} />
-        <Logos />
+
         <Story toggleModal={this.toggleModal} />
+        <Told toggleModal={this.toggleModal} />
+        <Deliver />
         <How toggleModal={this.toggleModal} />
-        <Portfolio
-          type="home"
-          navigate={this.props.history}
-          toggleModal={this.toggleModal}
-        />
+
         <Testimonials />
+        <Elements />
+        <Supercharge toggleModal={this.toggleModal} />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

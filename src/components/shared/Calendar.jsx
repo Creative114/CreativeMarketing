@@ -12,12 +12,15 @@ export default class Calendar extends Component {
   }
   render() {
     return (
-      <div style={{ width: "auto", height: "auto" }}>
-        <div
-          class="meetings-iframe-container"
-          data-src="https://meetings.hubspot.com/jet?embed=true"
-        />
-      </div>
+      <div
+        className="meetings-iframe-container"
+        style={{
+          width: "700px",
+          height: "700px",
+          overflow: "hidden"
+        }}
+        data-src="https://meetings.hubspot.com/jet?embed=true"
+      />
     );
   }
 }

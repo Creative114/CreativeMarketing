@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title } from "../../theme/index";
 import logo1 from "../../assets/logo1.jpg";
 import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
@@ -24,7 +23,7 @@ const Grid = styled.div`
   display: grid;
   margin: 2em auto;
   margin-top: 1em;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 185px;
   height: 100%;
   width: 87%;
@@ -41,15 +40,6 @@ const Image = styled.img`
   width: 100%;
   align-self: center;
   justify-self: center;
-`;
-
-const StyledColumn = styled(Column)`
-  align-items: center;
-  margin: 4em 0 2em 0;
-  text-align: center;
-  @media (max-width: 780px) {
-    width: 95%;
-  }
 `;
 
 const logos = [
@@ -72,12 +62,12 @@ export default function Logos() {
     <Wrapper>
       <Reveal effect="fadeIn">
         <React.Fragment>
-          <StyledColumn>
+          {/* <StyledColumn>
             <Title>Our clients.</Title>
             <Text logo margin="0">
               The Heroes Behind Our Success
             </Text>
-          </StyledColumn>
+          </StyledColumn> */}
           <Grid>
             {logos &&
               logos.map((key, index) => {

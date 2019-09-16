@@ -8,10 +8,10 @@ import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   height: 100%;
-  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background: rgb(242, 245, 247);
   align-items: center;
   padding: 3.5em 0;
   @media (max-width: 780px) {
@@ -26,11 +26,11 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 50px;
   margin: 0 auto;
+  width: 85%;
   margin-top: 2em;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
-  width: 90%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 375px;
@@ -101,10 +101,7 @@ export default function How({ toggleModal }) {
     <Wrapper>
       <Reveal effect="fadeIn">
         <StyledColumn>
-          <Title>3 Clear Steps.</Title>
-          <Text logo margin="0">
-            For Captivating Your Audience
-          </Text>
+          <Title>Here's how we do it</Title>
         </StyledColumn>
         <Grid>
           {items.map((key, index) => {
@@ -119,8 +116,8 @@ export default function How({ toggleModal }) {
           })}
         </Grid>
         <Row margin="2em 0 1em 0">
-          <Button primary onClick={() => toggleModal("story")}>
-            Start your story
+          <Button primary onClick={() => toggleModal("schedule")}>
+            Schedule a call now
           </Button>
         </Row>
       </Reveal>

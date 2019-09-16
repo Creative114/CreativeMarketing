@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Icon from "../../assets/icon.png";
-import Logo from "../../assets/logoColor.png";
+// import Logo from "../../assets/logoColor.png";
 import LogoWhite from "../../assets/logo.png";
 import Burger from "./Burger";
 import { Row, StyledNavLink, Button } from "../../theme/index";
@@ -30,9 +30,9 @@ const Image = styled.img`
   height: ${props => (props.active ? "30px" : "56px")};
   transition: 250ms;
   margin-left: 1.5em;
-  @media (max-width: 425px) {
-    width: 40px;
-    height: 56px;
+  @media (max-width: 920px) {
+    margin: 0;
+    display: none;
   }
 `;
 
@@ -50,6 +50,16 @@ const BurgerDiv = styled.div`
   display: none;
   @media (max-width: 920px) {
     display: block;
+  }
+`;
+
+const MobileImage = styled.img`
+  width: 40px;
+  height: 56px;
+  display: none;
+  @media (max-width: 920px) {
+    display: block;
+    margin-left: 1em;
   }
 `;
 
@@ -76,7 +86,7 @@ export default class Navigation extends Component {
     if (active && type === "home") {
       logo = Icon;
     } else if (!active && type === "home") {
-      logo = Logo;
+      logo = LogoWhite;
     } else if (active) {
       logo = Icon;
     } else if (!active) {
@@ -84,78 +94,82 @@ export default class Navigation extends Component {
     } else {
       logo = LogoWhite;
     }
-    console.log(logo);
-
     return logo;
   };
 
   render() {
     const { color, active } = this.state;
-    const { type, toggleModal } = this.props;
-    console.log(type);
+    const { type, toggleModal, show } = this.props;
 
     return (
-      <Wrapper
-        background={color}
-        active={active}
-        display={!this.props.show && "none"}
-      >
+      <Wrapper background={color} active={active} display={!show && "none"}>
+        <Image
+          src={this.handleLogo(active, type)}
+          active={!active}
+          alt="Creative114 Logo"
+        />
+
         <Link to="/">
-          <Image
-            src={this.handleLogo(active, type)}
-            active={!active}
-            alt="Creative114 Logo"
-          />
+          <MobileImage src={Icon} alt="Creative114 Logo" />
         </Link>
         {type !== "launch" && (
           <React.Fragment>
             <BurgerDiv>
               <Burger />
             </BurgerDiv>
+            {type !== "home" && (
+              <StyledRow>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/"
+                >
+                  Home
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/work"
+                >
+                  Work
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  exact
+                  to="/about"
+                >
+                  About
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  to="/impact"
+                >
+                  #Shareyourimpact
+                </StyledNavLink>
+                <StyledNavLink
+                  home={type === "home"}
+                  active={active}
+                  to="/contact"
+                >
+                  Contact
+                </StyledNavLink>
 
-            <StyledRow>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/"
-              >
-                Home
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/work"
-              >
-                Work
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                exact
-                to="/about"
-              >
-                About
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                to="/impact"
-              >
-                #Shareyourimpact
-              </StyledNavLink>
-              <StyledNavLink
-                home={type === "home"}
-                active={active}
-                to="/contact"
-              >
-                Contact
-              </StyledNavLink>
-              <Button primary onClick={() => toggleModal("schedule")}>
-                Schedule a call now
-              </Button>
-            </StyledRow>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
+              </StyledRow>
+            )}
+            {type === "home" && (
+              <StyledRow>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
+              </StyledRow>
+            )}
           </React.Fragment>
         )}
       </Wrapper>

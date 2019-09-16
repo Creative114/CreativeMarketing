@@ -6,37 +6,46 @@ import Lightbulb from "./Lightbulb";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(#ffffff, rgb(242, 245, 247));
-  padding-bottom: 4em;
+  background: ${props => props.background};
+  background-size: cover;
   display: flex;
   flex-direction: column;
   @media (max-width: 780px) {
     justify-content: center;
+    height: 100%;
   }
 `;
 
 const StyledLightbulb = styled(Column)`
   width: 5%;
   margin: 0 auto;
-  @media (max-width: 900px) {
-    width: 7.5%;
+  @media (max-width: 980px) {
+    display: none;
   }
 `;
 
 const StyledHomeColumn = styled(Column)`
-  margin-top: 6em;
-  width: 85%;
   align-items: center;
-  @media (max-width: 780px) {
+  text-align: center;
+  width: 65%;
+  height: auto;
+  margin: auto;
+  margin-top: 6em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  position: absolute;
+  align-items: center;
+  @media (max-width: 980px) {
     width: 95%;
-    margin: 1em auto 0 auto;
+    margin: 0 auto;
+    margin-top: 2em;
     text-align: center;
-  }
-  @media (max-width: 500px) {
-    width: 95%;
   }
 `;
 
@@ -50,13 +59,28 @@ const StyledRow = styled(Row)`
   }
 `;
 
-const StyledVideoRow = styled(Row)`
-  width: 75%;
-  height: 478px;
-  margin: 0 auto;
-  @media (max-width: 780px) {
-    width: 100%;
-    height: 100%;
+const Video = styled.video`
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const Overlay = styled.div`
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+`;
+
+const StyledButton = styled(Button)`
+  @media (max-width: 920px) {
+    display: none;
   }
 `;
 
@@ -66,34 +90,18 @@ export default class HomeSplash extends Component {
     return (
       <Wrapper>
         <Navigation type="home" toggleModal={toggleModal} />
-        <Reveal effect="fadeIn">
-          <StyledRow>
-            <StyledHomeColumn>
-              <StyledLightbulb>
-                <Lightbulb />
-              </StyledLightbulb>
-              <Title header home>
-                Supercharge Your Business With Emotionally Engaging Videos
-              </Title>
-              <Subtitle logo>
-                If you struggle to be interesting, relevant, and relatable,
-                we’ll help you identify and communicate{" "}
-                <span style={{ color: "#D21F04" }}>
-                  emotionally engaging stories
-                </span>{" "}
-                that generate results (and goosebumps).
-              </Subtitle>
-              <Row margin="2em 0">
-                <Button primary onClick={() => toggleModal("schedule")}>
-                  Schedule a call now
-                </Button>
-              </Row>
-            </StyledHomeColumn>
-          </StyledRow>
-        </Reveal>
-        <StyledVideoRow>
+
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center"
+          }}
+        >
           <div
-            className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
+            className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
             style={{ height: "100%", position: "relative", width: "100%" }}
           >
             <div
@@ -110,27 +118,37 @@ export default class HomeSplash extends Component {
               }}
             >
               <img
-                src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
-                style={{ height: "100%", width: "100%", objectFit: "contain" }}
+                src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "contain"
+                }}
                 alt=""
               />
             </div>
           </div>
-        </StyledVideoRow>
-        {/* <StyledVideoRow>
-        <video
-          autoplay="autoplay"
-          playsinline=""
-          muted="muted"
-          loop="loop"
-          preload=""
-          width="100%"
-          height="100%"
-          controlslist="nodownload"
-        >
-          <source src="https://creative114.wistia.com/medias/n5ltbaiebq?embedType=async&videoFoam=true&videoWidth=640" />
-        </video>
-      </StyledVideoRow> */}
+
+          <Overlay />
+          <StyledRow>
+            <StyledHomeColumn>
+              <StyledLightbulb>
+                <Lightbulb />
+              </StyledLightbulb>
+              <Title header home>
+                Your story told like never before
+              </Title>
+              <Subtitle home>
+                Supercharge your business with engaging videos
+              </Subtitle>
+              <Row margin="2em 0">
+                <StyledButton primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </StyledButton>
+              </Row>
+            </StyledHomeColumn>
+          </StyledRow>
+        </div>
       </Wrapper>
     );
   }

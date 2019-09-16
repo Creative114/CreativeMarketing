@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Button, Text } from "../../theme/index";
+import { Row, Column, Title, Text } from "../../theme/index";
 // import Reveal from "react-reveal/Reveal";
 import Icon from "../../assets/icon.png";
 
@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   background: linear-gradient(#ffffff, rgb(242, 245, 247));
   display: flex;
+  padding-bottom: 4em;
   flex-direction: column;
   @media (max-width: 780px) {
     justify-content: center;
@@ -45,14 +46,6 @@ const StyledRow = styled(Row)`
     justify-content: center;
     flex-direction: column;
     padding: 2em 0;
-  }
-`;
-
-const StyledButtonRow = styled(Row)`
-  margin: 1em 0;
-  @media (max-width: 1200px) {
-    justify-content: center;
-    margin: 2em 0;
   }
 `;
 
@@ -93,13 +86,12 @@ const StyledButton = styled.button`
 
 export default class LaunchSplash extends Component {
   render() {
-    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <StyledRow>
           <StyledColumn>
             <Image src={Icon} alt="" />
-            <Title header home margin=".25em 0 -.05em 0">
+            <Title launch header home margin=".25em 0 -.05em 0">
               Find Your Story
             </Title>
             <Text logo>
