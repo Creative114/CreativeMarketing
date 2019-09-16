@@ -2,12 +2,54 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
+
+.fadeIn {
+  animation: 1.5s slidein;
+  animation-fill-mode: forwards;
+  transition: 750ms;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.fadeDown {
+  animation: 1.5s slidedown;
+  animation-fill-mode: forwards;
+  transition: 750ms;
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 article,
 aside,
 details,
@@ -42,6 +84,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: inherit;
 }
 a:active,
 a:hover {
@@ -218,7 +262,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
 h1 {
   margin-left: 0;
@@ -384,7 +428,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
 figure {
   margin-left: 0;
@@ -619,4 +663,56 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.post > h1 {
+  margin: 0.5em 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: #505d68;
+  line-height: 34px;
+}
+
+.post > h2 {
+  margin: 1.25em 0 1px 0;
+  font-family: "Ubuntu", sans-serif;
+  color: #47566e;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.post > h3 {
+  margin: 0.5em 0;
+  margin-top: 1em;
+  font-family: "Ubuntu", sans-serif;
+  color: #47566e;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.post > p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  color: #2a2a2a;
+  line-height: 33px;
+  font-size: 16px;
+}
+
+.post > ul > li {
+  margin: 1em 0;
+  font-family: "Ubuntu", sans-serif;
+  color: #6c788c;
+  font-weight: 400;
+  line-height: 33px;
+  font-size: 16px;
+}
+
+.post > hr {
+  margin: 4em auto;
+  width: 25%;
+  border: none;
+  height: 2px;
+  color: rgba(0, 0, 0, 0.68);
+  background-color: rgba(0, 0, 0, 0.68);
+  border-radius: 8px;
 }

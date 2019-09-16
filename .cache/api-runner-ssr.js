@@ -3,7 +3,13 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('/Users/wwwhatley/Developer/creative114/creativemarketing/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+      options: {"plugins":[],"name":"William Whatley","short_name":"","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+    },{
+      plugin: require('/Users/wwwhatley/Developer/creative114/creativemarketing/node_modules/gatsby-remark-images/gatsby-ssr'),
+      options: {"plugins":[],"maxWidth":800,"wrapperStyle":"margin: 2em 0; width: 100%;","linkImagesToOriginal":false,"backgroundColor":"transparent"},
+    },{
+      plugin: require('/Users/wwwhatley/Developer/creative114/creativemarketing/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
