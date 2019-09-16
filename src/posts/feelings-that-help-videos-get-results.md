@@ -8,6 +8,10 @@ expertise: "Ideation, design, development, execution"
 type: "post"
 ---
 
+# 7 Feelings That Help Videos Get Results
+
+Maybe you’ve been told you need videos to promote and market your product or service, yet the videos you’ve created haven’t actually moved the needle on your digital and social channels, nor have they grown your business.
+
 Here’s a secret...
 
 ### People don’t buy products and services, they buy promises.

@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  margin: 0 auto;
+  margin: 5em auto;
 `;
 
 const Information = styled.div`

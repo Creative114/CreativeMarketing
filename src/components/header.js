@@ -98,6 +98,7 @@ export default class Navigation extends Component {
   render() {
     const { color, active } = this.state;
     const { type, toggleModal, show } = this.props;
+    console.log(type);
 
     return (
       <Wrapper background={color} active={active} display={!show && "none"}>
@@ -118,40 +119,30 @@ export default class Navigation extends Component {
                 <StyledNavLink
                   home={type === "home"}
                   active={active}
-                  exact
-                  to="/"
+                  href="https://www.creative114.com/#/"
                 >
                   Home
                 </StyledNavLink>
                 <StyledNavLink
                   home={type === "home"}
                   active={active}
-                  exact
-                  to="/work"
+                  href="https://www.creative114.com/#/work"
                 >
                   Work
                 </StyledNavLink>
                 <StyledNavLink
                   home={type === "home"}
                   active={active}
-                  exact
-                  to="/about"
+                  href="https://www.creative114.com/#/about"
                 >
                   About
                 </StyledNavLink>
                 <StyledNavLink
                   home={type === "home"}
                   active={active}
-                  to="/impact"
+                  href="https://www.creative114.com/#/impact"
                 >
                   #Shareyourimpact
-                </StyledNavLink>
-                <StyledNavLink
-                  home={type === "home"}
-                  active={active}
-                  to="/contact"
-                >
-                  Contact
                 </StyledNavLink>
 
                 <Button primary onClick={() => toggleModal("schedule")}>

@@ -165,8 +165,8 @@ export const Text = styled.p`
       `}
 `;
 
-export const StyledNavLink = styled(Link)`
-  color: ${props => (props.white ? "#fff" : "#D21F04")};
+export const StyledNavLink = styled.a`
+  color: ${props => (props.active ? "#D21F04" : "#D21F04")};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 1em;
@@ -177,7 +177,12 @@ export const StyledNavLink = styled(Link)`
   ${props =>
     props.home &&
     css`
-      color: #d21f04;
+      color: #fff;
+    `};
+  ${props =>
+    props.footer &&
+    css`
+      color: #fff;
     `};
   @media (max-width: 780px) {
     margin: 0 0.5em;

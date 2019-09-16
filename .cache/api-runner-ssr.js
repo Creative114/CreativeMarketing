@@ -6,7 +6,7 @@ var plugins = [{
       options: {"plugins":[],"name":"William Whatley","short_name":"","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
     },{
       plugin: require('/Users/wwwhatley/Developer/creative114/creativemarketing/node_modules/gatsby-remark-images/gatsby-ssr'),
-      options: {"plugins":[],"maxWidth":800,"wrapperStyle":"margin: 2em 0; width: 100%;","linkImagesToOriginal":false,"backgroundColor":"transparent"},
+      options: {"plugins":[],"maxWidth":800,"wrapperStyle":"margin: 2em 0;","linkImagesToOriginal":false,"backgroundColor":"transparent"},
     },{
       plugin: require('/Users/wwwhatley/Developer/creative114/creativemarketing/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},

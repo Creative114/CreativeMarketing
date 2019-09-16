@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StyledNavLink, Row, Text, Button, Column } from "../theme/index";
 import Logo from "../images/logo.png";
+import { FaInstagram, FaLinkedinIn, FaFacebook, FaVimeo } from "react-icons/fa";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -78,21 +79,18 @@ export default function Footer({ toggleModal }) {
       <StyledRow>
         <Image src={Logo} alt="" />
         <Row alignitems="center">
-          <StyledNavLink white to="/">
+          <StyledNavLink footer href="https://www.creative114.com/#/">
             Home
           </StyledNavLink>
-          <StyledNavLink white to="/work">
+          <StyledNavLink footer href="https://www.creative114.com/#/work">
             Work
           </StyledNavLink>
-          <StyledNavLink white to="/about">
+          <StyledNavLink footer href="https://www.creative114.com/#/about">
             About
           </StyledNavLink>
-          <StyledNavLink white to="/impact">
+          <StyledNavLink footer href="https://www.creative114.com/#/impact">
             Impact
           </StyledNavLink>
-          <Text footer contact className="drift-open-chat">
-            Contact
-          </Text>
           <DesktopDiv>
             <Button footer onClick={() => toggleModal("story")}>
               Find your story
@@ -122,14 +120,28 @@ export default function Footer({ toggleModal }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon social className="fab fa-linkedin-in" />
+            <FaLinkedinIn
+              style={{
+                color: "#fff",
+                height: "28px",
+                width: "16px",
+                marginLeft: ".5em"
+              }}
+            />
           </a>
           <a
             href="https://www.facebook.com/114brands"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon social className="fab fa-facebook-f" />
+            <FaFacebook
+              style={{
+                color: "#fff",
+                height: "28px",
+                width: "16px",
+                marginLeft: ".5em"
+              }}
+            />
           </a>
 
           <a
@@ -137,14 +149,28 @@ export default function Footer({ toggleModal }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon social className="fab fa-instagram" />
+            <FaInstagram
+              style={{
+                color: "#fff",
+                height: "28px",
+                width: "16px",
+                marginLeft: ".5em"
+              }}
+            />
           </a>
           <a
             href="https://vimeo.com/channels/1439000"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon social className="fab fa-vimeo-v" />
+            <FaVimeo
+              style={{
+                color: "#fff",
+                height: "28px",
+                width: "16px",
+                marginLeft: ".5em"
+              }}
+            />
           </a>
         </Row>
       </StyledRow>
