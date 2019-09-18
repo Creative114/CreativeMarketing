@@ -6,7 +6,7 @@ import Lightbulb from "./Lightbulb";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
@@ -59,13 +59,6 @@ const StyledRow = styled(Row)`
   }
 `;
 
-const Video = styled.video`
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 const Overlay = styled.div`
   bottom: 0;
   right: 0;
@@ -97,7 +90,8 @@ export default class HomeSplash extends Component {
             width: "100%",
             display: "flex",
             alignContent: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            position: "relative"
           }}
         >
           <div
