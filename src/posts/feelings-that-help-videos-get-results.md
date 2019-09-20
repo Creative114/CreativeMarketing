@@ -2,11 +2,13 @@
 path: /feelings-that-help-videos-get-results
 date: "2019-09-16"
 title: "7 Feelings That Help Videos Get Results"
-splash: "../images/gatsby-astronaut.png"
+splash: "../images/7feelings.jpg"
 subtitle: "Maybe you’ve been told you need videos to promote and market your product or service, yet the videos you’ve created haven’t actually moved the needle on your digital and social channels, nor have they grown your business."
 expertise: "Ideation, design, development, execution"
 type: "post"
 ---
+
+<img alt="Feelings Splash" src="../images/7feelings.jpg">
 
 # 7 Feelings That Help Videos Get Results
 
@@ -23,6 +25,8 @@ We are all subconsciously moving through our day looking for ways to improve our
 When considering how to turn your product or service into a story, don’t shy away from feelings you consider “negative.” Emotions are complex. If you’ve ever watched the Pixar’s movie “Inside/Out” you know that—even though Joy thought she was the most important feeling—Anger, Sadness, Disgust, and Fear were valuable in getting a response from the main character.
 
 Human beings have a broad emotional spectrum, and our buying decisions are based on all of those feelings. Love, hate, excitement, despair, satisfaction, envy—each can all tug at the heartstrings.
+
+<img alt="Feelings 1" src="../images/feelings1.jpg">
 
 ### Telling a good video story means connecting with human emotions.
 
@@ -57,6 +61,8 @@ We all have a strong belief system. It only takes one political debate to bring 
 ### #7: Anger
 
 Our spirit craves justice, and even the thought of injustice can stir deep feelings of anger that influence us to “get on board” and take up the cause. This kind of anger taps into our belief system and our values. It’s a feeling that promises justice will be served and people will ultimately feel freedom or protection as a result.
+
+<img alt="UrbanCrop" src="../images/feelings2.jpg">
 
 ## How Do YOU Feel?
 

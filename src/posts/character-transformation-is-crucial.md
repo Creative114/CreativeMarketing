@@ -2,11 +2,13 @@
 path: /character-transformation-is-crucial
 date: "2019-09-15"
 title: "Why Character Transformation Is Crucial for Your Next Video"
-splash: "../images/gatsby-astronaut.png"
+splash: "../images/charactertransformation.jpg"
 subtitle: "With so many businesses vying for video marketing space, your videos need a human connection that leads your customers through a transformation story."
 expertise: "Ideation, design, development, execution"
 type: "post"
 ---
+
+<img alt="transformation" src="../images/charactertransformation.jpg">
 
 # Why Character Transformation Is Crucial for Your Next Video
 
@@ -22,6 +24,8 @@ Your brand, your products, your event, or your services can produce hero-transfo
 
 Let’s move your customers ahead in their identity and their life.
 
+<img alt="transformation" src="../images/transformation1.jpg">
+
 ## Help Them Rewrite Their Story
 
 Humans buy character transformation. Your video can help them rewrite the story they’ve been telling themselves.
@@ -34,11 +38,11 @@ Here’s how it works…
 
 There are three crucial questions to ask as you begin to develop a transformational story:
 
-1.       What does your customer look like before using your product or services?
+1.            What does your customer look like before using your product or services?
 
-2.       What do they look like after using your product or services?
+2.            What do they look like after using your product or services?
 
-3.       How can your product or services get them there?
+3.            How can your product or services get them there?
 
 Here’s how to break each of those questions down so you can get the most value possible.
 
@@ -82,6 +86,8 @@ Emotional Value include things like:
 
 How can you transform your customer’s emotions? Make them feel something better—something different—then they’re currently feeling? Take a moment to consider how you can take them from their before-state to their after-state with Emotional Value.
 
+<img alt="transformation" src="../images/transformation2.jpg">
+
 ### Identify Their Average Day
 
 This is really powerful, because this is where you get into the narrative of your video story. What is your customer’s worst day? What is their best day? Write that story down, and feature the emotion someone is feeling. Deliver a better story about what life will look like after your product or services and you will sell transformation—and that’s what people really want. This adds Life-Changing Value.
@@ -101,6 +107,8 @@ What life changes can you offer your customer? Take a moment to consider how you
 This is the most difficult value to identify and to help change. Not all businesses will even be able to help their customers achieve it, but all should try. This is the moment that helps someone BECOME something completely different. People will fight for a greater status and self-transcendence. They want the status of the most beautiful lawn on the block or the certificate of completion that changes their name from what-they-were to who-they-are-now.
 
 Status goes beyond just self-gratification. The highest level of value is actually being able to say that your customer has changed someone else’s life because of their purchase or their loyalty to your product or services. One of the best examples of this is TOMS Shoes. When someone buys a pair of TOMS in the US, the company donates a pair of shoes to a child in need in a country like Haiti. There is no greater value than that! It’s the Social Impact Value.
+
+<img alt="transformation" src="../images/transformation3.jpg">
 
 ### Keep It Human
 
