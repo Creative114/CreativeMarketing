@@ -5,11 +5,10 @@ import { Column, Text, Subtitle } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 550px;
   width: 90%;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 4em auto 2em auto;
   transition: 750ms;
   @media (max-width: 920px) {
     flex-direction: column;
@@ -30,16 +29,6 @@ const StyledColumn = styled(Column)`
     width: 100%;
     padding: 1em 0;
     align-items: center;
-  }
-`;
-
-const StyledTextColumn = styled(Column)`
-  margin: 1em 0;
-  width: 70%;
-  @media (max-width: 920px) {
-    width: 95%;
-    text-align: center;
-    margin: 0;
   }
 `;
 

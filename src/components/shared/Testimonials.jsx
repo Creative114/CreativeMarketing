@@ -9,7 +9,7 @@ import Reveal from "react-reveal/Reveal";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 3em 0;
+  padding: 2em 0;
   @media (max-width: 780px) {
     text-align: center;
     padding: 3em 0 2em 0;

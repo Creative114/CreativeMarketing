@@ -49,7 +49,7 @@ class Home extends Component {
 
         <Testimonials />
         <Elements />
-        <Supercharge toggleModal={this.toggleModal} />
+        {/* <Supercharge toggleModal={this.toggleModal} /> */}
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

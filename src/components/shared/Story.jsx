@@ -36,56 +36,96 @@ const StyledVideoRow = styled(Row)`
 
 const TextRow = styled(Row)`
   margin: 0 auto;
+  margin-bottom: 2em;
   justify-content: space-between;
   width: 75%;
 `;
 
+const NumberedCircle = styled.div`
+  width: 45px;
+  height: 45px;
+  background: #d21f04;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 100%;
+  margin-right: 0.5em;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+`;
+
 export default class Story extends Component {
   render() {
-    const { toggleModal } = this.props;
+    const { toggleModal, type } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <TextRow>
-            <Text red>Simple process</Text>
-            <Text red>Engaging Stories</Text>
-            <Text red>Real results</Text>
-          </TextRow>
-          <StyledVideoRow>
-            <div
-              className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
-              style={{ height: "100%", position: "relative", width: "100%" }}
-            >
+          <React.Fragment>
+            <TextRow>
+              <Row alignitems="center">
+                <NumberedCircle>1</NumberedCircle>
+                <Text red margin="0">
+                  Simple process
+                </Text>
+              </Row>
+
+              <Row alignitems="center">
+                <NumberedCircle>2</NumberedCircle>
+                <Text red margin="0">
+                  Engaging Stories
+                </Text>
+              </Row>
+
+              <Row alignitems="center">
+                <NumberedCircle>3</NumberedCircle>
+                <Text red margin="0">
+                  Real results
+                </Text>
+              </Row>
+            </TextRow>
+
+            <StyledVideoRow>
               <div
-                className="wistia_swatch"
-                style={{
-                  height: "100%",
-                  left: 0,
-                  opacity: 0,
-                  overflow: "hidden",
-                  position: "absolute",
-                  top: 0,
-                  transition: "opacity 250ms",
-                  width: "100%"
-                }}
+                className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
+                style={{ height: "100%", position: "relative", width: "100%" }}
               >
-                <img
-                  src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
+                <div
+                  className="wistia_swatch"
                   style={{
                     height: "100%",
-                    width: "100%",
-                    objectFit: "contain"
+                    left: 0,
+                    opacity: 0,
+                    overflow: "hidden",
+                    position: "absolute",
+                    top: 0,
+                    transition: "opacity 250ms",
+                    width: "100%"
                   }}
-                  alt=""
-                />
+                >
+                  <img
+                    src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "contain"
+                    }}
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-          </StyledVideoRow>
-          <div style={{ margin: "0 auto", marginTop: "2em" }}>
-            <Button primary onClick={() => toggleModal("story")}>
-              Schedule a call now
-            </Button>
-          </div>
+            </StyledVideoRow>
+
+            <Row
+              justifycontent="center"
+              style={{ margin: "0 auto", marginTop: "4em" }}
+            >
+              <Button primary onClick={() => toggleModal("story")}>
+                Schedule a call now
+              </Button>
+            </Row>
+          </React.Fragment>
         </Reveal>
       </Wrapper>
     );

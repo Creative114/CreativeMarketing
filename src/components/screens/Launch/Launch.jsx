@@ -9,18 +9,27 @@ import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import LaunchVideos from "../../shared/LaunchVideos";
 import LaunchWhy from "../../shared/LaunchWhy";
+import LaunchStory from "../../shared/LaunchStory";
+import Share from "../../shared/Share";
 
 class Landing extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    isAuthed: false
   };
 
   toggleModal = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
+  handleAuth = () => {
+    this.setState({ isAuthed: true });
+  };
+
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, isAuthed } = this.state;
+    console.log(isAuthed);
+
     return (
       <div>
         <Helmet
@@ -35,11 +44,16 @@ class Landing extends Component {
             { property: "og:url", content: "http://creative114.com" }
           ]}
         />
-        <LaunchSplash toggleModal={this.toggleModal} />
-        <LaunchVideos />
+        <LaunchSplash
+          toggleModal={this.toggleModal}
+          handleAuth={this.handleAuth}
+        />
+        <LaunchStory isAuthed={isAuthed} />
+        <LaunchVideos isAuthed={isAuthed} />
         <LaunchWhy />
-        <Logos />
         <Testimonials />
+        <Logos />
+        <Share />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

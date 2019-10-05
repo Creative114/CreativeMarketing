@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2em 0;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -51,7 +52,7 @@ export default class Deliver extends Component {
     return (
       <Wrapper id="what">
         <Column alignitems="center" textalign="center" width="75%">
-          <Title>We deliver the perfect video</Title>
+          <Title>Stories that generate results</Title>
         </Column>
         <Grid>
           <Div>

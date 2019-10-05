@@ -1,138 +1,146 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Text } from "../../theme/index";
-// import Reveal from "react-reveal/Reveal";
-import Icon from "../../assets/icon.png";
+import { Row, Column, Title, Text, Subtitle, Button } from "../../theme/index";
+import Navigation from "./Navigation";
+import LaunchForm from "../shared/LaunchForm";
 
 const Wrapper = styled.div`
-  height: 650px;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(#ffffff, rgb(242, 245, 247));
+  background: ${props => props.background};
+  background-size: cover;
   display: flex;
-  padding-bottom: 4em;
   flex-direction: column;
   @media (max-width: 780px) {
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
   }
 `;
 
-const StyledColumn = styled(Column)`
-  width: 32%
-  margin: 5em auto 0 auto;
-  @media (max-width: 1200px) {
+const StyledHomeColumn = styled(Row)`
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  margin-top: 2em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 100000;
+  position: absolute;
+  justify-content: center;
+
+  @media (max-width: 980px) {
     width: 95%;
-    margin: 1em auto 0 auto;
+
     text-align: center;
   }
   @media (max-width: 500px) {
-    width: 95%;
-  }
-`;
-
-const StyledVideoColumn = styled(Row)`
-  width: 50%;
-  margin-top: 12em;
-  @media (max-width: 1200px) {
-    width: 95%;
-    margin: 0 auto;
+    margin-top: 2em;
   }
 `;
 
 const StyledRow = styled(Row)`
-  @media (max-width: 1200px) {
-    justify-content: center;
-    flex-direction: column;
-    padding: 2em 0;
-  }
-`;
-
-const Image = styled.img`
-  width: 50px;
-  height: 70px;
-  transition: 250ms;
-  @media (max-width: 425px) {
-    width: 40px;
-    height: 56px;
-  }
-`;
-
-const StyledButton = styled.button`
-  width: 342px;
-  height: 79px;
-  outline: none;
-  background: #d21f04;
-  border: 1px solid transparent;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
   align-items: center;
-  justify-content: center;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 19px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: 750ms;
-  margin: 0.5em 0;
-  text-transform: uppercase;
-  box-shadow: 0 5px 30px rgba(148, 151, 155, 0.6);
-  &:hover {
-    background-color: #f32405;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  @media (max-width: 780px) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
 `;
 
-export default class LaunchSplash extends Component {
+const Overlay = styled.div`
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+`;
+
+const StyledButton = styled(Button)`
+  @media (max-width: 780px) {
+    margin-top: 0;
+  }
+`;
+
+const StyledTitle = styled(Title)`
+  font-size: 68px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+`;
+
+export default class HomeSplash extends Component {
   render() {
+    const { toggleModal, handleAuth } = this.props;
     return (
       <Wrapper>
-        <StyledRow>
-          <StyledColumn>
-            <Image src={Icon} alt="" />
-            <Title launch header home margin=".25em 0 -.05em 0">
-              Find Your Story
-            </Title>
-            <Text logo>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, lorem
-              ipsum dolor sit amet consectetur adipiscing elit.
-            </Text>
+        <Navigation type="home" toggleModal={toggleModal} />
 
-            <StyledButton>Schedule a Free Consultation</StyledButton>
-          </StyledColumn>
-
-          <StyledVideoColumn>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+            position: "relative"
+          }}
+        >
+          <div
+            className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
+            style={{ height: "100%", position: "relative", width: "100%" }}
+          >
             <div
-              className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
-              style={{ height: "100%", position: "relative", width: "100%" }}
+              className="wistia_swatch"
+              style={{
+                height: "100%",
+                left: 0,
+                opacity: 0,
+                overflow: "hidden",
+                position: "absolute",
+                top: 0,
+                transition: "opacity 250ms",
+                width: "100%"
+              }}
             >
-              <div
-                className="wistia_swatch"
+              <img
+                src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
                 style={{
                   height: "100%",
-                  left: 0,
-                  opacity: 0,
-                  overflow: "hidden",
-                  position: "absolute",
-                  top: 0,
-                  transition: "opacity 250ms",
-                  width: "100%"
+                  width: "100%",
+                  objectFit: "contain"
                 }}
-              >
-                <img
-                  src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "contain"
-                  }}
-                  alt=""
-                />
-              </div>
+                alt=""
+              />
             </div>
-          </StyledVideoColumn>
-        </StyledRow>
+          </div>
+
+          <Overlay />
+          <StyledRow>
+            <StyledHomeColumn>
+              <div style={{ width: "50%" }}>
+                <StyledTitle>
+                  Four Elements To Videos That Get Results
+                </StyledTitle>
+              </div>
+              <LaunchForm handleAuth={handleAuth} />
+            </StyledHomeColumn>
+          </StyledRow>
+        </div>
       </Wrapper>
     );
   }

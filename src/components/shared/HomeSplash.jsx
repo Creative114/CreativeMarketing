@@ -30,22 +30,26 @@ const StyledLightbulb = styled(Column)`
 const StyledHomeColumn = styled(Column)`
   align-items: center;
   text-align: center;
-  width: 65%;
   height: auto;
   margin: auto;
-  margin-top: 6em;
+  margin-top: 2em;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 100000;
   position: absolute;
-  align-items: center;
+  justify-content: center;
+  @media (min-width: 1300px) {
+    width: 65%;
+  }
   @media (max-width: 980px) {
     width: 95%;
-    margin: 0 auto;
-    margin-top: 2em;
+
     text-align: center;
+  }
+  @media (max-width: 500px) {
+    margin-top: 2em;
   }
 `;
 
@@ -72,8 +76,8 @@ const Overlay = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  @media (max-width: 920px) {
-    display: none;
+  @media (max-width: 780px) {
+    margin-top: 0;
   }
 `;
 
@@ -133,7 +137,7 @@ export default class HomeSplash extends Component {
                 Your story told like never before
               </Title>
               <Subtitle home>
-                Supercharge your business with engaging videos
+                Showcase the emotional impact of the good that you do
               </Subtitle>
               <Row margin="2em 0">
                 <StyledButton primary onClick={() => toggleModal("schedule")}>

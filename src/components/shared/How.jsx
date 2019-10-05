@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background: rgb(242, 245, 247);
   align-items: center;
-  padding: 3.5em 0;
+  padding: 2em 0;
   @media (max-width: 780px) {
     width: 95%;
     padding: 1em 0;
@@ -115,7 +115,7 @@ export default function How({ toggleModal }) {
             );
           })}
         </Grid>
-        <Row margin="2em 0 1em 0">
+        <Row margin="2em 0">
           <Button primary onClick={() => toggleModal("schedule")}>
             Schedule a call now
           </Button>

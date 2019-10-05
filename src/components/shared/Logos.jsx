@@ -12,6 +12,7 @@ import logo9 from "../../assets/logo9.jpg";
 import logo10 from "../../assets/logo10.jpg";
 import logo11 from "../../assets/logo11.jpg";
 import logo12 from "../../assets/logo12.jpg";
+import logo_uc from "../../assets/logo_uc.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -21,10 +22,9 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  margin: 2em auto;
-  margin-top: 1em;
+  margin: 0 auto;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 185px;
+  grid-auto-rows: 150px;
   height: 100%;
   width: 87%;
   max-width: 1600px;
@@ -40,21 +40,28 @@ const Image = styled.img`
   width: 100%;
   align-self: center;
   justify-self: center;
+  filter: grayscale(85%);
+  transition: 250ms;
+  &:hover {
+    filter: grayscale(0%);
+  }
 `;
 
 const logos = [
-  logo1,
+  logo9,
+  logo11,
+  logo5,
+  logo4,
+  logo12,
+  logo_uc,
+
+  logo7,
   logo2,
   logo3,
-  logo4,
-  logo5,
   logo6,
-  logo7,
+
   logo8,
-  logo9,
-  logo10,
-  logo11,
-  logo12
+  logo1
 ];
 
 export default function Logos() {

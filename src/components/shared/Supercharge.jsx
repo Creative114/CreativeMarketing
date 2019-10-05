@@ -55,7 +55,11 @@ export default class Supercharge extends Component {
               </Text>
               <Text red>It's our job to help you produce those feelings.</Text>
             </Column>
-            <Button primary onClick={() => toggleModal("schedule")}>
+            <Button
+              margin="2em 0 0 0"
+              primary
+              onClick={() => toggleModal("schedule")}
+            >
               Schedule a call now
             </Button>
           </StyledColumn>

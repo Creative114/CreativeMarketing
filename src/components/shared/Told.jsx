@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background: rgb(242, 245, 247);
   justify-content: center;
-  padding: 3em 0;
+  padding: 2em 0;
   @media (min-width: 1750px) {
     min-height: 1000px;
   }
@@ -35,7 +35,7 @@ const StyledTextColumn = styled(Column)`
 `;
 
 const StyledRow = styled(Row)`
-  padding: 2.5em 0;
+  padding: 2em 0;
   justify-content: center;
   width: 90%;
   @media (max-width: 980px) {

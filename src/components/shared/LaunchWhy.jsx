@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Column, Title, Text } from "../../theme/index";
-// import Reveal from "react-reveal/Reveal";
+import action from "../../assets/Action.png";
+import audience from "../../assets/Audience.png";
+import connecting from "../../assets/Connecting.png";
 import BG from "../../assets/rectange_bg.png";
 
 const Wrapper = styled.div`
@@ -11,7 +13,7 @@ const Wrapper = styled.div`
   background: ${props => props.bg};
   flex-direction: column;
   align-items: center;
-  padding: 10em 0;
+  padding: 10em 0 4em 0;
   @media (max-width: 780px) {
     justify-content: center;
     padding: 5em 0;
@@ -39,7 +41,8 @@ const Div = styled.div`
   height: 100%;
   border-radius: 3px;
   display: flex;
-  align-items: center;
+  padding: 1em 0;
+  align-items: flex-start;
   justify-content: center;
   background: #fff;
   background-repeat: no-repeat;
@@ -81,28 +84,35 @@ const StyledColumn = styled(Column)`
   text-align: center;
 `;
 
+const Image = styled.img`
+  height: 94px;
+`;
+
 export default class LaunchWhy extends Component {
   render() {
     return (
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
-          <Title margin=".25em 0">The Problem</Title>
+          <Title margin=".25em 0">If Your Videos Are Boring</Title>
           <Text>If Your Videos Are Boring, they Won’t Get You Results</Text>
         </Column>
         <Grid>
           <Div>
-            <Column width="85%">
-              <Text>"Why aren’t my videos connecting with people?"</Text>
+            <Column width="85%" alignitems="center">
+              <Image src={audience} />
+              <Text dark>"Why aren’t my videos connecting with people?"</Text>
             </Column>
           </Div>
           <Div>
-            <Column width="85%">
-              <Text>"How can I reach my ideal target audience?"</Text>
+            <Column width="85%" alignitems="center">
+              <Image src={connecting} />
+              <Text dark>"How can I reach my ideal target audience?"</Text>
             </Column>
           </Div>
           <Div>
-            <Column width="85%">
-              <Text>"What makes people take action?"</Text>
+            <Column width="85%" alignitems="center">
+              <Image src={action} />
+              <Text dark>"What encourages or makes people take action?"</Text>
             </Column>
           </Div>
         </Grid>
@@ -112,21 +122,9 @@ export default class LaunchWhy extends Component {
             customers. Start supercharging your message with emotionally
             engaging video stories.
           </Text>
-          {/* <Text dark>
-            After you watch the 4 Find Your Story videos, reach out to
-            Creative114 for a free consultation on how to overcome your specific
-            obstacles and reach more people with your emotionally engaging video
-            story.
-          </Text> */}
         </StyledColumn>
         <Row justifycontent="center">
-          <StyledButton>
-            <i
-              class="fas fa-play-circle"
-              style={{ color: "#fff", marginRight: ".5em" }}
-            />
-            Find your story
-          </StyledButton>
+          <StyledButton>Get the videos</StyledButton>
         </Row>
       </Wrapper>
     );

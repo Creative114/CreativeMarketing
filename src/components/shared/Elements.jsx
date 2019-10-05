@@ -1,21 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import Jet from "../../assets/jet_picture.jpg";
+import launchimg from "../../assets/launch_img.png";
 import { Column, Title, Text, Button } from "../../theme";
 
 const Wrapper = styled.div`
-  background: ${props => props.background};
   width: 100%;
-  height: 650px;
-  background-size: cover;
+  height: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  padding: 4em 0;
+  background: linear-gradient(rgb(242, 245, 247), #ffffff);
+  justify-content: space-evenly;
   @media (max-width: 980px) {
     justify-content: center;
-    background: ${props => props.background},
-      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
-    background-blend-mode: overlay;
   }
 `;
 
@@ -49,9 +45,14 @@ const Span = styled.span`
   }
 `;
 
+const Image = styled.img`
+  width: 400px;
+`;
+
 export default function() {
   return (
-    <Wrapper background={`url('${Jet}')`}>
+    <Wrapper>
+      <Image src={launchimg} />
       <StyledColumn>
         <StyledTitle new>
           Four elements to videos that get <Span>RESULTS</Span>
@@ -60,7 +61,9 @@ export default function() {
           Sign Up To Access A Series Of Free Videos That Will Help You Transform
           The Way You Tell Your Brand Stories.
         </StyledText>
-        <Button primary>Access Now</Button>
+        <Button margin="1.5em 0" primary>
+          Access Now
+        </Button>
       </StyledColumn>
     </Wrapper>
   );
