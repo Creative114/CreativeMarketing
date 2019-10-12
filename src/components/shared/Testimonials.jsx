@@ -45,6 +45,22 @@ const StyledButton = styled.button`
   }
 `;
 
+const Div = styled.div`
+  display: block;
+  @media (max-width: 920px) {
+    margin: 0;
+    display: none;
+  }
+`;
+
+const MobileDiv = styled.div`
+  margin: 1.5em 0;
+  display: none;
+  @media (max-width: 920px) {
+    display: block;
+  }
+`;
+
 function MenuItem({ id, selected, title, handleClick, client }) {
   return (
     <StyledButton
@@ -76,12 +92,10 @@ export default class Testimonials extends Component {
     let settings = {
       dots: true,
       infinite: false,
-
+      arrows: false,
       speed: 1000,
       autoplay: true
     };
-
-    const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -90,52 +104,40 @@ export default class Testimonials extends Component {
               <Title>What they're saying</Title>
             </Row>
 
-            {mobile.matches && (
-              <div
-                style={{
-                  margin: "1.5em 0"
-                }}
-              >
-                <Slider {...settings}>
-                  <Testimonial
-                    title="Movement 2819"
-                    type="video"
-                    description="MOVEMENT 2819 is a nonprofit organization located in Tampa Bay, Florida. Founder, Dustin Lachance, organized an event that drew 20,000 people and featured notable Christian public figures like Kari Jobe and Tim Tebow. Creative114 developed content to advertise the event, as well as crafted a video recap of the night."
-                    src={
-                      "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
-                    }
-                    src2={
-                      "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
-                    }
-                  />
+            <MobileDiv>
+              <Slider {...settings}>
+                <Testimonial
+                  title="Movement 2819"
+                  type="video"
+                  description="MOVEMENT 2819 is a nonprofit organization located in Tampa Bay, Florida. Founder, Dustin Lachance, organized an event that drew 20,000 people and featured notable Christian public figures like Kari Jobe and Tim Tebow. Creative114 developed content to advertise the event, as well as crafted a video recap of the night."
+                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
+                  src2={
+                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                  }
+                />
 
-                  <Testimonial
-                    title="Litacore"
-                    type="video"
-                    src={
-                      "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
-                    }
-                    src2={
-                      "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
-                    }
-                    description="LITACORE is a technology company focused on enhancing the lives of people all around the world. Their groundbreaking website-based platform serves members of school community and allows school transportation administrators to track buses, provide accurate ETAs and reports to parents to assure the safety of their children. They hired Creative114 to renovate their marketing website, provide photography and graphics, and develop a creative brand launch video."
-                  />
+                <Testimonial
+                  title="Litacore"
+                  type="video"
+                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
+                  src2={
+                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                  }
+                  description="LITACORE is a technology company focused on enhancing the lives of people all around the world. Their groundbreaking website-based platform serves members of school community and allows school transportation administrators to track buses, provide accurate ETAs and reports to parents to assure the safety of their children. They hired Creative114 to renovate their marketing website, provide photography and graphics, and develop a creative brand launch video."
+                />
 
-                  <Testimonial
-                    title="The Collective Genius"
-                    type="video"
-                    description="THE COLLECTIVE GENIUS is a renowned real estate mastermind targeting an elite group of real estate investors throughout the country and the world. Their company is comprised of the top 5% of the nation’s investors. Creative114 was hired to capture powerful presentations at their quarterly meetings and produce videos and graphic design that they use to promote and grow their business."
-                    src={
-                      "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
-                    }
-                    src2={
-                      "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
-                    }
-                  />
-                </Slider>
-              </div>
-            )}
-            {!mobile.matches && (
+                <Testimonial
+                  title="The Collective Genius"
+                  type="video"
+                  description="THE COLLECTIVE GENIUS is a renowned real estate mastermind targeting an elite group of real estate investors throughout the country and the world. Their company is comprised of the top 5% of the nation’s investors. Creative114 was hired to capture powerful presentations at their quarterly meetings and produce videos and graphic design that they use to promote and grow their business."
+                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
+                  src2={
+                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                  }
+                />
+              </Slider>
+            </MobileDiv>
+            <Div>
               <React.Fragment>
                 <Row alignitems="center" justifycontent="center">
                   <MenuItem
@@ -204,7 +206,7 @@ export default class Testimonials extends Component {
                   )}
                 </Row>
               </React.Fragment>
-            )}
+            </Div>
           </React.Fragment>
         </Reveal>
       </Wrapper>

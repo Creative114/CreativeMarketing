@@ -17,11 +17,17 @@ const Wrapper = styled.div`
   @media (max-width: 780px) {
     justify-content: center;
     padding: 5em 0;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 const Image = styled.img`
   width: 400px;
+  @media (max-width: 500px) {
+    width: 325px;
+    margin-top: 2em;
+  }
 `;
 
 export default function Share() {

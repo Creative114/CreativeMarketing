@@ -22,15 +22,14 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 25px;
   margin: 0 auto;
   margin: 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 170px;
+  grid-auto-rows: auto;
   height: 100%;
   width: 80%;
   @media (max-width: 780px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
     margin: 2em auto;
   }
@@ -41,7 +40,6 @@ const Div = styled.div`
   height: 100%;
   border-radius: 3px;
   display: flex;
-  padding: 1em 0;
   align-items: flex-start;
   justify-content: center;
   background: #fff;
@@ -86,10 +84,12 @@ const StyledColumn = styled(Column)`
 
 const Image = styled.img`
   height: 94px;
+  margin: 0.75em 0;
 `;
 
 export default class LaunchWhy extends Component {
   render() {
+    const { isAuthed, toggleModal } = this.props;
     return (
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
@@ -98,19 +98,19 @@ export default class LaunchWhy extends Component {
         </Column>
         <Grid>
           <Div>
-            <Column width="85%" alignitems="center">
+            <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={audience} />
               <Text dark>"Why aren’t my videos connecting with people?"</Text>
             </Column>
           </Div>
           <Div>
-            <Column width="85%" alignitems="center">
+            <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={connecting} />
               <Text dark>"How can I reach my ideal target audience?"</Text>
             </Column>
           </Div>
           <Div>
-            <Column width="85%" alignitems="center">
+            <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={action} />
               <Text dark>"What encourages or makes people take action?"</Text>
             </Column>
@@ -124,7 +124,15 @@ export default class LaunchWhy extends Component {
           </Text>
         </StyledColumn>
         <Row justifycontent="center">
-          <StyledButton>Get the videos</StyledButton>
+          <StyledButton
+            onClick={
+              isAuthed
+                ? () => toggleModal("schedule")
+                : () => toggleModal("launch")
+            }
+          >
+            {isAuthed ? "Schedule a call now" : "Get the videos"}
+          </StyledButton>
         </Row>
       </Wrapper>
     );

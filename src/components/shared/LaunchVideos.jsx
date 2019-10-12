@@ -46,17 +46,33 @@ const Div = styled.div`
 
 export default class LaunchVideos extends Component {
   render() {
+    const { isAuthed, toggleModal } = this.props;
     return (
       <Wrapper id="what">
         <Grid>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/xv5qxmxszs/swatch" />
+            <Video
+              isAuthed={isAuthed}
+              toggleModal={toggleModal}
+              type="launch"
+              src="https://fast.wistia.com/embed/medias/xv5qxmxszs/swatch"
+            />
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/s0kg7ojjxg/swatch" />
+            <Video
+              isAuthed={isAuthed}
+              toggleModal={toggleModal}
+              type="launch"
+              src="https://fast.wistia.com/embed/medias/s0kg7ojjxg/swatch"
+            />
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/cp1ev8o1xq/swatch" />
+            <Video
+              isAuthed={isAuthed}
+              toggleModal={toggleModal}
+              type="launch"
+              src="https://fast.wistia.com/embed/medias/cp1ev8o1xq/swatch"
+            />
           </Div>
         </Grid>
       </Wrapper>

@@ -10,6 +10,7 @@ const Backdrop = styled.div`
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10000000000;
+  transition: 250ms;
 `;
 
 const Header = styled.div`
@@ -41,6 +42,7 @@ const StyledRow = styled(Row)`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  transition: 250ms;
   @media (max-width: 780px) {
     width: 95%;
   }
@@ -52,7 +54,7 @@ export default class Modal extends Component {
       return null;
     }
     return (
-      <Backdrop>
+      <Backdrop className="fadeIn">
         <Header>
           <Icon
             onClick={this.props.togglemodal}

@@ -4,8 +4,9 @@ import { Title, Text, Button, Column } from "../../theme";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
-  width: 380px;
-  height: 388px;
+  width: auto;
+  max-width: 380px;
+  height: auto;
   border-radius: 4px;
   background-color: #ffffff;
 `;
@@ -40,11 +41,14 @@ const StyledText = styled(Text)`
   letter-spacing: normal;
   color: #000000;
   margin-top: 2em;
+  @media (max-width: 880px) {
+    display: none;
+  }
 `;
 
 export default class LaunchForm extends Component {
   render() {
-    const { handleAuth } = this.props;
+    const { handleAuth, toggleModal, type } = this.props;
     return (
       <Wrapper>
         <StyledColumn>
@@ -62,29 +66,21 @@ export default class LaunchForm extends Component {
               function formv3() {
                 let xhr = new XMLHttpRequest();
                 let url =
-                  "https://api.hsforms.com/submissions/v3/integration/submit/5644251/b20fbe1a-8a15-45f7-bfa0-f3262992a250";
+                  "https://api.hsforms.com/submissions/v3/integration/submit/5644251/6fbb79fc-c8f5-4747-80e9-ec2a2f3ac23c";
                 let data = {
                   fields: [
-                    {
-                      name: "email",
-                      value: values.email
-                    },
                     {
                       name: "firstname",
                       value: values.firstname
                     },
                     {
-                      name: "lastname",
-                      value: values.lastname
-                    },
-                    {
-                      name: "message",
-                      value: values.message
+                      name: "email",
+                      value: values.email
                     }
                   ],
                   context: {
-                    pageUri: "www.creative114.com/#/",
-                    pageName: "Contact page"
+                    pageUri: "www.creative114.com/#/launch",
+                    pageName: "Landing page"
                   }
                 };
                 const final_data = JSON.stringify(data);
@@ -93,6 +89,7 @@ export default class LaunchForm extends Component {
                 xhr.onreadystatechange = function() {
                   if (xhr.readyState === 4 && xhr.status === 200) {
                     handleAuth();
+                    toggleModal();
                   }
                 };
                 xhr.send(final_data);
@@ -117,7 +114,7 @@ export default class LaunchForm extends Component {
                   name="email"
                   placeholder="Email"
                 />
-                <Button primary type="submit">
+                <Button primary type="submit" style={{ marginBottom: "1em" }}>
                   Get the videos
                 </Button>
               </form>

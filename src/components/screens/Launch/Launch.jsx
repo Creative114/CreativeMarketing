@@ -6,29 +6,44 @@ import Footer from "../../shared/Footer";
 import { withRouter } from "react-router-dom";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
-import FindYourStoryForm from "../../shared/FindYourStoryForm";
+import LaunchForm from "../../shared/LaunchForm";
 import LaunchVideos from "../../shared/LaunchVideos";
 import LaunchWhy from "../../shared/LaunchWhy";
 import LaunchStory from "../../shared/LaunchStory";
 import Share from "../../shared/Share";
+import Calendar from "../../shared/Calendar";
 
 class Landing extends Component {
   state = {
     isOpen: false,
-    isAuthed: false
+    isAuthed: false,
+    type: ""
   };
 
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  componentDidMount() {
+    let auth = localStorage.getItem("authorized") || false;
+    let isAuthed;
+    if (auth) {
+      isAuthed = true;
+    } else {
+      isAuthed = false;
+    }
+    this.setState({ isAuthed });
+  }
+
+  toggleModal = type => {
+    console.log("here");
+
+    this.setState({ isOpen: !this.state.isOpen, type });
   };
 
   handleAuth = () => {
+    localStorage.setItem("authorized", true);
     this.setState({ isAuthed: true });
   };
 
   render() {
-    const { isOpen, isAuthed } = this.state;
-    console.log(isAuthed);
+    const { isOpen, isAuthed, type } = this.state;
 
     return (
       <div>
@@ -48,16 +63,22 @@ class Landing extends Component {
           toggleModal={this.toggleModal}
           handleAuth={this.handleAuth}
         />
-        <LaunchStory isAuthed={isAuthed} />
-        <LaunchVideos isAuthed={isAuthed} />
-        <LaunchWhy />
+        <LaunchStory toggleModal={this.toggleModal} isAuthed={isAuthed} />
+        <LaunchVideos isAuthed={isAuthed} toggleModal={this.toggleModal} />
+        <LaunchWhy isAuthed={isAuthed} toggleModal={this.toggleModal} />
         <Testimonials />
         <Logos />
         <Share />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            <FindYourStoryForm />
+            {type === "launch" && (
+              <LaunchForm
+                handleAuth={this.handleAuth}
+                toggleModal={this.toggleModal}
+              />
+            )}
+            {type === "schedule" && <Calendar />}
           </Modal>
         )}
       </div>

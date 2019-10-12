@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     justify-content: center;
     height: 100%;
   }
@@ -28,18 +28,18 @@ const StyledHomeColumn = styled(Row)`
   top: 0;
   bottom: 0;
   left: 0;
-
   z-index: 100000;
   position: absolute;
   justify-content: center;
-
   @media (max-width: 980px) {
     width: 95%;
-
-    text-align: center;
+    // flex-direction: column;
+  }
+  @media (max-width: 720px) {
+    margin-top: 0;
+    // flex-direction: column;
   }
   @media (max-width: 500px) {
-    margin-top: 2em;
   }
 `;
 
@@ -48,7 +48,7 @@ const StyledRow = styled(Row)`
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     flex-direction: column-reverse;
     justify-content: flex-start;
   }
@@ -66,12 +66,6 @@ const Overlay = styled.div`
   min-width: 100%;
 `;
 
-const StyledButton = styled(Button)`
-  @media (max-width: 780px) {
-    margin-top: 0;
-  }
-`;
-
 const StyledTitle = styled(Title)`
   font-size: 68px;
   font-weight: bold;
@@ -81,11 +75,25 @@ const StyledTitle = styled(Title)`
   letter-spacing: normal;
   color: #ffffff;
   font-family: "Ubuntu", sans-serif;
+  @media (max-width: 920px) {
+    font-size: 48px;
+  }
+  @media (max-width: 880px) {
+    font-size: 32px;
+  }
 `;
 
-export default class HomeSplash extends Component {
+const StyledTitleDiv = styled.div`
+  width: 50%;
+  @media (max-width: 880px) {
+    width: 35%;
+  }
+`;
+
+export default class LaunchSplash extends Component {
   render() {
-    const { toggleModal, handleAuth } = this.props;
+    const { toggleModal, handleAuth, isAuthed } = this.props;
+
     return (
       <Wrapper>
         <Navigation type="home" toggleModal={toggleModal} />
@@ -132,12 +140,12 @@ export default class HomeSplash extends Component {
           <Overlay />
           <StyledRow>
             <StyledHomeColumn>
-              <div style={{ width: "50%" }}>
+              <StyledTitleDiv>
                 <StyledTitle>
                   Four Elements To Videos That Get Results
                 </StyledTitle>
-              </div>
-              <LaunchForm handleAuth={handleAuth} />
+              </StyledTitleDiv>
+              <LaunchForm handleAuth={handleAuth} type="splash" />
             </StyledHomeColumn>
           </StyledRow>
         </div>
