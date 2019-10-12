@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 const StyledColumn = styled(Column)`
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 1em;
 `;
 
 const Input = styled.input`
@@ -41,9 +42,6 @@ const StyledText = styled(Text)`
   letter-spacing: normal;
   color: #000000;
   margin-top: 2em;
-  @media (max-width: 880px) {
-    display: none;
-  }
 `;
 
 export default class LaunchForm extends Component {
