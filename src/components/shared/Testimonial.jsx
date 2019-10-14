@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle } from "../../theme/index";
+import { Column } from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const StyledColumn = styled(Column)`
 
 export default class Testimonial extends Component {
   render() {
-    const { title, description, src, type, src2 } = this.props;
+    const { src, type, src2 } = this.props;
     const swatch = src && src.split("/")[5];
     const swatch2 = src2 && src2.split("/")[5];
 

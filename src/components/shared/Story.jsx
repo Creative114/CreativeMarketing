@@ -58,7 +58,7 @@ const NumberedCircle = styled.div`
 
 export default class Story extends Component {
   render() {
-    const { toggleModal, type } = this.props;
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">

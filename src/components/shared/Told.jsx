@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Row, Button, Title } from "../../theme/index";
-import { Link } from "react-router-dom";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`

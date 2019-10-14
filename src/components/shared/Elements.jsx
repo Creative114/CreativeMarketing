@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import launchimg from "../../assets/launch_img.png";
 import { Column, Title, Text, Button } from "../../theme";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -61,9 +62,11 @@ export default function() {
           Sign Up To Access A Series Of Free Videos That Will Help You Transform
           The Way You Tell Your Brand Stories.
         </StyledText>
-        <Button margin="1.5em 0" primary>
-          Access Now
-        </Button>
+        <Link to="/launch">
+          <Button margin="1.5em 0" primary>
+            Access Now
+          </Button>
+        </Link>
       </StyledColumn>
     </Wrapper>
   );

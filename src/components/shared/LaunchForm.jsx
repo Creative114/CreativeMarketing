@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Title, Text, Button, Column } from "../../theme";
+import { Text, Button, Column } from "../../theme";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
@@ -46,7 +46,7 @@ const StyledText = styled(Text)`
 
 export default class LaunchForm extends Component {
   render() {
-    const { handleAuth, toggleModal, type } = this.props;
+    const { handleAuth, toggleModal } = this.props;
     return (
       <Wrapper>
         <StyledColumn>

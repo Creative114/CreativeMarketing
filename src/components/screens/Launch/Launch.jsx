@@ -62,11 +62,12 @@ class Landing extends Component {
         <LaunchSplash
           toggleModal={this.toggleModal}
           handleAuth={this.handleAuth}
+          isAuthed={isAuthed}
         />
         <LaunchStory toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <LaunchVideos isAuthed={isAuthed} toggleModal={this.toggleModal} />
         <LaunchWhy isAuthed={isAuthed} toggleModal={this.toggleModal} />
-        <Testimonials />
+        <Testimonials type="launch" />
         <Logos />
         <Share />
         <Footer toggleModal={this.toggleModal} />

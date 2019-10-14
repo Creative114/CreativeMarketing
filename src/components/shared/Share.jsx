@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, Text, Button, Column } from "../../theme";
 import ShareForm from "./ShareForm";
 import BG from "../../assets/rectange_bg.png";
 import launchimg from "../../assets/launch_img.png";

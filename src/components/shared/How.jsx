@@ -5,20 +5,20 @@ import production from "../../assets/production.png";
 import preproduction from "../../assets/preproduction.png";
 import postproduction from "../../assets/postproduction.png";
 import Reveal from "react-reveal/Reveal";
+import BG from "../../assets/rectange_bg.png";
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
+  background: ${props => props.bg};
   flex-direction: column;
-  background: rgb(242, 245, 247);
   align-items: center;
-  padding: 2em 0;
+  padding: 10em 0 4em 0;
   @media (max-width: 780px) {
-    width: 95%;
     padding: 1em 0;
     text-align: center;
-    padding: 3em 0 1.5em 0;
+    padding: 5em 0;
   }
 `;
 
@@ -98,7 +98,7 @@ export default function How({ toggleModal }) {
     }
   ];
   return (
-    <Wrapper>
+    <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <StyledColumn>
           <Title>Here's how we do it</Title>
@@ -115,7 +115,7 @@ export default function How({ toggleModal }) {
             );
           })}
         </Grid>
-        <Row margin="2em 0">
+        <Row margin="2em 0" justifycontent="center">
           <Button primary onClick={() => toggleModal("schedule")}>
             Schedule a call now
           </Button>

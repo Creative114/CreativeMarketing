@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import Lightbulb from "./Lightbulb";
-import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
   height: 100%;

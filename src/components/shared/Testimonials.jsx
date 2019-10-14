@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
-import { Title, Row } from "../../theme/index";
-import litatestimonial from "../../assets/litatestimonial.jpg";
+import { Title, Row, Column, Text } from "../../theme/index";
 import Slider from "react-slick";
 import Reveal from "react-reveal/Reveal";
 
@@ -47,6 +46,7 @@ const StyledButton = styled.button`
 
 const Div = styled.div`
   display: block;
+  margin-top: 2em;
   @media (max-width: 920px) {
     margin: 0;
     display: none;
@@ -54,7 +54,7 @@ const Div = styled.div`
 `;
 
 const MobileDiv = styled.div`
-  margin: 1.5em 0;
+  margin: 2em 0;
   display: none;
   @media (max-width: 920px) {
     display: block;
@@ -89,6 +89,7 @@ export default class Testimonials extends Component {
 
   render() {
     const { selected } = this.state;
+    const { type } = this.props;
     let settings = {
       dots: true,
       infinite: false,
@@ -100,39 +101,53 @@ export default class Testimonials extends Component {
       <Wrapper>
         <Reveal effect="fadeIn">
           <React.Fragment>
-            <Row justifycontent="center">
-              <Title>What they're saying</Title>
-            </Row>
+            <Column alignitems="center">
+              <Title>
+                {type === "launch"
+                  ? "Make An Emotional Impact"
+                  : "What they're saying"}
+              </Title>
+              {type === "launch" && (
+                <React.Fragment>
+                  <Text margin="0">
+                    Many Business Owners Are Wasting Money Creating Videos That
+                    Just Don’t Work.
+                  </Text>
+                  <br />
+                  <Text
+                    margin="-1.25em 0 0 0"
+                    dark
+                    style={{ fontStyle: "italic" }}
+                  >
+                    I Don’t Want That To Be You!
+                  </Text>
+                </React.Fragment>
+              )}
+            </Column>
 
             <MobileDiv>
               <Slider {...settings}>
                 <Testimonial
-                  title="Movement 2819"
                   type="video"
-                  description="MOVEMENT 2819 is a nonprofit organization located in Tampa Bay, Florida. Founder, Dustin Lachance, organized an event that drew 20,000 people and featured notable Christian public figures like Kari Jobe and Tim Tebow. Creative114 developed content to advertise the event, as well as crafted a video recap of the night."
                   src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
                   src2={
-                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                    "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
                   }
                 />
 
                 <Testimonial
-                  title="Litacore"
                   type="video"
-                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
+                  src={"https://fast.wistia.com/embed/medias/7jp6slsdkj/swatch"}
                   src2={
-                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                    "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
                   }
-                  description="LITACORE is a technology company focused on enhancing the lives of people all around the world. Their groundbreaking website-based platform serves members of school community and allows school transportation administrators to track buses, provide accurate ETAs and reports to parents to assure the safety of their children. They hired Creative114 to renovate their marketing website, provide photography and graphics, and develop a creative brand launch video."
                 />
 
                 <Testimonial
-                  title="The Collective Genius"
                   type="video"
-                  description="THE COLLECTIVE GENIUS is a renowned real estate mastermind targeting an elite group of real estate investors throughout the country and the world. Their company is comprised of the top 5% of the nation’s investors. Creative114 was hired to capture powerful presentations at their quarterly meetings and produce videos and graphic design that they use to promote and grow their business."
-                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
+                  src={"https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"}
                   src2={
-                    "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                    "https://fast.wistia.com/embed/medias/9th7svguvv/swatch"
                   }
                 />
               </Slider>
@@ -166,14 +181,12 @@ export default class Testimonials extends Component {
                 <Row>
                   {selected === "nonProfit" && (
                     <Testimonial
-                      title="Movement 2819"
                       type="video"
-                      description="Movement 2819 is a non-profit located in Tampa Bay area. Based on Matthew 28:19, their primary purpose is to go and tell the good news of the Gospel. To fulfill their mission, Dustin Lachance had the big vision to preach the Gospel to thousands of people. They invited Tim Tebow, Kari Jobe and many others. The event attracted over 20,000 people. We were hired to produce promotional videos, day of announcements, sponsor video and a recap for the event. We were honored to be part of such a special night."
                       src={
                         "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                        "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
                       }
                     />
                   )}
@@ -181,32 +194,40 @@ export default class Testimonials extends Component {
                   {selected === "startUp" && (
                     <Testimonial
                       type="video"
-                      title="Litacore"
-                      description="Smart Stop Logistics is a startup located in the Tampa Bay area with the mission to improve the quality of life for all ages with technology. The vision of their first product was to create a web-based platform for school district and transportation departments to track buses, find ETA's and give safety of mind to parents. We were hired by Litacore to create a branded video for their launch. However, with the value provided, they also hired us to revamp their marketing website, and to create new photographic assets for their business."
                       src={
-                        "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                        "https://fast.wistia.com/embed/medias/7jp6slsdkj/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                        "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
                       }
                     />
                   )}
                   {selected === "business" && (
                     <Testimonial
                       type="video"
-                      title="The Collective Genius"
-                      description="The Collective Genius is a Mastermind for elite real estate investors making a minimum of 50 deals per year or have a rental portfolio of a least 50 units. CG is comprised of the top 5% real estate investors in the Nation. The 120+ members help each other systematize inefficiencies, share inventory sources, and create joint venture on deals as well as educational training products. We were hired by CG to film presentations and testimonial videos at their quarterly meetings. We ended up also created graphic design assets for their new website."
                       src={
-                        "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
+                        "https://fast.wistia.com/embed/medias/9th7svguvv/swatch"
                       }
                     />
                   )}
                 </Row>
               </React.Fragment>
             </Div>
+            {type === "launch" && (
+              <Row
+                justifycontent="center"
+                margin="2.5em 0 0 0"
+                style={{ textAlign: "center" }}
+              >
+                <Text>
+                  People Will Respond To Your Videos After You Implement <br />
+                  What You Learn Here.
+                </Text>
+              </Row>
+            )}
           </React.Fragment>
         </Reveal>
       </Wrapper>

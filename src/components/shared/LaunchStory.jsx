@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Button, Row, Text } from "../../theme/index";
+import { Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -108,7 +108,7 @@ const StyledIconRow = styled(Row)`
 
 export default class LaunchStory extends Component {
   render() {
-    const { toggleModal, type, isAuthed } = this.props;
+    const { toggleModal, isAuthed } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">

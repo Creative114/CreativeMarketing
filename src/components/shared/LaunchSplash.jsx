@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Text, Subtitle, Button } from "../../theme/index";
+import { Row, Title } from "../../theme/index";
 import Navigation from "./Navigation";
 import LaunchForm from "../shared/LaunchForm";
 import launchsplash from "../../assets/launch_splash.jpg";
@@ -82,7 +82,7 @@ export default class LaunchSplash extends Component {
 
     return (
       <Wrapper background={`url('${launchsplash}')`}>
-        <Navigation type="home" toggleModal={toggleModal} />
+        <Navigation type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
 
         <StyledRow>
           <StyledHomeColumn>

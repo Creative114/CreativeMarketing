@@ -9,7 +9,6 @@ import logo6 from "../../assets/logo6.jpg";
 import logo7 from "../../assets/logo7.jpg";
 import logo8 from "../../assets/logo8.jpg";
 import logo9 from "../../assets/logo9.jpg";
-import logo10 from "../../assets/logo10.jpg";
 import logo11 from "../../assets/logo11.jpg";
 import logo12 from "../../assets/logo12.jpg";
 import logo_uc from "../../assets/logo_uc.png";

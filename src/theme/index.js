@@ -117,7 +117,6 @@ export const Text = styled.p`
       margin: 0;
       line-height: 1.75em;
       font-size: 16px;
-      margin: 0.5em 0;
     `};
   ${props =>
     props.post &&
@@ -129,6 +128,8 @@ export const Text = styled.p`
     props.dark &&
     css`
       color: #2b2b2b;
+      font-weight: 600;
+      line-height: 28px;
     `};
   ${props =>
     props.contact &&
@@ -179,7 +180,7 @@ export const StyledNavLink = styled(NavLink)`
   color: ${props => (props.active ? "#D21F04" : "#fff")};
   text-transform: uppercase;
   text-decoration: none;
-  margin: 0 1em;
+  margin-right: 1.5em;
   font-weight: 700;
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
@@ -338,6 +339,7 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #d21f04;
+      margin: 0;
       &:hover {
         color: #d21f04;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

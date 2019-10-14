@@ -99,7 +99,7 @@ export default class Navigation extends Component {
 
   render() {
     const { color, active } = this.state;
-    const { type, toggleModal, show } = this.props;
+    const { type, toggleModal, show, isAuthed } = this.props;
 
     return (
       <Wrapper background={color} active={active} display={!show && "none"}>
@@ -165,8 +165,15 @@ export default class Navigation extends Component {
             )}
             {type === "home" && (
               <StyledRow>
-                <Button primary onClick={() => toggleModal("schedule")}>
-                  Schedule a call now
+                <Button
+                  primary
+                  onClick={
+                    isAuthed
+                      ? () => toggleModal("schedule")
+                      : () => toggleModal("launch")
+                  }
+                >
+                  {isAuthed ? "Schedule a call now" : "Get the videos now"}
                 </Button>
               </StyledRow>
             )}

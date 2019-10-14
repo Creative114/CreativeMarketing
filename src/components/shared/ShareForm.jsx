@@ -4,8 +4,9 @@ import { Title, Text, Button, Column } from "../../theme";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
-  width: 380px;
-  height: 388px;
+  width: auto;
+  max-width: 380px;
+  height: auto;
   border-radius: 4px;
   background-color: #ffffff;
 `;
@@ -39,7 +40,7 @@ const StyledText = styled(Text)`
   line-height: 1.38;
   letter-spacing: normal;
   color: #000000;
-  margin-top: 2em;
+  margin-top: 0.5em;
 `;
 
 export default class ShareForm extends Component {
@@ -47,79 +48,100 @@ export default class ShareForm extends Component {
     return (
       <Wrapper>
         <StyledColumn>
-          <StyledText>
-            Four FREE VIDEOS That Will Help You Transform The Way You Tell Your
-            Brand Stories
-          </StyledText>
-          <Text red>Sign up now</Text>
           <Formik
             initialValues={{
               firstname: "",
-
+              friendsname: "",
               email: ""
             }}
-            onSubmit={values => {
-              function formv3() {
-                let xhr = new XMLHttpRequest();
-                let url =
-                  "https://api.hsforms.com/submissions/v3/integration/submit/5644251/b20fbe1a-8a15-45f7-bfa0-f3262992a250";
-                let data = {
-                  fields: [
-                    {
-                      name: "email",
-                      value: values.email
-                    },
-                    {
-                      name: "firstname",
-                      value: values.firstname
-                    },
-                    {
-                      name: "lastname",
-                      value: values.lastname
-                    },
-                    {
-                      name: "message",
-                      value: values.message
-                    }
-                  ],
-                  context: {
-                    pageUri: "www.creative114.com/#/",
-                    pageName: "Contact page"
+            onSubmit={(values, { setStatus }) => {
+              let xhr = new XMLHttpRequest();
+              let url =
+                "https://api.hsforms.com/submissions/v3/integration/submit/5644251/1d0d4da4-30a6-4397-9e3b-cc75471deb00";
+              let data = {
+                fields: [
+                  {
+                    name: "email",
+                    value: values.email
+                  },
+                  {
+                    name: "firstname",
+                    value: values.firstname
+                  },
+                  {
+                    name: "friendsname",
+                    value: values.friendsname
                   }
-                };
-                const final_data = JSON.stringify(data);
-                xhr.open("POST", url);
-                xhr.setRequestHeader("Content-type", "application/json");
-                xhr.onreadystatechange = function() {
-                  if (xhr.readyState === 4 && xhr.status === 200) {
-                    window.location.href = "https://creative114.com/#/thanks";
-                  }
-                };
-                xhr.send(final_data);
-              }
-              formv3();
+                ],
+                context: {
+                  pageUri: "www.creative114.com/#/launch",
+                  pageName: "Launch page"
+                }
+              };
+              const final_data = JSON.stringify(data);
+              xhr.open("POST", url);
+              xhr.setRequestHeader("Content-type", "application/json");
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                  setStatus({ submitted: true });
+                }
+              };
+              xhr.send(final_data);
             }}
-            render={({ values, handleSubmit, handleChange, handleBlur }) => (
+            render={({
+              values,
+              handleSubmit,
+              handleChange,
+              handleBlur,
+              status
+            }) => (
               <form onSubmit={handleSubmit}>
-                <Input
-                  value={values.firstname}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="name"
-                  name="firstname"
-                  placeholder="First name"
-                />
-                <Input
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                />
-                <Button primary type="submit">
-                  Get the videos
-                </Button>
+                {status && status.submitted && (
+                  <div>
+                    <Title>Thanks!</Title>
+                    <Text dark>We've sent your friend an email</Text>
+                  </div>
+                )}
+                {!status && (
+                  <div>
+                    <Title margin=".5em 0 0 0">Share the love</Title>
+                    <StyledText>
+                      Know Someone Who Would Enjoy These Videos? Share This Page
+                      With Them And Download The Series Worksheets For Free!
+                    </StyledText>
+                    <Input
+                      value={values.firstname}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      type="name"
+                      name="firstname"
+                      placeholder="Your first name"
+                    />
+                    <Input
+                      value={values.friendsname}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      type="friendsname"
+                      name="friendsname"
+                      placeholder="Your friend's name"
+                    />
+                    <Input
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      type="email"
+                      name="email"
+                      placeholder="Your friend's email"
+                    />
+                    <Button
+                      primary
+                      type="submit"
+                      style={{ marginBottom: "1em" }}
+                    >
+                      Get the videos
+                    </Button>
+                  </div>
+                )}
               </form>
             )}
           />
