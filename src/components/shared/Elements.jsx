@@ -3,16 +3,21 @@ import styled from "styled-components";
 import launchimg from "../../assets/launch_img.png";
 import { Column, Title, Text, Button } from "../../theme";
 import { Link } from "react-router-dom";
+import BG from "../../assets/rectange_bg.png";
 
 const Wrapper = styled.div`
+  height: auto;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  background: ${props => props.bg};
   display: flex;
-  padding: 4em 0;
-  background: linear-gradient(rgb(242, 245, 247), #ffffff);
   justify-content: space-evenly;
+  align-items: center;
+  padding: 10em 0 4em 0;
   @media (max-width: 980px) {
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5em 0;
   }
 `;
 
@@ -27,32 +32,24 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-const StyledText = styled(Text)`
-  @media (max-width: 980px) {
-    color: #fff;
-  }
-`;
+const StyledText = styled(Text)``;
 
-const StyledTitle = styled(Title)`
-  @media (max-width: 980px) {
-    color: #fff;
-  }
-`;
+const StyledTitle = styled(Title)``;
 
 const Span = styled.span`
   color: #d21f04;
-  @media (max-width: 980px) {
-    color: #fff;
-  }
 `;
 
 const Image = styled.img`
   width: 400px;
+  @media (max-width: 500px) {
+    width: 325px;
+  }
 `;
 
-export default function() {
+export default function Elements() {
   return (
-    <Wrapper>
+    <Wrapper bg={`url('${BG}')`}>
       <Image src={launchimg} />
       <StyledColumn>
         <StyledTitle new>

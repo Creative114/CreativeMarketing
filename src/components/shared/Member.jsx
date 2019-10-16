@@ -5,6 +5,7 @@ import { Column, Text, Subtitle, Row } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: auto;
+  min-height: 550px;
   width: 100%;
   align-items: center;
   margin: 0 auto;
@@ -32,6 +33,7 @@ const StyledRow = styled(Row)`
   @media (max-width: 1200px) {
     width: 100%;
     align-items: center;
+    flex-direction: column;
   }
 `;
 
@@ -41,6 +43,7 @@ const StyledTextColumn = styled(Column)`
   @media (max-width: 1200px) {
     width: 90%;
     text-align: center;
+    margin: 0 auto;
     align-items: center;
   }
 `;

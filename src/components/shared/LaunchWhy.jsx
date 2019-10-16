@@ -94,7 +94,7 @@ export default class LaunchWhy extends Component {
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
           <Title margin=".25em 0">If Your Videos Are Boring</Title>
-          <Text>If Your Videos Are Boring, they Won’t Get You Results</Text>
+          <Text>they won't get you results</Text>
         </Column>
         <Grid>
           <Div>

@@ -99,8 +99,8 @@ export default function Footer({ toggleModal }) {
           </div>
         </StyledColumn>
         <MobileDiv>
-          <Button footer onClick={() => toggleModal("story")}>
-            Find your story
+          <Button footer onClick={() => toggleModal("calendar")}>
+            Schedule a call now
           </Button>
         </MobileDiv>
         <StyledColumn justifycontent="space-between">
@@ -146,8 +146,8 @@ export default function Footer({ toggleModal }) {
           </Text>
         </StyledColumn>
         <DesktopDiv>
-          <Button footer onClick={() => toggleModal("story")}>
-            Find your story
+          <Button footer onClick={() => toggleModal("calendar")}>
+            Schedule a call now
           </Button>
         </DesktopDiv>
       </StyledRow>

@@ -28,8 +28,6 @@ const Img = styled.img`
 `;
 
 export default function Video({ src, isAuthed, toggleModal, type }) {
-  console.log(isAuthed, type);
-
   const swatch = src.split("/")[5];
   if (type === "launch" && !isAuthed) {
     return (

@@ -68,24 +68,14 @@ export default class Recent extends Component {
         </Column>
         <Grid>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/kklt1ne01e/swatch" />
-          </Div>
-          <Div>
-            <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" />
-          </Div>
-          <Div>
             <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" />
           </Div>
           <Div>
             <Video src="https://fast.wistia.com/embed/medias/v70c06uszd/swatch" />
           </Div>
           <Div>
-            <Video src="https://fast.wistia.com/embed/medias/ioz3i2dz8k/swatch" />
-          </Div>
-          <Div>
             <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />
           </Div>
-
           <Div>
             <Video src="https://fast.wistia.com/embed/medias/jsdmuoe293/swatch" />
           </Div>

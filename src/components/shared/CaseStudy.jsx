@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     flex-direction: ${props => (props.primary ? "column-reverse" : "column")};
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ const StyledColumn = styled(Column)`
   align-items: center;
   background-color: inherit;
 
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     width: 100%;
     padding: 4em 0;
     align-items: center;
@@ -30,20 +30,29 @@ const StyledColumn = styled(Column)`
 const StyledTextColumn = styled(Column)`
   margin: 0.5em 0;
   width: 70%;
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     width: 90%;
     text-align: center;
+    align-items: center;
   }
 `;
 
 const Div = styled.div`
-  background: ${props => props.background};
-  background-size: cover;
-  background-position: center;
   width: 50vw;
-  height: 600px;
-  @media (max-width: 780px) {
+  height: 600px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 980px) {
     width: 100%;
+    height: auto;
+  }
+`;
+
+const Image = styled.img`
+  width: 400px;
+  @media (max-width: 500px) {
+    width: 325px;
   }
 `;
 
@@ -67,12 +76,16 @@ export default function Benefit({ title, description, img, type, navigate }) {
               </Button>
             </StyledTextColumn>
           </StyledColumn>
-          <Div background={`url('${img}')`} />
+          <Div>
+            <Image src={img} />
+          </Div>
         </React.Fragment>
       )}
       {type === "left" && (
         <React.Fragment>
-          <Div background={`url('${img}')`} />
+          <Div>
+            <Image src={img} />
+          </Div>
           <StyledColumn>
             <StyledTextColumn>
               <Subtitle>{title}</Subtitle>

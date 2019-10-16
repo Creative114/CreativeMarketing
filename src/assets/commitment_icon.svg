@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="48px" viewBox="0 0 45 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Commitment Icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Commitment-Icon-2">
+            <path d="M10.0903966,2.53231088 C2.46352327,6.23254716 -1.49589101,18.6835482 1.14631834,29.9174467 C3.78852768,41.1513452 8.86573229,43.7804366 14.0504879,44.6189944 C19.2352434,45.4575522 32.3437802,46.090848 37.4590428,41.4410612 C42.5743054,36.7912745 46.9396826,15.7130828 42.4732279,8.13786929 C38.0067731,0.56265579 17.7172699,-1.16792541 10.0903966,2.53231088 Z" id="Path" fill="#D21F04" fill-rule="nonzero"></path>
+            <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(2.398151, 2.598224)" stroke="#000000" stroke-width="2">
+                <polyline id="Path" points="10.068 20.136 0 0 12 0 20 16"></polyline>
+                <polyline id="Path" points="29.933 20.134 40 0 28 0 20 16"></polyline>
+                <circle id="Oval" cx="20" cy="30" r="14"></circle>
+                <polygon id="Path" points="20 22.764 22.352 27.528 27.608 28.292 23.804 32 24.702 37.236 20 34.764 15.298 37.236 16.196 32 12.392 28.292 17.648 27.528"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

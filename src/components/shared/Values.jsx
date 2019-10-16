@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Column, Text, Title, Subtitle } from "../../theme/index";
+import creativity from "../../assets/creativity_icon.svg";
+import candor from "../../assets/candor_icon.svg";
+import credibility from "../../assets/credibility_icon.svg";
+import compassion from "../../assets/compassion_icon.svg";
+import commitment from "../../assets/commitment_icon.svg";
+import collaboration from "../../assets/collaboration_icon.svg";
 
 const Wrapper = styled.div`
   width: 80%;
@@ -16,10 +22,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Icon = styled.i`
-  font-size: 4em;
+const Icon = styled.img`
+  width: 72px;
   margin: 0.5em 0;
-  color: #b9402d;
 `;
 
 const StyledBox = styled(Column)`
@@ -60,37 +65,37 @@ const StyledColumn = styled(Column)`
 
 const values = [
   {
-    icon: "fas fa-handshake",
+    icon: collaboration,
     title: "Encourage Collaboration",
     description:
       "We combine our talents and resources with your expertise in your industry to engage, entertain, and excite the right people with your unique story."
   },
   {
-    icon: "fas fa-award",
+    icon: commitment,
     title: "Embrace Commitment",
     description:
       "We never settle for the status quo. We will go to any length possible to exceed your expectations and deliver the highest quality finished product."
   },
   {
-    icon: "fas fa-heart",
+    icon: compassion,
     title: "Express Compassion",
     description:
       "We are dedicated to loving and serving you. The way we treat people and live our lives is intricately woven into the exceptional work we produce."
   },
   {
-    icon: "fas fa-certificate",
+    icon: credibility,
     title: "Establish Credibility",
     description:
       "Trust and integrity are critical to our identity as a brand and as individuals. We promise to always do what is right for the client, no matter the circumstances."
   },
   {
-    icon: "fas fa-star",
+    icon: candor,
     title: "Emphasize Candor",
     description:
       "Transparency and honesty are ingrained in our people and in our processes. We will always be up front with you and work with your best interest in mind."
   },
   {
-    icon: "fas fa-bullseye",
+    icon: creativity,
     title: "Enhance Creativity",
     description:
       "We are passionate about our work and we don’t stop until we’ve pushed the boundaries of turning your vision into a breathtaking, exciting reality."
@@ -100,7 +105,7 @@ const values = [
 function Box({ icon, title, description }) {
   return (
     <StyledBox>
-      <Icon className={icon} />
+      <Icon src={icon} />
       <StyledBoxColumn>
         <Subtitle primary>{title}</Subtitle>
         <Text>{description}</Text>

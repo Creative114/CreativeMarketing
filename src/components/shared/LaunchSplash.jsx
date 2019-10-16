@@ -82,7 +82,12 @@ export default class LaunchSplash extends Component {
 
     return (
       <Wrapper background={`url('${launchsplash}')`}>
-        <Navigation type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
+        <Navigation
+          launch
+          type="home"
+          toggleModal={toggleModal}
+          isAuthed={isAuthed}
+        />
 
         <StyledRow>
           <StyledHomeColumn>

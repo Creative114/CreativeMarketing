@@ -335,7 +335,7 @@ export const Button = styled.button`
     props.footer &&
     css`
       background: #fff;
-      width: ${props => (props.small ? "135px" : "185px")};
+      width: ${props => (props.small ? "135px" : "225px")};
       height: 45px;
       border: 1px solid transparent;
       color: #d21f04;

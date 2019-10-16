@@ -39,6 +39,9 @@ const TextRow = styled(Row)`
   margin-bottom: 2em;
   justify-content: space-between;
   width: 75%;
+  @media (max-width: 780px) {
+    width: 95%;
+  }
 `;
 
 const NumberedCircle = styled.div`
@@ -54,6 +57,19 @@ const NumberedCircle = styled.div`
   font-size: 22px;
   font-weight: 600;
   font-family: "Ubuntu", sans-serif;
+  @media (max-width: 780px) {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    margin-right: 0;
+  }
+`;
+
+const StyledIconRow = styled(Row)`
+  align-items: center;
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 export default class Story extends Component {
@@ -64,26 +80,26 @@ export default class Story extends Component {
         <Reveal effect="fadeIn">
           <React.Fragment>
             <TextRow>
-              <Row alignitems="center">
+              <StyledIconRow alignitems="center">
                 <NumberedCircle>1</NumberedCircle>
                 <Text red margin="0">
                   Simple process
                 </Text>
-              </Row>
+              </StyledIconRow>
 
-              <Row alignitems="center">
+              <StyledIconRow alignitems="center">
                 <NumberedCircle>2</NumberedCircle>
                 <Text red margin="0">
                   Engaging Stories
                 </Text>
-              </Row>
+              </StyledIconRow>
 
-              <Row alignitems="center">
+              <StyledIconRow alignitems="center">
                 <NumberedCircle>3</NumberedCircle>
                 <Text red margin="0">
                   Real results
                 </Text>
-              </Row>
+              </StyledIconRow>
             </TextRow>
 
             <StyledVideoRow>

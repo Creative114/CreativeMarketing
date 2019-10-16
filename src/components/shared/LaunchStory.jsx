@@ -139,7 +139,7 @@ export default class LaunchStory extends Component {
             <StyledRow>
               <Text>
                 Watch each video and discover 4 elements that will transform the
-                way you engagae with your ideal audience
+                way you engage with your ideal audience
               </Text>
             </StyledRow>
             {!isAuthed && (

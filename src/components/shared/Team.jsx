@@ -91,22 +91,22 @@ const boxes = [
     description: "Lorem ipsum dolor sit amet, consectetur",
     icon: "fal fa-clipboard-list-check",
     img: jephte
-  },
-  {
-    id: "will",
-    title: "Accountability",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-fingerprint",
-    img: will
-  },
-
-  {
-    id: "alex",
-    title: "Accountability",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-fingerprint",
-    img: alex
   }
+  // {
+  //   id: "will",
+  //   title: "Accountability",
+  //   description: "Lorem ipsum dolor sit amet, consectetur",
+  //   icon: "fal fa-fingerprint",
+  //   img: will
+  // },
+
+  // {
+  //   id: "alex",
+  //   title: "Accountability",
+  //   description: "Lorem ipsum dolor sit amet, consectetur",
+  //   icon: "fal fa-fingerprint",
+  //   img: alex
+  // }
 ];
 
 function Box({ id, selected, handleClick, img }) {
@@ -138,7 +138,7 @@ export default class Team extends Component {
     let settings = {
       dots: true,
       infinite: false,
-      arrows: true,
+      arrows: false,
       speed: 1000,
       autoplay: true
     };

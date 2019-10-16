@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="47px" viewBox="0 0 48 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Creativity Icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Creativity-Icon-2" transform="translate(0.000000, 1.000000)">
+            <path d="M7.77502601,4.96513009 C0.94328622,8.26692979 -1.06196358,21.1364112 1.30478436,31.1606583 C3.67153229,41.1849053 10.9488353,44.5250763 15.5930583,45.2733393 C20.2372814,46.0216024 37.2231724,43.1404392 41.8051475,38.9913354 C46.3871225,34.8422316 44.144598,16.774708 40.1437899,10.0151835 C36.1429818,3.25565905 14.6067658,1.66333038 7.77502601,4.96513009 Z" id="Path" fill="#D21F04" fill-rule="nonzero"></path>
+            <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(3.203512, 0.000000)" stroke="#000000" stroke-width="2">
+                <path d="M35.297,20.002 C35.755,21.589 36,23.266 36,25 C36,34.941 27.941,43 18,43 C8.059,43 0,34.941 0,25 C0,15.059 8.059,7 18,7 C19.736,7 21.415,7.246 23.003,7.704" id="Path"></path>
+                <circle id="Oval" cx="18" cy="25" r="10"></circle>
+                <path d="M18,25 L41,2" id="Path"></path>
+                <polygon id="Path" points="37 6 35 0 29 6 31 12 37 14 43 8"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
