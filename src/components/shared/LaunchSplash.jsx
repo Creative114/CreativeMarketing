@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 920px) {
+    align-items: center;
   }
 `;
 
@@ -33,8 +34,8 @@ const StyledHomeColumn = styled(Row)`
   position: absolute;
   justify-content: center;
   @media (max-width: 980px) {
-    width: 95%;
     flex-direction: column;
+    margin: 0 auto;
     text-align: center;
   }
   @media (max-width: 720px) {

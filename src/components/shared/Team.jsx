@@ -19,13 +19,13 @@ const Wrapper = styled.div`
 const StyledBox = styled.div`
   width: 165px;
   height: 165px;
+  border-radius: 100%;
   background: #f1f5f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin: 0 1.5em;
-  border-radius: 3px;
   background: ${props => props.background};
   background-size: cover;
   background-repeat: no-repeat;

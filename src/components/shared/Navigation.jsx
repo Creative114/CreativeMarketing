@@ -103,11 +103,13 @@ export default class Navigation extends Component {
 
     return (
       <Wrapper background={color} active={active} display={!show && "none"}>
-        <Image
-          src={this.handleLogo(active, type)}
-          active={!active}
-          alt="Creative114 Logo"
-        />
+        <Link to="/">
+          <Image
+            src={this.handleLogo(active, type)}
+            active={!active}
+            alt="Creative114 Logo"
+          />
+        </Link>
 
         <Link to="/">
           <MobileImage src={Icon} alt="Creative114 Logo" />
@@ -148,7 +150,7 @@ export default class Navigation extends Component {
                   active={active}
                   to="/impact"
                 >
-                  #Shareyourimpact
+                  Impact
                 </StyledNavLink>
                 <StyledNavLink
                   home={type === "home"}
@@ -179,7 +181,7 @@ export default class Navigation extends Component {
                 </Button>
               </StyledRow>
             )}
-            {type === "home" && (
+            {type === "home" && !launch && (
               <StyledRow>
                 <Button primary onClick={() => toggleModal("schedule")}>
                   Schedule a call now

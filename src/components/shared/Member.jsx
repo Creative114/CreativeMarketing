@@ -51,7 +51,7 @@ const StyledTextColumn = styled(Column)`
 const Img = styled.img`
   width: 350px;
   height: 350px;
-  border-radius: 3px;
+  border-radius: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 1200px) {
     width: 350px;

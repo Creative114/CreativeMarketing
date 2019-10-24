@@ -78,16 +78,16 @@ export default function ContactForm() {
         <StyledRow>
           <Icon className="fas fa-map-pin" />
           <Text post>
-            801 Seminole Blvd, suite 114
-            <br /> Largo, FL 33770
+            7028 W. Waters Ave. #274
+            <br /> Tampa, Fl 33634-2292
           </Text>
         </StyledRow>
-        <span className="drift-open-chat">
-          <StyledRow>
-            <Icon className="fas fa-comment" />
-            <Text post>Chat now</Text>
-          </StyledRow>
-        </span>
+
+        <StyledRow onClick={() => window.HubSpotConversations.widget.open()}>
+          <Icon className="fas fa-comment" />
+          <Text post>Chat now</Text>
+        </StyledRow>
+
         <StyledRow>
           <a
             href="https://www.linkedin.com/showcase/creative114/"

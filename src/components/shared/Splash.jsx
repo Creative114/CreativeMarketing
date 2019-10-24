@@ -143,15 +143,8 @@ export default function Splash({
             /> */}
 
             {type !== "thanks" && (
-              <StyledButton
-                footer
-                onClick={() =>
-                  type === "contact"
-                    ? toggleModal("schedule")
-                    : toggleModal("story")
-                }
-              >
-                {type === "contact" ? "Schedule now" : "Start your story"}
+              <StyledButton footer onClick={() => toggleModal("schedule")}>
+                Schedule a call now
               </StyledButton>
             )}
             {type === "thanks" && <A href={PDF}>Download now!</A>}
