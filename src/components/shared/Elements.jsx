@@ -53,11 +53,13 @@ export default function Elements() {
       <Image src={launchimg} />
       <StyledColumn>
         <StyledTitle new>
-          Four elements to videos that get <Span>RESULTS</Span>
+          The Four <Span>Overlooked</Span> Secrets to Making Emotionally
+          Engaging Videos
         </StyledTitle>
         <StyledText>
-          Sign Up To Access A Series Of Free Videos That Will Help You Transform
-          The Way You Tell Your Brand Stories.
+          Sign Up for Limited Access to the 4 Step Video Framework Proven to
+          Illuminate Your Story, Transform Your Videos and Captivate Your
+          Audience.
         </StyledText>
         <Link to="/launch">
           <Button margin="1.5em 0" primary>

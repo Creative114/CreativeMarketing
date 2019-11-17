@@ -196,6 +196,26 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
+export const StyledALink = styled.a`
+  color: ${props => (props.active ? "#D21F04" : "#fff")};
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 1.5em;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  transition: 500ms;
+  ${props =>
+    props.home &&
+    css`
+      color: #d21f04;
+    `};
+  @media (max-width: 780px) {
+    margin: 0 0.5em;
+    font-size: 14px;
+  }
+`;
+
 export const Input = styled.input`
   width: 360px;
   height: 41px;

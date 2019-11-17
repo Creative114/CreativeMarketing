@@ -136,7 +136,8 @@ export default class HomeSplash extends Component {
                 Your story told like never before
               </Title>
               <Subtitle home>
-                Showcase the emotional impact of the good that you do
+                Showcase the emotional impact of the good that you do with
+                videos
               </Subtitle>
               <Row margin="2em 0">
                 <StyledButton primary onClick={() => toggleModal("schedule")}>

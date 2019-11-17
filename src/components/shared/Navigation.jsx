@@ -4,7 +4,7 @@ import Icon from "../../assets/icon.png";
 // import Logo from "../../assets/logoColor.png";
 import LogoWhite from "../../assets/logo.png";
 import Burger from "./Burger";
-import { Row, StyledNavLink, Button } from "../../theme/index";
+import { Row, StyledNavLink, Button, StyledALink } from "../../theme/index";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -183,6 +183,12 @@ export default class Navigation extends Component {
             )}
             {type === "home" && !launch && (
               <StyledRow>
+                <StyledALink
+                  active={active}
+                  href="https://blog.creative114.com/"
+                >
+                  Blog
+                </StyledALink>
                 <Button primary onClick={() => toggleModal("schedule")}>
                   Schedule a call now
                 </Button>

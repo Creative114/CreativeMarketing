@@ -1,6 +1,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { StyledNavLink, Row, Text, Button, Column } from "../../theme/index";
+import {
+  StyledNavLink,
+  Row,
+  Text,
+  Button,
+  Column,
+  StyledALink
+} from "../../theme/index";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
@@ -112,6 +119,8 @@ export default function Footer({ toggleModal }) {
             <StyledNavLink to="/work">Work</StyledNavLink>
             <StyledNavLink to="/about">About</StyledNavLink>
             <StyledNavLink to="/impact">Impact</StyledNavLink>
+            <StyledALink href="https://blog.creative114.com">Blog</StyledALink>
+            <StyledNavLink to="/contact">Contact</StyledNavLink>
           </StyledContentRow>
           <StyledContentRow>
             <a
