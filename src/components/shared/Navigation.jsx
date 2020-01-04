@@ -152,6 +152,12 @@ export default class Navigation extends Component {
                 >
                   Impact
                 </StyledNavLink>
+                <StyledALink
+                  active={active}
+                  href="https://blog.creative114.com"
+                >
+                  Blog
+                </StyledALink>
                 <StyledNavLink
                   home={type === "home"}
                   active={active}

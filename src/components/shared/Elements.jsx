@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 35%;
+  width: 55%;
   align-items: center;
   text-align: center;
   margin-right: 6em;
