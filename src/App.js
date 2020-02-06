@@ -9,7 +9,7 @@ import Contact from "./components/screens/Contact/Contact";
 import Thanks from "./components/screens/Thanks/Thanks";
 import NoMatch from "./components/screens/NoMatch/NoMatch";
 import StartNow from "./components/screens/StartNow/StartNow";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Launch from "./components/screens/Launch/Launch";
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
@@ -36,7 +36,7 @@ class App extends Component {
   }
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
           <Switch>
             <Route
@@ -127,7 +127,7 @@ class App extends Component {
             })} */}
           </Switch>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

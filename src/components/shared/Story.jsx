@@ -2,32 +2,34 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Button, Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
+import SimpleProcess from '../../assets/SimpleProcess.svg';
+import EngagingStories from '../../assets/EngagingStories.svg';
+import RealResults from '../../assets/RealResults.svg';
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 4em 0;
+  padding: 2em 0 4em 0;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 1750px) {
-    min-height: 1000px;
+    // min-height: 1000px;
   }
   @media (max-width: 1000px) {
     flex-direction: column;
     margin: 0 auto;
-    padding: 3em 0 1.5em 0;
+    padding: 1em 0 1.5em 0;
     text-align: center;
   }
 `;
 
 const StyledVideoRow = styled(Row)`
   width: 75%;
-  height: 478px;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 4em;
   @media (max-width: 780px) {
     width: 100%;
     height: 100%;
@@ -44,31 +46,20 @@ const TextRow = styled(Row)`
   }
 `;
 
-const NumberedCircle = styled.div`
-  width: 45px;
-  height: 45px;
-  background: #d21f04;
-  display: flex;
-  justify-content: center;
+const StyledIconRow = styled(Row)`
   align-items: center;
-  color: #fff;
-  border-radius: 100%;
-  margin-right: 0.5em;
-  font-size: 22px;
-  font-weight: 600;
-  font-family: "Ubuntu", sans-serif;
-  @media (max-width: 780px) {
-    width: 25px;
-    height: 25px;
-    font-size: 16px;
-    margin-right: 0;
+  @media (max-width: 1200px) {
+    flex-direction: column;
   }
 `;
 
-const StyledIconRow = styled(Row)`
-  align-items: center;
-  @media (max-width: 780px) {
-    flex-direction: column;
+const Icon = styled.img`
+  width: 120px;
+  @media (max-width: 1600px) {
+    width: 100px;
+  }
+  @media (max-width: 768px) {
+    width: 80px;
   }
 `;
 
@@ -81,23 +72,23 @@ export default class Story extends Component {
           <React.Fragment>
             <TextRow>
               <StyledIconRow alignitems="center">
-                <NumberedCircle>1</NumberedCircle>
+                <Icon src={SimpleProcess} />
                 <Text red margin="0">
-                  Simple process
+                  Simple Process
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
-                <NumberedCircle>2</NumberedCircle>
+                <Icon src={EngagingStories} />
                 <Text red margin="0">
                   Engaging Stories
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
-                <NumberedCircle>3</NumberedCircle>
+                <Icon src={RealResults} />
                 <Text red margin="0">
-                  Real results
+                  Real Results
                 </Text>
               </StyledIconRow>
             </TextRow>
@@ -137,7 +128,7 @@ export default class Story extends Component {
               justifycontent="center"
               style={{ margin: "0 auto", marginTop: "4em" }}
             >
-              <Button primary onClick={() => toggleModal("story")}>
+              <Button primary onClick={() => toggleModal("schedule")}>
                 Schedule a call now
               </Button>
             </Row>
