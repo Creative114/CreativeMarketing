@@ -9,6 +9,7 @@ import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import ApplyForm from "../../shared/ApplyForm";
 import Calendar from "../../shared/Calendar";
+import aboutimg from "../../../assets/About.jpg";
 
 export default class About extends Component {
   state = {
@@ -40,7 +41,8 @@ export default class About extends Component {
           title="About"
           text="Our team becomes an extension of your team. Collaborate with creative, diverse storytellers who know how to capture your vision, craft inspiring words, and create a compelling visual narrative that will captivate your audience."
           toggleModal={this.toggleModal}
-          src="https://player.vimeo.com/external/320613023.hd.mp4?s=e6381ef87a4e840aadcea5ae80381210ae9177b8&profile_id=175"
+          // src="https://player.vimeo.com/external/320613023.hd.mp4?s=e6381ef87a4e840aadcea5ae80381210ae9177b8&profile_id=175"
+          img={aboutimg}
         />
         <Team />
         <Values />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Column, Text, Title, Subtitle, Row, Button } from "../../theme/index";
 import production from "../../assets/production.png";
 import preproduction from "../../assets/preproduction.png";
@@ -31,8 +32,8 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
-  @media (max-width: 780px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media (max-width:  1200px) {
+    grid-template-columns: 1fr;
     grid-auto-rows: 375px;
     width: 95%;
     margin: 0 auto;
@@ -116,9 +117,11 @@ export default function How({ toggleModal }) {
           })}
         </Grid>
         <Row margin="2em 0" justifycontent="center">
-          <Button primary onClick={() => toggleModal("schedule")}>
-            Schedule a call now
-          </Button>
+          <Link to="/launch">
+            <Button primary>
+              Free StoryPitch Formula
+            </Button>
+          </Link>
         </Row>
       </Reveal>
     </Wrapper>

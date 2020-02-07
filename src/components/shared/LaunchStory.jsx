@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 1750px) {
-    min-height: 1000px;
+    // min-height: 1000px;
   }
   @media (max-width: 1000px) {
     flex-direction: column;
