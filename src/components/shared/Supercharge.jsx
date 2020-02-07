@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 4em 0;
   @media (min-width: 1750px) {
-    min-height: 1000px;
+    // min-height: 1000px;
   }
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -55,13 +55,11 @@ export default class Supercharge extends Component {
               </Text>
               <Text red>It's our job to help you produce those feelings.</Text>
             </Column>
-            <Button
-              margin="2em 0 0 0"
-              primary
-              onClick={() => toggleModal("schedule")}
-            >
-              Schedule a call now
-            </Button>
+            <Link to="/launch">
+              <Button primary margin="2em 0 0 0">
+                Free StoryPitch Formula
+              </Button>
+            </Link>
           </StyledColumn>
         </Reveal>
       </Wrapper>

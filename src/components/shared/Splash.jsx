@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Column, Title, Text, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import aboutSplash from "../../assets/aboutSplash.jpg";
-import impactSplash from "../../assets/impact.jpg";
+import impactSplash from "../../assets/impact_splash.jpg";
 import PDF from "../../assets/findyourstory.pdf";
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: ${props => props.height || "100%"};
@@ -105,14 +106,16 @@ export default function Splash({
 }) {
   return (
     <Wrapper
-      height={type === "casestudy" && "650px"}
+      height={type === "casestudy" ? "650px" : "auto"}
       backgroundposition={type === "casestudy" && "center"}
       background={
         type === "casestudy"
           ? `url('${img}')`
           : type === "thanks"
           ? `url('${impactSplash}')`
-          : type === "nomatch" && `url('${aboutSplash}')`
+          : type === "nomatch"
+          ? `url('${aboutSplash}')`
+          : `url('${img}')`
       }
     >
       <Navigation type={type} show={show} toggleModal={toggleModal} />
@@ -142,12 +145,19 @@ export default function Splash({
               style={{ minHeight: "320px", height: "58px" }}
             /> */}
 
-            {type !== "thanks" && (
-              <StyledButton footer onClick={() => toggleModal("schedule")}>
+            {type !== "thanks" && type !== "contact" && (
+              <Link to="/launch">
+                <StyledButton primary>
+                  Free StoryPitch Formula
+                </StyledButton>
+              </Link>
+            )}
+            {type === "thanks" && <A href={PDF}>Download now!</A>}
+            {type === "contact" && (
+              <StyledButton primary onClick={() => toggleModal("schedule")}>
                 Schedule a call now
               </StyledButton>
             )}
-            {type === "thanks" && <A href={PDF}>Download now!</A>}
           </StyledColumn>
         </div>
       )}
