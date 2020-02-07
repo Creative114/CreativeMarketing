@@ -15,25 +15,25 @@ import logo_uc from "../../assets/logo_uc.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  width: 95%;
+  width: 90%;
   height: 100%;
 `;
 
 const Grid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  // flex-wrap: wrap;
+  // justify-content: center;
   margin: 0 auto;
-  // grid-template-columns: repeat(6, 1fr);
-  // grid-auto-rows: 150px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 150px;
   height: 100%;
   width: 100%;
   // max-width: 1600px;
   @media (max-width: 780px) {
     width: 100%;
     margin: 0;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-auto-rows: 125px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 125px;
   }
 `;
 
@@ -49,8 +49,13 @@ const Image = styled.img`
 `;
 
 const ImageItem = styled.div`
-  padding: 10px;
-  width: 250px;
+  margin: auto 0;
+  margin-left: ${props => props.no >= 6 ? '30%' : '0px'};
+  margin-right: ${props => props.no < 6 ? '30%' : '0px'};
+  @media (max-width: 780px) {
+    margin-left: ${props => props.no / 3 % 2 === 1 ? '30%' : '0px'};
+    margin-right: ${props => props.no / 3 % 2 === 0 ? '30%' : '0px'};
+  }
 `;
 
 const logos = [
@@ -85,7 +90,7 @@ export default function Logos() {
             {logos &&
               logos.map((key, index) => {
               return (
-                <ImageItem key={index}>
+                <ImageItem key={index} no={index}>
                   <Image src={key} alt="Creative114 Logo" />
                 </ImageItem>
               )
