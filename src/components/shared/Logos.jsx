@@ -15,23 +15,25 @@ import logo_uc from "../../assets/logo_uc.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 95%;
   height: 100%;
 `;
 
 const Grid = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 150px;
+  // grid-template-columns: repeat(6, 1fr);
+  // grid-auto-rows: 150px;
   height: 100%;
-  width: 87%;
-  max-width: 1600px;
+  width: 100%;
+  // max-width: 1600px;
   @media (max-width: 780px) {
     width: 100%;
     margin: 0;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 125px;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-auto-rows: 125px;
   }
 `;
 
@@ -44,6 +46,11 @@ const Image = styled.img`
   &:hover {
     filter: grayscale(0%);
   }
+`;
+
+const ImageItem = styled.div`
+  padding: 10px;
+  width: 250px;
 `;
 
 const logos = [
@@ -77,7 +84,11 @@ export default function Logos() {
           <Grid>
             {logos &&
               logos.map((key, index) => {
-                return <Image src={key} alt="Creative114 Logo" key={index} />;
+              return (
+                <ImageItem key={index}>
+                  <Image src={key} alt="Creative114 Logo" />
+                </ImageItem>
+              )
               })}
           </Grid>
         </React.Fragment>

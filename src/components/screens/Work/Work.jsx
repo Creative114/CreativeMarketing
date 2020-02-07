@@ -5,7 +5,6 @@ import Recent from "../../shared/Recent";
 import Footer from "../../shared/Footer";
 import CaseStudies from "../../shared/CaseStudies";
 import { withRouter } from "react-router-dom";
-import splash from "../../../assets/workSplash.jpg";
 import Helmet from "react-helmet";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
@@ -13,6 +12,7 @@ import Calendar from "../../shared/Calendar";
 import josh from "../../../assets/josh_case.png";
 import tebow from "../../../assets/tebow_case.png";
 import jason from "../../../assets/jason_case.png";
+import workimg from "../../../assets/Work.jpg";
 
 class Work extends Component {
   state = {
@@ -67,8 +67,8 @@ class Work extends Component {
         <Splash
           type="work"
           title="More Than Work"
-          img={splash}
-          src="https://player.vimeo.com/external/320615958.hd.mp4?s=ef079df32a46b67d823275083675210fb601a354&profile_id=169"
+          // src="https://player.vimeo.com/external/320615958.hd.mp4?s=ef079df32a46b67d823275083675210fb601a354&profile_id=169"
+          img={workimg}
           toggleModal={this.toggleModal}
           text="We deliver far more than beautiful, cinematic work. Our passion is telling your inspiring, moving, and emotional stories through the art of video. Our greatest payment comes in the form of laughter, tears, applause, and goosebumps."
         />

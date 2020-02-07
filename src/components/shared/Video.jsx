@@ -57,9 +57,9 @@ export default function Video({ src, isAuthed, toggleModal, type }) {
   } else {
     return (
       <Wrapper className={`wistia_embed wistia_async_${swatch} videoFoam=true`}>
-        <Div className="wistia_swatch">
+        {/* <Div className="wistia_swatch">
           <Img src={src} alt="" />
-        </Div>
+        </Div> */}
       </Wrapper>
     );
   }
