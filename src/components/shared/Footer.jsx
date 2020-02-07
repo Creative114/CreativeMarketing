@@ -109,11 +109,9 @@ export default function Footer({ toggleModal }) {
           </div>
         </StyledColumn>
         <MobileDiv>
-          <Link to="/launch">
-            <Button footer>
-              Free StoryPitch Formula
-            </Button>
-          </Link>
+          <Button footer onClick={() => toggleModal("calendar")}>
+            Schedule a call now
+          </Button>
         </MobileDiv>
         <StyledColumn justifycontent="space-between">
           <StyledContentRow alignitems="center">
@@ -160,11 +158,9 @@ export default function Footer({ toggleModal }) {
           </Text>
         </StyledColumn>
         <DesktopDiv>
-          <Link to="/launch">
-            <Button footer>
-              Free StoryPitch Formula
-            </Button>
-          </Link>
+          <Button footer onClick={() => toggleModal("calendar")}>
+            Schedule a call now
+          </Button>
         </DesktopDiv>
       </StyledRow>
     </Wrapper>

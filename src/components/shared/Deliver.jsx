@@ -24,12 +24,12 @@ const Grid = styled.div`
   grid-gap: 15px;
   margin: 0 auto;
   margin: 2em 0;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
   width: 95%;
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 780px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
     margin: 0;
   }

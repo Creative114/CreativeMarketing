@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   padding: 10em 0 4em 0;
   @media (max-width: 980px) {
     flex-direction: column;
@@ -26,7 +25,7 @@ const StyledColumn = styled(Column)`
   width: 55%;
   align-items: center;
   text-align: center;
-  margin: 0 0.5em 0 0.5em;
+  margin-right: 6em;
   @media (max-width: 980px) {
     width: 95%;
     margin-right: 0;

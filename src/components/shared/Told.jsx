@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Column, Text, Row, Button, Title } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
-import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -14,7 +13,7 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 2em 0;
   @media (min-width: 1750px) {
-    // min-height: 1000px;
+    min-height: 1000px;
   }
   @media (max-width: 900px) {
     flex-direction: column;
@@ -61,6 +60,7 @@ const StyledColumn = styled(Column)`
 
 export default class Told extends Component {
   render() {
+    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -70,11 +70,9 @@ export default class Told extends Component {
                 Your <span style={{ color: "#d21f04" }}>story</span> deserves to
                 be heard
               </Title>
-              <Link to="/launch">
-                <Button primary>
-                  Free StoryPitch Formula
-                </Button>
-              </Link>
+              <Button primary onClick={() => toggleModal("schedule")}>
+                Schedule a call now
+              </Button>
             </StyledColumn>
             <StyledTextColumn>
               <Text secondary>

@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
-import { Link } from "react-router-dom";
+import Lightbulb from "./Lightbulb";
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  background: rgb(242, 245, 247);
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
@@ -16,6 +15,14 @@ const Wrapper = styled.div`
   @media (max-width: 780px) {
     justify-content: center;
     height: 100%;
+  }
+`;
+
+const StyledLightbulb = styled(Column)`
+  width: 5%;
+  margin: 0 auto;
+  @media (max-width: 980px) {
+    display: none;
   }
 `;
 
@@ -65,7 +72,6 @@ const Overlay = styled.div`
   height: 100%;
   min-height: 100%;
   min-width: 100%;
-  clip-path: ellipse(120% 100% at 50% 0%);
 `;
 
 const StyledButton = styled(Button)`
@@ -93,7 +99,7 @@ export default class HomeSplash extends Component {
         >
           <div
             className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
-            style={{ height: "100%", position: "relative", width: "100%", clipPath: "ellipse(120% 100% at 50% 0%)" }}
+            style={{ height: "100%", position: "relative", width: "100%" }}
           >
             <div
               className="wistia_swatch"
@@ -123,18 +129,20 @@ export default class HomeSplash extends Component {
           <Overlay />
           <StyledRow>
             <StyledHomeColumn>
+              <StyledLightbulb>
+                <Lightbulb />
+              </StyledLightbulb>
               <Title header home>
                 Your story told like never before
               </Title>
-              <Subtitle home>                
-                Showcase the emotional impact of the good that you do
+              <Subtitle home>
+                Showcase the emotional impact of the good that you do with
+                videos
               </Subtitle>
               <Row margin="2em 0">
-                <Link to="/launch">
-                  <StyledButton primary>
-                    Free StoryPitch Formula
-                  </StyledButton>
-                </Link>
+                <StyledButton primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </StyledButton>
               </Row>
             </StyledHomeColumn>
           </StyledRow>
