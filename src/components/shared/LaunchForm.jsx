@@ -46,7 +46,7 @@ const StyledText = styled(Text)`
 
 export default class LaunchForm extends Component {
   render() {
-    const { handleAuth } = this.props;
+    const { handleAuth, toggleModal } = this.props;
     return (
       <Wrapper>
         <StyledColumn>

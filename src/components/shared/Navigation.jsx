@@ -102,7 +102,7 @@ export default class Navigation extends Component {
     const { type, toggleModal, show, isAuthed, launch } = this.props;
 
     return (
-      <Wrapper background={color} active={active ? 1 : 0} display={!show && "none"}>
+      <Wrapper background={color} active={active} display={!show && "none"}>
         <Link to="/">
           <Image
             src={this.handleLogo(active, type)}
@@ -122,55 +122,53 @@ export default class Navigation extends Component {
             {type !== "home" && (
               <StyledRow>
                 <StyledNavLink
-                  home={type === "home" ? 1 : 0}
-                  active={active ? 1 : 0}
+                  home={type === "home"}
+                  active={active}
                   exact
                   to="/"
                 >
                   Home
                 </StyledNavLink>
                 <StyledNavLink
-                  home={type === "home" ? 1 : 0}
-                  active={active ? 1 : 0}
+                  home={type === "home"}
+                  active={active}
                   exact
                   to="/work"
                 >
                   Work
                 </StyledNavLink>
                 <StyledNavLink
-                  home={type === "home" ? 1 : 0}
-                  active={active ? 1 : 0}
+                  home={type === "home"}
+                  active={active}
                   exact
                   to="/about"
                 >
                   About
                 </StyledNavLink>
                 <StyledNavLink
-                  home={type === "home" ? 1 : 0}
-                  active={active ? 1 : 0}
+                  home={type === "home"}
+                  active={active}
                   to="/impact"
                 >
                   Impact
                 </StyledNavLink>
                 <StyledALink
-                  active={active ? 1 : 0}
+                  active={active}
                   href="https://blog.creative114.com"
                 >
                   Blog
                 </StyledALink>
                 <StyledNavLink
-                  home={type === "home" ? 1 : 0}
-                  active={active ? 1 : 0}
+                  home={type === "home"}
+                  active={active}
                   to="/contact"
                 >
                   Contact
                 </StyledNavLink>
 
-                <Link to="/launch">
-                  <Button primary>
-                    Access Now
-                  </Button>
-                </Link>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
               </StyledRow>
             )}
             {type === "home" && launch && (
@@ -192,16 +190,14 @@ export default class Navigation extends Component {
             {type === "home" && !launch && (
               <StyledRow>
                 <StyledALink
-                  active={active ? 1 : 0}
+                  active={active}
                   href="https://blog.creative114.com/"
                 >
                   Blog
                 </StyledALink>
-                <Link to="/launch">
-                  <Button primary>
-                    Access Now
-                  </Button>
-                </Link>
+                <Button primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
+                </Button>
               </StyledRow>
             )}
           </React.Fragment>

@@ -8,7 +8,6 @@ import Footer from "../../shared/Footer";
 import Posts from "../../shared/Posts";
 import NonProfitForm from "../../shared/NonProfitForm";
 import Calendar from "../../shared/Calendar";
-import impactimg from "../../../assets/impact.jpg";
 
 const posts = [
   {
@@ -55,8 +54,7 @@ class Impact extends Component {
           title="Bigger Than a Hashtag"
           text="Our clients are incredible. We started the #shareyourimpact movement to spread awareness and showcase the good they are doing. It’s a way for us to give more to our clients, our community, our people, and our world. Be inspired as you follow #shareyourimpact on social media!"
           toggleModal={this.toggleModal}
-          // src="https://player.vimeo.com/external/320619144.hd.mp4?s=58bb391b41ba251e391116c5e3d21462f96eba5a&profile_id=169"
-          img={impactimg}
+          src="https://player.vimeo.com/external/320619144.hd.mp4?s=58bb391b41ba251e391116c5e3d21462f96eba5a&profile_id=169"
         />
         <Posts posts={posts} />
         <Apply

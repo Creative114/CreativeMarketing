@@ -6,7 +6,6 @@ import ContactForm from "../../shared/ContactForm";
 import Modal from "../../shared/Modal";
 import FindYourStoryForm from "../../shared/FindYourStoryForm";
 import Calendar from "../../shared/Calendar";
-import contactimg from "../../../assets/Contact.jpg";
 
 export default class Contact extends Component {
   state = {
@@ -37,8 +36,7 @@ export default class Contact extends Component {
         <Splash
           type="contact"
           title="Let’s Explore Your Story"
-          // src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
-          img={contactimg}
+          src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
           toggleModal={this.toggleModal}
           redirect={this.redirect}
           text="We would love to hear from you."
