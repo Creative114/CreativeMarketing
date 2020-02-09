@@ -118,7 +118,7 @@ export default function How({ toggleModal }) {
         </Grid>
         <Row margin="2em 0" justifycontent="center">
           <Link to="/launch">
-            <Button primary>
+            <Button primary smallText>
               Free StoryPitch Formula
             </Button>
           </Link>

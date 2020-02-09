@@ -71,7 +71,7 @@ export default class Told extends Component {
                 be heard
               </Title>
               <Link to="/launch">
-                <Button primary>
+                <Button primary smallText>
                   Free StoryPitch Formula
                 </Button>
               </Link>

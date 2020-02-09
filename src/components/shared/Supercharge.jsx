@@ -56,7 +56,7 @@ export default class Supercharge extends Component {
               <Text red>It's our job to help you produce those feelings.</Text>
             </Column>
             <Link to="/launch">
-              <Button primary margin="2em 0 0 0">
+              <Button primary margin="2em 0 0 0" smallText>
                 Free StoryPitch Formula
               </Button>
             </Link>
