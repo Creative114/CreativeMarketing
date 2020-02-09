@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Button, Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
 import SimpleProcess from '../../assets/SimpleProcess.svg';
@@ -128,9 +129,11 @@ export default class Story extends Component {
               justifycontent="center"
               style={{ margin: "0 auto", marginTop: "4em" }}
             >
-              <Button primary onClick={() => toggleModal("schedule")}>
-                Schedule a call now
-              </Button>
+              <Link to="/launch">
+                <Button primary smallText>
+                  Free StoryPitch Formula
+                </Button>
+              </Link>
             </Row>
           </React.Fragment>
         </Reveal>

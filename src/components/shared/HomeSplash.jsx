@@ -131,7 +131,7 @@ export default class HomeSplash extends Component {
               </Subtitle>
               <Row margin="2em 0">
                 <Link to="/launch">
-                  <StyledButton primary>
+                  <StyledButton primary smallText>
                     Free StoryPitch Formula
                   </StyledButton>
                 </Link>

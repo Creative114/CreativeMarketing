@@ -344,6 +344,7 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       margin: ${props => props.margin || ".5em 0"}
+      font-size: ${props => (props.smallText ? "14px" : "16px")};
       color: #fff;
       &:hover {
         background-color: #f32405;
@@ -359,6 +360,7 @@ export const Button = styled.button`
       height: 45px;
       border: 1px solid transparent;
       color: #d21f04;
+      font-size: ${props => (props.smallText ? "14px" : "16px")};
       margin: 0;
       &:hover {
         color: #d21f04;

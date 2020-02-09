@@ -110,7 +110,7 @@ export default function Footer({ toggleModal }) {
         </StyledColumn>
         <MobileDiv>
           <Link to="/launch">
-            <Button footer>
+            <Button footer smallText>
               Free StoryPitch Formula
             </Button>
           </Link>
@@ -161,7 +161,7 @@ export default function Footer({ toggleModal }) {
         </StyledColumn>
         <DesktopDiv>
           <Link to="/launch">
-            <Button footer>
+            <Button footer smallText>
               Free StoryPitch Formula
             </Button>
           </Link>
