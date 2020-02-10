@@ -198,8 +198,8 @@ export default class Navigation extends Component {
                   Blog
                 </StyledALink>
                 <Link to="/launch">
-                  <Button primary>
-                    Access Now
+                  <Button primary smallText>
+                    Free StoryPitch Formula
                   </Button>
                 </Link>
               </StyledRow>
