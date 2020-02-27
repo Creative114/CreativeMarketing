@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title, Subtitle } from "../../theme/index";
+import { Column, Text, SpanTitle, SpanSubtitle, StyledColumn } from "../../theme/index";
 import creativity from "../../assets/creativity_icon.svg";
 import candor from "../../assets/candor_icon.svg";
 import credibility from "../../assets/credibility_icon.svg";
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-gap: 25px;
   height: 100%;
-  margin: 3em auto;
+  margin: 0em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 325px;
   @media (max-width: 780px) {
@@ -35,7 +35,7 @@ const StyledBox = styled(Column)`
 `;
 
 const StyledWrapper = styled(Column)`
-  padding: 6em 0 4em 0;
+  padding: 2em 0 0em 0;
   align-items: center;
   margin: 0 auto;
   @media (max-width: 780px) {
@@ -51,7 +51,7 @@ const StyledBoxColumn = styled(Column)`
   }
 `;
 
-const StyledColumn = styled(Column)`
+const CustomColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -107,7 +107,7 @@ function Box({ icon, title, description }) {
     <StyledBox>
       <Icon src={icon} />
       <StyledBoxColumn>
-        <Subtitle primary>{title}</Subtitle>
+        <SpanSubtitle primary>{title}</SpanSubtitle>
         <Text>{description}</Text>
       </StyledBoxColumn>
     </StyledBox>
@@ -117,14 +117,16 @@ function Box({ icon, title, description }) {
 export default function Values() {
   return (
     <StyledWrapper>
-      <StyledColumn>
-        <Title>Our Values</Title>
+      <CustomColumn>
+        <StyledColumn>
+          <SpanTitle>Our Values</SpanTitle>
+        </StyledColumn>
         <Text logo margin="0">
           The Creative114 team has a diverse background in different areas that
           allow us to use impeccable resources to convey your story and offer
           out-of-the-box solutions to your problems.
         </Text>
-      </StyledColumn>
+      </CustomColumn>
       <Wrapper>
         {values &&
           values.map((key, index) => {

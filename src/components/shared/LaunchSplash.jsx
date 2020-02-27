@@ -6,7 +6,12 @@ import LaunchForm from "../shared/LaunchForm";
 import launchsplash from "../../assets/launch_splash.jpg";
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
+  background: rgb(242,245,247);
+`;
+
+const Content =styled.div`
+  height: 100%;
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
@@ -18,7 +23,8 @@ const Wrapper = styled.div`
   @media (max-width: 920px) {
     align-items: center;
   }
-`;
+  clip-path: ellipse(120% 100% at 50% 0%);
+`
 
 const StyledHomeColumn = styled(Row)`
   align-items: center;
@@ -82,24 +88,26 @@ export default class LaunchSplash extends Component {
     const { toggleModal, handleAuth, isAuthed } = this.props;
 
     return (
-      <Wrapper background={`url('${launchsplash}')`}>
-        <Navigation
-          launch
-          type="home"
-          toggleModal={toggleModal}
-          isAuthed={isAuthed}
-        />
+      <Wrapper>
+        <Content background={`url('${launchsplash}')`}>
+          <Navigation
+            launch
+            type="home"
+            toggleModal={toggleModal}
+            isAuthed={isAuthed}
+          />
 
-        <StyledRow>
-          <StyledHomeColumn>
-            <StyledTitleDiv>
-              <StyledTitle>
-                Four Elements To Videos That Get Results
-              </StyledTitle>
-            </StyledTitleDiv>
-            <LaunchForm handleAuth={handleAuth} type="splash" />
-          </StyledHomeColumn>
-        </StyledRow>
+          <StyledRow>
+            <StyledHomeColumn>
+              <StyledTitleDiv>
+                <StyledTitle>
+                The Four Overlooked Secrets to Making Emotionally Engaging Videos
+                </StyledTitle>
+              </StyledTitleDiv>
+              <LaunchForm handleAuth={handleAuth} type="splash" />
+            </StyledHomeColumn>
+          </StyledRow>
+        </Content>
       </Wrapper>
     );
   }

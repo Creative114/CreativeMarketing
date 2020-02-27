@@ -83,7 +83,180 @@ export const Subtitle = styled.h2`
     `}
 `;
 
+export const SpanTitle = styled.span`
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 800;
+  color: #505d68;
+  font-size: 42px;
+  line-height: 52px;
+  margin: ${props => props.margin || ".5em 0"};
+  @media (max-width: 780px) {
+    font-size: 38px;
+  }
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
+  ${props =>
+    props.header &&
+    css`
+      color: ${props => (props.launch ? "#fff" : "#fff")};
+      font-size: ${props => props.home && "92px"};
+      text-transform: ${props => props.home && "uppercase"};
+      line-height: ${props => props.home && "90px"};
+      margin: ${props => props.margin || ".25em 0"};
+      @media (max-width: 1200px) {
+        font-size: 72px;
+        line-height: 90px;
+      }
+      @media (max-width: 900px) {
+        line-height: 62px;
+        line-height: 80px;
+      }
+      @media (max-width: 780px) {
+        font-size: 48px;
+        line-height: 64px;
+      }
+      @media (max-width: 500px) {
+        font-size: 28px;
+        line-height: 38px;
+      }
+    `};
+  ${props =>
+    props.new &&
+    css`
+      color: #000;
+      font-size: 60px;
+      line-height: 1.2em;
+      margin: 0.25em 0;
+      margin-top: 0;
+      @media (max-width: 1200px) {
+        font-size: 48px;
+      }
+      @media (max-width: 900px) {
+        font-size: 38px;
+      }
+    `};
+`;
+
+export const SpanSubtitle = styled.h2`
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: #505d68;
+  font-size: ${props => (props.logo ? "22px" : "21px")};
+  line-height: 38px;
+  margin: ${props => props.margin || "0.5em 0"};
+  @media (max-width: 900px) {
+    font-size: 21px;
+  }
+  ${props =>
+    props.home &&
+    css`
+      color: #fff;
+      font-size: 28px;
+      text-transform: uppercase;
+      margin: 0;
+      @media (max-width: 500px) {
+        font-size: 16px;
+        display: none;
+        line-height: 1em;
+      }
+    `}
+`;
+
 export const Text = styled.p`
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  color: #a1aeb7;
+  font-size: ${props => (props.logo ? "22px" : "18px")};
+  line-height: 34px;
+  margin: ${props => props.margin || "0.5em 0"};
+  @media (max-width: 780px) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  @media (max-width: 400px) {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  ${props =>
+    props.header &&
+    css`
+      color: #fff;
+      font-size: 22px;
+    `};
+  ${props =>
+    props.title &&
+    css`
+      margin: 0;
+      font-size: 21px;
+    `};
+  ${props =>
+    props.footer &&
+    css`
+      color: #fff;
+      margin: 0;
+      line-height: 1.75em;
+      font-size: 16px;
+    `};
+  ${props =>
+    props.post &&
+    css`
+      font-size: 14px;
+      line-height: 22px;
+    `};
+  ${props =>
+    props.dark &&
+    css`
+      color: #2b2b2b;
+      font-weight: 600;
+      line-height: 28px;
+    `};
+  ${props =>
+    props.contact &&
+    css`
+      color: ${props =>
+        props.home ? "#D21F04" : props.active ? "#D21F04" : "#fff"};
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 500ms;
+      cursor: pointer;
+      line-height: 1em;
+      @media (max-width: 780px) {
+        margin: 0 0.5em;
+        font-size: 14px;
+      }
+    `};
+  ${props =>
+    props.red &&
+    css`
+      color: #d21f04;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+    `}
+  ${props =>
+    props.pointer &&
+    css`
+      color: #000;
+      font-weight: 600;
+      margin-top: 0;
+    `}
+    ${props =>
+      props.secondary &&
+      css`
+        line-height: 1.5em;
+      `}
+      ${props =>
+        props.white &&
+        css`
+          color: #fff;
+        `}
+`;
+
+export const SubTitleText = styled.h6`
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #a1aeb7;
@@ -315,6 +488,10 @@ export const Column = styled.div`
   @media (max-width: 768px) {
     align-items: center;
   }
+`;
+
+export const StyledColumn = styled(Column)`
+  padding: 2em 0;
 `;
 
 export const Button = styled.button`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title, Subtitle, Row } from "../../theme/index";
+import { Column, Text, SpanTitle, SpanSubtitle, Row } from "../../theme/index";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -94,7 +94,7 @@ function Item({ title, text, icon }) {
     <Div>
       <Column width="85%" alignitems="center" textalign="center">
         <Icon className={icon} />
-        <Subtitle primary>{title}</Subtitle>
+        <SpanSubtitle primary>{title}</SpanSubtitle>
         <Text secondary>{text}</Text>
       </Column>
     </Div>
@@ -132,7 +132,7 @@ export default function Services() {
     <Wrapper>
       <StyledRow>
         <StyledTextRow>
-          <Title>Experts in solving problems</Title>
+          <SpanTitle>Experts in solving problems</SpanTitle>
         </StyledTextRow>
         <StyledTextRow>
           <Text secondary>

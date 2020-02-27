@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
+import SimpleProcess from '../../assets/SimpleProcess.svg';
+import EngagingStories from '../../assets/EngagingStories.svg';
+import RealResults from '../../assets/RealResults.svg';
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 4em 0;
+  padding: 2em 0 4em 0;
   display: flex;
   flex-direction: column;
   @media (min-width: 1750px) {
@@ -106,6 +109,16 @@ const StyledIconRow = styled(Row)`
   }
 `;
 
+const Icon = styled.img`
+width: 120px;
+@media (max-width: 1600px) {
+  width: 100px;
+}
+@media (max-width: 768px) {
+  width: 80px;
+}
+`;
+
 export default class LaunchStory extends Component {
   render() {
     const { toggleModal, isAuthed } = this.props;
@@ -114,24 +127,24 @@ export default class LaunchStory extends Component {
         <Reveal effect="fadeIn">
           <React.Fragment>
             <TextRow>
-              <StyledIconRow>
-                <NumberedCircle>1</NumberedCircle>
+            <StyledIconRow alignitems="center">
+                <Icon src={SimpleProcess} />
                 <Text red margin="0">
-                  Subscribe
+                  Simple Process
                 </Text>
               </StyledIconRow>
 
-              <StyledIconRow>
-                <NumberedCircle>2</NumberedCircle>
+              <StyledIconRow alignitems="center">
+                <Icon src={EngagingStories} />
                 <Text red margin="0">
-                  Get inspired
+                  Engaging Stories
                 </Text>
               </StyledIconRow>
 
-              <StyledIconRow>
-                <NumberedCircle>3</NumberedCircle>
+              <StyledIconRow alignitems="center">
+                <Icon src={RealResults} />
                 <Text red margin="0">
-                  Get results
+                  Real Results
                 </Text>
               </StyledIconRow>
             </TextRow>

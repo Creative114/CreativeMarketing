@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Text, Button } from "../../theme/index";
+import { Column, Title, SubTitleText, Text, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import aboutSplash from "../../assets/aboutSplash.jpg";
 import impactSplash from "../../assets/impact_splash.jpg";
@@ -8,21 +8,26 @@ import PDF from "../../assets/findyourstory.pdf";
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
-  height: ${props => props.height || "100%"};
+  background-color: rgb(242,245,247);
+`;
+
+const WrapContent = styled.div`
+  height: ${props => props.height || "calc(100vh - 70px)"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: ${props => props.backgroundposition};
+  clip-path: ellipse(120% 100% at 50% 0%);
 `;
 
 const StyledColumn = styled(Column)`
   align-items: center;
+  justify-content: center;
   text-align: center;
   width: 65%;
   height: auto;
   margin: auto;
-  margin-top: 15em;
   top: 0;
   bottom: 0;
   left: 0;
@@ -58,9 +63,10 @@ const Overlay = styled.div`
   height: 100%;
   min-height: 100%;
   min-width: 100%;
+  clip-path: ellipse(120% 100% at 50% 0%);
 `;
 
-const StyledText = styled(Text)`
+const StyledText = styled(SubTitleText)`
   @media (max-width: 920px) {
     display: none;
   }
@@ -105,62 +111,64 @@ export default function Splash({
   toggleModal
 }) {
   return (
-    <Wrapper
-      height={type === "casestudy" ? "650px" : "auto"}
-      backgroundposition={type === "casestudy" && "center"}
-      background={
-        type === "casestudy"
-          ? `url('${img}')`
-          : type === "thanks"
-          ? `url('${impactSplash}')`
-          : type === "nomatch"
-          ? `url('${aboutSplash}')`
-          : `url('${img}')`
-      }
-    >
-      <Navigation type={type} show={show} toggleModal={toggleModal} />
+    <Wrapper>
+      <WrapContent
+        height={type === "casestudy" ? "650px" : ""}
+        backgroundposition={type === "casestudy" && "center"}
+        background={
+          type === "casestudy"
+            ? `url('${img}')`
+            : type === "thanks"
+            ? `url('${impactSplash}')`
+            : type === "nomatch"
+            ? `url('${aboutSplash}')`
+            : `url('${img}')`
+        }
+      >
+        <Navigation type={type} show={show} toggleModal={toggleModal} />
 
-      {type !== "casestudy" && (
-        <div
-          style={{
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            alignContent: "center",
-            justifyContent: "center",
-            position: "relative"
-          }}
-        >
-          <Video autoPlay muted loop playsInline>
-            <source src={src} type="video/mp4" />
-          </Video>
-          <Overlay />
-          <StyledColumn>
-            <Title header>{title}</Title>
-            <StyledText header>{text}</StyledText>
+        {type !== "casestudy" && (
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              position: "relative"
+            }}
+          >
+            <Video autoPlay muted loop playsInline>
+              <source src={src} type="video/mp4" />
+            </Video>
+            <Overlay />
+            <StyledColumn>
+              <Title header>{title}</Title>
+              <StyledText header>{text}</StyledText>
 
-            {/* <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/creative114"
-              style={{ minHeight: "320px", height: "58px" }}
-            /> */}
+              {/* <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/creative114"
+                style={{ minHeight: "320px", height: "58px" }}
+              /> */}
 
-            {type !== "thanks" && type !== "contact" && (
-              <Link to="/launch">
-                <StyledButton primary>
-                  Free StoryPitch Formula
+              {type !== "thanks" && type !== "contact" && (
+                <Link to="/launch">
+                  <StyledButton primary>
+                    Free Story Formula
+                  </StyledButton>
+                </Link>
+              )}
+              {type === "thanks" && <A href={PDF}>Download now!</A>}
+              {type === "contact" && (
+                <StyledButton primary onClick={() => toggleModal("schedule")}>
+                  Schedule a call now
                 </StyledButton>
-              </Link>
-            )}
-            {type === "thanks" && <A href={PDF}>Download now!</A>}
-            {type === "contact" && (
-              <StyledButton primary onClick={() => toggleModal("schedule")}>
-                Schedule a call now
-              </StyledButton>
-            )}
-          </StyledColumn>
-        </div>
-      )}
+              )}
+            </StyledColumn>
+          </div>
+        )}
+      </WrapContent>
     </Wrapper>
   );
 }

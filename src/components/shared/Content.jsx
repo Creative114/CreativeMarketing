@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Title } from "../../theme/index";
+import { Column, Text, SpanTitle } from "../../theme/index";
 
 const Wrapper = styled.div`
   min-height: 400px;
@@ -28,7 +28,7 @@ export default function Content({ title, description }) {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>{title && title}</Title>
+        <SpanTitle>{title && title}</SpanTitle>
         <Text secondary>{description && description}</Text>
       </StyledColumn>
     </Wrapper>

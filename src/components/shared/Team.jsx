@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Member from "./Member";
-import { Row, Title, Text, Column } from "../../theme/index";
+import { Row, SpanTitle, Text, Column, StyledColumn } from "../../theme/index";
 import Slider from "react-slick";
 import jet from "../../assets/jet.jpg";
 import will from "../../assets/will.jpg";
@@ -12,7 +12,6 @@ import Rachael from "../../assets/rachel.jpg";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 4em 0 2em 0;
   margin: 0 auto;
 `;
 
@@ -58,7 +57,7 @@ const MobileDiv = styled.div`
   }
 `;
 
-const StyledColumn = styled(Column)`
+const CustomColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -145,14 +144,16 @@ export default class Team extends Component {
 
     return (
       <Wrapper>
-        <StyledColumn>
-          <Title>Meet the team</Title>
+        <CustomColumn>
+          <StyledColumn>
+            <SpanTitle>Meet the team</SpanTitle>
+          </StyledColumn>
           <Text logo margin="0">
             The Creative114 team has a diverse background in different areas
             that allow us to use impeccable resources to convey your story and
             offer out-of-the-box solutions to your problems.
           </Text>
-        </StyledColumn>
+        </CustomColumn>
         <MobileDiv>
           <Slider {...settings}>
             <Member

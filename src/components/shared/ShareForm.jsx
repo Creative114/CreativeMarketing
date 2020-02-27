@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Title, Text, Button, Column } from "../../theme";
+import { SpanTitle, Text, Button, Column } from "../../theme";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
@@ -98,13 +98,13 @@ export default class ShareForm extends Component {
               <form onSubmit={handleSubmit}>
                 {status && status.submitted && (
                   <div>
-                    <Title>Thanks!</Title>
+                    <SpanTitle>Thanks!</SpanTitle>
                     <Text dark>We've sent your friend an email</Text>
                   </div>
                 )}
                 {!status && (
                   <div>
-                    <Title margin=".5em 0 0 0">Share the love</Title>
+                    <SpanTitle margin=".5em 0 0 0">Share the love</SpanTitle>
                     <StyledText>
                       Know Someone Who Would Enjoy These Videos? Share This Page
                       With Them And Download The Series Worksheets For Free!

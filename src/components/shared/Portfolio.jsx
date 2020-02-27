@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Title, Column, Row, Button } from "../../theme/index";
+import { SpanTitle, StyledColumn, Column, Row, Button } from "../../theme/index";
 import port1 from "../../assets/port1.jpg";
 import port2 from "../../assets/port2.jpg";
 import port3 from "../../assets/port3.jpg";
@@ -17,7 +17,6 @@ import Video from "../shared/Video";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 3em 0;
   background: rgb(242, 245, 247);
 `;
 
@@ -68,6 +67,7 @@ const Grid = styled.div`
   min-width: 1200px;
   max-width: 1200px;
   margin: 3em auto;
+  margin-bottom: 0;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -178,9 +178,9 @@ export default class Portfolio extends Component {
       <Wrapper>
         <Reveal effect="fadeIn">
           <React.Fragment>
-            <Column alignitems="center">
-              <Title>Projects</Title>
-            </Column>
+            <StyledColumn alignitems="center">
+              <SpanTitle>Projects</SpanTitle>
+            </StyledColumn>
             <StyledRow>
               <MenuItem
                 id="all"

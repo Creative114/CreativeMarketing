@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CaseStudy from "./CaseStudy";
-import { Column, Title } from "../../theme/index";
+import { Column, SpanTitle } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  margin: 2em 0;
+  padding: 2em 0;
   align-items: center;
   text-align: center;
   @media (max-width: 780px) {
@@ -23,7 +23,7 @@ export default function CaseStudies({ casestudies, navigate }) {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>Case studies</Title>
+        <SpanTitle>Case studies</SpanTitle>
         {/* <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor.

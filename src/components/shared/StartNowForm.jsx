@@ -5,7 +5,7 @@ import {
   Label,
   Button,
   TextArea,
-  Title,
+  SpanTitle,
   Select
 } from "../../theme/index";
 import { Formik } from "formik";
@@ -47,7 +47,7 @@ export default function StartNowForm() {
   return (
     <Wrapper>
       <div style={{ textAlign: "center" }}>
-        <Title>Start now</Title>
+        <SpanTitle>Start now</SpanTitle>
       </div>
       <Formik
         initialValues={{

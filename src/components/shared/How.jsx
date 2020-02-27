@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Column, Text, Title, Subtitle, Row, Button } from "../../theme/index";
-import production from "../../assets/production.png";
-import preproduction from "../../assets/preproduction.png";
-import postproduction from "../../assets/postproduction.png";
+import { Column, Text, SpanTitle, SpanSubtitle, Row, Button } from "../../theme/index";
+import explore from "../../assets/Explore.svg";
+import express from "../../assets/Express.svg";
+import excite from "../../assets/Excite.svg";
 import Reveal from "react-reveal/Reveal";
 import BG from "../../assets/rectange_bg.png";
 
@@ -70,7 +70,7 @@ function Item({ title, text, img }) {
     <Div>
       <Column width="85%" alignitems="center" textalign="center">
         <Image src={img} />
-        <Subtitle primary>{title}</Subtitle>
+        <SpanSubtitle primary>{title}</SpanSubtitle>
         <Text secondary>{text}</Text>
       </Column>
     </Div>
@@ -83,26 +83,26 @@ export default function How({ toggleModal }) {
       title: "Explore",
       text:
         "People are longing to feel something. Maximize your story’s emotional impact by diving into what you want others to feel and how you want them to respond.",
-      img: preproduction
+      img: explore
     },
     {
       title: "Express",
       text:
         "The most captivating narratives combine inspired words with unforgettable pictures. Awaken your audience through robust, cinematic storytelling.",
-      img: production
+      img: express
     },
     {
       title: "Excite",
       text:
         "See your dream become a breathtaking reality, as you share your message on the world’s stage. Gain the recognition you deserve and the results you desire.",
-      img: postproduction
+      img: excite
     }
   ];
   return (
     <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <StyledColumn>
-          <Title>Here's how we do it</Title>
+          <SpanTitle>Here's how we do it</SpanTitle>
         </StyledColumn>
         <Grid>
           {items.map((key, index) => {
@@ -119,7 +119,7 @@ export default function How({ toggleModal }) {
         <Row margin="2em 0" justifycontent="center">
           <Link to="/launch">
             <Button primary smallText>
-              Free StoryPitch Formula
+              Free Story Formula
             </Button>
           </Link>
         </Row>

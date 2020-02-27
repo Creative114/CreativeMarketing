@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: calc(100% - 20px);
   width: 100%;
   background: rgb(242, 245, 247);
   margin: 0 auto;
@@ -93,7 +93,7 @@ export default class HomeSplash extends Component {
         >
           <div
             className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
-            style={{ height: "100%", position: "relative", width: "100%", clipPath: "ellipse(120% 100% at 50% 0%)" }}
+            style={{ height: "100%", width: "100%", clipPath: "ellipse(120% 100% at 50% 0%)" }}
           >
             <div
               className="wistia_swatch"
@@ -112,8 +112,7 @@ export default class HomeSplash extends Component {
                 src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
                 style={{
                   height: "100%",
-                  width: "100%",
-                  objectFit: "contain"
+                  objectFit: "cover"
                 }}
                 alt=""
               />
@@ -132,7 +131,7 @@ export default class HomeSplash extends Component {
               <Row margin="2em 0">
                 <Link to="/launch">
                   <StyledButton primary smallText>
-                    Free StoryPitch Formula
+                    Free Story Formula
                   </StyledButton>
                 </Link>
               </Row>

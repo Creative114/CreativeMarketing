@@ -12,7 +12,7 @@ import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  height: auto;
+  height: 90vh;
   width: 100%;
   background: #d21f04;
   padding: 4em 0;
@@ -111,7 +111,7 @@ export default function Footer({ toggleModal }) {
         <MobileDiv>
           <Link to="/launch">
             <Button footer smallText>
-              Free StoryPitch Formula
+              Free Story Formula
             </Button>
           </Link>
         </MobileDiv>
@@ -162,7 +162,7 @@ export default function Footer({ toggleModal }) {
         <DesktopDiv>
           <Link to="/launch">
             <Button footer smallText>
-              Free StoryPitch Formula
+              Free Story Formula
             </Button>
           </Link>
         </DesktopDiv>

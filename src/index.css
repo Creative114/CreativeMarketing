@@ -157,3 +157,7 @@ a {
   -webkit-transform: rotate(45deg) translate(-6px, -6px);
   transform: rotate(45deg) translate(-6px, -6px);
 }
+
+.wistia_embed {
+  height: 100% !important;
+}
