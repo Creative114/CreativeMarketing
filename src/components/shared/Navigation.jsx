@@ -199,7 +199,7 @@ export default class Navigation extends Component {
                 </StyledALink>
                 <Link to="/launch">
                   <Button primary smallText>
-                    Free StoryPitch Formula
+                    Free Story Formula
                   </Button>
                 </Link>
               </StyledRow>

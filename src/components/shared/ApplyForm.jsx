@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Input, Label, Button, Title, TextArea } from "../../theme/index";
+import { Input, Label, Button, SpanTitle, TextArea } from "../../theme/index";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
@@ -28,7 +28,7 @@ export default function FindYourStoryForm() {
   return (
     <Wrapper>
       <div style={{ textAlign: "center", width: "85%", margin: "0 auto" }}>
-        <Title>Apply now</Title>
+        <SpanTitle>Apply now</SpanTitle>
       </div>
       <Formik
         initialValues={{

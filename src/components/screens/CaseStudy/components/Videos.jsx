@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Row, Title } from "../../../../theme/index";
+import { Column, Row, SpanTitle } from "../../../../theme/index";
 import Video from "../../../shared/Video";
 
 const Wrapper = styled.div`
@@ -51,7 +51,7 @@ export default class Videos extends Component {
             <Video src={first} />
           </Column>
           <Row justifycontent="center">
-            <Title>Example videos</Title>
+            <SpanTitle>Example videos</SpanTitle>
           </Row>
           <Grid>
             <Div>

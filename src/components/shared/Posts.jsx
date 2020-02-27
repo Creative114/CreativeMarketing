@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Row, Text } from "../../theme/index";
+import { Column, SpanTitle, Row, Text } from "../../theme/index";
 import moment from "moment";
 import Video from "../shared/Video";
 
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4em 0;
+  padding: 2em 0;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -92,7 +92,7 @@ export default function Posts({ posts }) {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>The Stories</Title>
+        <SpanTitle>The Stories</SpanTitle>
         <Text logo margin="0">
           That Need to Be Told
         </Text>
@@ -120,7 +120,7 @@ export default function Posts({ posts }) {
       )}
       {posts && posts.length === 0 && (
         <Column alignitems="center" textalign="center" jusitfycontent="center">
-          <Title>Coming soon!</Title>
+          <SpanTitle>Coming soon!</SpanTitle>
         </Column>
       )}
     </Wrapper>

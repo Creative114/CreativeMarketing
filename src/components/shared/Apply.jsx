@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Title, Row, Text, Button } from "../../theme/index";
+import { Column, SpanTitle, Row, Text, Button, StyledColumn } from "../../theme/index";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -8,14 +8,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
+  padding: 0em 0 2em 0;
   @media (max-width: 780px) {
     padding: 2em 0 3em 0;
     text-align: center;
   }
 `;
 
-const StyledColumn = styled(Column)`
+const CustomColumn = styled(Column)`
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -29,11 +29,13 @@ const StyledColumn = styled(Column)`
 export default function Apply({ title, text, toggleModal, type }) {
   return (
     <Wrapper>
-      <Title>{title}</Title>
+      <StyledColumn>
+        <SpanTitle>{title}</SpanTitle>
+      </StyledColumn>
       <Text logo margin="0">
         to #shareyourimpact
       </Text>
-      <StyledColumn>
+      <CustomColumn>
         <Text>{text}</Text>
         <Row margin=".5em 0">
           <Button
@@ -45,7 +47,7 @@ export default function Apply({ title, text, toggleModal, type }) {
             Apply today
           </Button>
         </Row>
-      </StyledColumn>
+      </CustomColumn>
     </Wrapper>
   );
 }

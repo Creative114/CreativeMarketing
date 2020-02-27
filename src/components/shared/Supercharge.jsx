@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Button, Title } from "../../theme/index";
+import { Column, Text, Button, SpanTitle } from "../../theme/index";
 import { Link } from "react-router-dom";
 import Reveal from "react-reveal/Reveal";
 
@@ -36,11 +36,11 @@ export default class Supercharge extends Component {
       <Wrapper>
         <Reveal effect="fadeIn">
           <StyledColumn>
-            <Title new>
+            <SpanTitle new>
               Supercharge Your Business With <br /> Engaging Videos That
               Generate <span style={{ color: "#d21f04" }}>Results</span> <br />{" "}
               (and Goosebumps)
-            </Title>
+            </SpanTitle>
             <Column width="85%">
               <Text>
                 So many businesses are wasting money creating videos that just
@@ -57,7 +57,7 @@ export default class Supercharge extends Component {
             </Column>
             <Link to="/launch">
               <Button primary margin="2em 0 0 0" smallText>
-                Free StoryPitch Formula
+                Free Story Formula
               </Button>
             </Link>
           </StyledColumn>

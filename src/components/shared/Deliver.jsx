@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Title } from "../../theme/index";
+import { Column, SpanTitle } from "../../theme/index";
 import Video from "../shared/Video";
 import Logos from "../shared/Logos";
 
@@ -52,7 +52,7 @@ export default class Deliver extends Component {
     return (
       <Wrapper id="what">
         <Column alignitems="center" textalign="center" width="75%">
-          <Title>Stories that generate results</Title>
+          <SpanTitle>Stories that generate results</SpanTitle>
         </Column>
         <Grid>
           <Div>

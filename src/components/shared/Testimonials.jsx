@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
-import { Title, Row, Column, Text } from "../../theme/index";
+import { SpanTitle, Row, Column, Text } from "../../theme/index";
 import Slider from "react-slick";
 import Reveal from "react-reveal/Reveal";
 
@@ -102,11 +102,11 @@ export default class Testimonials extends Component {
         <Reveal effect="fadeIn">
           <React.Fragment>
             <Column alignitems="center">
-              <Title>
+              <SpanTitle>
                 {type === "launch"
                   ? "Make An Emotional Impact"
                   : "What they're saying"}
-              </Title>
+              </SpanTitle>
               {type === "launch" && (
                 <React.Fragment>
                   <Text margin="0">
@@ -129,26 +129,20 @@ export default class Testimonials extends Component {
               <Slider {...settings}>
                 <Testimonial
                   type="video"
-                  src={"https://fast.wistia.com/embed/medias/bdud912pe5/swatch"}
-                  src2={
-                    "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
-                  }
+                  src={"https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"}
+                  src2={""}
                 />
 
                 <Testimonial
                   type="video"
-                  src={"https://fast.wistia.com/embed/medias/7jp6slsdkj/swatch"}
-                  src2={
-                    "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
-                  }
+                  src={"https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"}
+                  src2={""}
                 />
 
                 <Testimonial
                   type="video"
                   src={"https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"}
-                  src2={
-                    "https://fast.wistia.com/embed/medias/9th7svguvv/swatch"
-                  }
+                  src2={""}
                 />
               </Slider>
             </MobileDiv>
@@ -183,10 +177,10 @@ export default class Testimonials extends Component {
                     <Testimonial
                       type="video"
                       src={
-                        "https://fast.wistia.com/embed/medias/bdud912pe5/swatch"
+                        "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
+                        ""
                       }
                     />
                   )}
@@ -195,10 +189,10 @@ export default class Testimonials extends Component {
                     <Testimonial
                       type="video"
                       src={
-                        "https://fast.wistia.com/embed/medias/7jp6slsdkj/swatch"
+                        "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
+                        ""
                       }
                     />
                   )}
@@ -209,7 +203,7 @@ export default class Testimonials extends Component {
                         "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
                       }
                       src2={
-                        "https://fast.wistia.com/embed/medias/9th7svguvv/swatch"
+                        ""
                       }
                     />
                   )}

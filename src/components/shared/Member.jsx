@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Subtitle, Row } from "../../theme/index";
+import { Column, Text, SpanSubtitle, Row } from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -78,7 +78,7 @@ export default function Member({ title, description, img, name }) {
         </StyledColumn>
         <StyledColumn>
           <StyledTextColumn>
-            <Subtitle>{name}</Subtitle>
+            <SpanSubtitle>{name}</SpanSubtitle>
             <Text title>{title}</Text>
             <Text>{description}</Text>
             {/* <Row margin=".5em 0">

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 90%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 4em auto 2em auto;
   transition: 750ms;
   @media (max-width: 920px) {
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 42vw;
+  width: 50vw;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ export default class Testimonial extends Component {
               </div>
             </div>
           </StyledColumn>
-          <StyledColumn>
+          {/* <StyledColumn>
             {type === "video" && (
               <div
                 className={`wistia_embed wistia_async_${swatch2} videoFoam=true`}
@@ -101,7 +101,7 @@ export default class Testimonial extends Component {
                   />
                 </div>
               </div>
-            )}
+            )} */}
             {/* {type === "image" && (
               <div
                 style={{ height: "100%", position: "relative", width: "99%" }}
@@ -116,7 +116,7 @@ export default class Testimonial extends Component {
                 />
               </div>
             )} */}
-          </StyledColumn>
+          {/* </StyledColumn> */}
         </React.Fragment>
       </Wrapper>
     );

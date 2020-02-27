@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Column, Text, Row, Button, Title } from "../../theme/index";
+import { Column, Text, Row, Button, SpanTitle } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
 import { Link } from "react-router-dom";
 
@@ -66,13 +66,13 @@ export default class Told extends Component {
         <Reveal effect="fadeIn">
           <StyledRow>
             <StyledColumn>
-              <Title new>
+              <SpanTitle new>
                 Your <span style={{ color: "#d21f04" }}>story</span> deserves to
                 be heard
-              </Title>
+              </SpanTitle>
               <Link to="/launch">
                 <Button primary smallText>
-                  Free StoryPitch Formula
+                  Free Story Formula
                 </Button>
               </Link>
             </StyledColumn>

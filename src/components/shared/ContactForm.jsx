@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Title,
+  SpanTitle,
   Column,
   Row,
   TextArea,
@@ -48,6 +48,10 @@ const StyledColumn = styled(Column)`
   }
 `;
 
+const CustomColumn = styled.div`
+  margin-bottom: 2em;
+`
+
 const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
@@ -62,7 +66,9 @@ export default function ContactForm() {
   return (
     <Wrapper>
       <StyledColumn>
-        <Title>Reach us</Title>
+        <CustomColumn>
+          <SpanTitle>Reach us</SpanTitle>
+        </CustomColumn>
         <a href="tel:4193677341">
           <StyledRow>
             <Icon className="fas fa-phone" />
@@ -121,7 +127,9 @@ export default function ContactForm() {
         </StyledRow>
       </StyledColumn>
       <StyledColumn>
-        <Title>Leave us a note</Title>
+        <CustomColumn>
+          <SpanTitle>Leave us a note</SpanTitle>
+        </CustomColumn>
         <Form action="https://formspree.io/xelajgzm" method="POST">
           <Label htmlFor="name" login>
             Name *

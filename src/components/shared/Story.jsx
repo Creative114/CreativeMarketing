@@ -131,7 +131,7 @@ export default class Story extends Component {
             >
               <Link to="/launch">
                 <Button primary smallText>
-                  Free StoryPitch Formula
+                  Free Story Formula
                 </Button>
               </Link>
             </Row>

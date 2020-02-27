@@ -11,7 +11,6 @@ import logo8 from "../../assets/logo8.jpg";
 import logo9 from "../../assets/logo9.jpg";
 import logo11 from "../../assets/logo11.jpg";
 import logo12 from "../../assets/logo12.jpg";
-import logo_uc from "../../assets/logo_uc.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -20,25 +19,27 @@ const Wrapper = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  // flex-wrap: wrap;
-  // justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 150px;
+  // display: grid;
+  // grid-template-columns: repeat(6, 1fr);
+  // grid-auto-rows: 150px;
   height: 100%;
   width: 100%;
   // max-width: 1600px;
-  @media (max-width: 780px) {
-    width: 100%;
-    margin: 0;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 125px;
-  }
+  // @media (max-width: 780px) {
+  //   width: 100%;
+  //   margin: 0;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   grid-auto-rows: 125px;
+  // }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  // width: 100%;
+  height: 150px;
   align-self: center;
   justify-self: center;
   filter: grayscale(85%);
@@ -50,12 +51,12 @@ const Image = styled.img`
 
 const ImageItem = styled.div`
   margin: auto 0;
-  margin-left: ${props => props.no >= 6 ? '30%' : '0px'};
-  margin-right: ${props => props.no < 6 ? '30%' : '0px'};
-  @media (max-width: 780px) {
-    margin-left: ${props => props.no / 3 % 2 === 1 ? '30%' : '0px'};
-    margin-right: ${props => props.no / 3 % 2 === 0 ? '30%' : '0px'};
-  }
+  // margin-left: ${props => props.no >= 6 ? '30%' : '0px'};
+  // margin-right: ${props => props.no < 6 ? '30%' : '0px'};
+  // @media (max-width: 780px) {
+  //   margin-left: ${props => props.no / 3 % 2 === 1 ? '30%' : '0px'};
+  //   margin-right: ${props => props.no / 3 % 2 === 0 ? '30%' : '0px'};
+  // }
 `;
 
 const logos = [
@@ -64,13 +65,10 @@ const logos = [
   logo5,
   logo4,
   logo12,
-  logo_uc,
-
   logo7,
   logo2,
   logo3,
   logo6,
-
   logo8,
   logo1
 ];

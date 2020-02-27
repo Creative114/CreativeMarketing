@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Column, Title, Text } from "../../theme/index";
-import action from "../../assets/Action.png";
-import audience from "../../assets/Audience.png";
-import connecting from "../../assets/Connecting.png";
+import { Row, Column, SpanTitle, Text } from "../../theme/index";
+import action from "../../assets/Action.svg";
+import audience from "../../assets/Audience.svg";
+import connecting from "../../assets/Connecting.svg";
 import BG from "../../assets/rectange_bg.png";
 
 const Wrapper = styled.div`
@@ -93,7 +93,7 @@ export default class LaunchWhy extends Component {
     return (
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
-          <Title margin=".25em 0">If Your Videos Are Boring</Title>
+          <SpanTitle margin=".25em 0">If Your Videos Are Boring</SpanTitle>
           <Text>they won't get you results</Text>
         </Column>
         <Grid>

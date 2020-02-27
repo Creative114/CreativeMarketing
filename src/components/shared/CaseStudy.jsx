@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Column, Text, Button, Subtitle } from "../../theme/index";
+import { Column, Text, Button, SpanSubtitle } from "../../theme/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -64,7 +64,7 @@ export default function Benefit({ title, description, img, type, navigate }) {
         <React.Fragment>
           <StyledColumn>
             <StyledTextColumn>
-              <Subtitle>{title}</Subtitle>
+              <SpanSubtitle>{title}</SpanSubtitle>
               <Text>{description}</Text>
               <Button
                 primary
@@ -88,7 +88,7 @@ export default function Benefit({ title, description, img, type, navigate }) {
           </Div>
           <StyledColumn>
             <StyledTextColumn>
-              <Subtitle>{title}</Subtitle>
+              <SpanSubtitle>{title}</SpanSubtitle>
               <Text>{description}</Text>
               <Button
                 primary
