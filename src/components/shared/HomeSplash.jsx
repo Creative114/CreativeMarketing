@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  height: calc(100% - 20px);
+  height: 100%;
   width: 100%;
   background: rgb(242, 245, 247);
   margin: 0 auto;
@@ -83,12 +83,13 @@ export default class HomeSplash extends Component {
 
         <div
           style={{
-            height: "100%",
+            height: "calc(100vh - 30px)",
             width: "100%",
-            display: "flex",
             alignContent: "center",
             justifyContent: "center",
-            position: "relative"
+            position: "relative",
+            clipPath: "ellipse(120% 100% at 50% 0%)",
+            maxHeight: "calc(100vw * 100 / 180)"
           }}
         >
           <div
@@ -118,7 +119,6 @@ export default class HomeSplash extends Component {
               />
             </div>
           </div>
-
           <Overlay />
           <StyledRow>
             <StyledHomeColumn>
