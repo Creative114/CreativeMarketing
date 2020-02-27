@@ -20,7 +20,7 @@ class App extends Component {
     const script2 = document.createElement("script");
     const script3 = document.createElement("script");
 
-    script1.src = "https://fast.wistia.com/embed/medias/videolink.jsonp";
+    script1.src = "https://fast.wistia.com/embed/medias/g2nuwu529g.jsonp";
     script1.async = true;
 
     script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
