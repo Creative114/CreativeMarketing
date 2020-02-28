@@ -8,17 +8,22 @@ import PDF from "../../assets/findyourstory.pdf";
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
   background-color: rgb(242,245,247);
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 70px)"};
+  height: ${props => props.height || "calc(100vh - 10px)"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: ${props => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
+  @media (max-width: 780px) {
+    height: 100%;
+  }
 `;
 
 const StyledColumn = styled(Column)`
