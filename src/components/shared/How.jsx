@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   background: ${props => props.bg};
   flex-direction: column;
   align-items: center;
-  padding: 10em 0 4em 0;
+  padding: 10em 0 2em 0;
   @media (max-width: 780px) {
     padding: 1em 0;
     text-align: center;
@@ -116,7 +116,7 @@ export default function How({ toggleModal }) {
             );
           })}
         </Grid>
-        <Row margin="2em 0" justifycontent="center">
+        <Row margin="3.5em 0 2em 0" justifycontent="center">
           <Link to="/launch">
             <Button primary smallText>
               Free Story Formula

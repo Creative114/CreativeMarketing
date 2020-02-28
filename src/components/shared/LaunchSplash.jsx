@@ -6,7 +6,7 @@ import LaunchForm from "../shared/LaunchForm";
 import launchsplash from "../../assets/launch_splash.jpg";
 
 const Wrapper = styled.div`
-  height: 90vh;
+  height: calc(100vh - 10px);
   background: rgb(242,245,247);
 `;
 
