@@ -4,11 +4,11 @@ import logo1 from "../../assets/logo1.jpg";
 import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
 import logo4 from "../../assets/logo4.jpg";
-import logo5 from "../../assets/logo5.jpg";
 import logo6 from "../../assets/logo6.jpg";
 import logo7 from "../../assets/logo7.jpg";
 import logo8 from "../../assets/logo8.jpg";
 import logo9 from "../../assets/logo9.jpg";
+import logo10 from "../../assets/logo10.jpg";
 import logo11 from "../../assets/logo11.jpg";
 import logo12 from "../../assets/logo12.jpg";
 import Reveal from "react-reveal/Reveal";
@@ -17,6 +17,9 @@ const Wrapper = styled.div`
   margin-top: 2em;
   width: 90%;
   height: 100%;
+  @media (max-width: 780px) {    
+    margin-right: 0px;
+  }
 `;
 
 const Grid = styled.div`
@@ -26,7 +29,7 @@ const Grid = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-auto-rows: 150px;
+  grid-auto-rows: 120px;
   height: 100%;
   width: 100%;
   max-width: 1600px;
@@ -34,7 +37,7 @@ const Grid = styled.div`
     width: 100%;
     margin: 0;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 125px;
+    grid-auto-rows: 100px;
   }
 `;
 
@@ -63,27 +66,27 @@ const ImageItem = styled.div`
 `;
 
 const logos = [
-  logo9,
-  null,
-  logo11,
-  null,
-  logo5,
-  null,
-  logo4,
-  null,
-  logo12,
-  null,
-  logo7,
+  logo1,
   null,
   logo2,
   null,
   logo3,
   null,
+  logo4,
+  null,
   logo6,
+  null,
+  logo7,
   null,
   logo8,
   null,
-  logo1
+  logo9,
+  null,
+  logo10,
+  null,
+  logo11,
+  null,
+  logo12
 ];
 
 export default function Logos() {
