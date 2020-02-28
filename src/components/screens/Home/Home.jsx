@@ -32,6 +32,7 @@ class Home extends Component {
           title="Creative114 | Brand Engagement, Marketing, Design"
           meta={[
             { name: "description", content: "Home Page for Creative114" },
+            { name: "keyword", content: "Creative114, Brand, Marketing, Design" },
             { property: "og:type", content: "website" },
             {
               property: "og:title",
