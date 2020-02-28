@@ -5,7 +5,7 @@ import { Column } from "../../theme/index";
 const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  width: 90%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   margin: 4em auto 2em auto;
@@ -19,16 +19,20 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 50vw;
+  width: 75%;
   position: relative;
   justify-content: center;
   align-items: center;
   background-color: inherit;
   transition: 750ms;
   @media (max-width: 920px) {
-    width: 100%;
+    width: 75%;
     padding: 1em 0;
     align-items: center;
+  }
+  @media (max-width: 780px) {
+    width: 95%;
+    height: 100%;
   }
 `;
 
