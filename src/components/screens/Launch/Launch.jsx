@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import LaunchSplash from "../../shared/LaunchSplash";
 import Logos from "../../shared/Logos";
 import Testimonials from "../../shared/Testimonials";
@@ -12,6 +13,13 @@ import LaunchWhy from "../../shared/LaunchWhy";
 import LaunchStory from "../../shared/LaunchStory";
 import Share from "../../shared/Share";
 import Calendar from "../../shared/Calendar";
+
+const StyledRow = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+`;
 
 class Landing extends Component {
   state = {
@@ -68,7 +76,9 @@ class Landing extends Component {
         <LaunchVideos isAuthed={isAuthed} toggleModal={this.toggleModal} />
         <LaunchWhy isAuthed={isAuthed} toggleModal={this.toggleModal} />
         <Testimonials type="launch" />
-        <Logos />
+        <StyledRow>
+          <Logos />
+        </StyledRow>        
         <Share />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (

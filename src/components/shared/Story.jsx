@@ -38,8 +38,7 @@ const StyledVideoRow = styled(Row)`
 `;
 
 const TextRow = styled(Row)`
-  margin: 0 auto;
-  margin-bottom: 2em;
+  margin: 2em auto;
   justify-content: space-between;
   width: 75%;
   @media (max-width: 780px) {
