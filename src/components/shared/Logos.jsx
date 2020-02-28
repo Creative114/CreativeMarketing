@@ -5,7 +5,7 @@ import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
 import logo4 from "../../assets/logo4.jpg";
 import logo6 from "../../assets/logo6.jpg";
-import logo7 from "../../assets/logo7.jpg";
+import logo5 from "../../assets/logo5.jpg";
 import logo8 from "../../assets/logo8.jpg";
 import logo9 from "../../assets/logo9.jpg";
 import logo10 from "../../assets/logo10.jpg";
@@ -76,7 +76,7 @@ const logos = [
   null,
   logo6,
   null,
-  logo7,
+  logo5,
   null,
   logo8,
   null,
