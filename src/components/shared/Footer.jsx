@@ -12,7 +12,7 @@ import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  height: 90vh;
+  height: 100%;
   width: 100%;
   background: #d21f04;
   padding: 4em 0;

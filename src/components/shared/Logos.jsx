@@ -14,7 +14,8 @@ import logo12 from "../../assets/logo12.jpg";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
-  margin-top: 2em;
+  margin-top: 2em;    
+  margin-right: 5%;
   width: 90%;
   height: 100%;
   @media (max-width: 780px) {    

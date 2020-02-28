@@ -168,7 +168,7 @@ export default class Navigation extends Component {
 
                 <Link to="/launch">
                   <Button primary>
-                    Access Now
+                    Free Story Formula
                   </Button>
                 </Link>
               </StyledRow>
