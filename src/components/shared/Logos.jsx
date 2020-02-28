@@ -14,32 +14,32 @@ import logo12 from "../../assets/logo12.jpg";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
+  margin-top: 2em;
   width: 90%;
   height: 100%;
 `;
 
 const Grid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
   margin: 0 auto;
-  // display: grid;
-  // grid-template-columns: repeat(6, 1fr);
-  // grid-auto-rows: 150px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-auto-rows: 150px;
   height: 100%;
   width: 100%;
-  // max-width: 1600px;
-  // @media (max-width: 780px) {
-  //   width: 100%;
-  //   margin: 0;
-  //   grid-template-columns: repeat(3, 1fr);
-  //   grid-auto-rows: 125px;
-  // }
+  max-width: 1600px;
+  @media (max-width: 780px) {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 125px;
+  }
 `;
 
 const Image = styled.img`
-  // width: 100%;
-  height: 150px;
+  width: 150%;
   align-self: center;
   justify-self: center;
   filter: grayscale(85%);
@@ -47,29 +47,42 @@ const Image = styled.img`
   &:hover {
     filter: grayscale(0%);
   }
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 `;
 
 const ImageItem = styled.div`
   margin: auto 0;
-  // margin-left: ${props => props.no >= 6 ? '30%' : '0px'};
-  // margin-right: ${props => props.no < 6 ? '30%' : '0px'};
+  // margin-left: ${props => props.no >= 6 ? '35%' : '0px'};
+  // margin-right: ${props => props.no < 6 ? '35%' : '0px'};
   // @media (max-width: 780px) {
-  //   margin-left: ${props => props.no / 3 % 2 === 1 ? '30%' : '0px'};
-  //   margin-right: ${props => props.no / 3 % 2 === 0 ? '30%' : '0px'};
+  //   margin-left: ${props => props.no / 3 % 2 === 1 ? '35%' : '0px'};
+  //   margin-right: ${props => props.no / 3 % 2 === 0 ? '35%' : '0px'};
   // }
 `;
 
 const logos = [
   logo9,
+  null,
   logo11,
+  null,
   logo5,
+  null,
   logo4,
+  null,
   logo12,
+  null,
   logo7,
+  null,
   logo2,
+  null,
   logo3,
+  null,
   logo6,
+  null,
   logo8,
+  null,
   logo1
 ];
 
@@ -89,7 +102,7 @@ export default function Logos() {
               logos.map((key, index) => {
               return (
                 <ImageItem key={index} no={index}>
-                  <Image src={key} alt="Creative114 Logo" />
+                  {key && <Image src={key} alt="Creative114 Logo" />}
                 </ImageItem>
               )
               })}
