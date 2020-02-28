@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 10px)"};
+  height: ${props => props.height || "calc(100vh - 70px)"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
