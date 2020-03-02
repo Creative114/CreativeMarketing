@@ -56,7 +56,7 @@ const CustomColumn = styled(Column)`
   align-items: center;
   text-align: center;
   width: 75%;
-  margin: 0 auto;
+  margin: 0 auto 25px;
   @media (max-width: 1100px) {
     margin: 1em auto;
     width: 95%;

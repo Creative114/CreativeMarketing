@@ -89,6 +89,7 @@ export default class HomeSplash extends Component {
             justifyContent: "center",
             position: "relative",
             clipPath: "ellipse(120% 100% at 50% 0%)",
+            webkitClipPath: "ellipse(120% 100% at 50% 0%)",
             maxHeight: "calc(100vw * 100 / 180)"
           }}
         >
