@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  background-color: rgb(242,245,247);
+  background-color: ${props => props.backgroundcolor};
 `;
 
 const WrapContent = styled.div`
@@ -21,7 +21,7 @@ const WrapContent = styled.div`
   background-size: cover;
   background-position: ${props => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
-  @media (max-width: 780px) {
+  @media (max-width: 920px) {
     height: 100%;
   }
 `;
@@ -116,7 +116,7 @@ export default function Splash({
   toggleModal
 }) {
   return (
-    <Wrapper>
+    <Wrapper backgroundcolor={type === "work" ? "#f2f5f7" : "#fff"}>
       <WrapContent
         height={type === "casestudy" ? "650px" : ""}
         backgroundposition={type === "casestudy" && "center"}
