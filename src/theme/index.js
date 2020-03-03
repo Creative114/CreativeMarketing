@@ -492,6 +492,7 @@ export const Column = styled.div`
 
 export const StyledColumn = styled(Column)`
   padding: 2em 0;
+  margin: auto;
 `;
 
 export const Button = styled.button`

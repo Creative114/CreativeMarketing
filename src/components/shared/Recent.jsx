@@ -7,29 +7,32 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
     padding: 1em 0;
+  }
+  &:after {
+    clear: both;
+    display: block;
   }
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
-  margin: 2em auto;
-  margin-bottom: 0;
+  margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: auto;
+  // grid-auto-rows: auto;
   height: 100%;
   width: 95%;
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
-    margin: 0;
+    margin: 0 auto;
   }
 `;
 
@@ -37,7 +40,7 @@ const Div = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 3px;
-  display: flex;
+  // display: flex;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
