@@ -15,15 +15,16 @@ const Wrapper = styled.div`
   height: 100%;
   margin: 0em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 325px;
+  // grid-auto-rows: 325px;
   @media (max-width: 780px) {
     width: 100%;
-    grid-auto-rows: 275px;
+    // grid-auto-rows: 275px;
   }
 `;
 
 const Icon = styled.img`
   width: 72px;
+  height: 70px;
   margin: 0.5em 0;
 `;
 
