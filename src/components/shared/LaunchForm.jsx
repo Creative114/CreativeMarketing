@@ -44,7 +44,23 @@ const StyledText = styled(Text)`
   margin-top: 2em;
 `;
 
-export default class LaunchForm extends Component {
+export default class LaunchForm extends Component {  
+  componentDidMount() {
+    const script = document.createElement('script');
+    script.src = 'https://js.hsforms.net/forms/v2.js';
+    document.body.appendChild(script);
+      
+    script.addEventListener('load', () => {
+      if(window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
+          target: '#hubspotForm'
+        })
+      }
+    });
+  }
+
   render() {
     const { handleAuth } = this.props;
     return (
@@ -53,9 +69,10 @@ export default class LaunchForm extends Component {
           <StyledText>
             Four FREE VIDEOS That Will Help You Transform The Way You Tell Your
             Brand Stories
-          </StyledText>
-          <Text red>Sign up now</Text>
-          <Formik
+          </StyledText>          
+          <div id="hubspotForm" />
+          {/* <Text red>Sign up now</Text> */}
+          {/* <Formik
             initialValues={{
               firstname: "",
               email: ""
@@ -116,7 +133,7 @@ export default class LaunchForm extends Component {
                 </Button>
               </form>
             )}
-          />
+          /> */}
         </StyledColumn>
       </Wrapper>
     );
