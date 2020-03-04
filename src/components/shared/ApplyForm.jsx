@@ -25,12 +25,25 @@ const Form = styled.form`
 `;
 
 export default function FindYourStoryForm() {
+  const script = document.createElement('script');
+  script.src = 'https://js.hsforms.net/forms/v2.js';
+  document.body.appendChild(script);
+    
+  script.addEventListener('load', () => {
+    if(window.hbspt) {
+      window.hbspt.forms.create({
+        portalId: '5644251',
+        formId: 'b20fbe1a-8a15-45f7-bfa0-f3262992a250',
+        target: '#hubspotForm'
+      })
+    }
+  });
   return (
     <Wrapper>
-      <div style={{ textAlign: "center", width: "85%", margin: "0 auto" }}>
-        <SpanTitle>Apply now</SpanTitle>
+      <div style={{ textAlign: "center", width: "85%", margin: "30px auto" }}>
+        <div id="hubspotForm" />
       </div>
-      <Formik
+      {/* <Formik
         initialValues={{
           firstname: "",
           lastname: "",
@@ -62,7 +75,7 @@ export default function FindYourStoryForm() {
                 }
               ],
               context: {
-                pageUri: "www.creative114.com/#/",
+                pageUri: "www.creative114.com",
                 pageName: "Contact page"
               }
             };
@@ -71,7 +84,7 @@ export default function FindYourStoryForm() {
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = function() {
               if (xhr.readyState === 4 && xhr.status === 200) {
-                window.location.href = "https://creative114.com/#/thanks";
+                window.location.href = "https://creative114.com/thanks";
               }
             };
             xhr.send(final_data);
@@ -131,7 +144,7 @@ export default function FindYourStoryForm() {
             </Button>
           </Form>
         )}
-      />
+      /> */}
     </Wrapper>
   );
 }

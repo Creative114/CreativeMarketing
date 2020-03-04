@@ -4,16 +4,17 @@ import { SpanTitle, Text, Button, Column } from "../../theme";
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
-  width: auto;
+  width: 100%;
   max-width: 380px;
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+  padding: 50px 0px;
 `;
 
 const StyledColumn = styled(Column)`
-  width: 90%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 0px auto;
 `;
 
 const Input = styled.input`
@@ -44,11 +45,27 @@ const StyledText = styled(Text)`
 `;
 
 export default class ShareForm extends Component {
+  componentDidMount() {
+    const script = document.createElement('script');
+    script.src = 'https://js.hsforms.net/forms/v2.js';
+    document.body.appendChild(script);
+      
+    script.addEventListener('load', () => {
+      if(window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '611c1bb0-6110-4379-8cab-15b6f79c78bf',
+          target: '#hubspotForm-share'
+        })
+      }
+    });
+  }
   render() {
     return (
       <Wrapper>
         <StyledColumn>
-          <Formik
+          <div id="hubspotForm-share" />
+          {/* <Formik
             initialValues={{
               firstname: "",
               friendsname: "",
@@ -144,7 +161,7 @@ export default class ShareForm extends Component {
                 )}
               </form>
             )}
-          />
+          /> */}
         </StyledColumn>
       </Wrapper>
     );

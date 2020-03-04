@@ -63,6 +63,21 @@ const Icon = styled.i`
 `;
 
 export default function ContactForm() {
+
+  const script = document.createElement('script');
+  script.src = 'https://js.hsforms.net/forms/v2.js';
+  document.body.appendChild(script);
+    
+  script.addEventListener('load', () => {
+    if(window.hbspt) {
+      window.hbspt.forms.create({
+        portalId: '5644251',
+        formId: 'fd529199-628a-494d-9d37-df3acb1187b1',
+        target: '#hubspotForm'
+      })
+    }
+  });
+    
   return (
     <Wrapper>
       <StyledColumn>
@@ -126,8 +141,8 @@ export default function ContactForm() {
           </a>
         </StyledRow>
       </StyledColumn>
-      <StyledColumn>
-        <CustomColumn>
+      <StyledColumn id="hubspotForm">
+        {/* <CustomColumn>
           <SpanTitle>Leave us a note</SpanTitle>
         </CustomColumn>
         <Form action="https://formspree.io/xelajgzm" method="POST">
@@ -150,7 +165,7 @@ export default function ContactForm() {
           <Button type="submit" primary>
             Send
           </Button>
-        </Form>
+        </Form> */}
       </StyledColumn>
     </Wrapper>
   );
