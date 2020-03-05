@@ -9,8 +9,10 @@ const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 5px;
   width: 550px;
-  height: auto;
-  margin: 4.5em auto;
+  height: auto;  
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 20px;
   z-index: 10000000;
 `;
 

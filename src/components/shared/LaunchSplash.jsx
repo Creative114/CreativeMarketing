@@ -8,6 +8,9 @@ import launchsplash from "../../assets/launch_splash.jpg";
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
   background: rgb(242,245,247);
+  @media (max-width: 920px) {
+    height: 100%;
+  }
 `;
 
 const Content =styled.div`
@@ -19,9 +22,12 @@ const Content =styled.div`
   background-size: cover;
   background-position: center;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   @media (max-width: 920px) {
     align-items: center;
+    height: 100%;
+    clip-path: ellipse(150% 100% at 50% 0%);
   }
   clip-path: ellipse(120% 100% at 50% 0%);
 `
@@ -37,9 +43,9 @@ const StyledHomeColumn = styled(Row)`
   bottom: 0;
   left: 0;
   z-index: 100000;
-  position: absolute;
+  // position: absolute;
   justify-content: center;
-  @media (max-width: 980px) {
+  @media (max-width: 920px) {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;

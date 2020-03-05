@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 2em 0 4em 0;
+  padding: 2em 0 2em 0;
   display: flex;
   flex-direction: column;
 
@@ -43,6 +43,7 @@ const TextRow = styled(Row)`
   width: 75%;
   @media (max-width: 780px) {
     width: 95%;
+    flex-direction: column;
   }
 `;
 
@@ -51,6 +52,11 @@ const StyledIconRow = styled(Row)`
   @media (max-width: 1200px) {
     flex-direction: column;
   }
+  @media (max-width: 780px) {
+    flex-direction: row;
+    margin: 20px auto;
+    width: 240px;
+  }  
 `;
 
 const Icon = styled.img`
@@ -126,7 +132,7 @@ export default class Story extends Component {
 
             <Row
               justifycontent="center"
-              style={{ margin: "0 auto", marginTop: "4em" }}
+              style={{ margin: "4em auto 2em" }}
             >
               <Link to="/launch">
                 <Button primary smallText>

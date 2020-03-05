@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   background: ${props => props.bg};
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   padding: 10em 0 4em 0;

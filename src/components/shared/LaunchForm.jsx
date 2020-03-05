@@ -5,10 +5,13 @@ import { Formik } from "formik";
 
 const Wrapper = styled.div`
   width: auto;
-  max-width: 380px;
+  max-width: 380px;  
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+  @media (max-width: 920px) {
+    margin: 0px 20px 100px 20px;
+  }
 `;
 
 const StyledColumn = styled(Column)`

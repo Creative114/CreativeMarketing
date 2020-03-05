@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 10px)"};
+  height: ${props => props.height || "calc(100vh - 85px)"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
@@ -22,7 +22,7 @@ const WrapContent = styled.div`
   background-position: ${props => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
   @media (max-width: 920px) {
-    height: 100%;
+    clip-path: ellipse(120% 100% at 50% 0%);
   }
 `;
 
@@ -117,6 +117,7 @@ export default function Splash({
 }) {
   return (
     <Wrapper backgroundcolor={type === "work" ? "#f2f5f7" : "#fff"}>
+      <Navigation type={type} show={show} toggleModal={toggleModal} />
       <WrapContent
         height={type === "casestudy" ? "650px" : ""}
         backgroundposition={type === "casestudy" && "center"}
@@ -130,8 +131,6 @@ export default function Splash({
             : `url('${img}')`
         }
       >
-        <Navigation type={type} show={show} toggleModal={toggleModal} />
-
         {type !== "casestudy" && (
           <div
             style={{
@@ -139,8 +138,7 @@ export default function Splash({
               width: "100%",
               display: "flex",
               alignContent: "center",
-              justifyContent: "center",
-              position: "relative"
+              justifyContent: "center"
             }}
           >
             <Video autoPlay muted loop playsInline>
