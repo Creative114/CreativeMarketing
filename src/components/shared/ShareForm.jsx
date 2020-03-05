@@ -5,10 +5,9 @@ import { Formik } from "formik";
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 380px;
+  max-width: 500px;
   height: auto;
   border-radius: 4px;
-  background-color: #ffffff;
   padding: 50px 0px;
 `;
 

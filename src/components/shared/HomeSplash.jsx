@@ -3,19 +3,19 @@ import styled from "styled-components";
 import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
 import Navigation from "./Navigation";
 import { Link } from "react-router-dom";
+import homesplash from "../../assets/Home.jpg";
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   background: rgb(242, 245, 247);
   margin: 0 auto;
-  background: ${props => props.background};
   background-size: cover;
   display: flex;
   flex-direction: column;
-  @media (max-width: 780px) {
-    justify-content: center;
-    height: 100%;
+  @media (max-width: 920px) {
+    height: calc(100vh - 10px);
+    background-color: #f2f5f7;
   }
 `;
 
@@ -36,6 +36,7 @@ const StyledHomeColumn = styled(Column)`
     width: 65%;
   }
   @media (max-width: 980px) {
+
     width: 95%;
 
     text-align: center;
@@ -74,6 +75,31 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const Content = styled.div`
+  height: calc(100vh - 10px);
+  width: 100%,
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  clip-path: ellipse(120% 100% at 50% 0%);
+  webkit-clip-path: ellipse(120% 100% at 50% 0%);
+  max-height: calc(100vw * 100 / 180);
+  @media (max-width: 920px) {
+    margin: 0;
+    max-height: 100%;
+    background: ${props => props.background};
+    background-size: cover;
+    background-position: center;
+  }
+`;
+
+const DesktopDiv = styled.div`
+  @media (max-width: 920px) {
+    margin: 0;
+    display: none;
+  }
+`;
+
 export default class HomeSplash extends Component {
   render() {
     const { toggleModal } = this.props;
@@ -81,45 +107,36 @@ export default class HomeSplash extends Component {
       <Wrapper>
         <Navigation type="home" toggleModal={toggleModal} />
 
-        <div
-          style={{
-            height: "calc(100vh - 10px)",
-            width: "100%",
-            alignContent: "center",
-            justifyContent: "center",
-            position: "relative",
-            clipPath: "ellipse(120% 100% at 50% 0%)",
-            webkitClipPath: "ellipse(120% 100% at 50% 0%)",
-            maxHeight: "calc(100vw * 100 / 180)"
-          }}
-        >
-          <div
+        <Content background={`url('${homesplash}')`}>
+          <DesktopDiv>
+            <div
             className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
             style={{ height: "100%", width: "100%", clipPath: "ellipse(120% 100% at 50% 0%)" }}
-          >
-            <div
-              className="wistia_swatch"
-              style={{
-                height: "100%",
-                left: 0,
-                opacity: 0,
-                overflow: "hidden",
-                position: "absolute",
-                top: 0,
-                transition: "opacity 250ms",
-                width: "100%"
-              }}
             >
-              <img
-                src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
+              <div
+                className="wistia_swatch"
                 style={{
                   height: "100%",
-                  objectFit: "cover"
+                  left: 0,
+                  opacity: 0,
+                  overflow: "hidden",
+                  position: "absolute",
+                  top: 0,
+                  transition: "opacity 250ms",
+                  width: "100%"
                 }}
-                alt=""
-              />
+              >
+                <img
+                  src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
+                  style={{
+                    height: "100%",
+                    objectFit: "cover"
+                  }}
+                  alt=""
+                />
+              </div>
             </div>
-          </div>
+          </DesktopDiv>
           <Overlay />
           <StyledRow>
             <StyledHomeColumn>
@@ -138,7 +155,7 @@ export default class HomeSplash extends Component {
               </Row>
             </StyledHomeColumn>
           </StyledRow>
-        </div>
+        </Content>
       </Wrapper>
     );
   }

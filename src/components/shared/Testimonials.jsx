@@ -58,6 +58,7 @@ const MobileDiv = styled.div`
   display: none;
   @media (max-width: 920px) {
     display: block;
+    margin: 0 0 2em 0;
   }
 `;
 

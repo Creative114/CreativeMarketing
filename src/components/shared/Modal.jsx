@@ -11,6 +11,7 @@ const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10000000000;
   transition: 250ms;
+  overflow: scroll;
 `;
 
 const Header = styled.div`

@@ -16,10 +16,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10em 0 2em 0;
-  @media (max-width: 780px) {
-    padding: 1em 0;
+  @media (max-width: 920px) {
     text-align: center;
     padding: 5em 0;
+    padding-bottom: 0;
   }
 `;
 
