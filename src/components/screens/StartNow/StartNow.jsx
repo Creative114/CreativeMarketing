@@ -74,7 +74,7 @@ export default function StartNow() {
       />
       <Splash
         type="contact"
-        title="Start Now"
+        title="Free Story Formula"
         src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
       />
 

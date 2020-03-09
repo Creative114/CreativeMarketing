@@ -20,12 +20,14 @@ const Wrapper = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-gap: 50px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   margin-top: 2em;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
+  // display: grid;
+  // grid-gap: 50px;
+  // grid-template-columns: repeact(1, 1fr);
+  // grid-auto-rows: auto;
   height: 100%;
   width: 75%;
   @media (max-width: 780px) {
@@ -42,9 +44,13 @@ const Div = styled.div`
   flex-direction: column;
   cursor: pointer;
   transition: 750ms;
+  margin-top: 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  &:first-child {
+    margin-top: 0px;
   }
 `;
 

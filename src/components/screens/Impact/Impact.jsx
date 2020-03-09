@@ -54,6 +54,7 @@ class Impact extends Component {
           type="impact"
           title="Bigger Than a Hashtag"
           text="Our clients are incredible. We started the #shareyourimpact movement to spread awareness and showcase the good they are doing. It’s a way for us to give more to our clients, our community, our people, and our world. Be inspired as you follow #shareyourimpact on social media!"
+          mobileText="Our clients are incredible. We started the #shareyourimpact movement to spread awareness and showcase the good they are doing."
           toggleModal={this.toggleModal}
           // src="https://player.vimeo.com/external/320619144.hd.mp4?s=58bb391b41ba251e391116c5e3d21462f96eba5a&profile_id=169"
           img={impactimg}

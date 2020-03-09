@@ -42,6 +42,7 @@ export default class Contact extends Component {
           toggleModal={this.toggleModal}
           redirect={this.redirect}
           text="We would love to hear from you."
+          mobileText="We would love to hear from you."
         />
 
         <ContactForm />

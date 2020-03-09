@@ -43,27 +43,7 @@ const TextRow = styled(Row)`
   width: 75%;
   @media (max-width: 780px) {
     width: 95%;
-  }
-`;
-
-const NumberedCircle = styled.div`
-  width: 45px;
-  height: 45px;
-  background: #d21f04;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  border-radius: 100%;
-  margin-right: 0.5em;
-  font-size: 22px;
-  font-weight: 600;
-  font-family: "Ubuntu", sans-serif;
-  @media (max-width: 780px) {
-    width: 25px;
-    height: 25px;
-    font-size: 16px;
-    margin-right: 0;
+    flex-direction: column;
   }
 `;
 
@@ -105,6 +85,8 @@ const StyledRow = styled(Row)`
 const StyledIconRow = styled(Row)`
   align-items: center;
   @media (max-width: 780px) {
+    width: 240px;
+    margin: 20px auto;
     flex-direction: column;
   }
 `;
@@ -127,7 +109,7 @@ export default class LaunchStory extends Component {
         <Reveal effect="fadeIn">
           <React.Fragment>
             <TextRow>
-            <StyledIconRow alignitems="center">
+              <StyledIconRow alignitems="center">
                 <Icon src={SimpleProcess} />
                 <Text red margin="0">
                   Simple Process

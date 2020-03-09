@@ -71,6 +71,7 @@ class Work extends Component {
           img={workimg}
           toggleModal={this.toggleModal}
           text="We deliver far more than beautiful, cinematic work. Our passion is telling your inspiring, moving, and emotional stories through the art of video. Our greatest payment comes in the form of laughter, tears, applause, and goosebumps."
+          mobileText="We deliver farWe deliver far more than beautiful, cinematic work. Our passion is telling your inspiring, and emotional stories through the art of video."
         />
         <Portfolio />
         <Recent recentwork={recentwork} />
