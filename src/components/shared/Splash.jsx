@@ -14,15 +14,18 @@ const Wrapper = styled.div`
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 85px)"};
+  height: ${props => props.height || "calc(100vh - 10px)"};
   width: 100%;
   margin: 0 auto;
   background: ${props => props.background};
   background-size: cover;
   background-position: ${props => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
+  webkit-clip-path: ellipse(120% 100% at 50% 0%);
   @media (max-width: 920px) {
+    height: ${props => props.height || "calc(100vh - 85px)"};
     clip-path: ellipse(120% 100% at 50% 0%);
+    webkit-clip-path: ellipse(120% 100% at 50% 0%);
   }
 `;
 
@@ -77,10 +80,17 @@ const StyledText = styled(SubTitleText)`
   }
 `;
 
-const StyledButton = styled(Button)`
+const StyledMobileText = styled(SubTitleText)`
+  display: none;
   @media (max-width: 920px) {
-    display: none;
+    display: block;
   }
+`;
+
+const StyledButton = styled(Button)`
+  // @media (max-width: 920px) {
+  //   display: none;
+  // }
 `;
 
 const A = styled.a`
@@ -111,6 +121,7 @@ export default function Splash({
   src,
   title,
   text,
+  mobileText,
   show,
   img,
   toggleModal
@@ -120,7 +131,7 @@ export default function Splash({
       <Navigation type={type} show={show} toggleModal={toggleModal} />
       <WrapContent
         height={type === "casestudy" ? "650px" : ""}
-        backgroundposition={type === "casestudy" && "center"}
+        backgroundposition={"center"}
         background={
           type === "casestudy"
             ? `url('${img}')`
@@ -148,7 +159,7 @@ export default function Splash({
             <StyledColumn>
               <Title header>{title}</Title>
               <StyledText header>{text}</StyledText>
-
+              <StyledMobileText header>{mobileText}</StyledMobileText>
               {/* <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/creative114"

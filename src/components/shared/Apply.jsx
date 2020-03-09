@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0em 0 2em 0;
   @media (max-width: 780px) {
-    padding: 2em 0 3em 0;
+    padding: 0em 0 3em 0;
     text-align: center;
   }
 `;

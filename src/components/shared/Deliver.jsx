@@ -23,15 +23,15 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
   margin: 0 auto;
-  margin: 2em 0;
+  margin: 2em 0 0 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
   width: 95%;
   @media (max-width: 1200px) {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     width: 95%;
-    margin: 0;
   }
 `;
 
@@ -45,6 +45,12 @@ const Div = styled.div`
   cursor: pointer;
   transition: 750ms;
   text-align: center;
+  @media (max-width: 1200px) {
+    margin-top: 1em;
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
 `;
 
 export default class Deliver extends Component {

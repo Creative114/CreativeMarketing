@@ -48,7 +48,7 @@ function BurgerMenu({ close }) {
           <StyledLi onClick={close}>Contact</StyledLi>
         </Link>
         <Link to="/startnow">
-          <StyledLi onClick={close}>Start Now</StyledLi>
+          <StyledLi onClick={close}>Free Story Formula</StyledLi>
         </Link>
       </StyledUl>
     </div>

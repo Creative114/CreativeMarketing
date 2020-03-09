@@ -49,13 +49,10 @@ const TextRow = styled(Row)`
 
 const StyledIconRow = styled(Row)`
   align-items: center;
-  @media (max-width: 1200px) {
-    flex-direction: column;
-  }
   @media (max-width: 780px) {
-    flex-direction: row;
     margin: 20px auto;
-    width: 240px;
+    width: 200px;
+    flex-direction: column;
   }  
 `;
 

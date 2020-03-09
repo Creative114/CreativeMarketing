@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const StyledColumn = styled(Column)`
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin: 1.5em;
 `;
 
 const Input = styled.input`
@@ -69,10 +69,10 @@ export default class LaunchForm extends Component {
     return (
       <Wrapper>
         <StyledColumn>
-          <StyledText>
+          {/* <StyledText>
             Four FREE VIDEOS That Will Help You Transform The Way You Tell Your
             Brand Stories
-          </StyledText>          
+          </StyledText>           */}
           <div id="hubspotForm" />
           {/* <Text red>Sign up now</Text> */}
           {/* <Formik
