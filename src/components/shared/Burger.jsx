@@ -2,6 +2,9 @@ import React from "react";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {
+  StyledALink
+} from "../../theme/index";
 
 function BurgerIcon({ open, ...props }) {
   return (
@@ -22,7 +25,7 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li`
-  margin: 1.5em 0;
+  margin: 1em 0;
   font-size: 1.4em;
   font-family: "Ubuntu", sans-serif;
   list-style: none;
@@ -47,7 +50,10 @@ function BurgerMenu({ close }) {
         <Link to="/contact">
           <StyledLi onClick={close}>Contact</StyledLi>
         </Link>
-        <Link to="/startnow">
+        <a href="https://blog.creative114.com" style={{color: "black"}}>
+          <StyledLi onClick={close}>Blog</StyledLi>
+        </a>
+        <Link to="/launch">
           <StyledLi onClick={close}>Free Story Formula</StyledLi>
         </Link>
       </StyledUl>
