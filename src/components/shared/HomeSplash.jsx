@@ -36,9 +36,7 @@ const StyledHomeColumn = styled(Column)`
     width: 65%;
   }
   @media (max-width: 980px) {
-
     width: 95%;
-
     text-align: center;
   }
   @media (max-width: 500px) {
