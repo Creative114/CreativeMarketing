@@ -54,6 +54,15 @@ const StyledColumn = styled(Column)`
   }
 `;
 
+const Content = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+`
+
 const Video = styled.video`
   right: 0;
   bottom: 0;
@@ -69,8 +78,6 @@ const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  min-height: 100%;
-  min-width: 100%;
   clip-path: ellipse(120% 100% at 50% 0%);
 `;
 
@@ -143,15 +150,7 @@ export default function Splash({
         }
       >
         {type !== "casestudy" && (
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center"
-            }}
-          >
+          <Content>
             <Video autoPlay muted loop playsInline>
               <source src={src} type="video/mp4" />
             </Video>
@@ -180,7 +179,7 @@ export default function Splash({
                 </StyledButton>
               )}
             </StyledColumn>
-          </div>
+          </Content>
         )}
       </WrapContent>
     </Wrapper>
