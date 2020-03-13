@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
-import SimpleProcess from '../../assets/SimpleProcess.svg';
-import EngagingStories from '../../assets/EngagingStories.svg';
-import RealResults from '../../assets/RealResults.svg';
+import SubscribeIcon from '../../assets/subscribe.svg';
+import InspiredIcon from '../../assets/inspired.svg';
+import ResultsIcon from '../../assets/results.svg';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -110,21 +110,21 @@ export default class LaunchStory extends Component {
           <React.Fragment>
             <TextRow>
               <StyledIconRow alignitems="center">
-                <Icon src={SimpleProcess} />
+                <Icon src={SubscribeIcon} />
                 <Text red margin="0">
                   Simple Process
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
-                <Icon src={EngagingStories} />
+                <Icon src={InspiredIcon} />
                 <Text red margin="0">
                   Engaging Stories
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
-                <Icon src={RealResults} />
+                <Icon src={ResultsIcon} />
                 <Text red margin="0">
                   Real Results
                 </Text>

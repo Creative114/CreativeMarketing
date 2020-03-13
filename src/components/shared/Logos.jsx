@@ -4,13 +4,13 @@ import logo1 from "../../assets/logo1.jpg";
 import logo2 from "../../assets/logo2.jpg";
 import logo3 from "../../assets/logo3.jpg";
 import logo4 from "../../assets/logo4.jpg";
-import logo6 from "../../assets/logo6.jpg";
 import logo5 from "../../assets/logo5.jpg";
+import logo6 from "../../assets/logo6.jpg";
+import logo7 from "../../assets/logo7.jpg";
 import logo8 from "../../assets/logo8.jpg";
 import logo9 from "../../assets/logo9.jpg";
-import logo10 from "../../assets/logo10.jpg";
-import logo11 from "../../assets/logo11.jpg";
-import logo12 from "../../assets/logo12.jpg";
+import logo10 from "../../assets/logo10.png";
+import logo11 from "../../assets/logo11.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -87,7 +87,7 @@ const logos = [
   null,
   logo11,
   null,
-  logo12
+  logo7
 ];
 
 export default function Logos() {
