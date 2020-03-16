@@ -112,21 +112,21 @@ export default class LaunchStory extends Component {
               <StyledIconRow alignitems="center">
                 <Icon src={SubscribeIcon} />
                 <Text red margin="0">
-                  Simple Process
+                  Subscribe
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
                 <Icon src={InspiredIcon} />
                 <Text red margin="0">
-                  Engaging Stories
+                  Get Inspired
                 </Text>
               </StyledIconRow>
 
               <StyledIconRow alignitems="center">
                 <Icon src={ResultsIcon} />
                 <Text red margin="0">
-                  Real Results
+                  Get results
                 </Text>
               </StyledIconRow>
             </TextRow>
