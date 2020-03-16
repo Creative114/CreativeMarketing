@@ -73,7 +73,7 @@ export default class Told extends Component {
               </SpanTitle>
               {
                 !mobile &&
-                <Link to="/launch">
+                <Link to="/launch" style={{height: "100%"}}>
                   <Button primary smallText>
                     Free Story Formula
                   </Button>
@@ -114,7 +114,7 @@ export default class Told extends Component {
             </StyledTextColumn>
             {
               mobile &&
-              <Link to="/launch">
+              <Link to="/launch" style={{height: "100%"}}>
                 <Button primary smallText>
                   Free Story Formula
                 </Button>
