@@ -41,6 +41,12 @@ const StyledButton = styled.button`
     background-color: #f32405;
     color: #fff;
   }
+  @media (max-width: 920px) {
+    font-size: 14px;
+  }
+  @media (max-width: 370px) {
+    font-size: 11px;
+  }
 `;
 
 const Div = styled.div`
