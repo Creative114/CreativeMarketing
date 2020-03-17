@@ -59,9 +59,22 @@ const StyledColumn = styled(Column)`
   }
 `;
 
+const Div = styled.div`
+  display: block;
+  @media (max-width: 980px) {
+    display: none;
+  }
+`;
+
+const MobileDiv = styled.div`
+  display: none;
+  @media (max-width: 980px) {
+    display: block;
+  }
+`;
+
 export default class Told extends Component {
   render() {
-    const mobile = window.matchMedia("(max-width: 780px)");
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -71,14 +84,13 @@ export default class Told extends Component {
                 Your <span style={{ color: "#d21f04" }}>story</span> deserves to
                 be heard
               </SpanTitle>
-              {
-                !mobile &&
-                <Link to="/launch" style={{height: "100%"}}>
+              <Div>
+                <Link to="/launch">
                   <Button primary smallText>
                     Free Story Formula
                   </Button>
                 </Link>
-              }
+              </Div>
             </StyledColumn>
             <StyledTextColumn>
               <Text secondary>
@@ -112,14 +124,13 @@ export default class Told extends Component {
                 <span style={{ color: "#d21f04" }}>RESULTS.</span>
               </Text>
             </StyledTextColumn>
-            {
-              mobile &&
+            <MobileDiv>
               <Link to="/launch" style={{height: "100%"}}>
                 <Button primary smallText>
                   Free Story Formula
                 </Button>
               </Link>
-            }
+            </MobileDiv>
           </StyledRow>
         </Reveal>
       </Wrapper>

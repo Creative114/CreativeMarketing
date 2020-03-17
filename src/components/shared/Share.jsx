@@ -30,10 +30,13 @@ const Image = styled.img`
   }
 `;
 
-export default function Share() {
+export default function Share({handleSubmitFormVisible, submitFormVisible}) {
   return (
     <Wrapper bg={`url('${BG}')`}>
-      <ShareForm />
+      <ShareForm
+        handleSubmitFormVisible={handleSubmitFormVisible}
+        submitFormVisible={submitFormVisible}
+      />
       <Image src={launchimg} />
     </Wrapper>
   );

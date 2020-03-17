@@ -92,11 +92,11 @@ export default class Testimonials extends Component {
     const { selected } = this.state;
     const { type } = this.props;
     let settings = {
-      dots: true,
+      dots: false,
       infinite: false,
-      arrows: false,
+      arrows: true,
       speed: 1000,
-      autoplay: true
+      autoplay: false
     };
     return (
       <Wrapper>

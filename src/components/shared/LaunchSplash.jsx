@@ -110,7 +110,12 @@ export default class LaunchSplash extends Component {
                 The Four Overlooked Secrets to Making Emotionally Engaging Videos
                 </StyledTitle>
               </StyledTitleDiv>
-              <LaunchForm handleAuth={handleAuth} type="splash" />
+              <LaunchForm
+                handleAuth={handleAuth}
+                handleSubmitFormVisible={this.props.handleSubmitFormVisible}
+                submitFormVisible={this.props.submitFormVisible}
+                type="splash"
+              />
             </StyledHomeColumn>
           </StyledRow>
         </Content>
