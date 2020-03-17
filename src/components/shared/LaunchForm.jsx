@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Text, Button, Column } from "../../theme";
-import { Formik } from "formik";
 
 const Wrapper = styled.div`
   width: auto;
@@ -19,34 +18,6 @@ const StyledColumn = styled(Column)`
   margin: 0 auto;
   margin: 1.5em;
 `;
-
-const Input = styled.input`
-  width: 90%;
-  height: 50px;
-  padding: 0 1em;
-  border-radius: 2px;
-  border: solid 1px #d5dce0;
-  background-color: #ffffff;
-  margin: 0.75em 0;
-  outline: none;
-  transition: 250ms;
-  &:focus {
-    border: solid 1px #d21f04;
-  }
-`;
-
-const StyledText = styled(Text)`
-  font-family: Ubuntu;
-  font-size: 16px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.38;
-  letter-spacing: normal;
-  color: #000000;
-  margin-top: 2em;
-`;
-
 export default class LaunchForm extends Component {
 
   componentDidMount() {
@@ -68,7 +39,9 @@ export default class LaunchForm extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
-      this.getForm();
+      if(window.hbspt) {
+        this.getForm();
+      }
     }
   }
 
@@ -81,6 +54,7 @@ export default class LaunchForm extends Component {
         target: '#hubspotFormHeader',
         onFormSubmitted: () => {            
           this.props.handleSubmitFormVisible(false);
+          this.props.handleAuth();
         }
       });
     } else {
@@ -98,25 +72,6 @@ export default class LaunchForm extends Component {
     return (
       <Wrapper>
         <StyledColumn id="hubspotFormHeader">
-          {/* {
-            this.props.submitFormVisible
-            ?
-              <HubspotForm
-                portalId='5644251'
-                formId='4364a36f-ea48-4d24-9c39-75ddf13d247e'
-                onSubmit={() => this.props.handleSubmitFormVisible(false)}
-                onReady={(form) => console.log('Form ready!')}
-                loading={<div>Loading...</div>}
-              />
-            :
-              <HubspotForm
-                portalId='5644251'
-                formId='611c1bb0-6110-4379-8cab-15b6f79c78bf'
-                onSubmit={() => this.props.handleSubmitFormVisible(true)}
-                onReady={(form) => console.log('Form ready!')}
-                loading={<div>Loading...</div>}
-              />
-          } */}
         </StyledColumn>
       </Wrapper>
     );

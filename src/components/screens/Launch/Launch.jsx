@@ -23,14 +23,10 @@ const StyledRow = styled.div`
 `;
 
 class Landing extends Component {
-  state = {
-    isOpen: false,
-    isAuthed: false,
-    submitFormVisible: true,
-    type: ""
-  };
+  
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
     let auth = localStorage.getItem("authorized") || false;
     let isAuthed;
     if (auth) {
@@ -38,8 +34,15 @@ class Landing extends Component {
     } else {
       isAuthed = false;
     }
-    this.setState({ isAuthed });
+
+    this.state = {
+      isOpen: false,
+      isAuthed: isAuthed,
+      submitFormVisible: !isAuthed,
+      type: ""
+    };
   }
+
 
   toggleModal = type => {
     console.log("here");

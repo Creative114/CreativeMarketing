@@ -55,7 +55,7 @@ const MobileDiv = styled.div`
   @media (max-width: 920px) {
     display: flex;
     justify-cotent: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 `;
 
@@ -73,6 +73,11 @@ const CustomColumn = styled(Column)`
 
 const ArrowIcon = styled.div`
   margin: 0 20px;
+  margin-top: 180px;
+  @media (max-width: 500px) {
+    margin: 0 10px;
+    margin-top: 130px;
+  }
 `
 
 const SliderContainer = styled.div`
