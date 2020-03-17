@@ -47,96 +47,62 @@ const StyledText = styled(Text)`
   margin-top: 2em;
 `;
 
-export default class LaunchForm extends Component {  
+export default class LaunchForm extends Component {
+
   componentDidMount() {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/v2.js';
+
+    const script1= document.createElement('script');
+    script1.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+
     document.body.appendChild(script);
+    document.body.appendChild(script1);
       
     script.addEventListener('load', () => {
       if(window.hbspt) {
         window.hbspt.forms.create({
           portalId: '5644251',
           formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
-          target: '#hubspotForm'
-        })
+          target: '#hubspotFormHeader',
+          onFormSubmitted: () => {            
+            this.props.handleSubmitFormVisible(false);
+          }
+        });
       }
     });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
+      document.getElementById("hubspotFormHeader").innerHTML = "";
+      if (this.props.submitFormVisible) {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
+          target: '#hubspotFormHeader',
+          onFormSubmitted: () => {            
+            this.props.handleSubmitFormVisible(false);
+          }
+        });
+      } else {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '611c1bb0-6110-4379-8cab-15b6f79c78bf',
+          target: '#hubspotFormHeader',
+          onFormSubmitted: () => {
+            this.props.handleSubmitFormVisible(true);
+          }
+        });
+      }
+    }
+  }
+
   render() {
-    const { handleAuth } = this.props;
     return (
       <Wrapper>
         <StyledColumn>
-          {/* <StyledText>
-            Four FREE VIDEOS That Will Help You Transform The Way You Tell Your
-            Brand Stories
-          </StyledText>           */}
-          <div id="hubspotForm" />
-          {/* <Text red>Sign up now</Text> */}
-          {/* <Formik
-            initialValues={{
-              firstname: "",
-              email: ""
-            }}
-            onSubmit={values => {
-              function formv3() {
-                let xhr = new XMLHttpRequest();
-                let url =
-                  "https://api.hsforms.com/submissions/v3/integration/submit/5644251/6fbb79fc-c8f5-4747-80e9-ec2a2f3ac23c";
-                let data = {
-                  fields: [
-                    {
-                      name: "firstname",
-                      value: values.firstname
-                    },
-                    {
-                      name: "email",
-                      value: values.email
-                    }
-                  ],
-                  context: {
-                    pageUri: "www.creative114.com/#/launch",
-                    pageName: "Landing page"
-                  }
-                };
-                const final_data = JSON.stringify(data);
-                xhr.open("POST", url);
-                xhr.setRequestHeader("Content-type", "application/json");
-                xhr.onreadystatechange = function() {
-                  if (xhr.readyState === 4 && xhr.status === 200) {
-                    handleAuth();
-                  }
-                };
-                xhr.send(final_data);
-              }
-              formv3();
-            }}
-            render={({ values, handleSubmit, handleChange, handleBlur }) => (
-              <form onSubmit={handleSubmit}>
-                <Input
-                  value={values.firstname}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="name"
-                  name="firstname"
-                  placeholder="First name"
-                />
-                <Input
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                />
-                <Button primary type="submit" style={{ marginBottom: "1em" }}>
-                  Get the videos
-                </Button>
-              </form>
-            )}
-          /> */}
+          <div id="hubspotFormHeader" />                                      
         </StyledColumn>
       </Wrapper>
     );

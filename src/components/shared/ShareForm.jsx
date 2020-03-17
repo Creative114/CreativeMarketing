@@ -44,26 +44,61 @@ const StyledText = styled(Text)`
 `;
 
 export default class ShareForm extends Component {
+
   componentDidMount() {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/v2.js';
+
+    const script1= document.createElement('script');
+    script1.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+
     document.body.appendChild(script);
+    document.body.appendChild(script1);
       
     script.addEventListener('load', () => {
       if(window.hbspt) {
         window.hbspt.forms.create({
           portalId: '5644251',
-          formId: '611c1bb0-6110-4379-8cab-15b6f79c78bf',
-          target: '#hubspotForm-share'
-        })
+          formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
+          target: '#hubspotFormFooter',
+          onFormSubmitted: () => {            
+            this.props.handleSubmitFormVisible(false);
+          }
+        });
       }
     });
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
+      document.getElementById("hubspotFormFooter").innerHTML = "";
+      if (this.props.submitFormVisible) {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
+          target: '#hubspotFormFooter',
+          onFormSubmitted: () => {            
+            this.props.handleSubmitFormVisible(false);
+          }
+        });
+      } else {
+        window.hbspt.forms.create({
+          portalId: '5644251',
+          formId: '611c1bb0-6110-4379-8cab-15b6f79c78bf',
+          target: '#hubspotFormFooter',
+          onFormSubmitted: () => {            
+            this.props.handleSubmitFormVisible(true);
+          }
+        });
+      }
+    }
+  }
+
   render() {
     return (
       <Wrapper>
         <StyledColumn>
-          <div id="hubspotForm-share" />
+          <div id="hubspotFormFooter" />
           {/* <Formik
             initialValues={{
               firstname: "",

@@ -25,6 +25,7 @@ class Landing extends Component {
   state = {
     isOpen: false,
     isAuthed: false,
+    submitFormVisible: true,
     type: ""
   };
 
@@ -50,8 +51,12 @@ class Landing extends Component {
     this.setState({ isAuthed: true });
   };
 
+  handleSubmitFormVisible = (value) => {
+    this.setState({ submitFormVisible: value })
+  }
+
   render() {
-    const { isOpen, isAuthed, type } = this.state;
+    const { isOpen, isAuthed, type, submitFormVisible } = this.state;
 
     return (
       <div>
@@ -70,7 +75,9 @@ class Landing extends Component {
         <LaunchSplash
           toggleModal={this.toggleModal}
           handleAuth={this.handleAuth}
+          handleSubmitFormVisible={this.handleSubmitFormVisible}
           isAuthed={isAuthed}
+          submitFormVisible={submitFormVisible}
         />
         <LaunchStory toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <LaunchVideos isAuthed={isAuthed} toggleModal={this.toggleModal} />
@@ -79,7 +86,10 @@ class Landing extends Component {
         <StyledRow>
           <Logos />
         </StyledRow>        
-        <Share />
+        <Share
+          handleSubmitFormVisible={this.handleSubmitFormVisible}
+          submitFormVisible={submitFormVisible}
+        />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
