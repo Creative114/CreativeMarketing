@@ -8,9 +8,9 @@ import logo5 from "../../assets/logo5.jpg";
 import logo6 from "../../assets/logo6.jpg";
 import logo7 from "../../assets/logo7.jpg";
 import logo8 from "../../assets/logo8.jpg";
-import logo9 from "../../assets/logo9.jpg";
-import logo10 from "../../assets/logo10.jpg";
-import logo11 from "../../assets/logo11.jpg";
+import logo9 from "../../assets/logo9.png";
+import logo10 from "../../assets/logo10.png";
+import logo11 from "../../assets/logo11.png";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`

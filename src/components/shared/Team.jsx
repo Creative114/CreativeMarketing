@@ -53,7 +53,9 @@ const MobileDiv = styled.div`
   margin: 1.5em 0;
   display: none;
   @media (max-width: 920px) {
-    display: block;
+    display: flex;
+    justify-cotent: space-between;
+    align-items: center;
   }
 `;
 
@@ -67,6 +69,21 @@ const CustomColumn = styled(Column)`
     margin: 1em auto;
     width: 95%;
   }
+`;
+
+const ArrowIcon = styled.div`
+  margin: 0 20px;
+`
+
+const SliderContainer = styled.div`
+  min-width: 10%;
+  flex: 1;
+`
+
+const Icon = styled.i`
+  font-size: 2em;
+  cursor: pointer;
+  color: #505d68;
 `;
 
 const boxes = [
@@ -91,21 +108,6 @@ const boxes = [
     icon: "fal fa-clipboard-list-check",
     img: jephte
   }
-  // {
-  //   id: "will",
-  //   title: "Accountability",
-  //   description: "Lorem ipsum dolor sit amet, consectetur",
-  //   icon: "fal fa-fingerprint",
-  //   img: will
-  // },
-
-  // {
-  //   id: "alex",
-  //   title: "Accountability",
-  //   description: "Lorem ipsum dolor sit amet, consectetur",
-  //   icon: "fal fa-fingerprint",
-  //   img: alex
-  // }
 ];
 
 function Box({ id, selected, handleClick, img }) {
@@ -132,14 +134,22 @@ export default class Team extends Component {
     });
   };
 
+  handlePrevSlide = () => {
+    this.slide.slickPrev();
+  }
+
+  handleNextSlide = () => {
+    this.slide.slickNext();
+  }
+
   render() {
     const { selected } = this.state;
     let settings = {
-      dots: true,
+      dots: false,
       infinite: false,
       arrows: false,
       speed: 1000,
-      autoplay: true
+      autoplay: false
     };
 
     return (
@@ -155,42 +165,36 @@ export default class Team extends Component {
           </Text>
         </CustomColumn>
         <MobileDiv>
-          <Slider {...settings}>
-            <Member
-              img={jet}
-              name="Getro Jean-Claude"
-              title="Founder & Creative Director"
-              description="Without Jet’s vision and servant leadership Creative114 would not be what it is today. He is committed to using his life to impact others. With his keen sense of human connection and his eye for capturing exceptional video content, Jet’s early creative career focused on video and design for nonprofits. After winning awards and gaining national coverage, he was motivated by something greater—the power of telling emotionally engaging stories. He continued to grow as a filmmaker, storyteller, and entrepreneur, eventually launching what is now known as Creative114. He is humbled to lead the team in diverse opportunities to share the unique stories of national and international nonprofits and businesses of all sizes. Jet is dedicated to reflecting the values of determination, creativity, and empowerment in everything he does."
-            />
+          <ArrowIcon onClick={this.handlePrevSlide}>
+            <Icon social className="fas fa-angle-left" />
+          </ArrowIcon>
+          <SliderContainer>
+            <Slider {...settings} ref={el => this.slide = el}>
+              <Member
+                img={jet}
+                name="Getro Jean-Claude"
+                title="Founder & Creative Director"
+                description="Without Jet’s vision and servant leadership Creative114 would not be what it is today. He is committed to using his life to impact others. With his keen sense of human connection and his eye for capturing exceptional video content, Jet’s early creative career focused on video and design for nonprofits. After winning awards and gaining national coverage, he was motivated by something greater—the power of telling emotionally engaging stories. He continued to grow as a filmmaker, storyteller, and entrepreneur, eventually launching what is now known as Creative114. He is humbled to lead the team in diverse opportunities to share the unique stories of national and international nonprofits and businesses of all sizes. Jet is dedicated to reflecting the values of determination, creativity, and empowerment in everything he does."
+              />
 
-            <Member
-              img={Rachael}
-              name="Rachael Jean-Claude"
-              title="Executive Assistant"
-              description="The expression “behind every great man there’s a great woman” is more than a simple adage.  It is the truth behind the leadership of Creative114. Jet and Rachael’s teamwork is important to the success of the company. At the core of Rachael’s work is a powerful question: How can I help foster an environment where creativity can thrive? She is a foundational part of the team, serving our clients and staff with her leadership support, production assistance, and business development. Although she rarely stands in the spotlight, Rachael works behind-the-scenes keeping our Creative114 moving forward."
-            />
+              <Member
+                img={Rachael}
+                name="Rachael Jean-Claude"
+                title="Executive Assistant"
+                description="The expression “behind every great man there’s a great woman” is more than a simple adage.  It is the truth behind the leadership of Creative114. Jet and Rachael’s teamwork is important to the success of the company. At the core of Rachael’s work is a powerful question: How can I help foster an environment where creativity can thrive? She is a foundational part of the team, serving our clients and staff with her leadership support, production assistance, and business development. Although she rarely stands in the spotlight, Rachael works behind-the-scenes keeping our Creative114 moving forward."
+              />
 
-            <Member
-              img={jephte}
-              name="Jephte Jean-Claude"
-              title="Marketing Intern"
-              description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
-            />
-
-            {/* <Member
-              img={will}
-              name="William Whatley"
-              title="Technologist"
-              description="William is the guy you want on your team. He helps give Creative114 our strong digital presence. As a talented website and applications developer, William works behind-the-scenes to diligently create and maintain our online presence. The work he does on our site also helps us better support and promote our clients. He keeps our site updated and create landing pages that are directly related to maximizing the reach of our stories and the Creative114 brand. "
-            />
-
-            <Member
-              img={alex}
-              name="Alex Gell"
-              title="Drone Operator"
-              description="As a certified drone operator, Alex professionally captures the beautiful shots and footage used in our creative content. Passionate about technology, he has a knack for using technical equipment to deliver the breathtaking visual aspects of our projects."
-            /> */}
-          </Slider>
+              <Member
+                img={jephte}
+                name="Jephte Jean-Claude"
+                title="Marketing Intern"
+                description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
+              />
+            </Slider>
+          </SliderContainer>
+          <ArrowIcon onClick={this.handleNextSlide}>
+            <Icon social className="fas fa-angle-right" />
+          </ArrowIcon>
         </MobileDiv>
         <DesktopDiv>
           <React.Fragment>

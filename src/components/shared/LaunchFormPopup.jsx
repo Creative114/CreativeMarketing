@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Text, Button, Column } from "../../theme";
+import HubspotForm from 'react-hubspot-form'
 import { Formik } from "formik";
 
 const Wrapper = styled.div`
@@ -47,7 +48,7 @@ const StyledText = styled(Text)`
   margin-top: 2em;
 `;
 
-export default class LaunchForm extends Component {
+export default class LaunchFormPopup extends Component {
 
   componentDidMount() {
     const script = document.createElement('script');
@@ -60,7 +61,7 @@ export default class LaunchForm extends Component {
     document.body.appendChild(script1);
       
     script.addEventListener('load', () => {
-      if(window.hbspt) {
+      if(window.hbspt) {        
         this.getForm();
       }
     });
@@ -73,12 +74,12 @@ export default class LaunchForm extends Component {
   }
 
   getForm = () => {
-    document.getElementById("hubspotFormHeader").innerHTML = "";
+    document.getElementById("hubspotFormHeaderPopup").innerHTML = "";
     if (this.props.submitFormVisible) {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
-        target: '#hubspotFormHeader',
+        target: '#hubspotFormHeaderPopup',
         onFormSubmitted: () => {            
           this.props.handleSubmitFormVisible(false);
         }
@@ -87,7 +88,7 @@ export default class LaunchForm extends Component {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: '611c1bb0-6110-4379-8cab-15b6f79c78bf',
-        target: '#hubspotFormHeader',
+        target: '#hubspotFormHeaderPopup',
         onFormSubmitted: () => {
         }
       });
@@ -95,9 +96,10 @@ export default class LaunchForm extends Component {
   }
 
   render() {
+    console.log("!23", this.props.submitFormVisible)
     return (
       <Wrapper>
-        <StyledColumn id="hubspotFormHeader">
+        <StyledColumn id="hubspotFormHeaderPopup">
           {/* {
             this.props.submitFormVisible
             ?

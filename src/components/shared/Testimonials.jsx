@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
 import { SpanTitle, Row, Column, Text } from "../../theme/index";
-import Slider from "react-slick";
 import Reveal from "react-reveal/Reveal";
 
 const Wrapper = styled.div`
@@ -48,17 +47,7 @@ const Div = styled.div`
   display: block;
   margin-top: 2em;
   @media (max-width: 920px) {
-    margin: 0;
-    display: none;
-  }
-`;
-
-const MobileDiv = styled.div`
-  margin: 2em 0;
-  display: none;
-  @media (max-width: 920px) {
-    display: block;
-    margin: 0 0 2em 0;
+    margin-top: 2em;
   }
 `;
 
@@ -91,13 +80,7 @@ export default class Testimonials extends Component {
   render() {
     const { selected } = this.state;
     const { type } = this.props;
-    let settings = {
-      dots: false,
-      infinite: false,
-      arrows: true,
-      speed: 1000,
-      autoplay: false
-    };
+
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
@@ -125,28 +108,6 @@ export default class Testimonials extends Component {
                 </React.Fragment>
               )}
             </Column>
-
-            <MobileDiv>
-              <Slider {...settings}>
-                <Testimonial
-                  type="video"
-                  src={"https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"}
-                  src2={""}
-                />
-
-                <Testimonial
-                  type="video"
-                  src={"https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"}
-                  src2={""}
-                />
-
-                <Testimonial
-                  type="video"
-                  src={"https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"}
-                  src2={""}
-                />
-              </Slider>
-            </MobileDiv>
             <Div>
               <React.Fragment>
                 <Row alignitems="center" justifycontent="center">

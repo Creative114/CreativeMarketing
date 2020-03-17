@@ -13,6 +13,7 @@ import LaunchWhy from "../../shared/LaunchWhy";
 import LaunchStory from "../../shared/LaunchStory";
 import Share from "../../shared/Share";
 import Calendar from "../../shared/Calendar";
+import LaunchFormPopup from "../../shared/LaunchFormPopup";
 
 const StyledRow = styled.div`
   display: flex;
@@ -94,9 +95,11 @@ class Landing extends Component {
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {type === "launch" && (
-              <LaunchForm
+              <LaunchFormPopup
                 handleAuth={this.handleAuth}
                 toggleModal={this.toggleModal}
+                handleSubmitFormVisible={this.handleSubmitFormVisible}
+                submitFormVisible={submitFormVisible}
               />
             )}
             {type === "schedule" && <Calendar />}

@@ -39,8 +39,8 @@ const StyledWrapper = styled(Column)`
   padding: 2em 0 0em 0;
   align-items: center;
   margin: 0 auto;
-  @media (max-width: 780px) {
-    padding: 3em 0 1.5em;
+  @media (max-width: 920px) {
+    padding: 0em 0 1.5em;
   }
 `;
 
