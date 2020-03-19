@@ -30,10 +30,11 @@ const Image = styled.img`
   }
 `;
 
-export default function Share({handleSubmitFormVisible, submitFormVisible}) {
+export default function Share({handleAuth, handleSubmitFormVisible, submitFormVisible}) {
   return (
     <Wrapper bg={`url('${BG}')`}>
       <ShareForm
+        handleAuth={handleAuth}
         handleSubmitFormVisible={handleSubmitFormVisible}
         submitFormVisible={submitFormVisible}
       />

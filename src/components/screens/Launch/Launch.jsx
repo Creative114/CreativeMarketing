@@ -91,6 +91,7 @@ class Landing extends Component {
           <Logos />
         </StyledRow>        
         <Share
+          handleAuth={this.handleAuth}
           handleSubmitFormVisible={this.handleSubmitFormVisible}
           submitFormVisible={submitFormVisible}
         />
