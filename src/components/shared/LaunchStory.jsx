@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
-import SubscribeIcon from '../../assets/subscribe.svg';
-import InspiredIcon from '../../assets/inspired.svg';
-import ResultsIcon from '../../assets/results.svg';
+import {StyledTitle} from "./LaunchSplash";
+import SubscribeIcon from "../../assets/subscribe.svg";
+import InspiredIcon from "../../assets/inspired.svg";
+import ResultsIcon from "../../assets/results.svg";
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 2em 0 4em 0;
+  padding: 2em 0 2.5em 0;
   display: flex;
   flex-direction: column;
   @media (min-width: 1750px) {
@@ -47,9 +48,21 @@ const TextRow = styled(Row)`
   }
 `;
 
+export const ProcessText = styled.p`
+  font-family: "Ubuntu", sans-serif;
+  color: #212121;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-size: 28px;
+  width: 100%;
+  font-weight: 100;
+`;
+
 const StyledButton = styled.button`
-  width: 342px;
-  height: 79px;
+  width: 225px;
+  height: 45px;
   outline: none;
   background: #d21f04;
   border: 1px solid transparent;
@@ -59,24 +72,24 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: 4px;
   transition: 750ms;
   margin: 0.5em 0;
   text-transform: uppercase;
-  box-shadow: 0 5px 30px rgba(148, 151, 155, 0.6);
+
   &:hover {
     background-color: #f32405;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 `;
 
-const StyledRow = styled(Row)`
-  margin: 0 auto;
-  width: 35%;
-  text-align: center;
+const StyledRow = styled.div`
+  align-items: center;
+  display: flex;
   justify-content: center;
+  
+  margin: 0;
   @media (max-width: 780px) {
     width: 95%;
   }
@@ -92,14 +105,15 @@ const StyledIconRow = styled(Row)`
 `;
 
 const Icon = styled.img`
-width: 120px;
-@media (max-width: 1600px) {
-  width: 100px;
-}
-@media (max-width: 768px) {
-  width: 80px;
-}
+  width: 120px;
+  @media (max-width: 1600px) {
+    width: 100px;
+  }
+  @media (max-width: 768px) {
+    width: 80px;
+  }
 `;
+
 
 export default class LaunchStory extends Component {
   render() {
@@ -132,10 +146,12 @@ export default class LaunchStory extends Component {
             </TextRow>
 
             <StyledRow>
-              <Text>
-                Watch each video and discover 4 elements that will transform the
-                way you engage with your ideal audience
-              </Text>
+              <ProcessText>
+                <span>
+                  Watch each video and discover 4 elements that will transform
+                </span>
+                <span>the way you engage with <b>your ideal audience</b></span>
+              </ProcessText>
             </StyledRow>
             {!isAuthed && (
               <div>

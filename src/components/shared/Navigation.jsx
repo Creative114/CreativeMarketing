@@ -185,7 +185,7 @@ export default class Navigation extends Component {
                 >
                   {isAuthed && launch
                     ? "Schedule a call now"
-                    : "Get the videos now"}
+                    : "Get the videos"}
                 </Button>
               </StyledRow>
             )}

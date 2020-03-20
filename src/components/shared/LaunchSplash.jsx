@@ -68,8 +68,13 @@ const StyledRow = styled(Row)`
   }
 `;
 
-const StyledTitle = styled(Title)`
-  font-size: 68px;
+export const StyledTitle = styled(Title)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-size: 64px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -77,8 +82,12 @@ const StyledTitle = styled(Title)`
   letter-spacing: normal;
   color: #ffffff;
   font-family: "Ubuntu", sans-serif;
-  @media (max-width: 920px) {
-    font-size: 48px;
+      @media (max-width: 1200px) {
+        font-size: 50px;
+
+  }
+  @media (max-width: 930px) {
+    font-size: 40px;
   }
 `;
 
@@ -107,7 +116,9 @@ export default class LaunchSplash extends Component {
             <StyledHomeColumn>
               <StyledTitleDiv>
                 <StyledTitle>
-                The Four Overlooked Secrets to Making Emotionally Engaging Videos
+                <span>FOUR SECRETS</span>
+                  <span>TO CREATE VIDEOS</span>
+                  <span>THAT GET RESULTS</span>
                 </StyledTitle>
               </StyledTitleDiv>
               <LaunchForm

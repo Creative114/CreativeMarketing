@@ -5,6 +5,7 @@ import action from "../../assets/Action.svg";
 import audience from "../../assets/Audience.svg";
 import connecting from "../../assets/Connecting.svg";
 import BG from "../../assets/rectange_bg.png";
+import {ProcessText} from "./LaunchStory";
 
 const Wrapper = styled.div`
   height: auto;
@@ -51,8 +52,8 @@ const Div = styled.div`
 `;
 
 const StyledButton = styled.button`
-  width: 342px;
-  height: 79px;
+  width: 225px;
+  height: 45px;
   outline: none;
   background: #d21f04;
   border: 1px solid transparent;
@@ -62,16 +63,14 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: 4px;
   transition: 750ms;
   margin: 0.5em 0;
   text-transform: uppercase;
-  box-shadow: 0 5px 30px rgba(148, 151, 155, 0.6);
   &:hover {
     background-color: #f32405;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 `;
 
@@ -93,8 +92,8 @@ export default class LaunchWhy extends Component {
     return (
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
-          <SpanTitle margin=".25em 0">If Your Videos Are Boring</SpanTitle>
-          <Text>they won't get you results</Text>
+          <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
+          <ProcessText style={{margin: '6px 0'}}>They Won't Get You Results</ProcessText>
         </Column>
         <Grid>
           <Div>
@@ -117,14 +116,15 @@ export default class LaunchWhy extends Component {
           </Div>
         </Grid>
         <StyledColumn>
-          <Text>
-            Overcome the obstacles that keep you from connecting with your
-            customers. Start supercharging your message with emotionally
-            engaging video stories.
-          </Text>
+          <ProcessText>
+            Overcome the obstacles that keep you from connecting with your customers.
+            <br/>
+            Start supercharging your message with emotionally <b>engaging video stories.</b>
+          </ProcessText>
         </StyledColumn>
         <Row justifycontent="center">
           <StyledButton
+            primary
             onClick={
               isAuthed
                 ? () => toggleModal("schedule")

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="46px" viewBox="0 0 47 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Collaboration Icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Collaboration-Icon-2" transform="translate(1.000000, 0.000000)">
+            <path d="M11.698495,1.50720955 C3.83666647,5.32143617 -2.09213146,18.2520922 2.47888342,29.7359782 C7.04989829,41.2198641 10.4361034,44.0260345 15.7805818,44.8904252 C21.1250601,45.7548158 34.6374215,44.0260345 39.9102661,39.2330054 C45.1831107,34.4399762 46.77588,19.2783683 42.1718306,11.469791 C37.5677812,3.66121376 19.5603236,-2.30701707 11.698495,1.50720955 Z" id="Path" fill="#D21F04" fill-rule="nonzero"></path>
+            <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.658516, 3.152077)" stroke="#000000" stroke-width="2">
+                <circle id="Oval" cx="7" cy="5" r="5"></circle>
+                <path d="M19,25 C12,21.417 12,15 6,15 C2.6862915,15 0,17.6862915 0,21 L0,39 L12,39 L12,27" id="Path"></path>
+                <path d="M25,25 C32,21.417 32,15 38,15 C41.3137085,15 44,17.6862915 44,21 L44,39 L32,39 L32,27" id="Path"></path>
+                <circle id="Oval" cx="37" cy="5" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

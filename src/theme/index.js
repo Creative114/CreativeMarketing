@@ -165,8 +165,8 @@ export const SpanSubtitle = styled.h2`
 
 export const Text = styled.p`
   font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  color: #a1aeb7;
+  font-weight: 100;
+  color: #212121;
   font-size: ${props => (props.logo ? "22px" : "18px")};
   line-height: 34px;
   margin: ${props => props.margin || "0.5em 0"};

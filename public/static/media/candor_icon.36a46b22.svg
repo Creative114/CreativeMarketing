@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="48px" viewBox="0 0 47 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Candor Icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Candor-Icon-2">
+            <path d="M13.9896497,4.47300273 C6.18563659,8.20755863 -2.00652652,14.9189321 2.53087334,26.1629452 C7.06827321,37.4069583 12.2927605,43.8279953 17.5979358,44.6743307 C22.9031111,45.5206662 36.3161032,43.8279953 41.5501716,39.1350819 C46.78424,34.4421685 46.1203631,13.4968121 41.5501716,5.85133869 C36.9799802,-1.79413475 21.7936627,0.73844683 13.9896497,4.47300273 Z" id="Path" fill="#D21F04" fill-rule="nonzero"></path>
+            <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.391122, 2.343167)" stroke="#000000" stroke-width="2">
+                <rect id="Rectangle" x="15" y="0" width="16" height="36" rx="4"></rect>
+                <path d="M5.1,27.9 C2.47418172,25.2744496 0.99898985,21.7132784 0.99898985,18 C0.99898985,14.2867216 2.47418172,10.7255504 5.1,8.1" id="Path"></path>
+                <path d="M9.343,12.343 C7.84261981,13.8433029 6.9997085,15.8781967 6.9997085,18 C6.9997085,20.1218033 7.84261981,22.1566971 9.343,23.657" id="Path"></path>
+                <path d="M40.9,27.9 C43.5258183,25.2744496 45.0010102,21.7132784 45.0010102,18 C45.0010102,14.2867216 43.5258183,10.7255504 40.9,8.1" id="Path"></path>
+                <path d="M36.657,12.343 C38.1573802,13.8433029 39.0002915,15.8781967 39.0002915,18 C39.0002915,20.1218033 38.1573802,22.1566971 36.657,23.657" id="Path"></path>
+                <path d="M15,10 L19,10" id="Path"></path>
+                <path d="M27,10 L31,10" id="Path"></path>
+                <path d="M15,26 L19,26" id="Path"></path>
+                <path d="M27,26 L31,26" id="Path"></path>
+                <path d="M15,18 L19,18" id="Path"></path>
+                <path d="M27,18 L31,18" id="Path"></path>
+                <path d="M26,36 L26,44" id="Path"></path>
+                <path d="M20,36 L20,44" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
