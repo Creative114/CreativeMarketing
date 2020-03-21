@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import Splash from "../../shared/Splash";
-import Values from "../../shared/Values";
-import Apply from "../../shared/Apply";
-import Team from "../../shared/Team";
-import Footer from "../../shared/Footer";
-import Helmet from "react-helmet";
-import Modal from "../../shared/Modal";
-import FindYourStoryForm from "../../shared/FindYourStoryForm";
-import ApplyForm from "../../shared/ApplyForm";
-import Calendar from "../../shared/Calendar";
-import aboutimg from "../../../assets/About.jpg";
+import React, { Component } from 'react';
+import Splash from '../../shared/Splash';
+import Values from '../../shared/Values';
+import Apply from '../../shared/Apply';
+import Team from '../../shared/Team';
+import Footer from '../../shared/Footer';
+import Helmet from 'react-helmet';
+import Modal from '../../shared/Modal';
+import FindYourStoryForm from '../../shared/FindYourStoryForm';
+import ApplyForm from '../../shared/ApplyForm';
+import Calendar from '../../shared/Calendar';
+import aboutimg from '../../../assets/About.jpg';
 
 export default class About extends Component {
   state = {
     isOpen: false,
-    type: null
+    type: null,
   };
 
   toggleModal = type => {
@@ -27,13 +27,13 @@ export default class About extends Component {
         <Helmet
           title="Our Team | Brand Engagement, Marketing, Design"
           meta={[
-            { name: "description", content: "About Page for Creative114" },
-            { property: "og:type", content: "website" },
+            { name: 'description', content: 'About Page for Creative114' },
+            { property: 'og:type', content: 'website' },
             {
-              property: "og:title",
-              content: "Brand Engagement, Marketing, Design"
+              property: 'og:title',
+              content: 'Brand Engagement, Marketing, Design',
             },
-            { property: "og:url", content: "http://creative114.com" }
+            { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
         <Splash
@@ -52,14 +52,14 @@ export default class About extends Component {
           title="Our team is growing!"
           text="We're looking for self-starters, go-getters, and those passionate
           about joining a creative force for good. Currently, we're seeking
-          content creators, designers, and programmers."          
+          content creators, designers, and programmers."
         />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            {type === "story" && <FindYourStoryForm />}
-            {type === "apply" && <ApplyForm />}
-            {type === "schedule" && <Calendar />}
+            {type === 'story' && <FindYourStoryForm />}
+            {type === 'apply' && <ApplyForm />}
+            {type === 'schedule' && <Calendar />}
           </Modal>
         )}
       </div>

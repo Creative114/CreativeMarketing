@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Input, Label, Button, SpanTitle, Text } from "../../theme/index";
-import { Formik } from "formik";
+import React from 'react';
+import styled from 'styled-components';
+import { Input, Label, Button, SpanTitle, Text } from '../../theme/index';
+import { Formik } from 'formik';
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,74 +39,64 @@ const Form = styled.form`
 export default function FindYourStoryForm() {
   return (
     <Wrapper>
-      <div style={{ textAlign: "center", width: "85%", margin: "0 auto" }}>
+      <div style={{ textAlign: 'center', width: '85%', margin: '0 auto' }}>
         <SpanTitle>Find your story</SpanTitle>
         <Text post>
-          When your feet hit the floor in the morning, you’re going to work
-          because of the impact that you make, not just to cash a paycheck. As
-          their guide, you are helping your customers - the heroes - win their
-          battles. You are making a difference. Why not you tell the emotional
-          impact of the good that you do with videos stories?
+          When your feet hit the floor in the morning, you’re going to work because of the impact that you make, not
+          just to cash a paycheck. As their guide, you are helping your customers - the heroes - win their battles. You
+          are making a difference. Why not you tell the emotional impact of the good that you do with videos stories?
         </Text>
         <Text post>
-          According to Hubspot, 85% of consumers want to see more video content
-          from brands. Tubular insight has found that 73% of marketers say video
-          positively impacts their ROI. Emotional Storytelling is a surefire way
-          to connect, engage and resonate with your targeted audience. People
-          rely on emotions, rather than information, to make decisions.
+          According to Hubspot, 85% of consumers want to see more video content from brands. Tubular insight has found
+          that 73% of marketers say video positively impacts their ROI. Emotional Storytelling is a surefire way to
+          connect, engage and resonate with your targeted audience. People rely on emotions, rather than information, to
+          make decisions.
         </Text>
         <Text post>
-          To help you get started, we’re sharing a copy of the internal process
-          we use to tell emotionally impacting stories. If you like a copy of
-          the exact process we use internally (our secret sauce), download it
-          for free here.
+          To help you get started, we’re sharing a copy of the internal process we use to tell emotionally impacting
+          stories. If you like a copy of the exact process we use internally (our secret sauce), download it for free
+          here.
         </Text>
       </div>
       <Formik
         initialValues={{
-          firstname: "",
-          email: ""
+          firstname: '',
+          email: '',
         }}
-        onSubmit={values => {
+        onSubmit={(values) => {
           function formv3() {
-            let xhr = new XMLHttpRequest();
-            let url =
-              "https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea";
-            let data = {
+            const xhr = new XMLHttpRequest();
+            const url =
+              'https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea';
+            const data = {
               fields: [
                 {
-                  name: "email",
-                  value: values.email
+                  name: 'email',
+                  value: values.email,
                 },
                 {
-                  name: "firstname",
-                  value: values.firstname
-                }
+                  name: 'firstname',
+                  value: values.firstname,
+                },
               ],
               context: {
-                pageUri: "www.creative114.com/#/",
-                pageName: "Contact page"
-              }
+                pageUri: 'www.creative114.com/#/',
+                pageName: 'Contact page',
+              },
             };
             const final_data = JSON.stringify(data);
-            xhr.open("POST", url);
-            xhr.setRequestHeader("Content-type", "application/json");
-            xhr.onreadystatechange = function() {
+            xhr.open('POST', url);
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.onreadystatechange = function () {
               if (xhr.readyState === 4 && xhr.status === 200) {
-                window.location.href = "https://creative114.com/#/thanks";
+                window.location.href = 'https://creative114.com/#/thanks';
               }
             };
             xhr.send(final_data);
           }
           formv3();
         }}
-        render={({
-          values,
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          setFieldValue
-        }) => (
+        render={({ values, handleSubmit, handleChange, handleBlur, setFieldValue }) => (
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="firstname" login>
               Name *
@@ -120,13 +110,7 @@ export default function FindYourStoryForm() {
             </Label>
             <Label htmlFor="email" login>
               Email *
-              <Input
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type="email"
-                name="email"
-              />
+              <Input value={values.email} onChange={handleChange} onBlur={handleBlur} type="email" name="email" />
             </Label>
 
             <Button margin=".5em 0 21px 0" primary type="submit">

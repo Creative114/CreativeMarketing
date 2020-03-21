@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, SpanTitle, Row, Text } from "../../theme/index";
-import moment from "moment";
-import Video from "../shared/Video";
+import React from 'react';
+import styled from 'styled-components';
+import { Column, SpanTitle, Row, Text } from '../../theme/index';
+import moment from 'moment';
+import Video from '../shared/Video';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -57,7 +57,7 @@ const Div = styled.div`
 const StyledPost = styled(Column)`
   padding: 0 1em;
   @media (max-width: 780px) {
-    width: ${props => (props.text ? "95%" : "65%")};
+    width: ${(props) => (props.text ? '95%' : '65%')};
     text-align: center;
     padding: 0;
   }
@@ -116,7 +116,7 @@ export default function Posts({ posts }) {
                 key={index}
                 title={key.title}
                 text={key.text}
-                date={moment(key.date).format("MMM Do YY")}
+                date={moment(key.date).format('MMM Do YY')}
                 // author={key.author}
                 video={key.video}
               />

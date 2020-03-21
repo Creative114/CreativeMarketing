@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Text, SpanTitle } from "../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import { Column, Text, SpanTitle } from '../../theme/index';
 
 const Wrapper = styled.div`
   min-height: 400px;

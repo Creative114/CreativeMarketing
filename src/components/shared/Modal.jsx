@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row } from "../../theme/index";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Row } from '../../theme/index';
 
 const Backdrop = styled.div`
   position: fixed;
@@ -57,10 +57,7 @@ export default class Modal extends Component {
     return (
       <Backdrop className="fadeIn">
         <Header>
-          <Icon
-            onClick={this.props.togglemodal}
-            className="fas fa-times-circle"
-          />
+          <Icon onClick={this.props.togglemodal} className="fas fa-times-circle" />
         </Header>
         <StyledRow>{this.props.children}</StyledRow>
       </Backdrop>

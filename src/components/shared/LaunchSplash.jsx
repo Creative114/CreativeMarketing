@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Title } from "../../theme/index";
-import Navigation from "./Navigation";
-import LaunchForm from "../shared/LaunchForm";
-import launchsplash from "../../assets/launch_splash.jpg";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Row, Title } from '../../theme/index';
+import Navigation from './Navigation';
+import LaunchForm from '../shared/LaunchForm';
+import launchsplash from '../../assets/launch_splash.jpg';
 
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
-  background: rgb(242,245,247);
+  background: rgb(242, 245, 247);
   @media (max-width: 920px) {
     height: 100%;
   }
 `;
 
-const Content =styled.div`
+const Content = styled.div`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
-    ${props => props.background};
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background};
   background-size: cover;
   background-position: center;
   display: flex;
@@ -30,7 +29,7 @@ const Content =styled.div`
     clip-path: ellipse(150% 100% at 50% 0%);
   }
   clip-path: ellipse(120% 100% at 50% 0%);
-`
+`;
 
 const StyledHomeColumn = styled(Row)`
   align-items: center;
@@ -81,10 +80,9 @@ export const StyledTitle = styled(Title)`
   line-height: 1.18;
   letter-spacing: normal;
   color: #ffffff;
-  font-family: "Ubuntu", sans-serif;
-      @media (max-width: 1200px) {
-        font-size: 50px;
-
+  font-family: 'Ubuntu', sans-serif;
+  @media (max-width: 1200px) {
+    font-size: 50px;
   }
   @media (max-width: 930px) {
     font-size: 40px;
@@ -105,18 +103,13 @@ export default class LaunchSplash extends Component {
     return (
       <Wrapper>
         <Content background={`url('${launchsplash}')`}>
-          <Navigation
-            launch
-            type="home"
-            toggleModal={toggleModal}
-            isAuthed={isAuthed}
-          />
+          <Navigation launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
 
           <StyledRow>
             <StyledHomeColumn>
               <StyledTitleDiv>
                 <StyledTitle>
-                <span>FOUR SECRETS</span>
+                  <span>FOUR SECRETS</span>
                   <span>TO CREATE VIDEOS</span>
                   <span>THAT GET RESULTS</span>
                 </StyledTitle>

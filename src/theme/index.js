@@ -1,29 +1,29 @@
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 // TYPE
 
 export const Title = styled.h1`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 800;
   color: #505d68;
   font-size: 42px;
   line-height: 52px;
-  margin: ${props => props.margin || ".5em 0"};
+  margin: ${(props) => props.margin || '.5em 0'};
   @media (max-width: 780px) {
     font-size: 38px;
   }
   @media (max-width: 400px) {
     font-size: 28px;
   }
-  ${props =>
+  ${(props) =>
     props.header &&
     css`
-      color: ${props => (props.launch ? "#fff" : "#fff")};
-      font-size: ${props => props.home && "92px"};
-      text-transform: ${props => props.home && "uppercase"};
-      line-height: ${props => props.home && "90px"};
-      margin: ${props => props.margin || ".25em 0"};
+      color: ${(props) => (props.launch ? '#fff' : '#fff')};
+      font-size: ${(props) => props.home && '92px'};
+      text-transform: ${(props) => props.home && 'uppercase'};
+      line-height: ${(props) => props.home && '90px'};
+      margin: ${(props) => props.margin || '.25em 0'};
       @media (max-width: 1200px) {
         font-size: 72px;
         line-height: 90px;
@@ -41,7 +41,7 @@ export const Title = styled.h1`
         line-height: 38px;
       }
     `};
-  ${props =>
+  ${(props) =>
     props.new &&
     css`
       color: #000;
@@ -59,16 +59,16 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   color: #505d68;
-  font-size: ${props => (props.logo ? "22px" : "21px")};
+  font-size: ${(props) => (props.logo ? '22px' : '21px')};
   line-height: 38px;
-  margin: ${props => props.margin || "0.5em 0"};
+  margin: ${(props) => props.margin || '0.5em 0'};
   @media (max-width: 900px) {
     font-size: 21px;
   }
-  ${props =>
+  ${(props) =>
     props.home &&
     css`
       color: #fff;
@@ -84,26 +84,26 @@ export const Subtitle = styled.h2`
 `;
 
 export const SpanTitle = styled.span`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 800;
   color: #505d68;
   font-size: 42px;
   line-height: 52px;
-  margin: ${props => props.margin || ".5em 0"};
+  margin: ${(props) => props.margin || '.5em 0'};
   @media (max-width: 780px) {
     font-size: 38px;
   }
   @media (max-width: 400px) {
     font-size: 28px;
   }
-  ${props =>
+  ${(props) =>
     props.header &&
     css`
-      color: ${props => (props.launch ? "#fff" : "#fff")};
-      font-size: ${props => props.home && "92px"};
-      text-transform: ${props => props.home && "uppercase"};
-      line-height: ${props => props.home && "90px"};
-      margin: ${props => props.margin || ".25em 0"};
+      color: ${(props) => (props.launch ? '#fff' : '#fff')};
+      font-size: ${(props) => props.home && '92px'};
+      text-transform: ${(props) => props.home && 'uppercase'};
+      line-height: ${(props) => props.home && '90px'};
+      margin: ${(props) => props.margin || '.25em 0'};
       @media (max-width: 1200px) {
         font-size: 72px;
         line-height: 90px;
@@ -121,7 +121,7 @@ export const SpanTitle = styled.span`
         line-height: 38px;
       }
     `};
-  ${props =>
+  ${(props) =>
     props.new &&
     css`
       color: #000;
@@ -139,16 +139,16 @@ export const SpanTitle = styled.span`
 `;
 
 export const SpanSubtitle = styled.h2`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   color: #505d68;
-  font-size: ${props => (props.logo ? "22px" : "21px")};
+  font-size: ${(props) => (props.logo ? '22px' : '21px')};
   line-height: 38px;
-  margin: ${props => props.margin || "0.5em 0"};
+  margin: ${(props) => props.margin || '0.5em 0'};
   @media (max-width: 900px) {
     font-size: 21px;
   }
-  ${props =>
+  ${(props) =>
     props.home &&
     css`
       color: #fff;
@@ -167,9 +167,9 @@ export const Text = styled.p`
   font-family: "Ubuntu", sans-serif;
   font-weight: 100;
   color: #212121;
-  font-size: ${props => (props.logo ? "22px" : "18px")};
+  font-size: ${(props) => (props.logo ? '22px' : '18px')};
   line-height: 34px;
-  margin: ${props => props.margin || "0.5em 0"};
+  margin: ${(props) => props.margin || '0.5em 0'};
   @media (max-width: 780px) {
     font-size: 16px;
     line-height: 32px;
@@ -178,19 +178,19 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 26px;
   }
-  ${props =>
+  ${(props) =>
     props.header &&
     css`
       color: #fff;
       font-size: 22px;
     `};
-  ${props =>
+  ${(props) =>
     props.title &&
     css`
       margin: 0;
       font-size: 21px;
     `};
-  ${props =>
+  ${(props) =>
     props.footer &&
     css`
       color: #fff;
@@ -198,24 +198,23 @@ export const Text = styled.p`
       line-height: 1.75em;
       font-size: 16px;
     `};
-  ${props =>
+  ${(props) =>
     props.post &&
     css`
       font-size: 14px;
       line-height: 22px;
     `};
-  ${props =>
+  ${(props) =>
     props.dark &&
     css`
       color: #2b2b2b;
       font-weight: 600;
       line-height: 28px;
     `};
-  ${props =>
+  ${(props) =>
     props.contact &&
     css`
-      color: ${props =>
-        props.home ? "#D21F04" : props.active ? "#D21F04" : "#fff"};
+      color: ${(props) => (props.home ? '#D21F04' : props.active ? '#D21F04' : '#fff')};
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 1em;
@@ -229,7 +228,7 @@ export const Text = styled.p`
         font-size: 14px;
       }
     `};
-  ${props =>
+  ${(props) =>
     props.red &&
     css`
       color: #d21f04;
@@ -237,19 +236,19 @@ export const Text = styled.p`
       font-weight: 600;
       text-transform: uppercase;
     `}
-  ${props =>
+  ${(props) =>
     props.pointer &&
     css`
       color: #000;
       font-weight: 600;
       margin-top: 0;
     `}
-    ${props =>
+    ${(props) =>
       props.secondary &&
       css`
         line-height: 1.5em;
       `}
-      ${props =>
+      ${(props) =>
         props.white &&
         css`
           color: #fff;
@@ -260,9 +259,9 @@ export const SubTitleText = styled.h6`
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   color: #a1aeb7;
-  font-size: ${props => (props.logo ? "22px" : "18px")};
+  font-size: ${(props) => (props.logo ? '22px' : '18px')};
   line-height: 34px;
-  margin: ${props => props.margin || "0.5em 0"};
+  margin: ${(props) => props.margin || '0.5em 0'};
   @media (max-width: 780px) {
     font-size: 16px;
     line-height: 32px;
@@ -271,19 +270,19 @@ export const SubTitleText = styled.h6`
     font-size: 14px;
     line-height: 26px;
   }
-  ${props =>
+  ${(props) =>
     props.header &&
     css`
       color: #fff;
       font-size: 22px;
     `};
-  ${props =>
+  ${(props) =>
     props.title &&
     css`
       margin: 0;
       font-size: 21px;
     `};
-  ${props =>
+  ${(props) =>
     props.footer &&
     css`
       color: #fff;
@@ -291,24 +290,23 @@ export const SubTitleText = styled.h6`
       line-height: 1.75em;
       font-size: 16px;
     `};
-  ${props =>
+  ${(props) =>
     props.post &&
     css`
       font-size: 14px;
       line-height: 22px;
     `};
-  ${props =>
+  ${(props) =>
     props.dark &&
     css`
       color: #2b2b2b;
       font-weight: 600;
       line-height: 28px;
     `};
-  ${props =>
+  ${(props) =>
     props.contact &&
     css`
-      color: ${props =>
-        props.home ? "#D21F04" : props.active ? "#D21F04" : "#fff"};
+      color: ${(props) => (props.home ? '#D21F04' : props.active ? '#D21F04' : '#fff')};
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 1em;
@@ -322,7 +320,7 @@ export const SubTitleText = styled.h6`
         font-size: 14px;
       }
     `};
-  ${props =>
+  ${(props) =>
     props.red &&
     css`
       color: #d21f04;
@@ -330,19 +328,19 @@ export const SubTitleText = styled.h6`
       font-weight: 600;
       text-transform: uppercase;
     `}
-  ${props =>
+  ${(props) =>
     props.pointer &&
     css`
       color: #000;
       font-weight: 600;
       margin-top: 0;
     `}
-    ${props =>
+    ${(props) =>
       props.secondary &&
       css`
         line-height: 1.5em;
       `}
-      ${props =>
+      ${(props) =>
         props.white &&
         css`
           color: #fff;
@@ -350,40 +348,44 @@ export const SubTitleText = styled.h6`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${props => (props.active ? "#D21F04" : "#fff")};
+  color: ${(props) => (props.active ? '#D21F04' : '#fff')};
   text-transform: uppercase;
   text-decoration: none;
   margin-right: 1.5em;
   font-weight: 700;
-  font-size: 10px;
-  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
   transition: 500ms;
-  ${props =>
+  ${(props) =>
     props.home &&
     css`
       color: #d21f04;
     `};
-  @media (max-width: 780px) {
+
+  @media (max-width: 1200px) {
     margin: 0 0.5em;
+    font-size: 15px;
+  }
+
+  @media (max-width: 780px) {
     font-size: 14px;
   }
 
   @media (max-width: 780px) {
-    margin: 0 0.5em;
     font-size: 12px;
   }
 `;
 
 export const StyledALink = styled.a`
-  color: ${props => (props.active ? "#D21F04" : "#fff")};
+  color: ${(props) => (props.active ? '#D21F04' : '#fff')};
   text-transform: uppercase;
   text-decoration: none;
   margin-right: 1.5em;
   font-weight: 700;
-  font-size: 10px;
-  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
   transition: 500ms;
-  ${props =>
+  ${(props) =>
     props.home &&
     css`
       color: #d21f04;
@@ -391,6 +393,10 @@ export const StyledALink = styled.a`
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 12px;
+  }
+  @media (max-width: 560px) {
+    margin: 0 0.5em;
+    font-size: 10px;
   }
 `;
 
@@ -459,11 +465,11 @@ export const TextArea = styled.textarea`
 `;
 
 export const Label = styled.label`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   text-transform: uppercase;
   color: #989898;
   font-size: 14px;
-  ${props =>
+  ${(props) =>
     props.login &&
     css`
       font-size: 12px;
@@ -476,20 +482,20 @@ export const Label = styled.label`
 
 export const Row = styled.div`
   display: flex;
-  width: ${props => props.width};
-  margin: ${props => props.margin};
-  align-items: ${props => props.alignitems};
-  justify-content: ${props => props.justifycontent};
+  width: ${(props) => props.width};
+  margin: ${(props) => props.margin};
+  align-items: ${(props) => props.alignitems};
+  justify-content: ${(props) => props.justifycontent};
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${props => props.width};
-  align-items: ${props => props.alignitems};
-  justify-content: ${props => props.justifycontent};
-  text-align: ${props => props.textalign};
-  margin: ${props => props.margin};
+  width: ${(props) => props.width};
+  align-items: ${(props) => props.alignitems};
+  justify-content: ${(props) => props.justifycontent};
+  text-align: ${(props) => props.textalign};
+  margin: ${(props) => props.margin};
   @media (max-width: 768px) {
     align-items: center;
   }
@@ -511,7 +517,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;
@@ -519,15 +525,15 @@ export const Button = styled.button`
   margin: 0.5em 0;
   text-transform: uppercase;
 
-  ${props =>
+  ${(props) =>
     props.primary &&
     css`
       background: #d21f04;
-      width: ${props => (props.small ? "155px" : "225px")};
+      width: ${(props) => (props.small ? '155px' : '225px')};
       height: 45px;
       border: 1px solid transparent;
-      margin: ${props => props.margin || ".5em 0"}
-      font-size: ${props => (props.smallText ? "14px" : "16px")};
+      margin: ${(props) => props.margin || '.5em 0'}
+      font-size: ${(props) => (props.smallText ? '14px' : '16px')};
       color: #fff;
       &:hover {
         background-color: #f32405;
@@ -535,15 +541,15 @@ export const Button = styled.button`
       }
     `};
 
-  ${props =>
+  ${(props) =>
     props.footer &&
     css`
       background: #fff;
-      width: ${props => (props.small ? "135px" : "225px")};
+      width: ${(props) => (props.small ? '135px' : '225px')};
       height: 45px;
       border: 1px solid transparent;
       color: #d21f04;
-      font-size: ${props => (props.smallText ? "14px" : "16px")};
+      font-size: ${(props) => (props.smallText ? '14px' : '16px')};
       margin: 0;
       &:hover {
         color: #d21f04;

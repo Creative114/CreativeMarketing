@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Text, SpanTitle, SpanSubtitle, Row } from "../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import { Column, Text, SpanTitle, SpanSubtitle, Row } from '../../theme/index';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -104,29 +104,28 @@ function Item({ title, text, icon }) {
 export default function Services() {
   const items = [
     {
-      title: "Video Marketing",
+      title: 'Video Marketing',
       text:
-        "Our core mission is to provide value to your organization--telling your story is the most powerful way in which you can do so.",
-      icon: "fas fa-video"
+        'Our core mission is to provide value to your organization--telling your story is the most powerful way in which you can do so.',
+      icon: 'fas fa-video',
     },
     {
-      title: "Web Design",
+      title: 'Web Design',
       text:
-        "At Creative114, we utilize the latest technologies and frameworks to ensure superior performance, security, and SEO.",
-      icon: "fas fa-code"
+        'At Creative114, we utilize the latest technologies and frameworks to ensure superior performance, security, and SEO.',
+      icon: 'fas fa-code',
     },
     {
-      title: "Graphic Design",
+      title: 'Graphic Design',
       text:
         "Consistency in branding is vital to your organizations' success--our team of experts create brands that represent your vision.",
-      icon: "fas fa-drafting-compass"
+      icon: 'fas fa-drafting-compass',
     },
     {
-      title: "Photography",
-      text:
-        "A picture tells a thousand words--Nothing fulfills us greater than capturing your happiest moments.",
-      icon: "fas fa-camera"
-    }
+      title: 'Photography',
+      text: 'A picture tells a thousand words--Nothing fulfills us greater than capturing your happiest moments.',
+      icon: 'fas fa-camera',
+    },
   ];
   return (
     <Wrapper>
@@ -136,23 +135,14 @@ export default function Services() {
         </StyledTextRow>
         <StyledTextRow>
           <Text secondary>
-            At heart, we're entrepreneurs just like you; we have the experience,
-            skillset, and know-how to position your business for success. We
-            provide scalable strategies for your oganization to meet new
-            heights.
+            At heart, we're entrepreneurs just like you; we have the experience, skillset, and know-how to position your
+            business for success. We provide scalable strategies for your oganization to meet new heights.
           </Text>
         </StyledTextRow>
       </StyledRow>
       <Grid>
         {items.map((key, index) => {
-          return (
-            <Item
-              key={index}
-              title={key.title}
-              text={key.text}
-              icon={key.icon}
-            />
-          );
+          return <Item key={index} title={key.title} text={key.text} icon={key.icon} />;
         })}
       </Grid>
     </Wrapper>

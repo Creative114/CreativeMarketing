@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Input, Label, Button, SpanTitle } from "../../theme/index";
-import { Formik } from "formik";
+import React from 'react';
+import styled from 'styled-components';
+import { Input, Label, Button, SpanTitle } from '../../theme/index';
+import { Formik } from 'formik';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 5px;
   width: 550px;
-  height: auto;  
+  height: auto;
   margin: 0 auto;
   margin-top: 150px;
   margin-bottom: 20px;
@@ -42,19 +42,19 @@ export default function NonProfitForm() {
   const script = document.createElement('script');
   script.src = 'https://js.hsforms.net/forms/v2.js';
   document.body.appendChild(script);
-    
+
   script.addEventListener('load', () => {
-    if(window.hbspt) {
+    if (window.hbspt) {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: 'f2b5ca43-259b-4608-b77c-090a6ed1a5c7',
-        target: '#hubspotForm'
-      })
+        target: '#hubspotForm',
+      });
     }
   });
   return (
     <Wrapper>
-      <div style={{ textAlign: "center", width: "85%", margin: "20px auto" }}>
+      <div style={{ textAlign: 'center', width: '85%', margin: '20px auto' }}>
         <div id="hubspotForm" />
       </div>
       {/* <Formik

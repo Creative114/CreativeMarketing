@@ -1,15 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import {
-  StyledNavLink,
-  Row,
-  Text,
-  Button,
-  Column,
-  StyledALink
-} from "../../theme/index";
-import Logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { StyledNavLink, Row, Text, Button, Column, StyledALink } from '../../theme/index';
+import Logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -57,7 +50,7 @@ const StyledColumn = styled(Column)`
     margin: 0.75em auto;
     align-items: center;
   }
-  ${props =>
+  ${(props) =>
     props.first &&
     css`
       width: 35%;
@@ -95,12 +88,12 @@ const DesktopDiv = styled(Row)`
 
 const LinkRow = styled(StyledContentRow)`
   @media (max-width: 560px) {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 200px;
-  margin: 0.2em 0.5em;
-  font-size: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    margin: 0.2em 0.5em;
+    font-size: 10em;
   }
 `;
 
@@ -112,11 +105,10 @@ export default function Footer({ toggleModal }) {
           <Link to="/">
             <Image src={Logo} alt="" />
           </Link>
-          <div style={{ width: "80%" }}>
+          <div style={{ width: '80%' }}>
             <Text footer>
-              If you’re struggle to be interesting, relevant, and relatable,
-              we’ll help you identify and communicate emotionally engaging video
-              stories that generate results (and goosebumps).
+              If you’re struggle to be interesting, relevant, and relatable, we’ll help you identify and communicate
+              emotionally engaging video stories that generate results (and goosebumps).
             </Text>
           </div>
         </StyledColumn>
@@ -137,39 +129,21 @@ export default function Footer({ toggleModal }) {
             <StyledNavLink to="/contact">Contact</StyledNavLink>
           </LinkRow>
           <StyledContentRow>
-            <a
-              href="https://www.linkedin.com/showcase/creative114/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/showcase/creative114/" target="_blank" rel="noopener noreferrer">
               <Icon social className="fab fa-linkedin-in" />
             </a>
-            <a
-              href="https://www.facebook.com/114brands"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.facebook.com/114brands" target="_blank" rel="noopener noreferrer">
               <Icon social className="fab fa-facebook-f" />
             </a>
 
-            <a
-              href="https://www.instagram.com/creative1.14/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.instagram.com/creative1.14/" target="_blank" rel="noopener noreferrer">
               <Icon social className="fab fa-instagram" />
             </a>
-            <a
-              href="https://vimeo.com/channels/1439000"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://vimeo.com/channels/1439000" target="_blank" rel="noopener noreferrer">
               <Icon social className="fab fa-vimeo-v" />
             </a>
           </StyledContentRow>
-          <Text footer>
-            2019 &copy; Creative114 | Made with &hearts; in Tampa, FL
-          </Text>
+          <Text footer>2019 &copy; Creative114 | Made with &hearts; in Tampa, FL</Text>
         </StyledColumn>
         <DesktopDiv>
           <Link to="/launch">

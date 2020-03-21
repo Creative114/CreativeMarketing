@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, SpanTitle, Row, Text, Button, StyledColumn } from "../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import { Column, SpanTitle, Row, Text, Button, StyledColumn } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -38,12 +38,7 @@ export default function Apply({ title, text, toggleModal, type }) {
       <CustomColumn>
         <Text>{text}</Text>
         <Row margin=".5em 0">
-          <Button
-            onClick={() =>
-              toggleModal(type === "impact" ? "nonprofit" : "apply")
-            }
-            primary
-          >
+          <Button onClick={() => toggleModal(type === 'impact' ? 'nonprofit' : 'apply')} primary>
             Apply today
           </Button>
         </Row>

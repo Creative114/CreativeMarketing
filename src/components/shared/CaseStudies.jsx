@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import CaseStudy from "./CaseStudy";
-import { Column, SpanTitle } from "../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import CaseStudy from './CaseStudy';
+import { Column, SpanTitle } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;

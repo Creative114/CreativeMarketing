@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import launchimg from "../../assets/launch_img.png";
-import { Column, Title, Text, Button } from "../../theme";
-import { Link } from "react-router-dom";
-import BG from "../../assets/rectange_bg.png";
+import React from 'react';
+import styled from 'styled-components';
+import launchimg from '../../assets/launch_img.png';
+import { Column, Title, Text, Button } from '../../theme';
+import { Link } from 'react-router-dom';
+import BG from '../../assets/rectange_bg.png';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -54,13 +54,11 @@ export default function Elements() {
       <Image src={launchimg} />
       <StyledColumn>
         <StyledTitle new>
-          The Four <Span>Overlooked</Span> Secrets to Making Emotionally
-          Engaging Videos
+          The Four <Span>Overlooked</Span> Secrets to Making Emotionally Engaging Videos
         </StyledTitle>
         <StyledText>
-          Sign Up for Limited Access to the 4 Step Video Framework Proven to
-          Illuminate Your Story, Transform Your Videos and Captivate Your
-          Audience.
+          Sign Up for Limited Access to the 4 Step Video Framework Proven to Illuminate Your Story, Transform Your
+          Videos and Captivate Your Audience.
         </StyledText>
         <Link to="/launch">
           <Button margin="1.5em 0" primary>

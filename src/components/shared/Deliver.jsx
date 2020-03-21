@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Column, SpanTitle } from "../../theme/index";
-import Video from "../shared/Video";
-import Logos from "../shared/Logos";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Column, SpanTitle } from '../../theme/index';
+import Video from '../shared/Video';
+import Logos from '../shared/Logos';
 
 const Wrapper = styled.div`
   height: 100%;

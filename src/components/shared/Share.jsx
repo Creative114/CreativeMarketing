@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import ShareForm from "./ShareForm";
-import BG from "../../assets/rectange_bg.png";
-import launchimg from "../../assets/launch_img.png";
+import React from 'react';
+import styled from 'styled-components';
+import ShareForm from './ShareForm';
+import BG from '../../assets/rectange_bg.png';
+import launchimg from '../../assets/launch_img.png';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -30,7 +30,7 @@ const Image = styled.img`
   }
 `;
 
-export default function Share({handleAuth, handleSubmitFormVisible, submitFormVisible}) {
+export default function Share({ handleAuth, handleSubmitFormVisible, submitFormVisible }) {
   return (
     <Wrapper bg={`url('${BG}')`}>
       <ShareForm

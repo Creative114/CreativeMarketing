@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Video from "../shared/Video";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Video from '../shared/Video';
 
 const Wrapper = styled.div`
   height: 100%;

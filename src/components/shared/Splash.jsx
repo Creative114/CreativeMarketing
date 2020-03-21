@@ -1,29 +1,29 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Title, SubTitleText, Text, Button } from "../../theme/index";
-import Navigation from "./Navigation";
-import aboutSplash from "../../assets/aboutSplash.jpg";
-import impactSplash from "../../assets/impact_splash.jpg";
-import PDF from "../../assets/findyourstory.pdf";
+import React from 'react';
+import styled from 'styled-components';
+import { Column, Title, SubTitleText, Text, Button } from '../../theme/index';
+import Navigation from './Navigation';
+import aboutSplash from '../../assets/aboutSplash.jpg';
+import impactSplash from '../../assets/impact_splash.jpg';
+import PDF from '../../assets/findyourstory.pdf';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  background-color: ${props => props.backgroundcolor};
+  background-color: ${(props) => props.backgroundcolor};
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 10px)"};
+  height: ${(props) => props.height || 'calc(100vh - 10px)'};
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   background-size: cover;
-  background-position: ${props => props.backgroundposition};
+  background-position: ${(props) => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
   webkit-clip-path: ellipse(120% 100% at 50% 0%);
   @media (max-width: 920px) {
-    height: ${props => props.height || "calc(100vh - 85px)"};
+    height: ${(props) => props.height || 'calc(100vh - 85px)'};
     clip-path: ellipse(120% 100% at 50% 0%);
     webkit-clip-path: ellipse(120% 100% at 50% 0%);
   }
@@ -61,7 +61,7 @@ const Content = styled.div`
   align-content: center;
   justify-content: center;
   position: relative;
-`
+`;
 
 const Video = styled.video`
   right: 0;
@@ -105,7 +105,7 @@ const A = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;
@@ -123,33 +123,24 @@ const A = styled.a`
   }
 `;
 
-export default function Splash({
-  type,
-  src,
-  title,
-  text,
-  mobileText,
-  show,
-  img,
-  toggleModal
-}) {
+export default function Splash({ type, src, title, text, mobileText, show, img, toggleModal }) {
   return (
-    <Wrapper backgroundcolor={type === "work" ? "#f2f5f7" : "#fff"}>
+    <Wrapper backgroundcolor={type === 'work' ? '#f2f5f7' : '#fff'}>
       <Navigation type={type} show={show} toggleModal={toggleModal} />
       <WrapContent
-        height={type === "casestudy" ? "650px" : ""}
-        backgroundposition={"center"}
+        height={type === 'casestudy' ? '650px' : ''}
+        backgroundposition={'center'}
         background={
-          type === "casestudy"
+          type === 'casestudy'
             ? `url('${img}')`
-            : type === "thanks"
+            : type === 'thanks'
             ? `url('${impactSplash}')`
-            : type === "nomatch"
+            : type === 'nomatch'
             ? `url('${aboutSplash}')`
             : `url('${img}')`
         }
       >
-        {type !== "casestudy" && (
+        {type !== 'casestudy' && (
           <Content>
             <Video autoPlay muted loop playsInline>
               <source src={src} type="video/mp4" />
@@ -165,16 +156,14 @@ export default function Splash({
                 style={{ minHeight: "320px", height: "58px" }}
               /> */}
 
-              {type !== "thanks" && type !== "contact" && (
+              {type !== 'thanks' && type !== 'contact' && (
                 <Link to="/launch">
-                  <StyledButton primary>
-                    Free Story Formula
-                  </StyledButton>
+                  <StyledButton primary>Free Story Formula</StyledButton>
                 </Link>
               )}
-              {type === "thanks" && <A href={PDF}>Download now!</A>}
-              {type === "contact" && (
-                <StyledButton primary onClick={() => toggleModal("schedule")}>
+              {type === 'thanks' && <A href={PDF}>Download now!</A>}
+              {type === 'contact' && (
+                <StyledButton primary onClick={() => toggleModal('schedule')}>
                   Schedule a call now
                 </StyledButton>
               )}

@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import Splash from "../../shared/Splash";
-import Footer from "../../shared/Footer";
-import Helmet from "react-helmet";
-import ContactForm from "../../shared/ContactForm";
-import Modal from "../../shared/Modal";
-import FindYourStoryForm from "../../shared/FindYourStoryForm";
-import Calendar from "../../shared/Calendar";
-import contactimg from "../../../assets/Contact.jpg";
+import React, { Component } from 'react';
+import Splash from '../../shared/Splash';
+import Footer from '../../shared/Footer';
+import Helmet from 'react-helmet';
+import ContactForm from '../../shared/ContactForm';
+import Modal from '../../shared/Modal';
+import FindYourStoryForm from '../../shared/FindYourStoryForm';
+import Calendar from '../../shared/Calendar';
+import contactimg from '../../../assets/Contact.jpg';
 
 export default class Contact extends Component {
   state = {
     isOpen: false,
-    type: null
+    type: null,
   };
 
   toggleModal = type => {
@@ -25,13 +25,13 @@ export default class Contact extends Component {
         <Helmet
           title="Our Team | Brand Engagement, Marketing, Design"
           meta={[
-            { name: "description", content: "Contact Page for Creative114" },
-            { property: "og:type", content: "website" },
+            { name: 'description', content: 'Contact Page for Creative114' },
+            { property: 'og:type', content: 'website' },
             {
-              property: "og:title",
-              content: "Brand Engagement, Marketing, Design"
+              property: 'og:title',
+              content: 'Brand Engagement, Marketing, Design',
             },
-            { property: "og:url", content: "http://creative114.com" }
+            { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
         <Splash
@@ -50,8 +50,8 @@ export default class Contact extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            {type === "story" && <FindYourStoryForm />}
-            {type === "schedule" && <Calendar />}
+            {type === 'story' && <FindYourStoryForm />}
+            {type === 'schedule' && <Calendar />}
           </Modal>
         )}
       </div>

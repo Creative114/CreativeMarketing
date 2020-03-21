@@ -1,15 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import {
-  SpanTitle,
-  Column,
-  Row,
-  TextArea,
-  Input,
-  Label,
-  Button,
-  Text
-} from "../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import { SpanTitle, Column, Row, TextArea, Input, Label, Button, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -50,12 +41,12 @@ const StyledColumn = styled(Column)`
 
 const CustomColumn = styled.div`
   margin-bottom: 2em;
-`
+`;
 
 const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
-  color: ${props => (props.social ? "#b9402d" : "#505d68")};
+  color: ${(props) => (props.social ? '#b9402d' : '#505d68')};
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 1.5em;
@@ -63,21 +54,20 @@ const Icon = styled.i`
 `;
 
 export default function ContactForm() {
-
   const script = document.createElement('script');
   script.src = 'https://js.hsforms.net/forms/v2.js';
   document.body.appendChild(script);
-    
+
   script.addEventListener('load', () => {
-    if(window.hbspt) {
+    if (window.hbspt) {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: 'fd529199-628a-494d-9d37-df3acb1187b1',
-        target: '#hubspotForm'
-      })
+        target: '#hubspotForm',
+      });
     }
   });
-    
+
   return (
     <Wrapper>
       <StyledColumn>
@@ -110,33 +100,17 @@ export default function ContactForm() {
         </StyledRow>
 
         <StyledRow>
-          <a
-            href="https://www.linkedin.com/showcase/creative114/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.linkedin.com/showcase/creative114/" target="_blank" rel="noopener noreferrer">
             <Icon social className="fab fa-linkedin-in" />
           </a>
-          <a
-            href="https://www.facebook.com/114brands"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.facebook.com/114brands" target="_blank" rel="noopener noreferrer">
             <Icon social className="fab fa-facebook-f" />
           </a>
 
-          <a
-            href="https://www.instagram.com/creative1.14/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.instagram.com/creative1.14/" target="_blank" rel="noopener noreferrer">
             <Icon social className="fab fa-instagram" />
           </a>
-          <a
-            href="https://vimeo.com/channels/1439000"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://vimeo.com/channels/1439000" target="_blank" rel="noopener noreferrer">
             <Icon social className="fab fa-vimeo-v" />
           </a>
         </StyledRow>

@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Footer from "../../shared/Footer";
-import Helmet from "react-helmet";
-import Splash from "../../shared/Splash";
-import { Input, Label, Button, TextArea } from "../../../theme/index";
+import React from 'react';
+import styled from 'styled-components';
+import Footer from '../../shared/Footer';
+import Helmet from 'react-helmet';
+import Splash from '../../shared/Splash';
+import { Input, Label, Button, TextArea } from '../../../theme/index';
 
 const Form = styled.form`
   display: flex;
@@ -45,11 +45,7 @@ function StartNowForm() {
       <Label htmlFor="objective" login>
         Objective *<TextArea name="objective" />
       </Label>
-      <input
-        type="hidden"
-        name="_next"
-        value="http://creative114.com/#/thanks"
-      />
+      <input type="hidden" name="_next" value="http://creative114.com/#/thanks" />
       <Button type="submit" primary>
         Send
       </Button>
@@ -63,13 +59,13 @@ export default function StartNow() {
       <Helmet
         title="Our Team | Brand Engagement, Marketing, Design"
         meta={[
-          { name: "description", content: "Start Now Page for Creative114" },
-          { property: "og:type", content: "website" },
+          { name: 'description', content: 'Start Now Page for Creative114' },
+          { property: 'og:type', content: 'website' },
           {
-            property: "og:title",
-            content: "Brand Engagement, Marketing, Design"
+            property: 'og:title',
+            content: 'Brand Engagement, Marketing, Design',
           },
-          { property: "og:url", content: "http://creative114.com" }
+          { property: 'og:url', content: 'http://creative114.com' },
         ]}
       />
       <Splash

@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import LaunchSplash from "../../shared/LaunchSplash";
-import Logos from "../../shared/Logos";
-import Testimonials from "../../shared/Testimonials";
-import Footer from "../../shared/Footer";
-import { withRouter } from "react-router-dom";
-import Helmet from "react-helmet";
-import Modal from "../../shared/Modal";
-import LaunchForm from "../../shared/LaunchForm";
-import LaunchVideos from "../../shared/LaunchVideos";
-import LaunchWhy from "../../shared/LaunchWhy";
-import LaunchStory from "../../shared/LaunchStory";
-import Share from "../../shared/Share";
-import Calendar from "../../shared/Calendar";
-import LaunchFormPopup from "../../shared/LaunchFormPopup";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import LaunchSplash from '../../shared/LaunchSplash';
+import Logos from '../../shared/Logos';
+import Testimonials from '../../shared/Testimonials';
+import Footer from '../../shared/Footer';
+import { withRouter } from 'react-router-dom';
+import Helmet from 'react-helmet';
+import Modal from '../../shared/Modal';
+import LaunchForm from '../../shared/LaunchForm';
+import LaunchVideos from '../../shared/LaunchVideos';
+import LaunchWhy from '../../shared/LaunchWhy';
+import LaunchStory from '../../shared/LaunchStory';
+import Share from '../../shared/Share';
+import Calendar from '../../shared/Calendar';
+import LaunchFormPopup from '../../shared/LaunchFormPopup';
 
 const StyledRow = styled.div`
   display: flex;
@@ -23,11 +23,10 @@ const StyledRow = styled.div`
 `;
 
 class Landing extends Component {
-  
   constructor(props) {
     super(props);
 
-    let auth = localStorage.getItem("authorized") || false;
+    let auth = localStorage.getItem('authorized') || false;
     let isAuthed;
     if (auth) {
       isAuthed = true;
@@ -39,25 +38,24 @@ class Landing extends Component {
       isOpen: false,
       isAuthed: isAuthed,
       submitFormVisible: !isAuthed,
-      type: ""
+      type: '',
     };
   }
 
-
   toggleModal = type => {
-    console.log("here");
+    console.log('here');
 
     this.setState({ isOpen: !this.state.isOpen, type });
   };
 
   handleAuth = () => {
-    localStorage.setItem("authorized", true);
+    localStorage.setItem('authorized', true);
     this.setState({ isAuthed: true });
   };
 
-  handleSubmitFormVisible = (value) => {
-    this.setState({ submitFormVisible: value })
-  }
+  handleSubmitFormVisible = value => {
+    this.setState({ submitFormVisible: value });
+  };
 
   render() {
     const { isOpen, isAuthed, type, submitFormVisible } = this.state;
@@ -67,13 +65,13 @@ class Landing extends Component {
         <Helmet
           title="Creative114 | Brand Engagement, Marketing, Design"
           meta={[
-            { name: "description", content: "Home Page for Creative114" },
-            { property: "og:type", content: "website" },
+            { name: 'description', content: 'Home Page for Creative114' },
+            { property: 'og:type', content: 'website' },
             {
-              property: "og:title",
-              content: "Brand Engagement, Marketing, Design"
+              property: 'og:title',
+              content: 'Brand Engagement, Marketing, Design',
             },
-            { property: "og:url", content: "http://creative114.com" }
+            { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
         <LaunchSplash
@@ -89,7 +87,7 @@ class Landing extends Component {
         <Testimonials type="launch" />
         <StyledRow>
           <Logos />
-        </StyledRow>        
+        </StyledRow>
         <Share
           handleAuth={this.handleAuth}
           handleSubmitFormVisible={this.handleSubmitFormVisible}
@@ -98,7 +96,7 @@ class Landing extends Component {
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            {type === "launch" && (
+            {type === 'launch' && (
               <LaunchFormPopup
                 handleAuth={this.handleAuth}
                 toggleModal={this.toggleModal}
@@ -106,7 +104,7 @@ class Landing extends Component {
                 submitFormVisible={submitFormVisible}
               />
             )}
-            {type === "schedule" && <Calendar />}
+            {type === 'schedule' && <Calendar />}
           </Modal>
         )}
       </div>
