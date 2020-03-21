@@ -355,7 +355,7 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   margin-right: 1.5em;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 10px;
   font-family: "Ubuntu", sans-serif;
   transition: 500ms;
   ${props =>
@@ -367,6 +367,11 @@ export const StyledNavLink = styled(NavLink)`
     margin: 0 0.5em;
     font-size: 14px;
   }
+
+  @media (max-width: 780px) {
+    margin: 0 0.5em;
+    font-size: 12px;
+  }
 `;
 
 export const StyledALink = styled.a`
@@ -375,7 +380,7 @@ export const StyledALink = styled.a`
   text-decoration: none;
   margin-right: 1.5em;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 10px;
   font-family: "Ubuntu", sans-serif;
   transition: 500ms;
   ${props =>
@@ -385,7 +390,7 @@ export const StyledALink = styled.a`
     `};
   @media (max-width: 780px) {
     margin: 0 0.5em;
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 

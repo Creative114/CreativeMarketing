@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   @media (max-width: 920px) {
     height: 100%;
     min-height: 100px;
+    padding: 2em 0;
   }
 `;
 
@@ -92,6 +93,17 @@ const DesktopDiv = styled(Row)`
   }
 `;
 
+const LinkRow = styled(StyledContentRow)`
+  @media (max-width: 560px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  margin: 0.2em 0.5em;
+  font-size: 10em;
+  }
+`;
+
 export default function Footer({ toggleModal }) {
   return (
     <Wrapper>
@@ -116,14 +128,14 @@ export default function Footer({ toggleModal }) {
           </Link>
         </MobileDiv>
         <StyledColumn justifycontent="space-between">
-          <StyledContentRow alignitems="center">
+          <LinkRow alignitems="center">
             <StyledNavLink to="/">Home</StyledNavLink>
             <StyledNavLink to="/work">Work</StyledNavLink>
             <StyledNavLink to="/about">About</StyledNavLink>
             <StyledNavLink to="/impact">Impact</StyledNavLink>
             <StyledALink href="https://blog.creative114.com">Blog</StyledALink>
             <StyledNavLink to="/contact">Contact</StyledNavLink>
-          </StyledContentRow>
+          </LinkRow>
           <StyledContentRow>
             <a
               href="https://www.linkedin.com/showcase/creative114/"
