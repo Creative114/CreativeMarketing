@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Testimonial from "./Testimonial";
 import { SpanTitle, Row, Column, Text } from "../../theme/index";
 import Reveal from "react-reveal/Reveal";
+import {ProcessText} from './LaunchStory'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -98,20 +99,14 @@ export default class Testimonials extends Component {
                   : "What they're saying"}
               </SpanTitle>
               {type === "launch" && (
-                <React.Fragment>
-                  <Text margin="0">
-                    Many Business Owners Are Wasting Money Creating Videos That
-                    Just Don’t Work.
-                  </Text>
-                  <br />
-                  <Text
-                    margin="-1.25em 0 0 0"
-                    dark
-                    style={{ fontStyle: "italic" }}
-                  >
-                    I Don’t Want That To Be You!
-                  </Text>
-                </React.Fragment>
+                <>
+                  <ProcessText>
+                    Many Business Owners Are Wasting Money
+                    <br />
+                    Creating Videos That Just Don’t Work.
+                    <b>I Don’t Want That To Be You!</b>
+                  </ProcessText>
+                </>
               )}
             </Column>
             <Div>
@@ -147,9 +142,7 @@ export default class Testimonials extends Component {
                       src={
                         "https://fast.wistia.com/embed/medias/ubvv0c8re9/swatch"
                       }
-                      src2={
-                        ""
-                      }
+                      src2={""}
                     />
                   )}
 
@@ -159,9 +152,7 @@ export default class Testimonials extends Component {
                       src={
                         "https://fast.wistia.com/embed/medias/2cxnagybwy/swatch"
                       }
-                      src2={
-                        ""
-                      }
+                      src2={""}
                     />
                   )}
                   {selected === "business" && (
@@ -170,9 +161,7 @@ export default class Testimonials extends Component {
                       src={
                         "https://fast.wistia.com/embed/medias/dhmx0u7je8/swatch"
                       }
-                      src2={
-                        ""
-                      }
+                      src2={""}
                     />
                   )}
                 </Row>
@@ -184,10 +173,10 @@ export default class Testimonials extends Component {
                 margin="2.5em 0 0 0"
                 style={{ textAlign: "center" }}
               >
-                <Text>
+                <ProcessText>
                   People Will Respond To Your Videos After You Implement <br />
-                  What You Learn Here.
-                </Text>
+                  <b>What You Learn Here.</b>
+                </ProcessText>
               </Row>
             )}
           </React.Fragment>

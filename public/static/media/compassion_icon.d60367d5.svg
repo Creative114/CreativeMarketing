@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Compassion Icon 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Compassion-Icon-2" transform="translate(1.000000, 0.000000)">
+            <path d="M10.0903966,2.53231088 C2.46352327,6.23254716 -1.49589101,18.6835482 1.14631834,29.9174467 C3.78852768,41.1513452 8.86573229,43.7804366 14.0504879,44.6189944 C19.2352434,45.4575522 32.3437802,46.090848 37.4590428,41.4410612 C42.5743054,36.7912745 46.9396826,15.7130828 42.4732279,8.13786929 C38.0067731,0.56265579 17.7172699,-1.16792541 10.0903966,2.53231088 Z" id="Path" fill="#D21F04" fill-rule="nonzero"></path>
+            <g id="Group" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.000000, 1.598224)" stroke="#000000" stroke-width="2">
+                <path d="M0,9 C6.627417,9 12,14.372583 12,21 L12,23.08 L15,30 L12,31 L12,34 C12,36.209139 10.209139,38 8,38 L4,38 L4,42" id="Path"></path>
+                <path d="M40,42 L40,38 L36,38 C33.790861,38 32,36.209139 32,34 L32,31 L29,30 L32,23.08 L32,21 C32,14.372583 37.372583,9 44,9" id="Path"></path>
+                <circle id="Oval" cx="22" cy="17" r="1"></circle>
+                <path d="M28.528,10.816 C26.8602008,9.05023879 24.5486944,8.03473626 22.1200493,8.00082716 C19.6914042,7.96691806 17.3524471,8.91749013 15.636,10.636" id="Path"></path>
+                <path d="M34.33,5.319 C31.1797937,1.98373378 26.8137122,0.06559441 22.2263712,0.00154382 C17.6390301,-0.06250677 13.2210972,1.7329861 9.979,4.979" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
