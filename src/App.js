@@ -13,7 +13,8 @@ import Launch from './components/screens/Launch/Launch';
 import 'normalize.css';
 
 class App extends Component {
-  componentWillMount() {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
     const script1 = document.createElement('script');
     const script2 = document.createElement('script');
     const script3 = document.createElement('script');
@@ -37,69 +38,24 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return <Home onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/about"
-              render={() => {
-                return <About onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/work"
-              render={() => {
-                return <Work onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/impact"
-              render={() => {
-                return <Impact onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/casestudies/:name"
-              render={() => {
-                return <CaseStudy onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/contact"
-              render={() => {
-                return <Contact onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/thanks"
-              render={() => {
-                return <Thanks onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/startnow"
-              render={() => {
-                return <StartNow onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
-            <Route
-              exact
-              path="/launch"
-              render={() => {
-                return <Launch onEnter={window.scrollTo(0, 0)} />;
-              }}
-            />
+            <Route exact path="/" render={() => <Home onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/about" render={() => <About onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/work" render={() => <Work onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/impact" render={() => <Impact onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/casestudies/:name" render={() => <CaseStudy onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/contact" render={() => <Contact onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/thanks" render={() => <Thanks onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/startnow" render={() => <StartNow onEnter={window.scrollTo(0, 0)} />} />
+
+            <Route exact path="/launch" render={() => <Launch onEnter={window.scrollTo(0, 0)} />} />
+
             <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
           </Switch>
         </div>
