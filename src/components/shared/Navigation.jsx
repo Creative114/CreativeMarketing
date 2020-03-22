@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -69,28 +69,29 @@ const MobileImage = styled.img`
   }
 `;
 
-export default class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color: 'rgba(0,0,0,0)',
-      active: false,
-    };
-  }
+const Navigation = props => {
+  const [color, setNavColor] = useState('rgba(0,0,0,0)');
+  const [active, setActive] = useState(false);
 
-  listenScrollEvent() {
+  const listenScrollEvent = () => {
     if (window.scrollY > 150) {
-      this.setState({ color: 'white', active: true });
+      setNavColor('white');
+      setActive(true);
     } else {
-      this.setState({ color: 'rgba(0,0,0,0)', active: false });
+      setNavColor('rgba(0,0,0,0)');
+      setActive(false);
     }
-  }
+  };
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent);
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
 
-  handleLogo(active, type) {
+    return () => {
+      window.removeEventListener('scroll', listenScrollEvent);
+    };
+  }, []);
+
+  const handleLogo = (active, type) => {
     let logo;
     if (active && type === 'home') {
       logo = Icon;
@@ -104,77 +105,74 @@ export default class Navigation extends Component {
       logo = LogoWhite;
     }
     return logo;
-  }
+  };
 
-  render() {
-    const { color, active } = this.state;
-    const { type, toggleModal, show, isAuthed, launch } = this.props;
+  const { type, toggleModal, show, isAuthed, launch } = props;
 
-    return (
-      <Wrapper background={color} active={active ? 1 : 0} display={!show && 'none'}>
-        <Link to="/">
-          <Image src={this.handleLogo(active, type)} active={!active} alt="Creative114 Logo" />
-        </Link>
+  return (
+    <Wrapper background={color} active={active ? 1 : 0} display={!show && 'none'}>
+      <Link to="/">
+        <Image src={handleLogo(active, type)} active={!active} alt="Creative114 Logo" />
+      </Link>
 
-        <Link to="/">
-          <MobileImage src={Icon} alt="Creative114 Logo" />
-        </Link>
-        {type !== 'launch' && (
-          <>
-            <BurgerDiv>
-              <Burger />
-            </BurgerDiv>
-            {type !== 'home' && (
-              <StyledRow>
-                <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/">
-                  Home
-                </StyledNavLink>
-                <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/work">
-                  Work
-                </StyledNavLink>
-                <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/about">
-                  About
-                </StyledNavLink>
-                <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/impact">
-                  Impact
-                </StyledNavLink>
-                <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com">
-                  Blog
-                </StyledALink>
-                <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/contact">
-                  Contact
-                </StyledNavLink>
+      <Link to="/">
+        <MobileImage src={Icon} alt="Creative114 Logo" />
+      </Link>
+      {type !== 'launch' && (
+        <>
+          <BurgerDiv>
+            <Burger />
+          </BurgerDiv>
+          {type !== 'home' && (
+            <StyledRow>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/">
+                Home
+              </StyledNavLink>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/work">
+                Work
+              </StyledNavLink>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/about">
+                About
+              </StyledNavLink>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/impact">
+                Impact
+              </StyledNavLink>
+              <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com">
+                Blog
+              </StyledALink>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/contact">
+                Contact
+              </StyledNavLink>
 
-                <Link to="/launch">
-                  <Button primary>Free Story Formula</Button>
-                </Link>
-              </StyledRow>
-            )}
-            {type === 'home' && launch && (
-              <StyledRow>
-                <Button primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
-                  {isAuthed && launch ? 'Schedule a call now' : 'Get the videos'}
+              <Link to="/launch">
+                <Button primary>Free Story Formula</Button>
+              </Link>
+            </StyledRow>
+          )}
+          {type === 'home' && launch && (
+            <StyledRow>
+              <Button primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
+                {isAuthed && launch ? 'Schedule a call now' : 'Get the videos'}
+              </Button>
+            </StyledRow>
+          )}
+          {type === 'home' && !launch && (
+            <StyledRow>
+              <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com/">
+                Blog
+              </StyledALink>
+              <Link to="/launch">
+                <Button primary smallText>
+                  Free Story Formula
                 </Button>
-              </StyledRow>
-            )}
-            {type === 'home' && !launch && (
-              <StyledRow>
-                <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com/">
-                  Blog
-                </StyledALink>
-                <Link to="/launch">
-                  <Button primary smallText>
-                    Free Story Formula
-                  </Button>
-                </Link>
-              </StyledRow>
-            )}
-          </>
-        )}
-      </Wrapper>
-    );
-  }
-}
+              </Link>
+            </StyledRow>
+          )}
+        </>
+      )}
+    </Wrapper>
+  );
+};
 
 Navigation.propTypes = {
   type: PropTypes.string,
@@ -183,3 +181,5 @@ Navigation.propTypes = {
   isAuthed: PropTypes.string,
   launch: PropTypes.string,
 };
+
+export default Navigation;
