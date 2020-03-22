@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Wrapper = styled.div`
   width: 100%;
   height: 75px;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   display: flex;
   align-items: center;
   position: fixed;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   top: 0;
   z-index: 900;
   transition: 500ms;
-  box-shadow: ${props => props.active && '0 0 10px rgba(0, 0, 0, 0.1)'};
+  box-shadow: ${(props) => props.active && '0 0 10px rgba(0, 0, 0, 0.1)'};
 
   @media (max-width: 920px) {
     position: relative;
@@ -28,8 +28,8 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${props => (props.active ? '220px' : '40px')};
-  height: ${props => (props.active ? '30px' : '56px')};
+  width: ${(props) => (props.active ? '220px' : '40px')};
+  height: ${(props) => (props.active ? '30px' : '56px')};
   transition: 250ms;
   margin-left: 1.5em;
 
@@ -69,7 +69,7 @@ const MobileImage = styled.img`
   }
 `;
 
-const Navigation = props => {
+const Navigation = (props) => {
   const [color, setNavColor] = useState('rgba(0,0,0,0)');
   const [active, setActive] = useState(false);
 

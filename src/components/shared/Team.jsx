@@ -26,10 +26,10 @@ const StyledBox = styled.div`
   align-items: center;
   text-align: center;
   margin: 0 1.5em;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   background-size: cover;
   background-repeat: no-repeat;
-  border: ${props => (props.active && '1.5px solid #b9402d') || '1.5px solid transparent'};
+  border: ${(props) => (props.active && '1.5px solid #b9402d') || '1.5px solid transparent'};
   cursor: pointer;
   transition: 750ms;
 
@@ -173,7 +173,7 @@ export default class Team extends Component {
             <Icon social className="fas fa-angle-left" />
           </ArrowIcon>
           <SliderContainer>
-            <Slider {...settings} ref={el => (this.slide = el)}>
+            <Slider {...settings} ref={(el) => (this.slide = el)}>
               <Member
                 img={jet}
                 name="Getro Jean-Claude"

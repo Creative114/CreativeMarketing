@@ -23,8 +23,8 @@ const Wrapper = styled.div`
 const StyledButton = styled.button`
   width: 195px;
   height: 45px;
-  background: ${props => (props.active ? '#D21F04' : '#fff')};
-  color: ${props => (props.active ? '#fff' : '#505d68')};
+  background: ${(props) => (props.active ? '#D21F04' : '#fff')};
+  color: ${(props) => (props.active ? '#fff' : '#505d68')};
   display: flex;
   text-transform: uppercase;
   flex-direction: column;
@@ -112,7 +112,7 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${props => (props.active ? 'blur(0px)' : 'blur(4px) grayscale(95%)')};
+  filter: ${(props) => (props.active ? 'blur(0px)' : 'blur(4px) grayscale(95%)')};
   transition: 750ms;
   cursor: pointer;
 

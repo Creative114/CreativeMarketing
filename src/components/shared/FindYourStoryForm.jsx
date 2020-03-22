@@ -51,7 +51,7 @@ export default function FindYourStoryForm() {
           firstname: '',
           email: '',
         }}
-        onSubmit={values => {
+        onSubmit={(values) => {
           function formv3() {
             const xhr = new XMLHttpRequest();
             const url =
@@ -75,7 +75,7 @@ export default function FindYourStoryForm() {
             const finalData = JSON.stringify(data);
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-type', 'application/json');
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
               if (xhr.readyState === 4 && xhr.status === 200) {
                 window.location.href = 'https://creative114.com/#/thanks';
               }

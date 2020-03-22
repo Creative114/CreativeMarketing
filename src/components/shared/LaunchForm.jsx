@@ -5,13 +5,19 @@ import styled from 'styled-components';
 import { Column } from '../../theme';
 
 const Wrapper = styled.div`
-  width: auto;
+  width: 100%;
   max-width: 380px;
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+
   @media (max-width: 920px) {
     margin: 0 20px 100px 20px;
+  }
+
+  @media (max-width: 568px) {
+    width: 80%;
+    padding: 6px 10px;
   }
 `;
 

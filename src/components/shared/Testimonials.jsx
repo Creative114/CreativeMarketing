@@ -20,8 +20,8 @@ const Wrapper = styled.div`
 const StyledButton = styled.button`
   width: 195px;
   height: 45px;
-  background: ${props => (props.active ? '#D21F04' : '#f2f5f7')};
-  color: ${props => (props.active ? '#fff' : '#505d68')};
+  background: ${(props) => (props.active ? '#D21F04' : '#f2f5f7')};
+  color: ${(props) => (props.active ? '#fff' : '#505d68')};
   display: flex;
   text-transform: uppercase;
   flex-direction: column;

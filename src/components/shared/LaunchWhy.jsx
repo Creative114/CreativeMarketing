@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   flex-direction: column;
   align-items: center;
   padding: 10em 0 4em 0;

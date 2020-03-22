@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   display: flex;
   justify-content: space-evenly;
   align-items: center;

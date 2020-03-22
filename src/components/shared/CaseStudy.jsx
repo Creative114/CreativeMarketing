@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   @media (max-width: 980px) {
-    flex-direction: ${props => (props.primary ? 'column-reverse' : 'column')};
+    flex-direction: ${(props) => (props.primary ? 'column-reverse' : 'column')};
     align-items: center;
     justify-content: center;
   }

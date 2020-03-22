@@ -11,20 +11,20 @@ import { Link } from 'react-router-dom';
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  background-color: ${props => props.backgroundcolor};
+  background-color: ${(props) => props.backgroundcolor};
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || 'calc(100vh - 10px)'};
+  height: ${(props) => props.height || 'calc(100vh - 10px)'};
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   background-size: cover;
-  background-position: ${props => props.backgroundposition};
+  background-position: ${(props) => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
   webkit-clip-path: ellipse(120% 100% at 50% 0%);
   @media (max-width: 920px) {
-    height: ${props => props.height || 'calc(100vh - 85px)'};
+    height: ${(props) => props.height || 'calc(100vh - 85px)'};
     clip-path: ellipse(120% 100% at 50% 0%);
     webkit-clip-path: ellipse(120% 100% at 50% 0%);
   }

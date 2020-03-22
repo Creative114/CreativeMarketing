@@ -86,7 +86,7 @@ const Content = styled.div`
   @media (max-width: 920px) {
     margin: 0;
     max-height: 100%;
-    background: ${props => props.background};
+    background: ${(props) => props.background};
     background-size: cover;
     background-position: center;
   }

@@ -17,7 +17,8 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   background-size: cover;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${props => props.background};
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background}, center;
+  background-size: cover;
   clip-path: ellipse(120% 100% at 50% 0%);
   display: flex;
   flex-direction: column;

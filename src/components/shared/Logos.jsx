@@ -58,11 +58,11 @@ const Image = styled.img`
 
 const ImageItem = styled.div`
   margin: auto 0;
-  // margin-left: ${props => (props.no >= 6 ? '35%' : '0px')};
-  // margin-right: ${props => (props.no < 6 ? '35%' : '0px')};
+  // margin-left: ${(props) => (props.no >= 6 ? '35%' : '0px')};
+  // margin-right: ${(props) => (props.no < 6 ? '35%' : '0px')};
   // @media (max-width: 780px) {
-  //   margin-left: ${props => ((props.no / 3) % 2 === 1 ? '35%' : '0px')};
-  //   margin-right: ${props => ((props.no / 3) % 2 === 0 ? '35%' : '0px')};
+  //   margin-left: ${(props) => ((props.no / 3) % 2 === 1 ? '35%' : '0px')};
+  //   margin-right: ${(props) => ((props.no / 3) % 2 === 0 ? '35%' : '0px')};
   // }
 `;
 
