@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Splash from '../../shared/Splash';
 import Content from '../../shared/Content';
 import Footer from '../../shared/Footer';
@@ -11,25 +13,28 @@ import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Modal from '../../shared/Modal';
 
 class CaseStudy extends Component {
-  state = {
-    name: '',
-    data: { title: '', description: '', image: '', videos: [] },
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      data: { title: '', description: '', image: '', videos: [] },
 
-    isOpen: false,
-  };
+      isOpen: false,
+    };
+  }
 
   componentDidMount() {
-    let name = this.props.match.params.name.split(':')[1];
+    const name = this.props.match.params.name.split(':')[1];
     this.setState({ name }, () => {
       this.getData();
     });
   }
 
-  toggleModal = () => {
+  toggleModal() {
     this.setState({ isOpen: !this.state.isOpen });
-  };
+  }
 
-  getData = () => {
+  getData() {
     const data = {
       movement2819: {
         image: casestudyhero1,
@@ -71,7 +76,7 @@ class CaseStudy extends Component {
         ],
       },
     };
-    let query = this.state.name;
+    const query = this.state.name;
     let dataSet = null;
 
     switch (query) {
@@ -89,7 +94,7 @@ class CaseStudy extends Component {
     }
     this.setState({ data: dataSet });
     return dataSet;
-  };
+  }
 
   render() {
     const { title, description, image, videos } = this.state.data;
@@ -113,5 +118,9 @@ class CaseStudy extends Component {
     }
   }
 }
+
+CaseStudy.propTypes = {
+  match: PropTypes.string,
+};
 
 export default withRouter(CaseStudy);

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Input, Label, Button, TextArea, SpanTitle, Select } from '../../theme/index';
+import { Button, Input, Label, Select, SpanTitle, TextArea } from '../../theme/index';
 import { Formik } from 'formik';
 
 const Wrapper = styled.div`
@@ -40,7 +40,7 @@ const StartNowForm = () => {
           budget: '',
           objective: '',
         }}
-        onSubmit={(values) => {
+        onSubmit={values => {
           function formv3() {
             const xhr = new XMLHttpRequest();
             const url =
@@ -64,7 +64,7 @@ const StartNowForm = () => {
             const finalData = JSON.stringify(data);
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-type', 'application/json');
-            xhr.onreadystatechange = function () {
+            xhr.onreadystatechange = function() {
               if (xhr.readyState === 4 && xhr.status === 200) {
                 console.log('success');
               }
@@ -120,7 +120,7 @@ const StartNowForm = () => {
                 value={values.budget}
                 id="budget"
                 name="budget"
-                onChange={(value) => {
+                onChange={value => {
                   setFieldValue('budget', value);
                 }}
               >

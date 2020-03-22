@@ -9,14 +9,17 @@ import Calendar from '../../shared/Calendar';
 import contactimg from '../../../assets/Contact.jpg';
 
 export default class Contact extends Component {
-  state = {
-    isOpen: false,
-    type: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: null,
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
   render() {
     const { isOpen, type } = this.state;
@@ -37,7 +40,6 @@ export default class Contact extends Component {
         <Splash
           type="contact"
           title="Let’s Explore Your Story"
-          // src="https://player.vimeo.com/external/320616573.hd.mp4?s=e3fb81e04f5a50ece286dee153b5d1a8166cc62f&profile_id=169"
           img={contactimg}
           toggleModal={this.toggleModal}
           redirect={this.redirect}

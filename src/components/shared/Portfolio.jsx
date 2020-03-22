@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { SpanTitle, StyledColumn, Column, Row, Button } from '../../theme/index';
+import { Button, Column, Row, SpanTitle, StyledColumn } from '../../theme/index';
 import port1 from '../../assets/port1.jpg';
 import port2 from '../../assets/port2.jpg';
 import port3 from '../../assets/port3.jpg';
@@ -37,16 +37,14 @@ const StyledButton = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: 250ms;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   border: none;
+
   &:hover {
     background-color: #d25a47;
     color: #fff;
   }
+
   @media (max-width: 780px) {
     font-size: 14px;
     width: 150px;
@@ -66,31 +64,34 @@ const StyledRow = styled(Row)`
 const Grid = styled.div`
   min-width: 1200px;
   max-width: 1200px;
-  margin: 3em auto;
-  margin-bottom: 0;
+  margin: 3em auto 0;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 160px;
   grid-auto-flow: dense;
+
   @media (min-width: 2500px) {
     min-width: 2500px;
     max-width: 2500px;
     grid-auto-rows: 355px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
+
   @media (min-width: 2000px) {
     min-width: 2000px;
     max-width: 2000px;
     grid-auto-rows: 325px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
+
   @media (min-width: 1750px) {
     min-width: 1750px;
     max-width: 1750px;
     grid-auto-rows: 280px;
     grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   }
+
   @media (max-width: 1300px) {
     width: 95%;
     min-width: 95%;
@@ -114,12 +115,14 @@ const StyledImage = styled.img`
   filter: ${props => (props.active ? 'blur(0px)' : 'blur(4px) grayscale(95%)')};
   transition: 750ms;
   cursor: pointer;
+
   &:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   }
 `;
 
 const lightbox = [
+  /*eslint-disable */
   <Video src="https://fast.wistia.com/embed/medias/b7t59q2bhm/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/gly35kaelh/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/fryc5uagap/swatch" />,
@@ -129,11 +132,10 @@ const lightbox = [
   <Video src="https://fast.wistia.com/embed/medias/ewz4lmrc7o/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/5eobdschy8/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/zxnxd3awth/swatch" />,
+  /*eslint-disable */
 ];
 
-function Image({ img, cid, selected }) {
-  return <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
-}
+const Image = ({ img, cid, selected }) => <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
 
 function MenuItem({ id, selected, title, handleClick }) {
   return (
@@ -153,30 +155,31 @@ export default class Portfolio extends Component {
     };
   }
 
-  handleClick = id => {
+  handleClick(id) {
     this.setState(() => {
       return {
         selected: id,
       };
     });
-  };
+  }
 
-  handleLightbox = index => {
+  handleLightbox(index) {
     this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
-  };
+  }
 
-  toggleModal = () => {
+  toggleModal() {
     this.setState({ isOpen: !this.state.isOpen });
-  };
+  }
 
   render() {
     const { selected, photoIndex, isOpen } = this.state;
     const { type, toggleModal } = this.props;
     const mobile = window.matchMedia('(max-width: 780px)');
+
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <StyledColumn alignitems="center">
               <SpanTitle>Projects</SpanTitle>
             </StyledColumn>
@@ -213,7 +216,6 @@ export default class Portfolio extends Component {
                 <Image selected={selected} cid={['smallBusinesses', 'all']} img={edental} />
               </Item>
               <Item className={mobile ? 'vertical' : ''} onClick={() => this.handleLightbox(4)}>
-                >
                 <Image selected={selected} img={litacore} cid={['startUps', 'all']} />
               </Item>
               <Item onClick={() => this.handleLightbox(5)}>
@@ -243,7 +245,7 @@ export default class Portfolio extends Component {
                 {lightbox[photoIndex]}
               </Modal>
             )}
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );

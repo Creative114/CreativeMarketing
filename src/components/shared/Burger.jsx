@@ -81,9 +81,9 @@ const Burger = () => {
         overlayStyle={{ background: 'rgba(255,255,255,0.98' }}
         contentStyle={contentStyle}
         closeOnDocumentClick={false}
-        trigger={(open) => <BurgerIcon open={open} />}
+        trigger={open => <BurgerIcon open={open} />}
       >
-        {(close) => <BurgerMenu close={close} />}
+        {close => <BurgerMenu close={close} />}
       </Popup>
     </div>
   );

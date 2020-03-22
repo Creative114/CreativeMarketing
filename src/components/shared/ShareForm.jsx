@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column } from '../../theme';
 
@@ -7,12 +8,12 @@ const Wrapper = styled.div`
   max-width: 500px;
   height: auto;
   border-radius: 4px;
-  padding: 50px 0px;
+  padding: 50px 0;
 `;
 
 const StyledColumn = styled(Column)`
   width: 80%;
-  margin: 0px auto;
+  margin: 0 auto;
 `;
 
 export default class ShareForm extends Component {
@@ -27,30 +28,30 @@ export default class ShareForm extends Component {
     document.body.appendChild(script1);
 
     script.addEventListener('load', () => {
-      if (window.hbspt) {
-        this.getForm();
-      }
+      if (window.hbspt) this.getForm();
     });
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
-      if (window.hbspt) {
-        this.getForm();
-      }
+    const { submitFormVisible } = this.props;
+
+    if (prevProps.submitFormVisible !== submitFormVisible) {
+      if (window.hbspt) this.getForm();
     }
   }
 
-  getForm = () => {
+  getForm() {
+    const { submitFormVisible, handleSubmitFormVisible, handleAuth } = this.props;
     document.getElementById('hubspotFormFooter').innerHTML = '';
-    if (this.props.submitFormVisible) {
+
+    if (submitFormVisible) {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
         target: '#hubspotFormFooter',
         onFormSubmitted: () => {
-          this.props.handleSubmitFormVisible(false);
-          this.props.handleAuth();
+          handleSubmitFormVisible(false);
+          handleAuth();
         },
       });
     } else {
@@ -61,7 +62,7 @@ export default class ShareForm extends Component {
         onFormSubmitted: () => {},
       });
     }
-  };
+  }
 
   render() {
     return (
@@ -73,3 +74,9 @@ export default class ShareForm extends Component {
     );
   }
 }
+
+ShareForm.propTypes = {
+  submitFormVisible: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.func,
+  handleAuth: PropTypes.func,
+};

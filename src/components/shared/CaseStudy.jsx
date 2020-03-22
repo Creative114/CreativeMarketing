@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Column, Text, Button, SpanSubtitle } from '../../theme/index';
+import { Button, Column, SpanSubtitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   @media (max-width: 980px) {
-    flex-direction: ${(props) => (props.primary ? 'column-reverse' : 'column')};
+    flex-direction: ${props => (props.primary ? 'column-reverse' : 'column')};
     align-items: center;
     justify-content: center;
   }
@@ -64,7 +64,7 @@ const Benefit = ({ title, description, img, type, navigate }) => {
   return (
     <Wrapper primary={type === 'right'}>
       {type === 'right' && (
-        <React.Fragment>
+        <>
           <StyledColumn>
             <StyledTextColumn>
               <SpanSubtitle>{title}</SpanSubtitle>
@@ -77,10 +77,10 @@ const Benefit = ({ title, description, img, type, navigate }) => {
           <Div>
             <Image src={img} />
           </Div>
-        </React.Fragment>
+        </>
       )}
       {type === 'left' && (
-        <React.Fragment>
+        <>
           <Div>
             <Image src={img} />
           </Div>
@@ -93,7 +93,7 @@ const Benefit = ({ title, description, img, type, navigate }) => {
               </Button>
             </StyledTextColumn>
           </StyledColumn>
-        </React.Fragment>
+        </>
       )}
     </Wrapper>
   );

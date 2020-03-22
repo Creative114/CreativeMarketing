@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Row, Column, SpanTitle, Text } from '../../theme/index';
+import { Column, Row, SpanTitle, Text } from '../../theme/index';
 import action from '../../assets/Action.svg';
 import audience from '../../assets/Audience.svg';
 import connecting from '../../assets/Connecting.svg';
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${(props) => props.bg};
+  background: ${props => props.bg};
   flex-direction: column;
   align-items: center;
   padding: 10em 0 4em 0;

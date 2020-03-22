@@ -53,7 +53,7 @@ const Div = styled.div`
 const StyledPost = styled(Column)`
   padding: 0 1em;
   @media (max-width: 780px) {
-    width: ${(props) => (props.text ? '95%' : '65%')};
+    width: ${props => (props.text ? '95%' : '65%')};
     text-align: center;
     padding: 0;
   }

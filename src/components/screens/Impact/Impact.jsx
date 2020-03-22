@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Splash from '../../shared/Splash';
 import Helmet from 'react-helmet';
 import Modal from '../../shared/Modal';
@@ -24,14 +25,17 @@ const posts = [
 ];
 
 class Impact extends Component {
-  state = {
-    isOpen: false,
-    type: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: '',
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
   render() {
     const { isOpen, type } = this.state;

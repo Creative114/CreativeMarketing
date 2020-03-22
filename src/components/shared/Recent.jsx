@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Text, SpanTitle, StyledColumn } from '../../theme/index';
+import { SpanTitle, StyledColumn, Text } from '../../theme/index';
 import Video from '../shared/Video';
 
 const Wrapper = styled.div`

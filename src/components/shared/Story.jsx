@@ -71,7 +71,7 @@ export default class Story extends Component {
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <TextRow>
               <StyledIconRow alignitems="center">
                 <Icon src={SimpleProcess} />
@@ -133,7 +133,7 @@ export default class Story extends Component {
                 </Button>
               </Link>
             </Row>
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );

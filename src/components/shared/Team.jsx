@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Member from './Member';
-import { Row, SpanTitle, Text, Column, StyledColumn } from '../../theme/index';
+import { Column, Row, SpanTitle, StyledColumn, Text } from '../../theme/index';
 import Slider from 'react-slick';
 import jet from '../../assets/jet.jpg';
 import will from '../../assets/will.jpg';
@@ -31,11 +32,7 @@ const StyledBox = styled.div`
   border: ${props => (props.active && '1.5px solid #b9402d') || '1.5px solid transparent'};
   cursor: pointer;
   transition: 750ms;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
   &:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   }
@@ -51,9 +48,10 @@ const DesktopDiv = styled.div`
 const MobileDiv = styled.div`
   margin: 1.5em 0;
   display: none;
+
   @media (max-width: 920px) {
     display: flex;
-    justify-cotent: space-between;
+    justify-content: space-between;
     align-items: flex-start;
   }
 `;
@@ -64,6 +62,7 @@ const CustomColumn = styled(Column)`
   text-align: center;
   width: 75%;
   margin: 0 auto;
+
   @media (max-width: 1100px) {
     margin: 1em auto;
     width: 95%;
@@ -71,11 +70,10 @@ const CustomColumn = styled(Column)`
 `;
 
 const ArrowIcon = styled.div`
-  margin: 0 20px;
-  margin-top: 180px;
+  margin: 180px 20px 0;
+
   @media (max-width: 500px) {
-    margin: 0 10px;
-    margin-top: 130px;
+    margin: 130px 10px 0;
   }
 `;
 
@@ -114,34 +112,44 @@ const boxes = [
   },
 ];
 
-function Box({ id, selected, handleClick, img }) {
+const Box = ({ id, selected, handleClick, img }) => {
   return <StyledBox background={`url('${img}')`} id={id} onClick={() => handleClick(id)} active={id === selected} />;
-}
+};
+
+Box.propTypes = {
+  id: PropTypes.string,
+  selected: PropTypes.bool,
+  handleClick: PropTypes.func,
+  img: PropTypes.string,
+};
 
 export default class Team extends Component {
-  state = {
-    selected: 'jet',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: 'jet',
+    };
+  }
 
-  handleClick = id => {
+  handleClick(id) {
     this.setState(() => {
       return {
         selected: id,
       };
     });
-  };
+  }
 
-  handlePrevSlide = () => {
+  handlePrevSlide() {
     this.slide.slickPrev();
-  };
+  }
 
-  handleNextSlide = () => {
+  handleNextSlide() {
     this.slide.slickNext();
-  };
+  }
 
   render() {
     const { selected } = this.state;
-    let settings = {
+    const settings = {
       dots: false,
       infinite: false,
       arrows: false,
@@ -193,7 +201,7 @@ export default class Team extends Component {
           </ArrowIcon>
         </MobileDiv>
         <DesktopDiv>
-          <React.Fragment>
+          <>
             <Row>
               {selected === 'jet' && (
                 <Member
@@ -255,7 +263,7 @@ export default class Team extends Component {
                   );
                 })}
             </Row>
-          </React.Fragment>
+          </>
         </DesktopDiv>
       </Wrapper>
     );

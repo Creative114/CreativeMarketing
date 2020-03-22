@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Testimonial from './Testimonial';
-import { SpanTitle, Row, Column } from '../../theme/index';
+import { Column, Row, SpanTitle } from '../../theme/index';
 import Reveal from 'react-reveal/Reveal';
 import { ProcessText } from './LaunchStory';
 
@@ -9,6 +10,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 2em 0;
+
   @media (max-width: 780px) {
     text-align: center;
     padding: 3em 0 2em 0;
@@ -32,12 +34,8 @@ const StyledButton = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: 250ms;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   border: none;
+
   &:hover {
     background-color: #f32405;
     color: #fff;
@@ -53,32 +51,44 @@ const StyledButton = styled.button`
 const Div = styled.div`
   display: block;
   margin-top: 2em;
+
   @media (max-width: 920px) {
     margin-top: 2em;
   }
 `;
 
-function MenuItem({ id, selected, title, handleClick, client }) {
+const MenuItem = ({ id, selected, title, handleClick, client }) => {
   return (
     <StyledButton id={id} onClick={() => handleClick(id, client)} active={id === selected}>
       {title}
     </StyledButton>
   );
-}
+};
+
+MenuItem.propTypes = {
+  client: PropTypes.string,
+  handleClick: PropTypes.string,
+  id: PropTypes.string,
+  selected: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default class Testimonials extends Component {
-  state = {
-    selected: 'nonProfit',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: 'nonProfit',
+    };
+  }
 
-  handleClick = (id, client) => {
+  handleClick(id, client) {
     this.setState(() => {
       return {
         selected: id,
         title: client,
       };
     });
-  };
+  }
 
   render() {
     const { selected } = this.state;
@@ -87,7 +97,7 @@ export default class Testimonials extends Component {
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <Column alignitems="center">
               <SpanTitle>{type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}</SpanTitle>
               {type === 'launch' && (
@@ -102,7 +112,7 @@ export default class Testimonials extends Component {
               )}
             </Column>
             <Div>
-              <React.Fragment>
+              <>
                 <Row alignitems="center" justifycontent="center">
                   <MenuItem
                     id="nonProfit"
@@ -151,7 +161,7 @@ export default class Testimonials extends Component {
                     />
                   )}
                 </Row>
-              </React.Fragment>
+              </>
             </Div>
             {type === 'launch' && (
               <Row justifycontent="center" margin="2.5em 0 0 0" style={{ textAlign: 'center' }}>
@@ -161,9 +171,13 @@ export default class Testimonials extends Component {
                 </ProcessText>
               </Row>
             )}
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );
   }
 }
+
+Testimonials.propTypes = {
+  type: PropTypes.string,
+};

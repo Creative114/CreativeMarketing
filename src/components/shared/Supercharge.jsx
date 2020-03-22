@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Column, Text, Button, SpanTitle } from '../../theme/index';
+import { Button, Column, SpanTitle, Text } from '../../theme/index';
 import { Link } from 'react-router-dom';
 import Reveal from 'react-reveal/Reveal';
 

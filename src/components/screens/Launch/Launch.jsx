@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import styled from 'styled-components';
 import LaunchSplash from '../../shared/LaunchSplash';
 import Logos from '../../shared/Logos';
@@ -25,13 +26,8 @@ class Landing extends Component {
   constructor(props) {
     super(props);
 
-    let auth = localStorage.getItem('authorized') || false;
-    let isAuthed;
-    if (auth) {
-      isAuthed = true;
-    } else {
-      isAuthed = false;
-    }
+    const auth = localStorage.getItem('authorized') || false;
+    const isAuthed = !!auth;
 
     this.state = {
       isOpen: false,
@@ -41,26 +37,24 @@ class Landing extends Component {
     };
   }
 
-  toggleModal = type => {
-    console.log('here');
-
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
-  handleAuth = () => {
+  handleAuth() {
     localStorage.setItem('authorized', true);
     this.setState({ isAuthed: true });
-  };
+  }
 
-  handleSubmitFormVisible = value => {
+  handleSubmitFormVisible(value) {
     this.setState({ submitFormVisible: value });
-  };
+  }
 
   render() {
     const { isOpen, isAuthed, type, submitFormVisible } = this.state;
 
     return (
-      <div>
+      <>
         <Helmet
           title="Creative114 | Brand Engagement, Marketing, Design"
           meta={[
@@ -106,7 +100,7 @@ class Landing extends Component {
             {type === 'schedule' && <Calendar />}
           </Modal>
         )}
-      </div>
+      </>
     );
   }
 }

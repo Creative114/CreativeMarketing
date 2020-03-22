@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import launchimg from '../../assets/launch_img.png';
-import { Column, Title, Text, Button } from '../../theme';
+import { Button, Column, Text, Title } from '../../theme';
 import { Link } from 'react-router-dom';
 import BG from '../../assets/rectange_bg.png';
 
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${(props) => props.bg};
+  background: ${props => props.bg};
   display: flex;
   justify-content: space-evenly;
   align-items: center;

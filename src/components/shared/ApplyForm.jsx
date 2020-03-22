@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 550px;
   height: auto;
   margin: 4.5em auto;
-  z-index: 10000000;
+  z-index: 900;
 `;
 
 export default function FindYourStoryForm() {

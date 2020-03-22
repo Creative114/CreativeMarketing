@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Splash from '../../shared/Splash';
 import Portfolio from '../../shared/Portfolio';
 import Recent from '../../shared/Recent';
@@ -15,14 +17,17 @@ import jason from '../../../assets/jason_case.png';
 import workimg from '../../../assets/Work.jpg';
 
 class Work extends Component {
-  state = {
-    isOpen: false,
-    type: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: '',
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
   render() {
     const { recentwork } = this.props;
@@ -50,6 +55,7 @@ class Work extends Component {
         img: josh,
       },
     ];
+
     return (
       <div>
         <Helmet
@@ -86,5 +92,10 @@ class Work extends Component {
     );
   }
 }
+
+Work.propTypes = {
+  history: PropTypes.any,
+  recentwork: PropTypes.any,
+};
 
 export default withRouter(Work);

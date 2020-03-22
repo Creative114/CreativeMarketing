@@ -12,18 +12,22 @@ import Calendar from '../../shared/Calendar';
 import aboutimg from '../../../assets/About.jpg';
 
 export default class About extends Component {
-  state = {
-    isOpen: false,
-    type: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: null,
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
+
   render() {
     const { isOpen, type } = this.state;
     return (
-      <div>
+      <>
         <Helmet
           title="Our Team | Brand Engagement, Marketing, Design"
           meta={[
@@ -62,7 +66,7 @@ export default class About extends Component {
             {type === 'schedule' && <Calendar />}
           </Modal>
         )}
-      </div>
+      </>
     );
   }
 }

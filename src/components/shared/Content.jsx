@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Column, Text, SpanTitle } from '../../theme/index';
+import { Column, SpanTitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   min-height: 400px;

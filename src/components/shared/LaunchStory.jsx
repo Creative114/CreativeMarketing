@@ -120,7 +120,7 @@ export default class LaunchStory extends Component {
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <TextRow>
               <StyledIconRow alignitems="center">
                 <Icon src={SubscribeIcon} />
@@ -237,7 +237,7 @@ export default class LaunchStory extends Component {
                 {isAuthed ? 'Schedule a call now' : 'Get the videos'}
               </StyledButton>
             </Row>
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );

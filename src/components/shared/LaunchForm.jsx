@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 import { Column } from '../../theme';
 
@@ -36,23 +38,26 @@ export default class LaunchForm extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
+    const { submitFormVisible } = this.props;
+    if (prevProps.submitFormVisible !== submitFormVisible) {
       if (window.hbspt) {
         this.getForm();
       }
     }
   }
 
-  getForm = () => {
+  getForm() {
+    const { submitFormVisible, handleSubmitFormVisible, handleAuth } = this.props;
+
     document.getElementById('hubspotFormHeader').innerHTML = '';
-    if (this.props.submitFormVisible) {
+    if (submitFormVisible) {
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
         target: '#hubspotFormHeader',
         onFormSubmitted: () => {
-          this.props.handleSubmitFormVisible(false);
-          this.props.handleAuth();
+          handleSubmitFormVisible(false);
+          handleAuth();
         },
       });
     } else {
@@ -63,7 +68,7 @@ export default class LaunchForm extends Component {
         onFormSubmitted: () => {},
       });
     }
-  };
+  }
 
   render() {
     return (
@@ -73,3 +78,9 @@ export default class LaunchForm extends Component {
     );
   }
 }
+
+LaunchForm.propTypes = {
+  submitFormVisible: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.func,
+  handleAuth: PropTypes.func,
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Column, Text, SpanTitle, SpanSubtitle, Row, Button } from '../../theme/index';
+import { Button, Column, Row, SpanSubtitle, SpanTitle, Text } from '../../theme/index';
 import explore from '../../assets/Explore.svg';
 import express from '../../assets/Express.svg';
 import excite from '../../assets/Excite.svg';
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${(props) => props.bg};
+  background: ${props => props.bg};
   flex-direction: column;
   align-items: center;
   padding: 10em 0 2em 0;

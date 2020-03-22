@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Column, Text, SpanSubtitle, Row } from '../../theme/index';
+import { Column, Row, SpanSubtitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   display: flex;

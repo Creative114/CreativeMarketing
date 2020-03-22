@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Column, Text, SpanTitle, SpanSubtitle, Row } from '../../theme/index';
+import { Column, Row, SpanSubtitle, SpanTitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   height: 100%;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column } from '../../theme';
 
@@ -8,8 +9,9 @@ const Wrapper = styled.div`
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+
   @media (max-width: 920px) {
-    margin: 0px 20px 100px 20px;
+    margin: 0 20px 100px 20px;
   }
 `;
 
@@ -17,6 +19,7 @@ const StyledColumn = styled(Column)`
   width: 90%;
   margin: 1.5em;
 `;
+
 export default class LaunchFormPopup extends Component {
   componentDidMount() {
     const script = document.createElement('script');
@@ -36,28 +39,40 @@ export default class LaunchFormPopup extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.submitFormVisible !== this.props.submitFormVisible) {
+    const { submitFormVisible } = this.props;
+    if (prevProps.submitFormVisible !== submitFormVisible) {
       this.getForm();
     }
   }
 
-  getForm = () => {
-    if (this.props.submitFormVisible) {
+  getForm() {
+    const { submitFormVisible, handleSubmitFormVisible, handleAuth, toggleModal } = this.props;
+
+    if (submitFormVisible) {
       document.getElementById('hubspotFormHeaderPopup').innerHTML = '';
       window.hbspt.forms.create({
         portalId: '5644251',
         formId: '4364a36f-ea48-4d24-9c39-75ddf13d247e',
         target: '#hubspotFormHeaderPopup',
         onFormSubmitted: () => {
-          this.props.handleSubmitFormVisible(false);
-          this.props.handleAuth();
-          this.props.toggleModal();
+          handleSubmitFormVisible(false);
+          handleAuth();
+          toggleModal();
         },
       });
     }
-  };
+  }
 
   render() {
-    return <Wrapper>{this.props.submitFormVisible && <StyledColumn id="hubspotFormHeaderPopup" />}</Wrapper>;
+    const { submitFormVisible } = this.props;
+
+    return <Wrapper>{submitFormVisible && <StyledColumn id="hubspotFormHeaderPopup" />}</Wrapper>;
   }
 }
+
+LaunchFormPopup.propTypes = {
+  submitFormVisible: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.bool,
+  handleAuth: PropTypes.func,
+  toggleModal: PropTypes.func,
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Column, Text, SpanTitle, SpanSubtitle, StyledColumn } from '../../theme/index';
+import { Column, SpanSubtitle, SpanTitle, StyledColumn, Text } from '../../theme/index';
 import creativity from '../../assets/creativity_icon.svg';
 import candor from '../../assets/candor_icon.svg';
 import credibility from '../../assets/credibility_icon.svg';

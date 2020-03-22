@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Row, Column, Title, Subtitle, Button } from '../../theme/index';
+import { Button, Column, Row, Subtitle, Title } from '../../theme/index';
 import Navigation from './Navigation';
 import { Link } from 'react-router-dom';
 import homesplash from '../../assets/Home.jpg';
@@ -86,7 +86,7 @@ const Content = styled.div`
   @media (max-width: 920px) {
     margin: 0;
     max-height: 100%;
-    background: ${(props) => props.background};
+    background: ${props => props.background};
     background-size: cover;
     background-position: center;
   }

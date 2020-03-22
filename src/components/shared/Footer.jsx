@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { StyledNavLink, Row, Text, Button, Column, StyledALink } from '../../theme/index';
+import { Button, Column, Row, StyledALink, StyledNavLink, Text } from '../../theme/index';
 import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
@@ -55,7 +55,7 @@ const StyledColumn = styled(Column)`
     margin: 0.75em auto;
     align-items: center;
   }
-  ${(props) =>
+  ${props =>
     props.first &&
     css`
       width: 35%;

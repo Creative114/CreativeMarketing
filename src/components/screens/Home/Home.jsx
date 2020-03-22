@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import HomeSplash from '../../shared/HomeSplash';
 import Story from '../../shared/Story';
 import How from '../../shared/How';
@@ -14,19 +15,22 @@ import Deliver from '../../shared/Deliver';
 import Elements from '../../shared/Elements';
 
 class Home extends Component {
-  state = {
-    isOpen: false,
-    type: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: '',
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
   render() {
     const { isOpen, type } = this.state;
     return (
-      <div>
+      <>
         <Helmet
           title="Creative114 | Brand Engagement, Marketing, Design"
           meta={[
@@ -57,7 +61,7 @@ class Home extends Component {
             {type === 'schedule' && <Calendar />}
           </Modal>
         )}
-      </div>
+      </>
     );
   }
 }
