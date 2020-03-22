@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Row, Text } from '../../theme/index';
 import Reveal from 'react-reveal/Reveal';
@@ -242,3 +243,8 @@ export default class LaunchStory extends Component {
     );
   }
 }
+
+LaunchStory.propTypes = {
+  toggleModal: PropTypes.func,
+  isAuthed: PropTypes.bool,
+};

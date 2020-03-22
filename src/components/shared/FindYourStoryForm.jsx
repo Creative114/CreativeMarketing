@@ -24,18 +24,6 @@ const Form = styled.form`
   }
 `;
 
-// const StyledInputButton = styled(Input)`
-//   background: #d21f04;
-//   width: ${props => (props.small ? "135px" : "165px")};
-//   height: 45px;
-//   border: 1px solid transparent;
-//   color: #fff;
-//   &:hover {
-//     background-color: #f32405;
-//     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-//   }
-// `;
-
 export default function FindYourStoryForm() {
   return (
     <Wrapper>
@@ -84,7 +72,7 @@ export default function FindYourStoryForm() {
                 pageName: 'Contact page',
               },
             };
-            const final_data = JSON.stringify(data);
+            const finalData = JSON.stringify(data);
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-type', 'application/json');
             xhr.onreadystatechange = function () {
@@ -92,7 +80,7 @@ export default function FindYourStoryForm() {
                 window.location.href = 'https://creative114.com/#/thanks';
               }
             };
-            xhr.send(final_data);
+            xhr.send(finalData);
           }
           formv3();
         }}

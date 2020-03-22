@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { Column } from '../../theme/index';
 
 const Wrapper = styled.div`
@@ -45,7 +47,7 @@ export default class Testimonial extends Component {
 
     return (
       <Wrapper>
-        <React.Fragment>
+        <>
           <StyledColumn>
             <div
               className={`wistia_embed wistia_async_${swatch} videoFoam=true`}
@@ -76,8 +78,12 @@ export default class Testimonial extends Component {
               </div>
             </div>
           </StyledColumn>
-        </React.Fragment>
+        </>
       </Wrapper>
     );
   }
 }
+
+Testimonial.propTypes = {
+  src: PropTypes.string,
+};

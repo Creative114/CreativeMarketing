@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { StyledNavLink, Row, Text, Button, Column, StyledALink } from '../../theme/index';
 import Logo from '../../assets/logo.png';
@@ -9,6 +10,7 @@ const Wrapper = styled.div`
   width: 100%;
   background: #d21f04;
   padding: 4em 0;
+
   @media (max-width: 920px) {
     height: 100%;
     min-height: 100px;
@@ -20,6 +22,7 @@ const Image = styled.img`
   width: 220px;
   height: 30px;
   margin-bottom: 1.5em;
+
   @media (max-width: 920px) {
     margin: 0.75em 0;
   }
@@ -30,6 +33,7 @@ const StyledRow = styled(Row)`
   width: 90%;
   height: 100%;
   margin: auto;
+
   @media (max-width: 920px) {
     flex-direction: column;
     align-items: center;
@@ -44,6 +48,7 @@ const StyledContentRow = styled(Row)`
 
 const StyledColumn = styled(Column)`
   justify-content: space-between;
+
   @media (max-width: 920px) {
     text-align: center;
     width: 95%;
@@ -64,6 +69,7 @@ const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
   color: #fff;
+
   @media (max-width: 920px) {
     margin: 0 0.5em;
     font-size: 1.5em;
@@ -73,6 +79,7 @@ const Icon = styled.i`
 const MobileDiv = styled.div`
   margin: 0;
   display: none;
+
   @media (max-width: 920px) {
     display: flex;
     justify-content: center;
@@ -97,7 +104,7 @@ const LinkRow = styled(StyledContentRow)`
   }
 `;
 
-export default function Footer({ toggleModal }) {
+const Footer = () => {
   return (
     <Wrapper>
       <StyledRow>
@@ -155,4 +162,10 @@ export default function Footer({ toggleModal }) {
       </StyledRow>
     </Wrapper>
   );
-}
+};
+
+Footer.propTypes = {
+  toggleModal: PropTypes.func,
+};
+
+export default Footer;

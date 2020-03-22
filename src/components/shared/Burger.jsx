@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function BurgerIcon({ open, ...props }) {
+const BurgerIcon = ({ open, ...props }) => {
   return (
     <div className={open ? 'burger-menu open' : 'burger-menu'} {...props}>
       <div className="bar1" key="b1" />
@@ -11,7 +12,11 @@ function BurgerIcon({ open, ...props }) {
       <div className="bar3" key="b3" />
     </div>
   );
-}
+};
+
+BurgerIcon.propTypes = {
+  open: PropTypes.bool,
+};
 
 const StyledUl = styled.ul`
   display: flex;
@@ -28,7 +33,7 @@ const StyledLi = styled.li`
   list-style: none;
 `;
 
-function BurgerMenu({ close }) {
+const BurgerMenu = ({ close }) => {
   return (
     <div className="menu">
       <StyledUl>
@@ -56,7 +61,11 @@ function BurgerMenu({ close }) {
       </StyledUl>
     </div>
   );
-}
+};
+
+BurgerMenu.propTypes = {
+  close: PropTypes.func,
+};
 
 const contentStyle = {
   background: 'rgba(255,255,255,0)',
@@ -64,7 +73,7 @@ const contentStyle = {
   border: 'none',
 };
 
-export default function Burger() {
+const Burger = () => {
   return (
     <div>
       <Popup
@@ -78,4 +87,6 @@ export default function Burger() {
       </Popup>
     </div>
   );
-}
+};
+
+export default Burger;

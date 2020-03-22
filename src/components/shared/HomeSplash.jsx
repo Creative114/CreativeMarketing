@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Row, Column, Title, Subtitle, Button } from '../../theme/index';
 import Navigation from './Navigation';
@@ -75,7 +76,7 @@ const StyledButton = styled(Button)`
 
 const Content = styled.div`
   height: calc(100vh - 10px);
-  width: 100%,
+  width: 100%;
   align-content: center;
   justify-content: center;
   position: relative;
@@ -160,3 +161,7 @@ export default class HomeSplash extends Component {
     );
   }
 }
+
+HomeSplash.propTypes = {
+  toggleModal: PropTypes.func,
+};

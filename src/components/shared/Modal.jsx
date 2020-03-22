@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Row } from '../../theme/index';
 
@@ -9,7 +10,7 @@ const Backdrop = styled.div`
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 10000000000;
+  z-index: 900;
   transition: 250ms;
   overflow: scroll;
 `;
@@ -51,16 +52,22 @@ const StyledRow = styled(Row)`
 
 export default class Modal extends Component {
   render() {
-    if (!this.props.show) {
-      return null;
-    }
+    const { show, togglemodal, children } = this.props;
+    if (!show) return null;
+
     return (
       <Backdrop className="fadeIn">
         <Header>
-          <Icon onClick={this.props.togglemodal} className="fas fa-times-circle" />
+          <Icon onClick={togglemodal} className="fas fa-times-circle" />
         </Header>
-        <StyledRow>{this.props.children}</StyledRow>
+        <StyledRow>{children}</StyledRow>
       </Backdrop>
     );
   }
 }
+
+Modal.propTypes = {
+  show: PropTypes.bool,
+  togglemodal: PropTypes.func,
+  children: PropTypes.element,
+};

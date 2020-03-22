@@ -24,19 +24,7 @@ const Form = styled.form`
   }
 `;
 
-// const StyledInputButton = styled(Input)`
-//   background: #d21f04;
-//   width: ${props => (props.small ? "135px" : "165px")};
-//   height: 45px;
-//   border: 1px solid transparent;
-//   color: #fff;
-//   &:hover {
-//     background-color: #f32405;
-//     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-//   }
-// `;
-
-export default function StartNowForm() {
+const StartNowForm = () => {
   return (
     <Wrapper>
       <div style={{ textAlign: 'center' }}>
@@ -73,7 +61,7 @@ export default function StartNowForm() {
                 pageName: 'Contact page',
               },
             };
-            const final_data = JSON.stringify(data);
+            const finalData = JSON.stringify(data);
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-type', 'application/json');
             xhr.onreadystatechange = function () {
@@ -81,7 +69,7 @@ export default function StartNowForm() {
                 console.log('success');
               }
             };
-            xhr.send(final_data);
+            xhr.send(finalData);
           }
           formv3();
         }}
@@ -144,10 +132,6 @@ export default function StartNowForm() {
               </Select>
             </Label>
 
-            {/* <Label htmlFor="budget" login>
-            Budget *
-            <Input type="text" name="budget" />
-          </Label> */}
             <Label htmlFor="objective" login>
               Objective *
               <TextArea value={values.objective} onChange={handleChange} onBlur={handleBlur} name="objective" />
@@ -161,4 +145,6 @@ export default function StartNowForm() {
       />
     </Wrapper>
   );
-}
+};
+
+export default StartNowForm;

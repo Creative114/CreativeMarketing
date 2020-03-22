@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Column, Text, SpanTitle, SpanSubtitle, Row, Button } from '../../theme/index';
@@ -16,19 +17,18 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10em 0 2em 0;
+
   @media (max-width: 920px) {
     text-align: center;
-    padding: 5em 0;
-    padding-bottom: 0;
+    padding: 5em 0 0;
   }
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 50px;
-  margin: 0 auto;
   width: 85%;
-  margin-top: 2em;
+  margin: 2em auto 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
@@ -65,7 +65,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-function Item({ title, text, img }) {
+const Item = ({ title, text, img }) => {
   return (
     <Div>
       <Column width="85%" alignitems="center" textalign="center">
@@ -75,9 +75,15 @@ function Item({ title, text, img }) {
       </Column>
     </Div>
   );
-}
+};
 
-export default function How({ toggleModal }) {
+Item.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  img: PropTypes.string,
+};
+
+const How = () => {
   const items = [
     {
       title: 'Explore',
@@ -98,16 +104,17 @@ export default function How({ toggleModal }) {
       img: excite,
     },
   ];
+
   return (
     <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <StyledColumn>
-          <SpanTitle>Here's how we do it</SpanTitle>
+          <SpanTitle>Here`&apos;`s how we do it</SpanTitle>
         </StyledColumn>
         <Grid>
-          {items.map((key, index) => {
-            return <Item key={index} title={key.title} text={key.text} img={key.img} />;
-          })}
+          {items.map((item, index) => (
+            <Item key={index} title={item.title} text={item.text} img={item.img} />
+          ))}
         </Grid>
         <Row margin="3.5em 0 2em 0" justifycontent="center">
           <Link to="/launch">
@@ -119,4 +126,10 @@ export default function How({ toggleModal }) {
       </Reveal>
     </Wrapper>
   );
-}
+};
+
+How.propTypes = {
+  toggleModal: PropTypes.func,
+};
+
+export default How;

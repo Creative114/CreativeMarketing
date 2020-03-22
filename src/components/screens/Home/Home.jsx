@@ -11,7 +11,6 @@ import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Calendar from '../../shared/Calendar';
 import Told from '../../shared/Told';
 import Deliver from '../../shared/Deliver';
-// import Supercharge from "../../shared/Supercharge";
 import Elements from '../../shared/Elements';
 
 class Home extends Component {
@@ -51,7 +50,6 @@ class Home extends Component {
         <How toggleModal={this.toggleModal} />
         <Testimonials />
         <Elements />
-        {/* <Supercharge toggleModal={this.toggleModal} /> */}
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

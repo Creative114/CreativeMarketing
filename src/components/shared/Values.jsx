@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { Column, Text, SpanTitle, SpanSubtitle, StyledColumn } from '../../theme/index';
 import creativity from '../../assets/creativity_icon.svg';
 import candor from '../../assets/candor_icon.svg';
@@ -15,10 +17,9 @@ const Wrapper = styled.div`
   height: 100%;
   margin: 0em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // grid-auto-rows: 325px;
+
   @media (max-width: 780px) {
     width: 100%;
-    // grid-auto-rows: 275px;
   }
 `;
 
@@ -36,17 +37,19 @@ const StyledBox = styled(Column)`
 `;
 
 const StyledWrapper = styled(Column)`
-  padding: 2em 0 0em 0;
+  padding: 2em 0 0 0;
   align-items: center;
   margin: 0 auto;
+
   @media (max-width: 920px) {
-    padding: 0em 0 1.5em;
+    padding: 0 0 1.5em;
   }
 `;
 
 const StyledBoxColumn = styled(Column)`
   width: 85%;
   align-items: center;
+
   @media (max-width: 780px) {
     width: 95%;
   }
@@ -58,6 +61,7 @@ const CustomColumn = styled(Column)`
   text-align: center;
   width: 75%;
   margin: 0 auto 25px;
+
   @media (max-width: 1100px) {
     margin: 1em auto;
     width: 95%;
@@ -103,7 +107,7 @@ const values = [
   },
 ];
 
-function Box({ icon, title, description }) {
+const Box = ({ icon, title, description }) => {
   return (
     <StyledBox>
       <Icon src={icon} />
@@ -113,9 +117,15 @@ function Box({ icon, title, description }) {
       </StyledBoxColumn>
     </StyledBox>
   );
-}
+};
 
-export default function Values() {
+Box.propTypes = {
+  icon: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+const Values = () => {
   return (
     <StyledWrapper>
       <CustomColumn>
@@ -129,10 +139,12 @@ export default function Values() {
       </CustomColumn>
       <Wrapper>
         {values &&
-          values.map((key, index) => {
-            return <Box key={index} icon={key.icon} title={key.title} description={key.description} />;
-          })}
+          values.map((value, index) => (
+            <Box key={index} icon={value.icon} title={value.title} description={value.description} />
+          ))}
       </Wrapper>
     </StyledWrapper>
   );
-}
+};
+
+export default Values;

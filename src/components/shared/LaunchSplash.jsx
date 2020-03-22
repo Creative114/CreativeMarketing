@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { Row, Title } from '../../theme/index';
 import Navigation from './Navigation';
 import LaunchForm from '../shared/LaunchForm';
@@ -14,44 +16,44 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background};
   background-size: cover;
-  background-position: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background};
+  clip-path: ellipse(120% 100% at 50% 0%);
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+
   @media (max-width: 920px) {
     align-items: center;
     height: 100%;
     clip-path: ellipse(150% 100% at 50% 0%);
   }
-  clip-path: ellipse(120% 100% at 50% 0%);
 `;
 
 const StyledHomeColumn = styled(Row)`
   align-items: center;
-  justify-content: space-between;
-  height: auto;
-  width: 100%;
-  margin: auto;
-  margin-top: 2em;
-  top: 0;
   bottom: 0;
-  left: 0;
-  z-index: 100000;
-  // position: absolute;
+  height: auto;
   justify-content: center;
+  left: 0;
+  margin: 2em auto auto;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+
   @media (max-width: 920px) {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
   }
+
   @media (max-width: 720px) {
     margin-top: 0;
   }
+
   @media (max-width: 500px) {
   }
 `;
@@ -61,6 +63,7 @@ const StyledRow = styled(Row)`
   width: 100%;
   margin: 0 auto;
   align-items: center;
+
   @media (max-width: 920px) {
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -68,22 +71,24 @@ const StyledRow = styled(Row)`
 `;
 
 export const StyledTitle = styled(Title)`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
-  font-size: 64px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.18;
-  letter-spacing: normal;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
   font-family: 'Ubuntu', sans-serif;
+  font-size: 64px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  justify-content: center;
+  letter-spacing: normal;
+  line-height: 1.18;
+  width: 100%;
+
   @media (max-width: 1200px) {
     font-size: 50px;
   }
+
   @media (max-width: 930px) {
     font-size: 40px;
   }
@@ -98,7 +103,7 @@ const StyledTitleDiv = styled.div`
 
 export default class LaunchSplash extends Component {
   render() {
-    const { toggleModal, handleAuth, isAuthed } = this.props;
+    const { toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible } = this.props;
 
     return (
       <Wrapper>
@@ -116,8 +121,8 @@ export default class LaunchSplash extends Component {
               </StyledTitleDiv>
               <LaunchForm
                 handleAuth={handleAuth}
-                handleSubmitFormVisible={this.props.handleSubmitFormVisible}
-                submitFormVisible={this.props.submitFormVisible}
+                handleSubmitFormVisible={handleSubmitFormVisible}
+                submitFormVisible={submitFormVisible}
                 type="splash"
               />
             </StyledHomeColumn>
@@ -127,3 +132,11 @@ export default class LaunchSplash extends Component {
     );
   }
 }
+
+LaunchSplash.propTypes = {
+  toggleModal: PropTypes.bool,
+  handleAuth: PropTypes.func,
+  isAuthed: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.func,
+  submitFormVisible: PropTypes.bool,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column, SpanTitle, Row, Text, Button, StyledColumn } from '../../theme/index';
 
@@ -8,9 +9,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0em 0 2em 0;
+  padding: 0 0 2em 0;
+
   @media (max-width: 780px) {
-    padding: 0em 0 3em 0;
+    padding: 0 0 3em 0;
     text-align: center;
   }
 `;
@@ -20,13 +22,14 @@ const CustomColumn = styled(Column)`
   justify-content: center;
   align-items: center;
   text-align: center;
+
   @media (max-width: 780px) {
     text-align: center;
     width: 95%;
   }
 `;
 
-export default function Apply({ title, text, toggleModal, type }) {
+const Apply = ({ title, text, toggleModal, type }) => {
   return (
     <Wrapper>
       <StyledColumn>
@@ -45,4 +48,13 @@ export default function Apply({ title, text, toggleModal, type }) {
       </CustomColumn>
     </Wrapper>
   );
-}
+};
+
+Apply.propTypes = {
+  text: PropTypes.string,
+  title: PropTypes.string,
+  toggleModal: PropTypes.func,
+  type: PropTypes.string,
+};
+
+export default Apply;

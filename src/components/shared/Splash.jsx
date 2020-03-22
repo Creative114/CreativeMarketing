@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column, Title, SubTitleText, Button } from '../../theme/index';
 import Navigation from './Navigation';
@@ -94,12 +95,6 @@ const StyledMobileText = styled(SubTitleText)`
   }
 `;
 
-const StyledButton = styled(Button)`
-  // @media (max-width: 920px) {
-  //   display: none;
-  // }
-`;
-
 const A = styled.a`
   cursor: pointer;
   display: flex;
@@ -124,6 +119,7 @@ const A = styled.a`
 `;
 
 export default function Splash({ type, src, title, text, mobileText, show, img, toggleModal }) {
+  console.log('props', { type, src, title, text, mobileText, show, img, toggleModal });
   return (
     <Wrapper backgroundcolor={type === 'work' ? '#f2f5f7' : '#fff'}>
       <Navigation type={type} show={show} toggleModal={toggleModal} />
@@ -153,14 +149,14 @@ export default function Splash({ type, src, title, text, mobileText, show, img, 
 
               {type !== 'thanks' && type !== 'contact' && (
                 <Link to="/launch">
-                  <StyledButton primary>Free Story Formula</StyledButton>
+                  <Button primary>Free Story Formula</Button>
                 </Link>
               )}
               {type === 'thanks' && <A href={PDF}>Download now!</A>}
               {type === 'contact' && (
-                <StyledButton primary onClick={() => toggleModal('schedule')}>
+                <Button primary onClick={() => toggleModal('schedule')}>
                   Schedule a call now
-                </StyledButton>
+                </Button>
               )}
             </StyledColumn>
           </Content>
@@ -169,3 +165,14 @@ export default function Splash({ type, src, title, text, mobileText, show, img, 
     </Wrapper>
   );
 }
+
+Splash.propTypes = {
+  type: PropTypes.string,
+  src: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  mobileText: PropTypes.string,
+  show: PropTypes.bool,
+  img: PropTypes.string,
+  toggleModal: PropTypes.bool,
+};

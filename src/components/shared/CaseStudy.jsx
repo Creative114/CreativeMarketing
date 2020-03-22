@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column, Text, Button, SpanSubtitle } from '../../theme/index';
 
@@ -8,6 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 2em 0;
   align-items: center;
+
   @media (max-width: 980px) {
     flex-direction: ${(props) => (props.primary ? 'column-reverse' : 'column')};
     align-items: center;
@@ -57,7 +59,7 @@ const Image = styled.img`
   }
 `;
 
-export default function Benefit({ title, description, img, type, navigate }) {
+const Benefit = ({ title, description, img, type, navigate }) => {
   const location = title.replace(/\s+/g, '');
   return (
     <Wrapper primary={type === 'right'}>
@@ -95,4 +97,14 @@ export default function Benefit({ title, description, img, type, navigate }) {
       )}
     </Wrapper>
   );
-}
+};
+
+Benefit.propTypes = {
+  description: PropTypes.string,
+  img: PropTypes.string,
+  navigate: PropTypes.any,
+  title: PropTypes.string,
+  type: PropTypes.string,
+};
+
+export default Benefit;

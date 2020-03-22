@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { Row, Column, SpanTitle, Text } from '../../theme/index';
 import action from '../../assets/Action.svg';
 import audience from '../../assets/Audience.svg';
@@ -24,7 +26,6 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-gap: 25px;
-  margin: 0 auto;
   margin: 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
@@ -93,25 +94,25 @@ export default class LaunchWhy extends Component {
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
           <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
-          <ProcessText style={{ margin: '6px 0' }}>They Won't Get You Results</ProcessText>
+          <ProcessText style={{ margin: '6px 0' }}>They Won &apos t Get You Results</ProcessText>
         </Column>
         <Grid>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={audience} />
-              <Text dark>"Why aren’t my videos connecting with people?"</Text>
+              <Text dark>Why aren’t my videos connecting with people?</Text>
             </Column>
           </Div>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={connecting} />
-              <Text dark>"How can I reach my ideal target audience?"</Text>
+              <Text dark>How can I reach my ideal target audience?</Text>
             </Column>
           </Div>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={action} />
-              <Text dark>"What encourages or makes people take action?"</Text>
+              <Text dark>What encourages or makes people take action?</Text>
             </Column>
           </Div>
         </Grid>
@@ -131,3 +132,8 @@ export default class LaunchWhy extends Component {
     );
   }
 }
+
+LaunchWhy.propTypes = {
+  isAuthed: PropTypes.bool,
+  toggleModal: PropTypes.func,
+};

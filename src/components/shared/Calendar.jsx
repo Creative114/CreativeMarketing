@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class Calendar extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const script3 = document.createElement('script');
 
     script3.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';

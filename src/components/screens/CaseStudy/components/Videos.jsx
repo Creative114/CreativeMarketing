@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Column, Row, SpanTitle } from '../../../../theme/index';
 import Video from '../../../shared/Video';
@@ -74,3 +75,7 @@ export default class Videos extends Component {
     }
   }
 }
+
+Videos.propTypes = {
+  videos: PropTypes.array,
+};

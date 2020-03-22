@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ShareForm from './ShareForm';
 import BG from '../../assets/rectange_bg.png';
@@ -30,7 +31,7 @@ const Image = styled.img`
   }
 `;
 
-export default function Share({ handleAuth, handleSubmitFormVisible, submitFormVisible }) {
+const Share = ({ handleAuth, handleSubmitFormVisible, submitFormVisible }) => {
   return (
     <Wrapper bg={`url('${BG}')`}>
       <ShareForm
@@ -41,4 +42,12 @@ export default function Share({ handleAuth, handleSubmitFormVisible, submitFormV
       <Image src={launchimg} />
     </Wrapper>
   );
-}
+};
+
+Share.propTypes = {
+  handleAuth: PropTypes.func,
+  handleSubmitFormVisible: PropTypes.func,
+  submitFormVisible: PropTypes.bool,
+};
+
+export default Share;
