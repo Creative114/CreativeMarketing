@@ -7,7 +7,6 @@ import Footer from '../../shared/Footer';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import Modal from '../../shared/Modal';
-import LaunchForm from '../../shared/LaunchForm';
 import LaunchVideos from '../../shared/LaunchVideos';
 import LaunchWhy from '../../shared/LaunchWhy';
 import LaunchStory from '../../shared/LaunchStory';

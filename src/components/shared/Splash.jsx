@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Column, Title, SubTitleText, Text, Button } from '../../theme/index';
+import { Column, Title, SubTitleText, Button } from '../../theme/index';
 import Navigation from './Navigation';
 import aboutSplash from '../../assets/aboutSplash.jpg';
 import impactSplash from '../../assets/impact_splash.jpg';
@@ -150,11 +150,6 @@ export default function Splash({ type, src, title, text, mobileText, show, img, 
               <Title header>{title}</Title>
               <StyledText header>{text}</StyledText>
               <StyledMobileText header>{mobileText}</StyledMobileText>
-              {/* <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/creative114"
-                style={{ minHeight: "320px", height: "58px" }}
-              /> */}
 
               {type !== 'thanks' && type !== 'contact' && (
                 <Link to="/launch">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Testimonial from './Testimonial';
-import { SpanTitle, Row, Column, Text } from '../../theme/index';
+import { SpanTitle, Row, Column } from '../../theme/index';
 import Reveal from 'react-reveal/Reveal';
 import { ProcessText } from './LaunchStory';
 

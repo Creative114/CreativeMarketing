@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Text, Button, Column } from '../../theme';
+import { Column } from '../../theme';
 
 const Wrapper = styled.div`
   width: auto;
@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 
 const StyledColumn = styled(Column)`
   width: 90%;
-  margin: 0 auto;
   margin: 1.5em;
 `;
 export default class LaunchFormPopup extends Component {

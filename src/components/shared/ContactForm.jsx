@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SpanTitle, Column, Row, TextArea, Input, Label, Button, Text } from '../../theme/index';
+import { SpanTitle, Column, Row, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,14 +13,6 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     padding: 2em 0;
-  }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 780px) {
-    align-items: center;
   }
 `;
 
@@ -114,32 +106,6 @@ export default function ContactForm() {
             <Icon social className="fab fa-vimeo-v" />
           </a>
         </StyledRow>
-      </StyledColumn>
-      <StyledColumn id="hubspotForm">
-        {/* <CustomColumn>
-          <SpanTitle>Leave us a note</SpanTitle>
-        </CustomColumn>
-        <Form action="https://formspree.io/xelajgzm" method="POST">
-          <Label htmlFor="name" login>
-            Name *
-            <Input type="text" name="name" />
-          </Label>
-          <Label htmlFor="_replyto" login>
-            Email *
-            <Input type="email" name="_replyto" />
-          </Label>
-          <Label htmlFor="message" login>
-            Message *<TextArea name="message" />
-          </Label>
-          <input
-            type="hidden"
-            name="_next"
-            value="http://creative114.com/#/thanks"
-          />
-          <Button type="submit" primary>
-            Send
-          </Button>
-        </Form> */}
       </StyledColumn>
     </Wrapper>
   );

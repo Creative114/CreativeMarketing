@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Text, Column } from '../../theme';
+import { Column } from '../../theme';
 
 const Wrapper = styled.div`
   width: 100%;

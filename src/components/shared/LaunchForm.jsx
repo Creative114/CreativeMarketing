@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Text, Button, Column } from '../../theme';
+import { Column } from '../../theme';
 
 const Wrapper = styled.div`
   width: auto;
@@ -9,14 +9,13 @@ const Wrapper = styled.div`
   border-radius: 4px;
   background-color: #ffffff;
   @media (max-width: 920px) {
-    margin: 0px 20px 100px 20px;
+    margin: 0 20px 100px 20px;
   }
 `;
 
 const StyledColumn = styled(Column)`
   width: 90%;
   margin: 0 auto;
-  margin: 1.5em;
 `;
 export default class LaunchForm extends Component {
   componentDidMount() {
