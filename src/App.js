@@ -13,8 +13,7 @@ import Launch from './components/screens/Launch/Launch';
 import 'normalize.css';
 
 class App extends Component {
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     const script1 = document.createElement('script');
     const script2 = document.createElement('script');
     const script3 = document.createElement('script');
