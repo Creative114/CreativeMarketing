@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 475px;
   height: 775px;
   margin: 4.5em auto;
-  z-index: 10000000;
+  z-index: 900;
 `;
 
 const Form = styled.form`

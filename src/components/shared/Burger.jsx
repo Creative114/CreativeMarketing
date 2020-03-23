@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const BurgerIcon = ({ open, ...props }) => {
-  console.log('props: ', props);
   return (
     <div className={open ? 'burger-menu open' : 'burger-menu'} {...props}>
       <div className="bar1" key="b1" />
@@ -76,17 +75,15 @@ const contentStyle = {
 
 const Burger = () => {
   return (
-    <div>
-      <Popup
-        modal
-        overlayStyle={{ background: 'rgba(255,255,255,0.98' }}
-        contentStyle={contentStyle}
-        closeOnDocumentClick={false}
-        trigger={(open) => <BurgerIcon open={open} />}
-      >
-        {(close) => <BurgerMenu close={close} />}
-      </Popup>
-    </div>
+    <Popup
+      modal
+      overlayStyle={{ background: 'rgba(255,255,255,0.98' }}
+      contentStyle={contentStyle}
+      closeOnDocumentClick
+      trigger={(open) => <BurgerIcon open={open} />}
+    >
+      {(close) => <BurgerMenu close={close} />}
+    </Popup>
   );
 };
 

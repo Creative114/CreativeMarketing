@@ -31,7 +31,7 @@ const Video = ({ src, isAuthed, toggleModal, type }) => {
   const swatch = src.split('/')[5];
   if (type === 'launch' && !isAuthed) {
     return (
-      <div onClick={() => toggleModal('launch')} style={{ width: '100%', height: '100%', zIndex: 100000000 }}>
+      <div onClick={() => toggleModal('launch')} style={{ width: '100%', height: '100%', zIndex: 900 }}>
         <Wrapper style={{ pointerEvents: 'none' }} className={`wistia_embed wistia_async_${swatch} videoFoam=true`}>
           <Div onClick={() => toggleModal('launch')} style={{ pointerEvents: 'none' }} className="wistia_swatch">
             <Img onClick={() => toggleModal('launch')} style={{ pointerEvents: 'none' }} src={src} alt="" />

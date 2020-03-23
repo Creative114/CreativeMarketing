@@ -33,6 +33,7 @@ const Icon = styled.i`
   z-index: 1000;
   margin-right: 1em;
   transition: 500ms;
+
   &:hover {
     color: #ccc;
   }
@@ -69,5 +70,5 @@ export default class Modal extends Component {
 Modal.propTypes = {
   show: PropTypes.bool,
   togglemodal: PropTypes.func,
-  children: PropTypes.element,
+  children: PropTypes.array,
 };

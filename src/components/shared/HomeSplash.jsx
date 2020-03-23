@@ -30,9 +30,10 @@ const StyledHomeColumn = styled(Column)`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 900;
   position: absolute;
   justify-content: center;
+
   @media (min-width: 1300px) {
     width: 65%;
   }
@@ -59,7 +60,7 @@ const Overlay = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  z-index: 1000;
+  z-index: 900;
   position: absolute;
   width: 100%;
   height: 100%;

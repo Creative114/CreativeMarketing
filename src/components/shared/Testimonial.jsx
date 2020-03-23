@@ -42,7 +42,6 @@ const StyledColumn = styled(Column)`
 export default class Testimonial extends Component {
   render() {
     const { src } = this.props;
-    console.log('src', src);
     const swatch = src && src.split('/')[5];
 
     return (

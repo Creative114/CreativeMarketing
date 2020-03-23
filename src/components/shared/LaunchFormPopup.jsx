@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+  z-index: 10000001;
 
   @media (max-width: 920px) {
     margin: 0 20px 100px 20px;
@@ -72,7 +73,7 @@ export default class LaunchFormPopup extends Component {
 
 LaunchFormPopup.propTypes = {
   submitFormVisible: PropTypes.bool,
-  handleSubmitFormVisible: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.func,
   handleAuth: PropTypes.func,
   toggleModal: PropTypes.func,
 };

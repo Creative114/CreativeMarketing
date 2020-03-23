@@ -40,7 +40,7 @@ const StyledColumn = styled(Column)`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 900;
   position: absolute;
   @media (max-width: 1200px) {
     margin: 8em auto;
@@ -74,7 +74,7 @@ const Overlay = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1000;
+  z-index: 900;
   position: absolute;
   width: 100%;
   height: 100%;
