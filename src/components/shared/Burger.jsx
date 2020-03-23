@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const BurgerIcon = ({ open, ...props }) => {
-  return (
-    <div className={open ? 'burger-menu open' : 'burger-menu'} {...props}>
-      <div className="bar1" key="b1" />
-      <div className="bar2" key="b2" />
-      <div className="bar3" key="b3" />
-    </div>
-  );
-};
+class BurgerIcon extends Component {
+  render() {
+    return (
+      <div className={this.props.open ? 'burger-menu open' : 'burger-menu'} {...this.props}>
+        <div className="bar1" key="b1" />
+        <div className="bar2" key="b2" />
+        <div className="bar3" key="b3" />
+      </div>
+    );
+  }
+}
 
 BurgerIcon.propTypes = {
   open: PropTypes.bool,
