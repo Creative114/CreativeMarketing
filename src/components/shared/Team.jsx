@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Member from "./Member";
-import { Row, SpanTitle, Text, Column, StyledColumn } from "../../theme/index";
-import Slider from "react-slick";
-import jet from "../../assets/jet.jpg";
-import will from "../../assets/will.jpg";
-import jephte from "../../assets/jephte.jpg";
-import alex from "../../assets/alex.jpg";
-import Rachael from "../../assets/rachel.jpg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Member from './Member';
+import { Column, Row, SpanTitle, StyledColumn, Text } from '../../theme/index';
+import Slider from 'react-slick';
+import jet from '../../assets/jet.jpg';
+import will from '../../assets/will.jpg';
+import jephte from '../../assets/jephte.jpg';
+import alex from '../../assets/alex.jpg';
+import Rachael from '../../assets/rachel.jpg';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -25,18 +26,13 @@ const StyledBox = styled.div`
   align-items: center;
   text-align: center;
   margin: 0 1.5em;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   background-size: cover;
   background-repeat: no-repeat;
-  border: ${props =>
-    (props.active && "1.5px solid #b9402d") || "1.5px solid transparent"};
+  border: ${(props) => (props.active && '1.5px solid #b9402d') || '1.5px solid transparent'};
   cursor: pointer;
   transition: 750ms;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
   &:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   }
@@ -52,9 +48,10 @@ const DesktopDiv = styled.div`
 const MobileDiv = styled.div`
   margin: 1.5em 0;
   display: none;
+
   @media (max-width: 920px) {
     display: flex;
-    justify-cotent: space-between;
+    justify-content: space-between;
     align-items: flex-start;
   }
 `;
@@ -65,6 +62,7 @@ const CustomColumn = styled(Column)`
   text-align: center;
   width: 75%;
   margin: 0 auto;
+
   @media (max-width: 1100px) {
     margin: 1em auto;
     width: 95%;
@@ -72,18 +70,17 @@ const CustomColumn = styled(Column)`
 `;
 
 const ArrowIcon = styled.div`
-  margin: 0 20px;
-  margin-top: 180px;
+  margin: 180px 20px 0;
+
   @media (max-width: 500px) {
-    margin: 0 10px;
-    margin-top: 130px;
+    margin: 130px 10px 0;
   }
-`
+`;
 
 const SliderContainer = styled.div`
   min-width: 10%;
   flex: 1;
-`
+`;
 
 const Icon = styled.i`
   font-size: 2em;
@@ -93,68 +90,71 @@ const Icon = styled.i`
 
 const boxes = [
   {
-    id: "jet",
-    title: "Effective",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-bullseye-arrow",
-    img: jet
+    id: 'jet',
+    title: 'Effective',
+    description: 'Lorem ipsum dolor sit amet, consectetur',
+    icon: 'fal fa-bullseye-arrow',
+    img: jet,
   },
   {
-    id: "Rachael",
-    title: "Efficient",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-rabbit-fast",
-    img: Rachael
+    id: 'Rachael',
+    title: 'Efficient',
+    description: 'Lorem ipsum dolor sit amet, consectetur',
+    icon: 'fal fa-rabbit-fast',
+    img: Rachael,
   },
   {
-    id: "jephte",
-    title: "Evaluations",
-    description: "Lorem ipsum dolor sit amet, consectetur",
-    icon: "fal fa-clipboard-list-check",
-    img: jephte
-  }
+    id: 'jephte',
+    title: 'Evaluations',
+    description: 'Lorem ipsum dolor sit amet, consectetur',
+    icon: 'fal fa-clipboard-list-check',
+    img: jephte,
+  },
 ];
 
-function Box({ id, selected, handleClick, img }) {
-  return (
-    <StyledBox
-      background={`url('${img}')`}
-      id={id}
-      onClick={() => handleClick(id)}
-      active={id === selected}
-    />
-  );
-}
+const Box = ({ id, selected, handleClick, img }) => {
+  return <StyledBox background={`url('${img}')`} id={id} onClick={() => handleClick(id)} active={id === selected} />;
+};
+
+Box.propTypes = {
+  id: PropTypes.string,
+  selected: PropTypes.bool,
+  handleClick: PropTypes.func,
+  img: PropTypes.string,
+};
 
 export default class Team extends Component {
-  state = {
-    selected: "jet"
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: 'jet',
+    };
+  }
 
-  handleClick = id => {
+  handleClick(id) {
     this.setState(() => {
       return {
-        selected: id
+        selected: id,
       };
     });
-  };
+  }
 
-  handlePrevSlide = () => {
+  handlePrevSlide() {
     this.slide.slickPrev();
   }
 
-  handleNextSlide = () => {
+  handleNextSlide() {
     this.slide.slickNext();
   }
 
   render() {
     const { selected } = this.state;
-    let settings = {
+    const settings = {
       dots: false,
       infinite: false,
       arrows: false,
       speed: 1000,
-      autoplay: false
+      autoplay: false,
     };
 
     return (
@@ -164,9 +164,8 @@ export default class Team extends Component {
             <SpanTitle>Meet the team</SpanTitle>
           </StyledColumn>
           <Text logo margin="0">
-            The Creative114 team has a diverse background in different areas
-            that allow us to use impeccable resources to convey your story and
-            offer out-of-the-box solutions to your problems.
+            The Creative114 team has a diverse background in different areas that allow us to use impeccable resources
+            to convey your story and offer out-of-the-box solutions to your problems.
           </Text>
         </CustomColumn>
         <MobileDiv>
@@ -174,7 +173,7 @@ export default class Team extends Component {
             <Icon social className="fas fa-angle-left" />
           </ArrowIcon>
           <SliderContainer>
-            <Slider {...settings} ref={el => this.slide = el}>
+            <Slider {...settings} ref={(el) => (this.slide = el)}>
               <Member
                 img={jet}
                 name="Getro Jean-Claude"
@@ -202,9 +201,9 @@ export default class Team extends Component {
           </ArrowIcon>
         </MobileDiv>
         <DesktopDiv>
-          <React.Fragment>
+          <>
             <Row>
-              {selected === "jet" && (
+              {selected === 'jet' && (
                 <Member
                   img={jet}
                   name="Getro Jean-Claude"
@@ -212,7 +211,7 @@ export default class Team extends Component {
                   description="Without Jet’s vision and servant leadership Creative114 would not be what it is today. He is committed to using his life to impact others. With his keen sense of human connection and his eye for capturing exceptional video content, Jet’s early creative career focused on video and design for nonprofits. After winning awards and gaining national coverage, he was motivated by something greater—the power of telling emotionally engaging stories. He continued to grow as a filmmaker, storyteller, and entrepreneur, eventually launching what is now known as Creative114. He is humbled to lead the team in diverse opportunities to share the unique stories of national and international nonprofits and businesses of all sizes. Jet is dedicated to reflecting the values of determination, creativity, and empowerment in everything he does."
                 />
               )}
-              {selected === "Rachael" && (
+              {selected === 'Rachael' && (
                 <Member
                   img={Rachael}
                   name="Rachael Jean-Claude"
@@ -220,7 +219,7 @@ export default class Team extends Component {
                   description="The expression “behind every great man there’s a great woman” is more than a simple adage.  It is the truth behind the leadership of Creative114. Jet and Rachael’s teamwork is important to the success of the company. At the core of Rachael’s work is a powerful question: How can I help foster an environment where creativity can thrive? She is a foundational part of the team, serving our clients and staff with her leadership support, production assistance, and business development. Although she rarely stands in the spotlight, Rachael works behind-the-scenes keeping our Creative114 moving forward."
                 />
               )}
-              {selected === "jephte" && (
+              {selected === 'jephte' && (
                 <Member
                   img={jephte}
                   name="Jephte Jean-Claude"
@@ -228,7 +227,7 @@ export default class Team extends Component {
                   description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
                 />
               )}
-              {selected === "will" && (
+              {selected === 'will' && (
                 <Member
                   img={will}
                   name="William Whatley"
@@ -237,7 +236,7 @@ export default class Team extends Component {
                 />
               )}
 
-              {selected === "alex" && (
+              {selected === 'alex' && (
                 <Member
                   img={alex}
                   name="Alex Gell"
@@ -264,7 +263,7 @@ export default class Team extends Component {
                   );
                 })}
             </Row>
-          </React.Fragment>
+          </>
         </DesktopDiv>
       </Wrapper>
     );

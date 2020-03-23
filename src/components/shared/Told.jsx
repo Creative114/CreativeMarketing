@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Column, Text, Row, Button, SpanTitle } from "../../theme/index";
-import Reveal from "react-reveal/Reveal";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Button, Column, Row, SpanTitle, Text } from '../../theme/index';
+import Reveal from 'react-reveal/Reveal';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -81,8 +81,7 @@ export default class Told extends Component {
           <StyledRow>
             <StyledColumn>
               <SpanTitle new>
-                Your <span style={{ color: "#d21f04" }}>story</span> deserves to
-                be heard
+                Your <span style={{ color: '#d21f04' }}>story</span> deserves to be heard
               </SpanTitle>
               <Div>
                 <Link to="/launch">
@@ -94,38 +93,28 @@ export default class Told extends Component {
             </StyledColumn>
             <StyledTextColumn>
               <Text secondary>
-                Telling engaging video stories is the best way for your business
-                to stay relevant and relatable.
+                Telling engaging video stories is the best way for your business to stay relevant and relatable.
               </Text>
               <Text pointer>
-                Your story deserves to be{" "}
-                <span style={{ color: "#d21f04" }}>TOLD.</span>
+                Your story deserves to be <span style={{ color: '#d21f04' }}>TOLD.</span>
               </Text>
-              <div
-                style={{ width: "26px", height: "6px", background: "#d21f04" }}
-              />
+              <div style={{ width: '26px', height: '6px', background: '#d21f04' }} />
               <Text secondary>
-                Sharing emotional video stories will connect you with people
-                unlike any other marketing tool.
+                Sharing emotional video stories will connect you with people unlike any other marketing tool.
               </Text>
               <Text pointer>
-                Your story deserves to{" "}
-                <span style={{ color: "#d21f04" }}>CONNECT.</span>
+                Your story deserves to <span style={{ color: '#d21f04' }}>CONNECT.</span>
               </Text>
-              <div
-                style={{ width: "26px", height: "6px", background: "#d21f04" }}
-              />
+              <div style={{ width: '26px', height: '6px', background: '#d21f04' }} />
               <Text secondary>
-                Expressing emotions through video storytelling will get you
-                results and transform your audience.
+                Expressing emotions through video storytelling will get you results and transform your audience.
               </Text>
               <Text pointer>
-                Your story deserves to get{" "}
-                <span style={{ color: "#d21f04" }}>RESULTS.</span>
+                Your story deserves to get <span style={{ color: '#d21f04' }}>RESULTS.</span>
               </Text>
             </StyledTextColumn>
             <MobileDiv>
-              <Link to="/launch" style={{height: "100%"}}>
+              <Link to="/launch" style={{ height: '100%' }}>
                 <Button primary smallText>
                   Free Story Formula
                 </Button>

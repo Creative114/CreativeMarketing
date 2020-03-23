@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Button, Row, Text } from "../../theme/index";
-import Reveal from "react-reveal/Reveal";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Button, Row, Text } from '../../theme/index';
+import Reveal from 'react-reveal/Reveal';
 import SimpleProcess from '../../assets/SimpleProcess.svg';
 import EngagingStories from '../../assets/EngagingStories.svg';
 import RealResults from '../../assets/RealResults.svg';
@@ -53,7 +53,7 @@ const StyledIconRow = styled(Row)`
     margin: 20px auto;
     width: 200px;
     flex-direction: column;
-  }  
+  }
 `;
 
 const Icon = styled.img`
@@ -68,11 +68,10 @@ const Icon = styled.img`
 
 export default class Story extends Component {
   render() {
-    const { toggleModal } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <TextRow>
               <StyledIconRow alignitems="center">
                 <Icon src={SimpleProcess} />
@@ -99,27 +98,27 @@ export default class Story extends Component {
             <StyledVideoRow>
               <div
                 className="wistia_embed wistia_async_n5ltbaiebq videoFoam=true"
-                style={{ height: "100%", position: "relative", width: "100%" }}
+                style={{ height: '100%', position: 'relative', width: '100%' }}
               >
                 <div
                   className="wistia_swatch"
                   style={{
-                    height: "100%",
+                    height: '100%',
                     left: 0,
                     opacity: 0,
-                    overflow: "hidden",
-                    position: "absolute",
+                    overflow: 'hidden',
+                    position: 'absolute',
                     top: 0,
-                    transition: "opacity 250ms",
-                    width: "100%"
+                    transition: 'opacity 250ms',
+                    width: '100%',
                   }}
                 >
                   <img
                     src="https://fast.wistia.com/embed/medias/n5ltbaiebq/swatch"
                     style={{
-                      height: "100%",
-                      width: "100%",
-                      objectFit: "contain"
+                      height: '100%',
+                      width: '100%',
+                      objectFit: 'contain',
                     }}
                     alt=""
                   />
@@ -127,17 +126,14 @@ export default class Story extends Component {
               </div>
             </StyledVideoRow>
 
-            <Row
-              justifycontent="center"
-              style={{ margin: "4em auto 2em" }}
-            >
+            <Row justifycontent="center" style={{ margin: '4em auto 2em' }}>
               <Link to="/launch">
                 <Button primary smallText>
                   Free Story Formula
                 </Button>
               </Link>
             </Row>
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );

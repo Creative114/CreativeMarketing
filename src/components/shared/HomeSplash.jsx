@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Column, Title, Subtitle, Button } from "../../theme/index";
-import Navigation from "./Navigation";
-import { Link } from "react-router-dom";
-import homesplash from "../../assets/Home.jpg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Button, Column, Row, Subtitle, Title } from '../../theme/index';
+import Navigation from './Navigation';
+import { Link } from 'react-router-dom';
+import homesplash from '../../assets/Home.jpg';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -29,9 +30,10 @@ const StyledHomeColumn = styled(Column)`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 900;
   position: absolute;
   justify-content: center;
+
   @media (min-width: 1300px) {
     width: 65%;
   }
@@ -58,7 +60,7 @@ const Overlay = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  z-index: 1000;
+  z-index: 900;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -75,7 +77,7 @@ const StyledButton = styled(Button)`
 
 const Content = styled.div`
   height: calc(100vh - 10px);
-  width: 100%,
+  width: 100%;
   align-content: center;
   justify-content: center;
   position: relative;
@@ -85,7 +87,7 @@ const Content = styled.div`
   @media (max-width: 920px) {
     margin: 0;
     max-height: 100%;
-    background: ${props => props.background};
+    background: ${(props) => props.background};
     background-size: cover;
     background-position: center;
   }
@@ -108,27 +110,31 @@ export default class HomeSplash extends Component {
         <Content background={`url('${homesplash}')`}>
           <DesktopDiv>
             <div
-            className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
-            style={{ height: "100%", width: "100%", clipPath: "ellipse(120% 100% at 50% 0%)" }}
+              className="wistia_embed wistia_async_g2nuwu529g videoFoam=true"
+              style={{
+                height: '100%',
+                width: '100%',
+                clipPath: 'ellipse(120% 100% at 50% 0%)',
+              }}
             >
               <div
                 className="wistia_swatch"
                 style={{
-                  height: "100%",
+                  height: '100%',
                   left: 0,
                   opacity: 0,
-                  overflow: "hidden",
-                  position: "absolute",
+                  overflow: 'hidden',
+                  position: 'absolute',
                   top: 0,
-                  transition: "opacity 250ms",
-                  width: "100%"
+                  transition: 'opacity 250ms',
+                  width: '100%',
                 }}
               >
                 <img
                   src="https://fast.wistia.com/embed/medias/g2nuwu529g/swatch"
                   style={{
-                    height: "100%",
-                    objectFit: "cover"
+                    height: '100%',
+                    objectFit: 'cover',
                   }}
                   alt=""
                 />
@@ -141,9 +147,7 @@ export default class HomeSplash extends Component {
               <Title header home>
                 Your story told like never before
               </Title>
-              <Subtitle home>                
-                Showcase the emotional impact of the good that you do
-              </Subtitle>
+              <Subtitle home>Showcase the emotional impact of the good that you do</Subtitle>
               <Row margin="2em 0">
                 <Link to="/launch">
                   <StyledButton primary smallText>
@@ -158,3 +162,7 @@ export default class HomeSplash extends Component {
     );
   }
 }
+
+HomeSplash.propTypes = {
+  toggleModal: PropTypes.func,
+};

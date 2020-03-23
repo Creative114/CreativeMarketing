@@ -1,18 +1,20 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { SpanTitle, StyledColumn, Column, Row, Button } from "../../theme/index";
-import port1 from "../../assets/port1.jpg";
-import port2 from "../../assets/port2.jpg";
-import port3 from "../../assets/port3.jpg";
-import tbsw from "../../assets/tbsw.jpg";
-import premier from "../../assets/premier.jpg";
-import edental from "../../assets/edental.jpg";
-import litacore from "../../assets/litacore.jpg";
-import nighttoshine from "../../assets/nighttoshine.jpg";
-import hirehumanly from "../../assets/hirehumanly.jpg";
-import Modal from "../shared/Modal";
-import Reveal from "react-reveal/Reveal";
-import Video from "../shared/Video";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+import { Button, Column, Row, SpanTitle, StyledColumn } from '../../theme/index';
+import port1 from '../../assets/port1.jpg';
+import port2 from '../../assets/port2.jpg';
+import port3 from '../../assets/port3.jpg';
+import tbsw from '../../assets/tbsw.jpg';
+import premier from '../../assets/premier.jpg';
+import edental from '../../assets/edental.jpg';
+import litacore from '../../assets/litacore.jpg';
+import nighttoshine from '../../assets/nighttoshine.jpg';
+import hirehumanly from '../../assets/hirehumanly.jpg';
+import Modal from '../shared/Modal';
+import Reveal from 'react-reveal/Reveal';
+import Video from '../shared/Video';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,30 +25,28 @@ const Wrapper = styled.div`
 const StyledButton = styled.button`
   width: 195px;
   height: 45px;
-  background: ${props => (props.active ? "#D21F04" : "#fff")};
-  color: ${props => (props.active ? "#fff" : "#505d68")};
+  background: ${(props) => (props.active ? '#D21F04' : '#fff')};
+  color: ${(props) => (props.active ? '#fff' : '#505d68')};
   display: flex;
   text-transform: uppercase;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   margin: 0 0.75em;
   outline: none;
   border-radius: 3px;
   cursor: pointer;
   transition: 250ms;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   border: none;
+
   &:hover {
     background-color: #d25a47;
     color: #fff;
   }
+
   @media (max-width: 780px) {
     font-size: 14px;
     width: 150px;
@@ -66,31 +66,34 @@ const StyledRow = styled(Row)`
 const Grid = styled.div`
   min-width: 1200px;
   max-width: 1200px;
-  margin: 3em auto;
-  margin-bottom: 0;
+  margin: 3em auto 0;
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 160px;
   grid-auto-flow: dense;
+
   @media (min-width: 2500px) {
     min-width: 2500px;
     max-width: 2500px;
     grid-auto-rows: 355px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
+
   @media (min-width: 2000px) {
     min-width: 2000px;
     max-width: 2000px;
     grid-auto-rows: 325px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
+
   @media (min-width: 1750px) {
     min-width: 1750px;
     max-width: 1750px;
     grid-auto-rows: 280px;
     grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   }
+
   @media (max-width: 1300px) {
     width: 95%;
     min-width: 95%;
@@ -111,15 +114,17 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${props => (props.active ? "blur(0px)" : "blur(4px) grayscale(95%)")};
+  filter: ${(props) => (props.active ? 'blur(0px)' : 'blur(4px) grayscale(95%)')};
   transition: 750ms;
   cursor: pointer;
+
   &:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   }
 `;
 
 const lightbox = [
+  /*eslint-disable */
   <Video src="https://fast.wistia.com/embed/medias/b7t59q2bhm/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/gly35kaelh/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/fryc5uagap/swatch" />,
@@ -128,78 +133,68 @@ const lightbox = [
   <Video src="https://fast.wistia.com/embed/medias/md0m7im8nw/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/ewz4lmrc7o/swatch" />,
   <Video src="https://fast.wistia.com/embed/medias/5eobdschy8/swatch" />,
-  <Video src="https://fast.wistia.com/embed/medias/zxnxd3awth/swatch" />
+  <Video src="https://fast.wistia.com/embed/medias/zxnxd3awth/swatch" />,
+  /*eslint-disable */
 ];
 
-function Image({ img, cid, selected }) {
-  return <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
-}
+const Image = ({ img, cid, selected }) => <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
 
-function MenuItem({ id, selected, title, handleClick }) {
+const MenuItem = ({ id, selected, title, handleClick }) => {
   return (
-    <StyledButton
-      id={id}
-      onClick={() => handleClick(id)}
-      active={id === selected}
-    >
+    <StyledButton id={id} onClick={() => handleClick(id)} active={id === selected}>
       {title}
     </StyledButton>
   );
-}
+};
+
+MenuItem.propTypes = {
+  img: PropTypes.string,
+  cid: PropTypes.string,
+  selected: PropTypes.bool,
+};
 
 export default class Portfolio extends Component {
-  state = {
-    selected: "all",
-    photoIndex: 0,
-    isOpen: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: 'all',
+      photoIndex: 0,
+      isOpen: false,
+    };
+  }
 
-  handleClick = id => {
+  handleClick(id) {
     this.setState(() => {
       return {
-        selected: id
+        selected: id,
       };
     });
-  };
+  }
 
-  handleLightbox = index => {
+  handleLightbox(index) {
     this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
-  };
+  }
 
-  toggleModal = () => {
+  toggleModal() {
     this.setState({ isOpen: !this.state.isOpen });
-  };
+  }
 
   render() {
     const { selected, photoIndex, isOpen } = this.state;
     const { type, toggleModal } = this.props;
-    const mobile = window.matchMedia("(max-width: 780px)");
+    const mobile = window.matchMedia('(max-width: 780px)');
+
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <StyledColumn alignitems="center">
               <SpanTitle>Projects</SpanTitle>
             </StyledColumn>
             <StyledRow>
-              <MenuItem
-                id="all"
-                title="All"
-                handleClick={this.handleClick}
-                selected={selected}
-              />
-              <MenuItem
-                id="startUps"
-                title="Startups"
-                handleClick={this.handleClick}
-                selected={selected}
-              />
-              <MenuItem
-                id="nonProfits"
-                title="nonProfits"
-                handleClick={this.handleClick}
-                selected={selected}
-              />
+              <MenuItem id="all" title="All" handleClick={this.handleClick} selected={selected} />
+              <MenuItem id="startUps" title="Startups" handleClick={this.handleClick} selected={selected} />
+              <MenuItem id="nonProfits" title="nonProfits" handleClick={this.handleClick} selected={selected} />
               <MenuItem
                 id="smallBusinesses"
                 title="Small Businesses"
@@ -216,88 +211,39 @@ export default class Portfolio extends Component {
             </StyledRow>
 
             <Grid>
-              <Item
-                onClick={() => this.handleLightbox(0)}
-                className={mobile ? "horizontal" : ""}
-              >
-                <Image
-                  selected={selected}
-                  cid={["startUps", "all"]}
-                  img={port2}
-                />
+              <Item onClick={() => this.handleLightbox(0)} className={mobile ? 'horizontal' : ''}>
+                <Image selected={selected} cid={['startUps', 'all']} img={port2} />
               </Item>
               <Item onClick={() => this.handleLightbox(1)}>
-                <Image
-                  selected={selected}
-                  cid={["nonProfits", "all"]}
-                  img={tbsw}
-                />
+                <Image selected={selected} cid={['nonProfits', 'all']} img={tbsw} />
               </Item>
               <Item onClick={() => this.handleLightbox(2)}>
-                <Image
-                  selected={selected}
-                  cid={["nonProfits", "all"]}
-                  img={nighttoshine}
-                />
+                <Image selected={selected} cid={['nonProfits', 'all']} img={nighttoshine} />
               </Item>
               <Item onClick={() => this.handleLightbox(3)}>
-                <Image
-                  selected={selected}
-                  cid={["smallBusinesses", "all"]}
-                  img={edental}
-                />
+                <Image selected={selected} cid={['smallBusinesses', 'all']} img={edental} />
               </Item>
-              <Item
-                className={mobile ? "vertical" : ""}
-                onClick={() => this.handleLightbox(4)}
-              >
-                >
-                <Image
-                  selected={selected}
-                  img={litacore}
-                  cid={["startUps", "all"]}
-                />
+              <Item className={mobile ? 'vertical' : ''} onClick={() => this.handleLightbox(4)}>
+                <Image selected={selected} img={litacore} cid={['startUps', 'all']} />
               </Item>
               <Item onClick={() => this.handleLightbox(5)}>
-                <Image
-                  selected={selected}
-                  cid={["startUps", "all"]}
-                  img={hirehumanly}
-                />
+                <Image selected={selected} cid={['startUps', 'all']} img={hirehumanly} />
               </Item>
               <Item onClick={() => this.handleLightbox(6)}>
-                <Image
-                  selected={selected}
-                  cid={["smallBusinesses", "all"]}
-                  img={premier}
-                />
+                <Image selected={selected} cid={['smallBusinesses', 'all']} img={premier} />
               </Item>
 
-              <Item
-                className={mobile ? "big" : ""}
-                onClick={() => this.handleLightbox(8)}
-              >
-                <Image
-                  selected={selected}
-                  cid={["nonProfits", "all"]}
-                  img={port1}
-                />
+              <Item className={mobile ? 'big' : ''} onClick={() => this.handleLightbox(8)}>
+                <Image selected={selected} cid={['nonProfits', 'all']} img={port1} />
               </Item>
 
-              <Item
-                className={mobile ? "horizontal" : ""}
-                onClick={() => this.handleLightbox(7)}
-              >
-                <Image
-                  selected={selected}
-                  cid={["largeBusinesses", "all"]}
-                  img={port3}
-                />
+              <Item className={mobile ? 'horizontal' : ''} onClick={() => this.handleLightbox(7)}>
+                <Image selected={selected} cid={['largeBusinesses', 'all']} img={port3} />
               </Item>
             </Grid>
-            {type === "home" && (
+            {type === 'home' && (
               <Column alignitems="center">
-                <Button primary onClick={() => toggleModal("story")}>
+                <Button primary onClick={() => toggleModal('story')}>
                   Start your story
                 </Button>
               </Column>
@@ -307,7 +253,7 @@ export default class Portfolio extends Component {
                 {lightbox[photoIndex]}
               </Modal>
             )}
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );

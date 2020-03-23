@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Text, Button, SpanSubtitle } from "../../theme/index";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Button, Column, SpanSubtitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,8 +9,9 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 2em 0;
   align-items: center;
+
   @media (max-width: 980px) {
-    flex-direction: ${props => (props.primary ? "column-reverse" : "column")};
+    flex-direction: ${(props) => (props.primary ? 'column-reverse' : 'column')};
     align-items: center;
     justify-content: center;
   }
@@ -57,22 +59,17 @@ const Image = styled.img`
   }
 `;
 
-export default function Benefit({ title, description, img, type, navigate }) {
-  let location = title.replace(/\s+/g, "");
+const Benefit = ({ title, description, img, type, navigate }) => {
+  const location = title.replace(/\s+/g, '');
   return (
-    <Wrapper primary={type === "right"}>
-      {type === "right" && (
-        <React.Fragment>
+    <Wrapper primary={type === 'right'}>
+      {type === 'right' && (
+        <>
           <StyledColumn>
             <StyledTextColumn>
               <SpanSubtitle>{title}</SpanSubtitle>
               <Text>{description}</Text>
-              <Button
-                primary
-                onClick={() =>
-                  navigate.push(`/casestudies/name:${location.toLowerCase()}`)
-                }
-              >
+              <Button primary onClick={() => navigate.push(`/casestudies/name:${location.toLowerCase()}`)}>
                 Learn more
               </Button>
             </StyledTextColumn>
@@ -80,10 +77,10 @@ export default function Benefit({ title, description, img, type, navigate }) {
           <Div>
             <Image src={img} />
           </Div>
-        </React.Fragment>
+        </>
       )}
-      {type === "left" && (
-        <React.Fragment>
+      {type === 'left' && (
+        <>
           <Div>
             <Image src={img} />
           </Div>
@@ -91,18 +88,23 @@ export default function Benefit({ title, description, img, type, navigate }) {
             <StyledTextColumn>
               <SpanSubtitle>{title}</SpanSubtitle>
               <Text>{description}</Text>
-              <Button
-                primary
-                onClick={() =>
-                  navigate.push(`/casestudies/name:${location.toLowerCase()}`)
-                }
-              >
+              <Button primary onClick={() => navigate.push(`/casestudies/name:${location.toLowerCase()}`)}>
                 Learn more
               </Button>
             </StyledTextColumn>
           </StyledColumn>
-        </React.Fragment>
+        </>
       )}
     </Wrapper>
   );
-}
+};
+
+Benefit.propTypes = {
+  description: PropTypes.string,
+  img: PropTypes.string,
+  navigate: PropTypes.any,
+  title: PropTypes.string,
+  type: PropTypes.string,
+};
+
+export default Benefit;

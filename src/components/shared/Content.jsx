@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Text, SpanTitle } from "../../theme/index";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Column, SpanTitle, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   min-height: 400px;
@@ -16,15 +17,16 @@ const Wrapper = styled.div`
 `;
 
 const StyledColumn = styled(Column)`
-  width: 55%
+  width: 55%;
   text-align: center;
   align-items: center;
+
   @media (max-width: 780px) {
-   width: 95%;
+    width: 95%;
   }
 `;
 
-export default function Content({ title, description }) {
+const Content = ({ title, description }) => {
   return (
     <Wrapper>
       <StyledColumn>
@@ -33,4 +35,11 @@ export default function Content({ title, description }) {
       </StyledColumn>
     </Wrapper>
   );
-}
+};
+
+Content.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+export default Content;

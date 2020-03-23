@@ -1,24 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import logo1 from "../../assets/logo1.jpg";
-import logo2 from "../../assets/logo2.jpg";
-import logo3 from "../../assets/logo3.jpg";
-import logo4 from "../../assets/logo4.jpg";
-import logo5 from "../../assets/logo5.jpg";
-import logo6 from "../../assets/logo6.jpg";
-import logo7 from "../../assets/logo7.png";
-import logo8 from "../../assets/logo8.jpg";
-import logo9 from "../../assets/logo9.png";
-import logo10 from "../../assets/logo10.png";
-import logo11 from "../../assets/logo11.png";
-import Reveal from "react-reveal/Reveal";
+import React from 'react';
+import styled from 'styled-components';
+import logo1 from '../../assets/logo1.jpg';
+import logo2 from '../../assets/logo2.jpg';
+import logo3 from '../../assets/logo3.jpg';
+import logo4 from '../../assets/logo4.jpg';
+import logo5 from '../../assets/logo5.jpg';
+import logo6 from '../../assets/logo6.jpg';
+import logo7 from '../../assets/logo7.png';
+import logo8 from '../../assets/logo8.jpg';
+import logo9 from '../../assets/logo9.png';
+import logo10 from '../../assets/logo10.png';
+import logo11 from '../../assets/logo11.png';
+import Reveal from 'react-reveal/Reveal';
 
 const Wrapper = styled.div`
-  margin-top: 2em;    
+  margin-top: 2em;
   margin-right: 5%;
   width: 90%;
   height: 100%;
-  @media (max-width: 780px) {    
+  @media (max-width: 780px) {
     margin-right: 0px;
   }
 `;
@@ -58,11 +58,11 @@ const Image = styled.img`
 
 const ImageItem = styled.div`
   margin: auto 0;
-  // margin-left: ${props => props.no >= 6 ? '35%' : '0px'};
-  // margin-right: ${props => props.no < 6 ? '35%' : '0px'};
+  // margin-left: ${(props) => (props.no >= 6 ? '35%' : '0px')};
+  // margin-right: ${(props) => (props.no < 6 ? '35%' : '0px')};
   // @media (max-width: 780px) {
-  //   margin-left: ${props => props.no / 3 % 2 === 1 ? '35%' : '0px'};
-  //   margin-right: ${props => props.no / 3 % 2 === 0 ? '35%' : '0px'};
+  //   margin-left: ${(props) => ((props.no / 3) % 2 === 1 ? '35%' : '0px')};
+  //   margin-right: ${(props) => ((props.no / 3) % 2 === 0 ? '35%' : '0px')};
   // }
 `;
 
@@ -87,32 +87,28 @@ const logos = [
   null,
   logo11,
   null,
-  logo7
+  logo7,
 ];
 
-export default function Logos() {
+const Logos = () => {
   return (
     <Wrapper>
       <Reveal effect="fadeIn">
-        <React.Fragment>
-          {/* <StyledColumn>
-            <Title>Our clients.</Title>
-            <Text logo margin="0">
-              The Heroes Behind Our Success
-            </Text>
-          </StyledColumn> */}
+        <>
           <Grid>
             {logos &&
               logos.map((key, index) => {
-              return (
-                <ImageItem key={index} no={index}>
-                  {key && <Image src={key} alt="Creative114 Logo" />}
-                </ImageItem>
-              )
+                return (
+                  <ImageItem key={index} no={index}>
+                    {key && <Image src={key} alt="Creative114 Logo" />}
+                  </ImageItem>
+                );
               })}
           </Grid>
-        </React.Fragment>
+        </>
       </Reveal>
     </Wrapper>
   );
-}
+};
+
+export default Logos;

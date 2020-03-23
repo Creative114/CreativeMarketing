@@ -1,17 +1,19 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Column, SpanTitle, Text } from "../../theme/index";
-import action from "../../assets/Action.svg";
-import audience from "../../assets/Audience.svg";
-import connecting from "../../assets/Connecting.svg";
-import BG from "../../assets/rectange_bg.png";
-import {ProcessText} from "./LaunchStory";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import { Column, Row, SpanTitle, Text } from '../../theme/index';
+import action from '../../assets/Action.svg';
+import audience from '../../assets/Audience.svg';
+import connecting from '../../assets/Connecting.svg';
+import BG from '../../assets/rectange_bg.png';
+import { ProcessText } from './LaunchStory';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   flex-direction: column;
   align-items: center;
   padding: 10em 0 4em 0;
@@ -24,7 +26,6 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-gap: 25px;
-  margin: 0 auto;
   margin: 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
@@ -62,7 +63,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 4px;
@@ -93,48 +94,46 @@ export default class LaunchWhy extends Component {
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
           <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
-          <ProcessText style={{margin: '6px 0'}}>They Won't Get You Results</ProcessText>
+          <ProcessText style={{ margin: '6px 0' }}>They Won &apos t Get You Results</ProcessText>
         </Column>
         <Grid>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={audience} />
-              <Text dark>"Why aren’t my videos connecting with people?"</Text>
+              <Text dark>Why aren’t my videos connecting with people?</Text>
             </Column>
           </Div>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={connecting} />
-              <Text dark>"How can I reach my ideal target audience?"</Text>
+              <Text dark>How can I reach my ideal target audience?</Text>
             </Column>
           </Div>
           <Div>
             <Column width="85%" alignitems="center" margin=".75em 0">
               <Image src={action} />
-              <Text dark>"What encourages or makes people take action?"</Text>
+              <Text dark>What encourages or makes people take action?</Text>
             </Column>
           </Div>
         </Grid>
         <StyledColumn>
           <ProcessText>
             Overcome the obstacles that keep you from connecting with your customers.
-            <br/>
+            <br />
             Start supercharging your message with emotionally <b>engaging video stories.</b>
           </ProcessText>
         </StyledColumn>
         <Row justifycontent="center">
-          <StyledButton
-            primary
-            onClick={
-              isAuthed
-                ? () => toggleModal("schedule")
-                : () => toggleModal("launch")
-            }
-          >
-            {isAuthed ? "Schedule a call now" : "Get the videos"}
+          <StyledButton primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
+            {isAuthed ? 'Schedule a call now' : 'Get the videos'}
           </StyledButton>
         </Row>
       </Wrapper>
     );
   }
 }
+
+LaunchWhy.propTypes = {
+  isAuthed: PropTypes.bool,
+  toggleModal: PropTypes.func,
+};

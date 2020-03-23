@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Text } from "../../theme/index";
-import Reveal from "react-reveal/Reveal";
-import {StyledTitle} from "./LaunchSplash";
-import SubscribeIcon from "../../assets/subscribe.svg";
-import InspiredIcon from "../../assets/inspired.svg";
-import ResultsIcon from "../../assets/results.svg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Row, Text } from '../../theme/index';
+import Reveal from 'react-reveal/Reveal';
+import SubscribeIcon from '../../assets/subscribe.svg';
+import InspiredIcon from '../../assets/inspired.svg';
+import ResultsIcon from '../../assets/results.svg';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -49,7 +49,7 @@ const TextRow = styled(Row)`
 `;
 
 export const ProcessText = styled.p`
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #212121;
   display: flex;
   justify-content: center;
@@ -71,7 +71,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 4px;
@@ -88,7 +88,7 @@ const StyledRow = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  
+
   margin: 0;
   @media (max-width: 780px) {
     width: 95%;
@@ -114,14 +114,13 @@ const Icon = styled.img`
   }
 `;
 
-
 export default class LaunchStory extends Component {
   render() {
     const { toggleModal, isAuthed } = this.props;
     return (
       <Wrapper>
         <Reveal effect="fadeIn">
-          <React.Fragment>
+          <>
             <TextRow>
               <StyledIconRow alignitems="center">
                 <Icon src={SubscribeIcon} />
@@ -147,45 +146,45 @@ export default class LaunchStory extends Component {
 
             <StyledRow>
               <ProcessText>
+                <span>Watch each video and discover 4 elements that will transform</span>
                 <span>
-                  Watch each video and discover 4 elements that will transform
+                  the way you engage with <b>your ideal audience</b>
                 </span>
-                <span>the way you engage with <b>your ideal audience</b></span>
               </ProcessText>
             </StyledRow>
             {!isAuthed && (
               <div>
-                <StyledVideoRow onClick={() => toggleModal("launch")}>
+                <StyledVideoRow onClick={() => toggleModal('launch')}>
                   <div
                     className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
                     style={{
-                      pointerEvents: "none",
-                      height: "100%",
-                      position: "relative",
-                      width: "100%"
+                      pointerEvents: 'none',
+                      height: '100%',
+                      position: 'relative',
+                      width: '100%',
                     }}
                   >
                     <div
                       className="wistia_swatch"
                       style={{
-                        height: "100%",
+                        height: '100%',
                         left: 0,
                         opacity: 0,
-                        overflow: "hidden",
-                        position: "absolute",
+                        overflow: 'hidden',
+                        position: 'absolute',
                         top: 0,
-                        transition: "opacity 250ms",
-                        width: "100%",
-                        pointerEvents: "none"
+                        transition: 'opacity 250ms',
+                        width: '100%',
+                        pointerEvents: 'none',
                       }}
                     >
                       <img
                         src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
                         style={{
-                          height: "100%",
-                          width: "100%",
-                          objectFit: "contain",
-                          pointerEvents: "none"
+                          height: '100%',
+                          width: '100%',
+                          objectFit: 'contain',
+                          pointerEvents: 'none',
                         }}
                         alt=""
                       />
@@ -200,30 +199,30 @@ export default class LaunchStory extends Component {
                   <div
                     className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
                     style={{
-                      height: "100%",
-                      position: "relative",
-                      width: "100%"
+                      height: '100%',
+                      position: 'relative',
+                      width: '100%',
                     }}
                   >
                     <div
                       className="wistia_swatch"
                       style={{
-                        height: "100%",
+                        height: '100%',
                         left: 0,
                         opacity: 0,
-                        overflow: "hidden",
-                        position: "absolute",
+                        overflow: 'hidden',
+                        position: 'absolute',
                         top: 0,
-                        transition: "opacity 250ms",
-                        width: "100%"
+                        transition: 'opacity 250ms',
+                        width: '100%',
                       }}
                     >
                       <img
                         src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
                         style={{
-                          height: "100%",
-                          width: "100%",
-                          objectFit: "contain"
+                          height: '100%',
+                          width: '100%',
+                          objectFit: 'contain',
                         }}
                         alt=""
                       />
@@ -234,19 +233,18 @@ export default class LaunchStory extends Component {
             )}
 
             <Row justifycontent="center" margin="4em 0 0">
-              <StyledButton
-                onClick={
-                  isAuthed
-                    ? () => toggleModal("schedule")
-                    : () => toggleModal("launch")
-                }
-              >
-                {isAuthed ? "Schedule a call now" : "Get the videos"}
+              <StyledButton onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
+                {isAuthed ? 'Schedule a call now' : 'Get the videos'}
               </StyledButton>
             </Row>
-          </React.Fragment>
+          </>
         </Reveal>
       </Wrapper>
     );
   }
 }
+
+LaunchStory.propTypes = {
+  toggleModal: PropTypes.func,
+  isAuthed: PropTypes.bool,
+};

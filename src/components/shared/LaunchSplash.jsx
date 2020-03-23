@@ -1,58 +1,60 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Title } from "../../theme/index";
-import Navigation from "./Navigation";
-import LaunchForm from "../shared/LaunchForm";
-import launchsplash from "../../assets/launch_splash.jpg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import { Row, Title } from '../../theme/index';
+import Navigation from './Navigation';
+import LaunchForm from '../shared/LaunchForm';
+import launchsplash from '../../assets/launch_splash.jpg';
 
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
-  background: rgb(242,245,247);
+  background: rgb(242, 245, 247);
   @media (max-width: 920px) {
     height: 100%;
   }
 `;
 
-const Content =styled.div`
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
-    ${props => props.background};
+const Content = styled.div`
   background-size: cover;
-  background-position: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background}, center;
+  background-size: cover;
+  clip-path: ellipse(120% 100% at 50% 0%);
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+
   @media (max-width: 920px) {
     align-items: center;
     height: 100%;
     clip-path: ellipse(150% 100% at 50% 0%);
   }
-  clip-path: ellipse(120% 100% at 50% 0%);
-`
+`;
 
 const StyledHomeColumn = styled(Row)`
   align-items: center;
-  justify-content: space-between;
-  height: auto;
-  width: 100%;
-  margin: auto;
-  margin-top: 2em;
-  top: 0;
   bottom: 0;
-  left: 0;
-  z-index: 100000;
-  // position: absolute;
+  height: auto;
   justify-content: center;
+  left: 0;
+  margin: 2em auto auto;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+
   @media (max-width: 920px) {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
   }
+
   @media (max-width: 720px) {
     margin-top: 0;
   }
+
   @media (max-width: 500px) {
   }
 `;
@@ -62,6 +64,7 @@ const StyledRow = styled(Row)`
   width: 100%;
   margin: 0 auto;
   align-items: center;
+
   @media (max-width: 920px) {
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -69,23 +72,24 @@ const StyledRow = styled(Row)`
 `;
 
 export const StyledTitle = styled(Title)`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
-  font-size: 64px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.18;
-  letter-spacing: normal;
   color: #ffffff;
-  font-family: "Ubuntu", sans-serif;
-      @media (max-width: 1200px) {
-        font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 64px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  justify-content: center;
+  letter-spacing: normal;
+  line-height: 1.18;
+  width: 100%;
 
+  @media (max-width: 1200px) {
+    font-size: 50px;
   }
+
   @media (max-width: 930px) {
     font-size: 40px;
   }
@@ -100,31 +104,26 @@ const StyledTitleDiv = styled.div`
 
 export default class LaunchSplash extends Component {
   render() {
-    const { toggleModal, handleAuth, isAuthed } = this.props;
+    const { toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible } = this.props;
 
     return (
       <Wrapper>
         <Content background={`url('${launchsplash}')`}>
-          <Navigation
-            launch
-            type="home"
-            toggleModal={toggleModal}
-            isAuthed={isAuthed}
-          />
+          <Navigation launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
 
           <StyledRow>
             <StyledHomeColumn>
               <StyledTitleDiv>
                 <StyledTitle>
-                <span>FOUR SECRETS</span>
+                  <span>FOUR SECRETS</span>
                   <span>TO CREATE VIDEOS</span>
                   <span>THAT GET RESULTS</span>
                 </StyledTitle>
               </StyledTitleDiv>
               <LaunchForm
                 handleAuth={handleAuth}
-                handleSubmitFormVisible={this.props.handleSubmitFormVisible}
-                submitFormVisible={this.props.submitFormVisible}
+                handleSubmitFormVisible={handleSubmitFormVisible}
+                submitFormVisible={submitFormVisible}
                 type="splash"
               />
             </StyledHomeColumn>
@@ -134,3 +133,11 @@ export default class LaunchSplash extends Component {
     );
   }
 }
+
+LaunchSplash.propTypes = {
+  toggleModal: PropTypes.func,
+  handleAuth: PropTypes.func,
+  isAuthed: PropTypes.bool,
+  handleSubmitFormVisible: PropTypes.func,
+  submitFormVisible: PropTypes.bool,
+};

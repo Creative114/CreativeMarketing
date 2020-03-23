@@ -1,53 +1,57 @@
-import React, { Component } from "react";
-import Splash from "../../shared/Splash";
-import Helmet from "react-helmet";
-import Modal from "../../shared/Modal";
-import FindYourStoryForm from "../../shared/FindYourStoryForm";
-import Apply from "../../shared/Apply";
-import Footer from "../../shared/Footer";
-import Posts from "../../shared/Posts";
-import NonProfitForm from "../../shared/NonProfitForm";
-import Calendar from "../../shared/Calendar";
-import impactimg from "../../../assets/impact.jpg";
+import React, { Component } from 'react';
+
+import Splash from '../../shared/Splash';
+import Helmet from 'react-helmet';
+import Modal from '../../shared/Modal';
+import FindYourStoryForm from '../../shared/FindYourStoryForm';
+import Apply from '../../shared/Apply';
+import Footer from '../../shared/Footer';
+import Posts from '../../shared/Posts';
+import NonProfitForm from '../../shared/NonProfitForm';
+import Calendar from '../../shared/Calendar';
+import impactimg from '../../../assets/impact.jpg';
 
 const posts = [
   {
-    title: "Tampa Bay Startup Week",
-    text: "",
-    video: "https://fast.wistia.com/embed/medias/gly35kaelh/swatch"
+    title: 'Tampa Bay Startup Week',
+    text: '',
+    video: 'https://fast.wistia.com/embed/medias/gly35kaelh/swatch',
   },
   {
-    title: "Night to shine",
-    text: "",
-    video: "https://fast.wistia.com/embed/medias/fryc5uagap/swatch"
-  }
+    title: 'Night to shine',
+    text: '',
+    video: 'https://fast.wistia.com/embed/medias/fryc5uagap/swatch',
+  },
 ];
 
 class Impact extends Component {
-  state = {
-    isOpen: false,
-    type: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      type: '',
+    };
+  }
 
-  toggleModal = type => {
+  toggleModal(type) {
     this.setState({ isOpen: !this.state.isOpen, type });
-  };
+  }
 
   render() {
     const { isOpen, type } = this.state;
 
     return (
-      <div style={{ height: "100%" }}>
+      <div style={{ height: '100%' }}>
         <Helmet
           title="Our Impact | Brand Engagement, Marketing, Design"
           meta={[
-            { name: "description", content: "Impact Page for Creative114" },
-            { property: "og:type", content: "website" },
+            { name: 'description', content: 'Impact Page for Creative114' },
+            { property: 'og:type', content: 'website' },
             {
-              property: "og:title",
-              content: "Brand Engagement, Marketing, Design"
+              property: 'og:title',
+              content: 'Brand Engagement, Marketing, Design',
             },
-            { property: "og:url", content: "http://creative114.com" }
+            { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
         <Splash
@@ -69,9 +73,9 @@ class Impact extends Component {
         <Footer />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
-            {type === "story" && <FindYourStoryForm />}
-            {type === "nonprofit" && <NonProfitForm />}
-            {type === "schedule" && <Calendar />}
+            {type === 'story' && <FindYourStoryForm />}
+            {type === 'nonprofit' && <NonProfitForm />}
+            {type === 'schedule' && <Calendar />}
           </Modal>
         )}
       </div>

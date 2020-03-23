@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, SpanTitle, Row, Text } from "../../theme/index";
-import moment from "moment";
-import Video from "../shared/Video";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Column, SpanTitle, Text } from '../../theme/index';
+import moment from 'moment';
+import Video from '../shared/Video';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -22,12 +23,7 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  margin-top: 2em;
-  // display: grid;
-  // grid-gap: 50px;
-  // grid-template-columns: repeact(1, 1fr);
-  // grid-auto-rows: auto;
+  margin: 2em auto 0;
   height: 100%;
   width: 75%;
   @media (max-width: 780px) {
@@ -57,7 +53,7 @@ const Div = styled.div`
 const StyledPost = styled(Column)`
   padding: 0 1em;
   @media (max-width: 780px) {
-    width: ${props => (props.text ? "95%" : "65%")};
+    width: ${(props) => (props.text ? '95%' : '65%')};
     text-align: center;
     padding: 0;
   }
@@ -75,26 +71,20 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-function Post({ title, text, date, author, video, description }) {
+const Post = ({ video }) => {
   return (
-    // <Link to={`/impact/${title.toLowerCase()}`}>
     <Div>
       <Video src={video} />
-      <StyledPost>
-        {/* <Subtitle margin="1em 0 0 0">{title}</Subtitle> */}
-        {/* <Text>{text}</Text> */}
-        <Row width="100%" justifycontent="space-between">
-          {/* <Text margin=".15em 0">{date}</Text> */}
-          {/* <Text margin=".15em 0">By: {author}</Text> */}
-        </Row>
-        {/* <Text post>{description}</Text> */}
-      </StyledPost>
+      <StyledPost />
     </Div>
-    // </Link>
   );
-}
+};
 
-export default function Posts({ posts }) {
+Post.propTypes = {
+  video: PropTypes.string,
+};
+
+const Posts = ({ posts }) => {
   return (
     <Wrapper>
       <StyledColumn>
@@ -102,23 +92,17 @@ export default function Posts({ posts }) {
         <Text logo margin="0">
           That Need to Be Told
         </Text>
-
-        {/* <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor.
-        </Text> */}
       </StyledColumn>
       {posts && posts.length >= 1 && (
         <Grid>
-          {posts.map((key, index) => {
+          {posts.map((post, index) => {
             return (
               <Post
                 key={index}
-                title={key.title}
-                text={key.text}
-                date={moment(key.date).format("MMM Do YY")}
-                // author={key.author}
-                video={key.video}
+                title={post.title}
+                text={post.text}
+                date={moment(post.date).format('MMM Do YY')}
+                video={post.video}
               />
             );
           })}
@@ -131,4 +115,15 @@ export default function Posts({ posts }) {
       )}
     </Wrapper>
   );
-}
+};
+
+Posts.propTypes = {
+  posts: PropTypes.arrayOf({
+    title: PropTypes.string,
+    text: PropTypes.string,
+    date: PropTypes.string,
+    video: PropTypes.string,
+  }),
+};
+
+export default Posts;

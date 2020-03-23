@@ -1,14 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import {
-  Input,
-  Label,
-  Button,
-  TextArea,
-  SpanTitle,
-  Select
-} from "../../theme/index";
-import { Formik } from "formik";
+import React from 'react';
+import styled from 'styled-components';
+import { Button, Input, Label, Select, SpanTitle, TextArea } from '../../theme/index';
+import { Formik } from 'formik';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +11,7 @@ const Wrapper = styled.div`
   width: 475px;
   height: 775px;
   margin: 4.5em auto;
-  z-index: 10000000;
+  z-index: 900;
 `;
 
 const Form = styled.form`
@@ -31,74 +24,56 @@ const Form = styled.form`
   }
 `;
 
-// const StyledInputButton = styled(Input)`
-//   background: #d21f04;
-//   width: ${props => (props.small ? "135px" : "165px")};
-//   height: 45px;
-//   border: 1px solid transparent;
-//   color: #fff;
-//   &:hover {
-//     background-color: #f32405;
-//     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-//   }
-// `;
-
-export default function StartNowForm() {
+const StartNowForm = () => {
   return (
     <Wrapper>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: 'center' }}>
         <SpanTitle>Start now</SpanTitle>
       </div>
       <Formik
         initialValues={{
-          businessName: "",
-          businessWebsite: "",
-          firstname: "",
-          email: "",
-          phone: "",
-          budget: "",
-          objective: ""
+          businessName: '',
+          businessWebsite: '',
+          firstname: '',
+          email: '',
+          phone: '',
+          budget: '',
+          objective: '',
         }}
-        onSubmit={values => {
-          function formv3() {
-            let xhr = new XMLHttpRequest();
-            let url =
-              "https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea";
-            let data = {
+        onSubmit={(values) => {
+          const formv3 = () => {
+            const xhr = new XMLHttpRequest();
+            const url =
+              'https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea';
+            const data = {
               fields: [
                 {
-                  name: "email",
-                  value: values.email
+                  name: 'email',
+                  value: values.email,
                 },
                 {
-                  name: "firstname",
-                  value: values.firstname
-                }
+                  name: 'firstname',
+                  value: values.firstname,
+                },
               ],
               context: {
-                pageUri: "www.creative114.com/#/",
-                pageName: "Contact page"
-              }
+                pageUri: 'www.creative114.com/#/',
+                pageName: 'Contact page',
+              },
             };
-            const final_data = JSON.stringify(data);
-            xhr.open("POST", url);
-            xhr.setRequestHeader("Content-type", "application/json");
-            xhr.onreadystatechange = function() {
+            const finalData = JSON.stringify(data);
+            xhr.open('POST', url);
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.onreadystatechange = () => {
               if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log("success");
+                console.log('success');
               }
             };
-            xhr.send(final_data);
-          }
+            xhr.send(finalData);
+          };
           formv3();
         }}
-        render={({
-          values,
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          setFieldValue
-        }) => (
+        render={({ values, handleSubmit, handleChange, handleBlur, setFieldValue }) => (
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="businessName" login>
               Business name *
@@ -132,23 +107,11 @@ export default function StartNowForm() {
             </Label>
             <Label htmlFor="email" login>
               Email *
-              <Input
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type="email"
-                name="email"
-              />
+              <Input value={values.email} onChange={handleChange} onBlur={handleBlur} type="email" name="email" />
             </Label>
             <Label htmlFor="phone" login>
               Phone *
-              <Input
-                value={values.phone}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type="phone"
-                name="phone"
-              />
+              <Input value={values.phone} onChange={handleChange} onBlur={handleBlur} type="phone" name="phone" />
             </Label>
 
             <Label htmlFor="budget" login>
@@ -157,8 +120,8 @@ export default function StartNowForm() {
                 value={values.budget}
                 id="budget"
                 name="budget"
-                onChange={value => {
-                  setFieldValue("budget", value);
+                onChange={(value) => {
+                  setFieldValue('budget', value);
                 }}
               >
                 <option value="first">$1,000-$2,500</option>
@@ -169,18 +132,9 @@ export default function StartNowForm() {
               </Select>
             </Label>
 
-            {/* <Label htmlFor="budget" login>
-            Budget *
-            <Input type="text" name="budget" />
-          </Label> */}
             <Label htmlFor="objective" login>
               Objective *
-              <TextArea
-                value={values.objective}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                name="objective"
-              />
+              <TextArea value={values.objective} onChange={handleChange} onBlur={handleBlur} name="objective" />
             </Label>
 
             <Button primary type="submit">
@@ -191,4 +145,6 @@ export default function StartNowForm() {
       />
     </Wrapper>
   );
-}
+};
+
+export default StartNowForm;

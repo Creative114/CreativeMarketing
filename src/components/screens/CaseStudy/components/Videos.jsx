@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Column, Row, SpanTitle } from "../../../../theme/index";
-import Video from "../../../shared/Video";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Column, Row, SpanTitle } from '../../../../theme/index';
+import Video from '../../../shared/Video';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -74,3 +75,7 @@ export default class Videos extends Component {
     }
   }
 }
+
+Videos.propTypes = {
+  videos: PropTypes.array,
+};

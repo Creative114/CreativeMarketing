@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Video from "../shared/Video";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Video from '../shared/Video';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -9,6 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -19,12 +21,12 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
-  margin: 0 auto;
   margin: 2em 0 4em 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
   width: 85%;
+
   @media (max-width: 780px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
@@ -79,3 +81,8 @@ export default class LaunchVideos extends Component {
     );
   }
 }
+
+LaunchVideos.propTypes = {
+  isAuthed: PropTypes.bool,
+  toggleModal: PropTypes.func,
+};

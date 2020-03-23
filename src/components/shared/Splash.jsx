@@ -1,31 +1,31 @@
-import React from "react";
-import styled from "styled-components";
-import { Column, Title, SubTitleText, Text, Button } from "../../theme/index";
-import Navigation from "./Navigation";
-import aboutSplash from "../../assets/aboutSplash.jpg";
-import impactSplash from "../../assets/impact_splash.jpg";
-import PDF from "../../assets/findyourstory.pdf";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Button, Column, SubTitleText, Title } from '../../theme/index';
+import Navigation from './Navigation';
+import aboutSplash from '../../assets/aboutSplash.jpg';
+import impactSplash from '../../assets/impact_splash.jpg';
+import PDF from '../../assets/findyourstory.pdf';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  background-color: ${props => props.backgroundcolor};
+  background-color: ${(props) => props.backgroundcolor};
 `;
 
 const WrapContent = styled.div`
-  height: ${props => props.height || "calc(100vh - 10px)"};
+  height: ${(props) => props.height || 'calc(100vh - 10px)'};
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   background-size: cover;
-  background-position: ${props => props.backgroundposition};
+  background-position: ${(props) => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
-  webkit-clip-path: ellipse(120% 100% at 50% 0%);
+
   @media (max-width: 920px) {
-    height: ${props => props.height || "calc(100vh - 85px)"};
+    height: ${(props) => props.height || 'calc(100vh - 85px)'};
     clip-path: ellipse(120% 100% at 50% 0%);
-    webkit-clip-path: ellipse(120% 100% at 50% 0%);
   }
 `;
 
@@ -40,7 +40,7 @@ const StyledColumn = styled(Column)`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 900;
   position: absolute;
   @media (max-width: 1200px) {
     margin: 8em auto;
@@ -61,7 +61,7 @@ const Content = styled.div`
   align-content: center;
   justify-content: center;
   position: relative;
-`
+`;
 
 const Video = styled.video`
   right: 0;
@@ -74,7 +74,7 @@ const Overlay = styled.div`
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1000;
+  z-index: 900;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -94,18 +94,12 @@ const StyledMobileText = styled(SubTitleText)`
   }
 `;
 
-const StyledButton = styled(Button)`
-  // @media (max-width: 920px) {
-  //   display: none;
-  // }
-`;
-
 const A = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;
@@ -123,33 +117,24 @@ const A = styled.a`
   }
 `;
 
-export default function Splash({
-  type,
-  src,
-  title,
-  text,
-  mobileText,
-  show,
-  img,
-  toggleModal
-}) {
+const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) => {
   return (
-    <Wrapper backgroundcolor={type === "work" ? "#f2f5f7" : "#fff"}>
+    <Wrapper backgroundcolor={type === 'work' ? '#f2f5f7' : '#fff'}>
       <Navigation type={type} show={show} toggleModal={toggleModal} />
       <WrapContent
-        height={type === "casestudy" ? "650px" : ""}
-        backgroundposition={"center"}
+        height={type === 'casestudy' ? '650px' : ''}
+        backgroundposition={'center'}
         background={
-          type === "casestudy"
+          type === 'casestudy'
             ? `url('${img}')`
-            : type === "thanks"
+            : type === 'thanks'
             ? `url('${impactSplash}')`
-            : type === "nomatch"
+            : type === 'nomatch'
             ? `url('${aboutSplash}')`
             : `url('${img}')`
         }
       >
-        {type !== "casestudy" && (
+        {type !== 'casestudy' && (
           <Content>
             <Video autoPlay muted loop playsInline>
               <source src={src} type="video/mp4" />
@@ -159,24 +144,17 @@ export default function Splash({
               <Title header>{title}</Title>
               <StyledText header>{text}</StyledText>
               <StyledMobileText header>{mobileText}</StyledMobileText>
-              {/* <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/creative114"
-                style={{ minHeight: "320px", height: "58px" }}
-              /> */}
 
-              {type !== "thanks" && type !== "contact" && (
+              {type !== 'thanks' && type !== 'contact' && (
                 <Link to="/launch">
-                  <StyledButton primary>
-                    Free Story Formula
-                  </StyledButton>
+                  <Button primary>Free Story Formula</Button>
                 </Link>
               )}
-              {type === "thanks" && <A href={PDF}>Download now!</A>}
-              {type === "contact" && (
-                <StyledButton primary onClick={() => toggleModal("schedule")}>
+              {type === 'thanks' && <A href={PDF}>Download now!</A>}
+              {type === 'contact' && (
+                <Button primary onClick={() => toggleModal('schedule')}>
                   Schedule a call now
-                </StyledButton>
+                </Button>
               )}
             </StyledColumn>
           </Content>
@@ -184,4 +162,17 @@ export default function Splash({
       </WrapContent>
     </Wrapper>
   );
-}
+};
+
+Splash.propTypes = {
+  type: PropTypes.string,
+  src: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  mobileText: PropTypes.string,
+  show: PropTypes.bool,
+  img: PropTypes.string,
+  toggleModal: PropTypes.bool,
+};
+
+export default Splash;

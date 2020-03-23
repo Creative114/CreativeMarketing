@@ -1,38 +1,38 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Column, Text, SpanTitle, SpanSubtitle, Row, Button } from "../../theme/index";
-import explore from "../../assets/Explore.svg";
-import express from "../../assets/Express.svg";
-import excite from "../../assets/Excite.svg";
-import Reveal from "react-reveal/Reveal";
-import BG from "../../assets/rectange_bg.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Button, Column, Row, SpanSubtitle, SpanTitle, Text } from '../../theme/index';
+import explore from '../../assets/Explore.svg';
+import express from '../../assets/Express.svg';
+import excite from '../../assets/Excite.svg';
+import Reveal from 'react-reveal/Reveal';
+import BG from '../../assets/rectange_bg.png';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
-  background: ${props => props.bg};
+  background: ${(props) => props.bg};
   flex-direction: column;
   align-items: center;
   padding: 10em 0 2em 0;
+
   @media (max-width: 920px) {
     text-align: center;
-    padding: 5em 0;
-    padding-bottom: 0;
+    padding: 5em 0 0;
   }
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 50px;
-  margin: 0 auto;
   width: 85%;
-  margin-top: 2em;
+  margin: 2em auto 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
-  @media (max-width:  1200px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr;
     grid-auto-rows: 375px;
     width: 95%;
@@ -65,7 +65,7 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-function Item({ title, text, img }) {
+const Item = ({ title, text, img }) => {
   return (
     <Div>
       <Column width="85%" alignitems="center" textalign="center">
@@ -75,46 +75,46 @@ function Item({ title, text, img }) {
       </Column>
     </Div>
   );
-}
+};
 
-export default function How({ toggleModal }) {
+Item.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  img: PropTypes.string,
+};
+
+const How = () => {
   const items = [
     {
-      title: "Explore",
+      title: 'Explore',
       text:
-        "People are longing to feel something. Maximize your story’s emotional impact by diving into what you want others to feel and how you want them to respond.",
-      img: explore
+        'People are longing to feel something. Maximize your story’s emotional impact by diving into what you want others to feel and how you want them to respond.',
+      img: explore,
     },
     {
-      title: "Express",
+      title: 'Express',
       text:
-        "The most captivating narratives combine inspired words with unforgettable pictures. Awaken your audience through robust, cinematic storytelling.",
-      img: express
+        'The most captivating narratives combine inspired words with unforgettable pictures. Awaken your audience through robust, cinematic storytelling.',
+      img: express,
     },
     {
-      title: "Excite",
+      title: 'Excite',
       text:
-        "See your dream become a breathtaking reality, as you share your message on the world’s stage. Gain the recognition you deserve and the results you desire.",
-      img: excite
-    }
+        'See your dream become a breathtaking reality, as you share your message on the world’s stage. Gain the recognition you deserve and the results you desire.',
+      img: excite,
+    },
   ];
+
   return (
     <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <StyledColumn>
-          <SpanTitle>Here's how we do it</SpanTitle>
+          <SpanTitle>Here`&apos;`s how we do it</SpanTitle>
         </StyledColumn>
         <Grid>
-          {items.map((key, index) => {
-            return (
-              <Item
-                key={index}
-                title={key.title}
-                text={key.text}
-                img={key.img}
-              />
-            );
-          })}
+          {items.map((item, index) => (
+            <Item key={index} title={item.title} text={item.text} img={item.img} />
+          ))}
         </Grid>
         <Row margin="3.5em 0 2em 0" justifycontent="center">
           <Link to="/launch">
@@ -126,4 +126,10 @@ export default function How({ toggleModal }) {
       </Reveal>
     </Wrapper>
   );
-}
+};
+
+How.propTypes = {
+  toggleModal: PropTypes.func,
+};
+
+export default How;

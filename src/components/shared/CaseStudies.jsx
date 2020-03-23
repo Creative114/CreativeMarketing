@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import CaseStudy from "./CaseStudy";
-import { Column, SpanTitle } from "../../theme/index";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import CaseStudy from './CaseStudy';
+import { Column, SpanTitle } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -19,15 +20,11 @@ const StyledColumn = styled(Column)`
   }
 `;
 
-export default function CaseStudies({ casestudies, navigate }) {
+const CaseStudies = ({ casestudies, navigate }) => {
   return (
     <Wrapper>
       <StyledColumn>
         <SpanTitle>Case studies</SpanTitle>
-        {/* <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor.
-        </Text> */}
       </StyledColumn>
 
       {casestudies &&
@@ -45,4 +42,11 @@ export default function CaseStudies({ casestudies, navigate }) {
         })}
     </Wrapper>
   );
-}
+};
+
+CaseStudies.propTypes = {
+  casestudies: PropTypes.array,
+  navigate: PropTypes.any,
+};
+
+export default CaseStudies;
