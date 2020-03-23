@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf public && mv build public",
     "test": "react-scripts test",
-    "nuke": "rm -rf yarn.lock && rm -rf node_modules && yarn install",
+    "nuke": "rm -rf package-lock.json && rm -rf node_modules && npm install",
     "lint": "eslint src -c .eslintrc.js --ext js,jsx",
     "lint:fix": "eslint src -c .eslintrc.js --fix --ext js,jsx"
   },
