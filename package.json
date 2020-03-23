@@ -41,12 +41,14 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prefer-arrow": "^1.1.7",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",

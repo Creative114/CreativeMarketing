@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-height: 100%;
-width: 100%:
-position: relative;
-border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
 `;
 
 const Div = styled.div`
@@ -27,7 +27,7 @@ const Img = styled.img`
   border-radius: 4px;
 `;
 
-export default function Video({ src, isAuthed, toggleModal, type }) {
+const Video = ({ src, isAuthed, toggleModal, type }) => {
   const swatch = src.split('/')[5];
   if (type === 'launch' && !isAuthed) {
     return (
@@ -48,4 +48,6 @@ export default function Video({ src, isAuthed, toggleModal, type }) {
       </Wrapper>
     );
   }
-}
+};
+
+export default Video;

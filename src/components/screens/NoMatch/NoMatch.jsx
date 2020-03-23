@@ -2,7 +2,7 @@ import React from 'react';
 import Splash from '../../shared/Splash';
 import Helmet from 'react-helmet';
 
-export default function NoMatch() {
+const NoMatch = () => {
   return (
     <div>
       <Helmet
@@ -20,4 +20,6 @@ export default function NoMatch() {
       <Splash type="nomatch" title="Oops" text="Something went wrong. Please try again." />
     </div>
   );
-}
+};
+
+export default NoMatch;

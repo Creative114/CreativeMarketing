@@ -3,7 +3,7 @@ import Splash from '../../shared/Splash';
 import Footer from '../../shared/Footer';
 import Helmet from 'react-helmet';
 
-export default function Thanks() {
+const Thanks = () => {
   return (
     <div>
       <Helmet
@@ -22,4 +22,6 @@ export default function Thanks() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Thanks;

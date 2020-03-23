@@ -176,10 +176,10 @@ const Navigation = (props) => {
 
 Navigation.propTypes = {
   type: PropTypes.string,
-  toggleModal: PropTypes.string,
+  toggleModal: PropTypes.func,
   show: PropTypes.string,
-  isAuthed: PropTypes.string,
-  launch: PropTypes.string,
+  isAuthed: PropTypes.bool,
+  launch: PropTypes.bool,
 };
 
 export default Navigation;

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const BurgerIcon = ({ open, ...props }) => {
+  console.log('props: ', props);
   return (
     <div className={open ? 'burger-menu open' : 'burger-menu'} {...props}>
       <div className="bar1" key="b1" />

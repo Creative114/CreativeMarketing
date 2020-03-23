@@ -22,11 +22,10 @@ const WrapContent = styled.div`
   background-size: cover;
   background-position: ${(props) => props.backgroundposition};
   clip-path: ellipse(120% 100% at 50% 0%);
-  webkit-clip-path: ellipse(120% 100% at 50% 0%);
+
   @media (max-width: 920px) {
     height: ${(props) => props.height || 'calc(100vh - 85px)'};
     clip-path: ellipse(120% 100% at 50% 0%);
-    webkit-clip-path: ellipse(120% 100% at 50% 0%);
   }
 `;
 
@@ -118,8 +117,7 @@ const A = styled.a`
   }
 `;
 
-export default function Splash({ type, src, title, text, mobileText, show, img, toggleModal }) {
-  console.log('props', { type, src, title, text, mobileText, show, img, toggleModal });
+const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) => {
   return (
     <Wrapper backgroundcolor={type === 'work' ? '#f2f5f7' : '#fff'}>
       <Navigation type={type} show={show} toggleModal={toggleModal} />
@@ -164,7 +162,7 @@ export default function Splash({ type, src, title, text, mobileText, show, img, 
       </WrapContent>
     </Wrapper>
   );
-}
+};
 
 Splash.propTypes = {
   type: PropTypes.string,
@@ -176,3 +174,5 @@ Splash.propTypes = {
   img: PropTypes.string,
   toggleModal: PropTypes.bool,
 };
+
+export default Splash;

@@ -26,7 +26,7 @@ class Landing extends Component {
   constructor(props) {
     super(props);
 
-    const auth = localStorage.getItem('authorized') || false;
+    const auth = window.localStorage.getItem('authorized') || false;
     const isAuthed = !!auth;
 
     this.state = {
@@ -37,18 +37,18 @@ class Landing extends Component {
     };
   }
 
-  toggleModal(type) {
-    this.setState({ isOpen: !this.state.isOpen, type });
-  }
+  toggleModal = (type) => {
+    return this.setState({ isOpen: !this.state.isOpen, type });
+  };
 
-  handleAuth() {
+  handleAuth = () => {
     localStorage.setItem('authorized', true);
     this.setState({ isAuthed: true });
-  }
+  };
 
-  handleSubmitFormVisible(value) {
+  handleSubmitFormVisible = (value) => {
     this.setState({ submitFormVisible: value });
-  }
+  };
 
   render() {
     const { isOpen, isAuthed, type, submitFormVisible } = this.state;

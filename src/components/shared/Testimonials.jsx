@@ -67,7 +67,7 @@ const MenuItem = ({ id, selected, title, handleClick, client }) => {
 
 MenuItem.propTypes = {
   client: PropTypes.string,
-  handleClick: PropTypes.string,
+  handleClick: PropTypes.func,
   id: PropTypes.string,
   selected: PropTypes.string,
   title: PropTypes.string,

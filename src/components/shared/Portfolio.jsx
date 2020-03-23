@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import { Button, Column, Row, SpanTitle, StyledColumn } from '../../theme/index';
 import port1 from '../../assets/port1.jpg';
 import port2 from '../../assets/port2.jpg';
@@ -137,13 +139,19 @@ const lightbox = [
 
 const Image = ({ img, cid, selected }) => <StyledImage src={img} id={cid} active={cid.includes(selected)} />;
 
-function MenuItem({ id, selected, title, handleClick }) {
+const MenuItem = ({ id, selected, title, handleClick }) => {
   return (
     <StyledButton id={id} onClick={() => handleClick(id)} active={id === selected}>
       {title}
     </StyledButton>
   );
-}
+};
+
+MenuItem.propTypes = {
+  img: PropTypes.string,
+  cid: PropTypes.string,
+  selected: PropTypes.bool,
+};
 
 export default class Portfolio extends Component {
   constructor(props) {

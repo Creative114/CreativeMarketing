@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   padding: 3em 0;
+
   @media (max-width: 780px) {
     flex-direction: column;
     justify-content: flex-start;
@@ -19,6 +20,7 @@ const Wrapper = styled.div`
 const StyledRow = styled(Row)`
   margin: 1em 0;
   align-items: center;
+
   @media (max-width: 780px) {
     margin: 0.5em 0;
   }
@@ -39,13 +41,14 @@ const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
   color: ${(props) => (props.social ? '#b9402d' : '#505d68')};
+
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 1.5em;
   }
 `;
 
-export default function ContactForm() {
+const ContactForm = () => {
   const script = document.createElement('script');
   script.src = 'https://js.hsforms.net/forms/v2.js';
   document.body.appendChild(script);
@@ -109,4 +112,6 @@ export default function ContactForm() {
       </StyledColumn>
     </Wrapper>
   );
-}
+};
+
+export default ContactForm;

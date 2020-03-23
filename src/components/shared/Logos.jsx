@@ -90,7 +90,7 @@ const logos = [
   logo7,
 ];
 
-export default function Logos() {
+const Logos = () => {
   return (
     <Wrapper>
       <Reveal effect="fadeIn">
@@ -109,4 +109,6 @@ export default function Logos() {
       </Reveal>
     </Wrapper>
   );
-}
+};
+
+export default Logos;

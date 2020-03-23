@@ -24,7 +24,7 @@ const Form = styled.form`
   }
 `;
 
-export default function FindYourStoryForm() {
+const FindYourStoryForm = () => {
   return (
     <Wrapper>
       <div style={{ textAlign: 'center', width: '85%', margin: '0 auto' }}>
@@ -52,7 +52,7 @@ export default function FindYourStoryForm() {
           email: '',
         }}
         onSubmit={(values) => {
-          function formv3() {
+          const formv3 = () => {
             const xhr = new XMLHttpRequest();
             const url =
               'https://api.hsforms.com/submissions/v3/integration/submit/5644251/9cdcc4d4-244b-4dcf-bc3c-501fc78e9aea';
@@ -75,13 +75,11 @@ export default function FindYourStoryForm() {
             const finalData = JSON.stringify(data);
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-type', 'application/json');
-            xhr.onreadystatechange = function () {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                window.location.href = 'https://creative114.com/#/thanks';
-              }
+            xhr.onreadystatechange = () => {
+              if (xhr.readyState === 4 && xhr.status === 200) window.location.href = 'https://creative114.com/#/thanks';
             };
             xhr.send(finalData);
-          }
+          };
           formv3();
         }}
         render={({ values, handleSubmit, handleChange, handleBlur, setFieldValue }) => (
@@ -109,4 +107,6 @@ export default function FindYourStoryForm() {
       />
     </Wrapper>
   );
-}
+};
+
+export default FindYourStoryForm;

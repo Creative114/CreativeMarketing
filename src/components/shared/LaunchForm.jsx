@@ -5,11 +5,15 @@ import styled from 'styled-components';
 import { Column } from '../../theme';
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 380px;
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
+  padding: 20px 10px 20px 10px;
 
   @media (max-width: 920px) {
     margin: 0 20px 100px 20px;

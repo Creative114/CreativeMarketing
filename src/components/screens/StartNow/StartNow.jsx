@@ -15,7 +15,7 @@ const Form = styled.form`
   }
 `;
 
-function StartNowForm() {
+const StartNowForm = () => {
   return (
     <Form action="https://formspree.io/xjeeoeem" method="POST">
       <Label htmlFor="businessName" login>
@@ -51,9 +51,9 @@ function StartNowForm() {
       </Button>
     </Form>
   );
-}
+};
 
-export default function StartNow() {
+const StartNow = () => {
   return (
     <div>
       <Helmet
@@ -78,4 +78,6 @@ export default function StartNow() {
       <Footer />
     </div>
   );
-}
+};
+
+export default StartNow;

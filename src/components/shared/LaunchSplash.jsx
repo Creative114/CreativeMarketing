@@ -135,7 +135,7 @@ export default class LaunchSplash extends Component {
 }
 
 LaunchSplash.propTypes = {
-  toggleModal: PropTypes.bool,
+  toggleModal: PropTypes.func,
   handleAuth: PropTypes.func,
   isAuthed: PropTypes.bool,
   handleSubmitFormVisible: PropTypes.func,

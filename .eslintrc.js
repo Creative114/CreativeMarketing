@@ -8,14 +8,15 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module',
   },
-  plugins: ['react', 'import', 'jsx-a11y', 'promise', 'standard', 'prettier'],
+  plugins: ['react', 'import', 'jsx-a11y', 'promise', 'standard', 'prettier', 'prefer-arrow'],
   rules: {
     'react/jsx-filename-extension': [
       1,
@@ -24,15 +25,18 @@ module.exports = {
       },
     ],
     'prettier/prettier': 'error',
+    'prefer-arrow/prefer-arrow-functions': [
+      'error',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
   },
   settings: {
     react: {
       version: 'detect',
     },
-    linkComponents: [
-      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
-      'Hyperlink',
-      { name: 'Link', linkAttribute: 'to' },
-    ],
   },
 };

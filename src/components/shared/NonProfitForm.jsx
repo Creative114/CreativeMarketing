@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   z-index: 90;
 `;
 
-export default function NonProfitForm() {
+const NonProfitForm = () => {
   const script = document.createElement('script');
   script.src = 'https://js.hsforms.net/forms/v2.js';
   document.body.appendChild(script);
@@ -33,4 +33,6 @@ export default function NonProfitForm() {
       </div>
     </Wrapper>
   );
-}
+};
+
+export default NonProfitForm;

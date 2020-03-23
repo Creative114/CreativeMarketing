@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   z-index: 900;
 `;
 
-export default function FindYourStoryForm() {
+const FindYourStoryForm = () => {
   const script = document.createElement('script');
   script.src = 'https://js.hsforms.net/forms/v2.js';
   document.body.appendChild(script);
@@ -33,4 +33,6 @@ export default function FindYourStoryForm() {
       </div>
     </Wrapper>
   );
-}
+};
+
+export default FindYourStoryForm;
