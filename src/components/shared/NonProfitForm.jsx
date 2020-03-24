@@ -26,6 +26,7 @@ const NonProfitForm = () => {
       });
     }
   });
+
   return (
     <Wrapper>
       <div style={{ textAlign: 'center', width: '85%', margin: '20px auto' }}>

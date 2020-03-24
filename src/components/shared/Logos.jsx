@@ -18,15 +18,13 @@ const Wrapper = styled.div`
   margin-right: 5%;
   width: 90%;
   height: 100%;
+
   @media (max-width: 780px) {
     margin-right: 0px;
   }
 `;
 
 const Grid = styled.div`
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
@@ -34,6 +32,7 @@ const Grid = styled.div`
   height: 100%;
   width: 100%;
   max-width: 1600px;
+
   @media (max-width: 780px) {
     width: 100%;
     margin: 0;
@@ -48,9 +47,11 @@ const Image = styled.img`
   justify-self: center;
   filter: grayscale(85%);
   transition: 250ms;
+
   &:hover {
     filter: grayscale(0%);
   }
+
   @media (max-width: 780px) {
     width: 100%;
   }

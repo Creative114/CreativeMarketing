@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 
 const Thanks = () => {
   return (
-    <div>
+    <>
       <Helmet
         title="Thank you | Brand Engagement, Marketing, Design"
         meta={[
@@ -20,7 +20,7 @@ const Thanks = () => {
       />
       <Splash type="thanks" title="Thanks" text="Please download the link below!" />
       <Footer />
-    </div>
+    </>
   );
 };
 

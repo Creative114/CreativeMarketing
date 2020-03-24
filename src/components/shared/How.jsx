@@ -32,6 +32,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
+
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
     grid-auto-rows: 375px;

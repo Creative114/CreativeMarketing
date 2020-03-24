@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 const NoMatch = () => {
   return (
-    <div>
+    <>
       <Helmet
         title="Thank you | Brand Engagement, Marketing, Design"
         meta={[
@@ -18,7 +18,7 @@ const NoMatch = () => {
         ]}
       />
       <Splash type="nomatch" title="Oops" text="Something went wrong. Please try again." />
-    </div>
+    </>
   );
 };
 

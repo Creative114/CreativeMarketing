@@ -20,9 +20,9 @@ export default class About extends Component {
     };
   }
 
-  toggleModal(type) {
+  toggleModal = (type) => {
     this.setState({ isOpen: !this.state.isOpen, type });
-  }
+  };
 
   render() {
     const { isOpen, type } = this.state;

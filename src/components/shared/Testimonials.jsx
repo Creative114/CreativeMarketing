@@ -81,14 +81,14 @@ export default class Testimonials extends Component {
     };
   }
 
-  handleClick(id, client) {
+  handleClick = (id, client) => {
     this.setState(() => {
       return {
         selected: id,
         title: client,
       };
     });
-  }
+  };
 
   render() {
     const { selected } = this.state;
