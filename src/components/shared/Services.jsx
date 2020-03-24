@@ -147,8 +147,8 @@ const Services = () => {
         </StyledTextRow>
         <StyledTextRow>
           <Text secondary>
-            At heart, we`&apos;`re entrepreneurs just like you; we have the experience, skillset, and know-how to
-            position your business for success. We provide scalable strategies for your oganization to meet new heights.
+            At heart, we&apos;re entrepreneurs just like you; we have the experience, skillset, and know-how to position
+            your business for success. We provide scalable strategies for your oganization to meet new heights.
           </Text>
         </StyledTextRow>
       </StyledRow>

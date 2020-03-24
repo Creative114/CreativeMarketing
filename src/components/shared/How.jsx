@@ -109,7 +109,7 @@ const How = () => {
     <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <StyledColumn>
-          <SpanTitle>Here`&apos;`s how we do it</SpanTitle>
+          <SpanTitle>Here&apos;s how we do it</SpanTitle>
         </StyledColumn>
         <Grid>
           {items.map((item, index) => (

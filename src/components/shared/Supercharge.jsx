@@ -38,14 +38,14 @@ export default class Supercharge extends Component {
               <span style={{ color: '#d21f04' }}>Results</span> <br /> (and Goosebumps)
             </SpanTitle>
             <Column width="85%">
-              <Text>So many businesses are wasting money creating videos that just don`&apos;`t work.</Text>
+              <Text>So many businesses are wasting money creating videos that just don&apos;t work.</Text>
               <Text red>We want to help you dominate your market.</Text>
               <Text>
                 At Creative114, we deliver far more than beautiful cinematic work. Our passion is telling your inspiring
                 and emotional stories through the art of video. Our greatest payment comes in the form of laughter,
                 tears, applause, and goosebumps.
               </Text>
-              <Text red>It`&apos;`s our job to help you produce those feelings.</Text>
+              <Text red>It&apos;s our job to help you produce those feelings.</Text>
             </Column>
             <Link to="/launch">
               <Button primary margin="2em 0 0 0" smallText>
