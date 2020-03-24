@@ -20,7 +20,7 @@ export const Title = styled.h1`
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
-      font-size: ${(props) => props.home && '92px'};
+      font-size: ${(props) => props.home && '66px'};
       text-transform: ${(props) => props.home && 'uppercase'};
       line-height: ${(props) => props.home && '90px'};
       margin: ${(props) => props.margin || '.25em 0'};
@@ -100,7 +100,7 @@ export const SpanTitle = styled.span`
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
-      font-size: ${(props) => props.home && '92px'};
+      font-size: ${(props) => props.home && '66px'};
       text-transform: ${(props) => props.home && 'uppercase'};
       line-height: ${(props) => props.home && '90px'};
       margin: ${(props) => props.margin || '.25em 0'};

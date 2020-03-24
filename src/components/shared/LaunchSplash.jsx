@@ -74,7 +74,7 @@ export const StyledTitle = styled(Title)`
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  font-size: 64px;
+  font-size: 52px;
   font-stretch: normal;
   font-style: normal;
   font-weight: bold;
