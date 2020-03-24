@@ -27,7 +27,7 @@ const StyledButton = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 0 0.75em;
   outline: none;
