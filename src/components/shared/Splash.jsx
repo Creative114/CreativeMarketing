@@ -99,7 +99,7 @@ const A = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;
