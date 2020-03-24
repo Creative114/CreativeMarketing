@@ -23,18 +23,18 @@ class CaseStudy extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const name = this.props.match.params.name.split(':')[1];
     this.setState({ name }, () => {
       this.getData();
     });
-  }
+  };
 
-  toggleModal() {
+  toggleModal = () => {
     this.setState({ isOpen: !this.state.isOpen });
-  }
+  };
 
-  getData() {
+  getData = () => {
     const data = {
       movement2819: {
         image: casestudyhero1,
@@ -92,9 +92,10 @@ class CaseStudy extends Component {
       default:
         dataSet = data.movement2819;
     }
+
     this.setState({ data: dataSet });
     return dataSet;
-  }
+  };
 
   render() {
     const { title, description, image, videos } = this.state.data;

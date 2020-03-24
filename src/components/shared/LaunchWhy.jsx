@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -87,53 +87,52 @@ const Image = styled.img`
   margin: 0.75em 0;
 `;
 
-export default class LaunchWhy extends Component {
-  render() {
-    const { isAuthed, toggleModal } = this.props;
-    return (
-      <Wrapper bg={`url('${BG}')`}>
-        <Column alignitems="center" textalign="center">
-          <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
-          <ProcessText style={{ margin: '6px 0' }}>They Won&apos;t Get You Results</ProcessText>
-        </Column>
-        <Grid>
-          <Div>
-            <Column width="85%" alignitems="center" margin=".75em 0">
-              <Image src={audience} />
-              <Text dark>Why aren’t my videos connecting with people?</Text>
-            </Column>
-          </Div>
-          <Div>
-            <Column width="85%" alignitems="center" margin=".75em 0">
-              <Image src={connecting} />
-              <Text dark>How can I reach my ideal target audience?</Text>
-            </Column>
-          </Div>
-          <Div>
-            <Column width="85%" alignitems="center" margin=".75em 0">
-              <Image src={action} />
-              <Text dark>What encourages or makes people take action?</Text>
-            </Column>
-          </Div>
-        </Grid>
-        <StyledColumn>
-          <ProcessText>
-            Overcome the obstacles that keep you from connecting with your customers.
-            <br />
-            Start supercharging your message with emotionally <b>engaging video stories.</b>
-          </ProcessText>
-        </StyledColumn>
-        <Row justifycontent="center">
-          <StyledButton primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
-            {isAuthed ? 'Schedule a call now' : 'Get the videos'}
-          </StyledButton>
-        </Row>
-      </Wrapper>
-    );
-  }
-}
+const LaunchWhy = ({ isAuthed, toggleModal }) => {
+  return (
+    <Wrapper bg={`url('${BG}')`}>
+      <Column alignitems="center" textalign="center">
+        <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
+        <ProcessText style={{ margin: '6px 0' }}>They Won&apos;t Get You Results</ProcessText>
+      </Column>
+      <Grid>
+        <Div>
+          <Column width="85%" alignitems="center" margin=".75em 0">
+            <Image src={audience} />
+            <Text dark>Why aren’t my videos connecting with people?</Text>
+          </Column>
+        </Div>
+        <Div>
+          <Column width="85%" alignitems="center" margin=".75em 0">
+            <Image src={connecting} />
+            <Text dark>How can I reach my ideal target audience?</Text>
+          </Column>
+        </Div>
+        <Div>
+          <Column width="85%" alignitems="center" margin=".75em 0">
+            <Image src={action} />
+            <Text dark>What encourages or makes people take action?</Text>
+          </Column>
+        </Div>
+      </Grid>
+      <StyledColumn>
+        <ProcessText>
+          Overcome the obstacles that keep you from connecting with your customers.
+          <br />
+          Start supercharging your message with emotionally <b>engaging video stories.</b>
+        </ProcessText>
+      </StyledColumn>
+      <Row justifycontent="center">
+        <StyledButton primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
+          {isAuthed ? 'Schedule a call now' : 'Get the videos'}
+        </StyledButton>
+      </Row>
+    </Wrapper>
+  );
+};
 
 LaunchWhy.propTypes = {
   isAuthed: PropTypes.bool,
   toggleModal: PropTypes.func,
 };
+
+export default LaunchWhy;

@@ -25,9 +25,9 @@ class Work extends Component {
     };
   }
 
-  toggleModal(type) {
+  toggleModal = (type) => {
     this.setState({ isOpen: !this.state.isOpen, type });
-  }
+  };
 
   render() {
     const { recentwork } = this.props;
@@ -57,7 +57,7 @@ class Work extends Component {
     ];
 
     return (
-      <div>
+      <>
         <Helmet
           title="Our Work | Brand Engagement, Marketing, Design"
           meta={[
@@ -88,7 +88,7 @@ class Work extends Component {
             {type === 'schedule' && <Calendar />}
           </Modal>
         )}
-      </div>
+      </>
     );
   }
 }

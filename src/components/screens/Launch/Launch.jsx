@@ -42,7 +42,7 @@ class Landing extends Component {
   };
 
   handleAuth = () => {
-    localStorage.setItem('authorized', true);
+    Window.localStorage.setItem('authorized', true);
     this.setState({ isAuthed: true });
   };
 

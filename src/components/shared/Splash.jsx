@@ -172,7 +172,7 @@ Splash.propTypes = {
   mobileText: PropTypes.string,
   show: PropTypes.bool,
   img: PropTypes.string,
-  toggleModal: PropTypes.bool,
+  toggleModal: PropTypes.func,
 };
 
 export default Splash;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -54,9 +54,6 @@ const StyledHomeColumn = styled(Row)`
   @media (max-width: 720px) {
     margin-top: 0;
   }
-
-  @media (max-width: 500px) {
-  }
 `;
 
 const StyledRow = styled(Row)`
@@ -102,37 +99,33 @@ const StyledTitleDiv = styled.div`
   }
 `;
 
-export default class LaunchSplash extends Component {
-  render() {
-    const { toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible } = this.props;
+const LaunchSplash = ({ toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible }) => {
+  return (
+    <Wrapper>
+      <Content background={`url('${launchsplash}')`}>
+        <Navigation launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
 
-    return (
-      <Wrapper>
-        <Content background={`url('${launchsplash}')`}>
-          <Navigation launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
-
-          <StyledRow>
-            <StyledHomeColumn>
-              <StyledTitleDiv>
-                <StyledTitle>
-                  <span>FOUR SECRETS</span>
-                  <span>TO CREATE VIDEOS</span>
-                  <span>THAT GET RESULTS</span>
-                </StyledTitle>
-              </StyledTitleDiv>
-              <LaunchForm
-                handleAuth={handleAuth}
-                handleSubmitFormVisible={handleSubmitFormVisible}
-                submitFormVisible={submitFormVisible}
-                type="splash"
-              />
-            </StyledHomeColumn>
-          </StyledRow>
-        </Content>
-      </Wrapper>
-    );
-  }
-}
+        <StyledRow>
+          <StyledHomeColumn>
+            <StyledTitleDiv>
+              <StyledTitle>
+                <span>FOUR SECRETS</span>
+                <span>TO CREATE VIDEOS</span>
+                <span>THAT GET RESULTS</span>
+              </StyledTitle>
+            </StyledTitleDiv>
+            <LaunchForm
+              handleAuth={handleAuth}
+              handleSubmitFormVisible={handleSubmitFormVisible}
+              submitFormVisible={submitFormVisible}
+              type="splash"
+            />
+          </StyledHomeColumn>
+        </StyledRow>
+      </Content>
+    </Wrapper>
+  );
+};
 
 LaunchSplash.propTypes = {
   toggleModal: PropTypes.func,
@@ -141,3 +134,5 @@ LaunchSplash.propTypes = {
   handleSubmitFormVisible: PropTypes.func,
   submitFormVisible: PropTypes.bool,
 };
+
+export default LaunchSplash;

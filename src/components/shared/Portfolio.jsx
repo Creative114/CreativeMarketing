@@ -150,7 +150,7 @@ const MenuItem = ({ id, selected, title, handleClick }) => {
 MenuItem.propTypes = {
   img: PropTypes.string,
   cid: PropTypes.string,
-  selected: PropTypes.bool,
+  selected: PropTypes.string,
 };
 
 export default class Portfolio extends Component {
@@ -163,21 +163,21 @@ export default class Portfolio extends Component {
     };
   }
 
-  handleClick(id) {
+  handleClick = (id) => {
     this.setState(() => {
       return {
         selected: id,
       };
     });
-  }
+  };
 
-  handleLightbox(index) {
+  handleLightbox = (index) => {
     this.setState({ isOpen: !this.state.isOpen, photoIndex: index });
-  }
+  };
 
-  toggleModal() {
+  toggleModal = () => {
     this.setState({ isOpen: !this.state.isOpen });
-  }
+  };
 
   render() {
     const { selected, photoIndex, isOpen } = this.state;

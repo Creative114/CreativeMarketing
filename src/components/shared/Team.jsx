@@ -118,7 +118,7 @@ const Box = ({ id, selected, handleClick, img }) => {
 
 Box.propTypes = {
   id: PropTypes.string,
-  selected: PropTypes.bool,
+  selected: PropTypes.string,
   handleClick: PropTypes.func,
   img: PropTypes.string,
 };
@@ -131,21 +131,21 @@ export default class Team extends Component {
     };
   }
 
-  handleClick(id) {
+  handleClick = (id) => {
     this.setState(() => {
       return {
         selected: id,
       };
     });
-  }
+  };
 
-  handlePrevSlide() {
+  handlePrevSlide = () => {
     this.slide.slickPrev();
-  }
+  };
 
-  handleNextSlide() {
+  handleNextSlide = () => {
     this.slide.slickNext();
-  }
+  };
 
   render() {
     const { selected } = this.state;

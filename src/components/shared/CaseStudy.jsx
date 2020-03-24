@@ -33,6 +33,7 @@ const StyledColumn = styled(Column)`
 const StyledTextColumn = styled(Column)`
   margin: 0.5em 0;
   width: 70%;
+
   @media (max-width: 980px) {
     width: 90%;
     text-align: center;
@@ -42,10 +43,10 @@ const StyledTextColumn = styled(Column)`
 
 const Div = styled.div`
   width: 50vw;
-  // height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 980px) {
     width: 100%;
     height: auto;
@@ -54,6 +55,7 @@ const Div = styled.div`
 
 const Image = styled.img`
   width: 400px;
+
   @media (max-width: 500px) {
     width: 325px;
   }

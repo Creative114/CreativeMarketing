@@ -55,7 +55,7 @@ export default class LaunchForm extends Component {
     }
   }
 
-  getForm() {
+  getForm = () => {
     const { submitFormVisible, handleSubmitFormVisible, handleAuth } = this.props;
 
     document.getElementById('hubspotFormHeader').innerHTML = '';
@@ -77,7 +77,7 @@ export default class LaunchForm extends Component {
         onFormSubmitted: () => {},
       });
     }
-  }
+  };
 
   render() {
     return (
