@@ -49,7 +49,7 @@ const TextRow = styled(Row)`
 `;
 
 export const ProcessText = styled.p`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #212121;
   display: flex;
   justify-content: center;
@@ -71,7 +71,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 4px;

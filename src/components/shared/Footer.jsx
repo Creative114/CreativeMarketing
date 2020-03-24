@@ -114,8 +114,8 @@ const Footer = () => {
           </Link>
           <div style={{ width: '80%' }}>
             <Text footer>
-              If you’re struggle to be interesting, relevant, and relatable, we’ll help you identify and communicate
-              emotionally engaging video stories that generate results (and goosebumps).
+              If you&apos;re struggling to be interesting, relevant, and relatable, we’ll help you identify and
+              communicate emotionally engaging video stories that generate results (and goosebumps).
             </Text>
           </div>
         </StyledColumn>

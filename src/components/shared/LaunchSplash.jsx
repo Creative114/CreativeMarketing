@@ -76,7 +76,7 @@ export const StyledTitle = styled(Title)`
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 64px;
   font-stretch: normal;
   font-style: normal;

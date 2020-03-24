@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // TYPE
 
 export const Title = styled.h1`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   color: #505d68;
   font-size: 42px;
@@ -59,7 +59,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #505d68;
   font-size: ${(props) => (props.logo ? '22px' : '21px')};
@@ -84,7 +84,7 @@ export const Subtitle = styled.h2`
 `;
 
 export const SpanTitle = styled.span`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   color: #505d68;
   font-size: 42px;
@@ -139,7 +139,7 @@ export const SpanTitle = styled.span`
 `;
 
 export const SpanSubtitle = styled.h2`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #505d68;
   font-size: ${(props) => (props.logo ? '22px' : '21px')};
@@ -164,7 +164,7 @@ export const SpanSubtitle = styled.h2`
 `;
 
 export const Text = styled.p`
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 100;
   color: #212121;
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
@@ -256,7 +256,7 @@ export const Text = styled.p`
 `;
 
 export const SubTitleText = styled.h6`
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   color: #a1aeb7;
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
@@ -354,7 +354,7 @@ export const StyledNavLink = styled(NavLink)`
   margin-right: 1.5em;
   font-weight: 700;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   transition: 500ms;
   ${(props) =>
     props.home &&
@@ -383,7 +383,7 @@ export const StyledALink = styled.a`
   margin-right: 1.5em;
   font-weight: 700;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   transition: 500ms;
   ${(props) =>
     props.home &&
@@ -465,7 +465,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const Label = styled.label`
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #989898;
   font-size: 14px;
@@ -517,7 +517,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;

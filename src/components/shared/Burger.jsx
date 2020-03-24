@@ -31,7 +31,7 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li`
   margin: 1em 0;
   font-size: 1.4em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   list-style: none;
 `;
 

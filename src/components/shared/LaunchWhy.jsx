@@ -63,7 +63,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 4px;
@@ -94,7 +94,7 @@ export default class LaunchWhy extends Component {
       <Wrapper bg={`url('${BG}')`}>
         <Column alignitems="center" textalign="center">
           <SpanTitle margin="0">If Your Videos Are Boring</SpanTitle>
-          <ProcessText style={{ margin: '6px 0' }}>They Won &apos t Get You Results</ProcessText>
+          <ProcessText style={{ margin: '6px 0' }}>They Won&apos;t Get You Results</ProcessText>
         </Column>
         <Grid>
           <Div>
