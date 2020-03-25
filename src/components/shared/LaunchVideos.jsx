@@ -47,6 +47,7 @@ const Div = styled.div`
 `;
 
 const LaunchVideos = ({ isAuthed, toggleModal }) => {
+  console.log('props: ', { isAuthed, toggleModal });
   return (
     <Wrapper id="what">
       <Grid>

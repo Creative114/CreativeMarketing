@@ -26,7 +26,7 @@ class Landing extends Component {
   constructor(props) {
     super(props);
 
-    const auth = window.localStorage.getItem('authorized') || false;
+    const auth = localStorage.getItem('authorized') || false;
     const isAuthed = !!auth;
 
     this.state = {
@@ -42,7 +42,7 @@ class Landing extends Component {
   };
 
   handleAuth = () => {
-    Window.localStorage.setItem('authorized', true);
+    localStorage.setItem('authorized', true);
     this.setState({ isAuthed: true });
   };
 
