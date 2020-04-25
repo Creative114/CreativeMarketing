@@ -47,35 +47,37 @@ const TextRow = styled(Row)`
 `;
 
 export const ProcessText = styled.p`
-  font-family: 'Montserrat', sans-serif;
   color: #212121;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  font-size: 28px;
-  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
   font-weight: 100;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 `;
 
 const StyledButton = styled.button`
-  width: 225px;
-  height: 45px;
-  outline: none;
+  align-items: center;
   background: #d21f04;
+  border-radius: 4px;
   border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  border-radius: 4px;
-  transition: 750ms;
+  height: 45px;
+  justify-content: center;
   margin: 0.5em 0;
+  outline: none;
   text-transform: uppercase;
+  transition: 750ms;
+  width: 225px;
 
   &:hover {
     background-color: #f32405;
@@ -142,10 +144,8 @@ const LaunchStory = ({ toggleModal, isAuthed }) => {
 
           <StyledRow>
             <ProcessText>
-              <span>Watch each video and discover 4 elements that will transform</span>
-              <span>
-                the way you engage with <b>your ideal audience</b>
-              </span>
+              Watch each video and discover 4 elements that will transform the way you engage with{' '}
+              <b>your ideal audience</b>
             </ProcessText>
           </StyledRow>
           {!isAuthed && (

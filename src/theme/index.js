@@ -4,40 +4,50 @@ import { NavLink } from 'react-router-dom';
 // TYPE
 
 export const Title = styled.h1`
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
   color: #505d68;
+  font-family: 'Montserrat', sans-serif;
   font-size: 42px;
+  font-weight: 800;
   line-height: 52px;
   margin: ${(props) => props.margin || '.5em 0'};
+
   @media (max-width: 780px) {
     font-size: 38px;
   }
+
   @media (max-width: 400px) {
     font-size: 28px;
   }
+
+  @media (max-width: 300px) {
+    font-size: 24px;
+  }
+
   ${(props) =>
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
-      font-size: ${(props) => props.home && '66px'};
-      text-transform: ${(props) => props.home && 'uppercase'};
+      font-size: ${(props) => props.home && '64px'};
       line-height: ${(props) => props.home && '90px'};
       margin: ${(props) => props.margin || '.25em 0'};
+      text-transform: ${(props) => props.home && 'uppercase'};
+
       @media (max-width: 1200px) {
         font-size: 72px;
         line-height: 90px;
       }
+
       @media (max-width: 900px) {
-        line-height: 62px;
         line-height: 80px;
       }
+
       @media (max-width: 780px) {
         font-size: 48px;
         line-height: 64px;
       }
-      @media (max-width: 500px) {
-        font-size: 28px;
+
+      @media (max-width: 520px) {
+        font-size: 24px;
         line-height: 38px;
       }
     `};
@@ -47,11 +57,12 @@ export const Title = styled.h1`
       color: #000;
       font-size: 60px;
       line-height: 1.2em;
-      margin: 0.25em 0;
       margin-top: 0;
+
       @media (max-width: 1200px) {
         font-size: 48px;
       }
+
       @media (max-width: 900px) {
         font-size: 38px;
       }
@@ -65,16 +76,19 @@ export const Subtitle = styled.h2`
   font-size: ${(props) => (props.logo ? '22px' : '21px')};
   line-height: 38px;
   margin: ${(props) => props.margin || '0.5em 0'};
+
   @media (max-width: 900px) {
     font-size: 21px;
   }
+
   ${(props) =>
     props.home &&
     css`
       color: #fff;
-      font-size: 28px;
+      font-size: 22px;
       text-transform: uppercase;
       margin: 0;
+
       @media (max-width: 500px) {
         font-size: 16px;
         display: none;
@@ -84,40 +98,51 @@ export const Subtitle = styled.h2`
 `;
 
 export const SpanTitle = styled.span`
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
   color: #505d68;
+  font-family: 'Montserrat', sans-serif;
   font-size: 42px;
+  font-weight: 800;
   line-height: 52px;
   margin: ${(props) => props.margin || '.5em 0'};
+
   @media (max-width: 780px) {
     font-size: 38px;
   }
+
   @media (max-width: 400px) {
     font-size: 28px;
   }
+
   ${(props) =>
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
       font-size: ${(props) => props.home && '66px'};
-      text-transform: ${(props) => props.home && 'uppercase'};
       line-height: ${(props) => props.home && '90px'};
       margin: ${(props) => props.margin || '.25em 0'};
+      text-transform: ${(props) => props.home && 'uppercase'};
+
       @media (max-width: 1200px) {
         font-size: 72px;
         line-height: 90px;
       }
+
       @media (max-width: 900px) {
-        line-height: 62px;
         line-height: 80px;
       }
+
       @media (max-width: 780px) {
         font-size: 48px;
         line-height: 64px;
       }
+
       @media (max-width: 500px) {
         font-size: 28px;
+        line-height: 38px;
+      }
+
+      @media (max-width: 300px) {
+        font-size: 24px;
         line-height: 38px;
       }
     `};
@@ -127,11 +152,12 @@ export const SpanTitle = styled.span`
       color: #000;
       font-size: 60px;
       line-height: 1.2em;
-      margin: 0.25em 0;
       margin-top: 0;
+
       @media (max-width: 1200px) {
         font-size: 48px;
       }
+
       @media (max-width: 900px) {
         font-size: 38px;
       }
@@ -145,51 +171,59 @@ export const SpanSubtitle = styled.h2`
   font-size: ${(props) => (props.logo ? '22px' : '21px')};
   line-height: 38px;
   margin: ${(props) => props.margin || '0.5em 0'};
+
   @media (max-width: 900px) {
     font-size: 21px;
   }
+
   ${(props) =>
     props.home &&
     css`
       color: #fff;
       font-size: 28px;
-      text-transform: uppercase;
       margin: 0;
+      text-transform: uppercase;
+
       @media (max-width: 500px) {
-        font-size: 16px;
         display: none;
+        font-size: 16px;
         line-height: 1em;
       }
     `}
 `;
 
 export const Text = styled.p`
-  font-family: "Montserrat", sans-serif;
-  font-weight: 100;
   color: #212121;
+  font-family: "Montserrat", sans-serif;
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
+  font-weight: 100;
   line-height: 34px;
   margin: ${(props) => props.margin || '0.5em 0'};
+
   @media (max-width: 780px) {
     font-size: 16px;
     line-height: 32px;
   }
+
   @media (max-width: 400px) {
     font-size: 14px;
     line-height: 26px;
   }
+
   ${(props) =>
     props.header &&
     css`
       color: #fff;
       font-size: 22px;
     `};
+
   ${(props) =>
     props.title &&
     css`
       margin: 0;
       font-size: 21px;
     `};
+
   ${(props) =>
     props.footer &&
     css`
@@ -198,12 +232,14 @@ export const Text = styled.p`
       line-height: 1.75em;
       font-size: 16px;
     `};
+
   ${(props) =>
     props.post &&
     css`
       font-size: 14px;
       line-height: 22px;
     `};
+
   ${(props) =>
     props.dark &&
     css`
@@ -211,6 +247,7 @@ export const Text = styled.p`
       font-weight: 600;
       line-height: 28px;
     `};
+
   ${(props) =>
     props.contact &&
     css`
@@ -228,6 +265,7 @@ export const Text = styled.p`
         font-size: 14px;
       }
     `};
+
   ${(props) =>
     props.red &&
     css`
@@ -236,6 +274,7 @@ export const Text = styled.p`
       font-weight: 600;
       text-transform: uppercase;
     `}
+
   ${(props) =>
     props.pointer &&
     css`
@@ -262,26 +301,31 @@ export const SubTitleText = styled.h6`
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
   line-height: 34px;
   margin: ${(props) => props.margin || '0.5em 0'};
+
   @media (max-width: 780px) {
     font-size: 16px;
     line-height: 32px;
   }
+
   @media (max-width: 400px) {
     font-size: 14px;
     line-height: 26px;
   }
+
   ${(props) =>
     props.header &&
     css`
       color: #fff;
       font-size: 22px;
     `};
+
   ${(props) =>
     props.title &&
     css`
       margin: 0;
       font-size: 21px;
     `};
+
   ${(props) =>
     props.footer &&
     css`
@@ -290,12 +334,14 @@ export const SubTitleText = styled.h6`
       line-height: 1.75em;
       font-size: 16px;
     `};
+
   ${(props) =>
     props.post &&
     css`
       font-size: 14px;
       line-height: 22px;
     `};
+
   ${(props) =>
     props.dark &&
     css`
@@ -303,6 +349,7 @@ export const SubTitleText = styled.h6`
       font-weight: 600;
       line-height: 28px;
     `};
+
   ${(props) =>
     props.contact &&
     css`
@@ -320,6 +367,7 @@ export const SubTitleText = styled.h6`
         font-size: 14px;
       }
     `};
+
   ${(props) =>
     props.red &&
     css`
@@ -328,6 +376,7 @@ export const SubTitleText = styled.h6`
       font-weight: 600;
       text-transform: uppercase;
     `}
+
   ${(props) =>
     props.pointer &&
     css`
@@ -335,11 +384,13 @@ export const SubTitleText = styled.h6`
       font-weight: 600;
       margin-top: 0;
     `}
+
     ${(props) =>
       props.secondary &&
       css`
         line-height: 1.5em;
       `}
+
       ${(props) =>
         props.white &&
         css`
@@ -363,7 +414,7 @@ export const StyledNavLink = styled(NavLink)`
     `};
 
   @media (max-width: 1200px) {
-    margin: 0 0.5em;
+    margin: 0.5em;
     font-size: 15px;
   }
 
@@ -396,7 +447,7 @@ export const StyledALink = styled.a`
   }
   @media (max-width: 560px) {
     margin: 0 0.5em;
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
@@ -507,34 +558,35 @@ export const StyledColumn = styled(Column)`
 `;
 
 export const Button = styled.button`
+  align-items: center;
   background-color: inherit;
-  width: 146px;
-  height: 40px;
-  outline: none;
+  border-radius: 3px;
   border: 1px solid #505d68;
   color: #505d68;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 3px;
-  transition: 750ms;
+  height: 40px;
+  justify-content: center;
   margin: 0.5em 0;
+  outline: none;
   text-transform: uppercase;
+  transition: 750ms;
+  width: 146px;
 
   ${(props) =>
     props.primary &&
     css`
       background: #d21f04;
-      width: ${(props) => (props.small ? '155px' : '225px')};
-      height: 45px;
       border: 1px solid transparent;
-      margin: ${(props) => props.margin || '.5em 0'}
-      font-size: ${(props) => (props.smallText ? '14px' : '16px')};
       color: #fff;
+      font-size: ${(props) => (props.smallText ? '14px' : '16px')};
+      height: 45px;
+      margin: ${(props) => props.margin || '.5em 0'}
+      width: ${(props) => (props.small ? '155px' : '225px')};
+
       &:hover {
         background-color: #f32405;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -545,12 +597,13 @@ export const Button = styled.button`
     props.footer &&
     css`
       background: #fff;
-      width: ${(props) => (props.small ? '135px' : '225px')};
-      height: 45px;
       border: 1px solid transparent;
       color: #d21f04;
       font-size: ${(props) => (props.smallText ? '14px' : '16px')};
+      height: 45px;
       margin: 0;
+      width: ${(props) => (props.small ? '135px' : '225px')};
+
       &:hover {
         color: #d21f04;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

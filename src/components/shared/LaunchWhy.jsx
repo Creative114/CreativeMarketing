@@ -117,8 +117,9 @@ const LaunchWhy = ({ isAuthed, toggleModal }) => {
       <StyledColumn>
         <ProcessText>
           Overcome the obstacles that keep you from connecting with your customers.
-          <br />
-          Start supercharging your message with emotionally <b>engaging video stories.</b>
+          <span>
+            Start supercharging your message with emotionally <b>engaging video stories.</b>
+          </span>
         </ProcessText>
       </StyledColumn>
       <Row justifycontent="center">
