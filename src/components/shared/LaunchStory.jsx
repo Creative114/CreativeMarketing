@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Row, Text } from '../../theme/index';
@@ -15,9 +15,7 @@ const Wrapper = styled.div`
   padding: 2em 0 2.5em 0;
   display: flex;
   flex-direction: column;
-  @media (min-width: 1750px) {
-    // min-height: 1000px;
-  }
+
   @media (max-width: 1000px) {
     flex-direction: column;
     margin: 0 auto;
@@ -29,8 +27,8 @@ const Wrapper = styled.div`
 const StyledVideoRow = styled(Row)`
   width: 75%;
   height: auto;
-  margin: 0 auto;
-  margin-top: 2em;
+  margin: 2em auto 0;
+
   @media (max-width: 780px) {
     width: 95%;
     height: 100%;
@@ -38,10 +36,10 @@ const StyledVideoRow = styled(Row)`
 `;
 
 const TextRow = styled(Row)`
-  margin: 0 auto;
-  margin-bottom: 2em;
+  margin: 0 auto 2em;
   justify-content: space-between;
   width: 75%;
+
   @media (max-width: 780px) {
     width: 95%;
     flex-direction: column;
@@ -49,35 +47,37 @@ const TextRow = styled(Row)`
 `;
 
 export const ProcessText = styled.p`
-  font-family: 'Montserrat', sans-serif;
   color: #212121;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  font-size: 28px;
-  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
   font-weight: 100;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 `;
 
 const StyledButton = styled.button`
-  width: 225px;
-  height: 45px;
-  outline: none;
+  align-items: center;
   background: #d21f04;
+  border-radius: 4px;
   border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  border-radius: 4px;
-  transition: 750ms;
+  height: 45px;
+  justify-content: center;
   margin: 0.5em 0;
+  outline: none;
   text-transform: uppercase;
+  transition: 750ms;
+  width: 225px;
 
   &:hover {
     background-color: #f32405;
@@ -114,137 +114,134 @@ const Icon = styled.img`
   }
 `;
 
-export default class LaunchStory extends Component {
-  render() {
-    const { toggleModal, isAuthed } = this.props;
-    return (
-      <Wrapper>
-        <Reveal effect="fadeIn">
-          <>
-            <TextRow>
-              <StyledIconRow alignitems="center">
-                <Icon src={SubscribeIcon} />
-                <Text red margin="0">
-                  Subscribe
-                </Text>
-              </StyledIconRow>
+const LaunchStory = ({ toggleModal, isAuthed }) => {
+  return (
+    <Wrapper>
+      <Reveal effect="fadeIn">
+        <>
+          <TextRow>
+            <StyledIconRow alignitems="center">
+              <Icon src={SubscribeIcon} />
+              <Text red margin="0">
+                Subscribe
+              </Text>
+            </StyledIconRow>
 
-              <StyledIconRow alignitems="center">
-                <Icon src={InspiredIcon} />
-                <Text red margin="0">
-                  Get Inspired
-                </Text>
-              </StyledIconRow>
+            <StyledIconRow alignitems="center">
+              <Icon src={InspiredIcon} />
+              <Text red margin="0">
+                Get Inspired
+              </Text>
+            </StyledIconRow>
 
-              <StyledIconRow alignitems="center">
-                <Icon src={ResultsIcon} />
-                <Text red margin="0">
-                  Get results
-                </Text>
-              </StyledIconRow>
-            </TextRow>
+            <StyledIconRow alignitems="center">
+              <Icon src={ResultsIcon} />
+              <Text red margin="0">
+                Get results
+              </Text>
+            </StyledIconRow>
+          </TextRow>
 
-            <StyledRow>
-              <ProcessText>
-                <span>Watch each video and discover 4 elements that will transform</span>
-                <span>
-                  the way you engage with <b>your ideal audience</b>
-                </span>
-              </ProcessText>
-            </StyledRow>
-            {!isAuthed && (
-              <div>
-                <StyledVideoRow onClick={() => toggleModal('launch')}>
+          <StyledRow>
+            <ProcessText>
+              Watch each video and discover 4 elements that will transform the way you engage with{' '}
+              <b>your ideal audience</b>
+            </ProcessText>
+          </StyledRow>
+          {!isAuthed && (
+            <div>
+              <StyledVideoRow onClick={() => toggleModal('launch')}>
+                <div
+                  className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
+                  style={{
+                    pointerEvents: 'none',
+                    height: '100%',
+                    position: 'relative',
+                    width: '100%',
+                  }}
+                >
                   <div
-                    className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
+                    className="wistia_swatch"
                     style={{
-                      pointerEvents: 'none',
                       height: '100%',
-                      position: 'relative',
+                      left: 0,
+                      opacity: 0,
+                      overflow: 'hidden',
+                      position: 'absolute',
+                      top: 0,
+                      transition: 'opacity 250ms',
                       width: '100%',
+                      pointerEvents: 'none',
                     }}
                   >
-                    <div
-                      className="wistia_swatch"
+                    <img
+                      src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
                       style={{
                         height: '100%',
-                        left: 0,
-                        opacity: 0,
-                        overflow: 'hidden',
-                        position: 'absolute',
-                        top: 0,
-                        transition: 'opacity 250ms',
                         width: '100%',
+                        objectFit: 'contain',
                         pointerEvents: 'none',
                       }}
-                    >
-                      <img
-                        src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          objectFit: 'contain',
-                          pointerEvents: 'none',
-                        }}
-                        alt=""
-                      />
-                    </div>
+                      alt=""
+                    />
                   </div>
-                </StyledVideoRow>
-              </div>
-            )}
-            {isAuthed && (
-              <div>
-                <StyledVideoRow>
+                </div>
+              </StyledVideoRow>
+            </div>
+          )}
+          {isAuthed && (
+            <div>
+              <StyledVideoRow>
+                <div
+                  className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
+                  style={{
+                    height: '100%',
+                    position: 'relative',
+                    width: '100%',
+                  }}
+                >
                   <div
-                    className="wistia_embed wistia_async_ite2h6tlyf videoFoam=true"
+                    className="wistia_swatch"
                     style={{
                       height: '100%',
-                      position: 'relative',
+                      left: 0,
+                      opacity: 0,
+                      overflow: 'hidden',
+                      position: 'absolute',
+                      top: 0,
+                      transition: 'opacity 250ms',
                       width: '100%',
                     }}
                   >
-                    <div
-                      className="wistia_swatch"
+                    <img
+                      src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
                       style={{
                         height: '100%',
-                        left: 0,
-                        opacity: 0,
-                        overflow: 'hidden',
-                        position: 'absolute',
-                        top: 0,
-                        transition: 'opacity 250ms',
                         width: '100%',
+                        objectFit: 'contain',
                       }}
-                    >
-                      <img
-                        src="https://fast.wistia.com/embed/medias/ite2h6tlyf/swatch"
-                        style={{
-                          height: '100%',
-                          width: '100%',
-                          objectFit: 'contain',
-                        }}
-                        alt=""
-                      />
-                    </div>
+                      alt=""
+                    />
                   </div>
-                </StyledVideoRow>
-              </div>
-            )}
+                </div>
+              </StyledVideoRow>
+            </div>
+          )}
 
-            <Row justifycontent="center" margin="4em 0 0">
-              <StyledButton onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
-                {isAuthed ? 'Schedule a call now' : 'Get the videos'}
-              </StyledButton>
-            </Row>
-          </>
-        </Reveal>
-      </Wrapper>
-    );
-  }
-}
+          <Row justifycontent="center" margin="4em 0 0">
+            <StyledButton onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>
+              {isAuthed ? 'Schedule a call now' : 'Get the videos'}
+            </StyledButton>
+          </Row>
+        </>
+      </Reveal>
+    </Wrapper>
+  );
+};
 
 LaunchStory.propTypes = {
   toggleModal: PropTypes.func,
   isAuthed: PropTypes.bool,
 };
+
+export default LaunchStory;

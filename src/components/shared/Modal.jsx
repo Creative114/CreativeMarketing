@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Row } from '../../theme/index';
@@ -51,24 +51,23 @@ const StyledRow = styled(Row)`
   }
 `;
 
-export default class Modal extends Component {
-  render() {
-    const { show, togglemodal, children } = this.props;
-    if (!show) return null;
+const Modal = ({ show, togglemodal, children }) => {
+  if (!show) return null;
 
-    return (
-      <Backdrop className="fadeIn">
-        <Header>
-          <Icon onClick={togglemodal} className="fas fa-times-circle" />
-        </Header>
-        <StyledRow>{children}</StyledRow>
-      </Backdrop>
-    );
-  }
-}
+  return (
+    <Backdrop className="fadeIn">
+      <Header>
+        <Icon onClick={togglemodal} className="fas fa-times-circle" />
+      </Header>
+      <StyledRow>{children}</StyledRow>
+    </Backdrop>
+  );
+};
 
 Modal.propTypes = {
   show: PropTypes.bool,
   togglemodal: PropTypes.func,
   children: PropTypes.array,
 };
+
+export default Modal;

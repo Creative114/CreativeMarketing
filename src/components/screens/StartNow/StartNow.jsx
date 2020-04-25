@@ -55,7 +55,7 @@ const StartNowForm = () => {
 
 const StartNow = () => {
   return (
-    <div>
+    <>
       <Helmet
         title="Our Team | Brand Engagement, Marketing, Design"
         meta={[
@@ -76,7 +76,7 @@ const StartNow = () => {
 
       <StartNowForm />
       <Footer />
-    </div>
+    </>
   );
 };
 

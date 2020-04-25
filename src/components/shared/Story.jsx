@@ -16,9 +16,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 1750px) {
-    // min-height: 1000px;
-  }
   @media (max-width: 1000px) {
     flex-direction: column;
     margin: 0 auto;
@@ -29,8 +26,7 @@ const Wrapper = styled.div`
 
 const StyledVideoRow = styled(Row)`
   width: 75%;
-  margin: 0 auto;
-  margin-top: 4em;
+  margin: 4em auto 0;
   @media (max-width: 780px) {
     width: 100%;
     height: 100%;
@@ -41,6 +37,7 @@ const TextRow = styled(Row)`
   margin: 1em auto 2em;
   justify-content: space-between;
   width: 75%;
+
   @media (max-width: 780px) {
     width: 95%;
     flex-direction: column;
@@ -49,6 +46,7 @@ const TextRow = styled(Row)`
 
 const StyledIconRow = styled(Row)`
   align-items: center;
+
   @media (max-width: 780px) {
     margin: 20px auto;
     width: 200px;
@@ -58,9 +56,11 @@ const StyledIconRow = styled(Row)`
 
 const Icon = styled.img`
   width: 120px;
+
   @media (max-width: 1600px) {
     width: 100px;
   }
+
   @media (max-width: 768px) {
     width: 80px;
   }

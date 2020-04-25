@@ -26,6 +26,7 @@ const FindYourStoryForm = () => {
       });
     }
   });
+
   return (
     <Wrapper>
       <div style={{ textAlign: 'center', width: '85%', margin: '30px auto' }}>

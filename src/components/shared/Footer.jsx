@@ -29,10 +29,10 @@ const Image = styled.img`
 `;
 
 const StyledRow = styled(Row)`
-  justify-content: space-between;
-  width: 90%;
+  display: flex;
   height: 100%;
-  margin: auto;
+  justify-content: center;
+  width: 100%;
 
   @media (max-width: 920px) {
     flex-direction: column;
@@ -52,7 +52,7 @@ const StyledColumn = styled(Column)`
   @media (max-width: 920px) {
     text-align: center;
     width: 95%;
-    margin: 0.75em auto;
+    margin: 0.5em auto 0.75em auto;
     align-items: center;
   }
   ${(props) =>
@@ -96,10 +96,11 @@ const DesktopDiv = styled(Row)`
 const LinkRow = styled(StyledContentRow)`
   @media (max-width: 560px) {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 200px;
-    margin: 0.2em 0.5em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0.2em 0;
     font-size: 10em;
   }
 `;

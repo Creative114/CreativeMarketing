@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2em 0;
+
   @media (max-width: 780px) {
     width: 95%;
     text-align: center;
@@ -26,6 +27,7 @@ const Grid = styled.div`
   margin: 2em auto 0;
   height: 100%;
   width: 75%;
+
   @media (max-width: 780px) {
     width: 95%;
     margin: 0;
@@ -42,9 +44,11 @@ const Div = styled.div`
   transition: 750ms;
   margin-top: 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
+
   &:first-child {
     margin-top: 0px;
   }
@@ -52,6 +56,7 @@ const Div = styled.div`
 
 const StyledPost = styled(Column)`
   padding: 0 1em;
+
   @media (max-width: 780px) {
     width: ${(props) => (props.text ? '95%' : '65%')};
     text-align: center;
@@ -65,6 +70,7 @@ const StyledColumn = styled(Column)`
   text-align: center;
   width: 75%;
   margin: 0 auto;
+
   @media (max-width: 1100px) {
     margin: 1em auto;
     width: 95%;

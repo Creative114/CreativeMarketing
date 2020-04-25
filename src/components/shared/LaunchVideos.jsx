@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Video from '../shared/Video';
@@ -46,43 +46,43 @@ const Div = styled.div`
   text-align: center;
 `;
 
-export default class LaunchVideos extends Component {
-  render() {
-    const { isAuthed, toggleModal } = this.props;
-    return (
-      <Wrapper id="what">
-        <Grid>
-          <Div>
-            <Video
-              isAuthed={isAuthed}
-              toggleModal={toggleModal}
-              type="launch"
-              src="https://fast.wistia.com/embed/medias/xv5qxmxszs/swatch"
-            />
-          </Div>
-          <Div>
-            <Video
-              isAuthed={isAuthed}
-              toggleModal={toggleModal}
-              type="launch"
-              src="https://fast.wistia.com/embed/medias/s0kg7ojjxg/swatch"
-            />
-          </Div>
-          <Div>
-            <Video
-              isAuthed={isAuthed}
-              toggleModal={toggleModal}
-              type="launch"
-              src="https://fast.wistia.com/embed/medias/cp1ev8o1xq/swatch"
-            />
-          </Div>
-        </Grid>
-      </Wrapper>
-    );
-  }
-}
+const LaunchVideos = ({ isAuthed, toggleModal }) => {
+  console.log('props: ', { isAuthed, toggleModal });
+  return (
+    <Wrapper id="what">
+      <Grid>
+        <Div>
+          <Video
+            isAuthed={isAuthed}
+            toggleModal={toggleModal}
+            type="launch"
+            src="https://fast.wistia.com/embed/medias/xv5qxmxszs/swatch"
+          />
+        </Div>
+        <Div>
+          <Video
+            isAuthed={isAuthed}
+            toggleModal={toggleModal}
+            type="launch"
+            src="https://fast.wistia.com/embed/medias/s0kg7ojjxg/swatch"
+          />
+        </Div>
+        <Div>
+          <Video
+            isAuthed={isAuthed}
+            toggleModal={toggleModal}
+            type="launch"
+            src="https://fast.wistia.com/embed/medias/cp1ev8o1xq/swatch"
+          />
+        </Div>
+      </Grid>
+    </Wrapper>
+  );
+};
 
 LaunchVideos.propTypes = {
   isAuthed: PropTypes.bool,
   toggleModal: PropTypes.func,
 };
+
+export default LaunchVideos;

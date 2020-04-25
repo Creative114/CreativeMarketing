@@ -46,7 +46,7 @@ export default class LaunchFormPopup extends Component {
     }
   }
 
-  getForm() {
+  getForm = () => {
     const { submitFormVisible, handleSubmitFormVisible, handleAuth, toggleModal } = this.props;
 
     if (submitFormVisible) {
@@ -62,7 +62,7 @@ export default class LaunchFormPopup extends Component {
         },
       });
     }
-  }
+  };
 
   render() {
     const { submitFormVisible } = this.props;

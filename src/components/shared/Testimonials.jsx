@@ -81,14 +81,14 @@ export default class Testimonials extends Component {
     };
   }
 
-  handleClick(id, client) {
+  handleClick = (id, client) => {
     this.setState(() => {
       return {
         selected: id,
         title: client,
       };
     });
-  }
+  };
 
   render() {
     const { selected } = this.state;
@@ -98,14 +98,14 @@ export default class Testimonials extends Component {
       <Wrapper>
         <Reveal effect="fadeIn">
           <>
-            <Column alignitems="center">
-              <SpanTitle>{type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}</SpanTitle>
+            <Column margin="-30px 0 0 0" alignitems="center">
+              <SpanTitle style={{ marginBottom: '0' }}>{type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}</SpanTitle>
               {type === 'launch' && (
                 <>
-                  <ProcessText>
+                  <ProcessText style={{ margin: '6px 0' }}>
                     Many Business Owners Are Wasting Money
-                    <br />
-                    Creating Videos That Just Don’t Work.
+                    {''}
+                    <span style={{ margin: '0 5px' }}>Creating Videos That Just Don’t Work.</span>
                     <b>I Don’t Want That To Be You!</b>
                   </ProcessText>
                 </>

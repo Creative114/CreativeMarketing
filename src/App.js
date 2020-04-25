@@ -35,29 +35,27 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/" render={() => <Home onEnter={window.scrollTo(0, 0)} />} />
+        <Switch>
+          <Route exact path="/" render={() => <Home onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/about" render={() => <About onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/about" render={() => <About onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/work" render={() => <Work onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/work" render={() => <Work onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/impact" render={() => <Impact onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/impact" render={() => <Impact onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/casestudies/:name" render={() => <CaseStudy onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/casestudies/:name" render={() => <CaseStudy onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/contact" render={() => <Contact onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/contact" render={() => <Contact onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/thanks" render={() => <Thanks onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/thanks" render={() => <Thanks onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/startnow" render={() => <StartNow onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/startnow" render={() => <StartNow onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route exact path="/launch" render={() => <Launch onEnter={window.scrollTo(0, 0)} />} />
+          <Route exact path="/launch" render={() => <Launch onEnter={window.scrollTo(0, 0)} />} />
 
-            <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
-          </Switch>
-        </div>
+          <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
+        </Switch>
       </BrowserRouter>
     );
   }

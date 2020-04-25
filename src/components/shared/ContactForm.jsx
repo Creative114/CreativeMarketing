@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Column, Row, SpanTitle, Text } from '../../theme/index';
+import { SpanTitle, Column, Row, Text } from '../../theme/index';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -41,7 +41,6 @@ const Icon = styled.i`
   font-size: 2em;
   margin-right: 0.75em;
   color: ${(props) => (props.social ? '#b9402d' : '#505d68')};
-
   @media (max-width: 780px) {
     margin: 0 0.5em;
     font-size: 1.5em;
@@ -110,6 +109,7 @@ const ContactForm = () => {
           </a>
         </StyledRow>
       </StyledColumn>
+      <StyledColumn id="hubspotForm" />
     </Wrapper>
   );
 };
