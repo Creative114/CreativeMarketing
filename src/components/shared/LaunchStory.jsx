@@ -49,15 +49,27 @@ const TextRow = styled(Row)`
 export const ProcessText = styled.p`
   color: #212121;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 100;
   justify-content: center;
   padding: 0;
   text-align: center;
   width: 100%;
+
+  span {
+    margin-top: 10px;
+  }
+
+  @media (max-width: 375px) {
+    width: 90%;
+
+    span {
+      margin-top: 0;
+    }
+  }
 `;
 
 const StyledButton = styled.button`
@@ -144,8 +156,10 @@ const LaunchStory = ({ toggleModal, isAuthed }) => {
 
           <StyledRow>
             <ProcessText>
-              Watch each video and discover 4 elements that will transform the way you engage with{' '}
-              <b>your ideal audience</b>
+              Watch each video and discover 4 elements that will transform the way
+              <span>
+                you engage with <b>your ideal audience</b>
+              </span>
             </ProcessText>
           </StyledRow>
           {!isAuthed && (

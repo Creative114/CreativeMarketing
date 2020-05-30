@@ -29,7 +29,8 @@ const StyledButton = styled.button`
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  margin: 0 0.75em;
+  margin: 0 5px;
+  box-sizing: border-box;
   outline: none;
   border-radius: 3px;
   cursor: pointer;
@@ -99,14 +100,16 @@ export default class Testimonials extends Component {
         <Reveal effect="fadeIn">
           <>
             <Column margin="-30px 0 0 0" alignitems="center">
-              <SpanTitle style={{ marginBottom: '0' }}>{type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}</SpanTitle>
+              <SpanTitle style={{ marginBottom: '0' }}>
+                {type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}
+              </SpanTitle>
               {type === 'launch' && (
                 <>
                   <ProcessText style={{ margin: '6px 0' }}>
                     Many Business Owners Are Wasting Money
-                    {''}
-                    <span style={{ margin: '0 5px' }}>Creating Videos That Just Don’t Work.</span>
-                    <b>I Don’t Want That To Be You!</b>
+                    <span>
+                      Creating Videos That Just Don’t Work. <b>I Don’t Want That To Be You!</b>
+                    </span>
                   </ProcessText>
                 </>
               )}
@@ -167,7 +170,9 @@ export default class Testimonials extends Component {
               <Row justifycontent="center" margin="2.5em 0 0 0" style={{ textAlign: 'center' }}>
                 <ProcessText>
                   People Will Respond To Your Videos After You Implement <br />
-                  <b>What You Learn Here.</b>
+                  <span>
+                    <b>What You Learn Here.</b>
+                  </span>
                 </ProcessText>
               </Row>
             )}
