@@ -110,7 +110,8 @@ export const SpanTitle = styled.span`
   }
 
   @media (max-width: 400px) {
-    font-size: 28px;
+    font-size: 27px;
+    padding: 0 15px;
   }
 
   ${(props) =>
