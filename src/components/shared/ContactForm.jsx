@@ -83,8 +83,8 @@ const ContactForm = () => {
         <StyledRow>
           <Icon className="fas fa-map-pin" />
           <Text post>
-            7028 W. Waters Ave. #274
-            <br /> Tampa, Fl 33634-2292
+            9551 Sunbelt Street Ste 308
+            <br /> Tampa, Fl 33635
           </Text>
         </StyledRow>
 

@@ -191,8 +191,8 @@ export default class Team extends Component {
               <Member
                 img={jephte}
                 name="Jephte Jean-Claude"
-                title="Marketing Intern"
-                description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing intern. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
+                title="Marketing Director"
+                description="As Jet’s younger brother, Jephte gets the perks of serving as our marketing director. He doesn’t take that role lightly. With many different experiences to learn from, he works well with others and strives to apply himself in every way. Our clients and staff appreciate his fun-loving, spirited personality. Jephte is determined to grow his leadership, film, marketing, and storytelling skills here. He is already on his way to becoming an integral part of the professional and creative growth of Creative114’s future."
               />
             </Slider>
           </SliderContainer>
