@@ -48,7 +48,7 @@ class Home extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
-        
+
         <TopBar />
         <HomeSplash toggleModal={this.toggleModal} />
         <Story toggleModal={this.toggleModal} />

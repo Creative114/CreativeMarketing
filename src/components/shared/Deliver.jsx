@@ -65,8 +65,8 @@ const Div = styled.div`
 const Hr = styled.hr`
   width: 50%;
   margin: 4em auto;
-  background-color: rgb(242,245,247);
-  border: 1px solid rgb(242,245,247);;
+  background-color: rgb(242, 245, 247);
+  border: 1px solid rgb(242, 245, 247); ;
 `;
 
 const Deliver = () => {
@@ -76,7 +76,7 @@ const Deliver = () => {
         <SpanTitle>Stories that generate results</SpanTitle>
       </Column>
       <Grid>
-      <Div>
+        <Div>
           <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" />
         </Div>
         <Div>

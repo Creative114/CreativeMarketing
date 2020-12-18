@@ -102,7 +102,9 @@ const StyledTitleDiv = styled.div`
 `;
 
 const NavigationMod = styled(Navigation)`
-  .Wrapper {top: 0;}
+  .Wrapper {
+    top: 0;
+  }
 `;
 
 const LaunchSplash = ({ toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible }) => {

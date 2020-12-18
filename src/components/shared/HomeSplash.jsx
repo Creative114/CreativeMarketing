@@ -147,7 +147,9 @@ const HomeSplash = ({ toggleModal }) => {
         <StyledRow>
           <StyledHomeColumn>
             <Title header home>
-              Your story told<br />like never before
+              Your story told
+              <br />
+              like never before
             </Title>
             <Subtitle home>Showcase the emotional impact of the good that you do</Subtitle>
             <Row margin="2em 0">

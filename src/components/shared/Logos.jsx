@@ -12,13 +12,13 @@ import logo9 from '../../assets/logo9.png';
 import logo10 from '../../assets/logo10.png';
 import logo11 from '../../assets/logo11.png';
 import Reveal from 'react-reveal/Reveal';
-import logo_bc from '../../assets/logo_bc.png';
-import logo_usf_green from '../../assets/logo_usf_green.png';
-import logo_cvf from '../../assets/logo_cvf.png';
-import logo_gh_navy from '../../assets/logo_gh_navy.png';
-import logo_gs from '../../assets/logo_gs.png';
-import logo_rs from '../../assets/logo_rs.png';
-import logo_skux from '../../assets/logo_skux.png';
+import logoBc from '../../assets/logoBc.png';
+import logoUsfGreen from '../../assets/logoUsfGreen.png';
+import logoCvf from '../../assets/logoCvf.png';
+import logoGhNavy from '../../assets/logoGhNavy.png';
+import logoGs from '../../assets/logoGs.png';
+import logoRs from '../../assets/logoRs.png';
+import logoSkux from '../../assets/logoSkux.png';
 
 const Wrapper = styled.div`
   margin-top: 2em;
@@ -76,9 +76,9 @@ const ImageItem = styled.div`
 `;
 
 const logos = [
-  logo_bc,
+  logoBc,
   null,
-  logo_usf_green,
+  logoUsfGreen,
   null,
   logo1,
   null,
@@ -102,15 +102,15 @@ const logos = [
   null,
   logo7,
   null,
-  logo_cvf,
+  logoCvf,
   null,
-  logo_gh_navy,
+  logoGhNavy,
   null,
-  logo_gs,
+  logoGs,
   null,
-  logo_rs,
+  logoRs,
   null,
-  logo_skux
+  logoSkux,
 ];
 
 const Logos = () => {
