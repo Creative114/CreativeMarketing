@@ -11,12 +11,19 @@ import commitment from '../../assets/commitment_icon.svg';
 import collaboration from '../../assets/collaboration_icon.svg';
 
 const Wrapper = styled.div`
-  width: 80%;
+  width: 90%;
   display: grid;
   grid-gap: 25px;
   height: 100%;
   margin: 0em auto;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 95%;
+    margin: 0 auto;
+  }
 
   @media (max-width: 780px) {
     width: 100%;

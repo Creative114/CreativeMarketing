@@ -27,8 +27,10 @@ export const Title = styled.h1`
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
-      font-size: ${(props) => props.home && '64px'};
-      line-height: ${(props) => props.home && '90px'};
+      // font-size: ${(props) => props.home && '64px'};
+      // line-height: ${(props) => props.home && '90px'};
+      font-size: ${(props) => props.home && '115px;'}
+      line-height: ${(props) => props.home && '115px'};
       margin: ${(props) => props.margin || '.25em 0'};
       text-transform: ${(props) => props.home && 'uppercase'};
 

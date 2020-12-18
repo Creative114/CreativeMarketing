@@ -21,11 +21,13 @@ const WrapContent = styled.div`
   background: ${(props) => props.background};
   background-size: cover;
   background-position: ${(props) => props.backgroundposition};
-  clip-path: ellipse(120% 100% at 50% 0%);
+  // clip-path: ellipse(120% 100% at 50% 0%);
+  clip-path: ellipse(250% 100% at 0% 0%);
 
   @media (max-width: 920px) {
     height: ${(props) => props.height || 'calc(100vh - 85px)'};
-    clip-path: ellipse(120% 100% at 50% 0%);
+    // clip-path: ellipse(120% 100% at 50% 0%);
+    clip-path: ellipse(250% 100% at 0% 0%);
   }
 `;
 
@@ -78,7 +80,8 @@ const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  clip-path: ellipse(120% 100% at 50% 0%);
+  // clip-path: ellipse(120% 100% at 50% 0%);
+  clip-path: ellipse(250% 100% at 0% 0%);
 `;
 
 const StyledText = styled(SubTitleText)`
@@ -145,9 +148,10 @@ const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) 
               <StyledText header>{text}</StyledText>
               <StyledMobileText header>{mobileText}</StyledMobileText>
 
-              {type !== 'thanks' && type !== 'contact' && (
-                <Link to="/launch">
-                  <Button primary>Free Story Formula</Button>
+              {type !== 'thanks' && type !== 'contact' && type !== 'quote' && (
+                <Link to="/quote">
+                  {/* <Button primary>Free Story Formula</Button> */}
+                  <Button primary>Request Quote</Button>
                 </Link>
               )}
               {type === 'thanks' && <A href={PDF}>Download now!</A>}

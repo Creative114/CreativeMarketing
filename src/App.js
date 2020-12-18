@@ -8,6 +8,7 @@ import Contact from './components/screens/Contact/Contact';
 import Thanks from './components/screens/Thanks/Thanks';
 import NoMatch from './components/screens/NoMatch/NoMatch';
 import StartNow from './components/screens/StartNow/StartNow';
+import Quote from './components/screens/Quote/Quote';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Launch from './components/screens/Launch/Launch';
 import 'normalize.css';
@@ -53,6 +54,8 @@ class App extends Component {
           <Route exact path="/startnow" render={() => <StartNow onEnter={window.scrollTo(0, 0)} />} />
 
           <Route exact path="/launch" render={() => <Launch onEnter={window.scrollTo(0, 0)} />} />
+
+          <Route exact path="/quote" render={() => <Quote onEnter={window.scrollTo(0, 0)} />} />
 
           <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
         </Switch>

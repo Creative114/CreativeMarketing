@@ -11,6 +11,7 @@ import casestudyhero3 from '../../../assets/casestudyhero3.jpg';
 import { withRouter } from 'react-router-dom';
 import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Modal from '../../shared/Modal';
+import TopBar from '../../shared/TopBar';
 
 class CaseStudy extends Component {
   constructor(props) {
@@ -103,6 +104,7 @@ class CaseStudy extends Component {
     if (this.state.data) {
       return (
         <div>
+          <TopBar />
           <Splash type="casestudy" img={image && image} toggleModal={this.toggleModal} />
           <Content title={title && title} description={description && description} />
           <Videos videos={videos && videos} />

@@ -127,9 +127,10 @@ export default class Story extends Component {
             </StyledVideoRow>
 
             <Row justifycontent="center" style={{ margin: '4em auto 2em' }}>
-              <Link to="/launch">
+              <Link to="/quote">
                 <Button primary smallText>
-                  Free Story Formula
+                  {/* Free Story Formula */}
+                  Request Quote
                 </Button>
               </Link>
             </Row>

@@ -35,7 +35,7 @@ const StyledHomeColumn = styled(Column)`
   justify-content: center;
 
   @media (min-width: 1300px) {
-    width: 65%;
+    width: 85%;
   }
   @media (max-width: 980px) {
     width: 95%;
@@ -67,7 +67,8 @@ const Overlay = styled.div`
   height: 100%;
   min-height: 100%;
   min-width: 100%;
-  clip-path: ellipse(120% 100% at 50% 0%);
+  // clip-path: ellipse(120% 100% at 50% 0%);
+  clip-path: ellipse(250% 100% at 0% 0%);
 `;
 
 const StyledButton = styled(Button)`
@@ -82,7 +83,8 @@ const Content = styled.div`
   align-content: center;
   justify-content: center;
   position: relative;
-  clip-path: ellipse(120% 100% at 50% 0%);
+  // clip-path: ellipse(120% 100% at 50% 0%);
+  clip-path: ellipse(250% 100% at 0% 0%);
   max-height: calc(100vw * 100 / 180);
 
   @media (max-width: 920px) {
@@ -113,7 +115,8 @@ const HomeSplash = ({ toggleModal }) => {
             style={{
               height: '100%',
               width: '100%',
-              clipPath: 'ellipse(120% 100% at 50% 0%)',
+              // clipPath: 'ellipse(120% 100% at 50% 0%)',
+              clipPath: 'ellipse(175% 100% at 50% 20%)',
             }}
           >
             <div
@@ -144,13 +147,14 @@ const HomeSplash = ({ toggleModal }) => {
         <StyledRow>
           <StyledHomeColumn>
             <Title header home>
-              Your story told like never before
+              Your story told<br />like never before
             </Title>
             <Subtitle home>Showcase the emotional impact of the good that you do</Subtitle>
             <Row margin="2em 0">
-              <Link to="/launch">
+              <Link to="/quote">
                 <StyledButton primary smallText>
-                  Free Story Formula
+                  {/* Free Story Formula */}
+                  Request Quote
                 </StyledButton>
               </Link>
             </Row>

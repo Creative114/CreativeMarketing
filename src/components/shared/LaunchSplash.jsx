@@ -19,7 +19,8 @@ const Content = styled.div`
   background-size: cover;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background}, center;
   background-size: cover;
-  clip-path: ellipse(120% 100% at 50% 0%);
+  // clip-path: ellipse(120% 100% at 50% 0%);
+  clip-path: ellipse(250% 100% at 0% 0%);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -30,7 +31,8 @@ const Content = styled.div`
   @media (max-width: 920px) {
     align-items: center;
     height: 100%;
-    clip-path: ellipse(150% 100% at 50% 0%);
+    // clip-path: ellipse(150% 100% at 50% 0%);
+    clip-path: ellipse(250% 100% at 0% 0%);
   }
 `;
 
@@ -99,11 +101,16 @@ const StyledTitleDiv = styled.div`
   }
 `;
 
+const NavigationMod = styled(Navigation)`
+  .Wrapper {top: 0;}
+`;
+
 const LaunchSplash = ({ toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible }) => {
   return (
     <Wrapper>
+      <NavigationMod launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
       <Content background={`url('${launchsplash}')`}>
-        <Navigation launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
+        {/* <NavigationMod launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} /> */}
 
         <StyledRow>
           <StyledHomeColumn>
