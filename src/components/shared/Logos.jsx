@@ -19,11 +19,12 @@ import logoGhNavy from '../../assets/logoGhNavy.png';
 import logoGs from '../../assets/logoGs.png';
 import logoRs from '../../assets/logoRs.png';
 import logoSkux from '../../assets/logoSkux.png';
+import logoRelecon from '../../assets/logoRelecon.png';
 
 const Wrapper = styled.div`
   margin-top: 2em;
-  margin-right: 5%;
-  // margin: 0 auto 2em 2.5%;
+  // margin-right: 5%;
+  margin: 0 auto;
   width: 90%;
   height: 100%;
 
@@ -35,7 +36,8 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  // grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 120px;
   height: 100%;
   width: 100%;
@@ -89,6 +91,8 @@ const logos = [
   logo4,
   null,
   logo6,
+  null,
+  logoRelecon,
   null,
   logo5,
   null,

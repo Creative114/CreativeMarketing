@@ -22,12 +22,12 @@ const WrapContent = styled.div`
   background-size: cover;
   background-position: ${(props) => props.backgroundposition};
   // clip-path: ellipse(120% 100% at 50% 0%);
-  clip-path: ellipse(250% 100% at 0% 0%);
+  clip-path: ellipse(225% 100% at 0% 0%);
 
   @media (max-width: 920px) {
     height: ${(props) => props.height || 'calc(100vh - 85px)'};
     // clip-path: ellipse(120% 100% at 50% 0%);
-    clip-path: ellipse(250% 100% at 0% 0%);
+    clip-path: ellipse(225% 100% at 0% 0%);
   }
 `;
 
@@ -81,7 +81,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   // clip-path: ellipse(120% 100% at 50% 0%);
-  clip-path: ellipse(250% 100% at 0% 0%);
+  clip-path: ellipse(225% 100% at 0% 0%);
 `;
 
 const StyledText = styled(SubTitleText)`

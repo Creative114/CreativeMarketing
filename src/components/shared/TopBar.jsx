@@ -48,7 +48,7 @@ const TopBar = () => {
   return (
     <Wrapper>
       <Div>
-        <Span>Sign up for Limited Access to the Free Story Formula</Span>
+        <Span>Sign up for Limited Access to the <strong>Free Story Formula</strong></Span>
         <Link to="/launch">
           <TopBarButton>Access Now</TopBarButton>
         </Link>

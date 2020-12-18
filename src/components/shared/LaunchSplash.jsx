@@ -20,7 +20,7 @@ const Content = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background}, center;
   background-size: cover;
   // clip-path: ellipse(120% 100% at 50% 0%);
-  clip-path: ellipse(250% 100% at 0% 0%);
+  clip-path: ellipse(225% 100% at 0% 0%);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -32,7 +32,7 @@ const Content = styled.div`
     align-items: center;
     height: 100%;
     // clip-path: ellipse(150% 100% at 50% 0%);
-    clip-path: ellipse(250% 100% at 0% 0%);
+    clip-path: ellipse(225% 100% at 0% 0%);
   }
 `;
 

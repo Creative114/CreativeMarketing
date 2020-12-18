@@ -68,7 +68,7 @@ const Overlay = styled.div`
   min-height: 100%;
   min-width: 100%;
   // clip-path: ellipse(120% 100% at 50% 0%);
-  clip-path: ellipse(250% 100% at 0% 0%);
+  clip-path: ellipse(225% 100% at 0% 0%);
 `;
 
 const StyledButton = styled(Button)`
@@ -84,7 +84,7 @@ const Content = styled.div`
   justify-content: center;
   position: relative;
   // clip-path: ellipse(120% 100% at 50% 0%);
-  clip-path: ellipse(250% 100% at 0% 0%);
+  clip-path: ellipse(225% 100% at 0% 0%);
   max-height: calc(100vw * 100 / 180);
 
   @media (max-width: 920px) {
