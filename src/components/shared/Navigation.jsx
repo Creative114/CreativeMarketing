@@ -16,7 +16,8 @@ const Wrapper = styled.div`
   align-items: center;
   position: fixed;
   justify-content: space-between;
-  top: 0;
+  // top: 0;
+  top: ${(props) => (props.active ? 0 : 'auto')};
   z-index: 10000000;
   transition: 500ms;
   box-shadow: ${(props) => props.active && '0 0 10px rgba(0, 0, 0, 0.1)'};
@@ -144,8 +145,9 @@ const Navigation = (props) => {
                 Contact
               </StyledNavLink>
 
-              <Link to="/launch">
-                <Button primary>Free Story Formula</Button>
+              <Link to="/quote">
+                {/* <Button primary>Free Story Formula</Button> */}
+                <Button primary>Request Quote</Button>
               </Link>
             </StyledRow>
           )}
@@ -161,9 +163,10 @@ const Navigation = (props) => {
               <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com/">
                 Blog
               </StyledALink>
-              <Link to="/launch">
+              <Link to="/quote">
                 <Button primary smallText>
-                  Free Story Formula
+                  {/* Free Story Formula */}
+                  Request Quote
                 </Button>
               </Link>
             </StyledRow>

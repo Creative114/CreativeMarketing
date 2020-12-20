@@ -121,9 +121,10 @@ const Footer = () => {
           </div>
         </StyledColumn>
         <MobileDiv>
-          <Link to="/launch">
+          <Link to="/quote">
             <Button footer smallText>
-              Free Story Formula
+              {/* Free Story Formula */}
+              Request Quote
             </Button>
           </Link>
         </MobileDiv>
@@ -154,9 +155,10 @@ const Footer = () => {
           <Text footer>2020 &copy; Creative114 | Made with &hearts; in Tampa, FL</Text>
         </StyledColumn>
         <DesktopDiv>
-          <Link to="/launch">
+          <Link to="/quote">
             <Button footer smallText>
-              Free Story Formula
+              {/* Free Story Formula */}
+              Request Quote
             </Button>
           </Link>
         </DesktopDiv>

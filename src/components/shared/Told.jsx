@@ -85,9 +85,10 @@ const Told = () => {
               Your <span style={{ color: '#d21f04' }}>story</span> deserves to be heard
             </SpanTitle>
             <Div>
-              <Link to="/launch">
+              <Link to="/quote">
                 <Button primary smallText>
-                  Free Story Formula
+                  {/* Free Story Formula */}
+                  Request Quote
                 </Button>
               </Link>
             </Div>
@@ -115,9 +116,10 @@ const Told = () => {
             </Text>
           </StyledTextColumn>
           <MobileDiv>
-            <Link to="/launch" style={{ height: '100%' }}>
+            <Link to="/quote" style={{ height: '100%' }}>
               <Button primary smallText>
-                Free Story Formula
+                {/* Free Story Formula */}
+                Request Quote
               </Button>
             </Link>
           </MobileDiv>

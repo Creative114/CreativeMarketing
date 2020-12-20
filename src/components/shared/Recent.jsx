@@ -23,12 +23,15 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  // margin: 0 auto;
+  margin: 2em auto 0 auto;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   height: 100%;
   width: 95%;
 
-  @media (max-width: 780px) {
+  // @media (max-width: 780px) {
+  @media (max-width: 960px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 95%;
     margin: 0 auto;

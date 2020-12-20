@@ -13,6 +13,7 @@ import Calendar from '../../shared/Calendar';
 import Told from '../../shared/Told';
 import Deliver from '../../shared/Deliver';
 import Elements from '../../shared/Elements';
+import TopBar from '../../shared/TopBar';
 
 class Home extends Component {
   constructor(props) {
@@ -47,6 +48,8 @@ class Home extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
+
+        <TopBar />
         <HomeSplash toggleModal={this.toggleModal} />
         <Story toggleModal={this.toggleModal} />
         <Told toggleModal={this.toggleModal} />

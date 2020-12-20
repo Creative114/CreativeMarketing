@@ -46,9 +46,10 @@ const Supercharge = () => {
             </Text>
             <Text red>It&apos;s our job to help you produce those feelings.</Text>
           </Column>
-          <Link to="/launch">
+          <Link to="/quote">
             <Button primary margin="2em 0 0 0" smallText>
-              Free Story Formula
+              {/* Free Story Formula */}
+              Request Quote
             </Button>
           </Link>
         </StyledColumn>
