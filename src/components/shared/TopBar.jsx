@@ -77,12 +77,12 @@ const TopBar = () => {
     <Wrapper>
       <Div>
         <Grid>
-        <Span>
-          Sign up for Limited Access to the <strong>Free Story Formula</strong>
-        </Span>
-        <Link to="/launch">
-          <TopBarButton>Access Now</TopBarButton>
-        </Link>
+          <Span>
+            Sign up for Limited Access to the <strong>Free Story Formula</strong>
+          </Span>
+          <Link to="/launch">
+            <TopBarButton>Access Now</TopBarButton>
+          </Link>
         </Grid>
       </Div>
     </Wrapper>
