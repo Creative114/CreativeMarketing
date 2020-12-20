@@ -118,9 +118,10 @@ const How = () => {
           ))}
         </Grid>
         <Row margin="3.5em 0 2em 0" justifycontent="center">
-          <Link to="/launch">
+          <Link to="/quote">
             <Button primary smallText>
-              Free Story Formula
+              {/* Free Story Formula */}
+              Request Quote
             </Button>
           </Link>
         </Row>

@@ -57,8 +57,9 @@ const BurgerMenu = ({ close }) => {
         <a href="https://blog.creative114.com" style={{ color: 'black' }}>
           <StyledLi onClick={close}>Blog</StyledLi>
         </a>
-        <Link to="/launch">
-          <StyledLi onClick={close}>Free Story Formula</StyledLi>
+        <Link to="/quote">
+          {/* <StyledLi onClick={close}>Free Story Formula</StyledLi> */}
+          <StyledLi onClick={close}>Request Quote</StyledLi>
         </Link>
       </StyledUl>
     </div>

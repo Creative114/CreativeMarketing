@@ -27,8 +27,10 @@ export const Title = styled.h1`
     props.header &&
     css`
       color: ${(props) => (props.launch ? '#fff' : '#fff')};
-      font-size: ${(props) => props.home && '64px'};
-      line-height: ${(props) => props.home && '90px'};
+      // font-size: ${(props) => props.home && '64px'};
+      // line-height: ${(props) => props.home && '90px'};
+      font-size: ${(props) => props.home && '115px;'}
+      line-height: ${(props) => props.home && '115px'};
       margin: ${(props) => props.margin || '.25em 0'};
       text-transform: ${(props) => props.home && 'uppercase'};
 
@@ -195,7 +197,7 @@ export const SpanSubtitle = styled.h2`
 
 export const Text = styled.p`
   color: #212121;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
   font-weight: 100;
   line-height: 34px;
@@ -284,19 +286,19 @@ export const Text = styled.p`
       margin-top: 0;
     `}
     ${(props) =>
-      props.secondary &&
-      css`
-        line-height: 1.5em;
-      `}
+    props.secondary &&
+    css`
+      line-height: 1.5em;
+    `}
       ${(props) =>
-        props.white &&
-        css`
-          color: #fff;
-        `}
+    props.white &&
+    css`
+      color: #fff;
+    `}
 `;
 
 export const SubTitleText = styled.h6`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: #a1aeb7;
   font-size: ${(props) => (props.logo ? '22px' : '18px')};
@@ -387,16 +389,16 @@ export const SubTitleText = styled.h6`
     `}
 
     ${(props) =>
-      props.secondary &&
-      css`
-        line-height: 1.5em;
-      `}
+    props.secondary &&
+    css`
+      line-height: 1.5em;
+    `}
 
       ${(props) =>
-        props.white &&
-        css`
-          color: #fff;
-        `}
+    props.white &&
+    css`
+      color: #fff;
+    `}
 `;
 
 export const StyledNavLink = styled(NavLink)`

@@ -10,6 +10,7 @@ import Posts from '../../shared/Posts';
 import NonProfitForm from '../../shared/NonProfitForm';
 import Calendar from '../../shared/Calendar';
 import impactimg from '../../../assets/impact.jpg';
+import TopBar from '../../shared/TopBar';
 
 const posts = [
   {
@@ -54,6 +55,7 @@ class Impact extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
+        <TopBar />
         <Splash
           type="impact"
           title="Bigger Than a Hashtag"

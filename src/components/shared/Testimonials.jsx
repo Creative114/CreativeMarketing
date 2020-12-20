@@ -105,7 +105,7 @@ export default class Testimonials extends Component {
               </SpanTitle>
               {type === 'launch' && (
                 <>
-                  <ProcessText>
+                  <ProcessText style={{ margin: '6px 0' }}>
                     Many Business Owners Are Wasting Money
                     <span>
                       Creating Videos That Just Don’t Work. <b>I Don’t Want That To Be You!</b>

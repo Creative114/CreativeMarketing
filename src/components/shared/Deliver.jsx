@@ -24,7 +24,8 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 15px;
   margin: 2em 0 0 0;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   grid-auto-rows: auto;
   height: 100%;
   width: 95%;
@@ -33,6 +34,12 @@ const Grid = styled.div`
     display: flex;
     flex-direction: column;
     width: 95%;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 95%;
+    margin: 0 auto;
   }
 `;
 
@@ -55,6 +62,12 @@ const Div = styled.div`
     }
   }
 `;
+const Hr = styled.hr`
+  width: 50%;
+  margin: 4em auto;
+  background-color: rgb(242, 245, 247);
+  border: 1px solid rgb(242, 245, 247); ;
+`;
 
 const Deliver = () => {
   return (
@@ -63,6 +76,15 @@ const Deliver = () => {
         <SpanTitle>Stories that generate results</SpanTitle>
       </Column>
       <Grid>
+        <Div>
+          <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" />
+        </Div>
+        <Div>
+          <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" />
+        </Div>
+        <Div>
+          <Video src="https://fast.wistia.com/embed/medias/xus7ajjskp/swatch" />
+        </Div>
         <Div>
           <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" />
         </Div>
@@ -73,6 +95,7 @@ const Deliver = () => {
           <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" />
         </Div>
       </Grid>
+      <Hr />
       <Logos />
     </Wrapper>
   );

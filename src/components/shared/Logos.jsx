@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo1 from '../../assets/logo1.jpg';
-import logo2 from '../../assets/logo2.jpg';
+// import logo2 from '../../assets/logo2.jpg';
 import logo3 from '../../assets/logo3.jpg';
 import logo4 from '../../assets/logo4.jpg';
 import logo5 from '../../assets/logo5.jpg';
@@ -12,10 +12,19 @@ import logo9 from '../../assets/logo9.png';
 import logo10 from '../../assets/logo10.png';
 import logo11 from '../../assets/logo11.png';
 import Reveal from 'react-reveal/Reveal';
+import logoBc from '../../assets/logoBc.png';
+import logoUsfGreen from '../../assets/logoUsfGreen.png';
+import logoCvf from '../../assets/logoCvf.png';
+import logoGhNavy from '../../assets/logoGhNavy.png';
+import logoGs from '../../assets/logoGs.png';
+import logoRs from '../../assets/logoRs.png';
+import logoSkux from '../../assets/logoSkux.png';
+import logoRelecon from '../../assets/logoRelecon.png';
 
 const Wrapper = styled.div`
   margin-top: 2em;
-  margin-right: 5%;
+  // margin-right: 5%;
+  margin: 0 auto;
   width: 90%;
   height: 100%;
 
@@ -27,7 +36,8 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  // grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 120px;
   height: 100%;
   width: 100%;
@@ -68,15 +78,21 @@ const ImageItem = styled.div`
 `;
 
 const logos = [
+  logoBc,
+  null,
+  logoUsfGreen,
+  null,
   logo1,
   null,
-  logo2,
-  null,
+  // logo2,
+  // null,
   logo3,
   null,
   logo4,
   null,
   logo6,
+  null,
+  logoRelecon,
   null,
   logo5,
   null,
@@ -89,6 +105,16 @@ const logos = [
   logo11,
   null,
   logo7,
+  null,
+  logoCvf,
+  null,
+  logoGhNavy,
+  null,
+  logoGs,
+  null,
+  logoRs,
+  null,
+  logoSkux,
 ];
 
 const Logos = () => {
