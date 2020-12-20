@@ -11,12 +11,18 @@ const Wrapper = styled.div`
 
 const Span = styled.span`
   color: #fff;
+  text-allign: center;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 const Div = styled.div`
-  margin: 0 auto;
-  justifycontent: center;
-  alignitems: center;
+  margin: 0 auto 8px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TopBarButton = styled.button`
@@ -31,7 +37,7 @@ const TopBarButton = styled.button`
   font-weight: 600;
   height: 40px;
   justify-content: center;
-  margin: 0.5em 0;
+  // margin: 0.5em 0;
   outline: none;
   text-transform: uppercase;
   transition: 750ms;
@@ -44,16 +50,40 @@ const TopBarButton = styled.button`
   }
 `;
 
+const Grid = styled.div`
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+  height: 100%;
+  width: auto;
+  padding: 4px 0;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+
+  @media (max-width: 767px) {
+    width: auto;
+    margin: 0;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    grid-gap: 1px;
+    text-align: center;
+  }
+`;
+
 const TopBar = () => {
   return (
     <Wrapper>
       <Div>
+        <Grid>
         <Span>
           Sign up for Limited Access to the <strong>Free Story Formula</strong>
         </Span>
         <Link to="/launch">
           <TopBarButton>Access Now</TopBarButton>
         </Link>
+        </Grid>
       </Div>
     </Wrapper>
   );
