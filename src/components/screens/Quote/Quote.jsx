@@ -14,6 +14,18 @@ import quoteimg from '../../../assets/Quote.jpg';
 const Div = styled.div`
   width: 50%;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    width: 65%;
+  }
+
+  @media (max-width: 921px) {
+    width: 80%;
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
 `;
 
 export default class Quote extends Component {
