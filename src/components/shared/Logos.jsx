@@ -22,14 +22,14 @@ import logoSkux from '../../assets/logoSkux.png';
 import logoRelecon from '../../assets/logoRelecon.png';
 
 const Wrapper = styled.div`
-  margin-top: 2em;
+  // margin-top: 2em;
   // margin-right: 5%;
   margin: 0 auto;
   width: 90%;
   height: 100%;
 
   @media (max-width: 780px) {
-    margin-right: 0px;
+    margin-right: 5%;
   }
 `;
 
