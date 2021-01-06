@@ -11,6 +11,7 @@ import StartNow from './components/screens/StartNow/StartNow';
 import Quote from './components/screens/Quote/Quote';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Launch from './components/screens/Launch/Launch';
+import TenX from './components/screens/TenX/TenX';
 import 'normalize.css';
 
 class App extends Component {
@@ -56,6 +57,8 @@ class App extends Component {
           <Route exact path="/launch" render={() => <Launch onEnter={window.scrollTo(0, 0)} />} />
 
           <Route exact path="/quote" render={() => <Quote onEnter={window.scrollTo(0, 0)} />} />
+
+          <Route exact path="/tenx" render={() => <TenX onEnter={window.scrollTo(0, 0)} />} />
 
           <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
         </Switch>

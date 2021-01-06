@@ -58,7 +58,7 @@ const Elements = () => {
           Sign Up for Limited Access to the 4 Step Video Framework Proven to Illuminate Your Story, Transform Your
           Videos and Captivate Your Audience.
         </Text>
-        <Link to="/launch">
+        <Link to="/tenx">
           <Button margin="1.5em 0" primary>
             Access Now
           </Button>

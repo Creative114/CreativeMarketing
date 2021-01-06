@@ -75,7 +75,7 @@ const Video = styled.video`
 const Overlay = styled.div`
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 900;
   position: absolute;
   width: 100%;
@@ -148,7 +148,7 @@ const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) 
               <StyledText header>{text}</StyledText>
               <StyledMobileText header>{mobileText}</StyledMobileText>
 
-              {type !== 'thanks' && type !== 'contact' && type !== 'quote' && (
+              {type !== 'thanks' && type !== 'contact' && type !== 'quote' && type !== 'tenx' && (
                 <Link to="/quote">
                   {/* <Button primary>Free Story Formula</Button> */}
                   <Button primary>Request Quote</Button>
@@ -158,6 +158,11 @@ const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) 
               {type === 'contact' && (
                 <Button primary onClick={() => toggleModal('schedule')}>
                   Schedule a call now
+                </Button>
+              )}
+              {type === 'tenx' && (
+                <Button primary onClick={() => toggleModal('schedule')}>
+                  Get The Videos
                 </Button>
               )}
             </StyledColumn>
