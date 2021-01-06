@@ -79,9 +79,9 @@ class Landing extends Component {
           handleSubmitFormVisible={this.handleSubmitFormVisible}
           isAuthed={isAuthed}
           submitFormVisible={submitFormVisible}
-          title="10X YOUR LEAD GENERATION"
-          text="A free mini-master course to help you increase your brand's awareness and generate new leads with video content."
-          mobileText="A free mini-master course to help you increase your brand's awareness and generate new leads with video content."
+          // title="10X YOUR LEAD GENERATION"
+          // text="A free mini-master course to help you increase your brand's awareness and generate new leads with video content."
+          // mobileText="A free mini-master course to help you increase your brand's awareness and generate new leads with video content."
         />
         <TenXStory toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <LaunchVideos isAuthed={isAuthed} toggleModal={this.toggleModal} />

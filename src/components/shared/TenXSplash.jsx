@@ -123,9 +123,9 @@ const TenXSplash = ({
   isAuthed,
   handleSubmitFormVisible,
   submitFormVisible,
-  title,
-  text,
-  mobileText,
+  // title,
+  // text,
+  // mobileText,
 }) => {
   return (
     <Wrapper>
@@ -135,9 +135,12 @@ const TenXSplash = ({
 
         <StyledRow>
           <StyledColumn>
-            <Title header>{title}</Title>
-            <StyledText header>{text}</StyledText>
-            <StyledMobileText header>{mobileText}</StyledMobileText>
+            {/* <Title header>{title}</Title> */}
+            <Title header>10X YOUR LEAD GENERATION</Title>
+            {/* <StyledText header>{text}</StyledText> */}
+            <StyledText header>A free mini-master course to help you increase your brand&apos;s awareness<br />and generate new leads with video content.</StyledText>
+            {/* <StyledMobileText header>{mobileText}</StyledMobileText> */}
+            <StyledMobileText header>A free mini-master course to help you increase your brand&apos;s awareness<br />and generate new leads with video content.</StyledMobileText>
 
             <Button primary onClick={() => toggleModal('launch')}>
               Get The Videos
@@ -155,9 +158,9 @@ TenXSplash.propTypes = {
   isAuthed: PropTypes.bool,
   handleSubmitFormVisible: PropTypes.func,
   submitFormVisible: PropTypes.bool,
-  title: PropTypes.string,
-  text: PropTypes.string,
-  mobileText: PropTypes.string,
+  // title: PropTypes.string,
+  // text: PropTypes.string,
+  // mobileText: PropTypes.string,
 };
 
 export default TenXSplash;
