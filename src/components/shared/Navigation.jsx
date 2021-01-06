@@ -139,7 +139,7 @@ const Navigation = (props) => {
                 Impact
               </StyledNavLink>
               <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com">
-                Blog
+                Resources
               </StyledALink>
               <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/contact">
                 Contact
@@ -161,7 +161,7 @@ const Navigation = (props) => {
           {type === 'home' && !launch && (
             <StyledRow>
               <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com/">
-                Blog
+                Resources
               </StyledALink>
               <Link to="/quote">
                 <Button primary smallText>

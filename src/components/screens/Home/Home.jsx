@@ -12,8 +12,10 @@ import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Calendar from '../../shared/Calendar';
 import Told from '../../shared/Told';
 import Deliver from '../../shared/Deliver';
-import Elements from '../../shared/Elements';
+// import Elements from '../../shared/Elements';
 import TopBar from '../../shared/TopBar';
+import TenXShare from '../../shared/TenXShare';
+import Video from '../../shared/Video';
 
 class Home extends Component {
   constructor(props) {
@@ -56,12 +58,14 @@ class Home extends Component {
         <Deliver />
         <How toggleModal={this.toggleModal} />
         <Testimonials />
-        <Elements />
+        {/* <Elements /> */}
+        <TenXShare toggleModal={this.toggleModal} />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {type === 'story' && <FindYourStoryForm />}
             {type === 'schedule' && <Calendar />}
+            {type === 'tenx' && <Video src="https://fast.wistia.com/embed/medias/4sgvuz8ssg/swatch" />}
           </Modal>
         )}
       </>

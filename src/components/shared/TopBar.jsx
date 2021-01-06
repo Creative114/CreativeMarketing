@@ -78,10 +78,11 @@ const TopBar = () => {
       <Div>
         <Grid>
           <Span>
-            Sign up for Limited Access to the <strong>Free Story Formula</strong>
+            {/* Sign up for Limited Access to the <strong>Free Story Formula</strong> */}
+            Discover a strategy to <strong>10X your lead generation</strong> with videos
           </Span>
-          <Link to="/launch">
-            <TopBarButton>Access Now</TopBarButton>
+          <Link to="/tenx">
+            <TopBarButton>ACCESS NOW</TopBarButton>
           </Link>
         </Grid>
       </Div>
