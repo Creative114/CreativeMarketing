@@ -138,9 +138,17 @@ const TenXSplash = ({
             {/* <Title header>{title}</Title> */}
             <Title header>10X YOUR LEAD GENERATION</Title>
             {/* <StyledText header>{text}</StyledText> */}
-            <StyledText header>A free mini-master course to help you increase your brand&apos;s awareness<br />and generate new leads with video content.</StyledText>
+            <StyledText header>
+              A free mini-master course to help you increase your brand&apos;s awareness
+              <br />
+              and generate new leads with video content.
+            </StyledText>
             {/* <StyledMobileText header>{mobileText}</StyledMobileText> */}
-            <StyledMobileText header>A free mini-master course to help you increase your brand&apos;s awareness<br />and generate new leads with video content.</StyledMobileText>
+            <StyledMobileText header>
+              A free mini-master course to help you increase your brand&apos;s awareness
+              <br />
+              and generate new leads with video content.
+            </StyledMobileText>
 
             <Button primary onClick={() => toggleModal('launch')}>
               Get The Videos
