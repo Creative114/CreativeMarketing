@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Row, Title } from '../../theme/index';
+import { Row, Title, SubTitleText, Column, Button } from '../../theme/index';
 import Navigation from './Navigation';
-import LaunchForm from '../shared/LaunchForm';
-import launchsplash from '../../assets/launch_splash.jpg';
+import tenxsplash from '../../assets/10X.jpg';
 
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
@@ -35,28 +34,6 @@ const Content = styled.div`
     height: 100%;
     // clip-path: ellipse(150% 100% at 50% 0%);
     clip-path: ellipse(225% 100% at 0% 0%);
-  }
-`;
-
-const StyledHomeColumn = styled(Row)`
-  align-items: center;
-  bottom: 0;
-  height: auto;
-  justify-content: center;
-  left: 0;
-  margin: 2em auto auto;
-  top: 0;
-  width: 100%;
-  z-index: 900;
-
-  @media (max-width: 920px) {
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  @media (max-width: 720px) {
-    margin-top: 0;
   }
 `;
 
@@ -96,10 +73,9 @@ export const StyledTitle = styled(Title)`
   }
 `;
 
-const StyledTitleDiv = styled.div`
-  width: 50%;
-  @media (max-width: 880px) {
-    width: 95%;
+const StyledText = styled(SubTitleText)`
+  @media (max-width: 920px) {
+    display: none;
   }
 `;
 
@@ -109,41 +85,79 @@ const NavigationMod = styled(Navigation)`
   }
 `;
 
-const LaunchSplash = ({ toggleModal, handleAuth, isAuthed, handleSubmitFormVisible, submitFormVisible }) => {
+const StyledColumn = styled(Column)`
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 65%;
+  height: auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  position: absolute;
+  @media (max-width: 1200px) {
+    margin: 8em auto;
+  }
+  @media (max-width: 780px) {
+    margin: 4em auto;
+    width: 85%;
+  }
+  @media (max-width: 500px) {
+    width: 95%;
+  }
+`;
+
+const StyledMobileText = styled(SubTitleText)`
+  display: none;
+  @media (max-width: 920px) {
+    display: block;
+  }
+`;
+
+const TenXSplash = ({
+  toggleModal,
+  handleAuth,
+  isAuthed,
+  handleSubmitFormVisible,
+  submitFormVisible,
+  title,
+  text,
+  mobileText,
+}) => {
   return (
     <Wrapper>
       <NavigationMod launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} />
-      <Content background={`url('${launchsplash}')`}>
+      <Content background={`url('${tenxsplash}')`}>
         {/* <NavigationMod launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} /> */}
 
         <StyledRow>
-          <StyledHomeColumn>
-            <StyledTitleDiv>
-              <StyledTitle>
-                <span>FOUR SECRETS</span>
-                <span>TO CREATE VIDEOS</span>
-                <span>THAT GET RESULTS</span>
-              </StyledTitle>
-            </StyledTitleDiv>
-            <LaunchForm
-              handleAuth={handleAuth}
-              handleSubmitFormVisible={handleSubmitFormVisible}
-              submitFormVisible={submitFormVisible}
-              type="splash"
-            />
-          </StyledHomeColumn>
+          <StyledColumn>
+            <Title header>{title}</Title>
+            <StyledText header>{text}</StyledText>
+            <StyledMobileText header>{mobileText}</StyledMobileText>
+
+            <Button primary onClick={() => toggleModal('launch')}>
+              Get The Videos
+            </Button>
+          </StyledColumn>
         </StyledRow>
       </Content>
     </Wrapper>
   );
 };
 
-LaunchSplash.propTypes = {
+TenXSplash.propTypes = {
   toggleModal: PropTypes.func,
   handleAuth: PropTypes.func,
   isAuthed: PropTypes.bool,
   handleSubmitFormVisible: PropTypes.func,
   submitFormVisible: PropTypes.bool,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  mobileText: PropTypes.string,
 };
 
-export default LaunchSplash;
+export default TenXSplash;

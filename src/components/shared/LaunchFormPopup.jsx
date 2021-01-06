@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Column } from '../../theme';
+import { Column, Row } from '../../theme';
+import formSideImg from '../../assets/form_popup_image.jpg';
 
 const Wrapper = styled.div`
   width: auto;
-  max-width: 380px;
+  // max-width: 380px;
+  max-width: 800px;
   height: auto;
   border-radius: 4px;
   background-color: #ffffff;
@@ -19,6 +21,21 @@ const Wrapper = styled.div`
 const StyledColumn = styled(Column)`
   width: 90%;
   margin: 1.5em;
+`;
+
+const ImageColumn = styled(Column)`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Image = styled.img`
+  width: 300px;
+
+  @media (max-width: 500px) {
+    width: 225px;
+    margin-top: 2em;
+  }
 `;
 
 export default class LaunchFormPopup extends Component {
@@ -67,7 +84,19 @@ export default class LaunchFormPopup extends Component {
   render() {
     const { submitFormVisible } = this.props;
 
-    return <Wrapper>{submitFormVisible && <StyledColumn id="hubspotFormHeaderPopup" />}</Wrapper>;
+    // return <Wrapper>{submitFormVisible && <StyledColumn id="hubspotFormHeaderPopup" />}</Wrapper>;
+    return (
+      <Wrapper>
+        <Row>
+          <ImageColumn>
+            <StyledColumn>
+              <Image src={formSideImg} />
+            </StyledColumn>
+          </ImageColumn>
+          <Column>{submitFormVisible && <StyledColumn id="hubspotFormHeaderPopup" />}</Column>
+        </Row>
+      </Wrapper>
+    );
   }
 }
 

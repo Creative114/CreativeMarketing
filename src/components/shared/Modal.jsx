@@ -32,6 +32,7 @@ const Icon = styled.i`
   cursor: pointer;
   z-index: 1000;
   margin-right: 1em;
+  margin-top: 4.5em;
   transition: 500ms;
 
   &:hover {
@@ -40,7 +41,8 @@ const Icon = styled.i`
 `;
 
 const StyledRow = styled(Row)`
-  width: 75%;
+  // width: 75%;
+  width: 60%;
   height: 100%;
   justify-content: center;
   align-items: center;

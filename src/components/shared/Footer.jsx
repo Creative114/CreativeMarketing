@@ -152,7 +152,7 @@ const Footer = () => {
               <Icon social className="fab fa-vimeo-v" />
             </a>
           </StyledContentRow>
-          <Text footer>2020 &copy; Creative114 | Made with &hearts; in Tampa, FL</Text>
+          <Text footer>2021 &copy; Creative114 | Made with &hearts; in Tampa, FL</Text>
         </StyledColumn>
         <DesktopDiv>
           <Link to="/quote">
