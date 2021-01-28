@@ -79,7 +79,7 @@ const TopBar = () => {
         <Grid>
           <Span>
             {/* Sign up for Limited Access to the <strong>Free Story Formula</strong> */}
-            Discover a strategy to <strong>10X your lead generation</strong> with videos
+            Take Your Business to the Next Level <strong>With The Power of Video Storytelling</strong>
           </Span>
           <Link to="/tenx">
             <TopBarButton>ACCESS NOW</TopBarButton>

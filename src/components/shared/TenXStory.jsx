@@ -167,7 +167,7 @@ const LaunchStory = ({ toggleModal, isAuthed }) => {
             <StyledIconRow alignitems="center">
               <Icon src={SubscribeIcon} />
               <Text red margin="0">
-                LEARN
+                WATCH
               </Text>
             </StyledIconRow>
 
@@ -191,16 +191,14 @@ const LaunchStory = ({ toggleModal, isAuthed }) => {
           </StyledRow>
           <StyledRow>
             <ProcessText>
-              Many business owners are wasting money creating videos that just don&apos;t work
+              Many business owners are spending money on videos that don&apos;t produce results
               <br />
               <StyledSpan>We don&apos;t want that to be you.</StyledSpan>
             </ProcessText>
           </StyledRow>
           <StyledRow>
             <ProcessText>
-              Discover a strategy that will grow your lead generation and increase your bottom line.
-              <br />
-              The steps to getting a video strategy that will multiply your business is easy!
+              You can take your business to the next level using a proven video strategy that will grow your lead generation and increase your bottom line.
             </ProcessText>
           </StyledRow>
           {!isAuthed && (
