@@ -130,8 +130,9 @@ export default class TenXTestimonials extends Component {
               {type === 'tenx' && (
                 <>
                   <ProcessText style={{ margin: '6px 0' }}>
-                    Start overcoming the obstacles that keep you from growing your business by supercharging your
-                    message with a video strategy that works.
+                    Start overcoming the obstacles that keep you from growing your business
+                    <br />
+                    by supercharging your message with a video strategy that works.
                   </ProcessText>
                 </>
               )}
