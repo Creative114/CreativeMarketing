@@ -96,7 +96,9 @@ const TenXShare = ({ toggleModal }) => {
           </Item>
         </Column>
         <Column alignitems="center" textalign="center" margin="3.5em 0 0 0">
-          <StyledSpan margin="0 0 20px 0">10X YOUR LEAD GENERATION</StyledSpan>
+          <StyledSpan margin="0 0 20px 0">
+            Take Your Business to the Next Level With The Power of Video Storytelling
+          </StyledSpan>
           <ProcessText style={{ margin: '0 0 20px 0' }}>
             This free mini-master course will help you increase your brand&apos;s awareness and generate new leads with
             video content

@@ -9,13 +9,13 @@ import tenxsplash from '../../assets/10X.jpg';
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
   background: rgb(242, 245, 247);
-  @media (max-width: 920px) {
-    height: 100%;
-  }
+  // @media (max-width: 920px) {
+  //   height: 100%;
+  // }
 `;
 
 const Content = styled.div`
-  background-size: cover;
+  //background-size: cover;
   // background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) =>
     props.background}, center;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.65)), ${(props) => props.background}, center;
@@ -100,13 +100,14 @@ const StyledColumn = styled(Column)`
   position: absolute;
   @media (max-width: 1200px) {
     margin: 8em auto;
+    width: 75%;
   }
   @media (max-width: 780px) {
     margin: 4em auto;
     width: 85%;
   }
   @media (max-width: 500px) {
-    width: 95%;
+    width: 90%;
   }
 `;
 
@@ -136,7 +137,7 @@ const TenXSplash = ({
         <StyledRow>
           <StyledColumn>
             {/* <Title header>{title}</Title> */}
-            <Title header>10X YOUR LEAD GENERATION</Title>
+            <Title header>Take Your Business to the Next Level With The Power of Video Storytelling</Title>
             {/* <StyledText header>{text}</StyledText> */}
             <StyledText header>
               A free mini-master course to help you increase your brand&apos;s awareness

@@ -130,11 +130,8 @@ export default class TenXTestimonials extends Component {
               {type === 'tenx' && (
                 <>
                   <ProcessText style={{ margin: '6px 0' }}>
-                    Stop wasting money on video stragegies that don&apos;t work.
-                    <br />
-                    You can overcome the obstacles that keepy you from growing your business.
-                    <br />
-                    Start supercharging your message with a video strategy that works.
+                    Start overcoming the obstacles that keep you from growing your business by supercharging your
+                    message with a video strategy that works.
                   </ProcessText>
                 </>
               )}
