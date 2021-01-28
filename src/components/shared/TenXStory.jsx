@@ -198,8 +198,9 @@ const LaunchStory = ({ toggleModal, isAuthed }) => {
           </StyledRow>
           <StyledRow>
             <ProcessText>
-              You can take your business to the next level using a proven video strategy that will grow your lead
-              generation and increase your bottom line.
+              You can take your business to the next level using a proven video strategy
+              <br />
+              that will grow your lead generation and increase your bottom line.
             </ProcessText>
           </StyledRow>
           {!isAuthed && (

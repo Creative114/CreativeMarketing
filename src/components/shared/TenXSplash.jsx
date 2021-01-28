@@ -137,7 +137,11 @@ const TenXSplash = ({
         <StyledRow>
           <StyledColumn>
             {/* <Title header>{title}</Title> */}
-            <Title header>Take Your Business to the Next Level With The Power of Video Storytelling</Title>
+            <Title header>
+              Take Your Business to the Next Level
+              <br />
+              With The Power of Video Storytelling
+            </Title>
             {/* <StyledText header>{text}</StyledText> */}
             <StyledText header>
               A free mini-master course to help you increase your brand&apos;s awareness
