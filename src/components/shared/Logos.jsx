@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo1 from '../../assets/logo1.jpg';
+//import logo1 from '../../assets/logo1.jpg';
 // import logo2 from '../../assets/logo2.jpg';
 import logo3 from '../../assets/logo3.jpg';
 import logo4 from '../../assets/logo4.jpg';
@@ -20,6 +20,7 @@ import logoGs from '../../assets/logoGs.png';
 import logoRs from '../../assets/logoRs.png';
 import logoSkux from '../../assets/logoSkux.png';
 import logoRelecon from '../../assets/logoRelecon.png';
+import logoSuperbowl from '../../assets/logoSuperbowl.png';
 
 const Wrapper = styled.div`
   // margin-top: 2em;
@@ -82,7 +83,8 @@ const logos = [
   null,
   logoUsfGreen,
   null,
-  logo1,
+  // logo1,
+  logoSuperbowl,
   null,
   // logo2,
   // null,
