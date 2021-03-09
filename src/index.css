@@ -155,3 +155,15 @@ a {
   -webkit-transform: rotate(45deg) translate(-6px, -6px);
   transform: rotate(45deg) translate(-6px, -6px);
 }
+
+.video_popup>.wistia_embed .wistia_click_to_play,
+.video_popup>.wistia_embed .wistia_click_to_play div,
+.video_popup>.wistia_embed .wistia_click_to_play div img {
+  height: 100%!important;
+  width: 100%!important;
+}
+
+.video_popup>.wistia_embed .wistia_click_to_play div,
+.video_popup>.wistia_embed .wistia_click_to_play div img {
+  position: unset!important;
+}
