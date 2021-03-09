@@ -156,6 +156,7 @@ a {
   transform: rotate(45deg) translate(-6px, -6px);
 }
 
+/* This handles the embed popup videos */
 .wistia_embed .wistia_click_to_play,
 .wistia_embed .wistia_click_to_play div,
 .wistia_embed .wistia_click_to_play div img {
