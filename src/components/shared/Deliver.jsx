@@ -82,7 +82,6 @@ const Hr = styled.hr`
 `;
 
 const Deliver = () => {
-
   return (
     <Wrapper id="what">
       <Column alignitems="center" textalign="center" width="75%">
@@ -108,7 +107,7 @@ const Deliver = () => {
           <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" />
         </Div>
 
-          {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="open" />
+        {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="open" />
 
           <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" />
 
@@ -119,7 +118,6 @@ const Deliver = () => {
           <Video src="https://fast.wistia.com/embed/medias/p20j70i0qu/swatch" type="open" />
 
           <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" /> */}
-
       </Grid>
       <Hr />
       <Logos />
