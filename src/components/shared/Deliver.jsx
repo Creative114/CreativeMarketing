@@ -20,28 +20,28 @@ const Wrapper = styled.div`
   }
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-gap: 15px;
-  margin: 2em 0 0 0;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-auto-rows: auto;
-  height: 100%;
-  width: 95%;
+// const Grid = styled.div`
+//   display: grid;
+//   grid-gap: 15px;
+//   margin: 2em 0 0 0;
+//   // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   grid-template-columns: repeat(3, minmax(300px, 1fr));
+//   grid-auto-rows: auto;
+//   height: 100%;
+//   width: 95%;
 
-  @media (max-width: 1200px) {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-  }
+//   @media (max-width: 1200px) {
+//     display: flex;
+//     flex-direction: column;
+//     width: 95%;
+//   }
 
-  @media (max-width: 960px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width: 95%;
-    margin: 0 auto;
-  }
-`;
+//   @media (max-width: 960px) {
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//     width: 95%;
+//     margin: 0 auto;
+//   }
+// `;
 
 // const Div = styled.div`
 //   width: 100%;
@@ -62,6 +62,24 @@ const Grid = styled.div`
 //     }
 //   }
 // `;
+
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 15px;
+  // margin: 0 auto;
+  margin: 2em auto 0 auto;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  height: 100%;
+  width: 95%;
+
+  // @media (max-width: 780px) {
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 95%;
+    margin: 0 auto;
+  }
+`;
 
 const Div = styled.div`
   width: 100%;
@@ -106,18 +124,6 @@ const Deliver = () => {
         <Div>
           <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" />
         </Div>
-
-        {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="open" />
-
-          <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" />
-
-          <Video src="https://fast.wistia.com/embed/medias/xus7ajjskp/swatch" type="open" />
-
-          <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" type="open" />
-
-          <Video src="https://fast.wistia.com/embed/medias/p20j70i0qu/swatch" type="open" />
-
-          <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" /> */}
       </Grid>
       <Hr />
       <Logos />
