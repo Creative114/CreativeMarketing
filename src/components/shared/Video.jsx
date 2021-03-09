@@ -39,6 +39,12 @@ const Video = ({ src, isAuthed, toggleModal, type }) => {
         </Wrapper>
       </div>
     );
+  } else if (type === 'open') {
+    return (
+      <Wrapper
+        className={`wistia_embed wistia_async_${swatch} videoFoam=true popover=true popoverAnimateThumbnail=true`}
+      ></Wrapper>
+    );
   } else {
     return (
       <Wrapper className={`wistia_embed wistia_async_${swatch} videoFoam=true`}>

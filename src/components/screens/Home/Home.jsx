@@ -55,7 +55,7 @@ class Home extends Component {
         <HomeSplash toggleModal={this.toggleModal} />
         <Story toggleModal={this.toggleModal} />
         <Told toggleModal={this.toggleModal} />
-        <Deliver />
+        <Deliver toggleModal={this.toggleModal} />
         <How toggleModal={this.toggleModal} />
         <Testimonials />
         {/* <Elements /> */}
