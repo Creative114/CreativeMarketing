@@ -61,22 +61,22 @@ const Recent = () => {
       </StyledColumn>
       <Grid>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" />
         </Div>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/v70c06uszd/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/v70c06uszd/swatch" type="open" />
         </Div>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/75qdcr5joj/swatch" type="open" />
         </Div>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/jsdmuoe293/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/jsdmuoe293/swatch" type="open" />
         </Div>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/k3qm1g877n/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/k3qm1g877n/swatch" type="open" />
         </Div>
         <Div>
-          <Video src="https://fast.wistia.com/embed/medias/bvj3ukhj2g/swatch" />
+          <Video src="https://fast.wistia.com/embed/medias/bvj3ukhj2g/swatch" type="open" />
         </Div>
       </Grid>
     </Wrapper>
