@@ -4,21 +4,21 @@ import { Column, SpanTitle } from '../../theme/index';
 import Video from '../shared/Video';
 import Logos from '../shared/Logos';
 
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em 0;
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 2em 0;
 
-  @media (max-width: 780px) {
-    width: 95%;
-    text-align: center;
-    padding: 1em 0;
-  }
-`;
+//   @media (max-width: 780px) {
+//     width: 95%;
+//     text-align: center;
+//     padding: 1em 0;
+//   }
+// `;
 
 // const Grid = styled.div`
 //   display: grid;
@@ -62,6 +62,23 @@ const Wrapper = styled.div`
 //     }
 //   }
 // `;
+
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 780px) {
+    width: 95%;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  &:after {
+    clear: both;
+    display: block;
+  }
+`;
 
 const Grid = styled.div`
   display: grid;
