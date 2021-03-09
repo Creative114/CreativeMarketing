@@ -42,7 +42,7 @@ const Video = ({ src, isAuthed, toggleModal, type }) => {
   } else if (type === 'open') {
     return (
       <Wrapper
-        className={`video_popup wistia_embed wistia_async_${swatch} videoFoam=true popover=true popoverAnimateThumbnail=true`}
+        className={`wistia_embed wistia_async_${swatch} videoFoam=true popover=true popoverAnimateThumbnail=true`}
       ></Wrapper>
     );
   } else {
