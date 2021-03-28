@@ -168,3 +168,7 @@ a {
 .wistia_embed .wistia_click_to_play div img {
   position: unset!important;
 }
+
+.wistia_popover_overlay {
+  backdrop-filter: blur(3px);
+}

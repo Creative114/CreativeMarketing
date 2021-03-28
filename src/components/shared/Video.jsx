@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -42,7 +43,7 @@ const Video = ({ src, isAuthed, toggleModal, type }) => {
   } else if (type === 'open') {
     return (
       <Wrapper
-        className={`wistia_embed wistia_async_${swatch} videoFoam=true popover=true popoverAnimateThumbnail=true`}
+        className={`wistia_embed wistia_async_${swatch} videoFoam=true popover=true popoverSize=854x360 popoverAnimateThumbnail=true popoverOverlayOpacity=0.9`}
       ></Wrapper>
     );
   } else {
@@ -54,6 +55,10 @@ const Video = ({ src, isAuthed, toggleModal, type }) => {
       </Wrapper>
     );
   }
+};
+
+Video.propTypes = {
+  toggleModal: PropTypes.func,
 };
 
 export default Video;

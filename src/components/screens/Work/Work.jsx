@@ -16,6 +16,7 @@ import tebow from '../../../assets/tebow_case.png';
 import jason from '../../../assets/jason_case.png';
 import workimg from '../../../assets/Work.jpg';
 import TopBar from '../../shared/TopBar';
+import Video from '../../shared/Video';
 
 class Work extends Component {
   constructor(props) {
@@ -23,16 +24,17 @@ class Work extends Component {
     this.state = {
       isOpen: false,
       type: '',
+      vidSource: ''
     };
   }
 
-  toggleModal = (type) => {
-    this.setState({ isOpen: !this.state.isOpen, type });
+  toggleModal = (type, vidSource) => {
+    this.setState({ isOpen: !this.state.isOpen, type, vidSource });
   };
 
   render() {
     const { recentwork } = this.props;
-    const { isOpen, type } = this.state;
+    const { isOpen, type, vidSource } = this.state;
     const casestudies = [
       {
         title: 'Collective Genius',
@@ -81,13 +83,14 @@ class Work extends Component {
           mobileText="We deliver far more than beautiful, cinematic work. Our passion is telling your inspiring, moving, and emotional stories through the art of video."
         />
         <Portfolio />
-        <Recent recentwork={recentwork} />
+        <Recent recentwork={recentwork} toggleModal={this.toggleModal} />
         <CaseStudies casestudies={casestudies} navigate={this.props.history} />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
             {type === 'story' && <FindYourStoryForm />}
             {type === 'schedule' && <Calendar />}
+            {type === 'videos' && <Video src={vidSource} />}
           </Modal>
         )}
       </>

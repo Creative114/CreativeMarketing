@@ -23,15 +23,16 @@ class Home extends Component {
     this.state = {
       isOpen: false,
       type: '',
+      vidSource: ''
     };
   }
 
-  toggleModal = (type) => {
-    this.setState({ isOpen: !this.state.isOpen, type });
+  toggleModal = (type, vidSource) => {
+    this.setState({ isOpen: !this.state.isOpen, type, vidSource });
   };
 
   render() {
-    const { isOpen, type } = this.state;
+    const { isOpen, type, vidSource } = this.state;
     return (
       <>
         <Helmet
@@ -66,6 +67,7 @@ class Home extends Component {
             {type === 'story' && <FindYourStoryForm />}
             {type === 'schedule' && <Calendar />}
             {type === 'tenx' && <Video src="https://fast.wistia.com/embed/medias/4sgvuz8ssg/swatch" />}
+            {type === 'videos' && <Video src={vidSource} />}
           </Modal>
         )}
       </>
