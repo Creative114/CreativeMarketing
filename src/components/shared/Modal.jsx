@@ -13,6 +13,7 @@ const Backdrop = styled.div`
   z-index: 900;
   transition: 250ms;
   overflow: scroll;
+  backdrop-filter: blur(5px);
 `;
 
 const Header = styled.div`
