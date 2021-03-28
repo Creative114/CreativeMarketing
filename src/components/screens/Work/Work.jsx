@@ -24,7 +24,7 @@ class Work extends Component {
     this.state = {
       isOpen: false,
       type: '',
-      vidSource: ''
+      vidSource: '',
     };
   }
 

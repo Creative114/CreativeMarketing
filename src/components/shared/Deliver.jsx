@@ -126,27 +126,57 @@ const Deliver = ({ toggleModal }) => {
       <Grid>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="videos" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/9c0777c485a25f1b6b79488da0fb15c9.png?" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/ld06fncegv')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/9c0777c485a25f1b6b79488da0fb15c9.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/ld06fncegv')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/69c55c7537f6ffa429647667e8c1921f.png?" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/jso7sbl54k')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/69c55c7537f6ffa429647667e8c1921f.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/jso7sbl54k')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/xus7ajjskp/swatch" type="open" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/be85927e51935c985f82309bae3b941a.png?" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/xus7ajjskp')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/be85927e51935c985f82309bae3b941a.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/xus7ajjskp')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" type="open" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/417ba2bcffcb71c43b6ee370af061f4a.png?" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/3f3146tcv5')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/417ba2bcffcb71c43b6ee370af061f4a.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/3f3146tcv5')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/p20j70i0qu/swatch" type="open" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/8b44e110fb44f1b37c33967b44cbfeaf.png" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/p20j70i0qu')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/8b44e110fb44f1b37c33967b44cbfeaf.png"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/p20j70i0qu')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" /> */}
-          <img src="https://embed-ssl.wistia.com/deliveries/7a9c0b14e50e420ba929685113cba22f.png?" onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/1s0g2445aj')} alt="video" style={{height: '100%', width: '100%'}} />
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/7a9c0b14e50e420ba929685113cba22f.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/1s0g2445aj')}
+            alt="video"
+            style={{ height: '100%', width: '100%' }}
+          />
         </Div>
       </Grid>
       <Hr />

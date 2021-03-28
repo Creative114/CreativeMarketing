@@ -23,7 +23,7 @@ class Home extends Component {
     this.state = {
       isOpen: false,
       type: '',
-      vidSource: ''
+      vidSource: '',
     };
   }
 
