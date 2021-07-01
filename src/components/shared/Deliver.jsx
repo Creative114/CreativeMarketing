@@ -127,7 +127,7 @@ const Deliver = ({ toggleModal }) => {
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="videos" /> */}
           <img
-            src="https://embed-ssl.wistia.com/deliveries/9c0777c485a25f1b6b79488da0fb15c9.png?"
+            src="https://embed-ssl.wistia.com/deliveries/da9f9244e341d5bb6ca39fbaf53fd0f9.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/ld06fncegv')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
@@ -136,8 +136,8 @@ const Deliver = ({ toggleModal }) => {
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" /> */}
           <img
-            src="https://embed-ssl.wistia.com/deliveries/69c55c7537f6ffa429647667e8c1921f.png?"
-            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/jso7sbl54k')}
+            src="https://embed-ssl.wistia.com/deliveries/c9a669568afd8540f593d7423b99140f.png?"
+            onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/3wz20782od')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
           />
@@ -145,7 +145,7 @@ const Deliver = ({ toggleModal }) => {
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/xus7ajjskp/swatch" type="open" /> */}
           <img
-            src="https://embed-ssl.wistia.com/deliveries/be85927e51935c985f82309bae3b941a.png?"
+            src="https://embed-ssl.wistia.com/deliveries/75dd5e759e8a90dd556c21dbfdc64557.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/xus7ajjskp')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
@@ -172,7 +172,7 @@ const Deliver = ({ toggleModal }) => {
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" /> */}
           <img
-            src="https://embed-ssl.wistia.com/deliveries/7a9c0b14e50e420ba929685113cba22f.png?"
+            src="https://embed-ssl.wistia.com/deliveries/01a8af54445b55ed0e0644596f254742.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/1s0g2445aj')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
