@@ -151,7 +151,7 @@ const SiiSplash = ({
             </StyledMobileText>
 
             <Link to="/pricing">
-              <Button primary>Request Pricing</Button>
+              <Button primary>Get Started</Button>
             </Link>
           </StyledColumn>
         </StyledRow>
