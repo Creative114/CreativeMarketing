@@ -124,7 +124,17 @@ const Navigation = (props) => {
           <BurgerDiv>
             <Burger />
           </BurgerDiv>
-          {type !== 'home' && (
+          {type === 'sii' && (
+            <StyledRow>
+              <Link to="/pricing">
+                <Button primary smallText>
+                  {/* Free Story Formula */}
+                  Request Pricing
+                </Button>
+              </Link>
+            </StyledRow>
+          )}
+          {type !== 'home' && type !== 'sii' && (
             <StyledRow>
               <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} exact to="/">
                 Home
@@ -149,6 +159,15 @@ const Navigation = (props) => {
                 {/* <Button primary>Free Story Formula</Button> */}
                 <Button primary>Request Quote</Button>
               </Link>
+
+              {/* {type !== 'pricing' && (
+
+              )}
+              {type === 'pricing' && (
+                <Link to="/">
+                  <Button primary onClick={isAuthed ? () => toggleModal('schedule') : () => toggleModal('launch')}>Get The Videos</Button>
+                </Link>
+              )} */}
             </StyledRow>
           )}
           {type === 'home' && launch && (
