@@ -66,6 +66,7 @@ const StyledBlockRow = styled.div`
   justify-content: center;
 
   margin: 0 auto;
+  padding: 8px 16px;
   @media (max-width: 780px) {
     width: 95%;
   }
@@ -221,7 +222,7 @@ const SiiPricing = () => {
             </ProcessText>
           </StyledRow>
           <StyledBlockRow>
-            <img src={fireworks} />
+            <img src={fireworks} alt="Fireworks" height="100" width="100" />
             <ProcessText>Give us a call and let&apos;s talk about all your options!</ProcessText>
           </StyledBlockRow>
 
