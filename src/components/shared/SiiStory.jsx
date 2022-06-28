@@ -226,7 +226,7 @@ const SiiStory = ({ toggleModal, isAuthed }) => {
             <Link to="/pricing">
               <Button primary smallText>
                 {/* Free Story Formula */}
-                Request Pricing
+                Get Started
               </Button>
             </Link>
           </Row>
