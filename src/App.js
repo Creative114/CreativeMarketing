@@ -12,6 +12,8 @@ import Quote from './components/screens/Quote/Quote';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Launch from './components/screens/Launch/Launch';
 import TenX from './components/screens/TenX/TenX';
+import Sii60 from './components/screens/Sii60/Sii60';
+import Pricing from './components/screens/Pricing/Pricing';
 import 'normalize.css';
 
 class App extends Component {
@@ -59,6 +61,10 @@ class App extends Component {
           <Route exact path="/quote" render={() => <Quote onEnter={window.scrollTo(0, 0)} />} />
 
           <Route exact path="/tenx" render={() => <TenX onEnter={window.scrollTo(0, 0)} />} />
+
+          <Route exact path="/sii60" render={() => <Sii60 onEnter={window.scrollTo(0, 0)} />} />
+
+          <Route exact path="/pricing" render={() => <Pricing onEnter={window.scrollTo(0, 0)} />} />
 
           <Route onEnter={window.scrollTo(0, 0)} component={NoMatch} />
         </Switch>

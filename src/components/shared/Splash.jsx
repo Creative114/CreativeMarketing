@@ -148,7 +148,7 @@ const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) 
               <StyledText header>{text}</StyledText>
               <StyledMobileText header>{mobileText}</StyledMobileText>
 
-              {type !== 'thanks' && type !== 'contact' && type !== 'quote' && type !== 'tenx' && (
+              {type !== 'thanks' && type !== 'contact' && type !== 'quote' && type !== 'tenx' && type !== 'sii' && (
                 <Link to="/quote">
                   {/* <Button primary>Free Story Formula</Button> */}
                   <Button primary>Request Quote</Button>
@@ -164,6 +164,11 @@ const Splash = ({ type, src, title, text, mobileText, show, img, toggleModal }) 
                 <Button primary onClick={() => toggleModal('schedule')}>
                   Get The Videos
                 </Button>
+              )}
+              {type === 'sii' && (
+                <Link to="/pricing">
+                  <Button primary>Request Pricing</Button>
+                </Link>
               )}
             </StyledColumn>
           </Content>
