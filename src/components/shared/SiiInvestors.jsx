@@ -59,16 +59,31 @@ const StyledRow = styled.div`
   }
 `;
 
+// export const ProcessText = styled.p`
+//   color: #212121;
+//   /*display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;*/
+//   font-family: 'Montserrat', sans-serif;
+//   font-size: 23px;
+//   font-weight: 100;
+//   padding: 0;
+
+//   width: 75%;
+//   margin: 0 auto 3em;
+// `;
+
 export const ProcessText = styled.p`
   color: #212121;
-  /*display: flex;
+  display: flex;
   flex-direction: column;
-  flex-wrap: wrap;*/
+  flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
   font-size: 23px;
   font-weight: 100;
+  justify-content: center;
   padding: 0;
-
+  text-align: center;
   width: 75%;
   margin: 0 auto 3em;
 `;
