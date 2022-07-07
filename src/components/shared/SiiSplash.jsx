@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Row, Title, SubTitleText, Column, Button } from '../../theme/index';
 import Navigation from './Navigation';
 import siisplash from '../../assets/sii60_splash.jpg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: calc(100vh - 10px);
@@ -19,7 +19,7 @@ const Content = styled.div`
   //background-size: cover;
   // background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) =>
     props.background}, center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.65)), ${(props) => props.background}, center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), ${(props) => props.background}, center;
   background-size: cover;
   // clip-path: ellipse(120% 100% at 50% 0%);
   clip-path: ellipse(225% 100% at 0% 0%);
@@ -56,7 +56,8 @@ export const StyledTitle = styled(Title)`
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  font-size: 52px;
+  /*font-size: 60px;*/
+  font-size: 60px;
   font-stretch: normal;
   font-style: normal;
   font-weight: bold;
@@ -65,16 +66,14 @@ export const StyledTitle = styled(Title)`
   line-height: 1.18;
   width: 100%;
 
-  @media (max-width: 1200px) {
-    font-size: 50px;
-  }
-
   @media (max-width: 930px) {
-    font-size: 40px;
+    font-size: 50px;
   }
 `;
 
 const StyledText = styled(SubTitleText)`
+  width: 85%;
+
   @media (max-width: 920px) {
     display: none;
   }
@@ -125,20 +124,32 @@ const SiiSplash = ({
   isAuthed,
   handleSubmitFormVisible,
   submitFormVisible,
+  scrollToContent,
   // title,
   // text,
   // mobileText,
 }) => {
   return (
     <Wrapper>
-      <NavigationMod launch type="sii" toggleModal={toggleModal} isAuthed={isAuthed} />
+      <NavigationMod
+        launch
+        type="sii"
+        toggleModal={toggleModal}
+        isAuthed={isAuthed}
+        scrollToContent={scrollToContent}
+      />
       <Content background={`url('${siisplash}')`}>
         {/* <NavigationMod launch type="home" toggleModal={toggleModal} isAuthed={isAuthed} /> */}
 
         <StyledRow>
           <StyledColumn>
             {/* <Title header>{title}</Title> */}
-            <Title header>More Sellers Will Say &quot;Yes!&quot;</Title>
+            <Title header home>
+              More Sellers
+              <br />
+              Will Say &quot;Yes!&quot;
+            </Title>
+            {/* <StyledTitle header>More Sellers Will Say &quot;Yes!&quot;</StyledTitle> */}
             {/* <StyledText header>{text}</StyledText> */}
             <StyledText header>
               Customized video packages built exclusively to generate more revenue for busy real estate investors like
@@ -150,9 +161,12 @@ const SiiSplash = ({
               you.
             </StyledMobileText>
 
-            <Link to="/pricing">
+            {/* <Link to="/pricing">
               <Button primary>Get Started</Button>
-            </Link>
+            </Link> */}
+            <Button primary onClick={() => scrollToContent()}>
+              GetStarted
+            </Button>
           </StyledColumn>
         </StyledRow>
       </Content>
@@ -166,6 +180,7 @@ SiiSplash.propTypes = {
   isAuthed: PropTypes.bool,
   handleSubmitFormVisible: PropTypes.func,
   submitFormVisible: PropTypes.bool,
+  scrollToContent: PropTypes.func,
 };
 
 export default SiiSplash;

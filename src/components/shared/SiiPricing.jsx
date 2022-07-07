@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
 import { Row, Button } from '../../theme/index';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import fireworks from '../../assets/fireworks.png';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   // margin-top: 2em;
@@ -85,10 +86,11 @@ const StyledTable = styled.table`
   }
 
   td {
-    padding: 12px;
+    padding: 36px 12px;
     text-align: center;
     vertical-align: middle;
     background-color: rgb(242, 245, 247);
+    width: 25%;
   }
 `;
 
@@ -116,6 +118,8 @@ const StyledList = styled.ul`
   width: 50px;
   text-align: center;
   justify-content: center;
+  margin: 0 auto;
+  padding-left: 16px;
 
   :before {
     content: attr(data-header);
@@ -135,7 +139,7 @@ const StyledList = styled.ul`
   }
 `;
 
-const SiiPricing = () => {
+const SiiPricing = ({ scrollToContent }) => {
   return (
     <Wrapper>
       <Reveal effect="fadeIn">
@@ -168,7 +172,7 @@ const SiiPricing = () => {
           </StyledTable>
           <StyledRow>
             <ProcessText>
-              <StyledSpan>2. ULTIMATE LEVEL | $12,495.00*</StyledSpan>
+              <StyledSpan>2. ULTIMATE LEVEL | $12,995.00*</StyledSpan>
             </ProcessText>
           </StyledRow>
           <StyledTable>
@@ -188,6 +192,13 @@ const SiiPricing = () => {
                   <li>Staff</li>
                 </StyledList>
               </td>
+              {/* <td>
+                <div style={{"text-align": "start", width: "50%"}}>
+                Included<br />
+                Office<br />
+                Staff
+                </div>
+              </td> */}
             </tr>
           </StyledTable>
           <StyledRow>
@@ -226,18 +237,30 @@ const SiiPricing = () => {
             <ProcessText>Give us a call and let&apos;s talk about all your options!</ProcessText>
           </StyledBlockRow>
 
+          <StyledRow>
+            <ProcessText>
+              <i>* Travel fees and lodging not included in the price</i>
+            </ProcessText>
+          </StyledRow>
+
           <Row margin="3.5em 0 2em 0" justifycontent="center">
-            <Link to="/pricing">
+            {/* <Link to="/pricing">
               <Button primary smallText>
-                {/* Free Story Formula */}
                 Get Started
               </Button>
-            </Link>
+            </Link> */}
+            <Button primary onClick={() => scrollToContent()}>
+              GetStarted
+            </Button>
           </Row>
         </>
       </Reveal>
     </Wrapper>
   );
+};
+
+SiiPricing.propTypes = {
+  scrollToContent: PropTypes.func,
 };
 
 export default SiiPricing;

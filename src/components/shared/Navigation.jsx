@@ -108,7 +108,7 @@ const Navigation = (props) => {
     return logo;
   };
 
-  const { type, toggleModal, show, isAuthed, launch } = props;
+  const { type, toggleModal, show, isAuthed, launch, scrollToContent } = props;
 
   return (
     <Wrapper background={color} active={active ? 1 : 0} display={!show && 'none'}>
@@ -126,12 +126,14 @@ const Navigation = (props) => {
           </BurgerDiv>
           {type === 'sii' && (
             <StyledRow>
-              <Link to="/pricing">
+              {/* <Link to="/pricing">
                 <Button primary smallText>
-                  {/* Free Story Formula */}
                   Get Started
                 </Button>
-              </Link>
+              </Link> */}
+              <Button primary onClick={() => scrollToContent()}>
+                GetStarted
+              </Button>
             </StyledRow>
           )}
           {type !== 'home' && type !== 'sii' && (
@@ -202,6 +204,7 @@ Navigation.propTypes = {
   show: PropTypes.string,
   isAuthed: PropTypes.bool,
   launch: PropTypes.bool,
+  scrollToContent: PropTypes.func,
 };
 
 export default Navigation;

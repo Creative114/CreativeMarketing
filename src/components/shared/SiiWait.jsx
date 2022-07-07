@@ -56,6 +56,7 @@ const StyledRow = styled.div`
 const StyledList = styled.ul`
   list-style: none;
   column-count: 1;
+  font-size: 23px;
 
   li {
     padding: 4px 0;

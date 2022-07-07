@@ -28,6 +28,8 @@ const StyledRow = styled.div`
 class Sii60 extends Component {
   constructor(props) {
     super(props);
+    this.pricingScroll = React.createRef();
+    this.scrollToContent = this.scrollToContent.bind(this);
 
     const auth = localStorage.getItem('authorized') || false;
     const isAuthed = !!auth;
@@ -38,6 +40,10 @@ class Sii60 extends Component {
       submitFormVisible: !isAuthed,
       type: 'sii',
     };
+  }
+
+  scrollToContent(content) {
+    this.pricingScroll.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   toggleModal = (type) => {
@@ -81,8 +87,9 @@ class Sii60 extends Component {
           handleSubmitFormVisible={this.handleSubmitFormVisible}
           isAuthed={isAuthed}
           submitFormVisible={submitFormVisible}
+          scrollToContent={this.scrollToContent}
         />
-        <SiiStory toggleModal={this.toggleModal} isAuthed={isAuthed} />
+        <SiiStory toggleModal={this.toggleModal} isAuthed={isAuthed} scrollToContent={this.scrollToContent} />
         <SiiInvestors toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <StyledRow>
           <SiiLogos />
@@ -90,9 +97,10 @@ class Sii60 extends Component {
         <SiiTypes></SiiTypes>
         <SiiCheck toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <SiiWait></SiiWait>
-        <SiiPricing></SiiPricing>
+        <SiiPricing scrollToContent={this.scrollToContent}></SiiPricing>
         <SiiCommit toggleModal={this.toggleModal} isAuthed={isAuthed} />
-        <SiiForm toggleModal={this.toggleModal} isAuthed={isAuthed}></SiiForm>
+        {/* <SiiForm toggleModal={this.toggleModal} isAuthed={isAuthed}></SiiForm> */}
+        <SiiForm ref={{ toggleModal: this.toggleModal, pricingScroll: this.pricingScroll }}></SiiForm>
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>
