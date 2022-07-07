@@ -131,6 +131,6 @@ SiiForm.propTypes = {
   toggleModal: PropTypes.func,
 };
 
-SiiForm.displayName = "SiiForm";
+SiiForm.displayName = 'SiiForm';
 
 export default SiiForm;
