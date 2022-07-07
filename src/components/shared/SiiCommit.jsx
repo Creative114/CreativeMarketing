@@ -98,10 +98,10 @@ const SiiCommit = ({ toggleModal, isAuthed }) => {
           </StyledRow>
 
           <Row margin="3.5em 0 2em 0" justifycontent="center">
-            <Link to="/pricing">
+            <Link to="/tenx">
               <Button primary smallText>
                 {/* Free Story Formula */}
-                Get Started
+                Get The Videos
               </Button>
             </Link>
           </Row>

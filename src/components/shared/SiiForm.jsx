@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
@@ -88,9 +88,12 @@ export const ProcessText = styled.p`
   margin: 0.75em auto;
 `;
 
-const SiiForm = ({ toggleModal, isAuthed }) => {
+// const SiiForm = ({ toggleModal, isAuthed }) => {
+const SiiForm = forwardRef((props, ref) => {
+  const { toggleModal, pricingScroll } = ref;
+
   return (
-    <Wrapper>
+    <Wrapper ref={pricingScroll}>
       <Reveal effect="fadeIn">
         <>
           <StyledRow>
@@ -122,11 +125,12 @@ const SiiForm = ({ toggleModal, isAuthed }) => {
       </Reveal>
     </Wrapper>
   );
-};
+});
 
 SiiForm.propTypes = {
   toggleModal: PropTypes.func,
-  isAuthed: PropTypes.bool,
 };
+
+SiiForm.displayName = 'SiiForm';
 
 export default SiiForm;
