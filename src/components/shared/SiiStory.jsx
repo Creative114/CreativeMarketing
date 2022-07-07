@@ -137,7 +137,7 @@ const Div = styled.div`
 
 const Image = styled.img`
   /*width: 150px;*/
-  height: 125px;
+  height: 175px;
   margin: 0.25em 0;
 `;
 
@@ -233,7 +233,7 @@ const SiiStory = ({ toggleModal, isAuthed, scrollToContent }) => {
               </Button>
             </Link> */}
             <Button primary onClick={() => scrollToContent()}>
-              GetStarted
+              Get Started
             </Button>
           </Row>
         </>

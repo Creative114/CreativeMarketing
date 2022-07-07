@@ -152,12 +152,12 @@ const SiiSplash = ({
             {/* <StyledTitle header>More Sellers Will Say &quot;Yes!&quot;</StyledTitle> */}
             {/* <StyledText header>{text}</StyledText> */}
             <StyledText header>
-              Customized video packages built exclusively to generate more revenue for busy real estate investors like
+              Customized video packages built exclusively to generate more revenue<br />for busy real estate investors like
               you.
             </StyledText>
             {/* <StyledMobileText header>{mobileText}</StyledMobileText> */}
             <StyledMobileText header>
-              Customized video packages built exclusively to generate more revenue for busy real estate investors like
+              Customized video packages built exclusively to generate more revenue<br />for busy real estate investors like
               you.
             </StyledMobileText>
 
@@ -165,7 +165,7 @@ const SiiSplash = ({
               <Button primary>Get Started</Button>
             </Link> */}
             <Button primary onClick={() => scrollToContent()}>
-              GetStarted
+              Get Started
             </Button>
           </StyledColumn>
         </StyledRow>
