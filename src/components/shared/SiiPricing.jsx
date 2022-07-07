@@ -250,7 +250,7 @@ const SiiPricing = ({ scrollToContent }) => {
               </Button>
             </Link> */}
             <Button primary onClick={() => scrollToContent()}>
-              GetStarted
+              Get Started
             </Button>
           </Row>
         </>
