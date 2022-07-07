@@ -89,17 +89,17 @@ const SiiInvestors = ({ toggleModal, isAuthed }) => {
           <div>
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/s7cn0ymxsl/swatch'} src2={''} />
             <ProcessText>
-              Eric Brewer of Integrity First Home Buyers generates 400+ deals per year in Cnetral Pennsylvania, and he
-              uses Sell It In 60 video content on his website, social media, CRM, and follow-up sequences to creae more
-              organic engagement with his customers.
+              Erick Gydesen of I Buy SD generates 500+ deals per year in San Diego, California, and he says he
+              can&apos;t even fully calculate how valuable his Sell It in 60 video content is for building trust with
+              more sellers and attracting the best industry talent to his team.
             </ProcessText>
           </div>
           <div>
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/qifzwyeu3p/swatch'} src2={''} />
             <ProcessText>
-              Erick Gydesen of I Buy SD generates 500+ deals per year in San Diego, California, and he says he
-              can&apos;t even fully calculate how valuable his Sell It in 60 video content is for building trust with
-              more sellers and attracting the best industry talent to his team.
+              Eric Brewer of Integrity First Home Buyers generates 400+ deals per year in Cnetral Pennsylvania, and he
+              uses Sell It In 60 video content on his website, social media, CRM, and follow-up sequences to creae more
+              organic engagement with his customers.
             </ProcessText>
           </div>
         </>
