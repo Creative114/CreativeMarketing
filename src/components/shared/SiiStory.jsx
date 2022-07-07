@@ -6,7 +6,7 @@ import Reveal from 'react-reveal/Reveal';
 import SelectIcon from '../../assets/Select-Gray-Icon.png';
 import ScriptsIcon from '../../assets/Script-Gray-Icon.png';
 import ShootIcon from '../../assets/Shoot-Gray-Icon.png';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Testimonial from './Testimonial';
 
 const Wrapper = styled.div`
@@ -93,6 +93,7 @@ const StyledList = styled.ul`
   list-style: none;
   column-count: 2;
   column-gap: 80px;
+  font-size: 23px;
 
   li {
     padding: 4px 0;
@@ -135,14 +136,15 @@ const Div = styled.div`
 `;
 
 const Image = styled.img`
-  width: 150px;
+  /*width: 150px;*/
+  height: 125px;
   margin: 0.25em 0;
 `;
 
 const Item = ({ title, text, img }) => {
   return (
     <Div>
-      <Column width="85%" alignitems="center" textalign="center">
+      <Column width="95%" alignitems="center" textalign="center">
         <Image src={img} />
         <SpanSubtitle primary>{title}</SpanSubtitle>
         <Text secondary>{text}</Text>
@@ -157,7 +159,7 @@ Item.propTypes = {
   img: PropTypes.string,
 };
 
-const SiiStory = ({ toggleModal, isAuthed }) => {
+const SiiStory = ({ toggleModal, isAuthed, scrollToContent }) => {
   const items = [
     {
       title: 'SELECT',
@@ -189,7 +191,9 @@ const SiiStory = ({ toggleModal, isAuthed }) => {
           <StyledRow>
             <ProcessText>
               <StyledSpan>Sell It In 60</StyledSpan> offers you an easy, hassle-free way to walk your potential sellers
-              through questions, objections, and challenges they may face at various stages of the sales process.
+              through
+              <br />
+              questions, objections, and challenges they may face at various stages of the sales process.
             </ProcessText>
           </StyledRow>
           <StyledRow>
@@ -223,12 +227,14 @@ const SiiStory = ({ toggleModal, isAuthed }) => {
             ))}
           </Grid>
           <Row margin="3.5em 0 2em 0" justifycontent="center">
-            <Link to="/pricing">
+            {/* <Link to="/pricing">
               <Button primary smallText>
-                {/* Free Story Formula */}
                 Get Started
               </Button>
-            </Link>
+            </Link> */}
+            <Button primary onClick={() => scrollToContent()}>
+              GetStarted
+            </Button>
           </Row>
         </>
       </Reveal>
@@ -239,6 +245,7 @@ const SiiStory = ({ toggleModal, isAuthed }) => {
 SiiStory.propTypes = {
   toggleModal: PropTypes.func,
   isAuthed: PropTypes.bool,
+  scrollToContent: PropTypes.func,
 };
 
 export default SiiStory;

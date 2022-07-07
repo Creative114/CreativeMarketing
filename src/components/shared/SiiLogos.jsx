@@ -58,21 +58,23 @@ const Image = styled.img`
   }
 
   @media (max-width: 780px) {
-    width: 100%;
+    /*width: 100%;*/
+    width: 80%;
   }
 
   @media only screen and (min-width: 992px) {
-    width: 90%;
+    /*width: 90%*/
+    width: 70%;
   }
 `;
 
 const ImageItem = styled.div`
   margin: auto 0;
-  // margin-left: ${(props) => (props.no >= 6 ? '35%' : '0px')};
-  // margin-right: ${(props) => (props.no < 6 ? '35%' : '0px')};
+  // margin-left: ${(props) => (props.no >= 9 ? '35%' : '0px')};
+  // margin-right: ${(props) => (props.no < 9 ? '35%' : '0px')};
   // @media (max-width: 780px) {
-  //   margin-left: ${(props) => ((props.no / 3) % 2 === 1 ? '35%' : '0px')};
-  //   margin-right: ${(props) => ((props.no / 3) % 2 === 0 ? '35%' : '0px')};
+  //   margin-left: ${(props) => ((props.no / 5) % 2 === 1 ? '35%' : '0px')};
+  //   margin-right: ${(props) => ((props.no / 5) % 2 === 0 ? '35%' : '0px')};
   // }
 `;
 
@@ -115,6 +117,7 @@ const StyledRow = styled.div`
 `;
 
 const logos = [logoAhb, logoCg, logoDl, logoIbs, logoIf, logoIps, logoStb, logoTnhb];
+// const logos = [null, logoAhb, null, logoCg, null, logoDl, null, logoIbs, null, logoIf, null, logoIps, null, logoStb, null, logoTnhb, null];
 
 const SiiLogos = () => {
   return (

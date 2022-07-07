@@ -57,6 +57,7 @@ const StyledList = styled.ul`
   list-style: none;
   column-count: 2;
   column-gap: 80px;
+  font-size: 23px;
 
   li {
     padding: 4px 0;
