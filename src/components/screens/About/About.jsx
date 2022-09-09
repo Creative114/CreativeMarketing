@@ -10,7 +10,7 @@ import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import ApplyForm from '../../shared/ApplyForm';
 import Calendar from '../../shared/Calendar';
 import aboutimg from '../../../assets/About.jpg';
-import TopBar from '../../shared/TopBar';
+// import TopBar from '../../shared/TopBar';
 
 export default class About extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class About extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
-        <TopBar />
+        {/* <TopBar /> */}
         <Splash
           type="about"
           title="About"

@@ -3,21 +3,40 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
 import Testimonial from './Testimonial';
+import BG from '../../assets/rectange_bg.png';
+
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   margin: 0 auto;
+//   background: linear-gradient(rgb(242, 245, 247), #ffffff);
+//   padding: 2em 0 2.5em 0;
+//   display: flex;
+//   flex-direction: column;
+
+//   @media (max-width: 1000px) {
+//     flex-direction: column;
+//     margin: 0 auto;
+//     padding: 3em 0 1.5em 0;
+//     text-align: center;
+//   }
+// `;
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 2em 0 2.5em 0;
+  background: ${(props) => props.bg} no-repeat;
   display: flex;
-  flex-direction: column;
-
-  @media (max-width: 1000px) {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8em 0 4em 0;
+  @media (max-width: 780px) {
+    justify-content: center;
+    padding: 5em 0;
     flex-direction: column;
-    margin: 0 auto;
-    padding: 3em 0 1.5em 0;
-    text-align: center;
+    align-items: center;
   }
 `;
 
@@ -90,7 +109,7 @@ export const ProcessText = styled.p`
 
 const SiiInvestors = ({ toggleModal, isAuthed }) => {
   return (
-    <Wrapper>
+    <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <>
           <StyledRow>
@@ -101,7 +120,7 @@ const SiiInvestors = ({ toggleModal, isAuthed }) => {
             <ProcessText>Jimmy and Susie Vreeland of I Buy STL generate 150+ deals per year in St. Louis, Missouri. 
             They captured and extra %80K as soon as they started sharing their Sell It In 60 video content.</ProcessText>
           </div> */}
-          <div>
+          <div style={{ width: '80%', margin: '0 auto' }}>
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/s7cn0ymxsl/swatch'} src2={''} />
             <ProcessText>
               Erick Gydesen of I Buy SD generates 500+ deals per year in San Diego, California, and he says he
@@ -109,10 +128,10 @@ const SiiInvestors = ({ toggleModal, isAuthed }) => {
               more sellers and attracting the best industry talent to his team.
             </ProcessText>
           </div>
-          <div>
+          <div style={{ width: '80%', margin: '0 auto' }}>
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/qifzwyeu3p/swatch'} src2={''} />
             <ProcessText>
-              Eric Brewer of Integrity First Home Buyers generates 400+ deals per year in Cnetral Pennsylvania, and he
+              Eric Brewer of Integrity First Home Buyers generates 400+ deals per year in Central Pennsylvania, and he
               uses Sell It In 60 video content on his website, social media, CRM, and follow-up sequences to creae more
               organic engagement with his customers.
             </ProcessText>

@@ -7,7 +7,7 @@ import Modal from '../../shared/Modal';
 import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Calendar from '../../shared/Calendar';
 import contactimg from '../../../assets/Contact.jpg';
-import TopBar from '../../shared/TopBar';
+// import TopBar from '../../shared/TopBar';
 
 export default class Contact extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export default class Contact extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
-        <TopBar />
+        {/* <TopBar /> */}
         <Splash
           type="contact"
           title="Let’s Explore Your Story"

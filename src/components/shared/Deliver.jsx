@@ -126,57 +126,93 @@ const Deliver = ({ toggleModal }) => {
       <Grid>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/ld06fncegv/swatch" type="videos" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/da9f9244e341d5bb6ca39fbaf53fd0f9.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/ld06fncegv')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_ld06fncegv popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/c9a669568afd8540f593d7423b99140f.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/3wz20782od')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_3wz20782od popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/xus7ajjskp/swatch" type="open" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/75dd5e759e8a90dd556c21dbfdc64557.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/xus7ajjskp')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_xus7ajjskp popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/3f3146tcv5/swatch" type="open" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/417ba2bcffcb71c43b6ee370af061f4a.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/3f3146tcv5')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_3f3146tcv5 popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/p20j70i0qu/swatch" type="open" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/8b44e110fb44f1b37c33967b44cbfeaf.png"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/p20j70i0qu')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_p20j70i0qu popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/1s0g2445aj/swatch" type="open" /> */}
-          <img
+          {/* <img
             src="https://embed-ssl.wistia.com/deliveries/01a8af54445b55ed0e0644596f254742.png?"
             onClick={() => toggleModal('videos', 'https://fast.wistia.net/embed/iframe/1s0g2445aj')}
             alt="video"
             style={{ height: '100%', width: '100%' }}
-          />
+          /> */}
+          <span
+            className="wistia_embed wistia_async_1s0g2445aj popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span>
         </Div>
       </Grid>
       <Hr />

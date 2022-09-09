@@ -13,7 +13,7 @@ import Calendar from '../../shared/Calendar';
 import Told from '../../shared/Told';
 import Deliver from '../../shared/Deliver';
 // import Elements from '../../shared/Elements';
-import TopBar from '../../shared/TopBar';
+// import TopBar from '../../shared/TopBar';
 import TenXShare from '../../shared/TenXShare';
 import Video from '../../shared/Video';
 
@@ -52,7 +52,7 @@ class Home extends Component {
           ]}
         />
 
-        <TopBar />
+        {/* <TopBar /> */}
         <HomeSplash toggleModal={this.toggleModal} />
         <Story toggleModal={this.toggleModal} />
         <Told toggleModal={this.toggleModal} />
