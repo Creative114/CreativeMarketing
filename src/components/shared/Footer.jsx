@@ -87,6 +87,10 @@ const MobileDiv = styled.div`
 `;
 
 const DesktopDiv = styled(Row)`
+  width: 100%;
+  display: inline-flex;
+  justify-content: end;
+
   @media (max-width: 920px) {
     margin: 0;
     display: none;
@@ -115,8 +119,11 @@ const Footer = () => {
           </Link>
           <div style={{ width: '80%' }}>
             <Text footer>
-              If you&apos;re struggling to be interesting, relevant, and relatable, we’ll help you identify and
-              communicate emotionally engaging video stories that generate results (and goosebumps).
+              {/* If you&apos;re struggling to be interesting, relevant, and relatable, we’ll help you identify and
+              communicate emotionally engaging video stories that generate results (and goosebumps). */}
+              Most businesses struggle to be relevant or relatable to their ideal customers. Using high-impact emotional
+              video storyselling, we help them connect with their audience in a deeper and more meaningful way that
+              gives them results.
             </Text>
           </div>
         </StyledColumn>
@@ -134,8 +141,9 @@ const Footer = () => {
             <StyledNavLink to="/work">Work</StyledNavLink>
             <StyledNavLink to="/about">About</StyledNavLink>
             <StyledNavLink to="/impact">Impact</StyledNavLink>
-            <StyledALink href="https://blog.creative114.com">Blog</StyledALink>
+            <StyledALink href="https://blog.creative114.com">Resources</StyledALink>
             <StyledNavLink to="/contact">Contact</StyledNavLink>
+            <StyledNavLink to="/sii60">Sell It In 60</StyledNavLink>
           </LinkRow>
           <StyledContentRow>
             <a href="https://www.linkedin.com/showcase/creative114/" target="_blank" rel="noopener noreferrer">
@@ -151,17 +159,22 @@ const Footer = () => {
             <a href="https://vimeo.com/channels/1439000" target="_blank" rel="noopener noreferrer">
               <Icon social className="fab fa-vimeo-v" />
             </a>
+
+            <DesktopDiv>
+              <Button footer smallText>
+                Request Quote
+              </Button>
+            </DesktopDiv>
           </StyledContentRow>
           <Text footer>2021 &copy; Creative114 | Made with &hearts; in Tampa, FL</Text>
         </StyledColumn>
-        <DesktopDiv>
+        {/* <DesktopDiv>
           <Link to="/quote">
             <Button footer smallText>
-              {/* Free Story Formula */}
               Request Quote
             </Button>
           </Link>
-        </DesktopDiv>
+        </DesktopDiv> */}
       </StyledRow>
     </Wrapper>
   );

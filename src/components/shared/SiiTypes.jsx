@@ -100,7 +100,10 @@ const SiiTypes = () => {
                 <strong>Bundle 6: </strong>TV Commercials
               </li>
               <li>
-                <strong>Bundle 7: </strong>Meet the Team
+                <strong>Bundle 7: </strong>Meet The Team
+              </li>
+              <li>
+                <strong>Bundle 8: </strong>Your Custom Script
               </li>
             </StyledList>
           </StyledRow>

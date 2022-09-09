@@ -4,13 +4,31 @@ import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
 import Testimonial from './Testimonial';
 import { Row } from '../../theme/index';
+import BG from '../../assets/rectange_bg.png';
+
+// const Wrapper = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   margin: 0 auto;
+//   background: linear-gradient(rgb(242, 245, 247), #ffffff);
+//   padding: 2em 0 2.5em 0;
+//   display: flex;
+//   flex-direction: column;
+
+//   @media (max-width: 1000px) {
+//     flex-direction: column;
+//     margin: 0 auto;
+//     padding: 3em 0 1.5em 0;
+//     text-align: center;
+//   }
+// `;
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(rgb(242, 245, 247), #ffffff);
-  padding: 2em 0 2.5em 0;
+  background: ${(props) => props.bg} no-repeat;
+  padding: 5em 0 2.5em 0;
   display: flex;
   flex-direction: column;
 
@@ -34,7 +52,7 @@ export const HeaderText = styled.p`
   padding: 0;
   text-align: center;
   width: 100%;
-  margin: 0.5em 0 0 0;
+  margin: 0.5em 0 16px 0;
 
   span {
     margin-top: 10px;
@@ -141,7 +159,7 @@ export default class SiiCheck extends Component {
     // const { toggleModal } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper bg={`url('${BG}')`}>
         <Reveal effect="fadeIn">
           <>
             <StyledRow>
@@ -157,7 +175,7 @@ export default class SiiCheck extends Component {
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/j0nizelhql/swatch'} src2={''} />
           </div> */}
 
-            <Div>
+            <Div style={{ width: '80%', margin: '0 auto' }}>
               <>
                 <Row alignitems="center" justifycontent="center">
                   <MenuItem

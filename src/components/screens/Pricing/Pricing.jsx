@@ -7,7 +7,7 @@ import FindYourStoryForm from '../../shared/FindYourStoryForm';
 import Calendar from '../../shared/Calendar';
 import HubspotForm from 'react-hubspot-form';
 import styled from 'styled-components';
-import TopBar from '../../shared/TopBar';
+// import TopBar from '../../shared/TopBar';
 import Splash from '../../shared/Splash';
 import quoteimg from '../../../assets/Quote.jpg';
 
@@ -97,7 +97,7 @@ export default class Pricing extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
-        <TopBar />
+        {/* <TopBar /> */}
         <Splash
           type="pricing"
           title="What's Your Story?"

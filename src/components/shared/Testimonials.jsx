@@ -100,7 +100,7 @@ export default class Testimonials extends Component {
         <Reveal effect="fadeIn">
           <>
             <Column margin="-30px 0 0 0" alignitems="center">
-              <SpanTitle style={{ marginBottom: '0' }}>
+              <SpanTitle style={{ marginBottom: '16' }}>
                 {type === 'launch' ? 'Make An Emotional Impact' : "What they're saying"}
               </SpanTitle>
               {type === 'launch' && (
@@ -114,27 +114,27 @@ export default class Testimonials extends Component {
                 </>
               )}
             </Column>
-            <Div>
+            <Div style={{ width: '80%', margin: '0 auto' }}>
               <>
                 <Row alignitems="center" justifycontent="center">
                   <MenuItem
                     id="nonProfit"
                     client="Movement 2819"
-                    title="Non Profit"
+                    title="Curiosity"
                     handleClick={this.handleClick}
                     selected={selected}
                   />
                   <MenuItem
                     id="startUp"
                     client="Litacore"
-                    title="Startup"
+                    title="Enlightenment"
                     handleClick={this.handleClick}
                     selected={selected}
                   />
                   <MenuItem
                     id="business"
                     client="The Collective Genius"
-                    title="Business"
+                    title="Commitment"
                     handleClick={this.handleClick}
                     selected={selected}
                   />

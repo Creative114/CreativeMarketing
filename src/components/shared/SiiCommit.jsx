@@ -4,17 +4,36 @@ import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
 import { Row, Button } from '../../theme/index';
 import { Link } from 'react-router-dom';
+import BG from '../../assets/rectange_bg.png';
+
+// const Wrapper = styled.div`
+//   // margin-top: 2em;
+//   // margin-right: 5%;
+//   margin: 0 auto;
+//   width: 90%;
+//   height: 100%;
+//   margin-bottom: 5%;
+
+//   @media (max-width: 780px) {
+//     margin-right: 5%;
+//   }
+// `;
 
 const Wrapper = styled.div`
-  // margin-top: 2em;
-  // margin-right: 5%;
+  height: auto;
+  width: 100%;
   margin: 0 auto;
-  width: 90%;
-  height: 100%;
-  margin-bottom: 5%;
-
+  background: ${(props) => props.bg} no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8em 0 4em 0;
   @media (max-width: 780px) {
-    margin-right: 5%;
+    justify-content: center;
+    padding: 5em 0;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -79,7 +98,7 @@ export const ProcessText = styled.p`
 
 const SiiCommit = ({ toggleModal, isAuthed }) => {
   return (
-    <Wrapper>
+    <Wrapper bg={`url('${BG}')`}>
       <Reveal effect="fadeIn">
         <>
           <StyledRow>

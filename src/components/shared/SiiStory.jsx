@@ -206,7 +206,7 @@ const SiiStory = ({ toggleModal, isAuthed, scrollToContent }) => {
           </StyledRow>
           <StyledRow>
             <StyledList>
-              <li>Professional ads on social channels</li>
+              <li>Social channel ads</li>
               <li>Television commercials</li>
               <li>CRM and drip campaign</li>
               <li>Social media content</li>
@@ -214,7 +214,7 @@ const SiiStory = ({ toggleModal, isAuthed, scrollToContent }) => {
               <li>And more!</li>
             </StyledList>
           </StyledRow>
-          <div>
+          <div style={{ width: '80%', margin: '0 auto' }}>
             <Testimonial type="video" src={'https://fast.wistia.com/embed/medias/nzs0atyfx1/swatch'} src2={''} />
           </div>
           <StyledRow>

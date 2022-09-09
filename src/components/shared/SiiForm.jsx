@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Reveal from 'react-reveal/Reveal';
 import HubspotForm from 'react-hubspot-form';
-import { Button } from '../../theme/index';
 
 const Wrapper = styled.div`
   // margin-top: 2em;
@@ -90,7 +89,7 @@ export const ProcessText = styled.p`
 
 // const SiiForm = ({ toggleModal, isAuthed }) => {
 const SiiForm = forwardRef((props, ref) => {
-  const { toggleModal, pricingScroll } = ref;
+  const { pricingScroll } = ref;
 
   return (
     <Wrapper ref={pricingScroll}>
@@ -99,7 +98,7 @@ const SiiForm = forwardRef((props, ref) => {
           <StyledRow>
             <HeaderText>You&apos;re About To Make A Smart Decision</HeaderText>
           </StyledRow>
-          <StyledRow>
+          {/* <StyledRow>
             <ProcessText>Schedule a 15-minute call</ProcessText>
           </StyledRow>
           <StyledRow>
@@ -109,7 +108,7 @@ const SiiForm = forwardRef((props, ref) => {
           </StyledRow>
           <StyledRow>
             <ProcessText>OR</ProcessText>
-          </StyledRow>
+          </StyledRow> */}
           <Div>
             <HubspotForm
               portalId="5644251"
