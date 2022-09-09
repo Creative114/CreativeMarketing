@@ -98,9 +98,10 @@ class Sii60 extends Component {
         <SiiCheck toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <SiiWait></SiiWait>
         <SiiPricing scrollToContent={this.scrollToContent}></SiiPricing>
-        <SiiCommit toggleModal={this.toggleModal} isAuthed={isAuthed} />
+        {/* <SiiCommit toggleModal={this.toggleModal} isAuthed={isAuthed} /> */}
         {/* <SiiForm toggleModal={this.toggleModal} isAuthed={isAuthed}></SiiForm> */}
         <SiiForm ref={{ toggleModal: this.toggleModal, pricingScroll: this.pricingScroll }}></SiiForm>
+        <SiiCommit toggleModal={this.toggleModal} isAuthed={isAuthed} />
         <Footer toggleModal={this.toggleModal} />
         {isOpen && (
           <Modal show={isOpen} togglemodal={this.toggleModal}>

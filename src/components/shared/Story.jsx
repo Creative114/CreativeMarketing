@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledVideoRow = styled(Row)`
-  width: 75%;
+  width: 60%;
   margin: 4em auto 0;
   @media (max-width: 780px) {
     width: 100%;

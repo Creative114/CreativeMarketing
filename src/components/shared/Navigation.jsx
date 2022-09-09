@@ -29,8 +29,10 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${(props) => (props.active ? '220px' : '40px')};
-  height: ${(props) => (props.active ? '30px' : '56px')};
+  // width: ${(props) => (props.active ? '220px' : '40px')};
+  // height: ${(props) => (props.active ? '30px' : '56px')};
+  width: ${(props) => (props.active ? '220px' : '50px')};
+  height: ${(props) => (props.active ? '30px' : '50px')};
   transition: 250ms;
   margin-left: 1.5em;
 
@@ -60,8 +62,10 @@ const BurgerDiv = styled.div`
 `;
 
 const MobileImage = styled.img`
-  width: 40px;
-  height: 56px;
+  // width: 40px;
+  // height: 56px;
+  width: 50px;
+  height: 50px;
   display: none;
 
   @media (max-width: 920px) {
@@ -156,6 +160,9 @@ const Navigation = (props) => {
               <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/contact">
                 Contact
               </StyledNavLink>
+              <StyledNavLink home={type === 'home' ? 1 : 0} active={active ? 1 : 0} to="/sii60">
+                Sell It In 60
+              </StyledNavLink>
 
               <Link to="/quote">
                 {/* <Button primary>Free Story Formula</Button> */}
@@ -181,6 +188,9 @@ const Navigation = (props) => {
           )}
           {type === 'home' && !launch && (
             <StyledRow>
+              <StyledALink active={active ? 1 : 0} href="/sii60">
+                Sell It In 60
+              </StyledALink>
               <StyledALink active={active ? 1 : 0} href="https://blog.creative114.com/">
                 Resources
               </StyledALink>

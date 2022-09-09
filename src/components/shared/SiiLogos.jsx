@@ -1,13 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import logoAhb from '../../assets/Creative114_business-01-AHB-logo.png';
-import logoCg from '../../assets/Creative114_business-02-GGHomes-logo.png';
-import logoDl from '../../assets/Creative114_business-03-Discount-Lots-logo.png';
-import logoIbs from '../../assets/Creative114_business-04-IBuyStill-logo.png';
-import logoIf from '../../assets/Creative114_business-05-Integrity-First-logo.png';
-import logoIps from '../../assets/Creative114_business-06-IPS-Cash-logo.png';
-import logoStb from '../../assets/Creative114_business-07-SellToBobby-logo.png';
-import logoTnhb from '../../assets/Creative114_business-08-TNHomeBuyers-logo.png';
+// import logoAhb from '../../assets/Creative114_business-01-AHB-logo.png';
+// import logoCg from '../../assets/Creative114_business-02-GGHomes-logo.png';
+// import logoDl from '../../assets/Creative114_business-03-Discount-Lots-logo.png';
+// import logoIbs from '../../assets/Creative114_business-04-IBuyStill-logo.png';
+// import logoIf from '../../assets/Creative114_business-05-Integrity-First-logo.png';
+// import logoIps from '../../assets/Creative114_business-06-IPS-Cash-logo.png';
+// import logoStb from '../../assets/Creative114_business-07-SellToBobby-logo.png';
+// import logoTnhb from '../../assets/Creative114_business-08-TNHomeBuyers-logo.png';
+import logoCg from '../../assets/logo_cg.png';
+import logoGgh from '../../assets/logo_ggh.png';
+import logoIf from '../../assets/logo_if.png';
+import logoIg from '../../assets/logo_ig.png';
+import logoStb from '../../assets/logo_stb.png';
+import logoAhb from '../../assets/logo_ahb.png';
+import logoDl from '../../assets/logo_dl.png';
+import logoEhb from '../../assets/logo_ehb.png';
+import logoIbs from '../../assets/logo_ibs.png';
+import logoIps from '../../assets/logo_ips.png';
+import logoNng from '../../assets/logo_nng.png';
+import logoThb from '../../assets/logo_thb.png';
 import Reveal from 'react-reveal/Reveal';
 
 const Wrapper = styled.div`
@@ -40,8 +52,19 @@ const Grid = styled.div`
     grid-auto-rows: 240px;
   }
 
-  @media only screen and (min-width: 992px) {
-    width: 90%;
+  @media (min-width: 992px) {
+    width: 85%;
+    grid-auto-rows: 200px;
+  }
+
+  @media (min-width: 1124px) {
+    width: 85%;
+    grid-auto-rows: 220px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 85%;
+    grid-auto-rows: 240px;
   }
 `;
 
@@ -49,7 +72,7 @@ const Image = styled.img`
   width: 75%;
   align-self: center;
   justify-self: center;
-  filter: grayscale(85%);
+  //filter: grayscale(85%);
   transition: 250ms;
   margin: 0 auto;
 
@@ -116,7 +139,8 @@ const StyledRow = styled.div`
   }
 `;
 
-const logos = [logoAhb, logoCg, logoDl, logoIbs, logoIf, logoIps, logoStb, logoTnhb];
+// const logos = [logoAhb, logoCg, logoDl, logoIbs, logoIf, logoIps, logoStb, logoTnhb];
+const logos = [logoCg, logoGgh, logoIf, logoIg, logoStb, logoAhb, logoDl, logoEhb, logoIbs, logoIps, logoNng, logoThb];
 // const logos = [null, logoAhb, null, logoCg, null, logoDl, null, logoIbs, null, logoIf, null, logoIps, null, logoStb, null, logoTnhb, null];
 
 const SiiLogos = () => {

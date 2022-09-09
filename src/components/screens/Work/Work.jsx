@@ -15,7 +15,7 @@ import josh from '../../../assets/josh_case.png';
 import tebow from '../../../assets/tebow_case.png';
 import jason from '../../../assets/jason_case.png';
 import workimg from '../../../assets/Work.jpg';
-import TopBar from '../../shared/TopBar';
+// import TopBar from '../../shared/TopBar';
 import Video from '../../shared/Video';
 
 class Work extends Component {
@@ -73,7 +73,7 @@ class Work extends Component {
             { property: 'og:url', content: 'http://creative114.com' },
           ]}
         />
-        <TopBar />
+        {/* <TopBar /> */}
         <Splash
           type="work"
           title="More Than Work"
