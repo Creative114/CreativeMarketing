@@ -145,7 +145,6 @@ const Deliver = ({ toggleModal }) => {
           >
             &nbsp;
           </span>
-
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" /> */}
