@@ -132,12 +132,20 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_ld06fncegv popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
           >
             &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_ld06fncegv popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
+          >
+            &nbsp;
           </span>
+
         </Div>
         <Div>
           {/* <Video src="https://fast.wistia.com/embed/medias/jso7sbl54k/swatch" type="open" /> */}
@@ -147,9 +155,16 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_3wz20782od popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_3wz20782od popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
           >
             &nbsp;
           </span>
@@ -162,9 +177,16 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_xus7ajjskp popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_xus7ajjskp popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
           >
             &nbsp;
           </span>
@@ -177,9 +199,16 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_3f3146tcv5 popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_3f3146tcv5 popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
           >
             &nbsp;
           </span>
@@ -192,9 +221,16 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_p20j70i0qu popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_p20j70i0qu popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
           >
             &nbsp;
           </span>
@@ -207,9 +243,16 @@ const Deliver = ({ toggleModal }) => {
             alt="video"
             style={{ height: '100%', width: '100%' }}
           /> */}
-          <span
+          {/* <span
             className="wistia_embed wistia_async_1s0g2445aj popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
             style={{ display: 'inline-block', height: '100%', width: '100%' }}
+          >
+            &nbsp;
+          </span> */}
+
+          <span
+            className="wistia_embed wistia_async_1s0g2445aj popoverDisableAutoPlay=true popover=true popoverAnimateThumbnail=true popoverOverlayOpacity=0.5 videoFoam=true"
+            style={{ display: 'inline-block' }}
           >
             &nbsp;
           </span>
