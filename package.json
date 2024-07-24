@@ -19,7 +19,7 @@
     "styled-components": "^4.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "react-scripts build && rm -rf public && mv build public",
     "test": "react-scripts test",
     "nuke": "rm -rf package-lock.json && rm -rf node_modules && npm install",
